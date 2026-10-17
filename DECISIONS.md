@@ -485,3 +485,25 @@ shame" sellers over RRP, top bargains, graphs, links to makers' pages).
   not sponsored. Sony, Canon, Nikon, OM System, GoPro and Insta360 refused
   automated checks (403), so they stay homepage links until someone confirms
   their search URL by hand.
+
+## 2026-10-17: Cash Converters, the plain board, and "doesn't work" listings
+
+- **Cash Converters (AU, UK)** is read through the structured-data source:
+  its robots.txt allows product pages, it has no feed or API, and its
+  JSON-LD carries price and condition. Its product URLs are numbers, not
+  names, so `slugless` reads a rotating sample of product pages and matches
+  each on its own title; its sitemap index has hundreds of children (about
+  90 MB), so `sitemapWindow` reads a different handful each run. Coverage
+  builds up over several runs instead of all at once. One request at a time
+  with the usual delay, so each AU and UK run takes about 20 minutes longer.
+- **`/board` stays inside the main layout.** The friends asked for an "HTML,
+  no JavaScript" page of just real deals. `/board` renders as plain HTML
+  tables with no client components of its own, but still loads the site's
+  shared script (header, feedback button, analytics): a separate root layout
+  would mean moving every route into route groups, which isn't worth it for
+  one page.
+- **Listings that say a part doesn't work are refused.** "Canon (View Finder
+  Doesn't Work) Canon EOS 90D" was matched as a working body. PARTS now also
+  refuses "doesn't / does not / don't work", "not functioning", "defective"
+  and "damaged". A "damaged box" new listing is refused too; refusing a real
+  offer is the safe side of the matching rule.
