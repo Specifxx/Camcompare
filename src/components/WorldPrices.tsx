@@ -22,6 +22,8 @@ export default function WorldPrices({ slug, path, market: here, name }: { slug: 
   const cur = MARKETS[here].currency;
   const approx = (v: number | null, same: boolean) => (v === null || same ? null : <span className="block text-[11px] text-subtle">≈ {price(Math.round(v / 100) * 100, cur)}</span>);
   return (
+    <section id="world-prices">
+    <h2 className="h-section mb-3">Price around the world</h2>
     <div className="card flex flex-col gap-3 p-4">
       {verdict && <p className="font-semibold">{verdict.text}</p>}
       <p className="text-xs text-muted">Prices are in each market&apos;s own currency. Under each: ≈ in {cur} at today&apos;s exchange rate.</p>
@@ -69,5 +71,6 @@ export default function WorldPrices({ slug, path, market: here, name }: { slug: 
         <Link href="/guides/grey-market-cameras">grey-market cameras</Link> before you buy.
       </p>
     </div>
+    </section>
   );
 }

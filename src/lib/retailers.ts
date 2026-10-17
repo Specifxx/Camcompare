@@ -112,6 +112,9 @@ const used = (r: Omit<Retailer, "source" | "conditions" | "authorized"> & Partia
 });
 const shop = (base: string, extra: { collections?: string[]; currency?: string; disabled?: string; brand?: string } = {}) => ({ source: "shopify" as const, shopify: { base, ...extra } });
 const pages = (structured: StructuredConfig = {}) => ({ source: "structured" as const, structured });
+// Cash Converters AU/UK product pages for lenses and digital bodies (the UK
+// site doubles the dashes: "lenses--filters", "dslr--slr-…").
+const CASH_CONVERTERS_CAMERAS = /\/cameras\/(lenses-+filters\/camera-lens|dslr-+slr-detachable-lens-cameras\/[^/]+|compact-cameras\/digital-camera|other\/camera---other)\/\d+$/;
 
 // Sources and programmes from the 2026-10-17 retailer research (docs/retailers.md).
 export const RETAILERS: Retailer[] = [
@@ -150,6 +153,8 @@ export const RETAILERS: Retailer[] = [
   dealer({ key: "currys", name: "Currys", market: "uk", country: "GB", site: "https://www.currys.co.uk", network: "awin" }),
   used({ key: "mpb-uk", name: "MPB", market: "uk", country: "GB", site: "https://www.mpb.com/en-uk", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.mpb.com/en-uk/search?q=${enc(q)}` }),
   used({ key: "harrison-cameras", name: "Harrison Cameras", market: "uk", country: "GB", site: "https://www.harrisoncameras.co.uk", network: null, ...shop("https://www.harrisoncameras.co.uk"), conditions: ["used", "new"] }),
+  // Same platform as cash-converters-au (checked 2026-10-17).
+  used({ key: "cash-converters-uk", name: "Cash Converters", market: "uk", country: "GB", site: "https://www.cashconverters.co.uk", network: null, ...pages({ slugless: true, sitemapWindow: 36, budget: 200, urlFilter: CASH_CONVERTERS_CAMERAS }) }),
   ebay("uk", "GB", "www.ebay.co.uk", "EBAY_GB", "710-53481-19255-0", "3"),
 
   // ---- Europe (euro)
@@ -171,6 +176,11 @@ export const RETAILERS: Retailer[] = [
   dealer({ key: "camera-house", name: "Camera House", market: "au", country: "AU", site: "https://www.camerahouse.com.au", network: "commission-factory", checkRow: true, searchUrl: (q) => `https://www.camerahouse.com.au/catalogsearch/result/?q=${enc(q)}` }),
   dealer({ key: "camerapro", name: "CameraPro", market: "au", country: "AU", site: "https://www.camerapro.com.au", network: "commission-factory", checkRow: true, searchUrl: (q) => `https://www.camerapro.com.au/catalogsearch/result/?q=${enc(q)}` }),
   dealer({ key: "jbhifi", name: "JB Hi-Fi", market: "au", country: "AU", site: "https://www.jbhifi.com.au", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.jbhifi.com.au/search?page=1&query=${enc(q)}` }),
+  // Pawn-shop chain, one site for every store (checked 2026-10-17: robots.txt
+  // allows /shop, JSON-LD Product/Offer with itemCondition Used, no bot wall).
+  // Its URLs don't name the item and it has ~230 product sitemaps, so it is
+  // read slugless over a rotating window of them (sources/structured.ts).
+  used({ key: "cash-converters-au", name: "Cash Converters", market: "au", country: "AU", site: "https://www.cashconverters.com.au", network: null, ...pages({ slugless: true, sitemapWindow: 36, budget: 200, urlFilter: CASH_CONVERTERS_CAMERAS }) }),
   ebay("au", "AU", "www.ebay.com.au", "EBAY_AU", "705-53470-19255-0", "15"),
 
   // ---- Singapore (eBay Partner Network has no ebay.com.sg programme)

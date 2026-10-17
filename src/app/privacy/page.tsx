@@ -8,8 +8,15 @@ export default function Privacy() {
     <div className="max-w-2xl space-y-4 text-sm leading-relaxed">
       <h1 className="text-2xl font-extrabold tracking-tight">Privacy</h1>
       <p>
-        {SITE_NAME} has no accounts. The only thing we store on our servers is feedback you choose to send: your message, the page and market it&apos;s
-        about, your browser type, and your email only if you give one (used only to reply).
+        {SITE_NAME} has no accounts. We store only two things on our servers, both only if you choose to send them: feedback (your message, the page and
+        market it&apos;s about, your browser type, and your email only if you give one, used only to reply) and price alerts.
+      </p>
+      <h2 className="h-section pt-2">Price alerts</h2>
+      <p>
+        When you use &ldquo;Track this price&rdquo;, we keep your email address, the product, market and condition, your target price, and the last price
+        we emailed you about. We first send one email asking you to confirm; nothing else is sent until you click it. After that we email you only when
+        that price drops, at most once a day per alert. Every email has a link to stop that alert and to see and remove all of yours; removed alerts are
+        never emailed again. Emails are sent through Resend, our email provider. We never use your address for anything else and never share or sell it.
       </p>
       <h2 className="h-section pt-2">What stays in your browser</h2>
       <p>

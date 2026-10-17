@@ -4,6 +4,7 @@ import { dealSignal, usedSaving, vsLaunch } from "@/lib/insights";
 import { MARKETS, type Currency, type MarketCode } from "@/lib/markets";
 import { AMAZON_MAX_AGE_H, isAmazonOffer, type HistoryPoint, type Offer } from "@/lib/offers";
 import { retailer } from "@/lib/retailers";
+import { usedValue } from "@/lib/value";
 import TimedPrice from "./TimedPrice";
 
 /** Amazon's price only with its time, and only while under a day old. */
@@ -15,18 +16,43 @@ export default function PriceBox({ newOffer, usedOffer, history, launch, market,
   const deal = dealSignal(history, newOffer?.price ?? null, "new", offersGeneratedAt(market)?.slice(0, 10));
   const saving = usedSaving(newOffer?.price ?? null, usedOffer?.price ?? null);
   const launchDelta = launch && launch.currency === cur ? vsLaunch(newOffer?.price ?? null, launch.amount) : null;
+  const typical = usedValue(history);
+  // RRP and the second-hand price, side by side near the top (friends' feedback, 2026-10-17).
+  const rrpLine = (launch || typical || usedOffer) && (
+    <p className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+      {launch && (
+        <span>
+          <span className="text-subtle">Launch RRP </span>
+          <span className="price font-semibold">{listPrice(launch.amount, launch.currency)}</span>
+          <span className="text-subtle">{extra ?? ""}</span>
+        </span>
+      )}
+      {typical ? (
+        <span>
+          <span className="text-subtle">Used, typically </span>
+          <span className="price font-semibold">{price(typical.value, cur)}</span>
+        </span>
+      ) : usedOffer ? (
+        <span>
+          <span className="text-subtle">Used from </span>
+          <span className="price font-semibold">{shown(usedOffer, cur)}</span>
+        </span>
+      ) : null}
+    </p>
+  );
   if (!newOffer && !usedOffer) {
     return (
       <div className="flex flex-col gap-1 text-sm">
         <p className="text-muted">
           No live price in {MARKETS[market].name} yet. We show one only when a retailer&apos;s feed or API sends it: <a href="#prices">where to look</a>.
         </p>
-        {launch && <p className="text-xs text-subtle">Launch price {listPrice(launch.amount, launch.currency)}{extra ?? ""}.</p>}
+        {rrpLine}
       </div>
     );
   }
   return (
     <div className="flex flex-col gap-2">
+      {rrpLine}
       <div className="grid grid-cols-2 gap-3 sm:max-w-md">
         <div className="card p-3">
           <p className="text-xs text-subtle">Lowest new</p>
@@ -42,12 +68,7 @@ export default function PriceBox({ newOffer, usedOffer, history, launch, market,
       </div>
       <div className="flex flex-wrap gap-2 text-xs">
         {deal && <span className={`chip ${deal.kind === "above-avg" ? "text-warn" : "text-win"}`}>{deal.text}</span>}
-        {launch && (
-          <span className="text-subtle">
-            Launch price {listPrice(launch.amount, launch.currency)}{extra ?? ""}
-            {launchDelta !== null ? ` · today ${launchDelta <= 0 ? `${-launchDelta}% under` : `${launchDelta}% over`}` : ""}
-          </span>
-        )}
+        {launchDelta !== null && <span className={launchDelta > 0 ? "text-warn" : "text-subtle"}>Lowest new today is {launchDelta <= 0 ? `${-launchDelta}% under` : `${launchDelta}% over`} launch RRP</span>}
       </div>
     </div>
   );

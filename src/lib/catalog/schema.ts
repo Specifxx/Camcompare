@@ -250,7 +250,17 @@ export type ProductKind = "camera" | "lens";
 export type Product = ({ kind: "camera" } & Camera) | ({ kind: "lens" } & Lens);
 
 export const brandSchema = z
-  .object({ slug, name: z.string(), country: z.string(), site: z.string().url(), sublines: z.array(z.string()).optional() })
+  .object({
+    slug,
+    name: z.string(),
+    country: z.string(),
+    site: z.string().url(), // the maker's homepage
+    // The maker's own site search, "{q}" where the product name goes. Only
+    // where the pattern was checked against the live site (2026-10-17);
+    // without it, product pages link to `site`.
+    search: z.string().url().refine((u) => u.includes("{q}"), "needs {q}").optional(),
+    sublines: z.array(z.string()).optional(),
+  })
   .strict();
 export type Brand = z.infer<typeof brandSchema>;
 

@@ -5,6 +5,8 @@ import { AD_SLOTS } from "@/lib/ads";
 import OffersTable from "@/components/OffersTable";
 import PhotoCredit from "@/components/PhotoCredit";
 import PriceBox from "@/components/PriceBox";
+import OfficialLink from "@/components/OfficialLink";
+import WorldPrices from "@/components/WorldPrices";
 import PriceHistory from "@/components/PriceHistory";
 import UsedValue from "@/components/UsedValue";
 import ProductCard from "@/components/ProductCard";
@@ -102,6 +104,9 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
                 · Announced {longMonthYear(l.announced)}
                 {l.status === "discontinued" ? " · Discontinued" : ""}
               </p>
+              <p className="mt-1">
+                <OfficialLink p={l} />
+              </p>
             </div>
             <KeySpecs l={l} />
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(l.slug, m)} launch={launchPrice(l, m)} market={m} />
@@ -119,6 +124,8 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
         <OffersTable product={l.slug} query={name} offers={offers} market={m} page={page} amazonAsin={l.amazonAsin} />
         {l.mounts.length > 1 && <p className="mt-2 text-xs text-subtle">Made in {l.mounts.length} mount versions. Check the version before you buy: each offer says which, when the retailer does.</p>}
       </section>
+
+      <WorldPrices slug={l.slug} path={`/lenses/${l.slug}`} market={m} name={short} />
 
       <section>
         <h2 className="h-section mb-3">Price history</h2>

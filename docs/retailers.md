@@ -123,6 +123,7 @@ priced in another currency is refused.
 | Currys | GB | Product feed `FEED_URL_CURRYS` | Awin | `AFFILIATE_DEEPLINK_CURRYS` |
 | MPB ★ | GB | Product feed `FEED_URL_MPB_UK` | Partnerize | `AFFILIATE_DEEPLINK_MPB_UK` |
 | Harrison Cameras | GB | Shopify products.json (no setup) | none known | — |
+| Cash Converters | GB | Structured data on its product pages (no setup) | none known | — |
 | eBay.co.uk | GB | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | `EBAY_AFFILIATE_CAMPAIGN` |
 
 ### 🇪🇺 Europe (EUR)
@@ -150,6 +151,7 @@ priced in another currency is refused.
 | Camera House ★ | AU | Product feed `FEED_URL_CAMERA_HOUSE` | Commission Factory | `AFFILIATE_DEEPLINK_CAMERA_HOUSE` |
 | CameraPro ★ | AU | Product feed `FEED_URL_CAMERAPRO` | Commission Factory | `AFFILIATE_DEEPLINK_CAMERAPRO` |
 | JB Hi-Fi ★ | AU | Product feed `FEED_URL_JBHIFI` | Partnerize | `AFFILIATE_DEEPLINK_JBHIFI` |
+| Cash Converters | AU | Structured data on its product pages (no setup) | none known | — |
 | eBay.com.au | AU | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | `EBAY_AFFILIATE_CAMPAIGN` |
 
 ### 🇸🇬 Singapore (SGD)
@@ -199,6 +201,19 @@ runners may be treated differently.
   TVs and music).
 - **Working via structured data:** Abt (until its CJ feed), Precision Camera,
   Dodd Camera.
+- **Cash Converters AU and UK** (cashconverters.com.au, cashconverters.co.uk;
+  one EPiServer platform behind Cloudflare, no challenge to a plain request):
+  robots.txt allows `/shop` (it disallows only search, filter and query URLs),
+  and each product page carries a JSON-LD Product/Offer with price, currency,
+  `InStock` and `UsedCondition`. Product URLs don't name the item
+  (`…/cameras/lenses-filters/camera-lens/001300347004`) and each site has
+  roughly 230 (AU) / 180 (UK) product sitemaps of 1,000 URLs, about 1% of
+  them lenses and digital bodies, and the category listing pages render their
+  products in JavaScript. So both are read `slugless` (every camera-category
+  URL is a candidate, matched on the page's own title) over a rotating window
+  of 36 sitemaps and 200 pages a run (`sources/structured.ts`). Listing titles
+  are the store's own and messy ("Canon Zoom Ef-S 18-55mm 1:3.5-5.6 Is Zoom
+  Canon Eos Black"), so many copies match nothing; that only loses offers.
 - **Next candidates:** MS Color and other WooCommerce shops (public Store
   API, SGD), Kamera Express, Calumet DE, Conns Cameras (EUR), Jessops, Mifsuds,
   Wilkinson (GBP) answer plain requests and need a per-site check.

@@ -11,10 +11,14 @@ Background: `docs/FEASIBILITY.md` says why it is shaped this way;
 
 ## No database for public data, on purpose
 
-Public data has no database; private feedback uses one small Neon table
-(`feedback`, `src/lib/feedback.ts`, `DATABASE_URL`), written by
-`/api/feedback` and read only by the owner's `/admin/<ADMIN_KEY>` page. Nothing
-public ever reads it. Everything public is JSON in `data/`, committed:
+Public data has no database; private data uses two small tables in one Neon
+project (`DATABASE_URL`): `feedback` (`src/lib/feedback.ts`), written by
+`/api/feedback` and read only by the owner's `/admin/<ADMIN_KEY>` page, and
+`price_alerts` (`src/lib/alerts.ts`), email price alerts written by
+`/api/alerts`, read by `scripts/check-alerts.ts` after each price import and
+by the token-only `/alerts/manage` page; emails go through Resend
+(`RESEND_API_KEY`). Nothing public ever reads either, and no page reads them
+at build time. Everything public is JSON in `data/`, committed:
 
 - `data/cameras/<slug>.json`, `data/lenses/<slug>.json`: the catalog
   (`src/lib/catalog/schema.ts`; how to write one: `docs/catalog-authoring.md`)

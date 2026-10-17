@@ -7,6 +7,8 @@ import LowLight from "@/components/LowLight";
 import PeerRanks from "@/components/PeerRanks";
 import PhotoCredit from "@/components/PhotoCredit";
 import PriceBox from "@/components/PriceBox";
+import OfficialLink from "@/components/OfficialLink";
+import WorldPrices from "@/components/WorldPrices";
 import PriceHistory from "@/components/PriceHistory";
 import UsedValue from "@/components/UsedValue";
 import ProductCard from "@/components/ProductCard";
@@ -141,6 +143,9 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
                 {c.status === "discontinued" ? " · Discontinued (new stock may be limited)" : ""}
                 {name !== c.name ? ` · Sold as ${c.name} in the US` : ""}
               </p>
+              <p className="mt-1">
+                <OfficialLink p={c} />
+              </p>
             </div>
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(c.slug, m)} launch={launchPrice(c, m)} market={m} extra={c.mount ? " (body only)" : ""} />
             <div className="flex flex-wrap gap-2">
@@ -161,6 +166,8 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
         <OffersTable product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} amazonAsin={c.amazonAsin} />
       </section>
+
+      <WorldPrices slug={c.slug} path={`/cameras/${c.slug}`} market={m} name={short} />
 
       <section>
         <h2 className="h-section mb-3">Price history</h2>

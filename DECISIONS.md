@@ -416,3 +416,36 @@ SaaS blue to film stock (cream paper and rust in light mode, darkroom browns
 in dark), headings to Fraunces, prices and spec lines to JetBrains Mono, and
 cards to print and contact-sheet frames. Text contrast still passes WCAG AA;
 green still means a price or a paid buy button.
+
+## 2026-10-17: Price alerts by email, without accounts
+
+Owner: "Tracking price option for every single camera" and "Price
+notification for accounts". Accounts would mean passwords, sessions and a
+login page for one feature, so the "account" is an email address and a
+random token per alert.
+
+- **"Track this price"** on every camera and lens page and in the quick view
+  (`PriceAlert`): email, condition (new, used, either) and an optional target,
+  prefilled 5% under today's lowest. Empty target means "any drop of 3% or
+  more".
+- **Double opt-in.** A new address gets one confirm email; nothing else is
+  sent until it clicks. Confirming one alert confirms the address. At most 5
+  unconfirmed alerts wait per address and 10 requests per IP per ten minutes,
+  so the form can't be used to mail-bomb someone. 50 alerts per address.
+- **Storage: one more private table**, `price_alerts`, in the feedback Neon
+  project, created on first use. Still nothing public reads the database and
+  no page reads it at build time; the only regular reader is
+  `scripts/check-alerts.ts`, one SELECT every three hours, so transfer stays
+  in kilobytes.
+- **Checked after each price import**, in refresh-prices.yml, from the
+  committed `data/offers/<market>.json` through `lowest()`: never Amazon's
+  price, which may not be stored, and so is not emailed either. Notify when
+  the price is at or under the target and lower than the last price emailed;
+  never the same price twice; at most one email per alert per 24 hours; back
+  over the target re-arms it. The step is `continue-on-error`: a mail
+  failure never fails the price job.
+- **Resend** (REST API, no SDK): free tier 100 emails a day, so a run sends
+  at most 90 and leaves the rest for the next run. Every alert email has a
+  one-click stop link (also as List-Unsubscribe / RFC 8058) and a manage
+  link. The links carry the token; the manage page is dynamic, noindex and
+  sends no referrer.

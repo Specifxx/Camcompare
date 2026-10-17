@@ -25,6 +25,18 @@ export type StructuredConfig = {
   sitemapFilter?: RegExp;
   /** Product page URLs (default: all). */
   urlFilter?: RegExp;
+  /**
+   * The shop's product URLs don't name the product (Cash Converters:
+   * ".../cameras/lenses-filters/camera-lens/001300347004"), so the slug can't
+   * pick candidates: every `urlFilter` page is one, read in a rotating sample
+   * within the budget, and matched on the page's own title.
+   */
+  slugless?: boolean;
+  /**
+   * Read only this many child sitemaps of an index per run, a different
+   * window each run, for shops with hundreds of them (all ≈ 90 MB).
+   */
+  sitemapWindow?: number;
   /** Product pages per run (default 250). */
   budget?: number;
   delayMs?: number;
@@ -140,6 +152,7 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
     const queue = cfg.sitemaps ?? [...robots.matchAll(/^\s*sitemap:\s*(\S+)/gim)].map((m) => m[1]);
     if (!queue.length) queue.push(`${origin}/sitemap.xml`);
     const pages = new Set<string>();
+    const slot = Math.floor(Date.parse(now) / (6 * 3600_000));
     for (let n = 0; queue.length && n < MAX_SITEMAPS; n++) {
       const url = queue.shift()!;
       const s = await get(url).catch(() => null);
@@ -148,8 +161,13 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
       const l = locs(s.text);
       if (/<sitemapindex/i.test(s.text)) {
         const re = cfg.sitemapFilter ?? /product/i;
-        const pick = l.filter((u) => re.test(u));
-        queue.push(...(pick.length ? pick : l));
+        let pick = l.filter((u) => re.test(u));
+        if (!pick.length) pick = l;
+        if (cfg.sitemapWindow && pick.length > cfg.sitemapWindow) {
+          const start = (slot * cfg.sitemapWindow) % pick.length;
+          pick = [...pick.slice(start), ...pick.slice(0, start)].slice(0, cfg.sitemapWindow);
+        }
+        queue.push(...pick);
       } else for (const u of l) pages.add(u);
     }
     // Only pages for products we list, and only where robots.txt allows.
@@ -162,18 +180,21 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
         continue;
       }
       if (url.origin !== origin || (cfg.urlFilter && !cfg.urlFilter.test(u)) || !robotsAllows(robots, url.pathname + url.search)) continue;
-      const m = matchListing({ title: slugText(u) }, index);
-      if (!m.product) continue;
-      (byProduct.get(m.product.slug) ?? byProduct.set(m.product.slug, []).get(m.product.slug)!).push(u);
+      // Slugless: keyed by URL, matched once the page is read.
+      const key = cfg.slugless ? u : matchListing({ title: slugText(u) }, index).product?.slug;
+      if (!key) continue;
+      (byProduct.get(key) ?? byProduct.set(key, []).get(key)!).push(u);
     }
     // Rotate through the candidates, a budget per run, so every product is
     // re-read within a day at four runs a day; products not read this run keep
     // their earlier offers (`covered`).
-    const all = [...byProduct.keys()].sort();
+    // Slugless candidates are shuffled per run instead (a stable hash of URL
+    // and slot), so a window larger than the budget is sampled evenly over runs.
+    const hash = (x: string) => [...x].reduce((h, c) => (Math.imul(h, 31) + c.charCodeAt(0)) | 0, slot);
+    const all = cfg.slugless ? [...byProduct.keys()].sort((a, b) => hash(a) - hash(b)) : [...byProduct.keys()].sort();
     const budget = cfg.budget ?? 250;
-    const slot = Math.floor(Date.parse(now) / (6 * 3600_000));
     const urls: [string, string][] = all.flatMap((p) => byProduct.get(p)!.slice(0, 3).map((u) => [p, u] as [string, string]));
-    const start = urls.length > budget ? (slot * budget) % urls.length : 0;
+    const start = urls.length > budget && !cfg.slugless ? (slot * budget) % urls.length : 0;
     const window = [...urls.slice(start), ...urls.slice(0, start)].slice(0, budget);
     const currency = MARKETS[market].currency;
     const offers: Offer[] = [];
@@ -203,7 +224,7 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
         offers.push({ product: m.product.slug, kind: m.kind, retailer: r.key, condition: cond, price: l.price, currency, url: u, title: l.title, seller: null, inStock: l.inStock, kit: m.kit, mount: m.mount, seenAt: now, sourceId: l.sku ?? null });
       }
     }
-    for (const [p] of window.slice(0, fetched)) covered.add(p);
+    if (!cfg.slugless) for (const [p] of window.slice(0, fetched)) covered.add(p);
     const note = `${pages.size} sitemap URLs, ${urls.length} candidates, ${fetched} pages read${stop ? `; ${stop}` : ""}`;
     log(`${r.key}: ${note}, ${offers.length} offers`);
     if (!fetched && window.length) return { status: "error", note };

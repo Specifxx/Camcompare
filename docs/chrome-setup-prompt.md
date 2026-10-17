@@ -27,7 +27,7 @@ GROUND RULES
 - If you can't finish a step (it needs a login I don't have, a page won't load, a programme hasn't approved us yet, a value doesn't exist yet), don't wait: note why, then go straight to the next step.
 - Never do these yourself; skip them and put them on my manual list instead: paying for anything, buying a domain, choosing or upgrading a plan, accepting a legal agreement or terms, submitting tax forms, bank or payout details, or entering my personal details (name, address, phone, ID). Fill in everything else on a sign-up form, stop just before those parts, note exactly where you stopped, and move on.
 - Never paste a secret into this chat. Put each value only into the exact setting named below.
-- Create exactly ONE database: one free Neon project named camcompare (Part 2A), for private feedback only. Never a paid plan, never a second project, and never put public data in it: public data stays in the GitHub repo and the site is built from it.
+- Create exactly ONE database: one free Neon project named camcompare (Part 2A), for private feedback and price alerts only. Never a paid plan, never a second project, and never put public data in it: public data stays in the GitHub repo and the site is built from it.
 - Keep a running list of everything you skipped or couldn't finish.
 
 FINAL OUTPUT
@@ -52,6 +52,7 @@ PART 2: Vercel (the camcompare project)
 4. Settings → Environment Variables: if NEXT_PUBLIC_SITE_URL exists, set it to https://www.camcompare.app (or delete it; the code no longer needs it).
 5. Environment variables are read when pages are BUILT, so set each of these for Production AND Preview as values become available, and after any change redeploy production (Deployments → latest production → ⋯ → Redeploy). Unset is safe: a link without a code just doesn't earn.
      DATABASE_URL and ADMIN_KEY (see Part 2A)
+     RESEND_API_KEY (price alert emails; see Part 2B)
      AMAZON_TAG_US, AMAZON_TAG_UK, AMAZON_TAG_DE, AMAZON_TAG_AU, AMAZON_TAG_SG
      EBAY_AFFILIATE_CAMPAIGN
      AFFILIATE_DEEPLINK_BH  (B&H Photo, US)
@@ -87,10 +88,20 @@ PART 2: Vercel (the camcompare project)
      Later, only once AdSense approves the site: NEXT_PUBLIC_ADSENSE_CLIENT, NEXT_PUBLIC_ADSENSE_SLOT_PRODUCT, NEXT_PUBLIC_ADSENSE_SLOT_LISTING, NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE, ADSENSE_PUBLISHER_ID
 
 PART 2A: Feedback database and admin link
-1. Neon (console.neon.tech; sign in with my GitHub account if I have no Neon login): create ONE new project named camcompare on the Free plan, Postgres default version, region closest to the Vercel project (for example AWS US East). Don't create tables: the site creates its one feedback table on first use. If the free plan isn't available without payment, skip this part and put it on my manual list.
+1. Neon (console.neon.tech; sign in with my GitHub account if I have no Neon login): create ONE new project named camcompare on the Free plan, Postgres default version, region closest to the Vercel project (for example AWS US East). Don't create tables: the site creates its tables (feedback, price_alerts) on first use. If the free plan isn't available without payment, skip this part and put it on my manual list.
 2. In the project's Connect dialog, turn "Connection pooling" ON and copy the pooled connection string (its host contains "-pooler"). Paste it only into Vercel → Settings → Environment Variables → DATABASE_URL (Production and Preview). Never paste it anywhere else.
 3. Generate a long random admin key: at least 32 random letters and digits (no symbols), for example from a password generator. Put it only into Vercel ADMIN_KEY (Production and Preview). Do not show it in this chat or in your final answer.
 4. Redeploy production. Then put this on my manual list: "Your admin link is https://www.camcompare.app/admin/<ADMIN_KEY>. Find the key in Vercel → Settings → Environment Variables → ADMIN_KEY (click to reveal). Bookmark the link and don't share it: anyone with it can read all feedback."
+
+PART 2B: Price alert emails (Resend)
+"Track this price" emails people when a camera or lens gets cheaper. It stores alerts in the same Neon project (table price_alerts, created on first use) and sends through Resend.
+1. Resend (resend.com): sign up on the free plan (sign in with my GitHub account if offered). If the free plan needs payment details, skip this part and put it on my manual list.
+2. Resend → Domains → Add Domain: camcompare.app (the apex, not www), region closest to the US. Resend lists DNS records (an MX and a TXT for the "send" subdomain, a DKIM TXT "resend._domainkey", and optionally a DMARC TXT "_dmarc").
+3. Add each record exactly in Vercel → my account's Domains (not the project) → camcompare.app → DNS Records → Add. Name/host without the trailing ".camcompare.app". Don't change or delete any existing record. Then back in Resend click Verify. DNS can take a few minutes; if it hasn't verified within 15 minutes, put "click Verify in Resend → Domains" on my manual list and carry on.
+4. Resend → API Keys → Create API Key: name camcompare, permission "Sending access", domain camcompare.app. Copy it once (it's shown only once) and paste it into BOTH Vercel → Settings → Environment Variables → RESEND_API_KEY (Production and Preview) AND GitHub → Settings → Secrets and variables → Actions → RESEND_API_KEY. Don't show it in this chat or in your final answer.
+5. GitHub secret DATABASE_URL: the same pooled Neon connection string as Vercel's DATABASE_URL (Part 2A). The price job uses it after each import to check alerts.
+6. Optional: only if I want a sender other than alerts@camcompare.app, set ALERTS_FROM_EMAIL (for example: CamCompare <alerts@camcompare.app>) in both places. Otherwise leave it unset.
+7. Redeploy production. Alerts start working on the next build and the next price run.
 
 PART 3: Affiliate programmes
 For each programme: check whether I already have an account (I do for Amazon Associates US, eBay Partner Network and Impact). If not, start the publisher sign-up, fill in what you can, and leave the legal, tax, payment and personal-details parts for my manual list. Use https://www.camcompare.app as the website. Describe the site as: "CamCompare compares camera and lens specs side by side and lists new and used prices from retailers, sorted by price, with links to buy. Free to use, earning from affiliate links."
@@ -160,6 +171,7 @@ PART 4: GitHub secrets (repo → Settings → Secrets and variables → Actions 
      AMAZON_TAG_US, AMAZON_TAG_UK, AMAZON_TAG_DE, AMAZON_TAG_AU, AMAZON_TAG_SG
      AMAZON_CREATORS_NA_CLIENT_ID, AMAZON_CREATORS_NA_CLIENT_SECRET, AMAZON_CREATORS_EU_CLIENT_ID, AMAZON_CREATORS_EU_CLIENT_SECRET, AMAZON_CREATORS_FE_CLIENT_ID, AMAZON_CREATORS_FE_CLIENT_SECRET
      BESTBUY_API_KEY
+     DATABASE_URL and RESEND_API_KEY (price alerts; Part 2B)
      FEED_URL_BH  (B&H Photo, US)
      FEED_URL_ADORAMA  (Adorama, US)
      FEED_URL_WALMART  (Walmart, US)
