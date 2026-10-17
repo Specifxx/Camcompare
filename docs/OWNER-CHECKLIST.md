@@ -21,7 +21,8 @@ with the link can see the page, so don't share it. Any other key is a 404.
 1. **GitHub.** Create `main` from the working branch and make it the default.
    Allow Actions to write (the daily price job commits to `main`).
 2. **Vercel project** for this repo, on a Pro team (Hobby is non-commercial),
-   production branch `main`. Then a domain and `NEXT_PUBLIC_SITE_URL`.
+   production branch `main`, live at https://www.camcompare.app (built into the
+   code; no variable needed). Turn on Web Analytics in the project.
 3. **Affiliate programmes.** Apply once the site is live, because programmes
    review the site:
    - **Amazon Associates**: one account per store (US, UK, Germany, Australia,

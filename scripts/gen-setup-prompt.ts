@@ -79,18 +79,19 @@ When you've gone through every part, your whole answer is one numbered list, MY 
   - anything to do afterwards (for example "then redeploy on Vercel").
 After the list, add one short line saying which parts you finished. Nothing else.
 
-PART 1: GitHub (github.com/Specifxx/Camcompare)
-1. The repo has only one branch, ccr-a3b03032-x84w3r. Create a branch named main from it (Branches → New branch), then Settings → General → Default branch → switch to main. The daily price job runs on the default branch.
-2. Settings → Actions → General: allow all actions, and under Workflow permissions select "Read and write permissions", then save. The daily price import commits price files to main.
-3. Don't add branch protection to main that blocks pushes from GitHub Actions; the price job pushes to it once a day.
-4. Leave secrets for Part 4.
+ALREADY DONE (don't redo, just confirm in passing): the repo has a main branch (default), the Vercel project is deployed from main, and the site is live at https://www.camcompare.app (the apex camcompare.app and the old camcompare.vercel.app both redirect there). The site's address is built into the code, so no Vercel variable is needed for it.
 
-PART 2: Vercel
-1. Add New → Project → import GitHub repo Specifxx/Camcompare. Framework preset Next.js, root directory "./", default build and install commands, Node.js 22.x. Production branch: main. Deploy.
-2. Plan: the site earns affiliate commission, so it must not run on the Hobby (non-commercial) plan. If my RiftCompare project is on a Pro team, put CamCompare in that same team. If that needs an upgrade or payment, use whatever team works for now and put the upgrade on my manual list.
-3. Domain: if one of my Vercel domains is free and clearly meant for this (for example a camcompare domain), attach it. Otherwise use the project's free .vercel.app address for now and put "buy and attach a domain, then update NEXT_PUBLIC_SITE_URL" on my manual list. Set NEXT_PUBLIC_SITE_URL to https://<the domain in use> (no trailing slash).
-4. Settings → Environment Variables. They are read when pages are BUILT, so set each one for Production AND Preview, and after any change redeploy production (Deployments → latest production → ⋯ → Redeploy). Fill what we have now; leave the rest unset. Unset is safe: a link without a code just doesn't earn.
-     NEXT_PUBLIC_SITE_URL
+PART 1: GitHub (github.com/Specifxx/Camcompare)
+1. Settings → Actions → General: allow all actions, and under Workflow permissions "Read and write permissions" must be selected (the price job commits prices to main every six hours). Fix it if not.
+2. Actions → "refresh-prices": confirm the latest run is green. If the latest run failed, open it and put the failing step and its error line on my manual list.
+3. Leave secrets for Part 4.
+
+PART 2: Vercel (the camcompare project)
+1. Plan: the site earns affiliate commission, so it must not run on the Hobby (non-commercial) plan. If the project is on Hobby and my RiftCompare project is on a Pro team, put "move CamCompare to the Pro team" on my manual list (don't pay or upgrade yourself).
+2. Analytics tab → Web Analytics → Enable (choose the free tier if asked; skip anything that needs payment and put it on my manual list). Speed Insights is optional; leave it off.
+3. Settings → Domains: confirm www.camcompare.app is the primary domain and camcompare.app redirects to it. Change nothing else there.
+4. Settings → Environment Variables: if NEXT_PUBLIC_SITE_URL exists, set it to https://www.camcompare.app (or delete it; the code no longer needs it).
+5. Environment variables are read when pages are BUILT, so set each of these for Production AND Preview as values become available, and after any change redeploy production (Deployments → latest production → ⋯ → Redeploy). Unset is safe: a link without a code just doesn't earn.
      DATABASE_URL and ADMIN_KEY (see Part 2A)
      AMAZON_TAG_US, AMAZON_TAG_UK, AMAZON_TAG_DE, AMAZON_TAG_AU, AMAZON_TAG_SG
      EBAY_AFFILIATE_CAMPAIGN
@@ -103,10 +104,10 @@ PART 2A: Feedback database and admin link
 1. Neon (console.neon.tech; sign in with my GitHub account if I have no Neon login): create ONE new project named camcompare on the Free plan, Postgres default version, region closest to the Vercel project (for example AWS US East). Don't create tables: the site creates its one feedback table on first use. If the free plan isn't available without payment, skip this part and put it on my manual list.
 2. In the project's Connect dialog, turn "Connection pooling" ON and copy the pooled connection string (its host contains "-pooler"). Paste it only into Vercel → Settings → Environment Variables → DATABASE_URL (Production and Preview). Never paste it anywhere else.
 3. Generate a long random admin key: at least 32 random letters and digits (no symbols), for example from a password generator. Put it only into Vercel ADMIN_KEY (Production and Preview). Do not show it in this chat or in your final answer.
-4. Redeploy production. Then put this on my manual list: "Your admin link is https://<site>/admin/<ADMIN_KEY>. Find the key in Vercel → Settings → Environment Variables → ADMIN_KEY (click to reveal). Bookmark the link and don't share it: anyone with it can read all feedback."
+4. Redeploy production. Then put this on my manual list: "Your admin link is https://www.camcompare.app/admin/<ADMIN_KEY>. Find the key in Vercel → Settings → Environment Variables → ADMIN_KEY (click to reveal). Bookmark the link and don't share it: anyone with it can read all feedback."
 
 PART 3: Affiliate programmes
-For each programme: check whether I already have an account (I do for Amazon Associates US, eBay Partner Network and Impact). If not, start the publisher sign-up, fill in what you can, and leave the legal, tax, payment and personal-details parts for my manual list. Use the site address from Part 2 as the website. Describe the site as: "CamCompare compares camera and lens specs side by side and lists new and used prices from retailers, sorted by price, with links to buy. Free to use, earning from affiliate links."
+For each programme: check whether I already have an account (I do for Amazon Associates US, eBay Partner Network and Impact). If not, start the publisher sign-up, fill in what you can, and leave the legal, tax, payment and personal-details parts for my manual list. Use https://www.camcompare.app as the website. Describe the site as: "CamCompare compares camera and lens specs side by side and lists new and used prices from retailers, sorted by price, with links to buy. Free to use, earning from affiliate links."
 A. Amazon Associates: a separate account for each of five stores.
    - US (affiliate-program.amazon.com): my RiftCompare account exists. Add the CamCompare domain to its website list (Account Settings → Edit Your Website and Mobile App List), then Manage Tracking IDs → add one such as camcompare-20 → AMAZON_TAG_US.
    - UK (affiliate-program.amazon.co.uk) → AMAZON_TAG_UK
@@ -141,7 +142,7 @@ ${feedVars}
 3. The run commits prices to main, and that commit triggers a fresh Vercel build. Confirm on Vercel that the build succeeded.
 
 PART 5: Search engines
-1. Google Search Console: add a URL-prefix property for https://<domain>/, choose the "HTML tag" method, copy only the content="…" code → Vercel GOOGLE_SITE_VERIFICATION, redeploy, then click Verify. Submit https://<domain>/sitemap.xml.
+1. Google Search Console: add a URL-prefix property for https://www.camcompare.app/, choose the "HTML tag" method, copy only the content="…" code → Vercel GOOGLE_SITE_VERIFICATION, redeploy, then click Verify. Submit https://www.camcompare.app/sitemap.xml.
 2. Bing Webmaster Tools: import the site from Google Search Console (quickest). If that isn't offered, use the meta-tag method → Vercel BING_SITE_VERIFICATION, redeploy, Verify. Submit the same sitemap.
 
 Finish with MY MANUAL STEPS, exactly as described under FINAL OUTPUT.
