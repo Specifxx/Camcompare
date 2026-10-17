@@ -3,7 +3,7 @@
 
 export const ALERT_CONDITIONS = ["new", "used", "any"] as const;
 export type AlertCondition = (typeof ALERT_CONDITIONS)[number];
-export const CONDITION_LABEL: Record<AlertCondition, string> = { new: "New", used: "Used or refurbished", any: "New or used" };
+export const ALERT_CONDITION_LABEL: Record<AlertCondition, string> = { new: "New", used: "Used or refurbished", any: "New or used" };
 
 /** Alerts one email address may hold (active ones). */
 export const ALERTS_PER_EMAIL = 50;

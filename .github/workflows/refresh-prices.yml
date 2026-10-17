@@ -85,5 +85,15 @@ jobs:
           git config user.email "camcompare-bot@users.noreply.github.com"
           git add data/offers data/price-history data/amazon-asins.json 2>/dev/null || git add data/offers data/price-history
           if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: prices $(date -u +%FT%H:%MZ)" && git pull --rebase origin main && git push; fi
+      - name: Price alerts
+        # Emails confirmed price alerts (scripts/check-alerts.ts). Skips cleanly
+        # until DATABASE_URL and RESEND_API_KEY are GitHub secrets. Never fails
+        # the price job: a broken email send is logged here, not a lost import.
+        continue-on-error: true
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERTS_FROM_EMAIL: ${{ secrets.ALERTS_FROM_EMAIL }}
+        run: npx tsx scripts/check-alerts.ts
       - name: Check sources
         run: npx tsx scripts/check-sources.ts

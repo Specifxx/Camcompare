@@ -3,7 +3,7 @@
 // page is dynamic, noindex and sends no referrer.
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONDITION_LABEL } from "@/lib/alert-kinds";
+import { ALERT_CONDITION_LABEL } from "@/lib/alert-kinds";
 import { alertsForToken, describeAlert, isToken, type AlertRow } from "@/lib/alerts";
 import { displayName, product } from "@/lib/catalog";
 import { logSafe } from "@/lib/feedback";
@@ -66,7 +66,7 @@ export default async function ManageAlerts({ searchParams }: { searchParams: { t
                         {name}
                       </Link>
                       <p className="text-xs text-muted">
-                        {MARKETS[a.market]?.short ?? a.market} · {CONDITION_LABEL[a.condition]} · {describeAlert(a)}
+                        {MARKETS[a.market]?.short ?? a.market} · {ALERT_CONDITION_LABEL[a.condition]} · {describeAlert(a)}
                         {a.confirmed ? "" : " · not confirmed yet"}
                       </p>
                     </div>

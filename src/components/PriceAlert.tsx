@@ -4,7 +4,7 @@
 // email, and every alert email carries its own stop and manage links.
 // Renders a button, and under it (full width in a flex-wrap row) the form.
 import { useId, useRef, useState } from "react";
-import { ALERT_CONDITIONS, CONDITION_LABEL, parseTarget, suggestTarget, type AlertCondition } from "@/lib/alert-kinds";
+import { ALERT_CONDITIONS, ALERT_CONDITION_LABEL, parseTarget, suggestTarget, type AlertCondition } from "@/lib/alert-kinds";
 import { EMAIL_MAX } from "@/lib/feedback-kinds";
 import { price } from "@/lib/format";
 import { MARKETS, type MarketCode } from "@/lib/markets";
@@ -115,7 +115,7 @@ export default function PriceAlert({
                   {ALERT_CONDITIONS.map((c) => (
                     <label key={c} className={`btn-ghost cursor-pointer text-xs ${condition === c ? "border-accent text-accent" : ""}`}>
                       <input type="radio" name={`${id}-cond`} value={c} checked={condition === c} onChange={() => pick(c)} className="sr-only" />
-                      {CONDITION_LABEL[c]}
+                      {ALERT_CONDITION_LABEL[c]}
                     </label>
                   ))}
                 </div>
@@ -136,7 +136,7 @@ export default function PriceAlert({
                   placeholder="Any drop"
                   className={`${field} mt-1 font-mono`}
                 />
-                <span className="mt-0.5 block text-xs text-subtle">{now !== null ? `Lowest today: ${price(now, cur)}` : "No price here yet: we'll email you when one appears under your target."}</span>
+                <span className="mt-0.5 block text-xs text-subtle">{now !== null ? `Lowest today: ${price(now, cur)}` : "No price here yet."}</span>
               </label>
               <div className="hidden" aria-hidden="true">
                 <label>
