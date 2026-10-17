@@ -37,6 +37,7 @@ const SENSOR_LABEL: Record<Specs["sensorFormat"], string> = {
   "1/1.9-inch": '1/1.9"',
   "1/2-inch": '1/2"',
   "1/2.3-inch": '1/2.3"',
+  "1/2.8-inch": '1/2.8"',
 };
 
 // Approximate sensor area in mm², for ranking only (never displayed).
@@ -56,6 +57,7 @@ const SENSOR_AREA: Record<Specs["sensorFormat"], number> = {
   "1/1.9-inch": 36,
   "1/2-inch": 31,
   "1/2.3-inch": 28,
+  "1/2.8-inch": 22,
 };
 
 export const sensorLabel = (f: Specs["sensorFormat"]) => SENSOR_LABEL[f];

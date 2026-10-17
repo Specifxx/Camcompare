@@ -10,6 +10,7 @@
   {"slug": "l-mount", "name": "L-Mount", "brand": null, "flangeMm": 20, "formats": ["full-frame", "aps-c"], "introduced": 2014, "status": "current"},
   {"slug": "micro-four-thirds", "name": "Micro Four Thirds", "brand": null, "flangeMm": 19.25, "formats": ["micro-four-thirds"], "introduced": 2008, "status": "current"},
   {"slug": "pentax-k", "name": "Pentax K", "brand": "ricoh", "flangeMm": 45.46, "formats": ["full-frame", "aps-c"], "introduced": 1975, "status": "current"},
+  {"slug": "pentax-645", "name": "Pentax 645", "brand": "ricoh", "flangeMm": 70.87, "formats": ["medium-format"], "introduced": 1984, "status": "legacy"},
   {"slug": "leica-m", "name": "Leica M", "brand": "leica", "flangeMm": 27.8, "formats": ["full-frame"], "introduced": 1954, "status": "current"},
   {"slug": "hasselblad-xcd", "name": "Hasselblad XCD", "brand": "hasselblad", "flangeMm": 18.14, "formats": ["medium-format"], "introduced": 2016, "status": "current"},
   {"slug": "pl", "name": "PL mount", "brand": null, "flangeMm": 52, "formats": ["full-frame", "super-35"], "introduced": 1982, "status": "current"},

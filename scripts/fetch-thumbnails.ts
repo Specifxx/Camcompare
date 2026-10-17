@@ -18,7 +18,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
-import { readCameraFiles, readLensFiles } from "../src/lib/catalog/load";
+import { readBrands, readCameraFiles, readLensFiles } from "../src/lib/catalog/load";
 import { readCredits, readRejects, thumbPath, THUMB_MAX_BYTES, THUMB_WIDTH, writeCredit, type ImageCredit } from "../src/lib/images";
 import { buildIndex, matchListing } from "../src/lib/matching";
 import { SAMPLE_SHOT, USER_AGENT, commonsImage, fetchWikidataCameras, linkAll, openverseSearch, searchCommonsFiles } from "../src/lib/wikidata";
@@ -44,6 +44,12 @@ async function main() {
   const only = process.env.ONLY?.split(",").filter(Boolean);
   const sources = new Set((process.env.SOURCES ?? "wikidata,commons,openverse").split(","));
   const credits = readCredits();
+  const brandName = new Map(readBrands().map((b) => [b.slug, b.name]));
+  // Openverse finds nothing for a full lens name ("Sigma 24-70mm F2.8 DG DN
+  // Art"), but titles found by "Sigma 24-70mm" still have to read as exactly
+  // this lens (isThis), so the short query is safe.
+  const openverseQuery = (kind: "camera" | "lens", p: { name: string; brand: string }, focal?: string) =>
+    (kind === "lens" && focal ? `${brandName.get(p.brand) ?? p.brand} ${focal}` : p.name).replace(/α/g, "a");
   const index = buildIndex(cameras, lenses);
   const products = [...cameras.map((p) => ({ kind: "camera" as const, p })), ...lenses.map((p) => ({ kind: "lens" as const, p }))].filter(
     ({ p }) => (!only || only.includes(p.slug)) && (process.env.FORCE || !credits[p.slug] || !fs.existsSync(thumbPath(p.slug))),
@@ -90,7 +96,8 @@ async function main() {
 
     if (!cand && !openverseOff) {
       try {
-        const hits = await openverseSearch(p.name.replace(/α/g, "a"));
+        const focal = kind === "lens" && "specs" in p && "focalMinMm" in p.specs ? (p.specs.focalMaxMm > p.specs.focalMinMm ? `${p.specs.focalMinMm}-${p.specs.focalMaxMm}mm` : `${p.specs.focalMinMm}mm`) : undefined;
+        const hits = await openverseSearch(openverseQuery(kind, p, focal));
         const hit = hits.find((h) => !rejected.has(h.url) && h.title && isThis(h.title));
         if (hit) cand = { url: hit.url, via: "openverse", credit: { source: "openverse", provider: hit.provider, file: hit.url, pageUrl: hit.landing, author: hit.creator, license: hit.license, licenseUrl: hit.licenseUrl || null, wikidata: w?.qid ?? null } };
         else tried.push("no Openverse photo titled for it");

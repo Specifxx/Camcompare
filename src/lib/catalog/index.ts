@@ -98,10 +98,12 @@ export function rivalsOf(p: AnyProduct): AnyProduct[] {
 
 // ------------------------------------------------------------ compatibility
 
+// A lens covers every sensor no bigger than its image circle; the mount
+// decides the rest (an APS-C lens made in Micro Four Thirds fits MFT bodies).
 const COVERS: Record<LensCoverage, SensorFormat[]> = {
-  "medium-format": ["medium-format"],
-  "full-frame": ["full-frame", "aps-h", "super-35", "aps-c"],
-  "aps-c": ["aps-c", "super-35"],
+  "medium-format": ["medium-format", "full-frame", "aps-h", "super-35", "aps-c", "micro-four-thirds"],
+  "full-frame": ["full-frame", "aps-h", "super-35", "aps-c", "micro-four-thirds"],
+  "aps-c": ["aps-c", "super-35", "micro-four-thirds"],
   "micro-four-thirds": ["micro-four-thirds"],
 };
 

@@ -29,6 +29,7 @@ export const SENSOR_FORMATS = [
   "1/1.9-inch",
   "1/2-inch",
   "1/2.3-inch",
+  "1/2.8-inch",
 ] as const;
 
 // What a lens's image circle covers. A full-frame lens also covers APS-C.
