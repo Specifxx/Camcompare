@@ -7,8 +7,16 @@ stopping. It skips anything it can't finish or that costs money, signs an
 agreement or needs your tax, bank or personal details, and ends with a
 numbered, step-by-step list of what's left for you.
 
-**No database.** All public data is JSON in this repo. There is nothing to set
-up in Neon.
+**Public data has no database.** All public data is JSON in this repo.
+**Private feedback uses one small Neon table**: one free Neon project named
+`camcompare`, its pooled connection string in Vercel `DATABASE_URL`. The
+prompt creates it.
+
+**Your admin link** is `https://<site>/admin/<ADMIN_KEY>`: every feedback
+message plus the site's status (catalog, offers per market and retailer, each
+source's last run). `ADMIN_KEY` is a long random string in Vercel → Settings →
+Environment Variables (the prompt generates it; 16 characters minimum). Anyone
+with the link can see the page, so don't share it. Any other key is a 404.
 
 1. **GitHub.** Create `main` from the working branch and make it the default.
    Allow Actions to write (the daily price job commits to `main`).

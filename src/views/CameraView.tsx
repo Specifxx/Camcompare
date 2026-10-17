@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import { AD_SLOTS } from "@/lib/ads";
-import EbayPanel from "@/components/EbayPanel";
 import OffersTable from "@/components/OffersTable";
 import PeerRanks from "@/components/PeerRanks";
 import PhotoCredit from "@/components/PhotoCredit";
@@ -11,7 +10,9 @@ import PriceHistory from "@/components/PriceHistory";
 import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
+import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
+import { cameraHighlights } from "@/lib/highlights";
 import {
   brandName,
   camera as getCamera,
@@ -61,28 +62,6 @@ export function cameraMetadata(slug: string, m: MarketCode): Metadata {
     index: marketIndexable(c.slug)(m),
     indexable: marketIndexable(c.slug),
   });
-}
-
-function KeySpecs({ c }: { c: Camera }) {
-  const s = c.specs;
-  const items = [
-    `${sensorLabel(s.sensorFormat)} sensor`,
-    `${s.megapixels} MP`,
-    s.ibis ? `IBIS${s.ibisStops ? ` ${s.ibisStops} stops` : ""}` : null,
-    s.videoMaxRes ? `${s.videoMaxRes} video${s.video4kMaxFps ? ` · 4K${s.video4kMaxFps}` : ""}` : null,
-    s.burstElecFps || s.burstMechFps ? `${Math.max(s.burstElecFps ?? 0, s.burstMechFps ?? 0)} fps` : null,
-    s.weightG ? `${s.weightG} g` : null,
-    s.weatherSealed ? "Weather sealed" : null,
-    s.waterproofM ? `Waterproof to ${s.waterproofM} m` : null,
-    lensLabel(c),
-  ].filter(Boolean);
-  return (
-    <ul className="flex flex-wrap gap-1.5">
-      {items.map((t) => (
-        <li key={t} className="chip">{t}</li>
-      ))}
-    </ul>
-  );
 }
 
 const LENS_GROUPS: LensCategory[] = ["standard", "wide", "ultra-wide", "telephoto", "super-telephoto", "macro"];
@@ -160,7 +139,6 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
                 {name !== c.name ? ` · Sold as ${c.name} in the US` : ""}
               </p>
             </div>
-            <KeySpecs c={c} />
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(c.slug, m)} launch={launchPrice(c, m)} market={m} extra={c.mount ? " (body only)" : ""} />
             <div className="flex flex-wrap gap-2">
               <SaveButton slug={c.slug} kind="camera" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} cond={lowest(offers, "new") ? "new" : "used"} />
@@ -172,14 +150,12 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
             </div>
           </div>
         </header>
+        <SpecHighlights items={cameraHighlights(c)} />
       </div>
 
       <section id="prices">
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
-        <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
-          <OffersTable product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} amazonAsin={c.amazonAsin} />
-          <EbayPanel product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} />
-        </div>
+        <OffersTable product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} amazonAsin={c.amazonAsin} />
       </section>
 
       <section>

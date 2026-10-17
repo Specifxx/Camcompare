@@ -3,6 +3,8 @@ import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import { AD_SLOTS } from "@/lib/ads";
 import ProductThumb from "@/components/ProductThumb";
+import QuickViewHost from "@/components/QuickView";
+import { quickViewAttrs } from "@/lib/quickview";
 import { displayName, historyAll, offersGeneratedAt, offersFor, product, publishedCameras, publishedLenses } from "@/lib/catalog";
 import { price } from "@/lib/format";
 import { priceDrops, usedSaving } from "@/lib/insights";
@@ -48,7 +50,7 @@ function Row({ slug, m, right }: { slug: string; m: MarketCode; right: React.Rea
   const p = product(slug)!;
   return (
     <li>
-      <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`)} prefetch={false} className="card flex items-center gap-3 p-3 text-fg no-underline hover:border-accent hover:no-underline">
+      <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`)} prefetch={false} {...quickViewAttrs(slug, m, displayName(p.item, m))} className="card flex items-center gap-3 p-3 text-fg no-underline hover:border-accent hover:no-underline">
         <ProductThumb slug={slug} alt="" className="w-20 shrink-0" />
         <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
         <span className="shrink-0 text-right text-sm">{right}</span>
@@ -107,6 +109,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
         </section>
       )}
       {!empty && <AdSlot slot={AD_SLOTS.listing} />}
+      {!empty && <QuickViewHost />}
     </div>
   );
 }

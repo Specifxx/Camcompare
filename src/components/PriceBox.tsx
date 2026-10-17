@@ -19,7 +19,7 @@ export default function PriceBox({ newOffer, usedOffer, history, launch, market,
     return (
       <div className="flex flex-col gap-1 text-sm">
         <p className="text-muted">
-          Not priced in {MARKETS[market].name} yet: <a href="#prices">check it at the retailers below</a>.
+          No live price in {MARKETS[market].name} yet. We show one only when a retailer&apos;s feed or API sends it: <a href="#prices">where to look</a>.
         </p>
         {launch && <p className="text-xs text-subtle">Launch price {listPrice(launch.amount, launch.currency)}{extra ?? ""}.</p>}
       </div>

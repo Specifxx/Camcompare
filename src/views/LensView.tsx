@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import { AD_SLOTS } from "@/lib/ads";
-import EbayPanel from "@/components/EbayPanel";
 import OffersTable from "@/components/OffersTable";
 import PhotoCredit from "@/components/PhotoCredit";
 import PriceBox from "@/components/PriceBox";
@@ -10,7 +9,9 @@ import PriceHistory from "@/components/PriceHistory";
 import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
+import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
+import { lensHighlights } from "@/lib/highlights";
 import { brandName, camerasFor, credit, displayName, displayShortName, historyFor, isIndexedPair, launchPrice, lens as getLens, mount, offersFor, pairSlug, product, rivalsOf } from "@/lib/catalog";
 import type { Lens } from "@/lib/catalog/schema";
 import { longMonthYear, price } from "@/lib/format";
@@ -43,18 +44,9 @@ export function lensMetadata(slug: string, m: MarketCode): Metadata {
   });
 }
 
+// The rest of the key facts are tiles (SpecHighlights): here what a buyer calls it.
 function KeySpecs({ l }: { l: Lens }) {
-  const s = l.specs;
-  const items = [
-    `${focalLabel(l)} ${apertureLabel(l)}`,
-    equivalentLabel(l),
-    `${coverageLabel(l.coverage)} lens`,
-    s.autofocus ? (s.afMotor ? `AF · ${s.afMotor}` : "Autofocus") : "Manual focus",
-    s.stabilized ? "Optical stabilisation" : null,
-    s.weatherSealed ? "Weather sealed" : null,
-    s.weightG ? `${s.weightG} g` : null,
-    ...lensCategories(l).map((c) => CATEGORY_LABEL[c]),
-  ].filter(Boolean);
+  const items = [`${coverageLabel(l.coverage)} lens`, ...lensCategories(l).map((c) => CATEGORY_LABEL[c])];
   return (
     <ul className="flex flex-wrap gap-1.5">
       {items.map((t) => (
@@ -116,14 +108,12 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
             </div>
           </div>
         </header>
+        <SpecHighlights items={lensHighlights(l)} />
       </div>
 
       <section id="prices">
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
-        <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
-          <OffersTable product={l.slug} query={name} offers={offers} market={m} page={page} amazonAsin={l.amazonAsin} />
-          <EbayPanel product={l.slug} query={name} offers={offers} market={m} page={page} />
-        </div>
+        <OffersTable product={l.slug} query={name} offers={offers} market={m} page={page} amazonAsin={l.amazonAsin} />
         {l.mounts.length > 1 && <p className="mt-2 text-xs text-subtle">Made in {l.mounts.length} mount versions. Check the version before you buy: each offer says which, when the retailer does.</p>}
       </section>
 

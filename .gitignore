@@ -11,3 +11,4 @@ next-env.d.ts
 public/search-index.json
 public/prices/
 data/offers-amazon/
+public/offers/

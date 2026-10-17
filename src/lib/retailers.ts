@@ -11,12 +11,13 @@
 // imports on marketplaces are not, and the offers list says so.
 // Client-safe: no Node imports.
 import type { MarketCode } from "./markets";
+import type { StructuredConfig } from "./sources/structured";
 
 export type Condition = "new" | "open-box" | "refurbished" | "used";
 export const CONDITIONS: Condition[] = ["new", "open-box", "refurbished", "used"];
 export const CONDITION_LABEL: Record<Condition, string> = { new: "New", "open-box": "Open box", refurbished: "Refurbished", used: "Used" };
 
-export type RetailerSource = "amazon-creators" | "ebay-browse" | "bestbuy-api" | "feed" | "shopify" | "link-only";
+export type RetailerSource = "amazon-creators" | "ebay-browse" | "bestbuy-api" | "feed" | "shopify" | "structured" | "link-only";
 export type Network =
   | "amazon"
   | "epn"
@@ -55,6 +56,8 @@ export type Retailer = {
   ebay?: { marketplaceId: string; rotationId: string; siteId: string };
   /** Public Shopify catalogue; `collections` limits the crawl to camera/lens collections. */
   shopify?: { base: string; collections?: string[] };
+  /** schema.org data on the shop's own product pages (sources/structured.ts); a feed retailer's fallback until its feed exists. */
+  structured?: StructuredConfig;
 };
 
 const enc = encodeURIComponent;
@@ -99,7 +102,8 @@ const used = (r: Omit<Retailer, "source" | "conditions" | "authorized"> & Partia
   authorized: false,
   ...r,
 });
-const shop = (base: string) => ({ source: "shopify" as const, shopify: { base } });
+const shop = (base: string, collections?: string[]) => ({ source: "shopify" as const, shopify: { base, ...(collections ? { collections } : {}) } });
+const pages = (structured: StructuredConfig = {}) => ({ source: "structured" as const, structured });
 
 // Sources and programmes from the 2026-10-17 retailer research (docs/retailers.md).
 export const RETAILERS: Retailer[] = [
@@ -109,11 +113,20 @@ export const RETAILERS: Retailer[] = [
   dealer({ key: "adorama", name: "Adorama", market: "us", country: "US", site: "https://www.adorama.com", network: "impact", conditions: ["new", "used", "open-box", "refurbished"], checkRow: true, searchUrl: (q) => `https://www.adorama.com/l/?searchinfo=${enc(q)}` }),
   dealer({ key: "bestbuy", name: "Best Buy", market: "us", country: "US", site: "https://www.bestbuy.com", network: "impact", source: "bestbuy-api", conditions: ["new", "open-box", "refurbished"], searchUrl: (q) => `https://www.bestbuy.com/site/searchpage.jsp?st=${enc(q)}` }),
   dealer({ key: "walmart", name: "Walmart", market: "us", country: "US", site: "https://www.walmart.com", network: "impact", searchUrl: (q) => `https://www.walmart.com/search?q=${enc(q)}` }),
-  dealer({ key: "abt", name: "Abt", market: "us", country: "US", site: "https://www.abt.com", network: "cj", searchUrl: (q) => `https://www.abt.com/resources/pages/search.php?keywords=${enc(q)}` }),
+  dealer({ key: "abt", name: "Abt", market: "us", country: "US", site: "https://www.abt.com", network: "cj", structured: { sitemapFilter: /sitemap-product/i }, searchUrl: (q) => `https://www.abt.com/resources/pages/search.php?keywords=${enc(q)}` }),
   dealer({ key: "moment", name: "Moment", market: "us", country: "US", site: "https://www.shopmoment.com", network: "impact", ...shop("https://www.shopmoment.com"), searchUrl: (q) => `https://www.shopmoment.com/search?q=${enc(q)}` }),
   dealer({ key: "focus-camera", name: "Focus Camera", market: "us", country: "US", site: "https://focuscamera.com", network: null, ...shop("https://focuscamera.com") }),
   dealer({ key: "beach-camera", name: "Beach Camera", market: "us", country: "US", site: "https://www.beachcamera.com", network: null, ...shop("https://www.beachcamera.com") }),
   dealer({ key: "camera-west", name: "Camera West", market: "us", country: "US", site: "https://camerawest.com", network: "direct", ...shop("https://camerawest.com"), conditions: ["new", "used"] }),
+  // Added 2026-10-17 after checking products.json, /meta.json (USD) and robots.txt.
+  dealer({ key: "pictureline", name: "Pictureline", market: "us", country: "US", site: "https://www.pictureline.com", network: null, ...shop("https://www.pictureline.com"), conditions: ["new", "used", "open-box", "refurbished"] }),
+  dealer({ key: "camera-wholesalers", name: "Camera Wholesalers", market: "us", country: "US", site: "https://www.camerawholesalers.com", network: null, ...shop("https://www.camerawholesalers.com"), conditions: ["new", "used"] }),
+  dealer({ key: "helix-camera", name: "Helix Camera", market: "us", country: "US", site: "https://helixcamera.com", network: null, ...shop("https://helixcamera.com"), conditions: ["new", "used"] }),
+  dealer({ key: "panasonic-store-us", name: "Shop Panasonic", market: "us", country: "US", site: "https://shop.panasonic.com", network: null, ...shop("https://shop.panasonic.com"), conditions: ["new", "refurbished"] }),
+  dealer({ key: "leica-store-miami", name: "Leica Store Miami", market: "us", country: "US", site: "https://leicastoremiami.com", network: null, ...shop("https://leicastoremiami.com"), conditions: ["new", "used"] }),
+  // Structured data (JSON-LD) on their product pages; robots.txt allows them.
+  dealer({ key: "precision-camera", name: "Precision Camera", market: "us", country: "US", site: "https://www.precision-camera.com", network: null, ...pages({ sitemaps: ["https://www.precision-camera.com/xmlsitemap.php?type=products&page=1", "https://www.precision-camera.com/xmlsitemap.php?type=products&page=2"] }), conditions: ["new", "used"] }),
+  dealer({ key: "dodd-camera", name: "Dodd Camera", market: "us", country: "US", site: "https://doddcamera.com", network: null, ...pages(), conditions: ["new", "used"] }),
   used({ key: "mpb", name: "MPB", market: "us", country: "US", site: "https://www.mpb.com/en-us", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.mpb.com/en-us/search?q=${enc(q)}` }),
   used({ key: "keh", name: "KEH", market: "us", country: "US", site: "https://www.keh.com", network: "awin" }),
   ebay("us", "US", "www.ebay.com", "EBAY_US", "711-53200-19255-0", "0"),
@@ -163,6 +176,7 @@ export const RETAILERS: Retailer[] = [
   // (checked 2026-10-17), so it only ever prices the few it lists.
   dealer({ key: "sony-store-sg", name: "Sony Store", market: "sg", country: "SG", site: "https://store.sony.com.sg", network: null, ...shop("https://store.sony.com.sg") }),
   dealer({ key: "leica-store-sg", name: "Leica Store", market: "sg", country: "SG", site: "https://leica-store.sg", network: null, ...shop("https://leica-store.sg") }),
+  dealer({ key: "tk-foto", name: "TK Foto", market: "sg", country: "SG", site: "https://tkfoto.com.sg", network: null, ...shop("https://tkfoto.com.sg"), authorized: null }),
   used({ key: "cash-converters-sg", name: "Cash Converters", market: "sg", country: "SG", site: "https://cashconverters.sg", network: null, ...shop("https://cashconverters.sg") }),
 ];
 

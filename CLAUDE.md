@@ -9,9 +9,12 @@ cost RiftCompare money.
 Background: `docs/FEASIBILITY.md` says why it is shaped this way;
 `DECISIONS.md` gives the rules below.
 
-## No database, on purpose
+## No database for public data, on purpose
 
-Everything public is JSON in `data/`, committed:
+Public data has no database; private feedback uses one small Neon table
+(`feedback`, `src/lib/feedback.ts`, `DATABASE_URL`), written by
+`/api/feedback` and read only by the owner's `/admin/<ADMIN_KEY>` page. Nothing
+public ever reads it. Everything public is JSON in `data/`, committed:
 
 - `data/cameras/<slug>.json`, `data/lenses/<slug>.json`: the catalog
   (`src/lib/catalog/schema.ts`; how to write one: `docs/catalog-authoring.md`)
@@ -30,7 +33,7 @@ Everything public is JSON in `data/`, committed:
 
 Pages read these at build time and are static. **No page sets `revalidate`.**
 Data changes only through commits, and each commit is a build. Don't add a
-database, an ISR interval or a request-time fetch for public data without an
+database for public data, an ISR interval or a request-time fetch for public data without an
 entry in DECISIONS.md: RiftCompare's Neon egress and ISR-write bills are the
 reason.
 

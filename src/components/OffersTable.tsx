@@ -1,98 +1,56 @@
-import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
-import { asinFor } from "@/lib/amazon-asins";
-import { price } from "@/lib/format";
+import { product as getProduct } from "@/lib/catalog";
 import { MARKETS, type MarketCode } from "@/lib/markets";
 import { AMAZON_MAX_AGE_H, type Offer } from "@/lib/offers";
-import { CONDITION_LABEL, retailer, retailersFor, type Retailer } from "@/lib/retailers";
-import OutboundLink from "./OutboundLink";
+import { alsoCheckLinks, ebayRows, offerRows, packKind } from "@/lib/offer-rows";
+import { price } from "@/lib/format";
+import EbayPanel from "./EbayPanel";
+import { AlsoCheck, OfferRowItem } from "./OfferRows";
 import TimedPrice from "./TimedPrice";
 
-const MOUNT_SHORT: Record<string, string> = {
-  "sony-e": "Sony E", "canon-rf": "Canon RF", "canon-ef": "Canon EF", "canon-ef-m": "Canon EF-M", "nikon-z": "Nikon Z", "nikon-f": "Nikon F",
-  "fujifilm-x": "Fujifilm X", "fujifilm-g": "Fujifilm G", "l-mount": "L-Mount", "micro-four-thirds": "MFT", "pentax-k": "Pentax K", "leica-m": "Leica M",
-};
-
-/** Filled button for links that earn (Amazon in its own colours), outline for the rest. */
-export function buttonClass(r: Retailer | undefined, href?: string): string {
-  if (!r || !isPaid(r.key, href)) return "btn-ghost";
-  if (r.amazon) return "btn-amazon";
-  if (r.ebay) return "btn-ebay";
-  return "btn-buy";
-}
-
 /**
- * Where to buy, in one market:
- *  1. every priced offer except eBay's (eBay has its own panel), cheapest first;
- *  2. a "Check price" row for each main retailer that has no price here yet:
- *     Amazon always (its prices may only be shown from its API, which opens
- *     after the account's first sales), then the market's main dealers.
- * The order is price, then the check rows; never commission. Rows whose link
- * earns get a filled button and a "Paid link" note. An Amazon price carries
- * its time and Amazon's disclaimer, and hides itself once over a day old.
+ * Where to buy, in one market. Rows hold real prices only: every priced offer
+ * except eBay's, in sortOffers order (in-stock body-only cheapest first); never
+ * commission. eBay's live listings sit beside them (EbayPanel). Stores we may
+ * not price yet (Amazon before its API, eBay before its keys) are tagged links
+ * in an "Also check" box, never rows. An Amazon price, once its API gives one,
+ * is a row with its time and Amazon's disclaimer, hidden after a day.
  */
 export default function OffersTable({ product, query, offers, market, page, amazonAsin }: { product: string; query: string; offers: Offer[]; market: MarketCode; page: string; amazonAsin?: string }) {
-  const priced = offers.filter((o) => !retailer(o.retailer)?.ebay);
-  const have = new Set(priced.map((o) => o.retailer));
-  const checks = retailersFor(market).filter((r) => r.checkRow && r.searchUrl && !r.ebay && !have.has(r.key));
-  const checkHref = (r: Retailer) => {
-    const asin = r.amazon ? asinFor(product, r.amazon.marketplace, amazonAsin) : null;
-    return affiliateUrl(r.key, asin ? `https://${r.amazon!.marketplace}/dp/${asin}` : r.searchUrl!(query), subId(page, "check"));
-  };
-  if (!priced.length && !checks.length) {
-    return <p className="card p-4 text-sm text-muted">No {MARKETS[market].short} retailers carry this yet.</p>;
-  }
-  const amazonPriced = priced.some((o) => retailer(o.retailer)?.amazon);
+  const p = getProduct(product);
+  const pack = p ? packKind(p) : "lens";
+  const rows = offerRows(offers, { page, placement: "offers", pack, withAmazon: true });
+  const listings = ebayRows(offers, market, { page, placement: "ebay", pack });
+  const checks = alsoCheckLinks({ product, query, offers, market, page, amazonAsin, placement: "check", amazonShown: rows.some((r) => r.amazon) });
+  const side = listings.length > 0 || checks.length > 0;
   return (
-    <div>
-      <ul className="card divide-y divide-line">
-        {priced.map((o, i) => {
-          const r = retailer(o.retailer);
-          // A feed or eBay link may already carry the affiliate id the import ran with.
-          const href = affiliateUrl(o.retailer, o.url, subId(page, "offers"));
-          const paid = isPaid(o.retailer, href);
-          return (
-            <li key={`${o.retailer}-${o.sourceId ?? i}`} className="flex items-center gap-3 px-4 py-3">
-              <div className="min-w-0 flex-1">
-                <p className="font-semibold">
-                  {r?.name ?? o.retailer}
-                  <span className="ml-2 text-xs font-normal text-muted">{CONDITION_LABEL[o.condition]}</span>
-                  {!o.inStock && <span className="ml-1 text-xs text-warn">out of stock</span>}
-                </p>
-                <p className="truncate text-xs text-subtle">
-                  {[o.seller ? `Seller: ${o.seller}` : r?.authorized ? "Authorized dealer" : null, o.mount && MOUNT_SHORT[o.mount] ? `${MOUNT_SHORT[o.mount]} version` : null, o.kit ? "includes lens" : null].filter(Boolean).join(" · ")}
-                </p>
-              </div>
-              <p className="price shrink-0 text-base font-bold">
-                {r?.amazon ? <TimedPrice text={price(o.price, o.currency)} seenAt={o.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : price(o.price, o.currency)}
+    <div className={`grid grid-cols-1 items-start gap-4 ${side ? "lg:grid-cols-[minmax(0,1fr)_300px]" : ""}`}>
+      <div>
+        {rows.length ? (
+          <>
+            <ul className="card divide-y divide-line">
+              {rows.map((r) => (
+                <OfferRowItem key={r.id} row={r} product={product} placement="offers" priceNode={r.amazon && r.seenAt ? <TimedPrice text={price(r.price, r.currency)} seenAt={r.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : undefined} />
+              ))}
+            </ul>
+            <p className="mt-2 text-[11px] text-subtle">Sorted by price, cheapest in-stock first. Some links earn us a commission; it never changes the order.</p>
+            {rows.some((r) => r.amazon) && (
+              <p className="mt-1 text-[11px] text-subtle">
+                Amazon prices and availability are accurate as of the time shown and are subject to change. The price and availability shown on Amazon at the time of purchase will apply.
               </p>
-              <div className="w-24 shrink-0 text-right">
-                <OutboundLink href={href} retailer={o.retailer} product={product} placement="offers" className={`${buttonClass(r, href)} w-full`}>
-                  View
-                </OutboundLink>
-                {paid && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
-              </div>
-            </li>
-          );
-        })}
-        {checks.map((r) => (
-          <li key={r.key} className="flex items-center gap-3 px-4 py-3">
-            <div className="min-w-0 flex-1">
-              <p className="font-semibold">{r.name}</p>
-              <p className="text-xs text-subtle">{r.amazon ? "Price shown on Amazon" : r.conditions.includes("used") && r.conditions.length === 1 ? "Used stock, graded and warrantied" : "Check today's price"}</p>
-            </div>
-            <div className="shrink-0 text-right">
-              <OutboundLink href={checkHref(r)} retailer={r.key} product={product} placement="check" className={buttonClass(r, checkHref(r))}>
-                {r.amazon ? "Check price on Amazon" : "Check price"}
-              </OutboundLink>
-              {isPaid(r.key, checkHref(r)) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
-            </div>
-          </li>
-        ))}
-      </ul>
-      {amazonPriced && (
-        <p className="mt-2 text-[11px] text-subtle">
-          Amazon prices and availability are accurate as of the time shown and are subject to change. The price and availability shown on Amazon at the time of purchase will apply.
-        </p>
+            )}
+          </>
+        ) : (
+          <div className="card p-5">
+            <p className="font-semibold">No live prices in {MARKETS[market].name} yet</p>
+            <p className="mt-1 text-sm text-muted">We list a price only when a retailer&apos;s own feed or API sends one, checked every day. None has for this product here yet.</p>
+          </div>
+        )}
+      </div>
+      {side && (
+        <div className="flex flex-col gap-4">
+          <EbayPanel product={product} query={query} offers={offers} market={market} page={page} />
+          <AlsoCheck links={checks} product={product} placement="check" />
+        </div>
       )}
     </div>
   );

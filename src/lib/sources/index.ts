@@ -5,6 +5,7 @@ import { bestBuySource } from "./bestbuy";
 import { ebaySource } from "./ebay";
 import { feedSource } from "./feed";
 import { shopifySource } from "./shopify";
+import { structuredSource } from "./structured";
 import type { PriceSource } from "./types";
 
 export function sourcesFor(market: MarketCode): PriceSource[] {
@@ -16,8 +17,17 @@ export function sourcesFor(market: MarketCode): PriceSource[] {
         return [ebaySource(r.key)];
       case "bestbuy-api":
         return [bestBuySource(r.key)];
-      case "feed":
-        return [feedSource(r.key)];
+      case "feed": {
+        // A feed retailer with a structured-data fallback reads its pages
+        // until its FEED_URL_* secret exists; then the feed alone (never both).
+        const feed = feedSource(r.key);
+        if (!r.structured) return [feed];
+        const env = `FEED_URL_${r.key.toUpperCase().replace(/-/g, "_")}`;
+        const pages = structuredSource(r.key);
+        return [{ retailer: r.key, run: (ctx) => (process.env[env] ? feed.run(ctx) : pages.run(ctx)) }];
+      }
+      case "structured":
+        return [structuredSource(r.key)];
       case "shopify":
         return [shopifySource(r.key)];
       default:

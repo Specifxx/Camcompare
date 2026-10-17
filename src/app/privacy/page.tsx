@@ -7,7 +7,10 @@ export default function Privacy() {
   return (
     <div className="max-w-2xl space-y-4 text-sm leading-relaxed">
       <h1 className="text-2xl font-extrabold tracking-tight">Privacy</h1>
-      <p>{SITE_NAME} has no accounts and stores nothing about you on our servers.</p>
+      <p>
+        {SITE_NAME} has no accounts. The only thing we store on our servers is feedback you choose to send: your message, the page and market it&apos;s
+        about, your browser type, and your email only if you give one (used only to reply).
+      </p>
       <h2 className="h-section pt-2">What stays in your browser</h2>
       <p>
         Your market choice (a cookie and local storage entry named <code>cc_market</code>) and your saved list (local storage). Clearing site data

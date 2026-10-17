@@ -2,9 +2,14 @@
 //   public/search-index.json   one row per published product, for the search box
 //   public/prices/<market>.json lowest new/used per product, for compare pages
 //                               and the saved list to show the visitor's market
+//   public/offers/<market>/<slug>.json one product's quick view: its offer rows
+//                               with affiliate links wrapped here, eBay listings,
+//                               "Also check" links and key specs. Never an
+//                               Amazon price (its licence: 24 hours), only a link.
 import fs from "node:fs";
 import path from "node:path";
-import { brandName, offersFor, publishedCameras, publishedLenses } from "../src/lib/catalog";
+import { brandName, offersFor, product, publishedCameras, publishedLenses } from "../src/lib/catalog";
+import { quickViewData } from "../src/lib/offer-rows";
 import { MARKET_CODES, MARKETS } from "../src/lib/markets";
 import { lowest } from "../src/lib/offers";
 import type { SearchRow } from "../src/lib/search";
@@ -32,4 +37,17 @@ for (const m of MARKET_CODES) {
   }
   fs.writeFileSync(path.join(pub, "prices", `${m}.json`), JSON.stringify({ currency: MARKETS[m].currency, p }));
 }
+const qvDir = path.join(pub, "offers");
+fs.rmSync(qvDir, { recursive: true, force: true });
+let qv = 0;
+for (const m of MARKET_CODES) {
+  fs.mkdirSync(path.join(qvDir, m), { recursive: true });
+  for (const { p: x } of products) {
+    const data = quickViewData(product(x.slug)!, m);
+    if (data.rows.some((r) => r.amazon) || /amazon/i.test(JSON.stringify(data.rows))) throw new Error(`Amazon price in the quick view of ${x.slug}`);
+    fs.writeFileSync(path.join(qvDir, m, `${x.slug}.json`), JSON.stringify(data));
+    qv++;
+  }
+}
+console.log(`quick view: ${qv} files`);
 console.log(`search index: ${rows.length} products; prices for ${MARKET_CODES.length} markets`);

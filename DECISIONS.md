@@ -305,3 +305,32 @@ worth keeping:
   matched by photo (Commons file, Flickr id), not file name.
 - **Browse and finder state lives in the URL** (`history.replaceState`), so
   Back returns to the same filters and picks.
+
+## 2026-10-17: Feedback in one small Neon table, read through a link-only admin page
+
+The owner asked for a very visible way to send feedback and "a very special
+hidden link, just a link only I can see" to read it, where anyone who has the
+link can use it.
+
+- **Neon for private feedback only.** One free Neon project (`camcompare`),
+  one table (`feedback`, created on first use by `src/lib/feedback.ts`), the
+  `@neondatabase/serverless` HTTP driver with `cache: "no-store"`. Public data
+  still has no database: the founding rule stands. Nothing public reads the
+  table; one INSERT per message and at most 500 rows per admin view keep
+  transfer near zero.
+- **Not GitHub issues.** The repo is public: issues would publish visitors'
+  email addresses and let anyone read every message.
+- **`/admin/<ADMIN_KEY>`, because the owner asked for a link, not a login.**
+  The key is compared in constant time; a wrong key, or an unset or
+  under-16-character `ADMIN_KEY`, is a 404. The right key sets an httpOnly
+  cookie and redirects to `/admin`, so the key never stays in a URL that
+  analytics or AdSense scripts can read (Google's ad crawler fetches the URLs
+  its script sees). `/admin` is noindex, Disallowed in robots.txt, never in
+  the sitemap.
+- **Spam guards without a captcha:** a hidden honeypot (answered "ok",
+  dropped), a 3-second minimum since the form opened, server-side length
+  caps, JSON-only, and five messages per IP per ten minutes, in memory. IPs are
+  never stored.
+- **The floating button sits bottom left** (buy buttons are at the right of
+  each offer row), lifts above any fixed bottom bar, and hides while an ad
+  slot passes under it.

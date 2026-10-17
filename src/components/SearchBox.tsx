@@ -6,7 +6,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { marketPath, type MarketCode } from "@/lib/markets";
 import { searchRank, type SearchRow } from "@/lib/search";
 
-export default function SearchBox({ market }: { market: MarketCode }) {
+// variant "hero": the home hero's big box (styling only; same search).
+export default function SearchBox({ market, variant = "header", placeholder = "Search cameras & lenses" }: { market: MarketCode; variant?: "header" | "hero"; placeholder?: string }) {
+  const hero = variant === "hero";
+  const ids = hero ? "hero-search" : "site-search";
   const router = useRouter();
   const [rows, setRows] = useState<SearchRow[] | null>(null);
   const [q, setQ] = useState("");
@@ -36,17 +39,23 @@ export default function SearchBox({ market }: { market: MarketCode }) {
   };
 
   return (
-    <div ref={box} className="relative min-w-0 flex-1 md:w-64 md:flex-none">
+    <div ref={box} className={hero ? "relative w-full" : "relative min-w-0 flex-1 md:w-64 md:flex-none"}>
+      {hero && (
+        <svg aria-hidden viewBox="0 0 24 24" className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-subtle" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+      )}
       <input
         type="search"
         value={q}
-        placeholder="Search cameras & lenses"
+        placeholder={placeholder}
         aria-label="Search cameras and lenses"
         role="combobox"
         aria-autocomplete="list"
         aria-expanded={listed}
-        aria-controls={listed ? "site-search-results" : undefined}
-        aria-activedescendant={listed && hits[active] ? `site-search-opt-${active}` : undefined}
+        aria-controls={listed ? `${ids}-results` : undefined}
+        aria-activedescendant={listed && hits[active] ? `${ids}-opt-${active}` : undefined}
         onFocus={() => {
           load();
           setOpen(true);
@@ -61,14 +70,26 @@ export default function SearchBox({ market }: { market: MarketCode }) {
           else if (e.key === "Enter" && hits[active]) go(hits[active]);
           else if (e.key === "Escape") setOpen(false);
         }}
-        className="w-full rounded-lg border border-line bg-raised px-3 py-1.5 text-sm"
+        className={
+          hero
+            ? "h-14 w-full rounded-2xl border border-line bg-surface/85 pl-12 pr-4 text-base shadow-lift outline-none backdrop-blur transition-colors placeholder:text-subtle focus:border-accent"
+            : "w-full rounded-lg border border-line bg-raised/80 px-3 py-1.5 text-sm transition-colors focus:border-accent focus:bg-surface"
+        }
       />
       {/* On a phone the box is narrow and right of centre, so the list spans the
           screen under the header row instead of hanging off the box's right edge. */}
       {listed && (
-        <ul id="site-search-results" role="listbox" className="fixed inset-x-4 top-14 z-40 mt-1 overflow-hidden rounded-lg border border-line bg-surface shadow-lg md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-[22rem]">
+        <ul
+          id={`${ids}-results`}
+          role="listbox"
+          className={
+            hero
+              ? "absolute inset-x-0 top-full z-40 mt-2 overflow-hidden rounded-xl border border-line bg-surface text-left shadow-lift"
+              : "fixed inset-x-4 top-14 z-40 mt-1 overflow-hidden rounded-lg border border-line bg-surface shadow-lg md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-[22rem]"
+          }
+        >
           {hits.map((r, i) => (
-            <li key={r.s} id={`site-search-opt-${i}`} role="option" aria-selected={i === active}>
+            <li key={r.s} id={`${ids}-opt-${i}`} role="option" aria-selected={i === active}>
               <button
                 type="button"
                 onMouseDown={(e) => e.preventDefault()}
