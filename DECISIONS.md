@@ -559,3 +559,34 @@ cables by spec, and lighting split by kind and camera system.
   list and kept in the query string. Camera pages get an "Accessories for"
   block (cheapest per category across shops and brands) only when something
   names that camera, plus flashes and triggers for its system.
+
+## 2026-10-17: A deal feed that remembers, like OzBargain
+
+Friends asked for a front page "like OzBargain": a feed you want to snatch
+from, where a deal that sells says so when you refresh, and a historical price.
+
+- **The memory is a committed public file per market**, `data/deal-log/<m>.json`
+  (`src/lib/deal-log.ts`), updated by `scripts/update-deal-log.ts` right after
+  the import in `refresh-prices.yml` and committed with the prices. No
+  database, no request-time read: the page is still built from files.
+- **A deal is product + condition + retailer**, found by `homeDeals` (cheapest
+  in-stock, body-only, non-Amazon offer against this market's RRP, at least
+  5% off). It stays live while that retailer still has it in stock in that
+  condition and it still saves 5%, even if another shop undercuts it (the
+  cheaper one becomes its own deal). It goes **"sold"** when the retailer no
+  longer has it in stock and **"expired"** when its price leaves deal
+  territory; gone deals are dropped after 7 days, and the page shows those
+  gone in the last 48 hours, greyed and stamped. A relisted deal is a fresh
+  find. A price drop keeps `firstSeen` and records `was` ("price dropped ·
+  was $X"); a rise clears it.
+- **No URLs and nothing of Amazon's in the file**: the page wraps the live
+  offer's own link at build time (`affiliateUrl` + `subId("home", "feed")`,
+  `OutboundLink`, "Paid link"), and `lowest` already leaves Amazon out.
+- **Times are the import's own** (`generatedAt`), so a rerun is stable; the
+  browser turns them into "found 3h ago" / "gone 2h ago".
+- **Historical price** on each row: a sparkline of up to 90 days of our own
+  daily lowest for that condition and "lowest in 90 days" only with at least
+  14 days of history, plus a link to the product page's price history.
+- Sort tabs Hot (biggest %), New (first seen), Biggest $ off; filters by
+  used/new and camera/lens. Each row's title says the whole deal ("Sony α7S
+  II body — used $895 at Camera West (RRP $3,000, save 70%)").

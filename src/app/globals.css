@@ -207,11 +207,16 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
 .cc-nav-link { position: relative; }
 .cc-nav-link[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, rgb(var(--c-accent)), rgb(var(--c-azure))); }
 
-/* ---- Iris (Logo.tsx): opens once, stops down on hover. CSS `d` only. */
-.cc-iris path { d: var(--d-open); transition: d 0.45s cubic-bezier(0.3, 1.3, 0.5, 1); }
-.cc-logo:hover .cc-iris path, a:focus-visible .cc-iris path { d: var(--d-stop); }
-.cc-iris-intro path { animation: cc-iris-open 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s both; }
-@keyframes cc-iris-open { from { d: var(--d-closed); } }
+/* ---- Iris (Logo.tsx): opens once, stops down on hover. Transforms only (no CSS `d`,
+   which Safari/iOS can't animate). Each blade slides its apex toward the centre in its
+   own turned frame, so one translate serves all six; the mark twists as it opens. */
+.cc-iris { transform-origin: 50% 50%; }
+.cc-iris .cc-blade { transform: translate(0, 0); transition: transform 0.45s cubic-bezier(0.3, 1.3, 0.5, 1); }
+.cc-logo:hover .cc-iris .cc-blade, a:focus-visible .cc-iris .cc-blade { transform: translate(-1.7px, 0.42px); }
+.cc-iris-intro { animation: cc-iris-twist 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s backwards; }
+.cc-iris-intro .cc-blade { animation: cc-iris-open 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s backwards; }
+@keyframes cc-iris-open { from { transform: translate(-5.2px, 1.3px); } to { transform: translate(0, 0); } }
+@keyframes cc-iris-twist { from { transform: rotate(-50deg); } to { transform: rotate(0deg); } }
 
 /* ---- Hero (components/home/Hero.tsx) ---- */
 .cc-hero-bg {
@@ -362,8 +367,8 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .cc-leak, .cc-bokeh, .cc-flare-core, .cc-in, .cc-focus, .cc-af-word::before, .cc-iris-intro path, .cc-live-dot::after, .cc-marquee-inner { animation: none !important; }
-  .cc-iris path { d: var(--d-open) !important; }
+  .cc-leak, .cc-bokeh, .cc-flare-core, .cc-in, .cc-focus, .cc-af-word::before, .cc-iris-intro, .cc-iris-intro .cc-blade, .cc-live-dot::after, .cc-marquee-inner { animation: none !important; }
+  .cc-iris, .cc-iris .cc-blade { transform: none !important; transition: none !important; }
   :where(a.card, .card-hover):hover { transform: none; }
   .cc-marquee { -webkit-mask-image: none; mask-image: none; }
   .cc-marquee-inner { flex-wrap: wrap; width: auto; justify-content: center; }
@@ -414,3 +419,26 @@ li:nth-child(even) > .hd-card .hd-note { rotate: 2deg; }
   .hd-photo { background: #f4efe6; box-shadow: 0 4px 12px -6px rgb(0 0 0 / 0.8); }
   .hd-tag { background: rgb(255 190 70); color: #1a120a; }
 }
+
+/* The deal feed (components/home/DealFeed.tsx): dense rows, OzBargain style.
+   A gone deal stays greyed with a stamp; its photo is desaturated. */
+.hf-list { border-top: 1px solid rgb(var(--c-line)); }
+.hf-row { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 0.4rem 0.85rem; align-items: start; padding: 0.8rem 0.25rem; border-bottom: 1px solid rgb(var(--c-line)); }
+@media (min-width: 640px) { .hf-row { grid-template-columns: 5.25rem minmax(0, 1fr) auto; align-items: center; padding: 0.85rem 0.5rem; } }
+.hf-row:hover { background: rgb(var(--c-raised)); }
+.hf-thumb { display: block; padding: 3px; background: #fff; border-radius: 2px; box-shadow: 0 1px 2px rgb(60 40 20 / 0.18); }
+.hf-act { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+@media (min-width: 640px) { .hf-act { grid-column: auto; flex-direction: column; align-items: flex-end; justify-content: center; gap: 0.4rem; min-width: 9rem; } }
+.hf-save { font-family: var(--font-display), Georgia, serif; font-size: 1.35rem; font-weight: 700; line-height: 1; color: rgb(var(--c-win)); text-align: left; }
+@media (min-width: 640px) { .hf-save { text-align: right; } }
+.hf-go { display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem; min-width: 8.5rem; padding: 0.55rem 1rem; font-size: 0.95rem; font-weight: 700; white-space: nowrap; }
+.hf-chip { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0 0.45rem; border-radius: 3px; font-size: 10.5px; font-weight: 700; line-height: 1.6; text-transform: uppercase; letter-spacing: 0.04em; }
+.hf-chip-new { background: rgb(var(--c-spark) / 0.35); color: rgb(var(--c-fg)); }
+.hf-chip-drop { background: rgb(var(--c-win) / 0.12); color: rgb(var(--c-win)); }
+.hf-chip-drop s { font-weight: 500; }
+.hf-chip-low { background: rgb(var(--c-accent-soft)); color: rgb(var(--c-accent)); }
+.hf-gone > :not(.hf-act) { opacity: 0.5; }
+.hf-gone .hf-thumb { filter: grayscale(1); }
+.hf-gone .hf-save { color: rgb(var(--c-subtle)); text-decoration: line-through; }
+.hf-stamp { display: inline-block; rotate: -6deg; padding: 0.1rem 0.6rem; border: 2px solid rgb(var(--c-warn)); border-radius: 3px; color: rgb(var(--c-warn)); font-family: var(--font-mono), monospace; font-size: 0.9rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; line-height: 1.15; }
+@media (prefers-color-scheme: dark) { .hf-thumb { background: #f4efe6; } }

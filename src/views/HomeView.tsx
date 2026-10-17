@@ -3,8 +3,7 @@ import Link from "next/link";
 import ProductThumb from "@/components/ProductThumb";
 import QuickViewHost from "@/components/QuickView";
 import SearchBox from "@/components/SearchBox";
-import DealCard from "@/components/home/DealCard";
-import DealTabs from "@/components/home/DealTabs";
+import DealFeed, { type FeedRow } from "@/components/home/DealFeed";
 import Freshness from "@/components/home/Freshness";
 import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
@@ -15,7 +14,6 @@ import {
   displayShortName,
   historyFor,
   indexedPairs,
-  launchPrice,
   mounts,
   offersFor,
   offersGeneratedAt,
@@ -25,12 +23,16 @@ import {
   publishedLenses,
   type AnyProduct,
 } from "@/lib/catalog";
-import { homeDealViews, type HomeDeal, type HomeDealInput } from "@/lib/deals-home";
+import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
+import { dealInputs } from "@/lib/deal-inputs";
+import { readDealLog, type DealEntry } from "@/lib/deal-log";
+import { isAmazonOffer } from "@/lib/offers";
+import { packKind } from "@/lib/offer-rows";
 import { price } from "@/lib/format";
 import { guides } from "@/lib/guides";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { quickViewAttrs } from "@/lib/quickview";
-import { retailer } from "@/lib/retailers";
+import { CONDITION_LABEL, retailer } from "@/lib/retailers";
 import { pageMeta } from "@/lib/seo";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import { deals } from "@/views/DealsView";
@@ -54,7 +56,10 @@ const PLACE: Record<MarketCode, string> = {
 };
 /** Below this many RRP deals a market gets the fallback lists instead (markets without launch prices). */
 const MIN_DEALS = 6;
-const SHOW = 24;
+/** Live deals on the feed at most (best saving first), and how long a gone one stays on it. */
+const FEED_MAX = 200;
+const GONE_SHOW_H = 48;
+const SPARK_DAYS = 90;
 
 const stamp = (iso: string) => {
   const d = new Date(iso);
@@ -68,40 +73,55 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   const all = [...cameras, ...lenses];
   const generatedAt = offersGeneratedAt(m);
 
-  // ---- best deals: cheapest used (or new) offer against this market's RRP
-  const items: HomeDealInput[] = [...cameras.map((p) => ({ p, kind: "camera" as const })), ...lenses.map((p) => ({ p, kind: "lens" as const }))].map(({ p, kind }) => {
-    const l = launchPrice(p, m);
-    return {
-      slug: p.slug,
-      kind,
-      offers: offersFor(p.slug, m),
-      rrpMinor: l && l.currency === cur ? Math.round(l.amount * 100) : null,
-    };
-  });
-  const views = {
-    used: homeDealViews(items, "used", SHOW),
-    new: homeDealViews(items, "new", SHOW),
-  };
-  const count = (list: (HomeDeal & { inAll: boolean })[]) => ({
-    all: list.filter((d) => d.inAll).length,
-    camera: list.filter((d) => d.kind === "camera").length,
-    lens: list.filter((d) => d.kind === "lens").length,
-  });
-  const counts = { used: count(views.used), new: count(views.new) };
-  const board = counts.used.all >= MIN_DEALS || counts.new.all >= MIN_DEALS;
-  const defaultMode = counts.used.all >= MIN_DEALS || counts.used.all >= counts.new.all ? "used" : "new";
-  const fallback = board ? null : deals(m);
-
-  // A handwritten note only where the numbers back it: the lowest price in at
-  // least two weeks of our own history, or more than half off RRP.
-  const noteFor = (d: HomeDeal, rank: number) => {
+  // ---- the deal feed: the deal log (lib/deal-log.ts, updated after each
+  // import) joined with this build's offers for the links and our own price
+  // history for the sparkline. Gone deals stay GONE_SHOW_H hours, stamped.
+  const log = readDealLog(m);
+  const inputs = new Map(dealInputs(m).map((it) => [it.slug, it]));
+  const since = log?.updatedAt ? Date.parse(log.updatedAt) - GONE_SHOW_H * 3_600_000 : 0;
+  const liveDeals = (log?.deals ?? []).filter((d) => d.status === "live" && product(d.slug)).sort((a, b) => b.pct - a.pct || b.save - a.save).slice(0, FEED_MAX);
+  const goneDeals = (log?.deals ?? []).filter((d) => d.status === "gone" && d.goneAt && Date.parse(d.goneAt) >= since && product(d.slug));
+  const toFeedRow = (d: DealEntry): FeedRow | null => {
+    const p = product(d.slug)!;
+    const gone = d.status === "gone" ? { at: d.goneAt!, why: d.goneWhy ?? "sold" } : null;
+    let buy: FeedRow["buy"] = null;
+    if (!gone) {
+      const o = (inputs.get(d.slug)?.offers ?? [])
+        .filter((x) => x.retailer === d.retailer && x.condition === d.condition && x.inStock && !x.kit && !isAmazonOffer(x))
+        .sort((a, b) => a.price - b.price)[0];
+      // The log and the offers come from the same import; a deal whose offer is not in this build is not shown live.
+      if (!o) return null;
+      const href = affiliateUrl(o.retailer, o.url, subId("home", "feed"));
+      buy = { href, paid: isPaid(o.retailer, href), retailer: o.retailer };
+    }
     const field = d.condition === "new" ? "new" : "used";
-    const pts = historyFor(d.slug, m).filter((p) => p[field] !== undefined);
-    if (pts.length >= 14 && d.price <= Math.min(...pts.map((p) => p[field]!))) return "lowest we've seen";
-    if (rank === 0) return "biggest saving today";
-    if (d.pct >= 50 && rank < 6) return "over half off!";
-    return null;
+    const pts = historyFor(d.slug, m).filter((h) => h[field] !== undefined).slice(-SPARK_DAYS).map((h) => h[field]!);
+    const pack = packKind(p);
+    return {
+      key: d.key,
+      slug: d.slug,
+      kind: d.kind,
+      name: `${displayName(p.item, m)}${pack === "body" ? " body" : ""}`,
+      cond: CONDITION_LABEL[d.condition].toLowerCase(),
+      isNew: d.condition === "new",
+      store: retailer(d.retailer)?.name ?? d.retailer,
+      price: d.price,
+      rrp: d.rrp,
+      save: d.save,
+      pct: d.pct,
+      was: d.was ?? null,
+      firstSeen: d.firstSeen,
+      droppedAt: d.droppedAt ?? null,
+      gone,
+      href: marketPath(m, `/${d.kind === "camera" ? "cameras" : "lenses"}/${d.slug}`),
+      buy,
+      spark: pts,
+      low90: pts.length >= 14 && d.price <= Math.min(...pts),
+    };
   };
+  const feed = [...liveDeals, ...goneDeals].map(toFeedRow).filter((r): r is FeedRow => r !== null);
+  const board = feed.filter((r) => !r.gone).length >= MIN_DEALS;
+  const fallback = board ? null : deals(m);
 
   const pairs = indexedPairs("camera")
     .sort((p, q) => newestOf(q).localeCompare(newestOf(p)))
@@ -111,24 +131,6 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   const systems = mounts().filter((mt) => mt.status === "current" && cameras.some((c) => c.mount === mt.slug));
   // Every guide, newest first: the articles are what search and ad crawlers read.
   const guideList = [...guides()].sort((a, b) => b.updated.localeCompare(a.updated) || a.title.localeCompare(b.title));
-
-  const dealList = (mode: "used" | "new") =>
-    views[mode].length > 0 && (
-      <ul data-list={mode} className="hd-list">
-        {(() => {
-          let rankAll = 0;
-          return views[mode].map((d, i) => {
-            const p = product(d.slug)!;
-            const rank = d.inAll ? rankAll++ : SHOW;
-            return (
-              <li key={d.slug} data-all={d.inAll ? "1" : "0"} data-k={d.kind}>
-                <DealCard d={d} m={m} currency={cur} name={displayShortName(p.item, m)} brand={brandName(p.item.brand)} store={retailer(d.retailer)?.name ?? d.retailer} note={noteFor(d, rank)} i={i} />
-              </li>
-            );
-          });
-        })()}
-      </ul>
-    );
 
   return (
     <div className="flex flex-col gap-14 sm:gap-16">
@@ -169,7 +171,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
             </h2>
             <p className="mt-1.5 max-w-2xl text-sm text-muted">
               {board
-                ? "The launch list price against the cheapest one in stock at a shop we check, body or lens only, no kits. Sorted by how much you keep in your pocket."
+                ? "The launch list price against the cheapest one in stock at a shop we check, body or lens only, no kits. When one sells or goes out of stock it stays here, stamped, so you can see what got snatched."
                 : `We don't have launch prices for ${PLACE[m]} on enough of the catalog yet, so we can't honestly do the RRP sum here. Until we do, here is what the prices themselves say.`}
             </p>
             {generatedAt && (
@@ -185,10 +187,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
 
           {board && (
             <div className="order-2">
-              <DealTabs counts={counts} defaultMode={defaultMode}>
-                {dealList("used")}
-                {dealList("new")}
-              </DealTabs>
+              <DealFeed rows={feed} m={m} currency={cur} />
               <p className="mt-5 flex flex-wrap items-center justify-between gap-3 text-sm">
                 <Link href={marketPath(m, "/deals")} prefetch={false} className="btn-primary">
                   All deals and price drops <span aria-hidden>→</span>
