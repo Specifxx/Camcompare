@@ -138,7 +138,8 @@ test("history keeps the lowest in-stock body-only price per condition group", ()
     offer({ price: 159900, condition: "used" }),
     offer({ price: 169900, condition: "refurbished" }),
   ]);
-  assert.deepEqual(h.prices, { "sony-a7-iv": { new: 219900, used: 159900 } });
+  // usedMid/usedN: the median and count of in-stock body-only used and refurbished prices.
+  assert.deepEqual(h.prices, { "sony-a7-iv": { new: 219900, used: 159900, usedMid: 164900, usedN: 2 } });
   assert.equal(h.currency, "USD");
 });
 

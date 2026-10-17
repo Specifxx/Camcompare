@@ -131,3 +131,16 @@ test("low light: pixel pitch from sensor area and megapixels, links pre-filled",
   const unmeasured = lowLightLinks([{ c: { ...a7iv, slug: "not-on-ptp" }, brandName: "Sony" }]);
   assert.ok(unmeasured[0].href.endsWith("/Charts/PDR.htm"));
 });
+
+test("used value: median of daily used prices once there's a week of them; months newest first", async () => {
+  const { usedValue, usedByMonth } = await import("../src/lib/value");
+  const days = Array.from({ length: 10 }, (_, i) => ({ day: `2026-10-${String(i + 1).padStart(2, "0")}`, used: 100000 + i * 1000, usedMid: 110000 + i * 1000, usedN: 3 }));
+  assert.equal(usedValue(days.slice(0, 6)), null);
+  const v = usedValue(days)!;
+  assert.equal(v.value, 114500);
+  assert.equal(v.days, 10);
+  assert.equal(v.listings, 30);
+  const months = usedByMonth([...days, { day: "2026-11-01", used: 90000 }]);
+  assert.deepEqual(months.map((m) => m.month), ["2026-11", "2026-10"]);
+  assert.equal(months[1].low, 100000);
+});

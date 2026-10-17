@@ -1,4 +1,4 @@
-// The home hero: blue-hour light with a golden-hour leak, bokeh (some
+// The home hero: warm light leaks like the end of a roll, bokeh (some
 // hexagonal, after the iris), a lens flare from the top right and film grain,
 // all decoration (aria-hidden) behind the real content. The background
 // breaks out full-bleed and reaches up behind the (clear-at-top) header.
@@ -13,7 +13,7 @@ import HeroScroll from "./HeroScroll";
 export type HeroStat = { value: string; label: string };
 export type HeroChip = { href: string; label: string };
 
-const WARM = "255 170 80", COOL = "90 140 255", WHITE = "235 242 255", AZURE = "60 190 255";
+const WARM = "255 165 70", COOL = "225 80 55", WHITE = "255 240 215", AZURE = "255 205 80";
 // [top %, left %, size px, colour, hexagonal, seconds]
 const BOKEH: [number, number, number, string, boolean, number][] = [
   [10, 72, 120, WARM, false, 16], [20, 88, 64, WARM, true, 12], [36, 80, 28, WHITE, false, 10], [8, 55, 40, COOL, false, 14],
@@ -22,7 +22,7 @@ const BOKEH: [number, number, number, string, boolean, number][] = [
 ];
 // Flare ghosts along the axis from the light (top right) through the centre.
 const GHOSTS: [number, number, number, string, boolean, number][] = [
-  [22, 66, 46, AZURE, true, 0.6], [38, 52, 22, WARM, false, 1], [54, 38, 70, COOL, false, 1.4], [70, 24, 30, "120 230 170", true, 1.9],
+  [22, 66, 46, AZURE, true, 0.6], [38, 52, 22, WARM, false, 1], [54, 38, 70, COOL, false, 1.4], [70, 24, 30, "240 120 60", true, 1.9],
 ];
 
 export default function Hero({ market: m, place, stats, chips, searchPlaceholder, children }: { market: MarketCode; place: string; stats: HeroStat[]; chips: HeroChip[]; searchPlaceholder: string; children: React.ReactNode }) {
@@ -63,14 +63,17 @@ export default function Hero({ market: m, place, stats, chips, searchPlaceholder
           <span aria-hidden className="cc-live-dot" />
           {mk.flag} Prices for {mk.name} · {mk.currency}
         </p>
-        <h1 id="hero-title" className="cc-focus mx-auto mt-5 text-[2.05rem] font-extrabold leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-[3.6rem]">
+        <p className="cc-in mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-subtle" style={{ "--i": 0 } as CSSProperties}>
+          Made by people who shoot, for people who shoot
+        </p>
+        <h1 id="hero-title" className="cc-focus cc-h1 mx-auto mt-3 text-[2.2rem] font-semibold leading-[1.04] tracking-[-0.02em] sm:text-5xl lg:text-[4rem]">
           Camera &amp; lens prices and specs, <br className="hidden sm:inline" />
           <span className="cc-af cc-af-word inline-block px-2 [--af-in:-4px] sm:[--af-in:-8px]">
-            <span className="text-gradient">side by side</span>
+            <em className="cc-h1-em text-accent">side by side</em>
           </span>
         </h1>
         <p className="cc-in mx-auto mt-5 max-w-2xl text-base text-muted sm:text-lg" style={{ "--i": 1 } as CSSProperties}>
-          Find the right camera or lens, then the lowest price for it, new, used or refurbished. Spec sheets from the makers; prices from retailers in {place}, checked daily.
+          Pick a body, find the glass, then see who&apos;s selling it cheapest: new, used or refurb. Specs straight off the makers&apos; sheets, prices from shops in {place}, checked every day.
         </p>
       </div>
 
@@ -95,14 +98,18 @@ export default function Hero({ market: m, place, stats, chips, searchPlaceholder
         {children}
       </div>
 
-      <dl className="cc-in mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line/80 bg-line/60 text-left backdrop-blur sm:grid-cols-4" style={{ "--i": 5 } as CSSProperties}>
-        {stats.map((s) => (
-          <div key={s.label} className="bg-surface/75 px-4 py-3">
-            <dt className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-subtle">{s.label}</dt>
-            <dd className="mt-0.5 font-display text-2xl font-bold tabular-nums tracking-tight">{s.value}</dd>
-          </div>
-        ))}
-      </dl>
+      {/* The numbers on a strip of film, frame numbers and all. */}
+      <div className="cc-in cc-film mx-auto mt-10 max-w-3xl rounded-[3px] shadow-lift" style={{ "--i": 5 } as CSSProperties}>
+        <dl className="grid grid-cols-2 gap-1.5 px-2 text-left sm:grid-cols-4">
+          {stats.map((s, i) => (
+            <div key={s.label} className="relative rounded-[2px] bg-[#f6ecd8] px-3.5 py-2.5 text-[#2a2018]">
+              <dt className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#6b5a48]">{s.label}</dt>
+              <dd className="mt-0.5 font-display text-2xl font-semibold tabular-nums tracking-tight">{s.value}</dd>
+              <span aria-hidden className="absolute right-2 top-1.5 font-mono text-[9px] text-[#a0521f]">{i + 1}A</span>
+            </div>
+          ))}
+        </dl>
+      </div>
       <HeroScroll target="cc-hero" />
     </section>
   );

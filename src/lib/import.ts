@@ -7,7 +7,7 @@ import path from "node:path";
 import type { Camera, Lens } from "./catalog/schema";
 import { MARKETS, type MarketCode } from "./markets";
 import { buildIndex } from "./matching";
-import { AMAZON_MAX_AGE_H, historyDir, lowest, OFFER_MAX_AGE_H, offersFile, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
+import { AMAZON_MAX_AGE_H, historyDir, isAmazonOffer, lowest, OFFER_MAX_AGE_H, offersFile, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
 import { retailer } from "./retailers";
 import { sourcesFor } from "./sources";
 import type { PriceSource, SourceResult } from "./sources/types";
@@ -51,7 +51,9 @@ export function historyFor(market: MarketCode, day: string, offers: Offer[]): Hi
   for (const [slug, list] of [...byProduct].sort(([a], [b]) => a.localeCompare(b))) {
     const n = lowest(list, "new");
     const u = lowest(list, "used");
-    if (n || u) prices[slug] = { ...(n ? { new: n.price } : {}), ...(u ? { used: u.price } : {}) };
+    const used = list.filter((o) => o.condition !== "new" && o.inStock && !o.kit && !isAmazonOffer(o)).map((o) => o.price).sort((a, b) => a - b);
+    const mid = used.length ? (used.length % 2 ? used[(used.length - 1) / 2] : Math.round((used[used.length / 2 - 1] + used[used.length / 2]) / 2)) : null;
+    if (n || u) prices[slug] = { ...(n ? { new: n.price } : {}), ...(u ? { used: u.price } : {}), ...(mid !== null ? { usedMid: mid, usedN: used.length } : {}) };
   }
   return { day, market, currency: MARKETS[market].currency, prices };
 }

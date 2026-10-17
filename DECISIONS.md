@@ -389,3 +389,22 @@ redirects to www). `SITE_URL` defaults to the domain in code and ignores a
 `*.vercel.app` value in `NEXT_PUBLIC_SITE_URL`, so a stale Vercel variable
 can't point canonical tags, the sitemap or og:image at a deployment address
 again. camcompare.vercel.app redirects (308) to the same path on the domain.
+
+## 2026-10-17: "Should be worth" from used asking prices; prices every three hours
+
+From friends' feedback (camera buyers): constant price updates, a "should be
+worth" value, used prices over time, eBay sold prices, Facebook Marketplace.
+
+- **Every three hours.** refresh-prices runs at :17 every third hour; each
+  commit is a build. More often would mostly rebuild unchanged pages.
+- **Should be worth, used**: each day's history now also keeps the median and
+  count of used and refurbished asking prices (`usedMid`, `usedN`). The value
+  is the median of those over 90 days, shown once a week of data exists, with
+  a usual range (10th to 90th percentile), today's cheapest used against it,
+  and a month-by-month table. Labelled as asking prices, because they are.
+- **eBay sold prices** need the Marketplace Insights API, which eBay grants
+  by application. The setup prompt asks for it alongside the Browse keys; the
+  value switches to confirmed sales when access exists.
+- **Facebook Marketplace: no.** It has no public listings API, needs a login,
+  and its terms forbid automated collection. That fails the sources rule
+  (never past a login or bot protection).

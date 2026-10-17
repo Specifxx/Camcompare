@@ -6,6 +6,7 @@ import OffersTable from "@/components/OffersTable";
 import PhotoCredit from "@/components/PhotoCredit";
 import PriceBox from "@/components/PriceBox";
 import PriceHistory from "@/components/PriceHistory";
+import UsedValue from "@/components/UsedValue";
 import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
@@ -122,6 +123,11 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
         <div className="card p-4">
           <PriceHistory points={historyFor(l.slug, m)} currency={MARKETS[m].currency} />
         </div>
+      </section>
+
+      <section>
+        <h2 className="h-section mb-3">Used: what it should be worth</h2>
+        <UsedValue history={historyFor(l.slug, m)} currency={MARKETS[m].currency} todayUsed={lowest(offers, "used")?.price ?? null} name={l.shortName} />
       </section>
 
       {(rivals.length > 0 || family.length > 0) && (

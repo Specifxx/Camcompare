@@ -7,11 +7,14 @@ import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
-import { Sora } from "next/font/google";
+import { Fraunces, JetBrains_Mono } from "next/font/google";
 
-// Display face for headings and the wordmark (variable, one file). Body text
-// stays on the system stack. adjustFontFallback keeps the swap from shifting.
-const sora = Sora({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+// Display face for headings and the wordmark: Fraunces, a soft "wonky" old-style
+// serif (variable, with its SOFT/WONK axes) so the site reads like a photo
+// magazine, not a SaaS page. Small labels, prices and EXIF-style metadata use
+// JetBrains Mono. Body text stays on the system stack for readability.
+const display = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap", axes: ["SOFT", "WONK", "opsz"] });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 // AdSense loads only when the owner sets NEXT_PUBLIC_ADSENSE_CLIENT (see AdSlot).
 const ADSENSE = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "";
@@ -32,14 +35,14 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f8fb" },
-    { media: "(prefers-color-scheme: dark)", color: "#080b12" },
+    { media: "(prefers-color-scheme: light)", color: "#f4eee2" },
+    { media: "(prefers-color-scheme: dark)", color: "#16120f" },
   ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={sora.variable}>
+    <html lang="en" className={`${display.variable} ${mono.variable}`}>
       {VERIFY.impact && (
         <head>
           {/* Impact reads the non-standard `value` attribute. */}

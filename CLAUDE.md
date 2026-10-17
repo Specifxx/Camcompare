@@ -39,7 +39,7 @@ reason.
 
 Builds:
 
-- `refresh-prices.yml` commits prices to `main` every six hours. Each commit
+- `refresh-prices.yml` commits prices to `main` every three hours. Each commit
   is a production build.
 - `claude/*` and `ccr-*` branches don't deploy (`vercel.json`).
 

@@ -73,10 +73,13 @@ export const historyDaySchema = z.object({
   day: z.string(),
   market: z.enum(MARKET_CODES),
   currency: z.enum(CURRENCIES),
-  prices: z.record(z.object({ new: z.number().int().optional(), used: z.number().int().optional() })),
+  // usedMid/usedN: median and count of that day's used and refurbished asking
+  // prices (in stock, body only, Amazon left out), for the "should be worth"
+  // value. Days written before 2026-10-17 lack them.
+  prices: z.record(z.object({ new: z.number().int().optional(), used: z.number().int().optional(), usedMid: z.number().int().optional(), usedN: z.number().int().optional() })),
 });
 export type HistoryDay = z.infer<typeof historyDaySchema>;
-export type HistoryPoint = { day: string; new?: number; used?: number };
+export type HistoryPoint = { day: string; new?: number; used?: number; usedMid?: number; usedN?: number };
 
 export const emptyOffers = (m: MarketCode): OffersFile => ({ generatedAt: null, market: m, currency: MARKETS[m].currency, sources: {}, offers: [] });
 

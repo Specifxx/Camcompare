@@ -8,6 +8,7 @@ import PeerRanks from "@/components/PeerRanks";
 import PhotoCredit from "@/components/PhotoCredit";
 import PriceBox from "@/components/PriceBox";
 import PriceHistory from "@/components/PriceHistory";
+import UsedValue from "@/components/UsedValue";
 import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
@@ -164,6 +165,11 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         <div className="card p-4">
           <PriceHistory points={historyFor(c.slug, m)} currency={MARKETS[m].currency} />
         </div>
+      </section>
+
+      <section>
+        <h2 className="h-section mb-3">Used: what it should be worth</h2>
+        <UsedValue history={historyFor(c.slug, m)} currency={MARKETS[m].currency} todayUsed={lowest(offers, "used")?.price ?? null} name={short} />
       </section>
 
       <section>
