@@ -201,3 +201,23 @@ test("feed rows need an http(s) link and their currency column must match", () =
   assert.equal(run({ ...base, link: "https://www.bhphotovideo.com/a", currency: "CAD" }).length, 0);
   assert.equal(run({ ...base, link: "https://www.bhphotovideo.com/a", currency: "usd" }).length, 1);
 });
+
+test("Shopify requests back off on 429/5xx and give up after four retries", async () => {
+  const { politeGet } = await import("../src/lib/sources/shopify");
+  const real = globalThis.fetch;
+  const waits: number[] = [];
+  let calls = 0;
+  const statuses = [503, 503, 200];
+  globalThis.fetch = (async () => new Response("{}", { status: statuses[Math.min(calls++, statuses.length - 1)] })) as typeof fetch;
+  try {
+    assert.equal((await politeGet("https://x.test/products.json", {}, async (ms) => void waits.push(ms))).status, 200);
+    assert.deepEqual(waits, [2000, 4000]);
+    calls = 0;
+    waits.length = 0;
+    statuses.splice(0, 3, 503);
+    assert.equal((await politeGet("https://x.test/products.json", {}, async (ms) => void waits.push(ms))).status, 503);
+    assert.equal(waits.length, 4);
+  } finally {
+    globalThis.fetch = real;
+  }
+});
