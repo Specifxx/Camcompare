@@ -124,8 +124,9 @@ function LensesForCamera({ c, m }: { c: Camera; m: MarketCode }) {
 export default function CameraView({ slug, market: m }: { slug: string; market: MarketCode }) {
   const c = getCamera(slug)!;
   const offers = offersFor(c.slug, m);
-  const n = lowest(offers, "new");
-  const u = lowest(offers, "used");
+  // The price box shows Amazon's price live, with its time (TimedPrice).
+  const n = lowest(offers, "new", true);
+  const u = lowest(offers, "used", true);
   const mt = c.mount ? mount(c.mount) : null;
   const self = product(c.slug)!;
   const rivals = rivalsOf(self);
@@ -161,7 +162,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
             <KeySpecs c={c} />
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(c.slug, m)} launch={launchPrice(c, m)} market={m} extra={c.mount ? " (body only)" : ""} />
             <div className="flex flex-wrap gap-2">
-              <SaveButton slug={c.slug} kind="camera" market={m} seen={n?.price ?? u?.price ?? null} />
+              <SaveButton slug={c.slug} kind="camera" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} />
               {rivals[0] && (
                 <Link href={isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)} className="btn-ghost">
                   Compare with {displayShortName(rivals[0].item, m)}

@@ -159,6 +159,8 @@ export const RETAILERS: Retailer[] = [
   dealer({ key: "challenger-sg", name: "Challenger", market: "sg", country: "SG", site: "https://online.challenger.sg", network: null, ...shop("https://online.challenger.sg"), searchUrl: (q) => `https://online.challenger.sg/search?q=${enc(q)}` }),
   dealer({ key: "cathay-photo", name: "Cathay Photo", market: "sg", country: "SG", site: "https://www.cathayphoto.com.sg", network: null, source: "link-only", checkRow: true, searchUrl: (q) => `https://www.cathayphoto.com.sg/catalogsearch/results?q=${enc(q)}` }),
   dealer({ key: "canon-store-sg", name: "Canon Store", market: "sg", country: "SG", site: "https://shop.sg.canon", network: null, ...shop("https://shop.sg.canon") }),
+  // Online it sells Cinema Line and pro units, not consumer Alpha bodies
+  // (checked 2026-10-17), so it only ever prices the few it lists.
   dealer({ key: "sony-store-sg", name: "Sony Store", market: "sg", country: "SG", site: "https://store.sony.com.sg", network: null, ...shop("https://store.sony.com.sg") }),
   dealer({ key: "leica-store-sg", name: "Leica Store", market: "sg", country: "SG", site: "https://leica-store.sg", network: null, ...shop("https://leica-store.sg") }),
   used({ key: "cash-converters-sg", name: "Cash Converters", market: "sg", country: "SG", site: "https://cashconverters.sg", network: null, ...shop("https://cashconverters.sg") }),

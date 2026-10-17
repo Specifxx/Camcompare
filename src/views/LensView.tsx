@@ -67,8 +67,9 @@ function KeySpecs({ l }: { l: Lens }) {
 export default function LensView({ slug, market: m }: { slug: string; market: MarketCode }) {
   const l = getLens(slug)!;
   const offers = offersFor(l.slug, m);
-  const n = lowest(offers, "new");
-  const u = lowest(offers, "used");
+  // The price box shows Amazon's price live, with its time (TimedPrice).
+  const n = lowest(offers, "new", true);
+  const u = lowest(offers, "used", true);
   const self = product(l.slug)!;
   const rivals = rivalsOf(self);
   const family = [l.predecessor, l.successor].map((s) => (s ? product(s) : null)).filter((x): x is NonNullable<typeof x> => x !== null);
@@ -111,7 +112,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
             <KeySpecs l={l} />
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(l.slug, m)} launch={launchPrice(l, m)} market={m} />
             <div className="flex flex-wrap gap-2">
-              <SaveButton slug={l.slug} kind="lens" market={m} seen={n?.price ?? u?.price ?? null} />
+              <SaveButton slug={l.slug} kind="lens" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} />
             </div>
           </div>
         </header>

@@ -1,8 +1,12 @@
 import { listPrice, price } from "@/lib/format";
 import { dealSignal, usedSaving, vsLaunch } from "@/lib/insights";
 import { MARKETS, type Currency, type MarketCode } from "@/lib/markets";
-import type { HistoryPoint, Offer } from "@/lib/offers";
+import { AMAZON_MAX_AGE_H, isAmazonOffer, type HistoryPoint, type Offer } from "@/lib/offers";
 import { retailer } from "@/lib/retailers";
+import TimedPrice from "./TimedPrice";
+
+/** Amazon's price only with its time, and only while under a day old. */
+const shown = (o: Offer, cur: Currency) => (isAmazonOffer(o) ? <TimedPrice text={price(o.price, cur)} seenAt={o.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : price(o.price, cur));
 
 export default function PriceBox({ newOffer, usedOffer, history, launch, market, extra }: { newOffer: Offer | null; usedOffer: Offer | null; history: HistoryPoint[]; launch: { amount: number; currency: Currency } | null; market: MarketCode; extra?: string }) {
   const cur = MARKETS[market].currency;
@@ -24,12 +28,12 @@ export default function PriceBox({ newOffer, usedOffer, history, launch, market,
       <div className="grid grid-cols-2 gap-3 sm:max-w-md">
         <div className="card p-3">
           <p className="text-xs text-subtle">Lowest new</p>
-          <p className="price text-xl font-bold text-buy">{newOffer ? price(newOffer.price, cur) : "—"}</p>
+          <p className="price text-xl font-bold text-buy">{newOffer ? shown(newOffer, cur) : "—"}</p>
           {newOffer && <p className="text-xs text-subtle">at {retailer(newOffer.retailer)?.name ?? newOffer.retailer}</p>}
         </div>
         <div className="card p-3">
           <p className="text-xs text-subtle">Lowest used/refurb</p>
-          <p className="price text-xl font-bold">{usedOffer ? price(usedOffer.price, cur) : "—"}</p>
+          <p className="price text-xl font-bold">{usedOffer ? shown(usedOffer, cur) : "—"}</p>
           {usedOffer && <p className="text-xs text-subtle">at {retailer(usedOffer.retailer)?.name ?? usedOffer.retailer}</p>}
           {saving !== null && <p className="text-xs text-win">{saving}% under new</p>}
         </div>

@@ -1,32 +1,60 @@
-# Camera images
+# Product images
 
-Rule (owner, 2026-10-17): **every listed camera has a thumbnail.** A camera
-without one is not published: it gets no page and appears in no listing
-(`src/lib/catalog/index.ts`).
+Rule (owner, 2026-10-17): **every listed product has a thumbnail.** A camera
+or lens without one is not published: it gets no page and appears in no
+listing, search result or sitemap (`src/lib/catalog/index.ts`).
 
-## Automatic: Wikimedia Commons
+Each published product has two files:
 
-`npm run thumbs:fetch` links each camera to its Wikidata item (an explicit
-`wikidata` id, otherwise an unambiguous name or Exif-model match). It takes
-the item's photo (P18) **only if it is CC0, CC BY, CC BY-SA or public
-domain**, then writes:
-
-- `public/cameras/<slug>.webp`: 640 px wide, under 150 KB;
-- `data/image-credits.json`: author, licence and source page. The camera page
-  and `/credits` print these, as CC BY and CC BY-SA require.
+- `public/products/<slug>.webp`: 640 px wide, under 150 KB;
+- `data/image-credits/<slug>.json`: author, licence, licence URL and source
+  page. The product page and `/credits` print these, as CC BY and CC BY-SA
+  require.
 
 `tests/catalog.test.ts` fails if a credit has no file, a file has no credit,
 or a file is over budget.
 
+## Automatic: `npm run thumbs:fetch`
+
+For every product without a thumbnail it tries, in order:
+
+1. **Wikidata**: the photo (P18) on the product's Wikidata item, found by an
+   explicit `wikidata` id or an unambiguous name match;
+2. **Commons search**: a Wikimedia Commons file whose *name* the listing
+   matcher (`matchListing`) reads as exactly this product;
+3. **Openverse**: a photo (mostly Flickr) whose title the matcher reads as
+   this product.
+
+Only CC0, public-domain, CC BY and CC BY-SA files are taken. No NC or ND.
+Openverse allows 200 anonymous searches a day; `OPENVERSE_TOKEN` raises that.
+
+## Check by eye before it ships
+
+A search hit (2 or 3) can be the right name on the wrong picture: a sample
+photo taken with the camera, two cameras side by side, a box, the previous
+generation. So every one is looked at:
+
+```
+npm run thumbs:sheet -- slug1,slug2,…    # labelled contact sheet
+npm run thumbs:reject -- slug1,slug2     # wrong photo: remove it
+```
+
+`thumbs:reject` deletes the image and credit and records the file in
+`data/image-rejects/<slug>.json`, so the next fetch never picks it again and
+tries the next candidate instead.
+
 ## Manual: press images
 
-For a camera Commons has no free photo of, use the maker's press image (most
-makers allow editorial use of press-kit images; check that maker's terms):
+For a product with no free photo, the maker's press image is the fallback,
+but most press kits allow editorial use only. Check that maker's terms first,
+then:
 
-1. save it as `public/cameras/<slug>.webp`, 640 px wide, under 150 KB;
-2. add a credit with `"source": "press"`, `"author": "<Maker>"`,
-   `"license": "Press image"`, and `pageUrl` set to the press page.
+1. save it as `public/products/<slug>.webp`, 640 px wide, under 150 KB;
+2. write `data/image-credits/<slug>.json` with `"source": "press"`,
+   `"provider"` and `"author"` set to the maker, `"file"` to the image URL,
+   `"pageUrl"` to the press page, `"license": "Press image"`,
+   `"licenseUrl": null`, `"wikidata": null`, and the image's `width` and
+   `height` (the schema is `imageCreditSchema` in `src/lib/images.ts`).
 
-Retailer feed images are allowed under most affiliate programmes, but only
-for promoting that retailer's offer. Don't use them as the camera's catalog
-photo.
+Retailer feed images are allowed under most affiliate programmes, but only to
+promote that retailer's offer. Don't use them as the catalog photo.

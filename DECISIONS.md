@@ -200,3 +200,47 @@ fact-checked by another. They live in `content/guides/` and are rendered with
 `marked`. Written content of this kind is what AdSense approval and long-tail
 search need; RiftCompare's "publish fewer pages" lesson means six good ones,
 not sixty.
+
+## 2026-10-17: Amazon rows without a price, eBay beside the table, filled buttons only when paid
+
+Owner asked for Amazon in the price rows, eBay "on the side" until its API
+keys exist, and the affiliate buttons highlighted. Three rules make that
+honest:
+
+- **Amazon "Check price" rows.** Amazon's Associates operating agreement
+  allows a price on the page only when it comes from its API and is under 24
+  hours old. The Creators API opens only after 10 qualifying sales in 30 days.
+  Until then each product's Amazon row says "Check price" with no number: it
+  links to the product's ASIN when `data/amazon-asins.json` knows it,
+  otherwise to a tagged Amazon search. The row sits after the priced offers.
+  A row with no price can't be sorted, and must not look like the cheapest.
+  Other retailers marked `checkRow` get the same row until a feed prices
+  them.
+- **Amazon prices are fetched by the build, never committed.** The Creators
+  API licence allows a price to be kept for 24 hours and shown with its time.
+  A committed file keeps it forever in git history. So the daily import only
+  finds ASINs (which may be stored, `data/amazon-asins.json`), and every build
+  fetches that day's prices into the git-ignored `data/offers-amazon/`
+  (`scripts/fetch-amazon-prices.ts`, which never fails the build). Amazon's
+  price appears only where it is shown live: its own row and the price box,
+  each with "as of <time>" and Amazon's disclaimer. A browser check hides it
+  once over 24 hours old, in case no build has run since. It stays out of
+  price history, deals, the saved list, metadata, structured data and the
+  public price files (`lowest`, `isAmazonOffer`). The cost: the Creators API
+  credentials live on Vercel as well as in GitHub.
+- **eBay sits beside the table, not in it.** eBay listings are single
+  sellers' auctions and used items, so they are a different kind of offer
+  from a dealer's price. `EbayPanel` shows up to four Browse API listings.
+  Before the keys exist it shows one tagged "Search eBay" link, which already
+  earns through EPN. Singapore has no EPN programme, so no panel there.
+- **Filled buttons only on paid links.** A retailer's button is filled in its
+  brand colour (Amazon orange, eBay blue, accent for the rest) only when
+  `isPaid` says the link earns. Unpaid links are outlined. The highlight
+  follows the money, but the order never does: rows stay sorted by price, and
+  every paid link carries the "Paid link" note.
+
+Setup is a prompt for Claude in Chrome (`docs/chrome-setup-prompt.md`). It is
+generated from the retailer registry (`scripts/gen-setup-prompt.ts`), so every
+variable name in it matches the code. Site-ownership codes for Google, Bing
+and Impact come from Vercel variables and render nothing until set; a
+placeholder code fails verification silently.

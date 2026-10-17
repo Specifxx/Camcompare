@@ -5,7 +5,7 @@ import { readBrands, readCameraFiles, readLensFiles, readMounts } from "./load";
 import type { Brand, Camera, Lens, LensCoverage, Mount, ProductKind, SensorFormat } from "./schema";
 import { readCredits, thumbPath, type ImageCredit } from "../images";
 import { MARKET_CODES, MARKETS, type Currency, type MarketCode } from "../markets";
-import { readHistory, readOffersFile, sortOffers, type HistoryPoint, type Offer } from "../offers";
+import { readAmazonOffers, readHistory, readOffersFile, sortOffers, type HistoryPoint, type Offer } from "../offers";
 
 export type AnyProduct = { kind: "camera"; item: Camera } | { kind: "lens"; item: Lens };
 
@@ -39,7 +39,7 @@ function load(): Catalog {
   for (const m of MARKET_CODES) {
     const file = readOffersFile(m);
     const offers = new Map<string, Offer[]>();
-    for (const o of file.offers) if (bySlug.has(o.product)) (offers.get(o.product) ?? offers.set(o.product, []).get(o.product)!).push(o);
+    for (const o of [...file.offers, ...readAmazonOffers(m)]) if (bySlug.has(o.product)) (offers.get(o.product) ?? offers.set(o.product, []).get(o.product)!).push(o);
     for (const [k, v] of offers) offers.set(k, sortOffers(v));
     const history = new Map<string, HistoryPoint[]>();
     for (const d of readHistory(m)) for (const [slug, p] of Object.entries(d.prices)) if (bySlug.has(slug)) (history.get(slug) ?? history.set(slug, []).get(slug)!).push({ day: d.day, ...p });

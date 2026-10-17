@@ -1,7 +1,7 @@
 import type { Camera, Lens } from "./catalog/schema";
 import { brandName, displayName } from "./catalog";
 import { MARKETS, marketPath, type MarketCode } from "./markets";
-import type { Offer } from "./offers";
+import { isAmazonOffer, type Offer } from "./offers";
 import { retailer } from "./retailers";
 import { abs, SITE_NAME } from "./site";
 import { thumbSrc } from "./thumb";
@@ -32,7 +32,7 @@ const ITEM_CONDITION: Record<Offer["condition"], string> = {
  */
 export function productLd(p: Camera | Lens, kind: "camera" | "lens", offers: Offer[], m: MarketCode) {
   const path = marketPath(m, `/${kind === "camera" ? "cameras" : "lenses"}/${p.slug}`);
-  const body = offers.filter((o) => !o.kit);
+  const body = offers.filter((o) => !o.kit && !isAmazonOffer(o));
   const prices = body.map((o) => o.price / 100);
   const validUntil = new Date(Date.now() + 86400_000).toISOString().slice(0, 10);
   return {

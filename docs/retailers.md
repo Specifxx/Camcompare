@@ -14,7 +14,7 @@ price" row on every product page where we have no price from it.
 
 | Source | What it needs | Where it runs |
 |---|---|---|
-| Amazon Creators API | Associates account per marketplace plus Creators API credentials. Amazon opens the API only after 10 qualifying sales in 30 days. Until then Amazon gets "Check price on Amazon" rows, because its prices may only be shown from its API. | daily import |
+| Amazon Creators API | Associates account per marketplace plus Creators API credentials. Amazon opens the API only after 10 qualifying sales in 30 days. Until then Amazon gets "Check price on Amazon" rows, because its prices may only be shown from its API. The daily import finds ASINs; each build fetches the prices, which are never committed (Amazon allows keeping them 24 hours). | daily import (ASINs) and every build (prices) |
 | eBay Browse API | eBay developer keys (`EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`). Until then the eBay panel is a tagged search link, which already earns. | daily import |
 | Best Buy Products API | free key from developer.bestbuy.com (`BESTBUY_API_KEY`) | daily import |
 | Affiliate-network product feeds | approval in the retailer's programme, then the feed URL as GitHub secret `FEED_URL_<KEY>` | daily import |

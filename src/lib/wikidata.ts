@@ -219,8 +219,9 @@ export type OpenverseImage = { id: string; title: string; url: string; landing: 
 
 /**
  * Openverse (WordPress's CC search: Flickr, Wikimedia and more). Commercial-
- * use licences only (CC0, PDM, BY, BY-SA; BY-ND is allowed because we only
- * resize). Anonymous use is 200 requests a day; OPENVERSE_TOKEN raises it.
+ * use licences only (CC0, PDM, BY, BY-SA). BY-ND is left out: Commons
+ * refuses it, and a resized crop may count as an adaptation. Anonymous use
+ * is 200 requests a day; OPENVERSE_TOKEN raises it.
  */
 export async function openverseSearch(q: string): Promise<OpenverseImage[]> {
   const params = new URLSearchParams({ q, page_size: "20", license_type: "commercial", category: "photograph", mature: "false" });
@@ -230,7 +231,7 @@ export async function openverseSearch(q: string): Promise<OpenverseImage[]> {
   if (!res.ok) throw new Error(`Openverse ${res.status}`);
   const body = (await res.json()) as { results: { id: string; title?: string; url: string; foreign_landing_url: string; creator?: string; license: string; license_version?: string; license_url?: string; provider: string; tags?: { name: string }[] }[] };
   return body.results
-    .filter((r) => /^(cc0|pdm|by|by-sa|by-nd)$/.test(r.license))
+    .filter((r) => /^(cc0|pdm|by|by-sa)$/.test(r.license))
     .map((r) => ({
       id: r.id,
       title: r.title ?? "",

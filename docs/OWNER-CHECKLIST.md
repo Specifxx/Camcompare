@@ -1,31 +1,46 @@
 # Owner checklist: what only you can do
 
-In order. Nothing here needs code.
+Nothing here needs code. Most of it is in
+[`chrome-setup-prompt.md`](chrome-setup-prompt.md): paste that prompt into
+Claude in Chrome and it works through the list in your browser, stopping
+before anything that costs money, signs an agreement or needs your tax or bank
+details.
 
-1. **Domain.** Buy one and set `NEXT_PUBLIC_SITE_URL` on Vercel.
+**No database.** All public data is JSON in this repo. There is nothing to set
+up in Neon.
+
+1. **GitHub.** Create `main` from the working branch and make it the default.
+   Allow Actions to write (the daily price job commits to `main`).
 2. **Vercel project** for this repo, on a Pro team (Hobby is non-commercial),
-   production branch `main`.
-3. **Affiliate programmes.** Apply once the site is live with the catalog,
-   because programmes review the site:
-   - **Amazon Associates**: add the new site to your existing account and make
-     a new tracking id (for example `camcompare-20`), then request **Creators
-     API** credentials (Associates Central > Tools > Creators API). Set
-     `AMAZON_ASSOCIATE_TAG`, `AMAZON_CREATORS_CLIENT_ID` and
-     `AMAZON_CREATORS_CLIENT_SECRET`.
-   - **eBay Partner Network**: new campaign in your existing account
-     (`EBAY_AFFILIATE_CAMPAIGN`). Reuse your eBay developer keys
-     (`EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`).
-   - **Impact**: Adorama and Best Buy. **B&H**: its own programme.
-     **FlexOffers**: MPB. **KEH**: its programme. For each, once approved:
-     - copy the **product feed URL** into the GitHub secret `FEED_URL_<KEY>`;
-     - copy the **deep-link template** into the Vercel variable
-       `AFFILIATE_DEEPLINK_<KEY>` (see `.env.example` for each network's
-       format).
-4. **GitHub secrets** for `refresh-prices.yml`: the import variables in
-   `.env.example`.
-5. **Spec pass.** Run `npm run wikidata:crosscheck`, then check every camera
-   it flags against the maker's spec sheet. The 2025 bodies matter most.
-6. **Missing photos.** `npm run thumbs:fetch` lists the cameras Commons has no
-   free photo for. Decide whether to use makers' press images
-   (`docs/images.md`).
-7. **Search Console and Bing Webmaster.** Submit `/sitemap.xml`.
+   production branch `main`. Then a domain and `NEXT_PUBLIC_SITE_URL`.
+3. **Affiliate programmes.** Apply once the site is live, because programmes
+   review the site:
+   - **Amazon Associates**: one account per store (US, UK, Germany, Australia,
+     Singapore). `AMAZON_TAG_US` … `AMAZON_TAG_SG`. Until the Creators API
+     opens (10 sales in 30 days), Amazon rows show a tagged "Check price"
+     button with no price; Amazon allows a price only from its API.
+   - **eBay Partner Network**: a new CamCompare campaign in your existing
+     account (`EBAY_AFFILIATE_CAMPAIGN`). Until the eBay developer keys exist
+     (`EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`), the eBay panel beside the price
+     table is a tagged "Search eBay" link.
+   - **Camera retailers** in five markets, through Impact, Awin, Partnerize,
+     Rakuten, Webgains, CJ, Commission Factory and their own programmes: the
+     full list with each variable is in [`retailers.md`](retailers.md). For
+     each one approved, the deep-link template goes in the Vercel variable
+     `AFFILIATE_DEEPLINK_<KEY>` and any product feed in the GitHub secret
+     `FEED_URL_<KEY>`.
+   - **Best Buy developer API**: a free key, `BESTBUY_API_KEY`.
+4. **GitHub secrets** for `refresh-prices.yml`, then run it once by hand and
+   read its "Check sources" step.
+5. **Search Console and Bing Webmaster.** Verify with the meta-tag codes
+   (`GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`) and submit
+   `/sitemap.xml`.
+6. **Ads, later.** Apply to AdSense once the site has traffic and the guides.
+   Slots render nothing until `NEXT_PUBLIC_ADSENSE_CLIENT` and slot ids are
+   set.
+7. **Spec spot-checks.** `npm run wikidata:crosscheck` flags specs that
+   disagree with Wikidata. Check the flagged ones against the maker's spec
+   sheet; recent bodies matter most.
+8. **Missing photos.** `npm run thumbs:fetch` lists the products no free
+   licence photo was found for. Each stays unpublished until it has one
+   (`images.md`). Makers' press images need the maker's permission.

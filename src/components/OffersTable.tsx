@@ -2,9 +2,10 @@ import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
 import { asinFor } from "@/lib/amazon-asins";
 import { price } from "@/lib/format";
 import { MARKETS, type MarketCode } from "@/lib/markets";
-import type { Offer } from "@/lib/offers";
+import { AMAZON_MAX_AGE_H, type Offer } from "@/lib/offers";
 import { CONDITION_LABEL, retailer, retailersFor, type Retailer } from "@/lib/retailers";
 import OutboundLink from "./OutboundLink";
+import TimedPrice from "./TimedPrice";
 
 const MOUNT_SHORT: Record<string, string> = {
   "sony-e": "Sony E", "canon-rf": "Canon RF", "canon-ef": "Canon EF", "canon-ef-m": "Canon EF-M", "nikon-z": "Nikon Z", "nikon-f": "Nikon F",
@@ -26,7 +27,8 @@ export function buttonClass(r: Retailer | undefined): string {
  *     Amazon always (its prices may only be shown from its API, which opens
  *     after the account's first sales), then the market's main dealers.
  * The order is price, then the check rows; never commission. Rows whose link
- * earns get a filled button and a "Paid link" note.
+ * earns get a filled button and a "Paid link" note. An Amazon price carries
+ * its time and Amazon's disclaimer, and hides itself once over a day old.
  */
 export default function OffersTable({ product, query, offers, market, page, amazonAsin }: { product: string; query: string; offers: Offer[]; market: MarketCode; page: string; amazonAsin?: string }) {
   const priced = offers.filter((o) => !retailer(o.retailer)?.ebay);
@@ -39,46 +41,56 @@ export default function OffersTable({ product, query, offers, market, page, amaz
   if (!priced.length && !checks.length) {
     return <p className="card p-4 text-sm text-muted">No {MARKETS[market].short} retailers carry this yet.</p>;
   }
+  const amazonPriced = priced.some((o) => retailer(o.retailer)?.amazon);
   return (
-    <ul className="card divide-y divide-line">
-      {priced.map((o, i) => {
-        const r = retailer(o.retailer);
-        return (
-          <li key={`${o.retailer}-${o.sourceId ?? i}`} className="flex items-center gap-3 px-4 py-3">
+    <div>
+      <ul className="card divide-y divide-line">
+        {priced.map((o, i) => {
+          const r = retailer(o.retailer);
+          return (
+            <li key={`${o.retailer}-${o.sourceId ?? i}`} className="flex items-center gap-3 px-4 py-3">
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold">
+                  {r?.name ?? o.retailer}
+                  <span className="ml-2 text-xs font-normal text-muted">{CONDITION_LABEL[o.condition]}</span>
+                  {!o.inStock && <span className="ml-1 text-xs text-warn">out of stock</span>}
+                </p>
+                <p className="truncate text-xs text-subtle">
+                  {[o.seller ? `Seller: ${o.seller}` : r?.authorized ? "Authorized dealer" : null, o.mount && MOUNT_SHORT[o.mount] ? `${MOUNT_SHORT[o.mount]} version` : null, o.kit ? "includes lens" : null].filter(Boolean).join(" · ")}
+                </p>
+              </div>
+              <p className="price shrink-0 text-base font-bold">
+                {r?.amazon ? <TimedPrice text={price(o.price, o.currency)} seenAt={o.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : price(o.price, o.currency)}
+              </p>
+              <div className="w-24 shrink-0 text-right">
+                <OutboundLink href={affiliateUrl(o.retailer, o.url, subId(page, "offers"))} retailer={o.retailer} product={product} placement="offers" className={`${buttonClass(r)} w-full`}>
+                  View
+                </OutboundLink>
+                {isPaid(o.retailer) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
+              </div>
+            </li>
+          );
+        })}
+        {checks.map((r) => (
+          <li key={r.key} className="flex items-center gap-3 px-4 py-3">
             <div className="min-w-0 flex-1">
-              <p className="font-semibold">
-                {r?.name ?? o.retailer}
-                <span className="ml-2 text-xs font-normal text-muted">{CONDITION_LABEL[o.condition]}</span>
-                {!o.inStock && <span className="ml-1 text-xs text-warn">out of stock</span>}
-              </p>
-              <p className="truncate text-xs text-subtle">
-                {[o.seller ? `Seller: ${o.seller}` : r?.authorized ? "Authorized dealer" : null, o.mount && MOUNT_SHORT[o.mount] ? `${MOUNT_SHORT[o.mount]} version` : null, o.kit ? "includes lens" : null].filter(Boolean).join(" · ")}
-              </p>
+              <p className="font-semibold">{r.name}</p>
+              <p className="text-xs text-subtle">{r.amazon ? "Price shown on Amazon" : r.conditions.includes("used") && r.conditions.length === 1 ? "Used stock, graded and warrantied" : "Check today's price"}</p>
             </div>
-            <p className="price shrink-0 text-base font-bold">{price(o.price, o.currency)}</p>
-            <div className="w-24 shrink-0 text-right">
-              <OutboundLink href={affiliateUrl(o.retailer, o.url, subId(page, "offers"))} retailer={o.retailer} product={product} placement="offers" className={`${buttonClass(r)} w-full`}>
-                View
+            <div className="shrink-0 text-right">
+              <OutboundLink href={checkHref(r)} retailer={r.key} product={product} placement="check" className={buttonClass(r)}>
+                {r.amazon ? "Check price on Amazon" : "Check price"}
               </OutboundLink>
-              {isPaid(o.retailer) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
+              {isPaid(r.key) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
             </div>
           </li>
-        );
-      })}
-      {checks.map((r) => (
-        <li key={r.key} className="flex items-center gap-3 px-4 py-3">
-          <div className="min-w-0 flex-1">
-            <p className="font-semibold">{r.name}</p>
-            <p className="text-xs text-subtle">{r.amazon ? "Price shown on Amazon" : r.conditions.includes("used") && r.conditions.length === 1 ? "Used stock, graded and warrantied" : "Check today's price"}</p>
-          </div>
-          <div className="shrink-0 text-right">
-            <OutboundLink href={checkHref(r)} retailer={r.key} product={product} placement="check" className={buttonClass(r)}>
-              {r.amazon ? "Check price on Amazon" : "Check price"}
-            </OutboundLink>
-            {isPaid(r.key) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
-          </div>
-        </li>
-      ))}
-    </ul>
+        ))}
+      </ul>
+      {amazonPriced && (
+        <p className="mt-2 text-[11px] text-subtle">
+          Amazon prices and availability are accurate as of the time shown and are subject to change. The price and availability shown on Amazon at the time of purchase will apply.
+        </p>
+      )}
+    </div>
   );
 }

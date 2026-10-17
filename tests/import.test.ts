@@ -120,3 +120,17 @@ test("Shopify: robots.txt is respected and conditions read from titles and tags"
   assert.equal(shopifyCondition({ title: "Sony a7 IV Ex-Demo", tags: "" }, ""), "open-box");
   assert.equal(shopifyCondition({ title: "Sony a7 IV", product_type: "Cameras" }, "Body"), "new");
 });
+
+test("Amazon prices are never kept past a day, and stay out of stored and derived prices", async () => {
+  const { lowest } = await import("../src/lib/offers");
+  const day2 = "2026-10-18T08:00:00.000Z"; // 25 hours after NOW
+  const prev = file([offer({ retailer: "amazon", price: 209900 }), offer({ retailer: "bh" })]);
+  const kept = mergeOffers(prev, { amazon: { status: "error", note: "down" }, bh: { status: "error", note: "down" } }, day2, new Set(["sony-a7-iv"]));
+  assert.deepEqual(kept.map((o) => o.retailer), ["bh"]);
+
+  const both = [offer({ retailer: "amazon", price: 209900 }), offer({ retailer: "bh" })];
+  assert.equal(lowest(both, "new")?.retailer, "bh");
+  assert.equal(lowest(both, "new", true)?.retailer, "amazon");
+  assert.deepEqual(Object.keys(historyFor("us", "2026-10-17", both).prices), ["sony-a7-iv"]);
+  assert.equal(historyFor("us", "2026-10-17", both).prices["sony-a7-iv"].new, 219900);
+});

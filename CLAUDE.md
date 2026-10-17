@@ -22,7 +22,11 @@ Everything public is JSON in `data/`, committed:
   price per product
 - `data/image-credits/<slug>.json`: thumbnail credits
   (`public/products/<slug>.webp`)
-- `data/amazon-asins.json`: Amazon ASINs found per marketplace
+- `data/amazon-asins.json`: Amazon ASINs found per marketplace. Amazon's
+  *prices* are never committed: its licence allows a price to be kept for 24
+  hours, so each build fetches them into the git-ignored `data/offers-amazon/`
+  (`scripts/fetch-amazon-prices.ts`), and they stay out of price history,
+  deals, metadata and structured data (`lowest`, `isAmazonOffer`).
 
 Pages read these at build time and are static. **No page sets `revalidate`.**
 Data changes only through commits, and each commit is a build. Don't add a

@@ -7,7 +7,7 @@ import path from "node:path";
 import type { Camera, Lens } from "./catalog/schema";
 import { MARKETS, type MarketCode } from "./markets";
 import { buildIndex } from "./matching";
-import { historyDir, lowest, OFFER_MAX_AGE_H, offersFile, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
+import { AMAZON_MAX_AGE_H, historyDir, lowest, OFFER_MAX_AGE_H, offersFile, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
 import { retailer } from "./retailers";
 import { sourcesFor } from "./sources";
 import type { PriceSource, SourceResult } from "./sources/types";
@@ -15,13 +15,13 @@ import type { PriceSource, SourceResult } from "./sources/types";
 /**
  * A source that ran replaces its offers (only for the products it covered,
  * when it says which). One that FAILED keeps yesterday's — a broken feed must
- * not empty every page — until they are OFFER_MAX_AGE_H old. One that is not
+ * not empty every page — until they are OFFER_MAX_AGE_H old (Amazon's,
+ * AMAZON_MAX_AGE_H: its terms forbid showing an older price). One that is not
  * configured contributes nothing. A retailer this run did not include
  * (IMPORT_ONLY) keeps its offers on the same terms as a failure.
  */
 export function mergeOffers(prev: OffersFile, results: Record<string, SourceResult>, now: string, slugs: Set<string>): Offer[] {
-  const cutoff = Date.parse(now) - OFFER_MAX_AGE_H * 3600_000;
-  const fresh = (o: Offer) => Date.parse(o.seenAt) >= cutoff;
+  const fresh = (o: Offer) => Date.parse(now) - Date.parse(o.seenAt) <= (retailer(o.retailer)?.amazon ? AMAZON_MAX_AGE_H : OFFER_MAX_AGE_H) * 3600_000;
   const keepPrev = (key: string, except?: Set<string>) => prev.offers.filter((o) => o.retailer === key && fresh(o) && !except?.has(o.product));
   const out: Offer[] = [];
   for (const [key, r] of Object.entries(results)) {

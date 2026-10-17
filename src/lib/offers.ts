@@ -10,16 +10,27 @@ import fs from "node:fs";
 import path from "node:path";
 import { z } from "zod";
 import { CURRENCIES, MARKET_CODES, MARKETS, type MarketCode } from "./markets";
-import { CONDITIONS, type Condition } from "./retailers";
+import { CONDITIONS, retailer, type Condition } from "./retailers";
 
 const DATA = path.join(process.cwd(), "data");
 export const OFFERS_DIR = path.join(DATA, "offers");
 export const HISTORY_DIR = path.join(DATA, "price-history");
 export const offersFile = (m: MarketCode) => path.join(OFFERS_DIR, `${m}.json`);
 export const historyDir = (m: MarketCode) => path.join(HISTORY_DIR, m);
+/**
+ * Amazon's prices are fetched by each build (scripts/fetch-amazon-prices.ts)
+ * into this git-ignored folder, never committed: its API licence allows a
+ * price to be kept for 24 hours, and a commit keeps it forever. Only ASINs,
+ * which may be stored, go in the repo (data/amazon-asins.json).
+ */
+export const AMAZON_OFFERS_DIR = path.join(DATA, "offers-amazon");
+export const amazonOffersFile = (m: MarketCode) => path.join(AMAZON_OFFERS_DIR, `${m}.json`);
+export const isAmazonOffer = (o: Offer) => Boolean(retailer(o.retailer)?.amazon);
 
 /** An offer is dropped if its source has not confirmed it for this long (RiftCompare's STORE_ROWS_MAX_AGE_H). */
 export const OFFER_MAX_AGE_H = 72;
+/** Amazon's limit: a price from its API may be shown for at most 24 hours. */
+export const AMAZON_MAX_AGE_H = 24;
 
 export const offerSchema = z
   .object({
@@ -74,6 +85,12 @@ export function readOffersFile(m: MarketCode, file = offersFile(m)): OffersFile 
   return offersFileSchema.parse(JSON.parse(fs.readFileSync(file, "utf8")));
 }
 
+/** This build's Amazon prices (scripts/fetch-amazon-prices.ts), if it fetched any. */
+export function readAmazonOffers(m: MarketCode, file = amazonOffersFile(m)): Offer[] {
+  if (!fs.existsSync(file)) return [];
+  return z.object({ offers: z.array(offerSchema) }).parse(JSON.parse(fs.readFileSync(file, "utf8"))).offers;
+}
+
 export function readHistory(m: MarketCode, dir = historyDir(m)): HistoryDay[] {
   if (!fs.existsSync(dir)) return [];
   return fs
@@ -88,8 +105,13 @@ export function sortOffers(offers: Offer[]): Offer[] {
   return [...offers].sort((a, b) => Number(a.kit) - Number(b.kit) || Number(b.inStock) - Number(a.inStock) || a.price - b.price);
 }
 
-/** The headline number: cheapest in-stock body-only offer in the condition group. */
-export function lowest(offers: Offer[], group: "new" | "used"): Offer | null {
-  const ok = offers.filter((o) => !o.kit && o.inStock && (group === "new" ? o.condition === "new" : o.condition !== "new"));
+/**
+ * The headline number: cheapest in-stock body-only offer in the condition
+ * group. Amazon's price counts only where it is shown live with its time
+ * (`withAmazon`, the price box); never in history, deals, metadata,
+ * structured data or the price files, which would store it.
+ */
+export function lowest(offers: Offer[], group: "new" | "used", withAmazon = false): Offer | null {
+  const ok = offers.filter((o) => !o.kit && o.inStock && (withAmazon || !isAmazonOffer(o)) && (group === "new" ? o.condition === "new" : o.condition !== "new"));
   return ok.reduce<Offer | null>((best, o) => (!best || o.price < best.price ? o : best), null);
 }
