@@ -1,10 +1,12 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { recommend } from "../src/lib/finder";
-import { dealSignal, priceDrops, usedSaving, vsLaunch } from "../src/lib/insights";
+import { convert, readFx, type Fx } from "../src/lib/fx";
+import { dealSignal, priceDrops, topBargains, usedSaving, vsLaunch, worldRows, worldVerdict, type BargainInput } from "../src/lib/insights";
+import { overBy, rowWarning } from "../src/lib/rrp";
 import { productLd } from "../src/lib/jsonld";
 import { isGlobalPath, marketForCountry, marketFromPath, rememberMarket, switchMarketPath, visitorMarket } from "../src/lib/market-client";
-import { marketPath, money } from "../src/lib/markets";
+import { marketPath, money, type MarketCode } from "../src/lib/markets";
 import type { Offer } from "../src/lib/offers";
 import { alternates } from "../src/lib/seo";
 import { CAMERAS } from "./fixtures";
@@ -146,4 +148,65 @@ test("the finder ranks by the stated rules and respects budget and size", () => 
   assert.equal(out[0].c.slug, "vlog");
   assert.ok(!out.some((x) => x.c.slug === "heavy" || x.c.slug === "pricey"));
   assert.ok(out[0].reasons.includes("Mic input"));
+});
+
+// ------------------------------------------------ friends' feedback, 2026-10-17
+
+const mk = (o: Partial<Offer>): Offer => ({
+  product: "x", kind: "camera", retailer: "bh", condition: "new", price: 100000, currency: "USD", url: "https://shop.example/x",
+  title: "X", seller: null, inStock: true, kit: false, mount: null, seenAt: "2026-10-17T00:00:00Z", sourceId: null, ...o,
+});
+
+test("top bargains: new under RRP and used under typical, in stock, body only, no Amazon", () => {
+  const items: BargainInput[] = [
+    { slug: "a", offers: [mk({ price: 80000 }), mk({ price: 60000, kit: true }), mk({ price: 50000, inStock: false })], rrpMinor: 100000, usedTypicalMinor: null },
+    { slug: "b", offers: [mk({ price: 70000, retailer: "adorama" })], rrpMinor: 100000, usedTypicalMinor: null },
+    { slug: "c", offers: [mk({ price: 99000 })], rrpMinor: 100000, usedTypicalMinor: null }, // 1%: under the floor
+    { slug: "d", offers: [mk({ price: 120000 })], rrpMinor: 100000, usedTypicalMinor: null }, // above RRP
+    { slug: "e", offers: [mk({ price: 50000 })], rrpMinor: null, usedTypicalMinor: null }, // no RRP
+    { slug: "f", offers: [mk({ price: 40000, retailer: "amazon" })], rrpMinor: 100000, usedTypicalMinor: null }, // Amazon only
+    { slug: "u", offers: [mk({ condition: "used", price: 45000 }), mk({ condition: "refurbished", price: 48000 })], rrpMinor: 100000, usedTypicalMinor: 60000 },
+  ];
+  const n = topBargains(items, "new");
+  assert.deepEqual(n.map((b) => [b.slug, b.pct, b.retailer]), [["b", 30, "adorama"], ["a", 20, "bh"]]);
+  assert.deepEqual(topBargains(items, "used").map((b) => [b.slug, b.price, b.pct]), [["u", 45000, 25]]);
+  assert.equal(topBargains(items, "new", 5, 1).length, 1);
+});
+
+test("offer rows warn above RRP and above the typical used price, never on kits", () => {
+  assert.equal(overBy(110000, 100000), 10);
+  assert.equal(overBy(100000, 100000), null);
+  assert.equal(overBy(100000, null), null);
+  assert.deepEqual(rowWarning({ price: 112500, condition: "New" }, 100000, null), { kind: "rrp", text: "Above RRP +13%" });
+  assert.equal(rowWarning({ price: 95000, condition: "New" }, 100000, 70000), null);
+  assert.equal(rowWarning({ price: 150000, condition: "New", kit: true }, 100000, null), null);
+  assert.deepEqual(rowWarning({ price: 80000, condition: "Used" }, 100000, 70000), { kind: "used", text: "Above typical used price" });
+  assert.equal(rowWarning({ price: 65000, condition: "Refurbished" }, 100000, 70000), null);
+  assert.equal(rowWarning({ price: 105000, condition: "Used" }, 100000, 70000)?.kind, "rrp");
+});
+
+test("price around the world converts only beside the own-currency price, and names the cheapest", () => {
+  const fx: Fx = { date: "2026-10-16", rates: { USD: 1, GBP: 0.75, EUR: 0.9, AUD: 1.5, SGD: 1.3 } };
+  assert.equal(convert(150000, "AUD", "USD", fx), 100000);
+  const none = { us: [], uk: [], eu: [], au: [], sg: [] } as Record<MarketCode, Offer[]>;
+  const rows = worldRows({ ...none, us: [mk({ price: 200000 })], au: [mk({ price: 264000, currency: "AUD" })], uk: [mk({ price: 150000, currency: "GBP", condition: "used" })] }, "us", fx);
+  const au = rows.find((r) => r.market === "au")!;
+  assert.equal(au.new, 264000); // its own currency, untouched
+  assert.equal(au.newHere, 176000); // ≈ USD
+  assert.equal(rows.find((r) => r.market === "us")!.newHere, 200000);
+  const v = worldVerdict(rows, "us")!;
+  assert.equal(v.cheapest, "au");
+  assert.equal(v.pct, 12);
+  assert.equal(v.text, "Cheapest in Australia: about 12% under the US price before shipping and import tax.");
+  assert.match(worldVerdict(rows, "au")!.text, /^Cheapest right here in Australia: about 12% under the price in the US, the next cheapest/);
+  // One market priced new and none used twice: nothing to compare.
+  assert.equal(worldVerdict(worldRows({ ...none, us: [mk({})] }, "us", fx), "us"), null);
+  assert.match(worldVerdict(worldRows({ ...none, au: [mk({ currency: "AUD" })], sg: [mk({ currency: "SGD" })] }, "us", fx), "us")!.text, /Not priced in the US yet/);
+});
+
+test("fx falls back to the reference rates without a file", () => {
+  const fx = readFx("/nonexistent/fx.json");
+  assert.equal(fx.date, null);
+  assert.equal(fx.rates.USD, 1);
+  assert.ok(fx.rates.GBP > 0.5 && fx.rates.GBP < 1);
 });

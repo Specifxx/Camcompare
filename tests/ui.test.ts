@@ -144,3 +144,16 @@ test("used value: median of daily used prices once there's a week of them; month
   assert.deepEqual(months.map((m) => m.month), ["2026-11", "2026-10"]);
   assert.equal(months[1].low, 100000);
 });
+
+test("official page links go to the maker's own search, else its homepage", async () => {
+  const { brands, publishedCameras } = await import("../src/lib/catalog");
+  const { officialHref } = await import("../src/components/OfficialLink");
+  for (const b of brands()) if (b.search) assert.ok(b.search.includes("{q}") && new URL(b.search).hostname.endsWith(new URL(b.site).hostname.replace(/^(www|shop|store|us)\./, "")), b.slug);
+  const leica = publishedCameras().find((c) => c.brand === "leica");
+  if (leica) {
+    const o = officialHref(leica)!;
+    assert.ok(o.search && o.href.startsWith("https://leica-camera.com/en-US/search?search=") && !o.href.includes("{q}"));
+  }
+  const sony = publishedCameras().find((c) => c.brand === "sony");
+  if (sony) assert.deepEqual(officialHref(sony), { href: "https://electronics.sony.com/imaging", host: "electronics.sony.com", search: false });
+});

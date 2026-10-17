@@ -170,7 +170,7 @@ export function worldVerdict(rows: WorldRow[], here: MarketCode): WorldVerdict |
     if (best.market === here) {
       const next = priced.filter((r) => r.market !== here).reduce((a, b) => (b[key]! < a[key]! ? b : a));
       const pct = Math.round(((next[key]! - mine) / next[key]!) * 100);
-      return { field, cheapest: here, here, pct, text: pct < 2 ? `About the same${label} price in ${place(here)} as in ${place(next.market)}, the next cheapest.` : `Cheapest${label} right here in ${place(here)}: about ${pct}% under ${place(next.market)}, the next cheapest.` };
+      return { field, cheapest: here, here, pct, text: pct < 2 ? `About the same${label} price in ${place(here)} as in ${place(next.market)}, the next cheapest.` : `Cheapest${label} right here in ${place(here)}: about ${pct}% under the price in ${place(next.market)}, the next cheapest.` };
     }
     const pct = Math.round(((mine - best[key]!) / mine) * 100);
     if (pct < 2) return { field, cheapest: best.market, here, pct, text: `About the same${label} price in ${place(here)} as anywhere else we track.` };

@@ -9,6 +9,7 @@ import { brandName, brands, displayName, displayShortName, historyAll, indexedPa
 import { price } from "@/lib/format";
 import { guides } from "@/lib/guides";
 import { priceDrops } from "@/lib/insights";
+import { BargainCard, bargains } from "@/views/DealsView";
 import { MARKET_CODES, MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { retailersFor } from "@/lib/retailers";
 import { pageMeta } from "@/lib/seo";
@@ -39,6 +40,11 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   const all = [...cameras, ...lenses];
   const pairs = indexedPairs("camera").sort((p, q) => newestOf(q).localeCompare(newestOf(p))).slice(0, 9);
   const drops = priceDrops(historyAll(m), "new").slice(0, 4);
+  // Top bargains: new furthest under RRP, topped up with used under the typical used price.
+  const top = (() => {
+    const b = bargains(m, 4);
+    return [...b.newBargains, ...b.usedBargains.filter((u) => !b.newBargains.some((n) => n.slug === u.slug))].slice(0, 4);
+  })();
   const live = brands().filter((b) => cameras.some((c) => c.brand === b.slug) || lenses.some((l) => l.brand === b.slug));
   const systems = mounts().filter((mt) => mt.status === "current" && cameras.some((c) => c.mount === mt.slug));
   const shops = [...new Set(retailersFor(m).map((r) => r.name))];
@@ -88,6 +94,19 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
               ))}
             </div>
           </div>
+        </section>
+      )}
+
+      {top.length > 0 && (
+        <section aria-labelledby="bargains-title">
+          <SectionHeading id="bargains-title" eyebrow="Top bargains" title="Furthest under the usual price today" href={marketPath(m, "/deals")} link="All bargains" />
+          <Reveal as="ul" stagger className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {top.map((b) => (
+              <li key={`${b.condition}-${b.slug}`}>
+                <BargainCard b={b} m={m} />
+              </li>
+            ))}
+          </Reveal>
         </section>
       )}
 

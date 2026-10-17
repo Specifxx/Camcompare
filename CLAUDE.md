@@ -54,7 +54,12 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
 `src/views/`, which take a `market`.
 
 - **Prices stay in their own currency.** Never convert one currency into
-  another for display. A feed priced in another currency is refused.
+  another for display. A feed priced in another currency is refused. One
+  exception: the "Price around the world" panel on product pages
+  (`src/components/WorldPrices.tsx`) shows each market's price in its own
+  currency with an approximate conversion beside it, labelled "≈ at today's
+  exchange rate" (`src/lib/fx.ts`, `data/fx.json` from `scripts/fetch-fx.ts`).
+  Nowhere else: not cards, rows, deals, metadata or structured data.
 - **Market product pages are noindex until priced.** A product page outside
   the US is noindex, out of the sitemap and out of hreflang until that market
   has an offer (`marketIndexable`). Keep that rule wherever a page is added.

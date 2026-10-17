@@ -449,3 +449,39 @@ random token per alert.
   one-click stop link (also as List-Unsubscribe / RFC 8058) and a manage
   link. The links carry the token; the manage page is dynamic, noindex and
   sends no referrer.
+
+## 2026-10-17: RRP, bargains, price around the world, official pages
+
+From friends' feedback (regional prices, RRP and used prices, "name and
+shame" sellers over RRP, top bargains, graphs, links to makers' pages).
+
+- **Price around the world** on every product page: each market's lowest new
+  and used price in its own currency, and under it an approximate conversion
+  into the page's currency, labelled "≈ at today's exchange rate", with a
+  verdict ("Cheapest in Australia: about 12% under the US price before
+  shipping and import tax") and a note that shipping, duty, GST/VAT and local
+  warranty are not included (links the grey-market guide). This relaxes
+  "never convert" for that one labelled panel only; every other price stays
+  unconverted. Rates: ECB reference rates via frankfurter.app (free, no key),
+  fetched into `data/fx.json` by `scripts/fetch-fx.ts` in refresh-prices
+  (a failure keeps the last file and never fails the job); without the file,
+  `refRate`. ECB rates change once a working day, so this adds at most one
+  changed file a day to a price commit.
+- **RRP** is the catalog's launch list price for the market, shown as
+  "Launch RRP", next to "Used, typically" (the should-be-worth value) or
+  "Used from" when there isn't a week of used data yet.
+- **No naming and shaming.** Marketplace sellers are often private people;
+  calling one out by name invites a defamation complaint and says nothing a
+  price doesn't. Instead an offer row priced above the market's RRP gets an
+  "Above RRP +N%" badge, and a used one above the typical used price "Above
+  typical used price". Kits are never flagged (not the body's price).
+- **Top bargains** (/deals and the home page): today's lowest in-stock,
+  body-only, non-Amazon new price against RRP, and used against the typical
+  used price, at least 5% under, biggest first (`topBargains`).
+- **Official page links** go to the maker's own site search for the
+  product's short name, only where the search URL pattern was checked
+  against the live site (`search` in data/brands.json); the rest link to the
+  maker's homepage ("Official site"). Not affiliate links: rel="noopener",
+  not sponsored. Sony, Canon, Nikon, OM System, GoPro and Insta360 refused
+  automated checks (403), so they stay homepage links until someone confirms
+  their search URL by hand.
