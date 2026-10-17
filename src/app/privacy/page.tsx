@@ -34,7 +34,7 @@ export default function Privacy() {
       <h2 className="h-section pt-2">Analytics</h2>
       <p>
         We count page views and clicks on retailer links with Vercel Web Analytics, which uses no cookies and does not identify you. To suggest your
-        country&apos;s prices we look up your country from your IP address when the page loads; the address isn&apos;t stored.
+        country&apos;s prices we look up your country from your IP address when the page loads; the address isn&apos;t stored, and your browser keeps only the country (for 30 days) so we don&apos;t ask again on every visit.
       </p>
       <h2 className="h-section pt-2">Retailers and affiliate links</h2>
       <p>

@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import { MARKETS, type MarketCode } from "@/lib/markets";
 import { isGlobalPath, marketForCountry, rememberMarket, rememberedMarket, switchMarketPath, useMarket } from "@/lib/market-client";
 
+const GEO_KEY = "cc_geo";
+const GEO_TTL_MS = 30 * 24 * 3_600_000;
+
 export default function GeoSuggest() {
   const pathname = usePathname() ?? "/";
   const router = useRouter();
@@ -24,9 +27,24 @@ export default function GeoSuggest() {
       /* ignore */
     }
     if (dismissed) return;
+    // The country, once per browser per 30 days: each /api/geo call is a
+    // function invocation, and a visitor's country rarely changes.
+    try {
+      const kept = JSON.parse(localStorage.getItem(GEO_KEY) ?? "null") as { country: string | null; at: number } | null;
+      if (kept && Date.now() - kept.at < GEO_TTL_MS) return setSuggest(marketForCountry(kept.country));
+    } catch {
+      /* ignore */
+    }
     fetch("/api/geo")
       .then((r) => r.json())
-      .then((d: { country: string | null }) => setSuggest(marketForCountry(d.country)))
+      .then((d: { country: string | null }) => {
+        try {
+          localStorage.setItem(GEO_KEY, JSON.stringify({ country: d.country, at: Date.now() }));
+        } catch {
+          /* ignore */
+        }
+        setSuggest(marketForCountry(d.country));
+      })
       .catch(() => {});
   }, []);
 
