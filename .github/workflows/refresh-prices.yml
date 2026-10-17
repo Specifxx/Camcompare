@@ -79,6 +79,6 @@ jobs:
           git config user.name "camcompare-bot"
           git config user.email "camcompare-bot@users.noreply.github.com"
           git add data/offers data/price-history data/amazon-asins.json 2>/dev/null || git add data/offers data/price-history
-          if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: daily prices $(date -u +%F)" && git push; fi
+          if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: daily prices $(date -u +%F)" && git pull --rebase origin main && git push; fi
       - name: Check sources
         run: npx tsx scripts/check-sources.ts
