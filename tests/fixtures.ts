@@ -21,7 +21,7 @@ export const CAMERAS: Camera[] = [
   cam("sony-a7-iv", "sony", ["a7 IV", "a7IV", "Alpha 7 IV", "A7M4"], { modelCodes: ["ILCE-7M4"], gtins: ["027242923577"], launchPriceUsd: 2499 }, { megapixels: 33 }),
   cam("sony-a7-iii", "sony", ["a7 III", "a7III", "Alpha 7 III"], { modelCodes: ["ILCE-7M3"], launchPriceUsd: 1999 }),
   cam("sony-a7r-iv", "sony", ["a7R IV", "a7RIV"], { modelCodes: ["ILCE-7RM4"], launchPriceUsd: 3499 }, { megapixels: 61 }),
-  cam("sony-a7c", "sony", ["a7C"], { modelCodes: ["ILCE-7C"], launchPriceUsd: 1799 }),
+  cam("sony-a7c", "sony", ["Sony a7C", "a7C"], { modelCodes: ["ILCE-7C"], launchPriceUsd: 1799 }),
   cam("sony-a7c-ii", "sony", ["a7C II", "a7CII"], { modelCodes: ["ILCE-7CM2"], launchPriceUsd: 2199 }),
   cam("sony-a7cr", "sony", ["a7CR"], { modelCodes: ["ILCE-7CR"], launchPriceUsd: 2999 }),
   cam("nikon-z6-ii", "nikon", ["Z6 II", "Z 6II", "Z6II"], { mount: "nikon-z", launchPriceUsd: 1999 }),

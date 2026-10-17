@@ -7,8 +7,14 @@
 //  - an alias only counts as a run of whole title words, so it can never be
 //    the front of another model ("Z6 II" in "Z6 III", "R5" in "R50", "Z 50"
 //    in "Z 50mm");
-//  - the longest match wins ("a7C" vs "a7C II"), and two different products
-//    of the same kind left standing means the listing is refused, not guessed;
+//  - alias keys drop a leading brand name ("Sony a7C" → "a7C"): the brand is
+//    checked on its own, and a brand-prefixed key would otherwise out-span
+//    the successor's ("Sony a7C" against "a7C II");
+//  - only products whose brand the title names are candidates; then the
+//    longest match wins ("a7C" vs "a7C II"), and two different products of
+//    the same kind left standing means the listing is refused, not guessed;
+//  - a model followed by a generation mark the catalog doesn't have ("R6
+//    Mark III" when only the R6 exists) is refused, not read as the older one;
 //  - accessories, parts and film bodies are refused outright;
 //  - a camera named alongside a lens is a kit (for a camera) and never a
 //    lens offer; a camera named after "for" ("… for Sony a6400") is only a
@@ -34,7 +40,7 @@ export function tokens(s: string): string[] {
 
 export const compact = (s: string) => tokens(s).join("");
 
-const BRAND_WORDS: Record<string, string[]> = {
+export const BRAND_WORDS: Record<string, string[]> = {
   sony: ["sony"],
   canon: ["canon"],
   nikon: ["nikon", "nikkor"],
@@ -147,6 +153,23 @@ export type CatalogIndex = {
 
 const MAX_ALIAS_TOKENS = 12;
 
+/**
+ * The keys a product's names are matched under: each alias, model code and
+ * short name as joined title words, minus any leading brand words. Used by
+ * the index and by catalog:check, so both see the same clashes.
+ */
+export function aliasKeys(p: Pick<Matchable, "brand" | "aliases" | "modelCodes" | "shortName">): string[] {
+  const brandTokens = (BRAND_WORDS[p.brand] ?? [p.brand]).map(tokens);
+  const keys = new Set<string>();
+  for (const name of [...p.aliases, ...p.modelCodes, p.shortName]) {
+    let t = tokens(name);
+    for (let b = brandTokens.find((bt) => bt.length < t.length && bt.every((w, i) => t[i] === w)); b; b = brandTokens.find((bt) => bt.length < t.length && bt.every((w, i) => t[i] === w))) t = t.slice(b.length);
+    const key = t.join("");
+    if (key.length >= 2) keys.add(key);
+  }
+  return [...keys];
+}
+
 export function buildIndex(cameras: Camera[], lenses: Lens[] = []): CatalogIndex {
   const byGtin = new Map<string, Matchable>();
   const byModelCode = new Map<string, Matchable>();
@@ -156,8 +179,7 @@ export function buildIndex(cameras: Camera[], lenses: Lens[] = []): CatalogIndex
     bySlug.set(p.slug, p);
     for (const g of p.gtins) byGtin.set(normalizeGtin(g), p);
     for (const m of p.modelCodes) byModelCode.set(compact(m), p);
-    const keys = new Set([...p.aliases, ...p.modelCodes, p.shortName].map(compact).filter((k) => k.length >= 2));
-    for (const key of keys) aliases.set(key, [...(aliases.get(key) ?? []), p]);
+    for (const key of aliasKeys(p)) aliases.set(key, [...(aliases.get(key) ?? []), p]);
   }
   return { byGtin, byModelCode, aliases, bySlug };
 }
@@ -187,6 +209,11 @@ export function mountInTitle(lower: string): string | null {
 }
 
 type Hit = { p: Matchable; from: number; to: number };
+
+// A word right after a model name that makes it a different model: a
+// generation ("ii", "Mark 3" → "iii") or, for bodies, a variant letter.
+const GENERATION = /^(?:ii|iii|iv|v|vi|vii|viii|ix)$/;
+const BODY_VARIANT = /^(?:\d|s|r|c|pro|plus|max|mini|lite|ultra|se)$/;
 
 function aliasHits(words: string[], index: CatalogIndex): Hit[] {
   const found = new Map<string, Hit>();
@@ -227,20 +254,24 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
     const p = index.byGtin.get(normalizeGtin(listing.gtin));
     if (p) return finish(p, "gtin");
   }
-  if (listing.mpn) {
-    // Dealers append a colour or region: "ILCE-7M4/B", "ILCE-7M4/B BODY".
-    const p = index.byModelCode.get(compact(listing.mpn)) ?? index.byModelCode.get(compact(listing.mpn.split("/")[0]));
-    if (p) return finish(p, "mpn");
-  }
-
   const words = tokens(listing.title);
   const title = words.join("");
+  if (listing.mpn) {
+    // Dealers append a colour or region: "ILCE-7M4/B", "ILCE-7M4/B BODY".
+    // Part numbers aren't unique across makers (Nikon's are bare 4-5 digit
+    // numbers), so the title must still name the brand.
+    const p = index.byModelCode.get(compact(listing.mpn)) ?? index.byModelCode.get(compact(listing.mpn.split("/")[0]));
+    if (p && brandNamed(p, words, title)) return finish(p, "mpn");
+  }
+
   let hits = aliasHits(words, index);
   // "… for Sony a6400": a camera named after "for/fits" is a compatibility note.
   hits = hits.filter((h) => !(h.p.kind === "camera" && words.slice(Math.max(0, h.from - 2), h.from).some((w) => w === "for" || w === "fits")));
+  if (!hits.length) return { product: null, reason: "no alias" };
+  hits = hits.filter((h) => brandNamed(h.p, words, title) || h.p.modelCodes.some((m) => title.includes(compact(m))));
+  if (!hits.length) return { product: null, reason: "brand not named" };
   const cams = hits.filter((h) => h.p.kind === "camera");
   const lenses = hits.filter((h) => h.p.kind === "lens");
-  if (!cams.length && !lenses.length) return { product: null, reason: "no alias" };
 
   let pick: Hit[];
   if (cams.length && lenses.length) {
@@ -252,7 +283,8 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
   }
   if (pick.length > 1) return { product: null, reason: `ambiguous: ${pick.map((h) => h.p.slug).join(", ")}` };
   const p = pick[0].p;
-  if (!brandNamed(p, words, title) && !p.modelCodes.some((m) => title.includes(compact(m)))) return { product: null, reason: "brand not named" };
+  const next = words[pick[0].to + 1] ?? "";
+  if (GENERATION.test(next) || (p.kind === "camera" && BODY_VARIANT.test(next) && words[pick[0].to + 2] !== "mount")) return { product: null, reason: `"${next}" after the name: a model we don't list` };
   const r = finish(p, "title");
   if (r.product && r.kind === "camera" && lenses.length) return { ...r, kit: true };
   return r;

@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { z } from "zod";
+import { aliasKeys } from "../matching";
 import { brandSchema, cameraSchema, lensSchema, mountSchema, type Brand, type Camera, type Lens, type Mount } from "./schema";
 
 export const DATA_DIR = path.join(process.cwd(), "data");
@@ -57,15 +58,15 @@ export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], 
   const lensSlugs = new Set(lenses.map((l) => l.slug));
   const brandSlugs = new Set(brands.map((b) => b.slug));
   const mountBySlug = new Map(mounts.map((m) => [m.slug, m]));
-  // Aliases are matched against retailer titles of BOTH kinds, so they must
-  // be unique across the whole catalog.
+  // Names are matched against retailer titles of BOTH kinds, under the
+  // matcher's own keys (brand words dropped; the title must name the brand).
+  // Two products of one brand sharing a key would make both unmatchable.
   const aliasOwner = new Map<string, string>();
-  const claim = (file: string, slug: string, names: string[]) => {
-    for (const a of names) {
-      const key = a.toLowerCase().replace(/[^a-z0-9α]+/g, "");
-      const owner = aliasOwner.get(key);
-      if (owner && owner !== slug) issues.push({ file, message: `alias "${a}" also belongs to ${owner}` });
-      aliasOwner.set(key, slug);
+  const claim = (file: string, p: Camera | Lens) => {
+    for (const key of aliasKeys(p)) {
+      const owner = aliasOwner.get(`${p.brand}:${key}`);
+      if (owner && owner !== p.slug) issues.push({ file, message: `name "${key}" also belongs to ${owner}` });
+      aliasOwner.set(`${p.brand}:${key}`, p.slug);
     }
   };
   for (const s of cameraSlugs) if (lensSlugs.has(s)) issues.push({ file: `${s}.json`, message: "slug used by both a camera and a lens" });
@@ -82,7 +83,7 @@ export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], 
       if (ref && !cameraSlugs.has(ref)) issues.push({ file, message: `references "${ref}", which is not in the catalog` });
     }
     if (c.rivals.includes(c.slug)) issues.push({ file, message: "lists itself as a rival" });
-    claim(file, c.slug, [...c.aliases, ...c.modelCodes]);
+    claim(file, c);
   }
   for (const l of lenses) {
     const file = `lenses/${l.slug}.json`;
@@ -93,7 +94,7 @@ export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], 
       if (ref && !lensSlugs.has(ref)) issues.push({ file, message: `references "${ref}", which is not in the catalog` });
     }
     if (l.rivals.includes(l.slug)) issues.push({ file, message: "lists itself as a rival" });
-    claim(file, l.slug, [...l.aliases, ...l.modelCodes]);
+    claim(file, l);
   }
   for (const list of [cameras, lenses] as { slug: string; successor: string | null; predecessor: string | null }[][]) {
     const bySlug = new Map(list.map((x) => [x.slug, x]));

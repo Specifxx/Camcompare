@@ -60,9 +60,24 @@ test("two different cameras in one title is refused, not guessed", () => {
 
 test("GTIN and part number win over the title", () => {
   assert.equal(slug("Mirrorless camera", { gtin: "0027242923577" }), "sony-a7-iv");
-  assert.equal(slug("Mirrorless camera", { mpn: "ILCE-7M3" }), "sony-a7-iii");
-  assert.equal(slug("Mirrorless camera", { mpn: "ILCE-7M4/B" }), "sony-a7-iv");
-  assert.equal(slug("Lens", { mpn: "SEL2470GM2" }), "sony-fe-24-70mm-f2-8-gm-ii");
+  assert.equal(slug("Sony mirrorless camera", { mpn: "ILCE-7M3" }), "sony-a7-iii");
+  assert.equal(slug("Sony mirrorless camera", { mpn: "ILCE-7M4/B" }), "sony-a7-iv");
+  assert.equal(slug("Sony lens", { mpn: "SEL2470GM2" }), "sony-fe-24-70mm-f2-8-gm-ii");
+  // Part numbers aren't unique across makers: the title must name the brand.
+  assert.equal(slug("Mirrorless camera", { mpn: "ILCE-7M3" }), null);
+});
+
+test("a brand-prefixed alias doesn't hide the successor", () => {
+  assert.equal(slug("Sony a7C II Body"), "sony-a7c-ii");
+  assert.equal(slug("Sony a7C Body"), "sony-a7c");
+});
+
+test("a generation we don't list is refused, not read as the older model", () => {
+  assert.equal(slug("Canon EOS R5 Mark II Body"), null);
+  assert.equal(slug("Nikon Z50 II Mirrorless"), null);
+  assert.equal(slug("Sony FE 24-70mm F2.8 GM III"), null);
+  assert.equal(slug("Sony a6400 E Mount Camera"), null); // not in the fixtures: no alias
+  assert.equal(slug("Nikon Z6 III 24.5MP"), "nikon-z6-iii");
 });
 
 test("kits are flagged for interchangeable-lens bodies only", () => {

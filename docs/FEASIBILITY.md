@@ -98,3 +98,44 @@ Go, scoped:
 2. **Lead with prices:** new + used + refurbished, history, and drop alerts.
    Spec comparison supports the price pages; it is not the headline.
 3. **Owner actions:** see `docs/OWNER-CHECKLIST.md`.
+
+## 8. Update, same day: five markets, lenses, free with ads
+
+The owner widened the scope: about 1,000 products (bodies and lenses), five
+markets (US, UK, EU, Australia, Singapore), free to use, paid by affiliate
+links and, later, display ads. What that changes:
+
+- **Lenses are most of the catalog**, and that suits the price-first plan.
+  Lenses ship more units than bodies, hold their value, and trade used
+  heavily (MPB, KEH, eBay). A lens page also links to the bodies it fits,
+  which builds internal links without making pages for the sake of it.
+- **Each market is a separate set of retailers and affiliate accounts.** None
+  of them shares a programme with another, except Amazon (one Associates
+  account per store) and eBay (one EPN campaign, a rotation id per site).
+  - **UK**: the strongest specialist trade (Wex, Park Cameras, Jessops,
+    Clifton, CameraWorld, London Camera Exchange, MPB), most of it on Awin,
+    Rakuten, Partnerize or Webgains.
+  - **EU**: one euro market, served in English and led by Germany, Europe's
+    biggest camera market: Amazon.de, Calumet, Foto Erhardt, Cyberport,
+    MediaMarkt, MPB, plus Coolblue for the Netherlands and Belgium.
+  - **Australia**: several specialists run Shopify (Ted's, digiDirect,
+    Georges, Camera Electronic), so prices flow before any approval. Camera
+    House and CameraPro are on Commission Factory; JB Hi-Fi is on Partnerize.
+  - **Singapore**: the smallest market and the thinnest affiliate cover: no
+    eBay programme. Amazon.sg, Lazada and Shopee pay, and a few shops run
+    Shopify. Expect little revenue here; the pages cost nothing extra to
+    build.
+- **Prices are never converted**, and a market product page is kept out of
+  search until that market has a price. A page with US prices in pounds, or
+  an empty UK price table, is exactly what a review would flag as thin.
+- **Ads**: AdSense wants original content and traffic before approval, so the
+  slots ship switched off. The six guides are the start of that content. UK
+  and EU visitors need a certified consent banner before ads run.
+- **Still no database.** Five markets means five offer files and five history
+  folders in the repo; the daily import writes them all in one commit, so the
+  site still builds once a day for nothing.
+- **Amazon's price rows wait on sales.** Its prices may only come from its
+  API, which opens after 10 sales in 30 days per store. Until then Amazon
+  rows link out with "Check price", and eBay sits beside the table as a
+  tagged search link until its API keys arrive. Both earn from day one.
+
