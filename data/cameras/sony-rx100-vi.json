@@ -1,0 +1,85 @@
+{
+  "slug": "sony-rx100-vi",
+  "brand": "sony",
+  "name": "Sony RX100 VI",
+  "shortName": "RX100 VI",
+  "aliases": [
+    "RX100 VI",
+    "RX100VI",
+    "RX100 Mark VI",
+    "RX100 M6",
+    "RX100M6",
+    "RX100 6"
+  ],
+  "modelCodes": [
+    "DSC-RX100M6"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2018-06-05",
+  "launchPriceUsd": 1200,
+  "launchPrices": {
+    "GBP": 1150
+  },
+  "status": "discontinued",
+  "predecessor": "sony-rx100-v",
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-zs200",
+    "sony-rx100-vii",
+    "canon-powershot-g5-x-mark-ii",
+    "panasonic-lumix-zs100"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      200
+    ],
+    "aperture": "f/2.8-4.5"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 24,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 32000,
+    "afPoints": 315,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 301,
+    "dimensionsMm": [
+      101.6,
+      58.1,
+      42.8
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 240,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

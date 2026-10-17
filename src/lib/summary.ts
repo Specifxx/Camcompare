@@ -1,51 +1,75 @@
-// The small per-camera record client components get (browse filters, the
-// compare picker). Keeps the full spec sheet out of client bundles.
-import type { Camera } from "./catalog/schema";
-import { brandName, offersFor } from "./catalog";
+// The small per-product record client components get (browse filters, the
+// finder, search, compare picker). Keeps full spec sheets out of client bundles.
+import type { Camera, Lens } from "./catalog/schema";
+import { brandName, displayName, displayShortName, launchPrice, offersFor } from "./catalog";
+import { MARKETS, type MarketCode } from "./markets";
 import { lowest } from "./offers";
 import { thumbSrc } from "./thumb";
+import { cropFactor, lensCategories } from "./specs/lens";
+import type { Base, CameraSummary, LensSummary } from "./summary-types";
 
-export type CameraSummary = {
-  slug: string;
-  name: string;
-  shortName: string;
-  brand: string;
-  brandName: string;
-  type: Camera["type"];
-  sensor: Camera["specs"]["sensorFormat"];
-  mount: string | null;
-  megapixels: number;
-  announced: string;
-  launchPriceUsd: number | null;
-  lowestNewCents: number | null;
-  lowestUsedCents: number | null;
-  ibis: boolean | null;
-  weatherSealed: boolean | null;
-  videoMaxRes: string | null;
-  weightG: number | null;
-  thumb: string;
-};
+export type { CameraSummary, LensSummary, ProductSummary } from "./summary-types";
+export { priceOf } from "./summary-types";
 
-export function summarize(c: Camera): CameraSummary {
-  const offers = offersFor(c.slug);
+function base(p: Camera | Lens, m: MarketCode): Base {
+  const offers = offersFor(p.slug, m);
   return {
-    slug: c.slug,
-    name: c.name,
-    shortName: c.shortName,
-    brand: c.brand,
-    brandName: brandName(c.brand),
-    type: c.type,
-    sensor: c.specs.sensorFormat,
-    mount: c.mount,
-    megapixels: c.specs.megapixels,
-    announced: c.announced,
-    launchPriceUsd: c.launchPriceUsd,
-    lowestNewCents: lowest(offers, "new")?.priceCents ?? null,
-    lowestUsedCents: lowest(offers, "used")?.priceCents ?? null,
-    ibis: c.specs.ibis,
-    weatherSealed: c.specs.weatherSealed,
-    videoMaxRes: c.specs.videoMaxRes,
-    weightG: c.specs.weightG,
-    thumb: thumbSrc(c.slug),
+    slug: p.slug,
+    name: displayName(p, m),
+    shortName: displayShortName(p, m),
+    brand: p.brand,
+    brandName: brandName(p.brand),
+    announced: p.announced,
+    status: p.status,
+    currency: MARKETS[m].currency,
+    launch: launchPrice(p, m)?.amount ?? null,
+    lowestNew: lowest(offers, "new")?.price ?? null,
+    lowestUsed: lowest(offers, "used")?.price ?? null,
+    thumb: thumbSrc(p.slug),
+    weightG: p.specs.weightG,
+    sealed: p.specs.weatherSealed,
   };
 }
+
+export function summarizeCamera(c: Camera, m: MarketCode): CameraSummary {
+  const s = c.specs;
+  return {
+    ...base(c, m),
+    kind: "camera",
+    type: c.type,
+    sensor: s.sensorFormat,
+    mount: c.mount,
+    megapixels: s.megapixels,
+    ibis: s.ibis,
+    videoMaxRes: s.videoMaxRes,
+    video4kMaxFps: s.video4kMaxFps,
+    burstFps: Math.max(s.burstMechFps ?? 0, s.burstElecFps ?? 0) || null,
+    evf: s.viewfinderType !== "none",
+    articulating: s.screenType === "fully-articulating" || s.screenType === "flip-up" || s.screenType === "multi-angle",
+    micJack: s.micJack,
+    dims: s.dimensionsMm,
+    subjects: s.afSubjects,
+    waterproofM: s.waterproofM,
+    fixedZoom: Boolean(c.fixedLens?.focalMm && c.fixedLens.focalMm.length === 2),
+  };
+}
+
+export function summarizeLens(l: Lens, m: MarketCode): LensSummary {
+  const k = cropFactor(l);
+  return {
+    ...base(l, m),
+    kind: "lens",
+    mounts: l.mounts,
+    coverage: l.coverage,
+    focalMin: l.specs.focalMinMm,
+    focalMax: l.specs.focalMaxMm,
+    eqMin: Math.round(l.specs.focalMinMm * k),
+    eqMax: Math.round(l.specs.focalMaxMm * k),
+    aperture: l.specs.apertureMax,
+    apertureTele: l.specs.apertureMaxTele,
+    autofocus: l.specs.autofocus,
+    stabilized: l.specs.stabilized,
+    categories: lensCategories(l),
+  };
+}
+

@@ -3,7 +3,12 @@
   "brand": "leica",
   "name": "Leica Q3 43",
   "shortName": "Q3 43",
-  "aliases": ["Leica Q3 43", "Q3 43", "Leica Q3-43", "Q3-43"],
+  "aliases": [
+    "Leica Q3 43",
+    "Q3 43",
+    "Leica Q3-43",
+    "Q3-43"
+  ],
   "modelCodes": [],
   "gtins": [],
   "type": "compact",
@@ -12,9 +17,18 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": ["leica-q3", "fujifilm-x100vi", "leica-m11"],
+  "rivals": [
+    "leica-q3",
+    "fujifilm-x100vi",
+    "leica-m11"
+  ],
   "mount": null,
-  "fixedLens": {"focalMm": [43], "aperture": "f/2"},
+  "fixedLens": {
+    "focalMm": [
+      43
+    ],
+    "aperture": "f/2"
+  },
   "specs": {
     "sensorFormat": "full-frame",
     "sensorType": "BSI CMOS",
@@ -28,7 +42,9 @@
     "shutterMaxMech": 2000,
     "shutterMaxElec": 16000,
     "afPoints": null,
-    "afSubjects": ["human"],
+    "afSubjects": [
+      "human"
+    ],
     "videoMaxRes": "8K",
     "video4kMaxFps": 60,
     "video10bit": true,
@@ -40,8 +56,13 @@
     "screenType": "tilting",
     "touchscreen": true,
     "weightG": null,
-    "dimensionsMm": [130, 80.3, 97.6],
+    "dimensionsMm": [
+      130,
+      80.3,
+      97.6
+    ],
     "weatherSealed": true,
+    "waterproofM": null,
     "cardSlots": 1,
     "cardTypes": "SD UHS-II",
     "batteryShotsCipa": 350,

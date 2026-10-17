@@ -1,0 +1,78 @@
+{
+  "slug": "gopro-hero8-black",
+  "brand": "gopro",
+  "name": "GoPro HERO8 Black",
+  "shortName": "HERO8 Black",
+  "aliases": [
+    "HERO8 Black",
+    "HERO 8 Black",
+    "HERO8",
+    "HERO 8"
+  ],
+  "modelCodes": [
+    "CHDHX-801"
+  ],
+  "gtins": [],
+  "type": "action",
+  "announced": "2019-10-01",
+  "launchPriceUsd": 399.99,
+  "status": "discontinued",
+  "predecessor": "gopro-hero7-black",
+  "successor": "gopro-hero9-black",
+  "rivals": [
+    "gopro-hero7-black",
+    "gopro-hero9-black",
+    "dji-osmo-action"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      16,
+      39
+    ],
+    "aperture": null
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 12,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 30,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 2000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 126,
+    "dimensionsMm": [
+      66.3,
+      48.6,
+      28.4
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q126486745"
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "hasselblad-907x-cfv-100c",
+  "brand": "hasselblad",
+  "name": "Hasselblad 907X & CFV 100C",
+  "shortName": "907X & CFV 100C",
+  "aliases": [
+    "Hasselblad 907X & CFV 100C",
+    "907X & CFV 100C",
+    "907X CFV 100C",
+    "907X and CFV 100C",
+    "907X 100C"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "medium-format",
+  "announced": "2024-01-24",
+  "launchPriceUsd": 8199,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "hasselblad-x2d-100c",
+    "fujifilm-gfx100s-ii",
+    "fujifilm-gfx100rf",
+    "leica-m11"
+  ],
+  "mount": "hasselblad-xcd",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "medium-format",
+    "sensorType": "BSI CMOS",
+    "megapixels": 100,
+    "isoMin": 64,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 3.3,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 6000,
+    "afPoints": 294,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": null,
+    "video4kMaxFps": null,
+    "video10bit": null,
+    "rawVideoInternal": null,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.36,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 780,
+    "dimensionsMm": [
+      102,
+      92,
+      84
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "CFexpress B + 1TB internal SSD",
+    "batteryShotsCipa": 420,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

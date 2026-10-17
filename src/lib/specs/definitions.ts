@@ -6,28 +6,36 @@ import type { Camera, Specs } from "../catalog/schema";
 
 export type Better = "higher" | "lower" | null;
 
-export type SpecDef = {
+export type SpecDef<T = Camera> = {
   key: string;
   label: string;
   /** Number used to rank values when `better` is set; null = not comparable. */
-  rank?: (c: Camera) => number | null;
+  rank?: (c: T) => number | null;
   better: Better;
-  format: (c: Camera) => string | null;
+  format: (c: T) => string | null;
   /** One line shown under the label on the compare page. */
   help?: string;
+  /** Only relevant to some products (waterproofing): hide the row when every value is empty. */
+  optional?: boolean;
 };
 
-export type SpecGroup = { id: string; title: string; specs: SpecDef[] };
+export type SpecGroup<T = Camera> = { id: string; title: string; specs: SpecDef<T>[] };
 
 const SENSOR_LABEL: Record<Specs["sensorFormat"], string> = {
   "medium-format": "Medium format",
   "full-frame": "Full frame",
   "aps-h": "APS-H",
+  "super-35": "Super 35",
   "aps-c": "APS-C",
   "micro-four-thirds": "Micro Four Thirds",
   "1.4-inch": '1.4"',
   "1-inch": '1"',
+  "2/3-inch": '2/3"',
+  "1/1.28-inch": '1/1.28"',
   "1/1.3-inch": '1/1.3"',
+  "1/1.7-inch": '1/1.7"',
+  "1/1.9-inch": '1/1.9"',
+  "1/2-inch": '1/2"',
   "1/2.3-inch": '1/2.3"',
 };
 
@@ -36,11 +44,17 @@ const SENSOR_AREA: Record<Specs["sensorFormat"], number> = {
   "medium-format": 1452,
   "full-frame": 864,
   "aps-h": 548,
+  "super-35": 362,
   "aps-c": 370,
   "micro-four-thirds": 225,
   "1.4-inch": 226, // Canon's 1.4-type: ~18.4 x 12.3 mm, a hair over Four Thirds by area
   "1-inch": 116,
+  "2/3-inch": 58,
+  "1/1.28-inch": 73,
   "1/1.3-inch": 69,
+  "1/1.7-inch": 43,
+  "1/1.9-inch": 36,
+  "1/2-inch": 31,
   "1/2.3-inch": 28,
 };
 
@@ -62,13 +76,16 @@ const TYPE_LABEL: Record<Camera["type"], string> = {
   compact: "Compact (fixed lens)",
   "medium-format": "Medium format",
   rangefinder: "Rangefinder",
+  action: "Action camera",
+  "360": "360° camera",
+  cinema: "Cinema camera",
 };
 export const typeLabel = (t: Camera["type"]) => TYPE_LABEL[t];
 
-const num = (v: number | null, unit = "", digits = 1) =>
+export const num = (v: number | null, unit = "", digits = 1) =>
   v === null ? null : `${Number.isInteger(v) ? v.toLocaleString("en-US") : v.toFixed(digits).replace(/\.0$/, "")}${unit}`;
-const yesNo = (v: boolean | null) => (v === null ? null : v ? "Yes" : "No");
-const yesRank = (v: boolean | null) => (v === null ? null : v ? 1 : 0);
+export const yesNo = (v: boolean | null) => (v === null ? null : v ? "Yes" : "No");
+export const yesRank = (v: boolean | null) => (v === null ? null : v ? 1 : 0);
 
 /** "4K" → 3840, "6.2K" → 6200, "1080p" → 1920. For ranking only. */
 export function videoWidth(res: string | null): number | null {
@@ -82,19 +99,20 @@ export function videoWidth(res: string | null): number | null {
 export function lensLabel(c: Camera): string | null {
   if (!c.fixedLens) return null;
   const f = c.fixedLens.focalMm;
-  return `${f.length === 1 ? `${f[0]}mm` : `${f[0]}–${f[1]}mm`} ${c.fixedLens.aperture} (35mm eq.)`;
+  const focal = f ? `${f.length === 1 ? `${f[0]}mm` : `${f[0]}–${f[1]}mm`} (35mm eq.)` : null;
+  return [focal, c.fixedLens.aperture].filter(Boolean).join(" ") || "Fixed lens";
 }
 
 const s = <K extends keyof Specs>(k: K) => (c: Camera) => c.specs[k];
 
-export const SPEC_GROUPS: SpecGroup[] = [
+export const SPEC_GROUPS: SpecGroup<Camera>[] = [
   {
     id: "overview",
     title: "Overview",
     specs: [
       { key: "type", label: "Type", better: null, format: (c) => typeLabel(c.type) },
       { key: "announced", label: "Announced", better: "higher", rank: (c) => Date.parse(c.announced), format: (c) => new Date(c.announced + "T00:00:00Z").toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" }) },
-      { key: "launchPriceUsd", label: "Launch price (body)", better: null, format: (c) => (c.launchPriceUsd === null ? null : `$${c.launchPriceUsd.toLocaleString("en-US")}`), help: "US list price when announced. Today's prices are in the offers table." },
+      { key: "launchPriceUsd", label: "US launch price", better: null, format: (c) => (c.launchPriceUsd === null ? null : `$${c.launchPriceUsd.toLocaleString("en-US")}`), help: "US list price when announced, body only. Today's prices are in the offers table." },
       { key: "lens", label: "Lens", better: null, format: (c) => lensLabel(c) ?? "Interchangeable" },
     ],
   },
@@ -151,6 +169,7 @@ export const SPEC_GROUPS: SpecGroup[] = [
       { key: "dimensionsMm", label: "Dimensions (W×H×D)", better: null, format: (c) => (c.specs.dimensionsMm ? `${c.specs.dimensionsMm.map((d) => d.toString()).join(" × ")} mm` : null) },
       { key: "weatherSealed", label: "Weather sealed", better: "higher", rank: (c) => yesRank(c.specs.weatherSealed), format: (c) => yesNo(c.specs.weatherSealed) },
       { key: "batteryShotsCipa", label: "Battery (CIPA shots)", better: "higher", rank: s("batteryShotsCipa"), format: (c) => num(c.specs.batteryShotsCipa) },
+      { key: "waterproofM", label: "Waterproof", optional: true, better: "higher", rank: s("waterproofM"), format: (c) => (c.specs.waterproofM ? `${num(c.specs.waterproofM)} m` : null) },
       { key: "cardSlots", label: "Card slots", better: "higher", rank: s("cardSlots"), format: (c) => (c.specs.cardSlots === null ? null : [String(c.specs.cardSlots), c.specs.cardTypes].filter(Boolean).join(" · ")) },
       { key: "usbC", label: "USB-C", better: "higher", rank: (c) => yesRank(c.specs.usbC), format: (c) => yesNo(c.specs.usbC) },
       { key: "builtInFlash", label: "Built-in flash", better: null, format: (c) => yesNo(c.specs.builtInFlash) },
@@ -160,10 +179,10 @@ export const SPEC_GROUPS: SpecGroup[] = [
 ];
 
 export type CompareCell = { text: string | null; win: boolean };
-export type CompareRow = { def: SpecDef; cells: CompareCell[]; allSame: boolean };
+export type CompareRow<T = Camera> = { def: SpecDef<T>; cells: CompareCell[]; allSame: boolean };
 
 /** One row per spec, with the winning column(s) marked. A tie marks nobody. */
-export function compareRows(cameras: Camera[], group: SpecGroup): CompareRow[] {
+export function compareRows<T>(cameras: T[], group: SpecGroup<T>): CompareRow<T>[] {
   return group.specs.map((def) => {
     const texts = cameras.map((c) => def.format(c));
     const allSame = texts.every((t) => t === texts[0]);
@@ -186,9 +205,9 @@ export function compareRows(cameras: Camera[], group: SpecGroup): CompareRow[] {
  * only from rows where both values are known and one is clearly better.
  * Facts, not opinions: no "winner" is declared.
  */
-export function keyDifferences(a: Camera, b: Camera, limit = 6): string[] {
+export function keyDifferences<T extends { shortName: string }>(a: T, b: T, groups: SpecGroup<T>[], limit = 6): string[] {
   const out: string[] = [];
-  for (const g of SPEC_GROUPS) {
+  for (const g of groups) {
     for (const row of compareRows([a, b], g)) {
       const [x, y] = row.cells;
       if (!x.text || !y.text || x.win === y.win) continue;

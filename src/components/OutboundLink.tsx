@@ -7,14 +7,14 @@ import { OUTBOUND_REL } from "@/lib/affiliate";
 export default function OutboundLink({
   href,
   retailer,
-  camera,
+  product,
   placement,
   className,
   children,
 }: {
   href: string;
   retailer: string;
-  camera: string;
+  product: string;
   placement: string;
   className?: string;
   children: React.ReactNode;
@@ -27,7 +27,7 @@ export default function OutboundLink({
       className={className}
       onClick={() => {
         try {
-          track("buy_click", { retailer, camera, placement });
+          track("buy_click", { retailer, product, placement });
         } catch {
           /* analytics must never block the click */
         }

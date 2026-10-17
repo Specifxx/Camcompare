@@ -1,5 +1,6 @@
-import type { Camera } from "./catalog/schema";
-import { brandName } from "./catalog";
+import type { Camera, Lens } from "./catalog/schema";
+import { brandName, displayName } from "./catalog";
+import { MARKETS, marketPath, type MarketCode } from "./markets";
 import type { Offer } from "./offers";
 import { retailer } from "./retailers";
 import { abs, SITE_NAME } from "./site";
@@ -24,36 +25,38 @@ const ITEM_CONDITION: Record<Offer["condition"], string> = {
 };
 
 /**
- * Product + AggregateOffer from the offers actually on the page. With no
- * offers there is no `offers` key at all: a Product claiming a price we
- * don't show is the mismatch Google's rich-result checks flag.
+ * Product + AggregateOffer from the offers actually on the page, in the
+ * market's currency. With no offers there is no `offers` key at all: a
+ * Product claiming a price we don't show is the mismatch Google's
+ * rich-result checks flag.
  */
-export function productLd(c: Camera, offers: Offer[]) {
+export function productLd(p: Camera | Lens, kind: "camera" | "lens", offers: Offer[], m: MarketCode) {
+  const path = marketPath(m, `/${kind === "camera" ? "cameras" : "lenses"}/${p.slug}`);
   const body = offers.filter((o) => !o.kit);
-  const prices = body.map((o) => o.priceCents / 100);
+  const prices = body.map((o) => o.price / 100);
   const validUntil = new Date(Date.now() + 86400_000).toISOString().slice(0, 10);
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    "@id": `${abs(`/cameras/${c.slug}`)}#product`,
-    name: c.name,
-    brand: { "@type": "Brand", name: brandName(c.brand) },
-    image: abs(thumbSrc(c.slug)),
-    ...(c.modelCodes[0] ? { mpn: c.modelCodes[0] } : {}),
-    ...(c.gtins[0] ? { gtin: c.gtins[0] } : {}),
-    category: "Digital Cameras",
+    "@id": `${abs(path)}#product`,
+    name: displayName(p, m),
+    brand: { "@type": "Brand", name: brandName(p.brand) },
+    image: abs(thumbSrc(p.slug)),
+    ...(p.modelCodes[0] ? { mpn: p.modelCodes[0] } : {}),
+    ...(p.gtins[0] ? { gtin: p.gtins[0] } : {}),
+    category: kind === "camera" ? "Cameras" : "Camera Lenses",
     ...(body.length
       ? {
           offers: {
             "@type": "AggregateOffer",
-            priceCurrency: "USD",
+            priceCurrency: MARKETS[m].currency,
             lowPrice: Math.min(...prices).toFixed(2),
             highPrice: Math.max(...prices).toFixed(2),
             offerCount: body.length,
             offers: body.slice(0, 10).map((o) => ({
               "@type": "Offer",
-              price: (o.priceCents / 100).toFixed(2),
-              priceCurrency: "USD",
+              price: (o.price / 100).toFixed(2),
+              priceCurrency: o.currency,
               itemCondition: ITEM_CONDITION[o.condition],
               availability: o.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
               seller: { "@type": "Organization", name: o.seller ?? retailer(o.retailer)?.name ?? o.retailer },
@@ -63,5 +66,13 @@ export function productLd(c: Camera, offers: Offer[]) {
         }
       : {}),
     isPartOf: { "@type": "WebSite", name: SITE_NAME, url: abs("/") },
+  };
+}
+
+export function itemListLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.slice(0, 100).map((it, i) => ({ "@type": "ListItem", position: i + 1, url: abs(it.path), name: it.name })),
   };
 }

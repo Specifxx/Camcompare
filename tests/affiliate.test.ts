@@ -13,22 +13,40 @@ const withEnv = (vars: Record<string, string>, fn: () => void) => {
 };
 
 test("unconfigured programmes leave links untouched and unmarked", () => {
-  withEnv({ AMAZON_ASSOCIATE_TAG: "", EBAY_AFFILIATE_CAMPAIGN: "", AFFILIATE_DEEPLINK_BH: "" }, () => {
+  withEnv({ AMAZON_TAG_US: "", AMAZON_ASSOCIATE_TAG: "", EBAY_AFFILIATE_CAMPAIGN: "", AFFILIATE_DEEPLINK_BH: "" }, () => {
     assert.equal(affiliateUrl("amazon", "https://www.amazon.com/dp/B000000000", "x"), "https://www.amazon.com/dp/B000000000");
     assert.equal(affiliateUrl("bh", "https://www.bhphotovideo.com/c/product/1", "x"), "https://www.bhphotovideo.com/c/product/1");
     assert.equal(isPaid("amazon"), false);
   });
 });
 
-test("Amazon gets tag and ascsubtag; eBay gets the EPN parameters", () => {
-  withEnv({ AMAZON_ASSOCIATE_TAG: "camcompare-20", EBAY_AFFILIATE_CAMPAIGN: "123" }, () => {
-    const a = new URL(affiliateUrl("amazon", "https://www.amazon.com/dp/B000000000", "cc-cam-offers"));
-    assert.equal(a.searchParams.get("tag"), "camcompare-20");
-    assert.equal(a.searchParams.get("ascsubtag"), "cc-cam-offers");
-    const e = new URL(affiliateUrl("ebay", "https://www.ebay.com/itm/1", "cc-cam-offers"));
-    assert.equal(e.searchParams.get("campid"), "123");
-    assert.equal(e.searchParams.get("mkevt"), "1");
-    assert.equal(e.searchParams.get("customid"), "cc-cam-offers");
+test("each Amazon marketplace gets its own tag, and only on its own domain", () => {
+  withEnv({ AMAZON_TAG_US: "cc-20", AMAZON_TAG_UK: "cc-21" }, () => {
+    const us = new URL(affiliateUrl("amazon", "https://www.amazon.com/dp/B000000000", "cc-cam"));
+    assert.equal(us.searchParams.get("tag"), "cc-20");
+    assert.equal(us.searchParams.get("ascsubtag"), "cc-cam");
+    const uk = new URL(affiliateUrl("amazon-gb", "https://www.amazon.co.uk/dp/B000000000", "cc-cam"));
+    assert.equal(uk.searchParams.get("tag"), "cc-21");
+    assert.equal(affiliateUrl("amazon-gb", "https://www.amazon.com/dp/B000000000", "x"), "https://www.amazon.com/dp/B000000000");
+    assert.equal(isPaid("amazon-de"), false);
+  });
+});
+
+test("the legacy AMAZON_ASSOCIATE_TAG still tags US links", () => {
+  withEnv({ AMAZON_TAG_US: "", AMAZON_ASSOCIATE_TAG: "old-20" }, () => {
+    assert.equal(new URL(affiliateUrl("amazon", "https://www.amazon.com/dp/B000000000", "x")).searchParams.get("tag"), "old-20");
+  });
+});
+
+test("eBay links get the EPN parameters with each site's rotation id", () => {
+  withEnv({ EBAY_AFFILIATE_CAMPAIGN: "123" }, () => {
+    const us = new URL(affiliateUrl("ebay", "https://www.ebay.com/itm/1", "cc-cam"));
+    assert.equal(us.searchParams.get("campid"), "123");
+    assert.equal(us.searchParams.get("mkrid"), "711-53200-19255-0");
+    assert.equal(us.searchParams.get("customid"), "cc-cam");
+    const uk = new URL(affiliateUrl("ebay-gb", "https://www.ebay.co.uk/itm/1", "cc-cam"));
+    assert.equal(uk.searchParams.get("mkrid"), "710-53481-19255-0");
+    assert.equal(uk.searchParams.get("siteid"), "3");
   });
 });
 
@@ -38,9 +56,14 @@ test("network deep-link templates wrap the retailer's own links only", () => {
       affiliateUrl("adorama", "https://www.adorama.com/isca7m4.html", "cc-x"),
       `https://adorama.example/c/1?u=${encodeURIComponent("https://www.adorama.com/isca7m4.html")}&subId1=cc-x`,
     );
-    // Already a tracking link from the feed: leave it alone.
     assert.equal(affiliateUrl("adorama", "https://www.anrdoezrs.net/click-1-2", "cc-x"), "https://www.anrdoezrs.net/click-1-2");
     assert.equal(isPaid("adorama"), true);
+  });
+});
+
+test("retailer keys with dashes map to underscore env names", () => {
+  withEnv({ AFFILIATE_DEEPLINK_MPB_UK: "https://www.awin1.com/cread.php?awinmid=1&awinaffid=2&clickref={subid}&ued={url}" }, () => {
+    assert.ok(affiliateUrl("mpb-uk", "https://www.mpb.com/en-uk/product/x", "cc").startsWith("https://www.awin1.com/"));
   });
 });
 

@@ -1,0 +1,82 @@
+{
+  "slug": "sony-hx99",
+  "brand": "sony",
+  "name": "Sony Cyber-shot HX99",
+  "shortName": "Cyber-shot HX99",
+  "aliases": [
+    "HX99",
+    "Cyber-shot HX99",
+    "Cybershot HX99"
+  ],
+  "modelCodes": [
+    "DSC-HX99"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2018-08-31",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "GBP": 450,
+    "EUR": 520
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-powershot-sx740-hs",
+    "panasonic-lumix-zs80",
+    "panasonic-lumix-zs70"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      720
+    ],
+    "aperture": "f/3.5-6.4"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 18.2,
+    "isoMin": 80,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 0.64,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 242,
+    "dimensionsMm": [
+      102,
+      58.1,
+      35.5
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD / Memory Stick Micro",
+    "batteryShotsCipa": 370,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

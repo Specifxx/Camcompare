@@ -1,0 +1,78 @@
+{
+  "slug": "fujifilm-x70",
+  "brand": "fujifilm",
+  "name": "Fujifilm X70",
+  "shortName": "X70",
+  "aliases": [
+    "X70",
+    "X-70"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2016-01-14",
+  "launchPriceUsd": 699.95,
+  "launchPrices": {
+    "GBP": 549
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "ricoh-gr-ii",
+    "fujifilm-x100t",
+    "sony-rx100-iv",
+    "canon-powershot-g7-x-mark-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS II",
+    "megapixels": 16.3,
+    "isoMin": 200,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 77,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 340,
+    "dimensionsMm": [
+      112.5,
+      64.4,
+      44.4
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 330,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

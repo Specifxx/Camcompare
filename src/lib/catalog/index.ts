@@ -1,70 +1,139 @@
 // Everything a page needs from the catalog, parsed once per build.
-// Pages only ever see PUBLISHED cameras: valid data, a thumbnail and a credit.
+// Pages only ever see PUBLISHED products: valid data, a thumbnail and a credit.
 import fs from "node:fs";
-import { readBrands, readCameraFiles, readMounts } from "./load";
-import type { Brand, Camera, Mount } from "./schema";
+import { readBrands, readCameraFiles, readLensFiles, readMounts } from "./load";
+import type { Brand, Camera, Lens, LensCoverage, Mount, ProductKind, SensorFormat } from "./schema";
 import { readCredits, thumbPath, type ImageCredit } from "../images";
-import { readHistory, readOffersFile, sortOffers, type Offer } from "../offers";
+import { MARKET_CODES, MARKETS, type Currency, type MarketCode } from "../markets";
+import { readHistory, readOffersFile, sortOffers, type HistoryPoint, type Offer } from "../offers";
+
+export type AnyProduct = { kind: "camera"; item: Camera } | { kind: "lens"; item: Lens };
+
+type MarketData = { offers: Map<string, Offer[]>; history: Map<string, HistoryPoint[]>; generatedAt: string | null };
 
 type Catalog = {
   cameras: Camera[];
-  bySlug: Map<string, Camera>;
+  lenses: Lens[];
+  bySlug: Map<string, AnyProduct>;
   brands: Brand[];
   mounts: Mount[];
   credits: Record<string, ImageCredit>;
-  offers: Map<string, Offer[]>;
-  offersGeneratedAt: string | null;
-  history: Map<string, { day: string; new?: number; used?: number }[]>;
+  markets: Record<MarketCode, MarketData>;
 };
 
 let memo: Catalog | null = null;
 
+const newestFirst = <T extends { announced: string; name: string }>(a: T, b: T) => b.announced.localeCompare(a.announced) || a.name.localeCompare(b.name);
+
 function load(): Catalog {
   if (memo) return memo;
-  const { cameras: all } = readCameraFiles();
   const credits = readCredits();
-  const cameras = all
-    .filter((c) => credits[c.slug] && fs.existsSync(thumbPath(c.slug)))
-    .sort((a, b) => b.announced.localeCompare(a.announced) || a.name.localeCompare(b.name));
-  const live = new Set(cameras.map((c) => c.slug));
-  const file = readOffersFile();
-  const offers = new Map<string, Offer[]>();
-  for (const o of file.offers) if (live.has(o.camera)) (offers.get(o.camera) ?? offers.set(o.camera, []).get(o.camera)!).push(o);
-  for (const [k, v] of offers) offers.set(k, sortOffers(v));
-  const history = new Map<string, { day: string; new?: number; used?: number }[]>();
-  for (const d of readHistory()) for (const [slug, p] of Object.entries(d.prices)) if (live.has(slug)) (history.get(slug) ?? history.set(slug, []).get(slug)!).push({ day: d.day, ...p });
-  memo = { cameras, bySlug: new Map(cameras.map((c) => [c.slug, c])), brands: readBrands(), mounts: readMounts(), credits, offers, offersGeneratedAt: file.generatedAt, history };
+  const published = (slug: string) => Boolean(credits[slug]) && fs.existsSync(thumbPath(slug));
+  const cameras = readCameraFiles().cameras.filter((c) => published(c.slug)).sort(newestFirst);
+  const lenses = readLensFiles().lenses.filter((l) => published(l.slug)).sort(newestFirst);
+  const bySlug = new Map<string, AnyProduct>([
+    ...cameras.map((c) => [c.slug, { kind: "camera", item: c }] as const),
+    ...lenses.map((l) => [l.slug, { kind: "lens", item: l }] as const),
+  ]);
+  const markets = {} as Record<MarketCode, MarketData>;
+  for (const m of MARKET_CODES) {
+    const file = readOffersFile(m);
+    const offers = new Map<string, Offer[]>();
+    for (const o of file.offers) if (bySlug.has(o.product)) (offers.get(o.product) ?? offers.set(o.product, []).get(o.product)!).push(o);
+    for (const [k, v] of offers) offers.set(k, sortOffers(v));
+    const history = new Map<string, HistoryPoint[]>();
+    for (const d of readHistory(m)) for (const [slug, p] of Object.entries(d.prices)) if (bySlug.has(slug)) (history.get(slug) ?? history.set(slug, []).get(slug)!).push({ day: d.day, ...p });
+    markets[m] = { offers, history, generatedAt: file.generatedAt };
+  }
+  memo = { cameras, lenses, bySlug, brands: readBrands(), mounts: readMounts(), credits, markets };
   return memo;
 }
 
 export const publishedCameras = () => load().cameras;
-export const camera = (slug: string) => load().bySlug.get(slug) ?? null;
+export const publishedLenses = () => load().lenses;
+export const product = (slug: string) => load().bySlug.get(slug) ?? null;
+export const camera = (slug: string) => {
+  const p = load().bySlug.get(slug);
+  return p?.kind === "camera" ? p.item : null;
+};
+export const lens = (slug: string) => {
+  const p = load().bySlug.get(slug);
+  return p?.kind === "lens" ? p.item : null;
+};
 export const brands = () => load().brands;
 export const brand = (slug: string) => load().brands.find((b) => b.slug === slug) ?? null;
+export const brandName = (slug: string) => brand(slug)?.name ?? slug;
 export const mounts = () => load().mounts;
 export const mount = (slug: string) => load().mounts.find((m) => m.slug === slug) ?? null;
 export const credit = (slug: string) => load().credits[slug] ?? null;
-export const offersFor = (slug: string) => load().offers.get(slug) ?? [];
-export const historyFor = (slug: string) => load().history.get(slug) ?? [];
-export const offersGeneratedAt = () => load().offersGeneratedAt;
+export const offersFor = (slug: string, m: MarketCode) => load().markets[m].offers.get(slug) ?? [];
+export const historyFor = (slug: string, m: MarketCode) => load().markets[m].history.get(slug) ?? [];
+export const offersGeneratedAt = (m: MarketCode) => load().markets[m].generatedAt;
+export const pricedSlugs = (m: MarketCode) => [...load().markets[m].offers.keys()];
+export const historyAll = (m: MarketCode) => load().markets[m].history;
 
-/** Rival references that point at published cameras. */
-export function rivalsOf(c: Camera): Camera[] {
-  return c.rivals.map((s) => camera(s)).filter((x): x is Camera => x !== null);
+/** The name a market sells it under ("Canon EOS 2000D" outside North America). */
+export function displayName(p: Camera | Lens, m: MarketCode): string {
+  return (m !== "us" && p.regionalNames?.[m]) || p.name;
 }
+export function displayShortName(p: Camera | Lens, m: MarketCode): string {
+  const regional = m !== "us" ? p.regionalNames?.[m] : undefined;
+  if (!regional) return p.shortName;
+  const b = brandName(p.brand);
+  return regional.startsWith(`${b} `) ? regional.slice(b.length + 1) : regional;
+}
+
+/** Launch price in the market's currency, when we know it. */
+export function launchPrice(p: Camera | Lens, m: MarketCode): { amount: number; currency: Currency } | null {
+  const cur = MARKETS[m].currency;
+  if (cur === "USD") return p.launchPriceUsd ? { amount: p.launchPriceUsd, currency: "USD" } : null;
+  const v = p.launchPrices?.[cur];
+  return v ? { amount: v, currency: cur } : null;
+}
+
+/** Rival references that point at published products of the same kind. */
+export function rivalsOf(p: AnyProduct): AnyProduct[] {
+  return p.item.rivals.map((s) => product(s)).filter((x): x is AnyProduct => x !== null && x.kind === p.kind);
+}
+
+// ------------------------------------------------------------ compatibility
+
+const COVERS: Record<LensCoverage, SensorFormat[]> = {
+  "medium-format": ["medium-format"],
+  "full-frame": ["full-frame", "aps-h", "super-35", "aps-c"],
+  "aps-c": ["aps-c", "super-35"],
+  "micro-four-thirds": ["micro-four-thirds"],
+};
+
+/** Native lenses for a body: same mount, image circle big enough. (Adapters are a different page.) */
+export function lensesFor(c: Camera): Lens[] {
+  if (!c.mount) return [];
+  return publishedLenses().filter((l) => l.mounts.includes(c.mount!) && COVERS[l.coverage].includes(c.specs.sensorFormat));
+}
+
+/** Bodies a lens fits natively, newest first. */
+export function camerasFor(l: Lens): Camera[] {
+  return publishedCameras().filter((c) => c.mount !== null && l.mounts.includes(c.mount) && COVERS[l.coverage].includes(c.specs.sensorFormat));
+}
+
+/** A lens made for a smaller sensor than the body: works only in crop mode. */
+export const lensCropsOn = (l: Lens, c: Camera) => l.coverage === "aps-c" && ["full-frame", "aps-h"].includes(c.specs.sensorFormat);
+
+// ------------------------------------------------------------ comparisons
 
 /**
  * The comparisons that get their own page: every rival pair named in the
  * catalog, once, in slug order. Never every possible pair — that is the
  * "scaled content" Google demotes.
  */
-export function comparePairs(): [Camera, Camera][] {
+export function comparePairs(kind?: ProductKind): [AnyProduct, AnyProduct][] {
   const seen = new Set<string>();
-  const pairs: [Camera, Camera][] = [];
-  for (const c of publishedCameras()) {
-    for (const r of rivalsOf(c)) {
-      const [a, b] = [c, r].sort((x, y) => x.slug.localeCompare(y.slug));
-      const key = `${a.slug}|${b.slug}`;
+  const pairs: [AnyProduct, AnyProduct][] = [];
+  for (const p of load().bySlug.values()) {
+    if (kind && p.kind !== kind) continue;
+    for (const r of rivalsOf(p)) {
+      const [a, b] = [p, r].sort((x, y) => x.item.slug.localeCompare(y.item.slug));
+      const key = `${a.item.slug}|${b.item.slug}`;
       if (seen.has(key)) continue;
       seen.add(key);
       pairs.push([a, b]);
@@ -73,27 +142,28 @@ export function comparePairs(): [Camera, Camera][] {
   return pairs;
 }
 
-export const pairSlug = (a: Camera, b: Camera) => {
+/**
+ * A pair is indexed (sitemap, no noindex) only when BOTH products name each
+ * other as rivals: the strongest cross-shops. One-sided pairs still get a page
+ * for visitors, marked noindex. RiftCompare's lesson: publish fewer pages.
+ */
+export const isIndexedPair = (a: AnyProduct, b: AnyProduct) => a.item.rivals.includes(b.item.slug) && b.item.rivals.includes(a.item.slug);
+export const indexedPairs = (kind?: ProductKind) => comparePairs(kind).filter(([a, b]) => isIndexedPair(a, b));
+
+export const pairSlug = (a: { slug: string }, b: { slug: string }) => {
   const [x, y] = [a, b].sort((p, q) => p.slug.localeCompare(q.slug));
   return `${x.slug}-vs-${y.slug}`;
 };
 
-export function parsePairSlug(s: string): [Camera, Camera] | null {
+export function parsePairSlug(s: string): [AnyProduct, AnyProduct] | null {
   const i = s.indexOf("-vs-");
   if (i < 0) return null;
-  const a = camera(s.slice(0, i));
-  const b = camera(s.slice(i + 4));
-  return a && b ? [a, b] : null;
+  const a = product(s.slice(0, i));
+  const b = product(s.slice(i + 4));
+  return a && b && a.kind === b.kind ? [a, b] : null;
 }
 
-export function brandName(slug: string) {
-  return brand(slug)?.name ?? slug;
-}
-
-/**
- * A pair is indexed (sitemap, no noindex) only when BOTH cameras name each
- * other as rivals: the strongest cross-shops. One-sided pairs still get a page
- * for visitors, marked noindex. RiftCompare's lesson: publish fewer pages.
- */
-export const isIndexedPair = (a: Camera, b: Camera) => a.rivals.includes(b.slug) && b.rivals.includes(a.slug);
-export const indexedPairs = () => comparePairs().filter(([a, b]) => isIndexedPair(a, b));
+export const productPath = (p: AnyProduct | { kind: ProductKind; slug: string }) => {
+  const slug = "item" in p ? p.item.slug : p.slug;
+  return `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`;
+};

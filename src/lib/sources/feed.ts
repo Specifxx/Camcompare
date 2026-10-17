@@ -1,5 +1,5 @@
 // Affiliate-network product feeds: how CamCompare prices the camera dealers
-// (B&H, Adorama, Best Buy, MPB, KEH). Every network — Impact, CJ, Awin,
+// in every market (B&H, Adorama, Wex, Park Cameras, Calumet, Ted's, MPB…). Every network — Impact, CJ, Awin,
 // FlexOffers, Rakuten — hands approved publishers a daily product file with
 // title, link, price, GTIN/UPC, MPN, condition and stock, in a Google
 // Shopping-like layout. That file is the camera world's products.json: an
@@ -13,9 +13,10 @@ import { Readable } from "node:stream";
 import { createGunzip } from "node:zlib";
 import readline from "node:readline";
 import { matchListing, plausiblePrice } from "../matching";
+import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
 import { retailer as getRetailer, type Condition } from "../retailers";
-import { toCents, type PriceSource, type SourceContext } from "./types";
+import { toMinor, type PriceSource, type SourceContext } from "./types";
 
 // Header spellings across Google Shopping, Impact, CJ and Awin feeds.
 const FIELDS: Record<string, string[]> = {
@@ -121,8 +122,20 @@ async function* rows(url: string): AsyncGenerator<FeedRow> {
 
 const decode = (s: string) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim();
 
+/** "1299.00 GBP" → "GBP" (any ISO code, so "CAD" is caught too); null when the price names no currency. */
+export function priceCurrency(v: string | undefined): string | null {
+  if (!v) return null;
+  const m = v.match(/(?:^|[\d\s])([A-Z]{3})\b/) ?? v.match(/\b([A-Z]{3})\s*[\d]/);
+  if (m) return m[1];
+  if (v.includes("£")) return "GBP";
+  if (v.includes("€")) return "EUR";
+  return null;
+}
+
+type RowCtx = Pick<SourceContext, "index" | "now" | "market">;
+
 /** Exported for tests: rows → offers, with every catalog and sanity rule applied. */
-export function rowsToOffers(key: string, input: Iterable<FeedRow>, ctx: Pick<SourceContext, "index" | "now">): Offer[] {
+export function rowsToOffers(key: string, input: Iterable<FeedRow>, ctx: RowCtx): Offer[] {
   const out: Offer[] = [];
   for (const r of input) {
     const o = rowToOffer(key, r, ctx);
@@ -131,49 +144,57 @@ export function rowsToOffers(key: string, input: Iterable<FeedRow>, ctx: Pick<So
   return out;
 }
 
-function rowToOffer(key: string, r: FeedRow, { index, now }: Pick<SourceContext, "index" | "now">): Offer | null {
+function rowToOffer(key: string, r: FeedRow, { index, now, market }: RowCtx): Offer | null {
   if (!r.title || !r.link) return null;
   const allowed = getRetailer(key)?.conditions ?? ["new"];
   const cond = feedCondition(r.condition);
   if (!cond || !allowed.includes(cond)) return null;
+  // A feed priced in another currency is refused, never converted
+  // (RiftCompare's offer-currency rule, after a CAD-as-USD store).
+  const currency = MARKETS[market].currency;
+  const named = priceCurrency(r.salePrice || r.price);
+  if (named && named !== currency) return null;
   const m = matchListing({ title: r.title, gtin: r.gtin, mpn: r.mpn }, index);
-  if (!m.camera) return null;
-  const sale = r.salePrice ? toCents(r.salePrice) : 0;
-  const price = r.price ? toCents(r.price) : 0;
-  const priceCents = sale > 0 && (!price || sale < price) ? sale : price;
-  if (!priceCents || !plausiblePrice(m.camera, cond, priceCents / 100)) return null;
+  if (!m.product) return null;
+  const sale = r.salePrice ? toMinor(r.salePrice) : 0;
+  const full = r.price ? toMinor(r.price) : 0;
+  const price = sale > 0 && (!full || sale < full) ? sale : full;
+  if (!price || !plausiblePrice(m.product, cond, price / 100, currency)) return null;
   return {
-    camera: m.camera.slug,
+    product: m.product.slug,
+    kind: m.kind,
     retailer: key,
     condition: cond,
-    priceCents,
-    currency: "USD",
+    price,
+    currency,
     url: r.link,
     title: r.title,
     seller: null,
     inStock: inStock(r.availability),
     kit: m.kit,
+    mount: m.mount,
     seenAt: now,
     sourceId: r.id ?? null,
   };
 }
 
-/** Per camera, condition and kit-ness, keep only the cheapest few rows: dealers list one camera under many SKUs. */
-export function cheapestPerCamera(offers: Offer[], keep = 3): Offer[] {
+/** Per product, condition, kit-ness and mount, keep only the cheapest few rows: dealers list one product under many SKUs. */
+export function cheapestPerProduct(offers: Offer[], keep = 3): Offer[] {
   const groups = new Map<string, Offer[]>();
   for (const o of offers) {
-    const k = `${o.camera}|${o.condition}|${o.kit}`;
+    const k = `${o.product}|${o.condition}|${o.kit}|${o.mount}`;
     (groups.get(k) ?? groups.set(k, []).get(k)!).push(o);
   }
-  return [...groups.values()].flatMap((g) => g.sort((a, b) => Number(b.inStock) - Number(a.inStock) || a.priceCents - b.priceCents).slice(0, keep));
+  return [...groups.values()].flatMap((g) => g.sort((a, b) => Number(b.inStock) - Number(a.inStock) || a.price - b.price).slice(0, keep));
 }
 
 export function feedSource(key: string): PriceSource {
   return {
     retailer: key,
     async run(ctx) {
-      const url = process.env[`FEED_URL_${key.toUpperCase()}`] || "";
-      if (!url) return { status: "skipped", note: `FEED_URL_${key.toUpperCase()} not set` };
+      const envName = `FEED_URL_${key.toUpperCase().replace(/-/g, "_")}`;
+      const url = process.env[envName] || "";
+      if (!url) return { status: "skipped", note: `${envName} not set` };
       const offers: Offer[] = [];
       let seen = 0;
       for await (const r of rows(url)) {
@@ -183,7 +204,7 @@ export function feedSource(key: string): PriceSource {
       }
       ctx.log(`${key}: ${seen} feed rows, ${offers.length} matched`);
       if (seen > 0 && offers.length === 0) return { status: "error", note: `${seen} rows, none matched the catalog: check the feed's columns` };
-      return { status: "ok", offers: cheapestPerCamera(offers), note: `${seen} rows` };
+      return { status: "ok", offers: cheapestPerProduct(offers), note: `${seen} rows` };
     },
   };
 }

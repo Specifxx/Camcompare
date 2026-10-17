@@ -2,15 +2,17 @@
 // lib/catalog/index.ts, never from here directly, so the parse happens once.
 import fs from "node:fs";
 import path from "node:path";
-import { brandSchema, cameraSchema, mountSchema, type Brand, type Camera, type Mount } from "./schema";
+import type { z } from "zod";
+import { brandSchema, cameraSchema, lensSchema, mountSchema, type Brand, type Camera, type Lens, type Mount } from "./schema";
 
 export const DATA_DIR = path.join(process.cwd(), "data");
 
 export type CatalogIssue = { file: string; message: string };
 
-export function readCameraFiles(dir = path.join(DATA_DIR, "cameras")): { cameras: Camera[]; issues: CatalogIssue[] } {
-  const cameras: Camera[] = [];
+function readDir<T extends { slug: string }>(dir: string, schema: z.ZodType<T>): { items: T[]; issues: CatalogIssue[] } {
+  const items: T[] = [];
   const issues: CatalogIssue[] = [];
+  if (!fs.existsSync(dir)) return { items, issues };
   for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort()) {
     let raw: unknown;
     try {
@@ -19,15 +21,25 @@ export function readCameraFiles(dir = path.join(DATA_DIR, "cameras")): { cameras
       issues.push({ file, message: `invalid JSON: ${(e as Error).message}` });
       continue;
     }
-    const parsed = cameraSchema.safeParse(raw);
+    const parsed = schema.safeParse(raw);
     if (!parsed.success) {
       for (const i of parsed.error.issues) issues.push({ file, message: `${i.path.join(".")}: ${i.message}` });
       continue;
     }
     if (`${parsed.data.slug}.json` !== file) issues.push({ file, message: `slug "${parsed.data.slug}" does not match file name` });
-    cameras.push(parsed.data);
+    items.push(parsed.data);
   }
-  return { cameras, issues };
+  return { items, issues };
+}
+
+export function readCameraFiles(dir = path.join(DATA_DIR, "cameras")): { cameras: Camera[]; issues: CatalogIssue[] } {
+  const { items, issues } = readDir(dir, cameraSchema as z.ZodType<Camera>);
+  return { cameras: items, issues };
+}
+
+export function readLensFiles(dir = path.join(DATA_DIR, "lenses")): { lenses: Lens[]; issues: CatalogIssue[] } {
+  const { items, issues } = readDir(dir, lensSchema as z.ZodType<Lens>);
+  return { lenses: items, issues: issues.map((i) => ({ ...i, file: `lenses/${i.file}` })) };
 }
 
 export function readBrands(): Brand[] {
@@ -39,12 +51,25 @@ export function readMounts(): Mount[] {
 }
 
 /** Cross-file rules a single-file schema cannot see. */
-export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[]): CatalogIssue[] {
+export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], lenses: Lens[] = []): CatalogIssue[] {
   const issues: CatalogIssue[] = [];
-  const slugs = new Set(cameras.map((c) => c.slug));
+  const cameraSlugs = new Set(cameras.map((c) => c.slug));
+  const lensSlugs = new Set(lenses.map((l) => l.slug));
   const brandSlugs = new Set(brands.map((b) => b.slug));
   const mountBySlug = new Map(mounts.map((m) => [m.slug, m]));
+  // Aliases are matched against retailer titles of BOTH kinds, so they must
+  // be unique across the whole catalog.
   const aliasOwner = new Map<string, string>();
+  const claim = (file: string, slug: string, names: string[]) => {
+    for (const a of names) {
+      const key = a.toLowerCase().replace(/[^a-z0-9α]+/g, "");
+      const owner = aliasOwner.get(key);
+      if (owner && owner !== slug) issues.push({ file, message: `alias "${a}" also belongs to ${owner}` });
+      aliasOwner.set(key, slug);
+    }
+  };
+  for (const s of cameraSlugs) if (lensSlugs.has(s)) issues.push({ file: `${s}.json`, message: "slug used by both a camera and a lens" });
+
   for (const c of cameras) {
     const file = `${c.slug}.json`;
     if (!brandSlugs.has(c.brand)) issues.push({ file, message: `unknown brand "${c.brand}"` });
@@ -54,20 +79,27 @@ export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[]):
       else if (!m.formats.includes(c.specs.sensorFormat)) issues.push({ file, message: `${c.mount} has no ${c.specs.sensorFormat} bodies` });
     }
     for (const ref of [c.predecessor, c.successor, ...c.rivals]) {
-      if (ref && !slugs.has(ref)) issues.push({ file, message: `references "${ref}", which is not in the catalog` });
+      if (ref && !cameraSlugs.has(ref)) issues.push({ file, message: `references "${ref}", which is not in the catalog` });
     }
     if (c.rivals.includes(c.slug)) issues.push({ file, message: "lists itself as a rival" });
-    for (const a of [...c.aliases, ...c.modelCodes]) {
-      const key = a.toLowerCase().replace(/[^a-z0-9α]+/g, "");
-      const owner = aliasOwner.get(key);
-      if (owner && owner !== c.slug) issues.push({ file, message: `alias "${a}" also belongs to ${owner}` });
-      aliasOwner.set(key, c.slug);
-    }
+    claim(file, c.slug, [...c.aliases, ...c.modelCodes]);
   }
-  for (const c of cameras) {
-    if (c.successor) {
-      const s = cameras.find((x) => x.slug === c.successor);
-      if (s && s.predecessor !== c.slug) issues.push({ file: `${c.slug}.json`, message: `successor ${s.slug} does not name it as predecessor` });
+  for (const l of lenses) {
+    const file = `lenses/${l.slug}.json`;
+    if (!brandSlugs.has(l.brand)) issues.push({ file, message: `unknown brand "${l.brand}"` });
+    for (const m of l.mounts) if (!mountBySlug.has(m)) issues.push({ file, message: `unknown mount "${m}"` });
+    if (new Set(l.mounts).size !== l.mounts.length) issues.push({ file, message: "a mount is listed twice" });
+    for (const ref of [l.predecessor, l.successor, ...l.rivals]) {
+      if (ref && !lensSlugs.has(ref)) issues.push({ file, message: `references "${ref}", which is not in the catalog` });
+    }
+    if (l.rivals.includes(l.slug)) issues.push({ file, message: "lists itself as a rival" });
+    claim(file, l.slug, [...l.aliases, ...l.modelCodes]);
+  }
+  for (const list of [cameras, lenses] as { slug: string; successor: string | null; predecessor: string | null }[][]) {
+    const bySlug = new Map(list.map((x) => [x.slug, x]));
+    for (const x of list) {
+      const s = x.successor ? bySlug.get(x.successor) : undefined;
+      if (s && s.predecessor !== x.slug) issues.push({ file: `${x.slug}.json`, message: `successor ${s.slug} does not name it as predecessor` });
     }
   }
   return issues;

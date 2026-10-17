@@ -6,29 +6,39 @@ export const metadata: Metadata = { title: "About & methodology", alternates: { 
 
 export default function About() {
   return (
-    <div className="prose-sm max-w-2xl space-y-4 text-sm leading-relaxed">
+    <div className="max-w-2xl space-y-4 text-sm leading-relaxed">
       <h1 className="text-2xl font-extrabold tracking-tight">About {SITE_NAME}</h1>
-      <p>{SITE_NAME} puts camera spec sheets side by side and shows what each camera costs today, new and used, across US retailers.</p>
-      <h2 className="h-section pt-2">Which cameras we list</h2>
       <p>
-        Interchangeable-lens and premium fixed-lens cameras announced in 2016 or later, plus a few older bodies that are still sold new or
-        still trade in volume used. Every camera has a photo; one without a properly licensed photo isn&apos;t listed until it has one.
+        {SITE_NAME} puts camera and lens spec sheets side by side and shows what each costs today, new, used and refurbished, at retailers in the
+        United States, the United Kingdom, Europe, Australia and Singapore. It is free to use and has no paid placements.
+      </p>
+      <h2 className="h-section pt-2">What we list</h2>
+      <p>
+        Cameras and lenses announced in 2012 or later: interchangeable-lens bodies, premium and travel compacts, action and 360° cameras and cinema
+        cameras, plus lenses from the camera makers and the main independent lens makers. Older gear stays only when it is still sold new or still trades
+        used in volume. Every product has a photo; one without a properly licensed photo isn&apos;t listed until it has one.
       </p>
       <h2 className="h-section pt-2">Where the specs come from</h2>
       <p>
-        The manufacturers&apos; own published specifications. Where a maker doesn&apos;t publish a figure, or we haven&apos;t verified it, we
-        show a dash rather than a guess. Weights include battery and card; battery life is the CIPA rating using the rear screen.
+        The makers&apos; own published specifications, checked twice: once when a product is added and again by a separate review against the maker&apos;s
+        spec page. Where a maker doesn&apos;t publish a figure, or we couldn&apos;t verify it, we show a dash rather than a guess. Weights include battery and
+        card; battery life is the CIPA rating using the rear screen.
       </p>
       <h2 className="h-section pt-2">Where the prices come from</h2>
       <p>
-        Retailers&apos; own product feeds and APIs, refreshed daily. We match each listing to a camera by barcode, then model number, then
-        title, and reject accessories, parts, and listings priced far below anything the camera has sold for. &ldquo;Lowest&rdquo; prices count
-        in-stock, body-only offers; kits with a lens are shown but never counted as the body price. Marketplace sellers on eBay and Amazon may
-        sell grey-market stock without a US warranty; authorized dealers are labelled.
+        Retailers&apos; own product feeds and official APIs, refreshed daily, in each market&apos;s currency. We never convert currencies. We match each
+        listing to a product by barcode, then model number, then title, and refuse accessories, parts, and listings priced far below anything the product
+        has sold for. &ldquo;Lowest&rdquo; prices count in-stock, body-only offers; kits with a lens are shown but never counted as the body price.
+        Marketplace sellers may sell grey-market stock without a local warranty; authorized dealers are labelled.
+      </p>
+      <h2 className="h-section pt-2">Price history and deals</h2>
+      <p>
+        We record each product&apos;s lowest new and used price every day, per market. Deal labels compare today&apos;s price with that record (for
+        example &ldquo;lowest in 90 days&rdquo;) and need two weeks of history before they appear.
       </p>
       <p>
         Some links earn us a commission. That never changes the order: offers are always sorted by price. See the{" "}
-        <Link href="/disclosure">affiliate disclosure</Link>.
+        <Link href="/disclosure">affiliate disclosure</Link> and <Link href="/privacy">privacy</Link> pages.
       </p>
     </div>
   );

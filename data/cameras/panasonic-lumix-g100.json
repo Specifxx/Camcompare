@@ -3,8 +3,15 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G100",
   "shortName": "Lumix G100",
-  "aliases": ["Lumix G100", "Lumix DC-G100", "Panasonic G100", "Panasonic Lumix G100"],
-  "modelCodes": ["DC-G100"],
+  "aliases": [
+    "Lumix G100",
+    "Lumix DC-G100",
+    "Panasonic G100",
+    "Panasonic Lumix G100"
+  ],
+  "modelCodes": [
+    "DC-G100"
+  ],
   "gtins": [],
   "type": "mirrorless",
   "announced": "2020-06-24",
@@ -12,7 +19,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": ["sony-zv-e10", "canon-eos-m50-mark-ii", "nikon-z30", "olympus-om-d-e-m10-mark-iv"],
+  "rivals": [
+    "sony-zv-e10",
+    "canon-eos-m50-mark-ii",
+    "nikon-z30",
+    "olympus-om-d-e-m10-mark-iv"
+  ],
   "mount": "micro-four-thirds",
   "fixedLens": null,
   "specs": {
@@ -28,7 +40,9 @@
     "shutterMaxMech": 500,
     "shutterMaxElec": 16000,
     "afPoints": 49,
-    "afSubjects": ["human"],
+    "afSubjects": [
+      "human"
+    ],
     "videoMaxRes": "4K",
     "video4kMaxFps": 30,
     "video10bit": false,
@@ -40,8 +54,13 @@
     "screenType": "fully-articulating",
     "touchscreen": true,
     "weightG": 352,
-    "dimensionsMm": [115.6, 82.5, 54.2],
+    "dimensionsMm": [
+      115.6,
+      82.5,
+      54.2
+    ],
     "weatherSealed": false,
+    "waterproofM": null,
     "cardSlots": 1,
     "cardTypes": "SD UHS-I",
     "batteryShotsCipa": 270,

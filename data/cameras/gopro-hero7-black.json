@@ -1,0 +1,73 @@
+{
+  "slug": "gopro-hero7-black",
+  "brand": "gopro",
+  "name": "GoPro HERO7 Black",
+  "shortName": "HERO7 Black",
+  "aliases": [
+    "HERO7 Black",
+    "HERO 7 Black"
+  ],
+  "modelCodes": [
+    "CHDHX-701"
+  ],
+  "gtins": [],
+  "type": "action",
+  "announced": "2018-09-20",
+  "launchPriceUsd": 399.99,
+  "status": "discontinued",
+  "predecessor": "gopro-hero6-black",
+  "successor": "gopro-hero8-black",
+  "rivals": [
+    "gopro-hero6-black",
+    "gopro-hero8-black",
+    "dji-osmo-action"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": null
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 12,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 30,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 2000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 116,
+    "dimensionsMm": [
+      62.3,
+      44.9,
+      33
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q60198342"
+}

@@ -3,8 +3,18 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S1R II",
   "shortName": "Lumix S1R II",
-  "aliases": ["Lumix S1R II", "Lumix S1RII", "S1RII", "S1R II", "S1R Mark II", "Lumix S1R Mark II", "Panasonic S1R II"],
-  "modelCodes": ["DC-S1RM2"],
+  "aliases": [
+    "Lumix S1R II",
+    "Lumix S1RII",
+    "S1RII",
+    "S1R II",
+    "S1R Mark II",
+    "Lumix S1R Mark II",
+    "Panasonic S1R II"
+  ],
+  "modelCodes": [
+    "DC-S1RM2"
+  ],
   "gtins": [],
   "type": "mirrorless",
   "announced": "2025-02-25",
@@ -12,7 +22,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": ["sony-a7r-v", "canon-eos-r5-mark-ii", "nikon-z8", "leica-sl3"],
+  "rivals": [
+    "sony-a7r-v",
+    "canon-eos-r5-mark-ii",
+    "nikon-z8",
+    "leica-sl3"
+  ],
   "mount": "l-mount",
   "fixedLens": null,
   "specs": {
@@ -28,7 +43,11 @@
     "shutterMaxMech": 8000,
     "shutterMaxElec": 16000,
     "afPoints": 779,
-    "afSubjects": ["human", "animal", "vehicle"],
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
     "videoMaxRes": "8K",
     "video4kMaxFps": 120,
     "video10bit": true,
@@ -40,8 +59,13 @@
     "screenType": "multi-angle",
     "touchscreen": true,
     "weightG": 795,
-    "dimensionsMm": [134.3, 102.3, 91.8],
+    "dimensionsMm": [
+      134.3,
+      102.3,
+      91.8
+    ],
     "weatherSealed": true,
+    "waterproofM": null,
     "cardSlots": 2,
     "cardTypes": "CFexpress B + SD UHS-II",
     "batteryShotsCipa": null,

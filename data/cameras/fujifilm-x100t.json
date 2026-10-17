@@ -1,0 +1,76 @@
+{
+  "slug": "fujifilm-x100t",
+  "brand": "fujifilm",
+  "name": "Fujifilm X100T",
+  "shortName": "X100T",
+  "aliases": [
+    "X100T",
+    "X100 T",
+    "X-100T"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2014-09-10",
+  "launchPriceUsd": 1299.95,
+  "status": "discontinued",
+  "predecessor": "fujifilm-x100s",
+  "successor": "fujifilm-x100f",
+  "rivals": [
+    "ricoh-gr-ii",
+    "fujifilm-x70",
+    "sony-rx100-iv",
+    "fujifilm-x-e2s"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      35
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS II",
+    "megapixels": 16.3,
+    "isoMin": 200,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "hybrid",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 440,
+    "dimensionsMm": [
+      126.5,
+      74.4,
+      52.4
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 330,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

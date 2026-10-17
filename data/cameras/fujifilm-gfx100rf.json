@@ -1,0 +1,82 @@
+{
+  "slug": "fujifilm-gfx100rf",
+  "brand": "fujifilm",
+  "name": "Fujifilm GFX100RF",
+  "shortName": "GFX100RF",
+  "aliases": [
+    "GFX100RF",
+    "GFX 100RF",
+    "GFX100 RF",
+    "GFX-100RF"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "medium-format",
+  "announced": "2025-03-20",
+  "launchPriceUsd": 4899.95,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "leica-q3",
+    "sony-rx1r-iii",
+    "hasselblad-907x-50c",
+    "fujifilm-x100vi"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/4"
+  },
+  "specs": {
+    "sensorFormat": "medium-format",
+    "sensorType": "CMOS",
+    "megapixels": 102,
+    "isoMin": 80,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": 3,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "vehicle",
+      "aircraft",
+      "train"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.15,
+    "screenDotsM": 2.1,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 735,
+    "dimensionsMm": [
+      133.5,
+      90.4,
+      76.5
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 820,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

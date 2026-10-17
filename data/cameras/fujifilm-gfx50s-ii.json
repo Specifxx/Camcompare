@@ -3,7 +3,13 @@
   "brand": "fujifilm",
   "name": "Fujifilm GFX50S II",
   "shortName": "GFX50S II",
-  "aliases": ["GFX50S II", "GFX 50S II", "GFX50SII", "GFX 50S Mark II", "GFX50S Mark II"],
+  "aliases": [
+    "GFX50S II",
+    "GFX 50S II",
+    "GFX50SII",
+    "GFX 50S Mark II",
+    "GFX50S Mark II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "type": "medium-format",
@@ -12,7 +18,12 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": ["hasselblad-907x-50c", "fujifilm-gfx100s", "sony-a7r-iv", "canon-eos-r5"],
+  "rivals": [
+    "hasselblad-907x-50c",
+    "fujifilm-gfx100s",
+    "sony-a7r-iv",
+    "canon-eos-r5"
+  ],
   "mount": "fujifilm-g",
   "fixedLens": null,
   "specs": {
@@ -28,7 +39,9 @@
     "shutterMaxMech": 4000,
     "shutterMaxElec": 16000,
     "afPoints": 425,
-    "afSubjects": ["human"],
+    "afSubjects": [
+      "human"
+    ],
     "videoMaxRes": "1080p",
     "video4kMaxFps": null,
     "video10bit": null,
@@ -40,8 +53,13 @@
     "screenType": "multi-angle",
     "touchscreen": true,
     "weightG": 900,
-    "dimensionsMm": [150, 104.2, 87.2],
+    "dimensionsMm": [
+      150,
+      104.2,
+      87.2
+    ],
     "weatherSealed": true,
+    "waterproofM": null,
     "cardSlots": 2,
     "cardTypes": "SD UHS-II + SD UHS-II",
     "batteryShotsCipa": 455,

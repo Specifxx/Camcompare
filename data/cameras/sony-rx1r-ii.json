@@ -1,0 +1,81 @@
+{
+  "slug": "sony-rx1r-ii",
+  "brand": "sony",
+  "name": "Sony RX1R II",
+  "shortName": "RX1R II",
+  "aliases": [
+    "RX1R II",
+    "RX1RII",
+    "RX1R Mark II",
+    "RX1R M2",
+    "RX1RM2",
+    "RX1R 2"
+  ],
+  "modelCodes": [
+    "DSC-RX1RM2"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2015-10-14",
+  "launchPriceUsd": 3299,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "sony-rx1r-iii",
+  "rivals": [
+    "leica-q-typ-116",
+    "leica-q2",
+    "fujifilm-x100v",
+    "sony-rx1r-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      35
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 42.4,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 399,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 507,
+    "dimensionsMm": [
+      113.3,
+      65.4,
+      72
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 220,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

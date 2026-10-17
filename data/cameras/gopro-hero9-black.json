@@ -1,0 +1,78 @@
+{
+  "slug": "gopro-hero9-black",
+  "brand": "gopro",
+  "name": "GoPro HERO9 Black",
+  "shortName": "HERO9 Black",
+  "aliases": [
+    "HERO9 Black",
+    "HERO 9 Black",
+    "HERO9",
+    "HERO 9"
+  ],
+  "modelCodes": [
+    "CHDHX-901"
+  ],
+  "gtins": [],
+  "type": "action",
+  "announced": "2020-09-16",
+  "launchPriceUsd": 449.99,
+  "status": "discontinued",
+  "predecessor": "gopro-hero8-black",
+  "successor": "gopro-hero10-black",
+  "rivals": [
+    "gopro-hero8-black",
+    "gopro-hero10-black",
+    "dji-osmo-action-2",
+    "insta360-one-rs"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      16,
+      39
+    ],
+    "aperture": "f/2.5"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 20,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 25,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 2000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "5K",
+    "video4kMaxFps": 60,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.27,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 158,
+    "dimensionsMm": [
+      71.8,
+      50.8,
+      33.6
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -1,18 +1,18 @@
-import { centsToUsd } from "@/lib/format";
-
-type Point = { day: string; new?: number; used?: number };
+import { price } from "@/lib/format";
+import type { Currency } from "@/lib/markets";
+import type { HistoryPoint } from "@/lib/offers";
 
 /** A server-rendered SVG: no chart library, nothing to hydrate. */
-export default function PriceHistory({ points }: { points: Point[] }) {
+export default function PriceHistory({ points, currency }: { points: HistoryPoint[]; currency: Currency }) {
   const series = (["new", "used"] as const).map((k) => ({ k, pts: points.filter((p) => p[k] !== undefined).map((p) => ({ day: p.day, v: p[k]! })) }));
   const all = series.flatMap((s) => s.pts);
   if (all.length < 2) {
-    return <p className="text-sm text-muted">Price history starts building the day we first price this camera; a chart appears after the second day.</p>;
+    return <p className="text-sm text-muted">Price history starts the day we first price this product here; a chart appears after the second day.</p>;
   }
   const days = [...new Set(points.map((p) => p.day))].sort();
   const W = 480;
   const H = 200;
-  const pad = { l: 56, r: 12, t: 12, b: 24 };
+  const pad = { l: 64, r: 12, t: 12, b: 24 };
   const min = Math.min(...all.map((p) => p.v));
   const max = Math.max(...all.map((p) => p.v));
   const span = max - min || max * 0.1 || 1;
@@ -26,7 +26,7 @@ export default function PriceHistory({ points }: { points: Point[] }) {
           <g key={v}>
             <line x1={pad.l} x2={W - pad.r} y1={y(v)} y2={y(v)} stroke="rgb(var(--c-line))" />
             <text x={pad.l - 6} y={y(v) + 4} textAnchor="end" fontSize="12" fill="rgb(var(--c-subtle))">
-              {centsToUsd(v)}
+              {price(v, currency)}
             </text>
           </g>
         ))}

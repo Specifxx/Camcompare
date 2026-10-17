@@ -1,0 +1,82 @@
+{
+  "slug": "sony-rx10-iv",
+  "brand": "sony",
+  "name": "Sony RX10 IV",
+  "shortName": "RX10 IV",
+  "aliases": [
+    "RX10 IV",
+    "RX10IV",
+    "RX10 Mark IV",
+    "RX10 M4",
+    "RX10M4",
+    "RX10 4"
+  ],
+  "modelCodes": [
+    "DSC-RX10M4"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2017-09-12",
+  "launchPriceUsd": 1699,
+  "status": "discontinued",
+  "predecessor": "sony-rx10-iii",
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-fz1000-ii",
+    "panasonic-lumix-fz2500",
+    "nikon-coolpix-p1000",
+    "sony-rx10-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      600
+    ],
+    "aperture": "f/2.4-4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 24,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 32000,
+    "afPoints": 315,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.44,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 1095,
+    "dimensionsMm": [
+      132.5,
+      94,
+      145
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 400,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

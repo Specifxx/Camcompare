@@ -1,0 +1,69 @@
+{
+  "slug": "fujifilm-x100s",
+  "brand": "fujifilm",
+  "name": "Fujifilm X100S",
+  "shortName": "X100S",
+  "aliases": [
+    "X100S",
+    "X100 S",
+    "X-100S"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2013-01-07",
+  "launchPriceUsd": 1299.95,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-x100t",
+  "rivals": [
+    "ricoh-gr-ii",
+    "fujifilm-x70",
+    "sony-rx100-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      35
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS II",
+    "megapixels": 16.3,
+    "isoMin": 200,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 49,
+    "afSubjects": null,
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.35,
+    "viewfinderType": "hybrid",
+    "screenSizeIn": 2.8,
+    "screenDotsM": 0.46,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 445,
+    "dimensionsMm": null,
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 330,
+    "usbC": false,
+    "micJack": null,
+    "headphoneJack": null,
+    "builtInFlash": true,
+    "wifi": false,
+    "bluetooth": false
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "ricoh-theta-x",
+  "brand": "ricoh",
+  "name": "Ricoh Theta X",
+  "shortName": "Theta X",
+  "aliases": [
+    "Theta X"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "360",
+  "announced": "2022-03-30",
+  "launchPriceUsd": null,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "insta360-x3",
+    "insta360-one-x2",
+    "gopro-max",
+    "insta360-one-rs-1-inch-360"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/2.4"
+  },
+  "specs": {
+    "sensorFormat": "1/2-inch",
+    "sensorType": "CMOS",
+    "megapixels": 60,
+    "isoMin": 50,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 60,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.25,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 170,
+    "dimensionsMm": [
+      51.7,
+      136.2,
+      29
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD UHS-I + 46GB internal",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

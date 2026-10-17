@@ -1,0 +1,75 @@
+{
+  "slug": "ricoh-gr-ii",
+  "brand": "ricoh",
+  "name": "Ricoh GR II",
+  "shortName": "GR II",
+  "aliases": [
+    "GR II",
+    "GRII",
+    "GR 2",
+    "GR2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2015-06-18",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "fujifilm-x70",
+    "fujifilm-x100t",
+    "sony-rx100-iv",
+    "panasonic-lumix-lx100"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 16.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 4,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 251,
+    "dimensionsMm": [
+      117,
+      62.8,
+      34.7
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I + 54MB internal",
+    "batteryShotsCipa": 320,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

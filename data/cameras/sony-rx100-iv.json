@@ -1,0 +1,85 @@
+{
+  "slug": "sony-rx100-iv",
+  "brand": "sony",
+  "name": "Sony RX100 IV",
+  "shortName": "RX100 IV",
+  "aliases": [
+    "RX100 IV",
+    "RX100IV",
+    "RX100 Mark IV",
+    "RX100 M4",
+    "RX100M4",
+    "RX100 4"
+  ],
+  "modelCodes": [
+    "DSC-RX100M4"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2015-06-10",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "EUR": 1150
+  },
+  "status": "discontinued",
+  "predecessor": "sony-rx100-iii",
+  "successor": "sony-rx100-v",
+  "rivals": [
+    "canon-powershot-g7-x-mark-ii",
+    "panasonic-lumix-lx10",
+    "panasonic-lumix-lx100",
+    "canon-powershot-g5-x-mark-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      70
+    ],
+    "aperture": "f/1.8-2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 16,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 32000,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 298,
+    "dimensionsMm": [
+      101.6,
+      58.1,
+      41
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 280,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

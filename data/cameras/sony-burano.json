@@ -1,0 +1,73 @@
+{
+  "slug": "sony-burano",
+  "brand": "sony",
+  "name": "Sony BURANO",
+  "shortName": "BURANO",
+  "aliases": [
+    "BURANO",
+    "Sony BURANO",
+    "CineAlta BURANO"
+  ],
+  "modelCodes": [
+    "MPC-2610"
+  ],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2023-09-12",
+  "launchPriceUsd": null,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "red-v-raptor-8k-vv",
+    "canon-eos-c500-mark-ii",
+    "sony-fx9",
+    "red-komodo-x"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 41.9,
+    "isoMin": 800,
+    "isoMax": 3200,
+    "ibis": true,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": 627,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "8.6K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.5,
+    "screenDotsM": 2.76,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": null,
+    "dimensionsMm": [
+      146,
+      143,
+      218
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B + CFexpress B",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

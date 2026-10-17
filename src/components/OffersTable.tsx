@@ -1,34 +1,28 @@
-import type { Camera } from "@/lib/catalog/schema";
 import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
-import { centsToUsd } from "@/lib/format";
+import { price } from "@/lib/format";
+import { MARKETS, type MarketCode } from "@/lib/markets";
 import type { Offer } from "@/lib/offers";
-import { CONDITION_LABEL, RETAILERS, retailer } from "@/lib/retailers";
+import { CONDITION_LABEL, retailer, retailersFor } from "@/lib/retailers";
 import OutboundLink from "./OutboundLink";
 
-const searchQuery = (c: Camera) => `${c.name} body`.replace(/α/g, "a");
+const MOUNT_SHORT: Record<string, string> = {
+  "sony-e": "Sony E", "canon-rf": "Canon RF", "canon-ef": "Canon EF", "canon-ef-m": "Canon EF-M", "nikon-z": "Nikon Z", "nikon-f": "Nikon F",
+  "fujifilm-x": "Fujifilm X", "fujifilm-g": "Fujifilm G", "l-mount": "L-Mount", "micro-four-thirds": "MFT", "pentax-k": "Pentax K", "leica-m": "Leica M",
+};
 
 /**
- * Today's offers, cheapest first. With none yet, the retailers' own search
- * pages — still useful, and honest about having no price to show.
+ * Today's offers in one market, cheapest first. With none yet, the market's
+ * retailers' own search pages — still useful, and honest about having no price.
  */
-export default function OffersTable({ camera, offers, page }: { camera: Camera; offers: Offer[]; page: string }) {
+export default function OffersTable({ product, query, offers, market, page }: { product: string; query: string; offers: Offer[]; market: MarketCode; page: string }) {
   if (!offers.length) {
-    const links = RETAILERS.filter((r) => r.searchUrl);
+    const links = retailersFor(market).filter((r) => r.searchUrl);
     return (
       <div className="card p-4">
-        <p className="text-sm text-muted">
-          We haven&apos;t collected live prices for the {camera.shortName} yet. Check it at these retailers:
-        </p>
+        <p className="text-sm text-muted">No live {MARKETS[market].short} prices yet. Check these retailers:</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {links.map((r) => (
-            <OutboundLink
-              key={r.key}
-              href={affiliateUrl(r.key, r.searchUrl!(searchQuery(camera)), subId(page, "search"))}
-              retailer={r.key}
-              camera={camera.slug}
-              placement="search"
-              className="btn-ghost"
-            >
+            <OutboundLink key={r.key} href={affiliateUrl(r.key, r.searchUrl!(query), subId(page, "search"))} retailer={r.key} product={product} placement="search" className="btn-ghost">
               {r.name}
               {isPaid(r.key) && <span className="text-[10px] font-normal text-subtle">· paid link</span>}
             </OutboundLink>
@@ -52,13 +46,12 @@ export default function OffersTable({ camera, offers, page }: { camera: Camera; 
                 {!o.inStock && <span className="ml-1 text-xs text-warn">out of stock</span>}
               </p>
               <p className="truncate text-xs text-subtle">
-                {o.seller ? `Seller: ${o.seller}` : r?.authorized ? "Authorized US dealer" : ""}
-                {o.kit ? " · includes lens" : ""}
+                {[o.seller ? `Seller: ${o.seller}` : r?.authorized ? "Authorized dealer" : null, o.mount && MOUNT_SHORT[o.mount] ? `${MOUNT_SHORT[o.mount]} version` : null, o.kit ? "includes lens" : null].filter(Boolean).join(" · ")}
               </p>
             </div>
-            <p className="price shrink-0 text-base font-bold">{centsToUsd(o.priceCents)}</p>
+            <p className="price shrink-0 text-base font-bold">{price(o.price, o.currency)}</p>
             <div className="shrink-0 text-right">
-              <OutboundLink href={affiliateUrl(o.retailer, o.url, subId(page, "offers"))} retailer={o.retailer} camera={camera.slug} placement="offers" className="btn-buy">
+              <OutboundLink href={affiliateUrl(o.retailer, o.url, subId(page, "offers"))} retailer={o.retailer} product={product} placement="offers" className="btn-buy">
                 View
               </OutboundLink>
               {isPaid(o.retailer) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}

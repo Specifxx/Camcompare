@@ -1,0 +1,79 @@
+{
+  "slug": "sony-fx2",
+  "brand": "sony",
+  "name": "Sony FX2",
+  "shortName": "FX2",
+  "aliases": [
+    "Sony FX2",
+    "FX2"
+  ],
+  "modelCodes": [
+    "ILME-FX2B"
+  ],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2025-05-28",
+  "launchPriceUsd": 2699.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-fx3",
+    "panasonic-lumix-s5-iix",
+    "nikon-zr",
+    "sony-fx30",
+    "sony-a7-iv"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 33,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 8000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 679,
+    "dimensionsMm": [
+      129.7,
+      77.8,
+      103.7
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 520,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

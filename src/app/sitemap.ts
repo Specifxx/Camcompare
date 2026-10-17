@@ -1,18 +1,22 @@
 import type { MetadataRoute } from "next";
-import { brands, indexedPairs, pairSlug, publishedCameras } from "@/lib/catalog";
+import { indexedPairs, offersFor, pairSlug, publishedCameras, publishedLenses } from "@/lib/catalog";
+import { MARKET_CODES, marketPath } from "@/lib/markets";
 import { abs } from "@/lib/site";
+import { liveBrands } from "@/views/BrandView";
+import { liveMounts } from "@/views/MountView";
 
-
+// Only pages that are indexed: every US product page, and a market's product
+// page once that market has prices for it (the same rule as the noindex).
 export default function sitemap(): MetadataRoute.Sitemap {
-  const cams = publishedCameras();
-  const live = new Set(cams.map((c) => c.brand));
-  return [
-    { url: abs("/") },
-    { url: abs("/cameras") },
-    { url: abs("/brands") },
-    ...brands().filter((b) => live.has(b.slug)).map((b) => ({ url: abs(`/brands/${b.slug}`) })),
-    ...cams.map((c) => ({ url: abs(`/cameras/${c.slug}`) })),
-    ...indexedPairs().map(([a, b]) => ({ url: abs(`/compare/${pairSlug(a, b)}`) })),
-    { url: abs("/about") },
-  ];
+  const out: MetadataRoute.Sitemap = [];
+  for (const m of MARKET_CODES) {
+    for (const p of ["/", "/cameras", "/lenses", "/deals", "/finder", "/brands"]) out.push({ url: abs(marketPath(m, p)) });
+    for (const b of liveBrands()) out.push({ url: abs(marketPath(m, `/brands/${b.slug}`)) });
+    for (const mt of liveMounts()) out.push({ url: abs(marketPath(m, `/mounts/${mt.slug}`)) });
+    for (const c of publishedCameras()) if (m === "us" || offersFor(c.slug, m).length) out.push({ url: abs(marketPath(m, `/cameras/${c.slug}`)) });
+    for (const l of publishedLenses()) if (m === "us" || offersFor(l.slug, m).length) out.push({ url: abs(marketPath(m, `/lenses/${l.slug}`)) });
+  }
+  for (const [a, b] of indexedPairs()) out.push({ url: abs(`/compare/${pairSlug(a.item, b.item)}`) });
+  out.push({ url: abs("/about") });
+  return out;
 }

@@ -1,0 +1,72 @@
+{
+  "slug": "gopro-max",
+  "brand": "gopro",
+  "name": "GoPro MAX",
+  "shortName": "MAX",
+  "aliases": [
+    "GoPro MAX",
+    "MAX 360"
+  ],
+  "modelCodes": [
+    "CHDHZ-203"
+  ],
+  "gtins": [],
+  "type": "360",
+  "announced": "2019-10-01",
+  "launchPriceUsd": 499.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": "gopro-max2",
+  "rivals": [
+    "insta360-one-x2",
+    "insta360-x3",
+    "gopro-max2"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 16.6,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 2000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "5.6K",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 1.69,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 159,
+    "dimensionsMm": [
+      64,
+      69.7,
+      39.7
+    ],
+    "weatherSealed": true,
+    "waterproofM": 5,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -3,7 +3,18 @@
   "brand": "canon",
   "name": "Canon EOS M50 Mark II",
   "shortName": "EOS M50 Mark II",
-  "aliases": ["EOS M50 Mark II", "M50 Mark II", "M50 II", "M50II", "M50 Mk II", "M50m2", "EOS M50 II", "M50 Mark 2", "EOS Kiss M2", "Kiss M2"],
+  "aliases": [
+    "EOS M50 Mark II",
+    "M50 Mark II",
+    "M50 II",
+    "M50II",
+    "M50 Mk II",
+    "M50m2",
+    "EOS M50 II",
+    "M50 Mark 2",
+    "EOS Kiss M2",
+    "Kiss M2"
+  ],
   "modelCodes": [],
   "gtins": [],
   "type": "mirrorless",
@@ -12,7 +23,12 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": ["sony-zv-e10", "sony-a6100", "olympus-om-d-e-m10-mark-iv", "panasonic-lumix-g100"],
+  "rivals": [
+    "sony-zv-e10",
+    "sony-a6100",
+    "olympus-om-d-e-m10-mark-iv",
+    "panasonic-lumix-g100"
+  ],
   "mount": "canon-ef-m",
   "fixedLens": null,
   "specs": {
@@ -28,7 +44,9 @@
     "shutterMaxMech": 4000,
     "shutterMaxElec": null,
     "afPoints": 143,
-    "afSubjects": ["human"],
+    "afSubjects": [
+      "human"
+    ],
     "videoMaxRes": "4K",
     "video4kMaxFps": 25,
     "video10bit": false,
@@ -40,8 +58,13 @@
     "screenType": "fully-articulating",
     "touchscreen": true,
     "weightG": 387,
-    "dimensionsMm": [116.3, 88.1, 58.7],
+    "dimensionsMm": [
+      116.3,
+      88.1,
+      58.7
+    ],
     "weatherSealed": false,
+    "waterproofM": null,
     "cardSlots": 1,
     "cardTypes": "SD UHS-I",
     "batteryShotsCipa": 305,

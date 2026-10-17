@@ -1,0 +1,82 @@
+{
+  "slug": "sony-rx100-iii",
+  "brand": "sony",
+  "name": "Sony RX100 III",
+  "shortName": "RX100 III",
+  "aliases": [
+    "RX100 III",
+    "RX100III",
+    "RX100 Mark III",
+    "RX100 M3",
+    "RX100M3",
+    "RX100 3"
+  ],
+  "modelCodes": [
+    "DSC-RX100M3"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2014-05-15",
+  "launchPriceUsd": 799,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "sony-rx100-iv",
+  "rivals": [
+    "canon-powershot-g7-x-mark-ii",
+    "panasonic-lumix-lx10",
+    "panasonic-lumix-lx100",
+    "canon-powershot-g9-x-mark-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      70
+    ],
+    "aperture": "f/1.8-2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 290,
+    "dimensionsMm": [
+      101.6,
+      58.1,
+      41
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 320,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

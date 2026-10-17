@@ -1,72 +1,89 @@
-// The daily price import: run every source, merge with yesterday's file,
-// write data/offers/latest.json and today's price-history file.
+// The daily price import: for each market, run its sources, merge with the
+// last run, write data/offers/<market>.json and today's history file.
 // Pure apart from `runImport`'s file writes, so tests drive `mergeOffers` and
 // `historyFor` directly.
 import fs from "node:fs";
 import path from "node:path";
-import type { Camera } from "./catalog/schema";
+import type { Camera, Lens } from "./catalog/schema";
+import { MARKETS, type MarketCode } from "./markets";
 import { buildIndex } from "./matching";
-import { HISTORY_DIR, OFFER_MAX_AGE_H, OFFERS_FILE, lowest, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
+import { historyDir, lowest, OFFER_MAX_AGE_H, offersFile, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
+import { retailer } from "./retailers";
+import { sourcesFor } from "./sources";
 import type { PriceSource, SourceResult } from "./sources/types";
 
 /**
- * A source that ran replaces its offers. One that FAILED keeps yesterday's
- * (a broken feed must not empty every page) until they are OFFER_MAX_AGE_H
- * old. One that is not configured contributes nothing. A retailer this run
- * did not include (IMPORT_ONLY) keeps its offers on the same terms as a failure.
+ * A source that ran replaces its offers (only for the products it covered,
+ * when it says which). One that FAILED keeps yesterday's — a broken feed must
+ * not empty every page — until they are OFFER_MAX_AGE_H old. One that is not
+ * configured contributes nothing. A retailer this run did not include
+ * (IMPORT_ONLY) keeps its offers on the same terms as a failure.
  */
-export function mergeOffers(prev: OffersFile, results: Record<string, SourceResult>, now: string, cameraSlugs: Set<string>): Offer[] {
+export function mergeOffers(prev: OffersFile, results: Record<string, SourceResult>, now: string, slugs: Set<string>): Offer[] {
   const cutoff = Date.parse(now) - OFFER_MAX_AGE_H * 3600_000;
+  const fresh = (o: Offer) => Date.parse(o.seenAt) >= cutoff;
+  const keepPrev = (key: string, except?: Set<string>) => prev.offers.filter((o) => o.retailer === key && fresh(o) && !except?.has(o.product));
   const out: Offer[] = [];
-  const keepPrev = (retailer: string) => prev.offers.filter((o) => o.retailer === retailer && Date.parse(o.seenAt) >= cutoff);
-  for (const [retailer, r] of Object.entries(results)) {
-    if (r.status === "ok") out.push(...r.offers);
-    else if (r.status === "error") out.push(...keepPrev(retailer));
+  for (const [key, r] of Object.entries(results)) {
+    if (r.status === "ok") {
+      out.push(...r.offers);
+      if (r.covered) out.push(...keepPrev(key, new Set(r.covered)));
+    } else if (r.status === "error") out.push(...keepPrev(key));
   }
-  for (const retailer of new Set(prev.offers.map((o) => o.retailer))) if (!(retailer in results)) out.push(...keepPrev(retailer));
-  // A camera removed from the catalog takes its offers with it.
-  return out.filter((o) => cameraSlugs.has(o.camera)).sort((a, b) => a.camera.localeCompare(b.camera) || a.priceCents - b.priceCents);
+  for (const key of new Set(prev.offers.map((o) => o.retailer))) if (!(key in results) && retailer(key)) out.push(...keepPrev(key));
+  // A product removed from the catalog takes its offers with it.
+  return out.filter((o) => slugs.has(o.product)).sort((a, b) => a.product.localeCompare(b.product) || a.price - b.price);
 }
 
-export function historyFor(day: string, offers: Offer[]): HistoryDay {
-  const byCamera = new Map<string, Offer[]>();
-  for (const o of offers) (byCamera.get(o.camera) ?? byCamera.set(o.camera, []).get(o.camera)!).push(o);
+export function historyFor(market: MarketCode, day: string, offers: Offer[]): HistoryDay {
+  const byProduct = new Map<string, Offer[]>();
+  for (const o of offers) (byProduct.get(o.product) ?? byProduct.set(o.product, []).get(o.product)!).push(o);
   const prices: HistoryDay["prices"] = {};
-  for (const [slug, list] of [...byCamera].sort(([a], [b]) => a.localeCompare(b))) {
+  for (const [slug, list] of [...byProduct].sort(([a], [b]) => a.localeCompare(b))) {
     const n = lowest(list, "new");
     const u = lowest(list, "used");
-    if (n || u) prices[slug] = { ...(n ? { new: n.priceCents } : {}), ...(u ? { used: u.priceCents } : {}) };
+    if (n || u) prices[slug] = { ...(n ? { new: n.price } : {}), ...(u ? { used: u.price } : {}) };
   }
-  return { day, currency: "USD", prices };
+  return { day, market, currency: MARKETS[market].currency, prices };
 }
 
-export async function runImport(cameras: Camera[], sources: PriceSource[], log = console.log): Promise<OffersFile> {
+export async function runMarket(market: MarketCode, cameras: Camera[], lenses: Lens[], sources: PriceSource[], log = console.log): Promise<OffersFile> {
   const now = new Date().toISOString();
-  const index = buildIndex(cameras);
+  const index = buildIndex(cameras, lenses);
+  const prev = readOffersFile(market);
   const results: Record<string, SourceResult> = {};
   const runs: Record<string, SourceRun> = {};
   for (const s of sources) {
-    let r: SourceResult;
+    const r = retailer(s.retailer);
+    if (!r) continue;
+    let res: SourceResult;
     try {
-      r = await s.run({ cameras, index, now, log });
+      res = await s.run({ market, retailer: r, cameras, lenses, index, now, prev, log });
     } catch (e) {
-      r = { status: "error", note: (e as Error).message.slice(0, 300) };
+      res = { status: "error", note: (e as Error).message.slice(0, 300) };
     }
-    results[s.retailer] = r;
-    runs[s.retailer] = { status: r.status, offers: r.status === "ok" ? r.offers.length : 0, ...(r.note ? { note: r.note } : {}), at: now };
-    log(`${s.retailer}: ${r.status}${r.status === "ok" ? ` ${r.offers.length} offers` : ""}${r.note ? ` (${r.note})` : ""}`);
+    results[s.retailer] = res;
+    runs[s.retailer] = { status: res.status, offers: res.status === "ok" ? res.offers.length : 0, ...(res.note ? { note: res.note } : {}), at: now };
+    log(`[${market}] ${s.retailer}: ${res.status}${res.status === "ok" ? ` ${res.offers.length} offers` : ""}${res.note ? ` (${res.note})` : ""}`);
   }
-  const prev = readOffersFile();
-  const offers = mergeOffers(prev, results, now, new Set(cameras.map((c) => c.slug)));
-  const file: OffersFile = { generatedAt: now, market: "US", sources: { ...prev.sources, ...runs }, offers };
-  fs.mkdirSync(path.dirname(OFFERS_FILE), { recursive: true });
-  fs.writeFileSync(OFFERS_FILE, JSON.stringify(file, null, 1) + "\n");
+  const slugs = new Set([...cameras, ...lenses].map((p) => p.slug));
+  const offers = mergeOffers(prev, results, now, slugs);
+  const file: OffersFile = { generatedAt: now, market, currency: MARKETS[market].currency, sources: { ...prev.sources, ...runs }, offers };
+  fs.mkdirSync(path.dirname(offersFile(market)), { recursive: true });
+  fs.writeFileSync(offersFile(market), JSON.stringify(file, null, 1) + "\n");
   const day = now.slice(0, 10);
-  const history = historyFor(day, offers);
+  const history = historyFor(market, day, offers);
   if (Object.keys(history.prices).length) {
-    fs.mkdirSync(HISTORY_DIR, { recursive: true });
-    fs.writeFileSync(path.join(HISTORY_DIR, `${day}.json`), JSON.stringify(history) + "\n");
+    fs.mkdirSync(historyDir(market), { recursive: true });
+    fs.writeFileSync(path.join(historyDir(market), `${day}.json`), JSON.stringify(history) + "\n");
   }
-  log(`${offers.length} offers for ${new Set(offers.map((o) => o.camera)).size} cameras`);
+  log(`[${market}] ${offers.length} offers for ${new Set(offers.map((o) => o.product)).size} products`);
   return file;
+}
+
+export async function runImport(markets: MarketCode[], cameras: Camera[], lenses: Lens[], only?: string[], log = console.log) {
+  for (const m of markets) {
+    const sources = sourcesFor(m).filter((s) => !only || only.includes(s.retailer));
+    await runMarket(m, cameras, lenses, sources, log);
+  }
 }

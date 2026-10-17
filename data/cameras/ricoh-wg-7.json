@@ -1,0 +1,73 @@
+{
+  "slug": "ricoh-wg-7",
+  "brand": "ricoh",
+  "name": "Ricoh WG-7",
+  "shortName": "WG-7",
+  "aliases": [
+    "WG-7",
+    "WG7"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2021-06-17",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "om-system-tg-7",
+    "olympus-tg-6",
+    "nikon-coolpix-w300"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28,
+      140
+    ],
+    "aperture": "f/3.5-5.5"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20,
+    "isoMin": 125,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 246,
+    "dimensionsMm": [
+      118.2,
+      65.5,
+      33.1
+    ],
+    "weatherSealed": true,
+    "waterproofM": 20,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I + 27MB internal",
+    "batteryShotsCipa": 340,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": false,
+    "bluetooth": false
+  }
+}

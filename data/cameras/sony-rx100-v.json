@@ -1,0 +1,82 @@
+{
+  "slug": "sony-rx100-v",
+  "brand": "sony",
+  "name": "Sony RX100 V",
+  "shortName": "RX100 V",
+  "aliases": [
+    "RX100 V",
+    "RX100V",
+    "RX100 Mark V",
+    "RX100 M5",
+    "RX100M5",
+    "RX100 5"
+  ],
+  "modelCodes": [
+    "DSC-RX100M5"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2016-10-06",
+  "launchPriceUsd": 1000,
+  "status": "discontinued",
+  "predecessor": "sony-rx100-iv",
+  "successor": "sony-rx100-vi",
+  "rivals": [
+    "canon-powershot-g7-x-mark-iii",
+    "canon-powershot-g5-x-mark-ii",
+    "panasonic-lumix-lx100-ii",
+    "sony-zv-1"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      70
+    ],
+    "aperture": "f/1.8-2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 24,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 32000,
+    "afPoints": 315,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 299,
+    "dimensionsMm": [
+      101.6,
+      58.1,
+      41
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 220,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

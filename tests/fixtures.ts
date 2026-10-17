@@ -5,7 +5,7 @@ const SPECS: Camera["specs"] = {
   burstMechFps: 10, burstElecFps: 20, shutterMaxMech: 8000, shutterMaxElec: 16000, afPoints: null, afSubjects: ["human"],
   videoMaxRes: "4K", video4kMaxFps: 60, video10bit: true, rawVideoInternal: false, evfDotsM: 3.69, viewfinderType: "electronic",
   screenSizeIn: 3, screenDotsM: 1.62, screenType: "fully-articulating", touchscreen: true, weightG: 650, dimensionsMm: [130, 95, 80],
-  weatherSealed: true, cardSlots: 2, cardTypes: "SD UHS-II x2", batteryShotsCipa: 500, usbC: true, micJack: true, headphoneJack: true,
+  weatherSealed: true, waterproofM: null, cardSlots: 2, cardTypes: "SD UHS-II x2", batteryShotsCipa: 500, usbC: true, micJack: true, headphoneJack: true,
   builtInFlash: false, wifi: true, bluetooth: true,
 };
 
@@ -32,4 +32,27 @@ export const CAMERAS: Camera[] = [
   cam("canon-eos-r6-mark-ii", "canon", ["EOS R6 Mark II", "R6 Mark II", "R6 II"], { mount: "canon-rf", launchPriceUsd: 2499 }),
   cam("fujifilm-x100v", "fujifilm", ["X100V"], { mount: null, fixedLens: { focalMm: [35], aperture: "f/2" }, type: "compact", launchPriceUsd: 1399 }),
   cam("fujifilm-x100vi", "fujifilm", ["X100VI"], { mount: null, fixedLens: { focalMm: [35], aperture: "f/2" }, type: "compact", launchPriceUsd: 1599 }),
+];
+
+import type { Lens } from "../src/lib/catalog/schema";
+
+const LSPECS: Lens["specs"] = {
+  focalMinMm: 24, focalMaxMm: 70, apertureMax: 2.8, apertureMaxTele: null, apertureMin: 22, autofocus: true, afMotor: "Linear",
+  stabilized: false, weatherSealed: true, weightG: 700, diameterMm: 88, lengthMm: 120, filterMm: 82, minFocusM: 0.21, maxMagnification: 0.32,
+  elements: 20, groups: 15, apertureBlades: 11, internalZoom: false, apertureRing: true, teleconverter: false,
+};
+
+export function lensFix(slug: string, brand: string, aliases: string[], over: Partial<Lens> = {}, specs: Partial<Lens["specs"]> = {}): Lens {
+  return {
+    slug, brand, name: aliases[0], shortName: aliases[0], aliases, modelCodes: [], gtins: [], announced: "2022-01-01", launchPriceUsd: 2299,
+    status: "current", predecessor: null, successor: null, rivals: [], mounts: ["sony-e"], coverage: "full-frame", specs: { ...LSPECS, ...specs }, ...over,
+  };
+}
+
+export const LENSES: Lens[] = [
+  lensFix("sony-fe-24-70mm-f2-8-gm-ii", "sony", ["FE 24-70mm F2.8 GM II", "24-70mm F2.8 GM II", "24-70mm f/2.8 G Master II"], { modelCodes: ["SEL2470GM2"] }),
+  lensFix("sony-fe-24-70mm-f2-8-gm", "sony", ["FE 24-70mm F2.8 GM", "24-70mm F2.8 GM", "24-70mm f/2.8 G Master"], { modelCodes: ["SEL2470GM"], launchPriceUsd: 2199 }),
+  lensFix("sigma-24-70mm-f2-8-dg-dn-art-ii", "sigma", ["24-70mm F2.8 DG DN II Art", "24-70mm F2.8 DG DN Art II", "24-70mm DG DN II"], { mounts: ["sony-e", "l-mount"], launchPriceUsd: 1199 }),
+  lensFix("sigma-56mm-f1-4-dc-dn-contemporary", "sigma", ["56mm F1.4 DC DN Contemporary", "56mm f/1.4 DC DN"], { mounts: ["sony-e", "fujifilm-x", "canon-ef-m", "micro-four-thirds", "l-mount", "canon-rf", "nikon-z"], coverage: "aps-c", launchPriceUsd: 479 }, { focalMinMm: 56, focalMaxMm: 56, apertureMax: 1.4, internalZoom: null }),
+  lensFix("nikon-z-50mm-f1-8-s", "nikon", ["Z 50mm f/1.8 S", "NIKKOR Z 50mm f/1.8 S"], { mounts: ["nikon-z"], launchPriceUsd: 599 }, { focalMinMm: 50, focalMaxMm: 50, apertureMax: 1.8, internalZoom: null }),
 ];

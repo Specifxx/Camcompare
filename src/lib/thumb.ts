@@ -1,2 +1,2 @@
-// Client-safe: the public path of a camera's thumbnail.
-export const thumbSrc = (slug: string) => `/cameras/${slug}.webp`;
+// Client-safe: the public path of a product's thumbnail (camera or lens).
+export const thumbSrc = (slug: string) => `/products/${slug}.webp`;

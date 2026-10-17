@@ -8,3 +8,5 @@ next-env.d.ts
 .env*.local
 .vercel
 .thumb-cache/
+public/search-index.json
+public/prices/

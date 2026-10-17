@@ -1,0 +1,74 @@
+{
+  "slug": "fujifilm-gfx50s",
+  "brand": "fujifilm",
+  "name": "Fujifilm GFX 50S",
+  "shortName": "GFX 50S",
+  "aliases": [
+    "GFX 50S",
+    "GFX50S",
+    "GFX-50S"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "medium-format",
+  "announced": "2017-01-19",
+  "launchPriceUsd": 6499,
+  "launchPrices": {
+    "GBP": 6199
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "hasselblad-x1d-50c",
+    "pentax-645z",
+    "nikon-d850",
+    "canon-eos-5ds-r"
+  ],
+  "mount": "fujifilm-g",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "medium-format",
+    "sensorType": "CMOS",
+    "megapixels": 51.4,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 3,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.36,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 920,
+    "dimensionsMm": [
+      147.5,
+      94.2,
+      91.4
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 400,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

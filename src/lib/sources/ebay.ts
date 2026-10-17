@@ -1,17 +1,20 @@
 // eBay Browse API, the same integration RiftCompare runs (src/lib/ebay.ts
 // there): client-credentials token, item_summary/search, and the EPN
 // campaign in X-EBAY-C-ENDUSERCTX so eBay returns itemAffiliateWebUrl.
-// One search per camera in category 31388 (Digital Cameras), fixed-price only;
-// every result still has to pass lib/matching.ts as THAT camera.
-// Quota: 5,000 Browse calls a day; one run is ~1 call per camera.
+// One search per product per market, fixed-price only, items located in the
+// market's country; every result still has to pass lib/matching.ts as THAT
+// product. Quota: 5,000 Browse calls a day shared by every eBay market, so
+// each market gets an equal share and walks the catalog in a daily rotation;
+// products it skips keep their earlier offers (`covered`).
 import { matchListing, plausiblePrice } from "../matching";
+import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
-import type { Condition } from "../retailers";
-import { toCents, type PriceSource } from "./types";
+import { RETAILERS, type Condition } from "../retailers";
+import { searchPhrase, sleep, toMinor, type PriceSource } from "./types";
 
 const TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token";
 const SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search";
-const DIGITAL_CAMERAS = "31388";
+const CATEGORY = { camera: "625", lens: "3323" } as const; // Cameras & Photo; Lenses
 
 // eBay condition ids: https://developer.ebay.com/api-docs/sell/static/metadata/condition-id-values.html
 function condition(id: string | undefined): Condition | null {
@@ -44,89 +47,103 @@ type Summary = {
   conditionId?: string;
   itemWebUrl: string;
   itemAffiliateWebUrl?: string;
-  seller?: { username?: string; feedbackPercentage?: string; feedbackScore?: number };
-  gtin?: string;
+  seller?: { username?: string; feedbackPercentage?: string };
 };
 
+let cachedToken: { value: string; until: number } | null = null;
 async function token(id: string, secret: string): Promise<string> {
+  if (cachedToken && cachedToken.until > Date.now()) return cachedToken.value;
   const res = await fetch(TOKEN_URL, {
     method: "POST",
     headers: { Authorization: `Basic ${Buffer.from(`${id}:${secret}`).toString("base64")}`, "Content-Type": "application/x-www-form-urlencoded" },
     body: "grant_type=client_credentials&scope=https%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope",
   });
   if (!res.ok) throw new Error(`eBay token ${res.status}`);
-  return ((await res.json()) as { access_token: string }).access_token;
+  const body = (await res.json()) as { access_token: string; expires_in: number };
+  cachedToken = { value: body.access_token, until: Date.now() + (body.expires_in - 120) * 1000 };
+  return cachedToken.value;
 }
 
-/** Cheapest offers kept per camera and condition. */
 const KEEP_PER_CONDITION = 3;
 const MIN_SELLER_FEEDBACK = 98;
 
-export const ebaySource: PriceSource = {
-  retailer: "ebay",
-  async run({ cameras, index, now, log }) {
+export function dailyWindow<T>(items: T[], budget: number, day: number): T[] {
+  if (budget >= items.length) return items;
+  const start = (day * budget) % items.length;
+  return [...items.slice(start), ...items.slice(0, start)].slice(0, budget);
+}
+
+export const ebaySource = (retailerKey: string): PriceSource => ({
+  retailer: retailerKey,
+  async run({ market, retailer: r, cameras, lenses, index, now, log }) {
     const id = process.env.EBAY_CLIENT_ID || "";
     const secret = process.env.EBAY_CLIENT_SECRET || "";
-    if (!id || !secret) return { status: "skipped", note: "EBAY_CLIENT_ID / EBAY_CLIENT_SECRET not set" };
+    if (!id || !secret || !r.ebay) return { status: "skipped", note: "EBAY_CLIENT_ID / EBAY_CLIENT_SECRET not set" };
     const campaign = process.env.EBAY_AFFILIATE_CAMPAIGN || "";
+    const currency = MARKETS[market].currency;
+    const ebayMarkets = RETAILERS.filter((x) => x.ebay).length;
+    const budget = Math.floor(Number(process.env.EBAY_MAX_CALLS || 4600) / ebayMarkets);
+    const day = Math.floor(Date.parse(now) / 86400_000);
+    const products = dailyWindow([...cameras.map((c) => ({ kind: "camera" as const, item: c })), ...lenses.map((l) => ({ kind: "lens" as const, item: l }))], budget, day);
     const bearer = await token(id, secret);
     const offers: Offer[] = [];
-    let calls = 0;
-    for (const camera of cameras) {
-      const q = `${camera.brand === "om-system" ? "OM System" : camera.brand} ${camera.aliases[0]}`;
+    const covered: string[] = [];
+    for (const { kind, item } of products) {
       const params = new URLSearchParams({
-        q,
-        category_ids: DIGITAL_CAMERAS,
-        filter: "buyingOptions:{FIXED_PRICE},itemLocationCountry:US,deliveryCountry:US,priceCurrency:USD",
+        q: searchPhrase(item),
+        category_ids: CATEGORY[kind],
+        filter: `buyingOptions:{FIXED_PRICE},itemLocationCountry:${r.country},deliveryCountry:${r.country},priceCurrency:${currency}`,
         sort: "price",
         limit: "100",
       });
       const res = await fetch(`${SEARCH_URL}?${params}`, {
         headers: {
           Authorization: `Bearer ${bearer}`,
-          "X-EBAY-C-MARKETPLACE-ID": "EBAY_US",
+          "X-EBAY-C-MARKETPLACE-ID": r.ebay.marketplaceId,
           ...(campaign ? { "X-EBAY-C-ENDUSERCTX": `affiliateCampaignId=${campaign}` } : {}),
         },
       });
-      calls++;
       if (res.status === 429) {
-        log(`ebay: rate limited after ${calls} calls`);
+        log(`${r.key}: rate limited after ${covered.length} searches`);
         break;
       }
       if (!res.ok) {
-        log(`ebay: ${camera.slug} ${res.status}`);
+        log(`${r.key}: ${item.slug} ${res.status}`);
         continue;
       }
+      covered.push(item.slug);
       const items = ((await res.json()) as { itemSummaries?: Summary[] }).itemSummaries ?? [];
       const kept = new Map<Condition, number>();
       for (const it of items) {
         const cond = condition(it.conditionId);
-        if (!cond || !it.price || it.price.currency !== "USD") continue;
+        if (!cond || !it.price || it.price.currency !== currency) continue;
         if (Number(it.seller?.feedbackPercentage ?? 0) < MIN_SELLER_FEEDBACK) continue;
-        const m = matchListing({ title: it.title, gtin: it.gtin }, index);
-        if (!m.camera || m.camera.slug !== camera.slug || m.kit) continue;
-        const priceCents = toCents(it.price.value);
-        if (!plausiblePrice(camera, cond, priceCents / 100)) continue;
+        const m = matchListing({ title: it.title }, index, kind);
+        if (!m.product || m.product.slug !== item.slug || m.kit) continue;
+        const price = toMinor(it.price.value);
+        if (!plausiblePrice(m.product, cond, price / 100, currency)) continue;
         const n = kept.get(cond) ?? 0;
         if (n >= KEEP_PER_CONDITION) continue;
         kept.set(cond, n + 1);
         offers.push({
-          camera: camera.slug,
-          retailer: "ebay",
+          product: item.slug,
+          kind,
+          retailer: r.key,
           condition: cond,
-          priceCents,
-          currency: "USD",
+          price,
+          currency,
           url: it.itemAffiliateWebUrl || it.itemWebUrl,
           title: it.title,
           seller: it.seller?.username ?? null,
           inStock: true,
           kit: false,
+          mount: m.mount,
           seenAt: now,
           sourceId: it.itemId,
         });
       }
-      await new Promise((r) => setTimeout(r, 250));
+      await sleep(200);
     }
-    return { status: "ok", offers, note: `${calls} Browse calls` };
+    return { status: "ok", offers, covered, note: `${covered.length}/${cameras.length + lenses.length} products searched` };
   },
-};
+});

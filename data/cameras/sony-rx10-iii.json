@@ -1,0 +1,82 @@
+{
+  "slug": "sony-rx10-iii",
+  "brand": "sony",
+  "name": "Sony RX10 III",
+  "shortName": "RX10 III",
+  "aliases": [
+    "RX10 III",
+    "RX10III",
+    "RX10 Mark III",
+    "RX10 M3",
+    "RX10M3",
+    "RX10 3"
+  ],
+  "modelCodes": [
+    "DSC-RX10M3"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2016-03-29",
+  "launchPriceUsd": 1499,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "sony-rx10-iv",
+  "rivals": [
+    "panasonic-lumix-fz1000-ii",
+    "panasonic-lumix-fz2500",
+    "nikon-coolpix-p1000",
+    "sony-rx10-iv"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      600
+    ],
+    "aperture": "f/2.4-4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 14,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 32000,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 1095,
+    "dimensionsMm": [
+      132.5,
+      94,
+      145
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 420,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

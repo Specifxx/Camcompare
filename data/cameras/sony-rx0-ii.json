@@ -1,0 +1,80 @@
+{
+  "slug": "sony-rx0-ii",
+  "brand": "sony",
+  "name": "Sony RX0 II",
+  "shortName": "RX0 II",
+  "aliases": [
+    "RX0 II",
+    "RX0II",
+    "RX0 Mark II",
+    "RX0 M2",
+    "RX0M2"
+  ],
+  "modelCodes": [
+    "DSC-RX0M2"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-03-26",
+  "launchPriceUsd": 700,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "gopro-hero8-black",
+    "dji-osmo-pocket",
+    "dji-osmo-action",
+    "sony-zv-1"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24
+    ],
+    "aperture": "f/4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 15.3,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 16,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 32000,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 1.5,
+    "screenDotsM": 0.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 132,
+    "dimensionsMm": [
+      59,
+      40.5,
+      35
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD / Memory Stick Micro",
+    "batteryShotsCipa": 240,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": null
+  }
+}

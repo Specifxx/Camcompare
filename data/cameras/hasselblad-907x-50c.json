@@ -3,7 +3,12 @@
   "brand": "hasselblad",
   "name": "Hasselblad 907X 50C",
   "shortName": "907X 50C",
-  "aliases": ["Hasselblad 907X 50C", "907X 50C", "907X & CFV II 50C", "907X CFV II 50C"],
+  "aliases": [
+    "Hasselblad 907X 50C",
+    "907X 50C",
+    "907X & CFV II 50C",
+    "907X CFV II 50C"
+  ],
   "modelCodes": [],
   "gtins": [],
   "type": "medium-format",
@@ -12,7 +17,11 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": ["fujifilm-gfx50s-ii", "fujifilm-gfx100s", "leica-m11"],
+  "rivals": [
+    "fujifilm-gfx50s-ii",
+    "fujifilm-gfx100s",
+    "leica-m11"
+  ],
   "mount": "hasselblad-xcd",
   "fixedLens": null,
   "specs": {
@@ -42,6 +51,7 @@
     "weightG": 740,
     "dimensionsMm": null,
     "weatherSealed": null,
+    "waterproofM": null,
     "cardSlots": 2,
     "cardTypes": "SD UHS-II + SD UHS-II",
     "batteryShotsCipa": null,

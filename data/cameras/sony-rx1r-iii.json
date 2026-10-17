@@ -1,0 +1,91 @@
+{
+  "slug": "sony-rx1r-iii",
+  "brand": "sony",
+  "name": "Sony RX1R III",
+  "shortName": "RX1R III",
+  "aliases": [
+    "RX1R III",
+    "RX1RIII",
+    "RX1R Mark III",
+    "RX1R M3",
+    "RX1RM3",
+    "RX1R 3"
+  ],
+  "modelCodes": [
+    "DSC-RX1RM3"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2025-07-15",
+  "launchPriceUsd": 5100,
+  "launchPrices": {
+    "GBP": 4200,
+    "EUR": 4900
+  },
+  "status": "current",
+  "predecessor": "sony-rx1r-ii",
+  "successor": null,
+  "rivals": [
+    "leica-q3",
+    "fujifilm-gfx100rf",
+    "fujifilm-x100vi",
+    "leica-q3-43"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      35
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 61,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 8000,
+    "afPoints": 693,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 2.36,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 498,
+    "dimensionsMm": [
+      113.3,
+      67.9,
+      87.5
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 300,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

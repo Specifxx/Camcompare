@@ -1,0 +1,71 @@
+{
+  "slug": "fujifilm-gfx100",
+  "brand": "fujifilm",
+  "name": "Fujifilm GFX100",
+  "shortName": "GFX100",
+  "aliases": [
+    "GFX100",
+    "GFX 100",
+    "GFX-100"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "medium-format",
+  "announced": "2019-05-23",
+  "launchPriceUsd": 9999,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7r-iv",
+    "hasselblad-x1d-ii-50c",
+    "nikon-d850",
+    "fujifilm-gfx100s"
+  ],
+  "mount": "fujifilm-g",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "medium-format",
+    "sensorType": "BSI CMOS",
+    "megapixels": 102,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 5,
+    "burstElecFps": 2.9,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.36,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 1320,
+    "dimensionsMm": [
+      156.2,
+      144,
+      75.1
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 800,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

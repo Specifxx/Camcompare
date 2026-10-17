@@ -3,8 +3,17 @@
   "brand": "sony",
   "name": "Sony RX100 VII",
   "shortName": "RX100 VII",
-  "aliases": ["RX100 VII", "RX100VII", "RX100 7", "RX100M7", "RX100 Mark VII", "RX100 M7"],
-  "modelCodes": ["DSC-RX100M7"],
+  "aliases": [
+    "RX100 VII",
+    "RX100VII",
+    "RX100 7",
+    "RX100M7",
+    "RX100 Mark VII",
+    "RX100 M7"
+  ],
+  "modelCodes": [
+    "DSC-RX100M7"
+  ],
   "gtins": [],
   "type": "compact",
   "announced": "2019-07-25",
@@ -12,9 +21,19 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": ["canon-powershot-g7-x-mark-iii", "sony-zv-1", "ricoh-gr-iii"],
+  "rivals": [
+    "canon-powershot-g7-x-mark-iii",
+    "sony-zv-1",
+    "ricoh-gr-iii"
+  ],
   "mount": null,
-  "fixedLens": {"focalMm": [24, 200], "aperture": "f/2.8-4.5"},
+  "fixedLens": {
+    "focalMm": [
+      24,
+      200
+    ],
+    "aperture": "f/2.8-4.5"
+  },
   "specs": {
     "sensorFormat": "1-inch",
     "sensorType": "Stacked CMOS",
@@ -28,7 +47,10 @@
     "shutterMaxMech": 2000,
     "shutterMaxElec": 32000,
     "afPoints": 357,
-    "afSubjects": ["human", "animal"],
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
     "videoMaxRes": "4K",
     "video4kMaxFps": 30,
     "video10bit": false,
@@ -40,8 +62,13 @@
     "screenType": "tilting",
     "touchscreen": true,
     "weightG": 302,
-    "dimensionsMm": [101.6, 58.1, 42.8],
+    "dimensionsMm": [
+      101.6,
+      58.1,
+      42.8
+    ],
     "weatherSealed": false,
+    "waterproofM": null,
     "cardSlots": 1,
     "cardTypes": "SD / Memory Stick Duo",
     "batteryShotsCipa": 260,

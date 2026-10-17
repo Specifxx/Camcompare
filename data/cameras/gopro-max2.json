@@ -1,0 +1,75 @@
+{
+  "slug": "gopro-max2",
+  "brand": "gopro",
+  "name": "GoPro MAX2",
+  "shortName": "MAX2",
+  "aliases": [
+    "MAX2",
+    "MAX 2",
+    "GoPro MAX2",
+    "MAX2 360"
+  ],
+  "modelCodes": [
+    "CHDHZ-311"
+  ],
+  "gtins": [],
+  "type": "360",
+  "announced": "2025-09-23",
+  "launchPriceUsd": 499.99,
+  "status": "current",
+  "predecessor": "gopro-max",
+  "successor": null,
+  "rivals": [
+    "gopro-max",
+    "insta360-x5",
+    "insta360-x4",
+    "dji-osmo-360"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/1.8"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 29.5,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 100,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 1.82,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 195,
+    "dimensionsMm": [
+      64,
+      69.7,
+      48.7
+    ],
+    "weatherSealed": true,
+    "waterproofM": 5,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

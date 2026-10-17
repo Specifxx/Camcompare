@@ -1,0 +1,78 @@
+{
+  "slug": "gopro-hero12-black",
+  "brand": "gopro",
+  "name": "GoPro HERO12 Black",
+  "shortName": "HERO12 Black",
+  "aliases": [
+    "HERO12 Black",
+    "HERO 12 Black",
+    "HERO12",
+    "HERO 12"
+  ],
+  "modelCodes": [
+    "CHDHX-121"
+  ],
+  "gtins": [],
+  "type": "action",
+  "announced": "2023-09-06",
+  "launchPriceUsd": 399.99,
+  "status": "current",
+  "predecessor": "gopro-hero11-black",
+  "successor": "gopro-hero13-black",
+  "rivals": [
+    "gopro-hero11-black",
+    "gopro-hero13-black",
+    "dji-osmo-action-4",
+    "insta360-ace-pro"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      12,
+      39
+    ],
+    "aperture": "f/2.5"
+  },
+  "specs": {
+    "sensorFormat": "1/1.9-inch",
+    "sensorType": "CMOS",
+    "megapixels": 27.1,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 30,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "5.3K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.27,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 154,
+    "dimensionsMm": [
+      71.8,
+      50.8,
+      33.6
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

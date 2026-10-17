@@ -1,0 +1,79 @@
+{
+  "slug": "sony-zv-1f",
+  "brand": "sony",
+  "name": "Sony ZV-1F",
+  "shortName": "ZV-1F",
+  "aliases": [
+    "ZV-1F",
+    "ZV1F",
+    "ZV 1F"
+  ],
+  "modelCodes": [
+    "ZV-1F"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2022-10-13",
+  "launchPriceUsd": 499,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-zv-1",
+    "sony-zv-1-ii",
+    "canon-powershot-v10",
+    "dji-osmo-pocket-3"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      20
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 16,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 32000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 256,
+    "dimensionsMm": [
+      105.5,
+      60,
+      46.4
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 360,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

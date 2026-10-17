@@ -5,12 +5,14 @@
 //  - a cross-check of our specs (mass, announcement date, mount).
 // Wikimedia asks bots for a descriptive User-Agent with a contact URL.
 import { compact } from "./matching";
-import type { Camera } from "./catalog/schema";
+
+/** What linking needs from a camera or a lens. */
+type Linkable = { slug: string; brand: string; name: string; aliases: string[]; modelCodes: string[]; wikidata?: string };
 
 export const USER_AGENT = "CamCompareBot/0.1 (https://github.com/Specifxx/Camcompare)";
 const SPARQL = "https://query.wikidata.org/sparql";
 const COMMONS_API = "https://commons.wikimedia.org/w/api.php";
-const DIGITAL_CAMERA_MODEL = "Q20741022";
+export const WD_CLASS = { camera: "Q20741022", lens: "Q109672300" } as const; // digital camera model; photographic lens model
 
 export type WikidataCamera = {
   qid: string;
@@ -25,20 +27,28 @@ export type WikidataCamera = {
   gtins: string[];
 };
 
+/** fetch with patience for Wikimedia's 429s (shared egress IPs hit them). */
+export async function politeFetch(url: string, tries = 5): Promise<Response> {
+  for (let i = 0; ; i++) {
+    const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, Accept: "application/json, application/sparql-results+json" } });
+    if (res.status !== 429 && res.status !== 503) return res;
+    if (i >= tries - 1) return res;
+    await new Promise((r) => setTimeout(r, 2000 * 2 ** i));
+  }
+}
+
 async function sparql<T>(query: string): Promise<T[]> {
-  const res = await fetch(`${SPARQL}?${new URLSearchParams({ query, format: "json" })}`, {
-    headers: { "User-Agent": USER_AGENT, Accept: "application/sparql-results+json" },
-  });
+  const res = await politeFetch(`${SPARQL}?${new URLSearchParams({ query, format: "json" })}`);
   if (!res.ok) throw new Error(`Wikidata SPARQL ${res.status}`);
   return ((await res.json()) as { results: { bindings: T[] } }).results.bindings;
 }
 
 type B = Record<string, { value: string } | undefined>;
 
-export async function fetchWikidataCameras(): Promise<WikidataCamera[]> {
+export async function fetchWikidataCameras(kind: keyof typeof WD_CLASS = "camera"): Promise<WikidataCamera[]> {
   const rows = await sparql<B>(`
     SELECT ?cam ?label ?alt ?makerLabel ?exif ?image ?mass ?ann ?pub ?mountLabel ?gtin WHERE {
-      ?cam wdt:P31 wd:${DIGITAL_CAMERA_MODEL} ; rdfs:label ?label . FILTER(LANG(?label) = "en")
+      ?cam wdt:P31 wd:${WD_CLASS[kind]} ; rdfs:label ?label . FILTER(LANG(?label) = "en")
       OPTIONAL { ?cam skos:altLabel ?alt . FILTER(LANG(?alt) = "en") }
       OPTIONAL { ?cam wdt:P176 ?maker }
       OPTIONAL { ?cam wdt:P2009 ?exif }
@@ -82,6 +92,22 @@ const MAKER_WORD: Record<string, RegExp> = {
   ricoh: /ricoh|pentax/i,
   sigma: /sigma/i,
   hasselblad: /hasselblad/i,
+  gopro: /gopro/i,
+  dji: /dji/i,
+  insta360: /insta360|arashi/i,
+  blackmagic: /blackmagic/i,
+  red: /red digital|^red$/i,
+  tamron: /tamron/i,
+  samyang: /samyang|rokinon/i,
+  viltrox: /viltrox/i,
+  tokina: /tokina|kenko/i,
+  laowa: /laowa|venus/i,
+  ttartisan: /ttartisan/i,
+  "7artisans": /7artisans/i,
+  zeiss: /zeiss/i,
+  voigtlander: /voigtl|cosina/i,
+  sirui: /sirui/i,
+  meike: /meike/i,
 };
 
 /**
@@ -93,7 +119,7 @@ const MAKER_WORD: Record<string, RegExp> = {
  * our full name, then any label, then a brand-stripped or Exif match. Only an
  * unambiguous best match is returned.
  */
-export function linkCamera(camera: Camera, items: WikidataCamera[]): WikidataCamera | null {
+export function linkCamera(camera: Linkable, items: WikidataCamera[]): WikidataCamera | null {
   if (camera.wikidata) return items.find((i) => i.qid === camera.wikidata) ?? null;
   const ours = new Set([camera.name, ...camera.aliases, ...camera.modelCodes].map(compact));
   const brandName = compact(camera.brand === "om-system" ? "olympus" : camera.brand);
@@ -120,9 +146,9 @@ export function linkCamera(camera: Camera, items: WikidataCamera[]): WikidataCam
  * cameras land on one item, only the one whose name IS the item's label
  * keeps it.
  */
-export function linkAll(cameras: Camera[], items: WikidataCamera[]): Map<string, WikidataCamera> {
+export function linkAll(cameras: Linkable[], items: WikidataCamera[]): Map<string, WikidataCamera> {
   const links = new Map<string, WikidataCamera>();
-  const byQid = new Map<string, Camera[]>();
+  const byQid = new Map<string, Linkable[]>();
   for (const c of cameras) {
     const w = linkCamera(c, items);
     if (w) byQid.set(w.qid, [...(byQid.get(w.qid) ?? []), c]);
@@ -149,7 +175,7 @@ const FREE = /^(cc0|cc[ -]by(-sa)?[ -]?\d|public domain|pd)/i;
 /** The file's licence and a ~960px thumbnail URL, or null if it is not freely licensed. */
 export async function commonsImage(file: string, width = 960): Promise<CommonsImage | null> {
   const params = new URLSearchParams({ action: "query", titles: `File:${file}`, prop: "imageinfo", iiprop: "url|extmetadata", iiurlwidth: String(width), format: "json", formatversion: "2" });
-  const res = await fetch(`${COMMONS_API}?${params}`, { headers: { "User-Agent": USER_AGENT } });
+  const res = await politeFetch(`${COMMONS_API}?${params}`);
   if (!res.ok) throw new Error(`Commons ${res.status}`);
   const page = ((await res.json()) as { query?: { pages?: { imageinfo?: { thumburl: string; descriptionurl: string; extmetadata: Record<string, { value: string } | undefined> }[] }[] } }).query?.pages?.[0];
   const info = page?.imageinfo?.[0];
@@ -177,7 +203,7 @@ export async function commonsImage(file: string, width = 960): Promise<CommonsIm
  */
 export async function searchCommonsFiles(query: string, limit = 20): Promise<string[]> {
   const params = new URLSearchParams({ action: "query", list: "search", srnamespace: "6", srsearch: query, srlimit: String(limit), format: "json", formatversion: "2" });
-  const res = await fetch(`${COMMONS_API}?${params}`, { headers: { "User-Agent": USER_AGENT } });
+  const res = await politeFetch(`${COMMONS_API}?${params}`);
   if (!res.ok) throw new Error(`Commons search ${res.status}`);
   const body = (await res.json()) as { query?: { search?: { title: string }[] } };
   return (body.query?.search ?? []).map((r) => r.title.replace(/^File:/, "")).filter((t) => /\.(jpe?g|png|webp)$/i.test(t));
@@ -186,3 +212,35 @@ export async function searchCommonsFiles(query: string, limit = 20): Promise<str
 // Sample photos taken WITH the camera, keyword-dump file names (a church
 // tagged "rx100 vii"), and shots of two cameras together.
 export const SAMPLE_SHOT = /\b(sample|taken|shot with|shot on|example|test ?shot|crop|100 ?%|photographed with|image quality|vs)\b|[;&]| and /i;
+
+// ------------------------------------------------------------- Openverse
+
+export type OpenverseImage = { id: string; title: string; url: string; landing: string; creator: string; license: string; licenseVersion: string; licenseUrl: string; provider: string; tags: string[] };
+
+/**
+ * Openverse (WordPress's CC search: Flickr, Wikimedia and more). Commercial-
+ * use licences only (CC0, PDM, BY, BY-SA; BY-ND is allowed because we only
+ * resize). Anonymous use is 200 requests a day; OPENVERSE_TOKEN raises it.
+ */
+export async function openverseSearch(q: string): Promise<OpenverseImage[]> {
+  const params = new URLSearchParams({ q, page_size: "20", license_type: "commercial", category: "photograph", mature: "false" });
+  const token = process.env.OPENVERSE_TOKEN;
+  const res = await fetch(`https://api.openverse.org/v1/images/?${params}`, { headers: { "User-Agent": USER_AGENT, ...(token ? { Authorization: `Bearer ${token}` } : {}) } });
+  if (res.status === 429) throw new Error("Openverse rate limit");
+  if (!res.ok) throw new Error(`Openverse ${res.status}`);
+  const body = (await res.json()) as { results: { id: string; title?: string; url: string; foreign_landing_url: string; creator?: string; license: string; license_version?: string; license_url?: string; provider: string; tags?: { name: string }[] }[] };
+  return body.results
+    .filter((r) => /^(cc0|pdm|by|by-sa|by-nd)$/.test(r.license))
+    .map((r) => ({
+      id: r.id,
+      title: r.title ?? "",
+      url: r.url,
+      landing: r.foreign_landing_url,
+      creator: r.creator || "Unknown author",
+      license: r.license === "cc0" ? "CC0" : r.license === "pdm" ? "Public domain" : `CC ${r.license.toUpperCase()} ${r.license_version ?? ""}`.trim(),
+      licenseVersion: r.license_version ?? "",
+      licenseUrl: r.license_url ?? "",
+      provider: r.provider,
+      tags: (r.tags ?? []).map((t) => t.name),
+    }));
+}

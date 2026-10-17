@@ -1,0 +1,77 @@
+{
+  "slug": "gopro-hero11-black-mini",
+  "brand": "gopro",
+  "name": "GoPro HERO11 Black Mini",
+  "shortName": "HERO11 Black Mini",
+  "aliases": [
+    "HERO11 Black Mini",
+    "HERO 11 Black Mini",
+    "HERO11 Mini",
+    "HERO 11 Mini"
+  ],
+  "modelCodes": [
+    "CHDHF-111"
+  ],
+  "gtins": [],
+  "type": "action",
+  "announced": "2022-09-14",
+  "launchPriceUsd": 399.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "gopro-hero11-black",
+    "insta360-go-3",
+    "dji-osmo-action-3"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      12,
+      39
+    ],
+    "aperture": "f/2.5"
+  },
+  "specs": {
+    "sensorFormat": "1/1.9-inch",
+    "sensorType": "CMOS",
+    "megapixels": 24.7,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "5.3K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": false,
+    "weightG": 133,
+    "dimensionsMm": [
+      52.4,
+      51.2,
+      38
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

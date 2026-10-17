@@ -3,7 +3,10 @@
   "brand": "nikon",
   "name": "Nikon Z50",
   "shortName": "Z50",
-  "aliases": ["Z50", "Z 50"],
+  "aliases": [
+    "Z50",
+    "Z 50"
+  ],
   "modelCodes": [],
   "gtins": [],
   "type": "mirrorless",
@@ -12,7 +15,12 @@
   "status": "current",
   "predecessor": null,
   "successor": "nikon-z50-ii",
-  "rivals": ["sony-a6400", "canon-eos-m50-mark-ii", "fujifilm-x-t30-ii", "canon-eos-r10"],
+  "rivals": [
+    "sony-a6400",
+    "canon-eos-m50-mark-ii",
+    "fujifilm-x-t30-ii",
+    "canon-eos-r10"
+  ],
   "mount": "nikon-z",
   "fixedLens": null,
   "specs": {
@@ -28,7 +36,10 @@
     "shutterMaxMech": 4000,
     "shutterMaxElec": 4000,
     "afPoints": 209,
-    "afSubjects": ["human", "animal"],
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
     "videoMaxRes": "4K",
     "video4kMaxFps": 30,
     "video10bit": false,
@@ -40,8 +51,13 @@
     "screenType": "tilting",
     "touchscreen": true,
     "weightG": 450,
-    "dimensionsMm": [126.5, 93.5, 60],
+    "dimensionsMm": [
+      126.5,
+      93.5,
+      60
+    ],
     "weatherSealed": null,
+    "waterproofM": null,
     "cardSlots": 1,
     "cardTypes": "SD UHS-I",
     "batteryShotsCipa": 320,

@@ -1,0 +1,69 @@
+{
+  "slug": "ricoh-theta-sc2",
+  "brand": "ricoh",
+  "name": "Ricoh Theta SC2",
+  "shortName": "Theta SC2",
+  "aliases": [
+    "Theta SC2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "360",
+  "announced": "2019-11-19",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "insta360-one-x2",
+    "gopro-max",
+    "insta360-x3"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 14,
+    "isoMin": 64,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 25000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": false,
+    "weightG": 104,
+    "dimensionsMm": [
+      45.2,
+      130.6,
+      22.9
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 0,
+    "cardTypes": "14GB internal",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

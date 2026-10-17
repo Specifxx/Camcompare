@@ -1,0 +1,71 @@
+{
+  "slug": "fujifilm-x-a7",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-A7",
+  "shortName": "X-A7",
+  "aliases": [
+    "X-A7",
+    "XA7",
+    "X A7"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-09-12",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": "fujifilm-x-a5",
+  "successor": null,
+  "rivals": [
+    "canon-eos-m50",
+    "sony-a6100",
+    "canon-eos-m200",
+    "fujifilm-x-t200"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.5,
+    "screenDotsM": 2.76,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 320,
+    "dimensionsMm": [
+      119,
+      67.7,
+      41.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 270,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

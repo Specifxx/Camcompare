@@ -1,0 +1,75 @@
+{
+  "slug": "fujifilm-x30",
+  "brand": "fujifilm",
+  "name": "Fujifilm X30",
+  "shortName": "X30",
+  "aliases": [
+    "X30",
+    "X-30"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2014-08-26",
+  "launchPriceUsd": 599.95,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-rx100-iii",
+    "panasonic-lumix-lx100",
+    "sony-rx100-iv"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28,
+      112
+    ],
+    "aperture": "f/2-2.8"
+  },
+  "specs": {
+    "sensorFormat": "2/3-inch",
+    "sensorType": "X-Trans CMOS II",
+    "megapixels": 12,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 12,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 423,
+    "dimensionsMm": [
+      118.7,
+      71.6,
+      60.3
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 470,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

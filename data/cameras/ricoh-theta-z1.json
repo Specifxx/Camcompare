@@ -1,0 +1,70 @@
+{
+  "slug": "ricoh-theta-z1",
+  "brand": "ricoh",
+  "name": "Ricoh Theta Z1",
+  "shortName": "Theta Z1",
+  "aliases": [
+    "Theta Z1",
+    "Theta Z1 51GB"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "360",
+  "announced": "2019-02-25",
+  "launchPriceUsd": null,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "insta360-one-rs-1-inch-360",
+    "insta360-x3",
+    "gopro-max"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/2.1"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 23,
+    "isoMin": 80,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 25000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": false,
+    "weightG": 182,
+    "dimensionsMm": [
+      48,
+      132.5,
+      29.7
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 0,
+    "cardTypes": "19GB internal (51GB version)",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

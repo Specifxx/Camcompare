@@ -1,0 +1,77 @@
+{
+  "slug": "fujifilm-x-half",
+  "brand": "fujifilm",
+  "name": "Fujifilm X half",
+  "shortName": "X half",
+  "aliases": [
+    "X half",
+    "X-half",
+    "Xhalf",
+    "X-HF1"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2025-05-22",
+  "launchPriceUsd": 849.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "ricoh-gr-iii",
+    "ricoh-gr-iiix",
+    "canon-powershot-v1",
+    "canon-powershot-g7-x-mark-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      32
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 17.7,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 2.4,
+    "screenDotsM": 0.92,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 240,
+    "dimensionsMm": [
+      105.8,
+      64.3,
+      45.8
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 510,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

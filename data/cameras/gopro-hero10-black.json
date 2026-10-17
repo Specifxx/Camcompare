@@ -1,0 +1,78 @@
+{
+  "slug": "gopro-hero10-black",
+  "brand": "gopro",
+  "name": "GoPro HERO10 Black",
+  "shortName": "HERO10 Black",
+  "aliases": [
+    "HERO10 Black",
+    "HERO 10 Black",
+    "HERO10",
+    "HERO 10"
+  ],
+  "modelCodes": [
+    "CHDHX-101"
+  ],
+  "gtins": [],
+  "type": "action",
+  "announced": "2021-09-16",
+  "launchPriceUsd": 499.99,
+  "status": "discontinued",
+  "predecessor": "gopro-hero9-black",
+  "successor": "gopro-hero11-black",
+  "rivals": [
+    "gopro-hero9-black",
+    "gopro-hero11-black",
+    "dji-osmo-action-3",
+    "insta360-one-rs"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      16,
+      39
+    ],
+    "aperture": "f/2.5"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 23.3,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 25,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "5.3K",
+    "video4kMaxFps": 120,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.27,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 154,
+    "dimensionsMm": [
+      71.8,
+      50.8,
+      33.6
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

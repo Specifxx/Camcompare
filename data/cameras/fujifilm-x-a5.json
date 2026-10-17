@@ -1,0 +1,71 @@
+{
+  "slug": "fujifilm-x-a5",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-A5",
+  "shortName": "X-A5",
+  "aliases": [
+    "X-A5",
+    "XA5",
+    "X A5"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2018-01-31",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-x-a7",
+  "rivals": [
+    "canon-eos-m100",
+    "olympus-pen-e-pl9",
+    "sony-a6000",
+    "fujifilm-x-t100"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 91,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 15,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 361,
+    "dimensionsMm": [
+      116.9,
+      67.7,
+      40.4
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 450,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}
