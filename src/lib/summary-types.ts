@@ -17,7 +17,6 @@ export type Base = {
   lowestNew: number | null; // minor units in `currency`
   lowestUsed: number | null;
   stores: number; // retailers with an in-stock offer in this market (Amazon not counted)
-  thumb: string;
   weightG: number | null;
   sealed: boolean | null;
 };

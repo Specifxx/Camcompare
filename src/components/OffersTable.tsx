@@ -5,6 +5,7 @@ import { alsoCheckLinks, ebayRows, offerRows, packKind } from "@/lib/offer-rows"
 import { price } from "@/lib/format";
 import { usedValue } from "@/lib/value";
 import EbayPanel from "./EbayPanel";
+import MoreOffers from "./MoreOffers";
 import { AlsoCheck, OfferRowItem } from "./OfferRows";
 import TimedPrice from "./TimedPrice";
 
@@ -31,6 +32,7 @@ export default function OffersTable({ product, query, offers, market, page, amaz
   const usedTypical = usedValue(historyFor(product, market))?.value ?? null;
   // The cheapest in-stock rows first; the rest (more kits, out of stock) one
   // click away, still in price order, so a long list doesn't bury the page.
+  // Those load on open from the quick view's static file (MoreOffers).
   const inStock = rows.filter((r) => r.inStock).length;
   const shown = Math.max(1, Math.min(inStock, VISIBLE));
   const rest = rows.slice(shown);
@@ -45,15 +47,7 @@ export default function OffersTable({ product, query, offers, market, page, amaz
             <ul className="card divide-y divide-line">
               {rows.slice(0, shown).map(item)}
             </ul>
-            {rest.length > 0 && (
-              <details className="group mt-2">
-                <summary className="cursor-pointer text-sm font-medium text-accent">
-                  Show {rest.length} more {rest.length === 1 ? "price" : "prices"}
-                  {rest.some((r) => !r.inStock) ? ", out of stock included" : ""}
-                </summary>
-                <ul className="card mt-2 divide-y divide-line">{rest.map(item)}</ul>
-              </details>
-            )}
+            {rest.length > 0 && <MoreOffers market={market} product={product} ids={rest.map((r) => r.id)} inline={rest.filter((r) => r.amazon)} outOfStock={rest.some((r) => !r.inStock)} rrp={rrp} usedTypical={usedTypical} amazonMaxAgeH={AMAZON_MAX_AGE_H} />}
             <p className="mt-2 text-[11px] text-subtle">Sorted by price, cheapest in-stock first. Some links earn us a commission; it never changes the order.</p>
             {rows.some((r) => r.amazon) && (
               <p className="mt-1 text-[11px] text-subtle">

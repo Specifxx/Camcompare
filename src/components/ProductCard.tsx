@@ -17,6 +17,8 @@ export const subline = cardSubline;
 // don't spend a render (an ISR write and a function call) on each of them.
 // A plain left click opens the quick view (QuickView.tsx); the href stays the
 // product page for crawlers, middle-click and new tabs.
+// Its long utility lists live in globals.css (.pc*): a grid repeats them on
+// every card, in the HTML and again in the RSC payload.
 export default function ProductCard({ p, market }: { p: ProductSummary; market: MarketCode }) {
   const now = p.lowestNew ?? p.lowestUsed;
   const chips = cardChips(p);
@@ -27,28 +29,28 @@ export default function ProductCard({ p, market }: { p: ProductSummary; market: 
         prefetch={false}
         rel={market !== "us" && now === null ? "nofollow" : undefined}
         {...quickViewAttrs(p.slug, market, p.name)}
-        className="card group flex h-full flex-col gap-2 p-3 text-fg no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+        className="card pc group"
       >
         <div className="relative">
           <ProductThumb slug={p.slug} alt={p.name} className="rounded-md" />
-          <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-1.5 mx-auto w-max rounded-full bg-fg/85 px-2.5 py-0.5 text-[11px] font-semibold text-bg opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+          <span aria-hidden className="pc-hint">
             {now !== null ? "Compare prices" : "Quick view"}
           </span>
         </div>
         <div className="flex-1">
-          <p className="text-xs font-medium text-subtle">{p.brandName}</p>
-          <p className="text-[15px] font-semibold leading-snug group-hover:text-accent">{p.shortName}</p>
-          <p className="mt-1 text-xs text-muted">{cardSubline(p)}</p>
+          <p className="pc-brand">{p.brandName}</p>
+          <p className="pc-name">{p.shortName}</p>
+          <p className="pc-sub">{cardSubline(p)}</p>
           {/* Key specs on one line: "IBIS · 4K 60p · 658 g". */}
           {chips.length > 0 && (
-            <ul className="exif mt-1.5 flex flex-wrap gap-x-1.5" aria-label="Key specs">
+            <ul className="exif pc-chips" aria-label="Key specs">
               {chips.map((c, i) => (
-                <li key={c} className={`${i > 0 ? "before:mr-1.5 before:text-subtle before:content-['·']" : ""} ${i === 2 ? "hidden sm:inline" : ""}`}>{c}</li>
+                <li key={c} className={i === 2 ? "hidden sm:inline" : undefined}>{c}</li>
               ))}
             </ul>
           )}
         </div>
-        <div className="border-t border-line pt-2 text-sm">
+        <div className="pc-foot">
           {now !== null ? (
             <>
               <span className="text-xs text-subtle">{p.lowestNew !== null ? "New from " : "Used from "}</span>

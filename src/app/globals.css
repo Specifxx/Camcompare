@@ -140,6 +140,16 @@ h1, h2 { letter-spacing: -0.015em; }
 /* Retailer buttons. Rows whose link earns get a filled button; the order of
    rows is still price, never commission. */
 @layer components {
+  /* ProductCard (repeated on every card of a grid, so named once here). */
+  .pc { @apply flex h-full flex-col gap-2 p-3 text-fg no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50; }
+  .pc-hint { @apply pointer-events-none absolute inset-x-0 bottom-1.5 mx-auto w-max rounded-full bg-fg/85 px-2.5 py-0.5 text-[11px] font-semibold text-bg opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100; }
+  .pc-brand { @apply text-xs font-medium text-subtle; }
+  .pc-name { @apply text-[15px] font-semibold leading-snug group-hover:text-accent; }
+  .pc-sub { @apply mt-1 text-xs text-muted; }
+  .pc-chips { @apply mt-1.5 flex flex-wrap gap-x-1.5; }
+  .pc-chips > li + li::before { @apply mr-1.5 text-subtle; content: "·"; }
+  .pc-foot { @apply border-t border-line pt-2 text-sm; }
+
   .btn-amazon { @apply btn bg-[#FF9900] text-[#111] hover:bg-[#f08804]; }
   .btn-ebay { @apply btn bg-[#0654BA] text-white hover:bg-[#054a9f]; }
 }

@@ -4,7 +4,6 @@ import type { Camera, Lens } from "./catalog/schema";
 import { brandName, displayName, displayShortName, launchPrice, offersFor } from "./catalog";
 import { MARKETS, type MarketCode } from "./markets";
 import { isAmazonOffer, lowest } from "./offers";
-import { thumbSrc } from "./thumb";
 import { cropFactor, lensCategories } from "./specs/lens";
 import type { Base, CameraSummary, LensSummary } from "./summary-types";
 
@@ -28,7 +27,6 @@ function base(p: Camera | Lens, m: MarketCode): Base {
     // Stores with it in stock today. Amazon's price is never in a summary
     // (they are embedded in static pages), so neither is its count.
     stores: new Set(offers.filter((o) => o.inStock && !isAmazonOffer(o)).map((o) => o.retailer)).size,
-    thumb: thumbSrc(p.slug),
     weightG: p.specs.weightG,
     sealed: p.specs.weatherSealed,
   };
