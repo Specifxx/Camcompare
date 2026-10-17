@@ -625,3 +625,83 @@ Friends' feedback; owner: "UI needs to be cleaner. No random shapes and graphics
   Reddit r/photography. Left out: DPReview and PetaPixel (their search
   answers with a Cloudflare challenge, 403; DPReview stays in the Low light
   panel as before) and the Lensrentals blog (it has no search URL).
+
+
+## 2026-10-17: Community v1 (accounts, comments, votes, CamKarma, reviews, boards)
+
+Owner approved, from friends' asks: a comment section on every listing, up/
+down votes on deals, "feel like Reddit", CamKarma for upvoted comments, a
+CamExpert badge, open boards and user reviews. Then: "UI needs to be cleaner.
+No random shapes and graphics."
+
+- **User-generated public content goes in Neon, read by client fetches.** It
+  changes by the minute and can't be commits, so it is the one exception to
+  "no database for public data": the community tables sit in the existing
+  `DATABASE_URL` project (no new project). Pages never read them at build
+  time or on the server; components load after render (`Discussion` only
+  when scrolled near). Public GETs carry `Cache-Control: public,
+  s-maxage=30, stale-while-revalidate=60` and nothing about the visitor, so
+  the CDN answers almost every read; per-member data (who am I, my votes, my
+  review) is separate `no-store` endpoints, skipped entirely for signed-out
+  visitors (no `cc_member` hint cookie). Hiding a post therefore takes up to
+  ~90 s to leave caches.
+- **Thread and member pages are static shells** (`/community/t`, `/u`) that
+  `next.config.js` rewrites `/community/t/<id>` and `/u/<name>` onto: a new
+  thread or member costs no build, ISR write or server render. They are
+  noindex (content rendered in the browser). `/community` and the five board
+  pages are static, indexable, in the sitemap, with a static intro.
+- **Magic-link sign-in.** 32-byte tokens, stored as SHA-256, single-use by an
+  atomic UPDATE, 15 minutes. The link opens `/community/signin`, which POSTs
+  the token: mail scanners that prefetch links can't spend it. Sessions are a
+  random token in a cookie signed with HMAC(`AUTH_SECRET`), httpOnly, Secure,
+  SameSite=Lax, looked up by hash (so sign-out and bans end them). Without an
+  AUTH_SECRET of 32+ characters sign-in is off with a clear message; reading
+  works. Limits: 3 links per address per 15 minutes and 10 per IP per hour
+  in the database (the IP stored as an HMAC), answers identical whether or
+  not the address is a member.
+- **Writes:** zod, text cleaned (tags, control and bidi characters stripped)
+  before length checks, rendered as text nodes with only http(s) autolinks
+  (`rel="nofollow ugc noopener"`). Every write needs a same-origin `Origin`
+  (and `Sec-Fetch-Site: same-origin` when sent) and JSON. Posting: 6 per
+  member and 20 per IP per 10 minutes per instance, plus 8 posts per member
+  per 10 minutes across instances (counted in the database).
+- **Votes** are ±1, one per member per comment, review, thread or deal,
+  changeable and removable; no voting on your own posts. Scores are always
+  summed from the votes (no stored counter to drift) and ignore banned
+  members' votes. One level of replies; a reply to a reply attaches to its
+  top-level comment. One review per member per product (posting again
+  replaces it).
+- **CamKarma** = votes on a member's visible comments and reviews; never deal
+  or thread votes. **CamExpert** = `CAMEXPERT_KARMA` (50) CamKarma and an
+  account `CAMEXPERT_MIN_ACCOUNT_DAYS` (14) days old, both in
+  `lib/community/rules.ts`; shown as a plain text badge.
+- **Votes and superlikes never decide the order of offers or deals.** Deal
+  votes are displayed only. Premium is not built; `docs/premium-plan.md`
+  keeps any paid superlike cosmetic for the same reason as "commission never
+  decides order".
+- **Moderation.** Report on every comment, review and thread (signed-in, once
+  per member per post). 3 distinct reporters hide a post until the owner
+  looks, because the owner isn't always watching. `/admin` lists open reports
+  and the newest posts with hide/unhide, ban/unban and dismiss; the buttons
+  post to `/admin/moderate` (under `/admin` because the admin cookie is
+  scoped to that path; same cookie check, same-origin). Hidden posts and
+  everything by a banned member disappear from every public read; banning
+  ends their sessions.
+- **Owner notices are bounded** (`notifyOwnerBounded`, `lib/community/notify.ts`):
+  one email per event to `OWNER_EMAIL` through Resend, at most 20 reports,
+  10 new posts and 5 new members a day (UTC), counted in `community_notices`
+  so every instance shares the cap; the last one says the cap was hit.
+- **Plain UI.** Text, thin rules, small ▲▼ arrows, "[CamExpert]" in text, no
+  decorative shapes, gradients or paper effects, per the owner's feedback.
+
+## 2026-10-17: Plain and clean, replacing the film-stock look
+
+Friends' verdict on the film-stock look ("A warmer, film-stock look", above):
+"UI needs to be cleaner. No random shapes and graphics." It is replaced:
+Inter for all text (Fraunces, JetBrains Mono's display use and Caveat are
+gone), an off-white page with white panels, neutral greys and 1px borders,
+one accent (the logo's rust) and green only for money. No light leaks,
+bokeh, grain, gradients, viewfinder corners, film frames, tape, tilted
+photos, stickers, marquee or scroll animations. The only motion left is the
+logo's one-off aperture opening, which friends liked. A new decoration needs
+a reason a buyer would care about.

@@ -18,7 +18,26 @@ project (`DATABASE_URL`): `feedback` (`src/lib/feedback.ts`), written by
 `/api/alerts`, read by `scripts/check-alerts.ts` after each price import and
 by the token-only `/alerts/manage` page; emails go through Resend
 (`RESEND_API_KEY`). Nothing public ever reads either, and no page reads them
-at build time. Everything public is JSON in `data/`, committed:
+at build time.
+
+**The one deliberate exception: the community** (`src/lib/community/`,
+DECISIONS.md "Community v1"). Comments, votes, reviews and discussion threads
+are public but user-generated, change by the minute and can't be commits, so
+they live in the same Neon project: `community_users` (email, username, ban
+flag; the email is never returned publicly), `community_login_tokens`
+(SHA-256 of each magic link, 15 minutes, single use) and `community_sessions`
+(hashed session tokens; cookies signed with `AUTH_SECRET`), private; and
+`community_comments`, `community_votes`, `community_reviews`,
+`community_threads`, public through the API; plus `community_reports` and
+`community_notices` (daily owner-email counts), private. They are read **at
+request time by client fetches only** (and by the owner's `/admin`), after the static page renders, through
+`/api/community/*` GETs the CDN caches for 30 s (`s-maxage=30,
+stale-while-revalidate=60`) so a busy page costs one query a minute. No page
+reads them at build time or server-side, pages stay static, and thread and
+member pages are static shells (`/community/t`, `/u`, via rewrites). Don't
+add server reads, ISR or prewarming for them.
+
+Everything else public is JSON in `data/`, committed:
 
 - `data/cameras/<slug>.json`, `data/lenses/<slug>.json`: the catalog
   (`src/lib/catalog/schema.ts`; how to write one: `docs/catalog-authoring.md`)
