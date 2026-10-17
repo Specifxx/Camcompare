@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Reveal from "@/components/Reveal";
+
 
 /** Home section heading: a film-edge eyebrow, display title with a grease-pencil underline, optional "all" link. */
 export default function SectionHeading({ eyebrow, title, href, link, id }: { eyebrow: string; title: string; href?: string; link?: string; id?: string }) {
   return (
-    <Reveal className="mb-5 flex items-end justify-between gap-4">
+    <div className="mb-4 flex items-end justify-between gap-4">
       <div>
         <p className="eyebrow flex items-center gap-2">
           <span aria-hidden className="text-spark">▶</span>
@@ -20,6 +20,6 @@ export default function SectionHeading({ eyebrow, title, href, link, id }: { eye
           {link} <span aria-hidden className="inline-block transition-transform group-hover:translate-x-1">→</span>
         </Link>
       )}
-    </Reveal>
+    </div>
   );
 }

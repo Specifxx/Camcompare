@@ -34,6 +34,12 @@ at build time. Everything public is JSON in `data/`, committed:
   hours, so each build fetches them into the git-ignored `data/offers-amazon/`
   (`scripts/fetch-amazon-prices.ts`), and they stay out of price history,
   deals, metadata and structured data (`lowest`, `isAmazonOffer`).
+- `data/accessories/<market>.json`: camera accessories (cages, batteries,
+  tripods, cards, film, lights…) from listings the Shopify and structured
+  sources already read but `matchListing` refuses, classified by
+  `classifyAccessory` (`src/lib/accessories.ts`); and
+  `data/accessory-history/<market>/YYYY-MM-DD.json`, the day's lowest price
+  per GB per card/drive format and capacity. Both written by the import.
 
 Pages read these at build time and are static. **No page sets `revalidate`.**
 Data changes only through commits, and each commit is a build. Don't add a

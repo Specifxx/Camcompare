@@ -133,25 +133,30 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   return (
     <div className="flex flex-col gap-14 sm:gap-16">
       {/* ---- small hero: one line and the search box */}
-      <section aria-labelledby="hero-title" className="hd-hero">
-        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
-          {MARKETS[m].flag} Prices for {MARKETS[m].name} · {cur}
-        </p>
-        <h1 id="hero-title" className="mt-1.5 text-[1.6rem] font-semibold leading-tight tracking-[-0.02em] sm:text-[2.2rem]">
-          Camera &amp; lens prices, compared. <em className="cc-h1-em text-accent">Best deals first.</em>
-        </h1>
-        <div className="mt-4 max-w-2xl">
-          <SearchBox market={m} variant="hero" placeholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`} />
+      <section aria-labelledby="hero-title" className="hd-hero lg:grid lg:grid-cols-[1fr_21rem] lg:items-center lg:gap-12">
+        <div>
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
+            {MARKETS[m].flag} Prices for {MARKETS[m].name} · {cur}
+          </p>
+          <h1 id="hero-title" className="mt-1.5 text-[1.6rem] font-semibold leading-tight tracking-[-0.02em] sm:text-[2.2rem]">
+            Camera &amp; lens prices, compared. <em className="cc-h1-em text-accent">Best deals first.</em>
+          </h1>
+          <div className="mt-4 max-w-2xl">
+            <SearchBox market={m} variant="hero" placeholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`} />
+          </div>
+          <p className="mt-3 text-sm text-muted">
+            or browse <Link href={marketPath(m, "/cameras")}>cameras</Link>, <Link href={marketPath(m, "/lenses")}>lenses</Link>, or let us <Link href={marketPath(m, "/finder")}>help you choose</Link>
+          </p>
         </div>
-        <p className="mt-3 text-sm text-muted">
-          or browse <Link href={marketPath(m, "/cameras")}>cameras</Link>, <Link href={marketPath(m, "/lenses")}>lenses</Link>, or let us <Link href={marketPath(m, "/finder")}>help you choose</Link>
-        </p>
+        {/* Wide screens: the note beside the hero. Narrow: after the deals (below). */}
+        <div className="hidden lg:block">
+          <MakersNote board={board} place={PLACE[m]} />
+        </div>
       </section>
 
       {/* ---- best deals */}
       <section aria-labelledby="deals-title" className="-mt-4 sm:-mt-6">
-        {/* Mobile: heading, deals, then the note. Wide: the note beside the heading. */}
-        <div className="grid gap-6 lg:grid-cols-[1fr_20rem] lg:items-start">
+        <div className="grid gap-6">
           <div className="order-1">
             <p className="eyebrow flex items-center gap-2">
               <span aria-hidden className="text-spark">
@@ -174,12 +179,12 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
               </p>
             )}
           </div>
-          <div className="order-3 lg:order-2">
-            <MakersNote />
+          <div className="order-3 mx-auto w-full max-w-xl lg:hidden">
+            <MakersNote board={board} place={PLACE[m]} />
           </div>
 
           {board && (
-            <div className="order-2 lg:order-3 lg:col-span-2">
+            <div className="order-2">
               <DealTabs counts={counts} defaultMode={defaultMode}>
                 {dealList("used")}
                 {dealList("new")}
@@ -193,44 +198,55 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
             </div>
           )}
 
-          {fallback && (
-            <div className="order-2 grid gap-8 md:grid-cols-2 lg:order-3 lg:col-span-2">
-              <FallbackList
-                m={m}
-                title="Got cheaper this week"
-                empty={`No new-price drops in ${PLACE[m]} this week. We need a week of prices to spot one.`}
-                rows={fallback.newDrops.slice(0, 8).map((d) => ({
-                  slug: d.slug,
-                  right: (
-                    <>
-                      <span className="price font-bold text-buy">{price(d.to, cur)}</span> <span className="block text-xs text-win">−{d.pct}% in a week</span>
-                    </>
-                  ),
-                }))}
-              />
-              <FallbackList
-                m={m}
-                title="Used for a lot less than new"
-                empty={`Not enough used and new prices side by side in ${PLACE[m]} yet.`}
-                rows={fallback.savings.slice(0, 8).map((s) => ({
-                  slug: s.slug,
-                  right: (
-                    <>
-                      <span className="price font-bold text-buy">{price(s.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span>
-                      <span className="block text-xs text-win">
-                        {s.pct}% under new {price(s.n!.price, cur)}
-                      </span>
-                    </>
-                  ),
-                }))}
-              />
-              <p className="text-sm md:col-span-2">
-                <Link href={marketPath(m, "/deals")} prefetch={false} className="font-semibold">
-                  Everything on the deals page <span aria-hidden>→</span>
-                </Link>
-              </p>
-            </div>
-          )}
+          {fallback &&
+            (() => {
+              // One list alone takes the full width; an empty one only says so when both are.
+              const dropsN = fallback.newDrops.length,
+                savesN = fallback.savings.length;
+              const solo = !dropsN || !savesN;
+              return (
+                <div className="order-2 grid gap-8 md:grid-cols-2">
+                  <FallbackList
+                    m={m}
+                    hidden={!dropsN && savesN > 0}
+                    wide={solo}
+                    title="Got cheaper this week"
+                    empty={`No new-price drops in ${PLACE[m]} this week. We need a week of prices to spot one.`}
+                    rows={fallback.newDrops.slice(0, solo ? 12 : 8).map((d) => ({
+                      slug: d.slug,
+                      right: (
+                        <>
+                          <span className="price font-bold text-buy">{price(d.to, cur)}</span> <span className="block text-xs text-win">−{d.pct}% in a week</span>
+                        </>
+                      ),
+                    }))}
+                  />
+                  <FallbackList
+                    m={m}
+                    hidden={!savesN && dropsN > 0}
+                    wide={solo}
+                    title="Used for a lot less than new"
+                    empty={`Not enough used and new prices side by side in ${PLACE[m]} yet.`}
+                    rows={fallback.savings.slice(0, solo ? 12 : 8).map((s) => ({
+                      slug: s.slug,
+                      right: (
+                        <>
+                          <span className="price font-bold text-buy">{price(s.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span>
+                          <span className="block text-xs text-win">
+                            {s.pct}% under new {price(s.n!.price, cur)}
+                          </span>
+                        </>
+                      ),
+                    }))}
+                  />
+                  <p className="text-sm md:col-span-2">
+                    <Link href={marketPath(m, "/deals")} prefetch={false} className="font-semibold">
+                      Everything on the deals page <span aria-hidden>→</span>
+                    </Link>
+                  </p>
+                </div>
+              );
+            })()}
         </div>
         <QuickViewHost />
       </section>
@@ -311,14 +327,15 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   );
 }
 
-function FallbackList({ m, title, rows, empty }: { m: MarketCode; title: string; rows: { slug: string; right: React.ReactNode }[]; empty: string }) {
+function FallbackList({ m, title, rows, empty, wide, hidden }: { m: MarketCode; title: string; rows: { slug: string; right: React.ReactNode }[]; empty: string; wide: boolean; hidden: boolean }) {
+  if (hidden) return null;
   return (
-    <div>
+    <div className={wide ? "md:col-span-2" : ""}>
       <h3 className="font-display text-lg font-semibold">{title}</h3>
       {rows.length === 0 ? (
         <p className="mt-2 text-sm text-muted">{empty}</p>
       ) : (
-        <ul className="mt-3 flex flex-col gap-2">
+        <ul className={`mt-3 grid gap-2 ${wide ? "md:grid-cols-2" : ""}`}>
           {rows.map((r) => {
             const p = product(r.slug)!;
             return (

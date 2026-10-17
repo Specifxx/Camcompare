@@ -395,7 +395,7 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
 .hd-save .price { font-family: var(--font-display), Georgia, serif; }
 .hd-save-pct { font-size: 0.95rem; font-weight: 600; }
 /* A handwritten note pinned on the card's top edge, clear of the text. */
-.hd-note { position: absolute; right: 10px; top: -13px; rotate: -3deg; padding: 0 8px; border-radius: 2px; background: rgb(var(--c-paper)); border: 1px solid rgb(var(--c-line)); color: rgb(var(--c-accent)); font-size: 1.15rem; line-height: 1.35; box-shadow: 0 2px 5px -3px rgb(60 40 20 / 0.4); pointer-events: none; }
+.hd-note { position: absolute; right: 10px; top: -16px; rotate: -3deg; padding: 0 8px; border-radius: 2px; background: rgb(var(--c-paper)); border: 1px solid rgb(var(--c-line)); color: rgb(var(--c-accent)); font-size: 1.15rem; line-height: 1.35; box-shadow: 0 2px 5px -3px rgb(60 40 20 / 0.4); pointer-events: none; }
 li:nth-child(even) > .hd-card .hd-note { rotate: 2deg; }
 /* The makers' note: a sheet of paper taped up, slightly off square. */
 .hd-letter { position: relative; padding: 1.1rem 1.15rem 1rem; background: rgb(var(--c-paper)); border: 1px solid rgb(var(--c-line)); border-radius: 3px; box-shadow: var(--shadow-card); rotate: 0.6deg; }

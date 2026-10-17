@@ -507,3 +507,55 @@ shame" sellers over RRP, top bargains, graphs, links to makers' pages).
   refuses "doesn't / does not / don't work", "not functioning", "defective"
   and "damaged". A "damaged box" new listing is refused too; refusing a real
   offer is the safe side of the matching rule.
+
+## 2026-10-17: Camera accessories from listings we already download
+
+Owner: "something that searches for camera accessories too, like film or
+tripods … camera rigs and cages, and compare the prices of different
+accessory brands"; then memory cards and SSDs by format with price per GB,
+cables by spec, and lighting split by kind and camera system.
+
+- **No new scraping targets.** The Shopify sources already download every
+  product a shop lists, and the structured-data source reads pages from
+  shop sitemaps. Listings `matchListing` refuses (or never matches) are
+  offered to `classifyAccessory` (`src/lib/accessories.ts`); the ones it
+  recognises go to `data/accessories/<market>.json`. The structured source
+  spends only budget the catalog left unused (at most 60 pages a run) on
+  sitemap URLs whose slug reads as an accessory, under the same robots,
+  delay and bot-protection rules. Amazon and eBay: none.
+- **Camera and lens matching is untouched.** The classifier only ever sees
+  what matching threw away, and it is refuse-only in the same spirit: junk
+  shop stock (binoculars, knives, TVs, laptops), "for parts", a listing that
+  reads as a lens (focal length + aperture before any "for") or as a camera
+  bundle ("… Camera + 64GB Memory Bundle"), a price over the category's cap,
+  or a listing naming a catalog camera directly at a third or more of its
+  launch price are all refused.
+- **A camera is only attached when its brand is named** (or the accessory
+  maker is that camera maker, or its model code appears), and a model
+  followed by a generation the catalog lacks ("R6 Mark III") is not read as
+  the older one. Film, cards, drives and cables never attach to a model.
+  Flashes and triggers carry a camera *system* instead, from TTL suffixes
+  (Godox V1-S, X2T-C, XPro-F, TT685II-O) or the title.
+- **The kind named first is the product** ("FJ400 strobe kit with wireless
+  trigger" is a strobe; "tripod with ball head and QR plate" a tripod); the
+  category list order breaks ties ("battery grip" is a grip).
+- **Specs come from the title only**: capacity (packs multiplied out),
+  read/write MB/s (or "1800x"), V-class, VPG, UHS bus, card format
+  (CFexpress Type A/B, SD, microSD, XQD, CFast); drive kind; HDMI ends and
+  version, USB/Thunderbolt generation and Gbps, length. A CFexpress card
+  whose type the title doesn't state is "type not stated", not guessed.
+- **Caps keep the files reasonable**: per category the 400 cheapest, plus
+  the 40 cheapest per category and camera, per category and flash system,
+  and 12 per card/drive format and capacity (so big expensive cards aren't
+  cut by the category cap). Same keep-on-error and 72-hour aging as offers.
+  One listing per line in the file, for readable diffs.
+- **Price per GB is tracked**: each import writes
+  `data/accessory-history/<market>/YYYY-MM-DD.json`, the day's lowest
+  in-stock new price and price per GB per format and capacity; the card and
+  drive pages draw a small trend once a series has two days.
+- **Pages are static** like the rest: `/accessories`, `/accessories/<category>`
+  and the market variants, noindex and out of the sitemap until that market
+  has listings in the category. Filters are client-side over the static
+  list and kept in the query string. Camera pages get an "Accessories for"
+  block (cheapest per category across shops and brands) only when something
+  names that camera, plus flashes and triggers for its system.
