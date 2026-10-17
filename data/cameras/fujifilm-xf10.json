@@ -40,7 +40,7 @@
     "burstElecFps": null,
     "shutterMaxMech": 4000,
     "shutterMaxElec": 16000,
-    "afPoints": 91,
+    "afPoints": null,
     "afSubjects": [
       "human"
     ],

@@ -9,7 +9,9 @@
     "Xhalf",
     "X-HF1"
   ],
-  "modelCodes": [],
+  "modelCodes": [
+    "X-HF1"
+  ],
   "gtins": [],
   "type": "compact",
   "announced": "2025-05-22",
@@ -42,7 +44,7 @@
     "burstElecFps": null,
     "shutterMaxMech": 2000,
     "shutterMaxElec": null,
-    "afPoints": null,
+    "afPoints": 9,
     "afSubjects": [
       "human"
     ],
@@ -66,7 +68,7 @@
     "waterproofM": null,
     "cardSlots": 1,
     "cardTypes": "SD UHS-I",
-    "batteryShotsCipa": 510,
+    "batteryShotsCipa": 880,
     "usbC": true,
     "micJack": false,
     "headphoneJack": false,

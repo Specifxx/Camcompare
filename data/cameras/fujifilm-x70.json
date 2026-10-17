@@ -10,7 +10,7 @@
   "modelCodes": [],
   "gtins": [],
   "type": "compact",
-  "announced": "2016-01-14",
+  "announced": "2016-01-15",
   "launchPriceUsd": 699.95,
   "launchPrices": {
     "GBP": 549
@@ -69,7 +69,7 @@
     "cardTypes": "SD",
     "batteryShotsCipa": 330,
     "usbC": false,
-    "micJack": false,
+    "micJack": true,
     "headphoneJack": false,
     "builtInFlash": true,
     "wifi": true,

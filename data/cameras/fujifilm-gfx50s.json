@@ -12,7 +12,7 @@
   "gtins": [],
   "type": "medium-format",
   "announced": "2017-01-19",
-  "launchPriceUsd": 6499,
+  "launchPriceUsd": 6499.95,
   "launchPrices": {
     "GBP": 6199
   },
@@ -53,7 +53,7 @@
     "screenDotsM": 2.36,
     "screenType": "multi-angle",
     "touchscreen": true,
-    "weightG": 920,
+    "weightG": 825,
     "dimensionsMm": [
       147.5,
       94.2,

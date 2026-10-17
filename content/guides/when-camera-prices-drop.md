@@ -37,12 +37,12 @@ Fujifilm aimed to check a claim within 14 days and to pay within a further 28. S
 
 A minimum advertised price (MAP) policy sets the lowest price at which a maker's dealers may advertise its products. It limits the advertised price, not necessarily the price you pay.
 
-US law gives makers room to do this. The Federal Trade Commission explains that a manufacturer may deal only with retailers that follow its resale price policy, and may stop dealing with one that doesn't. Since a 2007 Supreme Court decision, federal law judges minimum resale price rules case by case rather than banning them outright, though some state laws are stricter.
+The Federal Trade Commission explains that a manufacturer may deal only with retailers that follow its resale price policy, and may stop dealing with one that doesn't. Since a 2007 Supreme Court decision, federal law judges minimum resale price rules case by case rather than banning them outright, though some state laws are stricter.
 
 Where a maker enforces such a policy, buyers see two effects:
 
 - **Authorised dealers tend to show the same price,** so shopping around between them saves less than you might expect.
-- **Drops tend to happen together.** When a maker's instant savings start, its dealers can advertise the lower price for the same dates, and it rises again when they end.
+- **Drops tend to happen together.** Instant savings let a maker's dealers advertise the lower price for the same dates.
 
 A listing well below the usual price can be a grey import, an open-box or used item, or a marketplace seller. That can still be a good buy, but check what you are getting.
 
@@ -56,15 +56,13 @@ When a maker replaces a camera or lens, the outgoing model may be discounted or 
 
 ### The older model, used
 
-A launch can also bring more used copies onto the market, as owners sell to fund the upgrade, and more supply can push the used price down. It doesn't always work that way: when demand for a camera outstrips supply, used prices can hold up, or even rise for a while.
+A launch can also bring more used copies onto the market, as owners sell to fund the upgrade, and more supply can push the used price down. But when demand outstrips supply, used prices can hold up, or even rise for a while.
 
 ### The new model
 
-A newly launched camera may not be discounted for some time, and popular models can be on back order. The first discounts may arrive with the maker's first promotion on it or with a sale season. If you don't need the newest features, the previous model at a reduced price can be better value. Use [compare](/compare) to see what the newer one actually adds.
+A newly launched camera may not be discounted for some time, and popular models can be on back order. The first discounts may come with a maker promotion or a sale season. If you don't need the newest features, the previous model at a reduced price can be better value. Use [compare](/compare) to see what the newer one actually adds.
 
 ## Sale seasons
-
-Sale seasons are when makers' promotions and shops' own discounts can overlap.
 
 | Market | Sale periods to watch |
 |---|---|
@@ -89,7 +87,7 @@ The cheapest copy of a camera or lens is often not a new one:
 - **Refurbished** gear has been checked and, where needed, repaired, by the maker or by a dealer. Makers such as Nikon cover their refurbished products with a warranty; check how long it lasts.
 - **Used** gear has had at least one owner. Its condition, and who is selling it, decide what it is worth.
 
-Who sells it matters as much as the price, because the main protections apply when the seller is a business:
+Who sells it matters as much as the price. The main protections apply when the seller is a business:
 
 - **UK:** the Consumer Rights Act covers goods a trader sells you, second-hand included. They must be of satisfactory quality, judged against how they were described and the price.
 - **EU:** second-hand goods from a professional seller get the same minimum two-year guarantee as new, though some countries let the seller agree a shorter period with you, never under one year. Goods bought from private individuals aren't covered.

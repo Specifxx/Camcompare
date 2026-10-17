@@ -63,7 +63,7 @@
     "batteryShotsCipa": 400,
     "usbC": true,
     "micJack": true,
-    "headphoneJack": null,
+    "headphoneJack": false,
     "builtInFlash": false,
     "wifi": true,
     "bluetooth": true
