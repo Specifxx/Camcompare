@@ -1,7 +1,56 @@
 {
- "generatedAt": null,
+ "generatedAt": "2026-10-17T10:58:37.025Z",
  "market": "eu",
  "currency": "EUR",
- "sources": {},
+ "sources": {
+  "amazon-de": {
+   "status": "skipped",
+   "offers": 0,
+   "note": "Creators API EU credentials or AMAZON_TAG_DE not set",
+   "at": "2026-10-17T10:58:37.025Z"
+  },
+  "calumet-de": {
+   "status": "skipped",
+   "offers": 0,
+   "note": "FEED_URL_CALUMET_DE not set",
+   "at": "2026-10-17T10:58:37.025Z"
+  },
+  "foto-erhardt": {
+   "status": "skipped",
+   "offers": 0,
+   "note": "FEED_URL_FOTO_ERHARDT not set",
+   "at": "2026-10-17T10:58:37.025Z"
+  },
+  "cyberport": {
+   "status": "skipped",
+   "offers": 0,
+   "note": "FEED_URL_CYBERPORT not set",
+   "at": "2026-10-17T10:58:37.025Z"
+  },
+  "mediamarkt-de": {
+   "status": "skipped",
+   "offers": 0,
+   "note": "FEED_URL_MEDIAMARKT_DE not set",
+   "at": "2026-10-17T10:58:37.025Z"
+  },
+  "coolblue": {
+   "status": "skipped",
+   "offers": 0,
+   "note": "FEED_URL_COOLBLUE not set",
+   "at": "2026-10-17T10:58:37.025Z"
+  },
+  "mpb-eu": {
+   "status": "skipped",
+   "offers": 0,
+   "note": "FEED_URL_MPB_EU not set",
+   "at": "2026-10-17T10:58:37.025Z"
+  },
+  "ebay-de": {
+   "status": "skipped",
+   "offers": 0,
+   "note": "EBAY_CLIENT_ID / EBAY_CLIENT_SECRET not set",
+   "at": "2026-10-17T10:58:37.025Z"
+  }
+ },
  "offers": []
 }
