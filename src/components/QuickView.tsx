@@ -259,7 +259,7 @@ function Dialog({ target }: { target: Target }) {
 
           {failed ? (
             <p className="card p-4 text-sm text-muted">
-              Couldn&apos;t load the prices. {href ? <Link href={href} onClick={goFull}>Open the product page</Link> : null}
+              Couldn&apos;t load the prices. {href ? <Link prefetch={false} href={href} onClick={goFull}>Open the product page</Link> : null}
             </p>
           ) : !data ? (
             <div className="flex flex-col gap-3" aria-busy="true" aria-label="Loading prices">

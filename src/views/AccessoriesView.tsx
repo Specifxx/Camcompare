@@ -52,7 +52,7 @@ export default function AccessoriesView({ market: m }: { market: MarketCode }) {
       </div>
       {!sums.length && (
         <p className="card p-6 text-sm text-muted">
-          No accessory listings for {MARKETS[m].name} yet: they appear after the next price check of shops here. Until then, <Link href={marketPath(m, "/cameras")}>browse cameras</Link>.
+          No accessory listings for {MARKETS[m].name} yet: they appear after the next price check of shops here. Until then, <Link prefetch={false} href={marketPath(m, "/cameras")}>browse cameras</Link>.
         </p>
       )}
       {GROUP_ORDER.map((g) => {
@@ -114,7 +114,7 @@ export function AccessoryCategoryView({ category, market: m }: { category: strin
     <div className="flex flex-col gap-8">
       <div>
         <nav className="mb-2 text-xs text-subtle" aria-label="Breadcrumb">
-          <Link href={marketPath(m, "/accessories")}>Accessories</Link> / <span>{c.label}</span>
+          <Link prefetch={false} href={marketPath(m, "/accessories")}>Accessories</Link> / <span>{c.label}</span>
         </nav>
         <h1 className="text-2xl font-extrabold tracking-tight">{c.label} in {MARKETS[m].name}</h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
@@ -127,7 +127,7 @@ export function AccessoryCategoryView({ category, market: m }: { category: strin
       {perGb && <PerGbTrend history={history} category={category} currency={MARKETS[m].currency} formatName={(f) => formatLabel(category, f) ?? f} />}
       {rows.length > 0 && <AccessoryBrowser rows={rows} cams={cams} cameraBrands={brands} perGb={perGb} system={SYSTEM_CATEGORIES.has(category)} />}
       <p className="text-sm">
-        <Link href={marketPath(m, "/accessories")}>All accessory categories →</Link>
+        <Link prefetch={false} href={marketPath(m, "/accessories")}>All accessory categories →</Link>
       </p>
       {rows.length > 0 && <AdSlot slot={AD_SLOTS.listing} />}
     </div>

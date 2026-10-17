@@ -56,7 +56,7 @@ export default function CompareView({ market: m, c }: { market: MarketCode; c?: 
           <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {indexedPairs().slice(0, 45).map(([a, b]) => (
               <li key={pairSlug(a.item, b.item)}>
-                <Link href={`/compare/${pairSlug(a.item, b.item)}`}>
+                <Link prefetch={false} href={`/compare/${pairSlug(a.item, b.item)}`}>
                   {a.item.name} vs {b.item.name}
                 </Link>
               </li>

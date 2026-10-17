@@ -35,7 +35,7 @@ export default function SuggestedKit({ c, m }: { c: Camera; m: MarketCode }) {
             {picks.map((p) => (
               <tr key={p.lens.slug}>
                 <td className={cell}>
-                  <Link href={marketPath(m, `/lenses/${p.lens.slug}`)} className="font-semibold">
+                  <Link prefetch={false} href={marketPath(m, `/lenses/${p.lens.slug}`)} className="font-semibold">
                     {brandName(p.lens.brand)} {displayShortName(p.lens, m)}
                   </Link>
                   <span className="block text-xs text-muted">{p.reason}</span>

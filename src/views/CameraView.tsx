@@ -89,7 +89,7 @@ function LensesForCamera({ c, m }: { c: Camera; m: MarketCode }) {
     <section>
       <div className="mb-3 flex items-baseline justify-between gap-4">
         <h2 className="h-section">Lenses for the {displayShortName(c, m)}</h2>
-        <Link href={marketPath(m, `/lenses?mount=${c.mount}`)} className="shrink-0 text-sm">All {lenses.length} {mt?.name ?? ""} lenses →</Link>
+        <Link prefetch={false} href={marketPath(m, `/lenses?mount=${c.mount}`)} className="shrink-0 text-sm">All {lenses.length} {mt?.name ?? ""} lenses →</Link>
       </div>
       <div className="flex flex-col gap-5">
         {groups.map(({ g, list }) => (
@@ -132,7 +132,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
       />
       <div className="flex flex-col gap-6">
         <nav className="text-xs text-subtle" aria-label="Breadcrumb">
-          <Link href={marketPath(m, "/cameras")}>Cameras</Link> / <Link href={marketPath(m, `/brands/${c.brand}`)}>{brandName(c.brand)}</Link> / <span>{short}</span>
+          <Link prefetch={false} href={marketPath(m, "/cameras")}>Cameras</Link> / <Link prefetch={false} href={marketPath(m, `/brands/${c.brand}`)}>{brandName(c.brand)}</Link> / <span>{short}</span>
         </nav>
         <header className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
           <figure>
@@ -143,7 +143,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
             <div>
               <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{name}</h1>
               <p className="mt-1 text-sm text-muted">
-                {typeLabel(c.type)} · {mt ? <Link href={marketPath(m, `/mounts/${mt.slug}`)}>{mt.name}</Link> : "Fixed lens"} · Announced {longMonthYear(c.announced)}
+                {typeLabel(c.type)} · {mt ? <Link prefetch={false} href={marketPath(m, `/mounts/${mt.slug}`)}>{mt.name}</Link> : "Fixed lens"} · Announced {longMonthYear(c.announced)}
                 {c.status === "discontinued" ? " · Discontinued (new stock may be limited)" : ""}
                 {name !== c.name ? ` · Sold as ${c.name} in the US` : ""}
               </p>
@@ -156,7 +156,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
               <SaveButton slug={c.slug} kind="camera" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} cond={lowest(offers, "new") ? "new" : "used"} />
               <PriceAlert slug={c.slug} kind="camera" market={m} newPrice={lowest(offers, "new")?.price ?? null} usedPrice={lowest(offers, "used")?.price ?? null} />
               {rivals[0] && (
-                <Link href={isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)} className="btn-ghost">
+                <Link prefetch={false} href={isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)} className="btn-ghost">
                   Compare with {displayShortName(rivals[0].item, m)}
                 </Link>
               )}
@@ -202,7 +202,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
             {[...family, ...rivals]
               .filter((x, i, arr) => arr.findIndex((y) => y.item.slug === x.item.slug) === i)
               .map((r) => (
-                <Link key={r.item.slug} href={isIndexedPair(self, r) ? `/compare/${pairSlug(c, r.item)}` : marketPath(m, `/compare?c=${c.slug},${r.item.slug}`)} className="btn-ghost">
+                <Link prefetch={false} key={r.item.slug} href={isIndexedPair(self, r) ? `/compare/${pairSlug(c, r.item)}` : marketPath(m, `/compare?c=${c.slug},${r.item.slug}`)} className="btn-ghost">
                   vs {displayName(r.item, m)}
                   {r.item.slug === c.predecessor ? <span className="text-xs font-normal text-subtle">(predecessor)</span> : r.item.slug === c.successor ? <span className="text-xs font-normal text-subtle">(successor)</span> : null}
                 </Link>

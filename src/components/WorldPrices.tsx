@@ -68,7 +68,7 @@ export default function WorldPrices({ slug, path, market: here, name }: { slug: 
       <p className="text-[11px] text-subtle">
         Each price is in its own currency, as the store charges it. The ≈ figures are approximate, at today&apos;s exchange rate
         {fx.date ? ` (ECB reference rates, ${fx.date})` : ""}, rounded, and leave out shipping, import duty, GST/VAT and card fees. A camera bought abroad may not carry a local warranty: see{" "}
-        <Link href="/guides/grey-market-cameras">grey-market cameras</Link> before you buy.
+        <Link prefetch={false} href="/guides/grey-market-cameras">grey-market cameras</Link> before you buy.
       </p>
     </div>
     </section>

@@ -33,8 +33,8 @@ export default function MountView({ slug, market: m }: { slug: string; market: M
           {mt.brand ? `${brandName(mt.brand)}'s` : "An alliance"} mount, introduced in {mt.introduced}, flange distance {mt.flangeMm} mm, for {mt.formats.map((f) => sensorLabel(f)).join(" and ")} sensors{mt.status === "legacy" ? "; no longer developed" : ""}. {bodies.length} bodies and {lenses.length} lenses here.
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-sm">
-          <Link href={marketPath(m, `/cameras?mount=${mt.slug}`)} className="btn-ghost">Filter cameras</Link>
-          <Link href={marketPath(m, `/lenses?mount=${mt.slug}`)} className="btn-ghost">Filter lenses</Link>
+          <Link prefetch={false} href={marketPath(m, `/cameras?mount=${mt.slug}`)} className="btn-ghost">Filter cameras</Link>
+          <Link prefetch={false} href={marketPath(m, `/lenses?mount=${mt.slug}`)} className="btn-ghost">Filter lenses</Link>
         </div>
       </div>
       {bodies.length > 0 && (
@@ -73,7 +73,7 @@ export function MountsIndex({ market: m }: { market: MarketCode }) {
       <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {list.map(({ mt, bodies, lenses }) => (
           <li key={mt.slug}>
-            <Link href={marketPath(m, `/mounts/${mt.slug}`)} className="card flex flex-col p-4 text-fg no-underline hover:border-accent hover:no-underline">
+            <Link prefetch={false} href={marketPath(m, `/mounts/${mt.slug}`)} className="card flex flex-col p-4 text-fg no-underline hover:border-accent hover:no-underline">
               <span className="font-semibold">{mt.name}</span>
               <span className="text-sm text-subtle">
                 {mt.formats.map((f) => sensorLabel(f)).join(" / ")} · {bodies} bodies · {lenses} lenses{mt.status === "legacy" ? " · legacy" : ""}

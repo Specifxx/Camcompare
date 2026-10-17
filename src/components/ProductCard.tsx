@@ -13,6 +13,8 @@ export const subline = cardSubline;
 // product page's payload. Outside the US an unpriced product's page is
 // rendered on its first request, so a prefetch would also be an ISR write
 // for a noindex page nobody opened.
+// Those unpriced pages are noindex, so their links are nofollow: crawlers
+// don't spend a render (an ISR write and a function call) on each of them.
 // A plain left click opens the quick view (QuickView.tsx); the href stays the
 // product page for crawlers, middle-click and new tabs.
 export default function ProductCard({ p, market }: { p: ProductSummary; market: MarketCode }) {
@@ -23,6 +25,7 @@ export default function ProductCard({ p, market }: { p: ProductSummary; market: 
       <Link
         href={marketPath(market, `/${p.kind === "camera" ? "cameras" : "lenses"}/${p.slug}`)}
         prefetch={false}
+        rel={market !== "us" && now === null ? "nofollow" : undefined}
         {...quickViewAttrs(p.slug, market, p.name)}
         className="card group flex h-full flex-col gap-2 p-3 text-fg no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
       >

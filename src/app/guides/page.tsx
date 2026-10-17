@@ -13,7 +13,7 @@ export default function GuidesIndex() {
       <ul className="flex flex-col gap-3">
         {list.map((g) => (
           <li key={g.slug}>
-            <Link href={`/guides/${g.slug}`} className="card block p-4 text-fg no-underline hover:border-accent hover:no-underline">
+            <Link prefetch={false} href={`/guides/${g.slug}`} className="card block p-4 text-fg no-underline hover:border-accent hover:no-underline">
               <span className="block font-semibold">{g.title}</span>
               <span className="text-sm text-muted">{g.description}</span>
             </Link>

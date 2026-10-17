@@ -15,7 +15,7 @@ export default function Credits() {
       <ul className="divide-y divide-line text-sm">
         {rows.map(({ kind, p, cr }) => (
           <li key={p.slug} className="py-2">
-            <Link href={productPath({ kind, slug: p.slug })} className="font-medium">{p.name}</Link>:{" "}
+            <Link prefetch={false} href={productPath({ kind, slug: p.slug })} className="font-medium">{p.name}</Link>:{" "}
             <a href={cr.pageUrl} rel="nofollow noopener" target="_blank">{cr.file.length > 80 ? `${cr.file.slice(0, 77)}…` : cr.file}</a> by {cr.author}, {cr.licenseUrl ? <a href={cr.licenseUrl} rel="nofollow noopener" target="_blank">{cr.license}</a> : cr.license}
             {cr.source === "press" ? " (press image)" : ""}
           </li>

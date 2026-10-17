@@ -114,8 +114,8 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
       </div>
       {empty && (
         <p className="card p-6 text-sm text-muted">
-          Nothing to show yet: bargains appear once {MARKETS[m].short} retailers send prices, and price drops after a week of price history. Until then, <Link href={marketPath(m, "/cameras")}>browse cameras</Link> or{" "}
-          <Link href={marketPath(m, "/lenses")}>lenses</Link>.
+          Nothing to show yet: bargains appear once {MARKETS[m].short} retailers send prices, and price drops after a week of price history. Until then, <Link prefetch={false} href={marketPath(m, "/cameras")}>browse cameras</Link> or{" "}
+          <Link prefetch={false} href={marketPath(m, "/lenses")}>lenses</Link>.
         </p>
       )}
       {(newBargains.length > 0 || usedBargains.length > 0) && (

@@ -38,7 +38,7 @@ export default function About() {
       </p>
       <p>
         Some links earn us a commission. That never changes the order: offers are always sorted by price. See the{" "}
-        <Link href="/disclosure">affiliate disclosure</Link> and <Link href="/privacy">privacy</Link> pages.
+        <Link prefetch={false} href="/disclosure">affiliate disclosure</Link> and <Link prefetch={false} href="/privacy">privacy</Link> pages.
       </p>
     </div>
   );

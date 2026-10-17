@@ -62,7 +62,7 @@ export default async function ManageAlerts({ searchParams }: { searchParams: { t
                 return (
                   <li key={a.id} className="flex flex-wrap items-center justify-between gap-3 p-3">
                     <div className="min-w-0">
-                      <Link href={href} className="font-semibold">
+                      <Link prefetch={false} href={href} className="font-semibold">
                         {name}
                       </Link>
                       <p className="text-xs text-muted">

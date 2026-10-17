@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="cc-header glass sticky top-0 z-30">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:gap-5">
-        <Link href={marketPath(m, "/")} className="flex shrink-0 items-center text-fg no-underline hover:no-underline" aria-label={`${SITE_NAME} home`}>
+        <Link prefetch={false} href={marketPath(m, "/")} className="flex shrink-0 items-center text-fg no-underline hover:no-underline" aria-label={`${SITE_NAME} home`}>
           <Logo compact intro />
         </Link>
         <nav className="hidden items-center gap-4 text-sm font-medium md:flex">

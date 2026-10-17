@@ -345,7 +345,7 @@ export default function Browser(props: Props) {
             <div className="flex shrink-0 gap-2">
               <button onClick={() => setPicked([])} className="btn-ghost">Clear</button>
               {picked.length >= 2 ? (
-                <Link href={marketPath(market, `/compare?c=${picked.join(",")}`)} className="btn-primary">Compare {picked.length}</Link>
+                <Link prefetch={false} href={marketPath(market, `/compare?c=${picked.join(",")}`)} className="btn-primary">Compare {picked.length}</Link>
               ) : (
                 <span className="btn-ghost opacity-60">Pick one more</span>
               )}

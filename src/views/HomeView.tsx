@@ -147,7 +147,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
             <SearchBox market={m} variant="hero" placeholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`} />
           </div>
           <p className="mt-3 text-sm text-muted">
-            or browse <Link href={marketPath(m, "/cameras")}>cameras</Link>, <Link href={marketPath(m, "/lenses")}>lenses</Link>, or let us <Link href={marketPath(m, "/finder")}>help you choose</Link>
+            or browse <Link prefetch={false} href={marketPath(m, "/cameras")}>cameras</Link>, <Link prefetch={false} href={marketPath(m, "/lenses")}>lenses</Link>, or let us <Link prefetch={false} href={marketPath(m, "/finder")}>help you choose</Link>
           </p>
           <div className="mt-3">
             <MakersNote board={board} place={PLACE[m]} />

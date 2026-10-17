@@ -28,7 +28,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(breadcrumb([{ name: "Guides", path: "/guides" }, { name: g.title, path: `/guides/${g.slug}` }]))} />
       <nav className="mb-4 text-xs text-subtle">
-        <Link href="/guides">Guides</Link> / <span>{g.title}</span>
+        <Link prefetch={false} href="/guides">Guides</Link> / <span>{g.title}</span>
       </nav>
       <h1 className="text-3xl font-extrabold tracking-tight">{g.title}</h1>
       {g.updated && <p className="mt-1 text-xs text-subtle">Updated {g.updated} · {Math.max(1, Math.round(g.words / 220))} min read</p>}
@@ -40,7 +40,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
           <ul className="grid gap-2 sm:grid-cols-2">
             {others.map((o) => (
               <li key={o.slug}>
-                <Link href={`/guides/${o.slug}`}>{o.title}</Link>
+                <Link prefetch={false} href={`/guides/${o.slug}`}>{o.title}</Link>
               </li>
             ))}
           </ul>

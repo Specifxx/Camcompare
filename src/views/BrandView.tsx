@@ -21,7 +21,7 @@ export function BrandsIndex({ market: m }: { market: MarketCode }) {
       <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((b) => (
           <li key={b.slug}>
-            <Link href={marketPath(m, `/brands/${b.slug}`)} className="card flex items-center justify-between p-4 text-fg no-underline hover:border-accent hover:no-underline">
+            <Link prefetch={false} href={marketPath(m, `/brands/${b.slug}`)} className="card flex items-center justify-between p-4 text-fg no-underline hover:border-accent hover:no-underline">
               <span className="font-semibold">{b.name}</span>
               <span className="text-sm text-subtle">{[b.cams ? `${b.cams} cameras` : null, b.lenses ? `${b.lenses} lenses` : null].filter(Boolean).join(" · ")}</span>
             </Link>

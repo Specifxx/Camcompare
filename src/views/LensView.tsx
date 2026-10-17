@@ -85,7 +85,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
       />
       <div className="flex flex-col gap-6">
         <nav className="text-xs text-subtle" aria-label="Breadcrumb">
-          <Link href={marketPath(m, "/lenses")}>Lenses</Link> / <Link href={marketPath(m, `/brands/${l.brand}`)}>{brandName(l.brand)}</Link> / <span>{short}</span>
+          <Link prefetch={false} href={marketPath(m, "/lenses")}>Lenses</Link> / <Link prefetch={false} href={marketPath(m, `/brands/${l.brand}`)}>{brandName(l.brand)}</Link> / <span>{short}</span>
         </nav>
         <header className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
           <figure>
@@ -100,7 +100,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
                 {mountNames.map((mt, i) => (
                   <span key={mt.slug}>
                     {i > 0 ? ", " : ""}
-                    <Link href={marketPath(m, `/mounts/${mt.slug}`)}>{mt.name}</Link>
+                    <Link prefetch={false} href={marketPath(m, `/mounts/${mt.slug}`)}>{mt.name}</Link>
                   </span>
                 ))}{" "}
                 · Announced {longMonthYear(l.announced)}
@@ -148,7 +148,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
             {[...family, ...rivals]
               .filter((x, i, arr) => arr.findIndex((y) => y.item.slug === x.item.slug) === i)
               .map((r) => (
-                <Link key={r.item.slug} href={isIndexedPair(self, r) ? `/compare/${pairSlug(l, r.item)}` : marketPath(m, `/compare?c=${l.slug},${r.item.slug}`)} className="btn-ghost">
+                <Link prefetch={false} key={r.item.slug} href={isIndexedPair(self, r) ? `/compare/${pairSlug(l, r.item)}` : marketPath(m, `/compare?c=${l.slug},${r.item.slug}`)} className="btn-ghost">
                   vs {displayName(r.item, m)}
                   {r.item.slug === l.predecessor ? <span className="text-xs font-normal text-subtle">(predecessor)</span> : r.item.slug === l.successor ? <span className="text-xs font-normal text-subtle">(successor)</span> : null}
                 </Link>
@@ -162,7 +162,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
           <div className="mb-3 flex items-baseline justify-between gap-4">
             <h2 className="h-section">Cameras it fits</h2>
             {mountNames[0] && (
-              <Link href={marketPath(m, `/cameras?mount=${l.mounts.join(",")}`)} className="shrink-0 text-sm">
+              <Link prefetch={false} href={marketPath(m, `/cameras?mount=${l.mounts.join(",")}`)} className="shrink-0 text-sm">
                 All {bodies.length} →
               </Link>
             )}

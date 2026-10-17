@@ -50,7 +50,7 @@ export default function CompareTable({ items, market, followVisitorMarket = fals
                         {head}
                       </FollowLink>
                     ) : (
-                      <Link href={marketPath(market, productPath(p))} className={cls}>
+                      <Link prefetch={false} href={marketPath(market, productPath(p))} className={cls}>
                         {head}
                       </Link>
                     )}
