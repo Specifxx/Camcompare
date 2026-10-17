@@ -1,5 +1,5 @@
 # Every six hours (owner, 2026-10-17: live prices): import prices for every
-# market, commit data/offers, data/price-history, data/deal-log and data/amazon-asins.json
+# market, commit data/offers, data/price-history, data/deal-log, data/accessories, data/accessory-history and data/amazon-asins.json
 # to main. Each commit is a production build (Vercel builds main), so prices
 # are at most about six hours old and there are four data builds a day.
 # Fails — and GitHub emails the owner — when a configured source breaks.
@@ -89,7 +89,7 @@ jobs:
         run: |
           git config user.name "camcompare-bot"
           git config user.email "camcompare-bot@users.noreply.github.com"
-          git add data/offers data/price-history data/deal-log data/amazon-asins.json 2>/dev/null || git add data/offers data/price-history data/deal-log
+          git add data/offers data/price-history data/deal-log data/accessories data/accessory-history data/amazon-asins.json 2>/dev/null || git add data/offers data/price-history data/deal-log data/accessories data/accessory-history
           if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: prices $(date -u +%FT%H:%MZ)" && git pull --rebase origin main && git push; fi
       - name: Price alerts
         # Emails confirmed price alerts (scripts/check-alerts.ts). Skips cleanly
