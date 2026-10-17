@@ -408,3 +408,11 @@ worth" value, used prices over time, eBay sold prices, Facebook Marketplace.
 - **Facebook Marketplace: no.** It has no public listings API, needs a login,
   and its terms forbid automated collection. That fails the sources rule
   (never past a login or bot protection).
+
+## 2026-10-17: A warmer, film-stock look
+
+Friends' feedback: the site looked "too corporate". The palette moved from
+SaaS blue to film stock (cream paper and rust in light mode, darkroom browns
+in dark), headings to Fraunces, prices and spec lines to JetBrains Mono, and
+cards to print and contact-sheet frames. Text contrast still passes WCAG AA;
+green still means a price or a paid buy button.

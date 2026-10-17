@@ -24,27 +24,29 @@ export default function ProductCard({ p, market }: { p: ProductSummary; market: 
         href={marketPath(market, `/${p.kind === "camera" ? "cameras" : "lenses"}/${p.slug}`)}
         prefetch={false}
         {...quickViewAttrs(p.slug, market, p.name)}
-        className="card group flex h-full flex-col gap-2 p-3 text-fg no-underline transition-[border-color,box-shadow] duration-150 hover:border-accent hover:no-underline hover:shadow-lg focus-visible:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+        className="card group flex h-full flex-col gap-2 p-2.5 pb-3 text-fg no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
       >
-        <div className="relative">
-          <ProductThumb slug={p.slug} alt={p.name} />
+        {/* A frame on a contact sheet: the photo inside a strip of film. */}
+        <div className="cc-frame relative">
+          <ProductThumb slug={p.slug} alt={p.name} className="cc-zoom rounded-[2px]" />
           <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-1.5 mx-auto w-max rounded-full bg-fg/85 px-2.5 py-0.5 text-[11px] font-semibold text-bg opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
             {now !== null ? "Compare prices" : "Quick view"}
           </span>
         </div>
         <div className="flex-1">
-          <p className="text-xs font-medium text-subtle">{p.brandName}</p>
-          <p className="font-semibold leading-tight group-hover:text-accent">{p.shortName}</p>
+          <p className="font-mono text-[10.5px] font-medium uppercase tracking-[0.12em] text-subtle">{p.brandName}</p>
+          <p className="font-display text-[1.05rem] font-semibold leading-tight tracking-[-0.01em] group-hover:text-accent">{p.shortName}</p>
           <p className="mt-1 text-xs text-muted">{cardSubline(p)}</p>
+          {/* Key specs as an EXIF line: "IBIS · 4K 60p · 658 g". */}
           {chips.length > 0 && (
-            <ul className="mt-1.5 flex flex-wrap gap-1">
+            <ul className="exif mt-1.5 flex flex-wrap gap-x-1.5" aria-label="Key specs">
               {chips.map((c, i) => (
-                <li key={c} className={`chip px-2 text-[10.5px] ${i === 2 ? "hidden sm:inline-flex" : ""}`}>{c}</li>
+                <li key={c} className={`${i > 0 ? "before:mr-1.5 before:text-subtle before:content-['·']" : ""} ${i === 2 ? "hidden sm:inline" : ""}`}>{c}</li>
               ))}
             </ul>
           )}
         </div>
-        <div className="text-sm">
+        <div className="border-t border-dashed border-line pt-2 text-sm">
           {now !== null ? (
             <>
               <span className="text-xs text-subtle">{p.lowestNew !== null ? "New from " : "Used from "}</span>

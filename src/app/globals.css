@@ -1,20 +1,30 @@
 /* =============================================================================
-   CamCompare design system
+   CamCompare design system: "film stock"
    -----------------------------------------------------------------------------
+   Made to feel like a photo magazine / contact sheet, not a SaaS page: cream
+   paper and warm ink in light mode, darkroom browns in dark mode, film grain
+   over every page (body::after), warm light leaks in the hero.
    Colours are RGB triplets (--c-*) used through Tailwind (bg-surface, text-muted,
    border-line, text-accent, bg-buy …): light by default, dark under
-   prefers-color-scheme. Brand: a six-blade iris (components/brand/Logo.tsx);
-   blue is brand and accent, the amber blade (--c-spark) is decoration only.
+   prefers-color-scheme. Brand: a six-blade iris (components/brand/Logo.tsx) in
+   safelight rust; rust is brand and accent (AA as text on every surface), the
+   Kodak-yellow blade (--c-spark) is decoration only. Green (--c-buy) still
+   means money: buy buttons and lowest prices.
+   Type: Fraunces (font-display, headings, h1/h2 by default), JetBrains Mono
+   (font-mono: prices, labels, EXIF lines), system sans for body text.
 
    Classes other components may use:
-     .card              surface panel; an <a class="card"> (or .card-hover) lifts and glows on hover
-     .btn .btn-primary  gradient primary button      .btn-ghost  outline (link doesn't earn)
+     .card              a print: paper panel; an <a class="card"> (or .card-hover) lifts and tilts on hover
+     .btn .btn-primary  rust primary button          .btn-ghost  outline (link doesn't earn)
      .btn-buy           filled buy button (link earns)  .btn-amazon / .btn-ebay  retailer colours
      .chip / .chip-link small pill / pill that is a link
      .price             tabular price figures
-     .h-section         section heading (display font)   .eyebrow  small uppercase label
-     .text-gradient     brand gradient text              .hairline-brand  1px gradient rule
-     .glass             frosted surface                  .font-display  Sora (Tailwind)
+     .exif              EXIF-style mono metadata line ("24.2MP · FF · IBIS")
+     .h-section         section heading (display font)   .eyebrow  small uppercase mono label
+     .text-gradient     accent text (legacy name)        .hairline-brand  1px rust-to-yellow rule
+     .glass             frosted surface                  .font-display  Fraunces (Tailwind)
+     .cc-film           35mm strip with sprocket holes   .cc-frame  contact-sheet frame round a photo
+     .cc-note           panel with a strip of masking tape .cc-mark  grease-pencil underline (svg)
      shadow-lift, shadow-glow (Tailwind)
      <Reveal> (components/Reveal.tsx)  scroll reveal; `stagger` on a grid cascades its children
    Motion: nothing is hidden in the server HTML; the block at the end stills
@@ -163,6 +173,7 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
     background-repeat: repeat-x, repeat-x;
     padding: 16px 0;
   }
+  @media (prefers-color-scheme: dark) { .cc-film { background-color: #000; --hole: rgb(var(--c-subtle) / 0.45); } }
 }
 
 /* "Differences only" on the compare table (CompareToggle.tsx). */
@@ -255,6 +266,25 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
   .cc-flare-core { background: radial-gradient(closest-side, rgb(255 244 220 / 0.75), rgb(255 160 60 / 0.28) 35%, transparent); }
   .cc-grain { opacity: 0.07; }
 }
+
+/* ---- Film and print motifs ---- */
+/* Hero H1: Fraunces at display size, soft corners; the em goes "wonky" italic. */
+.cc-h1 { font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; }
+.cc-h1-em { font-style: italic; font-weight: 500; font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144; }
+/* Contact-sheet frame round a card's photo: film base with sprocket holes. */
+.cc-frame {
+  --hole: rgb(var(--c-surface) / 0.9);
+  padding: 8px 3px; border-radius: 3px; background-color: #1f1813;
+  background-image: linear-gradient(90deg, var(--hole) 0 5px, transparent 5px 11px), linear-gradient(90deg, var(--hole) 0 5px, transparent 5px 11px);
+  background-size: 11px 3px, 11px 3px; background-position: 3px 3px, 3px calc(100% - 3px); background-repeat: repeat-x;
+}
+@media (prefers-color-scheme: dark) { .cc-frame { background-color: #000; --hole: rgb(var(--c-subtle) / 0.45); } }
+/* Pinned-up note: a strip of masking tape across the top (decoration). */
+.cc-note { overflow: visible; }
+.cc-note::before { content: ""; position: absolute; top: -9px; left: 50%; width: 76px; height: 18px; margin-left: -38px; rotate: -2deg; background: rgb(var(--c-spark) / 0.35); border-left: 1px dashed rgb(var(--c-fg) / 0.12); border-right: 1px dashed rgb(var(--c-fg) / 0.12); }
+.cc-note:nth-child(2)::before { rotate: 3deg; }
+/* Hand-drawn underline under a section title (a grease-pencil mark). */
+.cc-mark { display: block; width: 64px; height: 8px; color: rgb(var(--c-spark)); }
 
 /* Entrance on load: the H1 racks into focus (no opacity change, so it paints
    for LCP at once); the rest rises in, staggered by --i. */

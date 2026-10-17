@@ -63,8 +63,8 @@ export default function Hero({ market: m, place, stats, chips, searchPlaceholder
           <span aria-hidden className="cc-live-dot" />
           {mk.flag} Prices for {mk.name} · {mk.currency}
         </p>
-        <p className="cc-in mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-subtle" style={{ "--i": 0 } as CSSProperties}>
-          Made by people who shoot, for people who shoot
+        <p className="cc-in mt-4 font-mono text-[11px] uppercase tracking-[0.16em] text-subtle" style={{ "--i": 0 } as CSSProperties}>
+          For people who shoot<span className="hidden sm:inline"> · no fluff, just prices</span>
         </p>
         <h1 id="hero-title" className="cc-focus cc-h1 mx-auto mt-3 text-[2.2rem] font-semibold leading-[1.04] tracking-[-0.02em] sm:text-5xl lg:text-[4rem]">
           Camera &amp; lens prices and specs, <br className="hidden sm:inline" />

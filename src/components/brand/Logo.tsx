@@ -1,4 +1,4 @@
-// CamCompare mark: a six-blade iris. Blue is the brand; the one amber blade is
+// CamCompare mark: a six-blade iris. Rust (film-stock warm) is the brand; the one amber blade is
 // the "spark" (the best price). Geometry: each blade is the 60° wedge at a
 // hexagon vertex, clipped to the circle, with a gap (scripted, not hand-drawn).
 // Where CSS `d` is supported the iris opens once on load and stops down on
@@ -52,8 +52,8 @@ export default function Logo({ size = 28, compact = false, intro = false, classN
   return (
     <span className={`cc-logo inline-flex items-center gap-2 ${className}`}>
       <LogoMark size={size} intro={intro} />
-      <span className={`font-display text-[1.07rem] font-bold leading-none tracking-[-0.03em] text-fg ${compact ? "hidden sm:inline" : ""}`}>
-        Cam<span className="font-medium text-muted">Compare</span>
+      <span className={`font-display text-[1.2rem] font-semibold leading-none tracking-[-0.02em] text-fg ${compact ? "hidden sm:inline" : ""}`}>
+        Cam<span className="font-normal italic text-muted">Compare</span>
         <span className="sr-only"> ({SITE_NAME})</span>
       </span>
     </span>

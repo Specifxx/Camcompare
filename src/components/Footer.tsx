@@ -20,7 +20,7 @@ export default function Footer() {
           <Link href={marketPath(here, "/")} prefetch={false} className="text-fg no-underline hover:no-underline" aria-label={`${SITE_NAME} home`}>
             <Logo size={30} />
           </Link>
-          <p className="mt-3">Camera and lens prices from retailers in five markets, specs from the makers&apos; own spec sheets.</p>
+          <p className="mt-3">Camera and lens prices from shops in five markets, specs off the makers&apos; own sheets. Built for people who&apos;d rather be out shooting than comparing tabs.</p>
           <p className="mt-3 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
             <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-buy" /> Prices checked daily
           </p>
@@ -49,7 +49,7 @@ export default function Footer() {
         </p>
       </div>
       {/* The wordmark, oversized and faded: decoration only. */}
-      <p aria-hidden className="pointer-events-none select-none whitespace-nowrap text-center font-display text-[17vw] font-bold leading-[0.8] tracking-[-0.05em] text-fg/[0.045] lg:text-[11.5rem]">
+      <p aria-hidden className="pointer-events-none select-none whitespace-nowrap text-center font-display text-[17vw] font-semibold italic leading-[0.8] tracking-[-0.04em] text-fg/[0.06] lg:text-[11.5rem]">
         CamCompare
       </p>
     </footer>
