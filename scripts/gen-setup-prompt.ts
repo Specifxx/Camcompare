@@ -44,8 +44,10 @@ const prompt = `# Claude in Chrome: set up CamCompare
 Paste everything in the box below into Claude in Chrome while you're signed in
 to GitHub, Vercel and the affiliate dashboards you already use (Amazon
 Associates, eBay Partner Network, Impact). It works in your own browser, as
-you, and stops to ask before anything that costs money, signs an agreement or
-needs your tax, bank or personal details.
+you, and never stops to ask: it does every step it can, skips any step it
+can't finish or that costs money, signs an agreement or needs your tax, bank
+or personal details, and ends with a numbered, step-by-step list of what's
+left for you.
 
 No database: CamCompare keeps every piece of public data (catalog, prices,
 price history, photo credits) as JSON in the GitHub repo and builds static
@@ -60,10 +62,20 @@ registry, so every variable name matches the code.
 You are setting up CamCompare, my camera and lens price-comparison website, in my own browser. The code is in the GitHub repo Specifxx/Camcompare. It is a sister site of my RiftCompare site (repo Specifxx/TCGEmpire, already on Vercel), and I already have some affiliate accounts from that one.
 
 GROUND RULES
-- Ask me before you: pay for anything, buy a domain, choose or upgrade a plan, accept any legal agreement, submit tax forms, bank or payout details, or enter my personal details. Show me what you're about to submit and wait for my yes.
+- Set up everything you can, in order, without stopping to ask me anything.
+- If you can't finish a step (it needs a login I don't have, a page won't load, a programme hasn't approved us yet, a value doesn't exist yet), don't wait: note why, then go straight to the next step.
+- Never do these yourself; skip them and put them on my manual list instead: paying for anything, buying a domain, choosing or upgrading a plan, accepting a legal agreement or terms, submitting tax forms, bank or payout details, or entering my personal details (name, address, phone, ID). Fill in everything else on a sign-up form, stop just before those parts, note exactly where you stopped, and move on.
 - Never paste a secret into this chat. Put each value only into the exact setting named below.
 - Do NOT create a database and do NOT set up Neon. CamCompare needs none: all public data is committed to the GitHub repo and the site is built from it.
-- Work through the parts in order. Keep a checklist. At the end, give me a table listing every numbered item, whether it is done, waiting on approval, or blocked, and what I need to do next.
+- Keep a running list of everything you skipped or couldn't finish.
+
+FINAL OUTPUT
+When you've gone through every part, your whole answer is one numbered list, MY MANUAL STEPS, in the order I should do them. Group related items (for example, all the Amazon steps together). For each step give:
+  - what to do and why it's needed, in one line;
+  - the exact website to open and the clicks to get there;
+  - what to type or choose, and where to paste any value it gives me (the exact Vercel variable or GitHub secret name);
+  - anything to do afterwards (for example "then redeploy on Vercel").
+After the list, add one short line saying which parts you finished. Nothing else.
 
 PART 1: GitHub (github.com/Specifxx/Camcompare)
 1. The repo has only one branch, ccr-a3b03032-x84w3r. Create a branch named main from it (Branches → New branch), then Settings → General → Default branch → switch to main. The daily price job runs on the default branch.
@@ -73,8 +85,8 @@ PART 1: GitHub (github.com/Specifxx/Camcompare)
 
 PART 2: Vercel
 1. Add New → Project → import GitHub repo Specifxx/Camcompare. Framework preset Next.js, root directory "./", default build and install commands, Node.js 22.x. Production branch: main. Deploy.
-2. Plan: the site earns affiliate commission, so it must not run on the Hobby (non-commercial) plan. If my RiftCompare project is on a Pro team, put CamCompare in that same team. Ask me before upgrading anything.
-3. Domain: ask me which domain to use. Don't buy one without my OK. When it's attached, set NEXT_PUBLIC_SITE_URL to https://<that domain> (no trailing slash).
+2. Plan: the site earns affiliate commission, so it must not run on the Hobby (non-commercial) plan. If my RiftCompare project is on a Pro team, put CamCompare in that same team. If that needs an upgrade or payment, use whatever team works for now and put the upgrade on my manual list.
+3. Domain: if one of my Vercel domains is free and clearly meant for this (for example a camcompare domain), attach it. Otherwise use the project's free .vercel.app address for now and put "buy and attach a domain, then update NEXT_PUBLIC_SITE_URL" on my manual list. Set NEXT_PUBLIC_SITE_URL to https://<the domain in use> (no trailing slash).
 4. Settings → Environment Variables. They are read when pages are BUILT, so set each one for Production AND Preview, and after any change redeploy production (Deployments → latest production → ⋯ → Redeploy). Fill what we have now; leave the rest unset. Unset is safe: a link without a code just doesn't earn.
      NEXT_PUBLIC_SITE_URL
      AMAZON_TAG_US, AMAZON_TAG_UK, AMAZON_TAG_DE, AMAZON_TAG_AU, AMAZON_TAG_SG
@@ -85,7 +97,7 @@ ${deeplinkVars}
      Later, only once AdSense approves the site: NEXT_PUBLIC_ADSENSE_CLIENT, NEXT_PUBLIC_ADSENSE_SLOT_PRODUCT, NEXT_PUBLIC_ADSENSE_SLOT_LISTING, NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE, ADSENSE_PUBLISHER_ID
 
 PART 3: Affiliate programmes
-For each programme: check whether I already have an account (I do for Amazon Associates US, eBay Partner Network and Impact). If not, start the publisher sign-up and stop for me at the legal, tax and payment steps. Use the domain from Part 2 as the website. Describe the site as: "CamCompare compares camera and lens specs side by side and lists new and used prices from retailers, sorted by price, with links to buy. Free to use, earning from affiliate links."
+For each programme: check whether I already have an account (I do for Amazon Associates US, eBay Partner Network and Impact). If not, start the publisher sign-up, fill in what you can, and leave the legal, tax, payment and personal-details parts for my manual list. Use the site address from Part 2 as the website. Describe the site as: "CamCompare compares camera and lens specs side by side and lists new and used prices from retailers, sorted by price, with links to buy. Free to use, earning from affiliate links."
 A. Amazon Associates: a separate account for each of five stores.
    - US (affiliate-program.amazon.com): my RiftCompare account exists. Add the CamCompare domain to its website list (Account Settings → Edit Your Website and Mobile App List), then Manage Tracking IDs → add one such as camcompare-20 → AMAZON_TAG_US.
    - UK (affiliate-program.amazon.co.uk) → AMAZON_TAG_UK
@@ -93,10 +105,10 @@ A. Amazon Associates: a separate account for each of five stores.
    - Australia (affiliate-program.amazon.com.au) → AMAZON_TAG_AU
    - Singapore (affiliate-program.amazon.sg) → AMAZON_TAG_SG
    Put each tag in Vercel AND as a GitHub secret with the same name.
-   The Creators API (Associates Central → Tools → Creators API), which lets the site show Amazon's price, only opens after 10 qualifying sales in 30 days. Until then the site shows a tagged "Check price" button in the Amazon row. Note it as pending. When it opens, create credentials and add them in BOTH Vercel (each build fetches Amazon's prices fresh, because Amazon doesn't allow storing them) and GitHub secrets (the daily job finds each product's Amazon listing): AMAZON_CREATORS_NA_CLIENT_ID and AMAZON_CREATORS_NA_CLIENT_SECRET (US), AMAZON_CREATORS_EU_CLIENT_ID and AMAZON_CREATORS_EU_CLIENT_SECRET (UK and Germany), AMAZON_CREATORS_FE_CLIENT_ID and AMAZON_CREATORS_FE_CLIENT_SECRET (Australia and Singapore). Then redeploy.
+   The Creators API (Associates Central → Tools → Creators API), which lets the site show Amazon's price, only opens after 10 qualifying sales in 30 days. Until then the site shows a tagged "Check price" button in the Amazon row. If it isn't open yet, skip it and put it on my manual list as a later step. When it opens, create credentials and add them in BOTH Vercel (each build fetches Amazon's prices fresh, because Amazon doesn't allow storing them) and GitHub secrets (the daily job finds each product's Amazon listing): AMAZON_CREATORS_NA_CLIENT_ID and AMAZON_CREATORS_NA_CLIENT_SECRET (US), AMAZON_CREATORS_EU_CLIENT_ID and AMAZON_CREATORS_EU_CLIENT_SECRET (UK and Germany), AMAZON_CREATORS_FE_CLIENT_ID and AMAZON_CREATORS_FE_CLIENT_SECRET (Australia and Singapore). Then redeploy.
 B. eBay Partner Network (partnernetwork.ebay.com): in my existing account create a NEW campaign named "CamCompare", so its earnings are separate from RiftCompare's. Copy its campaign ID (10 digits) → Vercel EBAY_AFFILIATE_CAMPAIGN AND GitHub secret EBAY_AFFILIATE_CAMPAIGN. The eBay developer API keys come later. When I have them, add GitHub secrets EBAY_CLIENT_ID and EBAY_CLIENT_SECRET. Until then the site shows a tagged "Search eBay" link beside the prices, which already earns.
 C. Impact (app.impact.com): in my existing account add CamCompare as a new property/website. Copy its site-verification code (only the code, not the whole meta tag) → Vercel IMPACT_SITE_VERIFICATION, redeploy, then click Verify in Impact.
-D. Retailer programmes, grouped by network. Apply to every one now; most take days to approve, so list which are pending. When one approves us, build its deep-link template: the network's deep link with the product URL replaced by {url}, and the click reference replaced by {subid} where the network has one. If the network offers that retailer's product feed, copy the feed URL (CSV, TSV or Google Shopping XML; .gz is fine).
+D. Retailer programmes, grouped by network. Apply to every one now. Most take days to approve: for any not approved yet, put "when approved, add its deep link (and feed)" on my manual list with the exact variable names. When one approves us, build its deep-link template: the network's deep link with the product URL replaced by {url}, and the click reference replaced by {subid} where the network has one. If the network offers that retailer's product feed, copy the feed URL (CSV, TSV or Google Shopping XML; .gz is fine).
 ${byNetwork}
    Deep-link template formats (check each against the network's own deep-link tool):
      Impact: https://<tracking-domain>/c/<ids>?u={url}&subId1={subid}
@@ -116,14 +128,14 @@ PART 4: GitHub secrets (repo → Settings → Secrets and variables → Actions 
      AMAZON_CREATORS_NA_CLIENT_ID, AMAZON_CREATORS_NA_CLIENT_SECRET, AMAZON_CREATORS_EU_CLIENT_ID, AMAZON_CREATORS_EU_CLIENT_SECRET, AMAZON_CREATORS_FE_CLIENT_ID, AMAZON_CREATORS_FE_CLIENT_SECRET
      BESTBUY_API_KEY
 ${feedVars}
-2. Then open Actions → "Refresh prices" → Run workflow. When it finishes, open the run and read the "Check sources" step. "ok" means that source priced, "skip" means its secret isn't set yet, and "FAIL" means something's wrong: tell me which.
+2. Then open Actions → "Refresh prices" → Run workflow. When it finishes, open the run and read the "Check sources" step. "ok" means that source priced, "skip" means its secret isn't set yet, and "FAIL" means something's wrong: put each FAIL, with its error line, on my manual list.
 3. The run commits prices to main, and that commit triggers a fresh Vercel build. Confirm on Vercel that the build succeeded.
 
 PART 5: Search engines
 1. Google Search Console: add a URL-prefix property for https://<domain>/, choose the "HTML tag" method, copy only the content="…" code → Vercel GOOGLE_SITE_VERIFICATION, redeploy, then click Verify. Submit https://<domain>/sitemap.xml.
 2. Bing Webmaster Tools: import the site from Google Search Console (quickest). If that isn't offered, use the meta-tag method → Vercel BING_SITE_VERIFICATION, redeploy, Verify. Submit the same sitemap.
 
-Finish with the status table from the ground rules.
+Finish with MY MANUAL STEPS, exactly as described under FINAL OUTPUT.
 \`\`\`
 `;
 

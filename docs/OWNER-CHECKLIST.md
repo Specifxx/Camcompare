@@ -2,9 +2,10 @@
 
 Nothing here needs code. Most of it is in
 [`chrome-setup-prompt.md`](chrome-setup-prompt.md): paste that prompt into
-Claude in Chrome and it works through the list in your browser, stopping
-before anything that costs money, signs an agreement or needs your tax or bank
-details.
+Claude in Chrome and it works through the list in your browser without
+stopping. It skips anything it can't finish or that costs money, signs an
+agreement or needs your tax, bank or personal details, and ends with a
+numbered, step-by-step list of what's left for you.
 
 **No database.** All public data is JSON in this repo. There is nothing to set
 up in Neon.
