@@ -166,3 +166,21 @@ test("spot-check fixes from the first import", () => {
   assert.equal(c("Atomos Right angle MICRO to FULL HDMI Cable (50cm)")?.specs.hdmi, "Micro HDMI to HDMI");
   assert.deepEqual(c("Canon Mount Adapter EF-EOS R")?.cameras, []);
 });
+
+test("thousands separators and zero speeds never reach the file", () => {
+  const s = c("Samsung 990 EVO 5.0 NVMe SSD 1TB: Ultra-Fast 5,000MB/s Read")?.specs;
+  assert.equal(s?.readMBs, 5000);
+  assert.equal(c("Some 0/0MB/s SD Card 64GB")?.specs.readMBs, undefined);
+});
+
+test("flash parts are not flashes or triggers", () => {
+  assert.notEqual(cat("Sony FAEC1AM 5' Flash Synchro Extension Cable"), "flashes");
+  assert.notEqual(cat("ProMaster Dedicated Flash Diffuser for Nikon SB900"), "flashes");
+  assert.notEqual(cat("Leica S2 Pocket Wizard Motor Drive Cable"), "triggers");
+  assert.equal(cat("Godox V1-S Round Head Flash for Sony"), "flashes");
+  assert.equal(cat("Profoto Connect - Canon"), "triggers");
+});
+
+test("a flash sold with its battery is still a flash", () => {
+  assert.equal(cat("Godox V1-C Flash with VB26 Battery for Canon"), "flashes");
+});

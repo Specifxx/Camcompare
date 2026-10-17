@@ -48,7 +48,10 @@ export default function AccessoryBrowser({
 
   const brands = useMemo(() => [...new Map(rows.filter((r) => r.brand).map((r) => [r.brand!, r.brandName ?? r.brand!])).entries()].sort((a, b) => a[1].localeCompare(b[1])), [rows]);
   const formats = useMemo(() => [...new Map(rows.filter((r) => r.format).map((r) => [r.format!, r.formatName ?? r.format!])).entries()].sort((a, b) => a[1].localeCompare(b[1])), [rows]);
-  const caps = useMemo(() => [...new Set(rows.map((r) => r.specs.capacityGB).filter((x): x is number => Boolean(x)))].sort((a, b) => a - b), [rows]);
+  const caps = useMemo(() => {
+    const max = Math.max(0, ...rows.map((r) => r.specs.capacityGB ?? 0));
+    return [32, 64, 128, 256, 512, 1000, 2000, 4000, 8000].filter((c) => c <= max);
+  }, [rows]);
   const camOptions = Object.entries(cams)
     .filter(([, c]) => !f.cb || c.brand === f.cb)
     .sort((a, b) => a[1].name.localeCompare(b[1].name));

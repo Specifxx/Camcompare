@@ -29,9 +29,24 @@ export type AccessoryHistoryDay = z.infer<typeof accessoryHistoryDaySchema>;
 
 export const emptyAccessories = (m: MarketCode): AccessoriesFile => ({ generatedAt: null, market: m, currency: MARKETS[m].currency, accessories: [] });
 
+/**
+ * A row that fails the schema is dropped, never fatal: this file feeds every
+ * camera page, and one bad listing must not take them down.
+ */
 export function readAccessoriesFile(m: MarketCode, file = accessoriesFile(m)): AccessoriesFile {
   if (!fs.existsSync(file)) return emptyAccessories(m);
-  return accessoriesFileSchema.parse(JSON.parse(fs.readFileSync(file, "utf8")));
+  let raw: { generatedAt?: unknown; accessories?: unknown };
+  try {
+    raw = JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch {
+    return emptyAccessories(m);
+  }
+  const rows = Array.isArray(raw.accessories) ? raw.accessories : [];
+  const accessories = rows.flatMap((r) => {
+    const ok = accessoryOfferSchema.safeParse(r);
+    return ok.success ? [ok.data] : [];
+  });
+  return { ...emptyAccessories(m), generatedAt: typeof raw.generatedAt === "string" ? raw.generatedAt : null, accessories };
 }
 
 /** One listing per line: a readable diff, a file a fraction of the indented size. */

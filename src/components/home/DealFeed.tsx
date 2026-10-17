@@ -14,6 +14,7 @@ import ProductThumb from "@/components/ProductThumb";
 import { price } from "@/lib/format";
 import type { Currency, MarketCode } from "@/lib/markets";
 import { quickViewAttrs } from "@/lib/quickview";
+import DealVotes from "@/components/community/DealVotes";
 import { shortAgo } from "./checked-ago";
 
 export type FeedRow = {
@@ -151,6 +152,7 @@ function FeedItem({ r, m, currency, now, i }: { r: FeedRow; m: MarketCode; curre
           </Link>
         </h3>
         <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted">
+          <DealVotes dealKey={voteKey(m, r.key)} />
           <span>{r.store}</span>
           <span aria-hidden>·</span>
           <span className="capitalize">{r.cond}</span>
@@ -202,6 +204,10 @@ function FeedItem({ r, m, currency, now, i }: { r: FeedRow; m: MarketCode; curre
     </li>
   );
 }
+
+// The deal log's key ("slug|condition|retailer") in the vote API's alphabet.
+// Stable across builds, so a deal keeps its votes from one import to the next.
+export const voteKey = (m: MarketCode, key: string) => `${m}:${key}`.toLowerCase().replace(/\|/g, ":").replace(/[^a-z0-9:_.-]/g, "-").slice(0, 120);
 
 function Spark({ pts }: { pts: number[] }) {
   const W = 64,

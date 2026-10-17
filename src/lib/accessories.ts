@@ -88,6 +88,7 @@ const BROKEN = /\b(for parts|parts only|not working|broken|as[- ]is|faulty|untes
 const CAMERA_PRODUCT = /\b\d{1,3}(\.\d)?\s?mp\b|\b(mirrorless|dslr|slr|camcorder|digital camera|instant camera|action camera|cinema camera|point[- ]and[- ]shoot|compact camera|underwater camera|film camera|rangefinder camera|camera body|body only|lens kit|camera (bundle|kit))\b/;
 // A lens: focal length followed by an aperture ("24-70mm f/2.8", "50mm F1.4").
 const LENSY = /\b\d{1,4}(-\d{1,4})?\s?mm\s*(f\/?|1:)\s?\d/;
+const FLASH_PART = /\b(cables?|cords?|sync cover|covers?|diffusers?|brackets?|bounce|bender|holders?|cases?|pouch|shoe mount|stand adapter|mounting foot|feet|foot|batter(y|ies)|battery pack|chargers?|filters?|gels?|dome|softbox|grid|snoot|extension|terminal|adapters?|rails?|clamp|replacement|parts?)\b/;
 const ADDON = /\bwith\b|\bw\/|\+|\bplus\b|\band\b|&|\bincl|\bbundle\b|\bkit\b/;
 const FOR_WORD = /\b(for|fits|compatible with|suits)\b/;
 
@@ -473,7 +474,19 @@ function cableSpecs(l: string): AccessorySpecs {
   return s;
 }
 
+/** A zero or non-number read from a title is unknown, not a value: dropped. */
+function clean(s: AccessorySpecs): AccessorySpecs {
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(s)) if (v !== undefined && v !== "" && !(typeof v === "number" && !(Number.isFinite(v) && v > 0))) out[k] = v;
+  return out as AccessorySpecs;
+}
+
 function specsFor(category: string, l: string): AccessorySpecs {
+  return clean(rawSpecs(category, l));
+}
+
+function rawSpecs(category: string, title: string): AccessorySpecs {
+  const l = title.replace(/(\d),(\d{3})(?!\d)/g, "$1$2"); // "5,000MB/s" → "5000MB/s"
   if (category === "memory-cards") {
     const s: AccessorySpecs = { ...capacityOf(l), ...speedOf(l) };
     const f = cardFormat(l);
@@ -611,8 +624,11 @@ export function classifyAccessory(listing: { title: string; productType?: string
     // The kind named first is the product ("FJ400 strobe kit with wireless
     // trigger", "Tripod with ball head and QR plate"); on a tie the list
     // order decides ("battery grip" is a grip).
+    // A part for a flash ("Flash Sync Cable", "Flash Diffuser for SB900",
+    // "Pocket Wizard Motor Drive Cable") is not a flash or a trigger.
+    const flashPart = FLASH_PART.test(lower.split(/\bwith\b|\bw\/|\+|\bincl|\bkit\b/)[0]); // "V1 Flash with Battery" is a flash
     for (const c of CATEGORIES) {
-      if (c.slug === "film") continue;
+      if (c.slug === "film" || (flashPart && (c.slug === "flashes" || c.slug === "triggers"))) continue;
       const m = c.re.exec(lower);
       if (m && (!cat || m.index < at)) {
         cat = c;
