@@ -65,8 +65,8 @@
     "cardTypes": "SD UHS-I",
     "batteryShotsCipa": 320,
     "usbC": false,
-    "micJack": null,
-    "headphoneJack": null,
+    "micJack": false,
+    "headphoneJack": false,
     "builtInFlash": true,
     "wifi": true,
     "bluetooth": false

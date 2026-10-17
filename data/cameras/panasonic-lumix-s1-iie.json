@@ -54,7 +54,7 @@
       "aircraft"
     ],
     "videoMaxRes": "6K",
-    "video4kMaxFps": 120,
+    "video4kMaxFps": 60,
     "video10bit": true,
     "rawVideoInternal": true,
     "evfDotsM": 5.76,

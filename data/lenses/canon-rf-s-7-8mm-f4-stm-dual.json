@@ -7,7 +7,7 @@
   "modelCodes": ["6795C002"],
   "gtins": [],
   "announced": "2024-10-30",
-  "launchPriceUsd": null,
+  "launchPriceUsd": 449.99,
   "launchPrices": {"SGD": 699},
   "status": "current",
   "predecessor": null,

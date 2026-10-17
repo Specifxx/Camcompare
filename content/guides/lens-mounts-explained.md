@@ -18,7 +18,7 @@ The electrical language is usually the camera maker's own. Some makers share it 
 
 ### Flange distance
 
-Flange distance is the gap between the face of the mount and the sensor. Lenses are built for that exact gap; get it wrong and they will not focus to infinity.
+Flange distance is the gap between the face of the mount and the sensor. Lenses are built for that exact gap; make it longer and they will not focus to infinity.
 
 DSLRs need a long gap to make room for the mirror. Mirrorless cameras have none, so most of their mounts sit 16 to 20 mm from the sensor. That one number explains most of what you can and cannot adapt.
 
@@ -47,7 +47,7 @@ Our [mounts page](/mounts) lists what we track for each.
 
 ### Sony E
 
-Sony launched E-mount in 2010 on its APS-C NEX cameras and added full frame with the A7 and A7R in 2013. In 2011 it began licensing the mount's specification to other lens makers without royalties.
+Sony launched E-mount in 2010 on its APS-C NEX cameras and added full-frame stills cameras with the A7 and A7R in 2013. In 2011 it began licensing the mount's specification to other lens makers without royalties.
 
 ### Canon RF
 
@@ -73,7 +73,7 @@ Olympus and Panasonic launched Micro Four Thirds in 2008. It is a shared standar
 
 ### Canon EF
 
-Canon's EF mount dates from 1987. It is fully electronic, with no mechanical focus or aperture linkage, and every autofocus lens has its own motor. EF-S lenses fit only Canon's APS-C DSLRs made since 2003; EF lenses fit them all. Canon's last new EF lens design came out in 2018.
+Canon's EF mount dates from 1987. It is fully electronic, with no mechanical focus or aperture linkage, and every autofocus lens has its own motor. EF-S lenses fit only Canon's APS-C DSLRs since the EOS 300D; EF lenses fit them all. Canon's last new EF lens design came out in 2018.
 
 ### Nikon F
 
@@ -125,9 +125,9 @@ Adapting is a good bridge between systems, but expect compromises if it is your 
 
 - **Sony E:** a very wide choice. Sigma, Tamron, Samyang, Viltrox, Tokina and others make autofocus lenses.
 - **Nikon Z:** Nikon licenses the mount to Sigma, Tamron and Cosina (Voigtländer). Other brands, such as Viltrox, sell Z-mount lenses too.
-- **Canon RF:** Canon allows third-party manual-focus lenses, and autofocus lenses only for APS-C, which Sigma and Tamron make. Earlier full-frame autofocus lenses from Samyang, Viltrox and Yongnuo were withdrawn after requests from Canon.
+- **Canon RF:** Canon allows third-party manual-focus lenses, and autofocus lenses only for APS-C, which Sigma and Tamron make. Earlier full-frame autofocus lenses from Samyang and Viltrox were withdrawn, Viltrox's at Canon's request.
 - **Fujifilm X:** open to third parties, including Sigma, Tamron, Viltrox and Tokina.
-- **Fujifilm G:** autofocus lenses are Fujinon. Third-party lenses have been manual focus; the first third-party autofocus designs were announced in 2026.
+- **Fujifilm G:** autofocus lenses are mostly Fujinon; third-party lenses were manual focus until 2026.
 - **L-Mount:** Leica, Panasonic and Sigma lenses are all native, plus alliance members such as Samyang, Sirui and Viltrox.
 - **Micro Four Thirds:** Panasonic and OM System, plus Sigma and many manual-focus makers.
 - **Canon EF, Nikon F and Pentax K:** decades of third-party lenses, much of that choice now second-hand.
@@ -147,9 +147,9 @@ Then [compare bodies](/compare) on that mount; your lenses will outlast whicheve
 Some manufacturer warranties cover only the country or region of sale, so a lens imported from elsewhere may not be covered. Your rights against the seller are separate:
 
 - **UK:** the Consumer Rights Act 2015 gives you 30 days to reject a faulty item for a refund.
-- **EU:** sellers owe at least a two-year legal guarantee, and a defect that appears within a year of delivery (two years in some countries) is presumed present at delivery.
+- **EU:** sellers owe at least a two-year legal guarantee (some countries allow one year for used goods), and a defect that appears within a year of delivery (two years in some countries) is presumed present at delivery.
 - **Australia:** consumer guarantees apply alongside any warranty, cannot be taken away and have no fixed end date.
 - **Singapore:** under the Lemon Law, a defect that appears within six months of delivery is presumed present at delivery unless the seller proves otherwise.
-- **US:** there is no national guarantee like these. You rely on the warranty, the return policy and state-law implied warranties, which some states let sellers exclude by selling "as is".
+- **US:** there is no national guarantee like these. You rely on the warranty, the return policy and state-law implied warranties, which most states let sellers exclude by selling "as is".
 
 These rights cover buying from a business; a private second-hand sale gets far less protection. Our [deals page](/deals) shows retailer prices in each market.

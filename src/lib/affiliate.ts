@@ -79,12 +79,35 @@ export function affiliateUrl(retailerKey: string, url: string, sub: string): str
   return template.replaceAll("{url}", encodeURIComponent(url)).replaceAll("{subid}", encodeURIComponent(sub));
 }
 
-/** True when a link to this retailer earns: decides the "Paid link" note. */
-export function isPaid(retailerKey: string): boolean {
+/**
+ * True when a link to this retailer earns: decides the "Paid link" note.
+ * Pass the link itself where there is one: an offer's URL can already be
+ * tagged when it is stored (eBay's itemAffiliateWebUrl carries the campaign
+ * the import ran with; network feeds hand out tracking links), and it earns
+ * even when this build's environment lacks the id.
+ */
+export function isPaid(retailerKey: string, href?: string): boolean {
   const r = retailer(retailerKey);
+  if (href && isTagged(href)) return true;
   if (r?.amazon) return Boolean(amazonTag(retailerKey));
   if (r?.ebay) return Boolean(ebayCampaign());
   return isTemplate(env(deeplinkEnv(retailerKey)));
+}
+
+// Click hosts of the affiliate networks: Awin, CJ, Impact, Rakuten, FlexOffers, Involve Asia.
+const NETWORK_HOST = /(^|\.)(awin1\.com|anrdoezrs\.net|dpbolvw\.net|jdoqocy\.com|kqzyfj\.com|tkqlhce\.com|sjv\.io|pxf\.io|7eer\.net|evyy\.net|ojrq\.net|linksynergy\.com|flexlinkspro\.com|invol\.co)$/;
+
+/** Does this URL already carry an affiliate id: an Amazon tag, an EPN campaign, or a network click host? */
+function isTagged(href: string): boolean {
+  try {
+    const u = new URL(href);
+    if (NETWORK_HOST.test(u.hostname)) return true;
+    if (/(^|\.)amazon\./.test(u.hostname)) return Boolean(u.searchParams.get("tag"));
+    if (/(^|\.)ebay\./.test(u.hostname)) return Boolean(u.searchParams.get("campid"));
+    return false;
+  } catch {
+    return false;
+  }
 }
 
 /** A usable deep-link template: wraps {url}, or appends "&k=v" parameters. */

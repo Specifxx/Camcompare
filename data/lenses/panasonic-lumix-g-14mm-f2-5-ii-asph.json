@@ -23,7 +23,7 @@
     "autofocus": true,
     "afMotor": "Stepping motor",
     "stabilized": false,
-    "weatherSealed": false,
+    "weatherSealed": null,
     "weightG": 55,
     "diameterMm": 55.5,
     "lengthMm": 20.5,

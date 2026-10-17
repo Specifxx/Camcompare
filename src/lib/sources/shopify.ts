@@ -3,7 +3,8 @@
 // 200+ card shops this way (src/lib/price-import.ts there); CamCompare uses
 // it only for camera shops that run Shopify, never past a robots.txt
 // Disallow, at one request every ~half second, with a contact header.
-// `country=` asks Shopify Markets for the market's own price.
+// `country=` asks Shopify Markets for the market's own price, and the
+// store's currency (/meta.json) must be the market's.
 import { matchListing, plausiblePrice } from "../matching";
 import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
@@ -16,18 +17,40 @@ const MAX_PAGES = 60;
 type Variant = { id: number; title: string; price: string; available: boolean; sku?: string | null };
 type Product = { id: number; title: string; handle: string; product_type?: string; tags?: string[] | string; variants: Variant[] };
 
-/** Is `path` allowed for every user agent by this robots.txt? Conservative: any matching Disallow refuses. */
+/**
+ * Is `path` allowed for us by this robots.txt? RFC 9309 matching: `*` is any
+ * run of characters, a final `$` anchors the end, and the longest matching
+ * rule wins (Allow on a tie). Rules for "*" and for CamCompareBot both count.
+ * Cutting each rule at its first `*` turned Shopify's default robots.txt
+ * (rules that start `/*` or `*`) into a Disallow of every path.
+ */
 export function robotsAllows(robots: string, path: string): boolean {
   let applies = false;
+  let group = false; // consecutive User-agent lines share one group
+  let best = { length: -1, allow: true };
   for (const raw of robots.split(/\r?\n/)) {
     const line = raw.replace(/#.*/, "").trim();
     const m = line.match(/^(user-agent|disallow|allow)\s*:\s*(.*)$/i);
     if (!m) continue;
     const [, field, value] = m;
-    if (/^user-agent$/i.test(field)) applies = value === "*" || /camcompare/i.test(value);
-    else if (applies && /^disallow$/i.test(field) && value && path.startsWith(value.replace(/\*.*$/, ""))) return false;
+    if (/^user-agent$/i.test(field)) {
+      const ours = value === "*" || /camcompare/i.test(value);
+      applies = group ? applies || ours : ours;
+      group = true;
+      continue;
+    }
+    group = false;
+    if (!applies || !value || !robotsRule(value).test(path)) continue;
+    const allow = /^allow$/i.test(field);
+    if (value.length > best.length || (value.length === best.length && allow)) best = { length: value.length, allow };
   }
-  return true;
+  return best.allow;
+}
+
+function robotsRule(rule: string): RegExp {
+  const end = rule.endsWith("$");
+  const body = (end ? rule.slice(0, -1) : rule).split("*").map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join(".*");
+  return new RegExp(`^${body}${end ? "$" : ""}`);
 }
 
 export function shopifyCondition(p: Pick<Product, "title" | "product_type" | "tags">, variantTitle: string): Condition {
@@ -44,9 +67,15 @@ export const shopifySource = (retailerKey: string): PriceSource => ({
     if (!r.shopify) return { status: "skipped", note: "no Shopify config" };
     const base = r.shopify.base.replace(/\/$/, "");
     const robots = await fetch(`${base}/robots.txt`, { headers: { "User-Agent": UA } }).then((x) => (x.ok ? x.text() : ""), () => "");
-    const paths = (r.shopify.collections?.length ? r.shopify.collections.map((c) => `/collections/${c}/products.json`) : ["/products.json"]).filter((p) => robotsAllows(robots, p));
+    const paths = (r.shopify.collections?.length ? r.shopify.collections.map((c) => `/collections/${c}/products.json`) : ["/products.json"]).filter((p) => robotsAllows(robots, `${p}?limit=250&page=1&country=${r.country}`));
     if (!paths.length) return { status: "skipped", note: "robots.txt disallows products.json" };
+    // products.json names no currency, so the store's own (/meta.json) must be
+    // the market's: another currency is refused, never converted.
     const currency = MARKETS[market].currency;
+    if (!robotsAllows(robots, "/meta.json")) return { status: "skipped", note: "robots.txt disallows /meta.json: store currency unknown" };
+    const meta = await fetch(`${base}/meta.json`, { headers: { "User-Agent": UA } }).then((x) => (x.ok ? (x.json() as Promise<{ currency?: string }>) : null)).catch(() => null);
+    if (!meta?.currency) throw new Error("no store currency in /meta.json");
+    if (meta.currency !== currency) return { status: "skipped", note: `store charges in ${meta.currency}, not ${currency}` };
     const offers: Offer[] = [];
     let seen = 0;
     for (const path of paths) {

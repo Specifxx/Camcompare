@@ -78,6 +78,18 @@ test("append-style programmes add their parameters to the retailer's own URL", (
   withEnv({ AFFILIATE_DEEPLINK_BH: "nonsense" }, () => assert.equal(isPaid("bh"), false));
 });
 
+test("a link tagged when it was stored is paid, whatever this build's environment holds", () => {
+  withEnv({ EBAY_AFFILIATE_CAMPAIGN: "", AMAZON_TAG_US: "", AMAZON_ASSOCIATE_TAG: "", AFFILIATE_DEEPLINK_ADORAMA: "" }, () => {
+    assert.equal(isPaid("ebay"), false);
+    assert.equal(isPaid("ebay", "https://www.ebay.com/itm/1?mkcid=1&campid=5338000000&toolid=10001"), true);
+    assert.equal(isPaid("ebay", "https://www.ebay.com/itm/1"), false);
+    assert.equal(isPaid("amazon", "https://www.amazon.com/dp/B000000000?tag=cc-20"), true);
+    assert.equal(isPaid("adorama", "https://www.anrdoezrs.net/click-1-2?url=x"), true);
+    assert.equal(isPaid("adorama", "https://www.adorama.com/isca7m4.html"), false);
+    assert.equal(isPaid("adorama", "not a url"), false);
+  });
+});
+
 test("sub-ids are short and safe", () => {
   assert.equal(subId("cam-sony-a7-iv", "offers"), "cc-cam-sony-a7-iv-offers");
   assert.ok(subId("x".repeat(100), "y").length <= 60);

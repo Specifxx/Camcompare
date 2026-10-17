@@ -4,7 +4,7 @@
   "name": "Leica Summilux-SL 50 f/1.4 ASPH.",
   "shortName": "Summilux-SL 50 f/1.4 ASPH.",
   "aliases": ["Summilux-SL 50 f/1.4 ASPH.", "Summilux-SL 50mm f/1.4 ASPH", "Summilux-SL 50 f/1.4", "Summilux-SL 50mm f/1.4", "Summilux-SL 50mm F1.4 ASPH", "50mm f/1.4 Summilux-SL ASPH", "50mm f/1.4 Summilux-SL"],
-  "modelCodes": [],
+  "modelCodes": ["11180"],
   "gtins": [],
   "announced": "2016-12-13",
   "launchPriceUsd": 5295,

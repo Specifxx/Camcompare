@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { buildIndex, compact, matchListing, mountInTitle, plausiblePrice } from "../src/lib/matching";
-import { CAMERAS, LENSES } from "./fixtures";
+import { buildIndex, compact, launchIn, matchListing, mountInTitle, plausiblePrice } from "../src/lib/matching";
+import { CAMERAS, LENSES, cam, lensFix } from "./fixtures";
 
 const index = buildIndex(CAMERAS, LENSES);
 const slug = (title: string, extra: { gtin?: string; mpn?: string } = {}, want?: "camera" | "lens") => {
@@ -45,6 +45,32 @@ test("camera accessories and parts are refused", () => {
   assert.equal(slug("Sony NP-FZ100 battery for a7 IV"), null);
 });
 
+test("parts pulled from a body or a lens are refused, but spec words in real titles are not", () => {
+  assert.equal(slug("Sony A7 III ILCE-7M3 CMOS Image Sensor Unit Replacement Part"), null);
+  assert.equal(slug("Sony Alpha a7 III CMOS Sensor Assembly"), null);
+  assert.equal(slug("Canon EOS R5 Main Board Replacement"), null);
+  assert.equal(slug("Sony A7 IV Rear LCD Display Replacement"), null);
+  assert.equal(slug("Sony a7 III Shutter Assembly"), null);
+  assert.equal(slug("Sony a7 III Eyepiece"), null);
+  assert.equal(slug("Sony a7 III Untested"), null);
+  assert.equal(slug("Sony FE 24-70mm F2.8 GM II Lens Front Element Glass Replacement"), null);
+  assert.equal(slug("Sony Alpha a7 III 24.2MP Full Frame CMOS Mirrorless Digital Camera Body"), "sony-a7-iii");
+  assert.equal(slug('Canon EOS R5 Full-Frame Mirrorless Camera, 45 Megapixel Full-Frame CMOS Sensor, 3.2" Vari-Angle LCD Display'), "canon-eos-r5");
+});
+
+test("action-camera mods are accessories, even when the mod shares the camera's name", () => {
+  const gopro = buildIndex([
+    cam("gopro-max", "gopro", ["GoPro MAX", "MAX 360"], { mount: null, type: "360", launchPriceUsd: 499.99 }),
+    cam("gopro-hero13-black", "gopro", ["HERO13 Black"], { mount: null, type: "action", launchPriceUsd: 399.99 }),
+  ]);
+  const g = (title: string) => matchListing({ title }, gopro).product?.slug ?? null;
+  assert.equal(g("GoPro MAX Lens Mod 2.0 for HERO13 Black"), null);
+  assert.equal(g("GoPro HERO13 Black Macro Lens Mod"), null);
+  assert.equal(g("GoPro HERO13 Black Media Mod"), null);
+  assert.equal(g("GoPro MAX 360 Action Camera"), "gopro-max");
+  assert.equal(g("GoPro HERO13 Black"), "gopro-hero13-black");
+});
+
 test("film cameras that share a digital name are refused", () => {
   assert.equal(slug("Sony a7 IV 35mm film SLR"), null);
   assert.equal(slug("Fujifilm X100V Digital Camera"), "fujifilm-x100v");
@@ -80,6 +106,21 @@ test("a generation we don't list is refused, not read as the older model", () =>
   assert.equal(slug("Nikon Z6 III 24.5MP"), "nikon-z6-iii");
 });
 
+test("a decimal aperture is one word, so 'GM 2.8' is not 'GM2'", () => {
+  const gm = buildIndex([], [
+    lensFix("sony-fe-24-70mm-f2-8-gm-ii", "sony", ["FE 24-70mm F2.8 GM II", "24-70 GM II", "24-70 GM2"]),
+    lensFix("sony-fe-24-70mm-f2-8-gm", "sony", ["FE 24-70mm F2.8 GM", "FE 24-70 GM", "24-70 GM"], { launchPriceUsd: 2199 }),
+    lensFix("hasselblad-xcd-2-5-90v", "hasselblad", ["XCD 2,5/90V", "XCD 2.5/90V"], { mounts: ["hasselblad-x"], launchPriceUsd: 4299 }),
+  ]);
+  const g = (title: string) => matchListing({ title }, gm).product?.slug ?? null;
+  assert.equal(g("Sony FE 24-70 GM 2.8"), "sony-fe-24-70mm-f2-8-gm");
+  assert.equal(g("Sony 24-70 GM2"), "sony-fe-24-70mm-f2-8-gm-ii");
+  assert.equal(g("Sony FE 24-70mm F2.8 GM II Lens"), "sony-fe-24-70mm-f2-8-gm-ii");
+  assert.equal(g("Hasselblad XCD 2.5/90V"), "hasselblad-xcd-2-5-90v");
+  assert.equal(g("Hasselblad XCD 2,5/90V"), "hasselblad-xcd-2-5-90v");
+  assert.equal(compact("FE 24-70mm F2.8 GM"), compact("fe 24-70mm f/2.8 gm"));
+});
+
 test("kits are flagged for interchangeable-lens bodies only", () => {
   const kit = matchListing({ title: "Sony a7 IV with 28-70mm Lens Kit" }, index);
   assert.ok(kit.product && kit.kit);
@@ -87,6 +128,18 @@ test("kits are flagged for interchangeable-lens bodies only", () => {
   assert.ok(body.product && !body.kit);
   const fixed = matchListing({ title: "Fujifilm X100VI 23mm f/2 Silver" }, index);
   assert.ok(fixed.product && !fixed.kit);
+});
+
+test("a kit lens with its prefix glued on, or added with '+' to a body, is still a kit", () => {
+  const kit = (title: string) => {
+    const m = matchListing({ title }, index);
+    return m.product ? m.kit : null;
+  };
+  assert.equal(kit("Canon EOS R50 Mirrorless Camera with RF-S18-45mm Lens"), true);
+  assert.equal(kit("Canon EOS R5 Mirrorless Camera RF24-105mm"), true);
+  assert.equal(kit("Sony a7 IV Body Only + Sigma 24mm"), true);
+  assert.equal(kit("Sony a7 IV Body Only"), false);
+  assert.equal(kit("Sony a7 IV Body, fits FE 24-70mm"), false);
 });
 
 test("lens generations and series never collide", () => {
@@ -115,6 +168,13 @@ test("a camera named after 'for' is a compatibility note on a lens listing", () 
 test("lens accessories are refused", () => {
   assert.equal(slug("ALC-SH167 Lens Hood for Sony FE 24-70mm F2.8 GM II"), null);
   assert.equal(slug("82mm UV Filter for Sony FE 24-70mm f/2.8 GM II"), null);
+  // Named after the lens, with no "for".
+  assert.equal(slug("Sony FE 24-70mm F2.8 GM II Lens Hood ALC-SH167"), null);
+  assert.equal(slug("Sony FE 24-70mm F2.8 GM Front Lens Cap"), null);
+  assert.equal(slug("Sigma 24-70mm F2.8 DG DN II Art Tripod Collar"), null);
+  // …but a lens that comes with them is the lens.
+  assert.equal(slug("Sony FE 24-70mm F2.8 GM II Lens w/ Hood & Caps"), "sony-fe-24-70mm-f2-8-gm-ii");
+  assert.equal(slug("Sony FE 24-70mm F2.8 GM Lens with Front and Rear Caps"), "sony-fe-24-70mm-f2-8-gm");
 });
 
 test("a body with a lens is a camera kit, never a lens price", () => {
@@ -139,4 +199,22 @@ test("prices far below launch are refused, in any currency", () => {
   assert.equal(plausiblePrice(a7iv, "new", 1999, "GBP"), true);
   assert.equal(plausiblePrice(a7iv, "new", 350, "GBP"), false);
   assert.equal(plausiblePrice({ launchPriceUsd: 2499, launchPrices: { AUD: 4299 } }, "new", 3600, "AUD"), true);
+});
+
+test("with no US launch price, another market's sets the floor", () => {
+  const gbpOnly = { launchPriceUsd: null, launchPrices: { GBP: 790 } };
+  assert.equal(launchIn(gbpOnly, "GBP"), 790);
+  assert.equal(Math.round(launchIn(gbpOnly, "USD")!), 1000);
+  assert.equal(plausiblePrice(gbpOnly, "new", 120), false);
+  assert.equal(plausiblePrice(gbpOnly, "new", 950), true);
+});
+
+test("with no launch price anywhere, only a GTIN or part-number match is trusted", () => {
+  const none = { launchPriceUsd: null, launchPrices: {} };
+  assert.equal(launchIn(none, "USD"), null);
+  // "Canon EF 24-70mm f/2.8L II USM Lens Hood" at $45 is a title match.
+  assert.equal(plausiblePrice(none, "new", 45), false);
+  assert.equal(plausiblePrice(none, "used", 1200, "USD", "title"), false);
+  assert.equal(plausiblePrice(none, "used", 1200, "USD", "gtin"), true);
+  assert.equal(plausiblePrice(none, "new", 20, "USD", "mpn"), false);
 });

@@ -71,7 +71,7 @@ Small marks on the front element usually have little visible effect; marks on th
 
 Photograph a flat, detailed subject such as a brick wall, exactly square on, wide open and stopped down. If one side is clearly softer than the other, the lens may be decentred; a knock can cause this.
 
-Check the lens is made for your mount, not just your brand: some lenses come in several mounts, and an adapted lens can lose autofocus speed or features. [Mounts](/mounts) lists the bodies and lenses we track for each mount.
+Check the lens is made for your mount, not just your brand: some lenses come in several mounts, and an adapted lens can lose autofocus speed or features. [Mounts](/mounts) lists our bodies and lenses for each mount.
 
 ## Returns, warranties and payment protection
 
@@ -100,13 +100,13 @@ These are the general rules for buying from a business. Private sales get much l
 
 ### United States
 
-The FTC's Cooling-Off Rule doesn't cover online purchases, so returns depend on the seller. To dispute a credit card charge for goods not delivered as agreed, your letter should reach the issuer within 60 days after it sent the first bill showing the charge. Disputes about quality have extra conditions under federal rules.
+The FTC's Cooling-Off Rule doesn't cover online purchases, so returns depend on the seller. To dispute a credit card charge for goods not delivered as agreed, your letter should reach the issuer within 60 days after the first bill showing it was sent. Disputes about quality have extra conditions under federal rules.
 
 ### United Kingdom
 
 From a trader, satisfactory quality is judged against the item's description and price. You have 30 days to reject a faulty item for a refund, and a fault in the first six months is presumed present at delivery unless the trader proves otherwise. From a private seller, the item must be as described, but the satisfactory-quality rule doesn't apply.
 
-Section 75 makes your credit card provider jointly liable with the seller for single items costing more than £100 and up to £30,000. Paying through an intermediary such as PayPal usually loses this protection. Debit cards have chargeback.
+Section 75 makes your credit card provider jointly liable with the seller for single items costing more than £100 and up to £30,000. It usually excludes PayPal payments. Debit cards have chargeback.
 
 ### European Union
 

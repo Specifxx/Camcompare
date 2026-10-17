@@ -35,7 +35,7 @@
     "isoMin": 100,
     "isoMax": 51200,
     "ibis": true,
-    "ibisStops": 6.5,
+    "ibisStops": 6,
     "burstMechFps": 9,
     "burstElecFps": 9,
     "shutterMaxMech": 8000,
@@ -55,7 +55,7 @@
     "screenDotsM": 2.1,
     "screenType": "multi-angle",
     "touchscreen": true,
-    "weightG": 1021,
+    "weightG": 1020,
     "dimensionsMm": [
       148.9,
       110,

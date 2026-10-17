@@ -1,10 +1,11 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
+import { gzipSync } from "node:zlib";
 import { historyFor, mergeOffers } from "../src/lib/import";
 import { buildIndex } from "../src/lib/matching";
 import type { Offer, OffersFile } from "../src/lib/offers";
 import { dailyWindow, priceFloor } from "../src/lib/sources/ebay";
-import { cheapestPerProduct, feedCondition, headerMap, priceCurrency, rowsToOffers, splitDelimited } from "../src/lib/sources/feed";
+import { cheapestPerProduct, feedCondition, feedRows, headerMap, priceCurrency, rowsToOffers, splitDelimited, type FeedRow } from "../src/lib/sources/feed";
 import { robotsAllows, shopifyCondition } from "../src/lib/sources/shopify";
 import { toMinor } from "../src/lib/sources/types";
 import { CAMERAS, LENSES } from "./fixtures";
@@ -19,6 +20,36 @@ const file = (offers: Offer[]): OffersFile => ({ generatedAt: "2026-10-16T07:00:
 test("delimited lines: quotes, escaped quotes, tabs", () => {
   assert.deepEqual(splitDelimited('a,"b, c","say ""hi""",', ","), ["a", "b, c", 'say "hi"', ""]);
   assert.deepEqual(splitDelimited("a\tb\tc", "\t"), ["a", "b", "c"]);
+});
+
+const readFeed = async (body: string | Uint8Array<ArrayBuffer>) => {
+  const out: FeedRow[] = [];
+  for await (const r of feedRows(new Response(body).body!)) out.push(r);
+  return out;
+};
+
+test("an inch mark in an unquoted cell doesn't swallow the rows after it", async () => {
+  const tsv = 'id\ttitle\tprice\n1\tAtomos Ninja V 5" HDR Monitor\t399\n2\tSony a7 III Body\t1498\n3\tSmallRig 1/4"-20 Screw\t9\n4\tCanon EOS R5 Body\t3399\n';
+  assert.deepEqual((await readFeed(tsv)).map((r) => r.id), ["1", "2", "3", "4"]);
+  const csv = 'id,title,price\r\n1,Atomos 5" Monitor,399\r\n2,"Sony a7 IV, body ""mint""\nsecond line",2198\r\n3,Canon EOS R5,3399\r\n';
+  const rows = await readFeed(csv);
+  assert.deepEqual(rows.map((r) => r.id), ["1", "2", "3"]);
+  assert.equal(rows[1].title, 'Sony a7 IV, body "mint"\nsecond line');
+});
+
+test("an XML feed on one line yields every item, never the channel's title", async () => {
+  const item = (id: string, t: string) => `<item><g:id>${id}</g:id><title>${t}</title><g:shipping><g:price>5.00 USD</g:price></g:shipping><g:price>2198.00 USD</g:price></item>`;
+  const xml = `<?xml version="1.0"?><rss><channel><title>Dealer &amp; Co</title>${item("1", "Sony a7 IV")}${item("2", "Canon EOS R5")}</channel></rss>`;
+  assert.deepEqual(await readFeed(xml), [
+    { id: "1", title: "Sony a7 IV", price: "2198.00 USD" },
+    { id: "2", title: "Canon EOS R5", price: "2198.00 USD" },
+  ]);
+});
+
+test("gzip is read from the bytes, not the URL or content type", async () => {
+  const csv = "id,title\n1,Sony a7 IV\n";
+  assert.deepEqual((await readFeed(new Uint8Array(gzipSync(csv)))).map((r) => r.title), ["Sony a7 IV"]);
+  assert.deepEqual((await readFeed(csv)).map((r) => r.title), ["Sony a7 IV"]);
 });
 
 test("feed headers from different networks map to the same fields", () => {
@@ -115,6 +146,18 @@ test("Shopify: robots.txt is respected and conditions read from titles and tags"
   assert.equal(robotsAllows("User-agent: *\nDisallow: /checkout", "/products.json"), true);
   assert.equal(robotsAllows("User-agent: *\nDisallow: /products", "/products.json"), false);
   assert.equal(robotsAllows("User-agent: Googlebot\nDisallow: /\n\nUser-agent: *\nDisallow: /cart", "/products.json"), true);
+  // Shopify's default rules are wildcards, not prefixes.
+  const shopify = "User-agent: *\nAllow: /\nDisallow: /cart.js\nDisallow: /*/collections/*+*\nDisallow: */collections/*filter*&*filter*\nDisallow: /*?*oseid=*\nDisallow: /*.atom$";
+  assert.equal(robotsAllows(shopify, "/products.json"), true);
+  assert.equal(robotsAllows(shopify, "/collections/cameras/products.json?limit=250&page=1&country=AU"), true);
+  assert.equal(robotsAllows(shopify, "/en/collections/a+b"), false);
+  assert.equal(robotsAllows(shopify, "/cart.js"), false);
+  assert.equal(robotsAllows(shopify, "/blogs/news.atom"), false);
+  assert.equal(robotsAllows(shopify, "/blogs/news.atom?x=1"), true);
+  assert.equal(robotsAllows("User-agent: *\nDisallow: /*?limit=", "/products.json?limit=250"), false);
+  // The longest rule wins, and consecutive User-agent lines share their rules.
+  assert.equal(robotsAllows("User-agent: *\nDisallow: /products\nAllow: /products.json", "/products.json"), true);
+  assert.equal(robotsAllows("User-agent: Googlebot\nUser-agent: *\nDisallow: /products", "/products.json"), false);
   assert.equal(shopifyCondition({ title: "Sony a7 III (Used)", tags: [] }, ""), "used");
   assert.equal(shopifyCondition({ title: "Sony a7 III", tags: ["Pre-Owned"] }, ""), "used");
   assert.equal(shopifyCondition({ title: "Sony a7 IV Ex-Demo", tags: "" }, ""), "open-box");
@@ -139,6 +182,7 @@ test("eBay searches start at the used price floor, in the market's currency", ()
   assert.equal(priceFloor({ launchPriceUsd: 2499, launchPrices: {} }, "USD"), 299);
   assert.equal(priceFloor({ launchPriceUsd: 2499, launchPrices: { GBP: 2399 } }, "GBP"), 287);
   assert.equal(priceFloor({ launchPriceUsd: null, launchPrices: {} }, "USD"), 30);
+  assert.equal(priceFloor({ launchPriceUsd: null, launchPrices: { GBP: 790 } }, "USD"), 120);
 });
 
 test("run notes never carry a feed URL or its query string", async () => {
