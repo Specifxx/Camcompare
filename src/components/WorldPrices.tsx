@@ -24,6 +24,7 @@ export default function WorldPrices({ slug, path, market: here, name }: { slug: 
   return (
     <div className="card flex flex-col gap-3 p-4">
       {verdict && <p className="font-semibold">{verdict.text}</p>}
+      <p className="text-xs text-muted">Prices are in each market&apos;s own currency. Under each: ≈ in {cur} at today&apos;s exchange rate.</p>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <caption className="sr-only">Lowest new and used price of the {name} in each market, with an approximate conversion into {cur}</caption>

@@ -17,6 +17,10 @@ import { AlsoCheck, EbayListings, OfferRowItem } from "./OfferRows";
 import ProductThumb from "./ProductThumb";
 import SpecHighlights from "./SpecHighlights";
 import OutboundLink from "./OutboundLink";
+import PriceAlert from "./PriceAlert";
+
+/** The cheapest in-stock, body-only row, new or not: the price the alert check reads (Amazon and eBay are not in rows). */
+const lowRow = (rows: QuickViewData["rows"], isNew: boolean) => rows.filter((r) => r.inStock && !r.kit && !r.amazon && (r.condition === "New") === isNew).reduce<number | null>((b, r) => (b === null || r.price < b ? r.price : b), null);
 
 type Target = { slug: string; market: MarketCode; name?: string; href?: string };
 
@@ -292,6 +296,9 @@ function Dialog({ target }: { target: Target }) {
                 )}
                 {data.mounts > 1 && <p className="mt-2 text-[11px] text-subtle">Made in {data.mounts} mount versions: check the version before you buy.</p>}
               </section>
+              <div className="flex flex-wrap gap-2">
+                <PriceAlert slug={data.slug} kind={data.kind} market={m} newPrice={lowRow(data.rows, true)} usedPrice={lowRow(data.rows, false)} />
+              </div>
               {data.ebay && (
                 <section aria-label={`On ${data.ebay.name}`} className="flex flex-col gap-2">
                   <h3 className="font-bold">On {data.ebay.name}</h3>

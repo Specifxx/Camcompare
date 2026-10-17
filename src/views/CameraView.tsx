@@ -12,6 +12,7 @@ import UsedValue from "@/components/UsedValue";
 import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
+import PriceAlert from "@/components/PriceAlert";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
 import { cameraHighlights } from "@/lib/highlights";
@@ -144,6 +145,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(c.slug, m)} launch={launchPrice(c, m)} market={m} extra={c.mount ? " (body only)" : ""} />
             <div className="flex flex-wrap gap-2">
               <SaveButton slug={c.slug} kind="camera" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} cond={lowest(offers, "new") ? "new" : "used"} />
+              <PriceAlert slug={c.slug} kind="camera" market={m} newPrice={lowest(offers, "new")?.price ?? null} usedPrice={lowest(offers, "used")?.price ?? null} />
               {rivals[0] && (
                 <Link href={isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)} className="btn-ghost">
                   Compare with {displayShortName(rivals[0].item, m)}

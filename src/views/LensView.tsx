@@ -10,6 +10,7 @@ import UsedValue from "@/components/UsedValue";
 import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
+import PriceAlert from "@/components/PriceAlert";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
 import { lensHighlights } from "@/lib/highlights";
@@ -106,6 +107,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(l.slug, m)} launch={launchPrice(l, m)} market={m} />
             <div className="flex flex-wrap gap-2">
               <SaveButton slug={l.slug} kind="lens" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} cond={lowest(offers, "new") ? "new" : "used"} />
+              <PriceAlert slug={l.slug} kind="lens" market={m} newPrice={lowest(offers, "new")?.price ?? null} usedPrice={lowest(offers, "used")?.price ?? null} />
             </div>
           </div>
         </header>
