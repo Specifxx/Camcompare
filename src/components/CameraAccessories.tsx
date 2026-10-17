@@ -24,7 +24,7 @@ export default function CameraAccessories({ slug, market: m }: { slug: string; m
         {items.map(({ category, label, one, row, count, forModel }) => (
           <li key={category} className="flex items-center gap-3 px-4 py-3">
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-bold uppercase tracking-wide text-muted">{label}</p>
+              <p className="text-xs text-muted">{label}</p>
               <p className="truncate font-semibold leading-tight">{row.title}</p>
               <p className="mt-0.5 text-xs text-subtle">
                 Cheapest {one} {forModel ? `for the ${short}` : "for this system"} at {row.retailerName} · {row.condition}

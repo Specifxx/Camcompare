@@ -544,9 +544,9 @@ cables by spec, and lighting split by kind and camera system.
   (CFexpress Type A/B, SD, microSD, XQD, CFast); drive kind; HDMI ends and
   version, USB/Thunderbolt generation and Gbps, length. A CFexpress card
   whose type the title doesn't state is "type not stated", not guessed.
-- **Caps keep the files reasonable**: per category the 400 cheapest, plus
-  the 40 cheapest per category and camera, per category and flash system,
-  and 12 per card/drive format and capacity (so big expensive cards aren't
+- **Caps keep the files reasonable** (about 3 MB for the US): per category
+  the 300 cheapest, plus the 30 cheapest per category and camera, per
+  category and flash system, and 8 per card/drive format and capacity (so big expensive cards aren't
   cut by the category cap). Same keep-on-error and 72-hour aging as offers.
   One listing per line in the file, for readable diffs.
 - **Price per GB is tracked**: each import writes

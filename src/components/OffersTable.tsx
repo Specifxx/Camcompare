@@ -16,6 +16,8 @@ import TimedPrice from "./TimedPrice";
  * in an "Also check" box, never rows. An Amazon price, once its API gives one,
  * is a row with its time and Amazon's disclaimer, hidden after a day.
  */
+const VISIBLE = 8;
+
 export default function OffersTable({ product, query, offers, market, page, amazonAsin }: { product: string; query: string; offers: Offer[]; market: MarketCode; page: string; amazonAsin?: string }) {
   const p = getProduct(product);
   const pack = p ? packKind(p) : "lens";
@@ -27,16 +29,31 @@ export default function OffersTable({ product, query, offers, market, page, amaz
   const launch = p ? launchPrice(p.item, market) : null;
   const rrp = launch && launch.currency === MARKETS[market].currency ? Math.round(launch.amount * 100) : null;
   const usedTypical = usedValue(historyFor(product, market))?.value ?? null;
+  // The cheapest in-stock rows first; the rest (more kits, out of stock) one
+  // click away, still in price order, so a long list doesn't bury the page.
+  const inStock = rows.filter((r) => r.inStock).length;
+  const shown = Math.max(1, Math.min(inStock, VISIBLE));
+  const rest = rows.slice(shown);
+  const item = (r: (typeof rows)[number]) => (
+    <OfferRowItem key={r.id} row={r} product={product} placement="offers" rrp={rrp} usedTypical={usedTypical} priceNode={r.amazon && r.seenAt ? <TimedPrice text={price(r.price, r.currency)} seenAt={r.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : undefined} />
+  );
   return (
     <div className={`grid grid-cols-1 items-start gap-4 ${side ? "lg:grid-cols-[minmax(0,1fr)_300px]" : ""}`}>
       <div>
         {rows.length ? (
           <>
             <ul className="card divide-y divide-line">
-              {rows.map((r) => (
-                <OfferRowItem key={r.id} row={r} product={product} placement="offers" rrp={rrp} usedTypical={usedTypical} priceNode={r.amazon && r.seenAt ? <TimedPrice text={price(r.price, r.currency)} seenAt={r.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : undefined} />
-              ))}
+              {rows.slice(0, shown).map(item)}
             </ul>
+            {rest.length > 0 && (
+              <details className="group mt-2">
+                <summary className="cursor-pointer text-sm font-medium text-accent">
+                  Show {rest.length} more {rest.length === 1 ? "price" : "prices"}
+                  {rest.some((r) => !r.inStock) ? ", out of stock included" : ""}
+                </summary>
+                <ul className="card mt-2 divide-y divide-line">{rest.map(item)}</ul>
+              </details>
+            )}
             <p className="mt-2 text-[11px] text-subtle">Sorted by price, cheapest in-stock first. Some links earn us a commission; it never changes the order.</p>
             {rows.some((r) => r.amazon) && (
               <p className="mt-1 text-[11px] text-subtle">
