@@ -716,3 +716,36 @@ buttons. Green (`--c-buy` / `--c-win`) stays the colour of money: savings,
 lowest prices and paid buy buttons, plus the one green blade of the iris.
 The favicon and the link-preview image swap their orange for the same
 green. Everything else stays neutral grey, as in "Plain and clean".
+
+## 2026-10-18: Cutting Vercel spend
+
+Usage per cycle was ~12.7K function invocations, ~21K ISR writes, ~166K ISR
+reads against ~70K CDN requests, 2 GB Fast Origin Transfer and 2 h of build
+CPU. Audit: no page sets `revalidate`, nothing calls `revalidatePath` or
+`revalidateTag`, there is no `unstable_cache`, no cron route and no middleware.
+The site is static, rebuilt by price commits. Where the spend came from:
+
+- **Builds.** Every price commit (8 a day) was a production build. Each one
+  re-renders ~2,400 pages (~435 MB of HTML+RSC) and empties the CDN, so the
+  next request for every page reads the ISR cache again, in 8 KB units. That
+  is why ISR reads outnumber CDN requests: a 280 KB product page is ~35 units.
+  Now `scripts/vercel-ignore-build.mjs` builds only `main`, skips commits
+  that only touch docs, tests or workflows, skips price commits where only
+  timestamps changed, and spaces real price changes 6 hours apart. Freshness
+  goes from ≤3 h to ≤~9 h, inside the 6–24 h the owner judged fine.
+- **On-demand pages.** Market product pages a market hasn't priced
+  (dynamicParams) render on first request and are cached until the next
+  deploy: every crawl of one was a function call and an ISR write. They stay
+  (no 404s), but listing links to them are now nofollow (they're noindex),
+  and fewer deploys means fewer re-renders.
+- **Prefetch.** Remaining `<Link>`s prefetched their target's whole RSC
+  payload; all now use `prefetch={false}`.
+- **Payload.** The store table's hidden rows load on open from the quick
+  view's static JSON; product cards use named CSS classes and a plain `<img>`.
+  The prerendered output drops ~11% (product pages ~16%).
+- **Not done, on purpose.** Adding `revalidate` to product pages (suggested
+  6–24 h) would add ISR writes on top of builds, not remove any: static pages
+  rebuilt by commits are the cheaper model here (see "No database for public
+  data"). Web Analytics stays (the owner uses its buy_click events).
+  `/compare?c=` stays dynamic (it reads the query), and robots.txt now keeps
+  crawlers off it and every other query URL.

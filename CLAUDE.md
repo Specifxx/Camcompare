@@ -61,16 +61,21 @@ Everything else public is JSON in `data/`, committed:
   per GB per card/drive format and capacity. Both written by the import.
 
 Pages read these at build time and are static. **No page sets `revalidate`.**
-Data changes only through commits, and each commit is a build. Don't add a
+Data changes only through commits, and builds follow commits (below). Don't add a
 database for public data, an ISR interval or a request-time fetch for public data without an
 entry in DECISIONS.md: RiftCompare's Neon egress and ISR-write bills are the
 reason.
 
 Builds:
 
-- `refresh-prices.yml` commits prices to `main` every three hours. Each commit
-  is a production build.
-- `claude/*` and `ccr-*` branches don't deploy (`vercel.json`).
+- `refresh-prices.yml` commits prices to `main` every three hours.
+- Only `main` deploys. `vercel.json`'s ignoreCommand
+  (`scripts/vercel-ignore-build.mjs`) skips other branches, commits touching
+  only docs, tests or workflows, and price commits where only timestamps
+  changed. A price commit with real changes builds once the last deployment
+  is 6 hours old, so prices on the site are at most ~9 hours old. `[deploy]`
+  in a commit subject forces a build. Each build re-renders ~2,400 pages and
+  empties the CDN cache, so don't loosen this without a DECISIONS.md entry.
 
 ## Markets
 
