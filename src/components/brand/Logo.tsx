@@ -5,11 +5,10 @@
 // from the apexes being off-centre.
 //
 // Motion is transforms only (globals.css, "Iris"), so it runs the same in
-// Safari/iOS, Firefox, Chrome and Android: closing slides every blade's apex
-// toward the centre (one translate, the same in each blade's own turned frame)
-// while the whole mark twists, as a real iris does. It opens once on load and
-// stops down a little on hover; under reduced motion it is still. (It used to
-// animate the CSS `d` property, which Safari does not support.)
+// Safari/iOS, Firefox, Chrome and Android: on load every blade's apex slides
+// out from the centre (one translate, the same in each blade's own turned
+// frame), so the iris opens once, quickly; under reduced motion it is still.
+// (It used to animate the CSS `d` property, which Safari does not support.)
 import { useId } from "react";
 import { SITE_NAME } from "@/lib/site";
 

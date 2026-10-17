@@ -207,16 +207,11 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
 .cc-nav-link { position: relative; }
 .cc-nav-link[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, rgb(var(--c-accent)), rgb(var(--c-azure))); }
 
-/* ---- Iris (Logo.tsx): opens once, stops down on hover. Transforms only (no CSS `d`,
-   which Safari/iOS can't animate). Each blade slides its apex toward the centre in its
-   own turned frame, so one translate serves all six; the mark twists as it opens. */
-.cc-iris { transform-origin: 50% 50%; }
-.cc-iris .cc-blade { transform: translate(0, 0); transition: transform 0.45s cubic-bezier(0.3, 1.3, 0.5, 1); }
-.cc-logo:hover .cc-iris .cc-blade, a:focus-visible .cc-iris .cc-blade { transform: translate(-1.7px, 0.42px); }
-.cc-iris-intro { animation: cc-iris-twist 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s backwards; }
-.cc-iris-intro .cc-blade { animation: cc-iris-open 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s backwards; }
+/* ---- Iris (Logo.tsx): opens once on load, quickly. Transforms only (no CSS `d`, which
+   Safari/iOS can't animate): each blade slides its apex out from the centre in its own
+   turned frame, so one translate serves all six. Nothing else moves. */
+.cc-iris-intro .cc-blade { animation: cc-iris-open 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s backwards; }
 @keyframes cc-iris-open { from { transform: translate(-5.2px, 1.3px); } to { transform: translate(0, 0); } }
-@keyframes cc-iris-twist { from { transform: rotate(-50deg); } to { transform: rotate(0deg); } }
 
 /* ---- Hero (components/home/Hero.tsx) ---- */
 .cc-hero-bg {
@@ -367,8 +362,7 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .cc-leak, .cc-bokeh, .cc-flare-core, .cc-in, .cc-focus, .cc-af-word::before, .cc-iris-intro, .cc-iris-intro .cc-blade, .cc-live-dot::after, .cc-marquee-inner { animation: none !important; }
-  .cc-iris, .cc-iris .cc-blade { transform: none !important; transition: none !important; }
+  .cc-leak, .cc-bokeh, .cc-flare-core, .cc-in, .cc-focus, .cc-af-word::before, .cc-iris-intro .cc-blade, .cc-live-dot::after, .cc-marquee-inner { animation: none !important; }
   :where(a.card, .card-hover):hover { transform: none; }
   .cc-marquee { -webkit-mask-image: none; mask-image: none; }
   .cc-marquee-inner { flex-wrap: wrap; width: auto; justify-content: center; }
