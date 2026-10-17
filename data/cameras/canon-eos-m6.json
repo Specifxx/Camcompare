@@ -1,0 +1,71 @@
+{
+  "slug": "canon-eos-m6",
+  "brand": "canon",
+  "name": "Canon EOS M6",
+  "shortName": "EOS M6",
+  "aliases": [
+    "EOS M6",
+    "EOS-M6",
+    "M6"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2017-02-14",
+  "launchPriceUsd": 779.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "canon-eos-m6-mark-ii",
+  "rivals": [
+    "sony-a6300",
+    "fujifilm-x-e3",
+    "panasonic-lumix-gx85",
+    "canon-eos-m5"
+  ],
+  "mount": "canon-ef-m",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 9,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 390,
+    "dimensionsMm": [
+      112,
+      68,
+      44.5
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 295,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

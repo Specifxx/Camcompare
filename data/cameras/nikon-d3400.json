@@ -1,0 +1,70 @@
+{
+  "slug": "nikon-d3400",
+  "brand": "nikon",
+  "name": "Nikon D3400",
+  "shortName": "D3400",
+  "aliases": [
+    "D3400",
+    "D 3400"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2016-08-17",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": "nikon-d3300",
+  "successor": null,
+  "rivals": [
+    "canon-eos-rebel-t6",
+    "canon-eos-rebel-t7",
+    "canon-eos-rebel-sl2",
+    "nikon-d3500"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 11,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.921,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 445,
+    "dimensionsMm": [
+      124,
+      98,
+      75.5
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": false,
+    "bluetooth": true
+  }
+}

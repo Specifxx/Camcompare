@@ -68,10 +68,14 @@ export function affiliateUrl(retailerKey: string, url: string, sub: string): str
     return u.toString();
   }
   const template = env(deeplinkEnv(retailerKey));
-  if (!template || !template.includes("{url}")) return url;
+  if (!isTemplate(template)) return url;
   // Some feeds (CJ, Awin) already hand out tracking links: wrap only links to
   // the retailer's own site.
   if (r && !sameSite(u.hostname, new URL(r.site).hostname)) return url;
+  if (/^[?&]/.test(template)) {
+    for (const [k, v] of new URLSearchParams(template.slice(1))) u.searchParams.set(k, v.replaceAll("{subid}", sub));
+    return u.toString();
+  }
   return template.replaceAll("{url}", encodeURIComponent(url)).replaceAll("{subid}", encodeURIComponent(sub));
 }
 
@@ -80,5 +84,8 @@ export function isPaid(retailerKey: string): boolean {
   const r = retailer(retailerKey);
   if (r?.amazon) return Boolean(amazonTag(retailerKey));
   if (r?.ebay) return Boolean(ebayCampaign());
-  return env(deeplinkEnv(retailerKey)).includes("{url}");
+  return isTemplate(env(deeplinkEnv(retailerKey)));
 }
+
+/** A usable deep-link template: wraps {url}, or appends "&k=v" parameters. */
+const isTemplate = (t: string) => t.includes("{url}") || /^[?&][^=&]+=[^&]/.test(t);

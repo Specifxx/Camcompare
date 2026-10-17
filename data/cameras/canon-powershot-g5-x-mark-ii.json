@@ -1,0 +1,83 @@
+{
+  "slug": "canon-powershot-g5-x-mark-ii",
+  "brand": "canon",
+  "name": "Canon PowerShot G5 X Mark II",
+  "shortName": "PowerShot G5 X Mark II",
+  "aliases": [
+    "PowerShot G5 X Mark II",
+    "G5 X Mark II",
+    "G5X Mark II",
+    "G5 X II",
+    "G5X II",
+    "G5XII",
+    "G5X Mk II",
+    "G5Xm2",
+    "G5X Mark 2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-07-09",
+  "launchPriceUsd": 899.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-rx100-vi",
+    "sony-rx100-vii",
+    "canon-powershot-g7-x-mark-iii",
+    "panasonic-lumix-lx100-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      120
+    ],
+    "aperture": "f/1.8-2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 20,
+    "burstElecFps": 30,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 25600,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 340,
+    "dimensionsMm": [
+      110.9,
+      60.9,
+      46
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 230,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

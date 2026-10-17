@@ -1,0 +1,74 @@
+{
+  "slug": "red-komodo-x",
+  "brand": "red",
+  "name": "RED KOMODO-X",
+  "shortName": "KOMODO-X",
+  "aliases": [
+    "KOMODO-X",
+    "KOMODO-X 6K",
+    "KOMODO-X RF Mount"
+  ],
+  "modelCodes": [
+    "710-0356-00"
+  ],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2023-05-16",
+  "launchPriceUsd": 9995,
+  "status": "current",
+  "predecessor": "red-komodo-6k",
+  "successor": null,
+  "rivals": [
+    "red-komodo-6k",
+    "canon-eos-c400",
+    "sony-fx9",
+    "sony-fx6",
+    "canon-eos-c500-mark-ii"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "super-35",
+    "sensorType": "Global Shutter CMOS",
+    "megapixels": 19.9,
+    "isoMin": 250,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.9,
+    "screenDotsM": 6.22,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 1188,
+    "dimensionsMm": [
+      101.26,
+      95.26,
+      129.37
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "CFexpress B",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

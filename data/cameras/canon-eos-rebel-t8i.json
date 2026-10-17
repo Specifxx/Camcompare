@@ -1,0 +1,82 @@
+{
+  "slug": "canon-eos-rebel-t8i",
+  "brand": "canon",
+  "name": "Canon EOS Rebel T8i",
+  "shortName": "EOS Rebel T8i",
+  "aliases": [
+    "EOS Rebel T8i",
+    "Rebel T8i",
+    "T8i",
+    "EOS 850D",
+    "850D",
+    "EOS Kiss X10i",
+    "Kiss X10i"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2020-02-12",
+  "launchPriceUsd": 749.99,
+  "regionalNames": {
+    "uk": "Canon EOS 850D",
+    "eu": "Canon EOS 850D",
+    "au": "Canon EOS 850D",
+    "sg": "Canon EOS 850D"
+  },
+  "status": "current",
+  "predecessor": "canon-eos-rebel-t7i",
+  "successor": null,
+  "rivals": [
+    "nikon-d5600",
+    "canon-eos-rebel-sl3",
+    "canon-eos-90d",
+    "canon-eos-r10"
+  ],
+  "mount": "canon-ef",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.1,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7.5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 45,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 25,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 515,
+    "dimensionsMm": [
+      131,
+      102.6,
+      76.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q93428008"
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "nikon-d610",
+  "brand": "nikon",
+  "name": "Nikon D610",
+  "shortName": "D610",
+  "aliases": [
+    "D610",
+    "D 610"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2013-10-08",
+  "launchPriceUsd": 1999.95,
+  "launchPrices": {
+    "GBP": 1799.99
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "nikon-d750",
+    "canon-eos-6d",
+    "sony-a7-ii",
+    "pentax-k-1"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.3,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 39,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 0.921,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 850,
+    "dimensionsMm": [
+      141,
+      113,
+      82
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-I + SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": false,
+    "bluetooth": false
+  },
+  "wikidata": "Q15143841"
+}

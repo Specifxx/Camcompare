@@ -1,0 +1,73 @@
+{
+  "slug": "nikon-d4s",
+  "brand": "nikon",
+  "name": "Nikon D4S",
+  "shortName": "D4S",
+  "aliases": [
+    "D4S",
+    "D4 S",
+    "D 4S"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2014-02-25",
+  "launchPriceUsd": 6499.95,
+  "launchPrices": {
+    "GBP": 5199.99
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "nikon-d5",
+  "rivals": [
+    "nikon-d5",
+    "canon-eos-1d-x-mark-ii"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 16.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 51,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 0.921,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 1350,
+    "dimensionsMm": [
+      160,
+      156.5,
+      90.5
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "XQD + CF",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": false
+  },
+  "wikidata": "Q15830462"
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "blackmagic-cinema-camera-6k",
+  "brand": "blackmagic",
+  "name": "Blackmagic Cinema Camera 6K",
+  "shortName": "Cinema Camera 6K",
+  "aliases": [
+    "Cinema Camera 6K",
+    "Cinema Camera 6K Full Frame",
+    "BMCC 6K"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2023-09-15",
+  "launchPriceUsd": 2595,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "blackmagic-pocket-cinema-camera-6k-pro",
+    "blackmagic-pyxis-6k",
+    "sony-fx3",
+    "panasonic-lumix-s5-iix",
+    "nikon-zr"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.6,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 5,
+    "screenDotsM": 6.22,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 1135,
+    "dimensionsMm": [
+      180,
+      122,
+      94
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "CFexpress B",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": true
+  }
+}

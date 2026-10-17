@@ -45,16 +45,33 @@ jobs:
           AMAZON_TAG_DE: ${{ secrets.AMAZON_TAG_DE }}
           AMAZON_TAG_AU: ${{ secrets.AMAZON_TAG_AU }}
           AMAZON_TAG_SG: ${{ secrets.AMAZON_TAG_SG }}
+          BESTBUY_API_KEY: ${{ secrets.BESTBUY_API_KEY }}
           # Feed URLs: one secret per feed retailer, FEED_URL_<KEY> (docs/retailers.md).
           # tests/workflows.test.ts fails if a feed retailer is missing here.
           # FEEDS-START
           FEED_URL_BH: ${{ secrets.FEED_URL_BH }}
           FEED_URL_ADORAMA: ${{ secrets.FEED_URL_ADORAMA }}
-          FEED_URL_BESTBUY: ${{ secrets.FEED_URL_BESTBUY }}
+          FEED_URL_WALMART: ${{ secrets.FEED_URL_WALMART }}
+          FEED_URL_ABT: ${{ secrets.FEED_URL_ABT }}
           FEED_URL_MPB: ${{ secrets.FEED_URL_MPB }}
           FEED_URL_KEH: ${{ secrets.FEED_URL_KEH }}
+          FEED_URL_WEX: ${{ secrets.FEED_URL_WEX }}
+          FEED_URL_PARK_CAMERAS: ${{ secrets.FEED_URL_PARK_CAMERAS }}
+          FEED_URL_JESSOPS: ${{ secrets.FEED_URL_JESSOPS }}
+          FEED_URL_CLIFTON_CAMERAS: ${{ secrets.FEED_URL_CLIFTON_CAMERAS }}
+          FEED_URL_CAMERAWORLD: ${{ secrets.FEED_URL_CAMERAWORLD }}
+          FEED_URL_LCE: ${{ secrets.FEED_URL_LCE }}
+          FEED_URL_CURRYS: ${{ secrets.FEED_URL_CURRYS }}
           FEED_URL_MPB_UK: ${{ secrets.FEED_URL_MPB_UK }}
+          FEED_URL_CALUMET_DE: ${{ secrets.FEED_URL_CALUMET_DE }}
+          FEED_URL_FOTO_ERHARDT: ${{ secrets.FEED_URL_FOTO_ERHARDT }}
+          FEED_URL_CYBERPORT: ${{ secrets.FEED_URL_CYBERPORT }}
+          FEED_URL_MEDIAMARKT_DE: ${{ secrets.FEED_URL_MEDIAMARKT_DE }}
+          FEED_URL_COOLBLUE: ${{ secrets.FEED_URL_COOLBLUE }}
           FEED_URL_MPB_EU: ${{ secrets.FEED_URL_MPB_EU }}
+          FEED_URL_CAMERA_HOUSE: ${{ secrets.FEED_URL_CAMERA_HOUSE }}
+          FEED_URL_CAMERAPRO: ${{ secrets.FEED_URL_CAMERAPRO }}
+          FEED_URL_JBHIFI: ${{ secrets.FEED_URL_JBHIFI }}
           # FEEDS-END
         run: npm run import:prices
       - name: Commit data

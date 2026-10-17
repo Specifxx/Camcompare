@@ -1,0 +1,75 @@
+{
+  "slug": "olympus-tg-5",
+  "brand": "om-system",
+  "name": "Olympus Tough TG-5",
+  "shortName": "Tough TG-5",
+  "aliases": [
+    "Tough TG-5",
+    "TG-5",
+    "TG5"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2017-05-17",
+  "launchPriceUsd": 449.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "olympus-tg-6",
+  "rivals": [
+    "nikon-coolpix-w300",
+    "ricoh-wg-7"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      25,
+      100
+    ],
+    "aperture": "f/2-4.9"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 12,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": true,
+    "ibisStops": 2.5,
+    "burstMechFps": 5,
+    "burstElecFps": 20,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.46,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 250,
+    "dimensionsMm": [
+      113,
+      66,
+      31.9
+    ],
+    "weatherSealed": true,
+    "waterproofM": 15,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 340,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

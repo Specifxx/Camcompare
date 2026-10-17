@@ -1,0 +1,75 @@
+{
+  "slug": "canon-eos-6d",
+  "brand": "canon",
+  "name": "Canon EOS 6D",
+  "shortName": "EOS 6D",
+  "aliases": [
+    "EOS 6D",
+    "6D"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2012-09-17",
+  "launchPriceUsd": 2099,
+  "launchPrices": {
+    "GBP": 1799
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "nikon-d610",
+    "nikon-d750",
+    "sony-a7-ii",
+    "canon-eos-6d-mark-ii",
+    "canon-eos-5d-mark-iii"
+  ],
+  "mount": "canon-ef",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 20.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 4.5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 11,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 755,
+    "dimensionsMm": [
+      144.5,
+      110.5,
+      71.2
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q66215"
+}

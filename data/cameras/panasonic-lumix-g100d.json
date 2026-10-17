@@ -1,0 +1,75 @@
+{
+  "slug": "panasonic-lumix-g100d",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix G100D",
+  "shortName": "Lumix G100D",
+  "aliases": [
+    "Lumix G100D",
+    "Lumix DC-G100D",
+    "Panasonic G100D",
+    "Panasonic Lumix G100D",
+    "G100D"
+  ],
+  "modelCodes": [
+    "DC-G100D"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-12-20",
+  "launchPriceUsd": null,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-zv-e10",
+    "canon-eos-r50",
+    "nikon-z30",
+    "olympus-om-d-e-m10-mark-iv"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 20.3,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": 10,
+    "shutterMaxMech": 500,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.84,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 346,
+    "dimensionsMm": [
+      115.6,
+      83.1,
+      54.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 270,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

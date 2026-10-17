@@ -1,0 +1,83 @@
+{
+  "slug": "canon-powershot-g7-x-mark-ii",
+  "brand": "canon",
+  "name": "Canon PowerShot G7 X Mark II",
+  "shortName": "PowerShot G7 X Mark II",
+  "aliases": [
+    "PowerShot G7 X Mark II",
+    "G7 X Mark II",
+    "G7X Mark II",
+    "G7 X II",
+    "G7X II",
+    "G7XII",
+    "G7X Mk II",
+    "G7Xm2",
+    "G7X Mark 2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2016-02-18",
+  "launchPriceUsd": 699.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-rx100-iv",
+    "sony-rx100-v",
+    "panasonic-lumix-lx10",
+    "sony-rx100-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      100
+    ],
+    "aperture": "f/1.8-2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": 31,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 319,
+    "dimensionsMm": [
+      105.5,
+      60.9,
+      42.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 265,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

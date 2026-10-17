@@ -62,7 +62,7 @@
     "cardSlots": 0,
     "cardTypes": "microSD (in the Front Touchscreen or Power Module)",
     "batteryShotsCipa": null,
-    "usbC": true,
+    "usbC": null,
     "micJack": false,
     "headphoneJack": false,
     "builtInFlash": false,

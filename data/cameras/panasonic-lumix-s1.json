@@ -1,0 +1,77 @@
+{
+  "slug": "panasonic-lumix-s1",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix S1",
+  "shortName": "Lumix S1",
+  "aliases": [
+    "Lumix S1",
+    "Lumix DC-S1",
+    "Panasonic S1",
+    "Panasonic Lumix S1",
+    "DC-S1"
+  ],
+  "modelCodes": [
+    "DC-S1"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-02-01",
+  "launchPriceUsd": 2499.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7-iii",
+    "nikon-z6",
+    "canon-eos-r",
+    "panasonic-lumix-s5"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 6.5,
+    "burstMechFps": 9,
+    "burstElecFps": 9,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 1021,
+    "dimensionsMm": [
+      148.9,
+      110,
+      96.7
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B / XQD + SD UHS-II",
+    "batteryShotsCipa": 380,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q65241650"
+}

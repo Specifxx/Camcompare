@@ -1,0 +1,79 @@
+{
+  "slug": "panasonic-lumix-gx9",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix GX9",
+  "shortName": "Lumix GX9",
+  "aliases": [
+    "Lumix GX9",
+    "Lumix DC-GX9",
+    "Panasonic GX9",
+    "Panasonic Lumix GX9",
+    "Lumix GX7 Mark III",
+    "GX7 Mark III",
+    "DC-GX7MK3"
+  ],
+  "modelCodes": [
+    "DC-GX9",
+    "DC-GX7MK3"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2018-02-13",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": "panasonic-lumix-gx85",
+  "successor": null,
+  "rivals": [
+    "fujifilm-x-e3",
+    "olympus-pen-f",
+    "sony-a6300",
+    "olympus-om-d-e-m10-mark-iii"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 20.3,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 4,
+    "burstMechFps": 9,
+    "burstElecFps": 9,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.24,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 450,
+    "dimensionsMm": [
+      124,
+      72.1,
+      46.8
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 260,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q137705252"
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "insta360-x5",
+  "brand": "insta360",
+  "name": "Insta360 X5",
+  "shortName": "X5",
+  "aliases": [
+    "X5"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "360",
+  "announced": "2025-04-22",
+  "launchPriceUsd": 549.99,
+  "status": "current",
+  "predecessor": "insta360-x4",
+  "successor": null,
+  "rivals": [
+    "dji-osmo-360",
+    "gopro-max2",
+    "insta360-x4"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "1/1.28-inch",
+    "sensorType": "CMOS",
+    "megapixels": 72,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.5,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 200,
+    "dimensionsMm": [
+      46,
+      124.5,
+      38.2
+    ],
+    "weatherSealed": true,
+    "waterproofM": 15,
+    "cardSlots": 1,
+    "cardTypes": "microSD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "panasonic-lumix-zs100",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix ZS100",
+  "shortName": "Lumix ZS100",
+  "aliases": [
+    "Lumix ZS100",
+    "Lumix DMC-ZS100",
+    "Panasonic ZS100",
+    "Panasonic Lumix ZS100",
+    "ZS100",
+    "Lumix TZ100",
+    "Lumix DMC-TZ100",
+    "Panasonic TZ100",
+    "Panasonic Lumix TZ100",
+    "TZ100",
+    "TZ110"
+  ],
+  "modelCodes": [
+    "DMC-ZS100",
+    "DMC-TZ100",
+    "DMC-TZ110",
+    "DMC-TX1"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2016-01-05",
+  "launchPriceUsd": 699.99,
+  "regionalNames": {
+    "uk": "Panasonic Lumix TZ100",
+    "eu": "Panasonic Lumix TZ100"
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "panasonic-lumix-zs200",
+  "rivals": [
+    "canon-powershot-g9-x-mark-ii",
+    "canon-powershot-g7-x-mark-ii",
+    "sony-rx100-iv",
+    "panasonic-lumix-lx10"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      25,
+      250
+    ],
+    "aperture": "f/2.8-5.9"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.17,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 310,
+    "dimensionsMm": [
+      110.5,
+      64.5,
+      44.3
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 300,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

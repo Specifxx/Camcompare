@@ -1,0 +1,73 @@
+{
+  "slug": "olympus-om-d-e-m5",
+  "brand": "om-system",
+  "name": "Olympus OM-D E-M5",
+  "shortName": "E-M5",
+  "aliases": [
+    "OM-D E-M5",
+    "E-M5",
+    "EM5"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2012-02-08",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "EUR": 1099
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "olympus-om-d-e-m5-mark-ii",
+  "rivals": [
+    "panasonic-lumix-gx7",
+    "sony-a6000",
+    "fujifilm-x-t1"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 16.1,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": null,
+    "burstMechFps": 9,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 35,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.61,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 425,
+    "dimensionsMm": [
+      121,
+      89.6,
+      41.9
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 360,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": false
+  }
+}

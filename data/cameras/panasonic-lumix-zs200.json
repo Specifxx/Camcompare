@@ -1,0 +1,94 @@
+{
+  "slug": "panasonic-lumix-zs200",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix ZS200",
+  "shortName": "Lumix ZS200",
+  "aliases": [
+    "Lumix ZS200",
+    "Lumix DC-ZS200",
+    "Panasonic ZS200",
+    "Panasonic Lumix ZS200",
+    "ZS200",
+    "Lumix TZ200",
+    "Lumix DC-TZ200",
+    "Panasonic TZ200",
+    "Panasonic Lumix TZ200",
+    "TZ200",
+    "TZ220"
+  ],
+  "modelCodes": [
+    "DC-ZS200",
+    "DC-TZ200",
+    "DC-TZ220",
+    "DC-TX2"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2018-02-13",
+  "launchPriceUsd": 799.99,
+  "regionalNames": {
+    "uk": "Panasonic Lumix TZ200",
+    "eu": "Panasonic Lumix TZ200"
+  },
+  "status": "discontinued",
+  "predecessor": "panasonic-lumix-zs100",
+  "successor": null,
+  "rivals": [
+    "sony-rx100-vi",
+    "sony-rx100-vii",
+    "canon-powershot-g5-x-mark-ii",
+    "canon-powershot-g7-x-mark-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      360
+    ],
+    "aperture": "f/3.3-6.4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.33,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.24,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 340,
+    "dimensionsMm": [
+      111.2,
+      66.4,
+      45.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 370,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

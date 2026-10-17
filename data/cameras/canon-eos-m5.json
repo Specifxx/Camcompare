@@ -1,0 +1,71 @@
+{
+  "slug": "canon-eos-m5",
+  "brand": "canon",
+  "name": "Canon EOS M5",
+  "shortName": "EOS M5",
+  "aliases": [
+    "EOS M5",
+    "EOS-M5",
+    "M5"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2016-09-15",
+  "launchPriceUsd": 979.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a6300",
+    "fujifilm-x-t20",
+    "panasonic-lumix-g85",
+    "olympus-om-d-e-m5-mark-ii"
+  ],
+  "mount": "canon-ef-m",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 9,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 1.62,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 427,
+    "dimensionsMm": [
+      115.6,
+      89.2,
+      60.6
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 295,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

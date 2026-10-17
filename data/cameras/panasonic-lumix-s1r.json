@@ -1,0 +1,77 @@
+{
+  "slug": "panasonic-lumix-s1r",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix S1R",
+  "shortName": "Lumix S1R",
+  "aliases": [
+    "Lumix S1R",
+    "Lumix DC-S1R",
+    "Panasonic S1R",
+    "Panasonic Lumix S1R",
+    "DC-S1R"
+  ],
+  "modelCodes": [
+    "DC-S1R"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-02-01",
+  "launchPriceUsd": 3699.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7r-iii",
+    "sony-a7r-iv",
+    "nikon-z7",
+    "canon-eos-r5"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 47.3,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 6.5,
+    "burstMechFps": 9,
+    "burstElecFps": 9,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 1020,
+    "dimensionsMm": [
+      148.9,
+      110,
+      96.7
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B / XQD + SD UHS-II",
+    "batteryShotsCipa": 360,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q126330815"
+}

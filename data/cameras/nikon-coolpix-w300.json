@@ -1,0 +1,76 @@
+{
+  "slug": "nikon-coolpix-w300",
+  "brand": "nikon",
+  "name": "Nikon COOLPIX W300",
+  "shortName": "COOLPIX W300",
+  "aliases": [
+    "COOLPIX W300",
+    "W300"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2017-05-31",
+  "launchPriceUsd": 389.95,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "olympus-tg-6",
+    "om-system-tg-7",
+    "ricoh-wg-7",
+    "olympus-tg-5"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      120
+    ],
+    "aperture": "f/2.8-4.9"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 16,
+    "isoMin": 125,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7,
+    "burstElecFps": null,
+    "shutterMaxMech": 1500,
+    "shutterMaxElec": null,
+    "afPoints": 99,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.921,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 231,
+    "dimensionsMm": [
+      111.5,
+      66,
+      29
+    ],
+    "weatherSealed": true,
+    "waterproofM": 30,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 280,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

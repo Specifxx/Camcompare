@@ -1,0 +1,73 @@
+{
+  "slug": "canon-eos-c80",
+  "brand": "canon",
+  "name": "Canon EOS C80",
+  "shortName": "EOS C80",
+  "aliases": [
+    "EOS C80",
+    "Cinema EOS C80",
+    "C80"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2024-09-09",
+  "launchPriceUsd": 5499,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-fx6",
+    "canon-eos-c70",
+    "canon-eos-c400",
+    "red-komodo-6k",
+    "blackmagic-pyxis-6k"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked BSI CMOS",
+    "megapixels": 19,
+    "isoMin": 160,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.5,
+    "screenDotsM": 2.76,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 1545,
+    "dimensionsMm": [
+      160,
+      137.4,
+      116
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD + SD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

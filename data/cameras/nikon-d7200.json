@@ -1,0 +1,71 @@
+{
+  "slug": "nikon-d7200",
+  "brand": "nikon",
+  "name": "Nikon D7200",
+  "shortName": "D7200",
+  "aliases": [
+    "D7200",
+    "D 7200"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2015-03-02",
+  "launchPriceUsd": 1199.95,
+  "status": "discontinued",
+  "predecessor": "nikon-d7100",
+  "successor": null,
+  "rivals": [
+    "canon-eos-80d",
+    "nikon-d7500",
+    "nikon-d7100",
+    "pentax-k-3-ii"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 51,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 1.23,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 765,
+    "dimensionsMm": [
+      135.5,
+      106.5,
+      76
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-I + SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q19513187"
+}

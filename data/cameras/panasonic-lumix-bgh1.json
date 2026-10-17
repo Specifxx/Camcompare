@@ -1,0 +1,76 @@
+{
+  "slug": "panasonic-lumix-bgh1",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix BGH1",
+  "shortName": "Lumix BGH1",
+  "aliases": [
+    "Lumix BGH1",
+    "Lumix DC-BGH1",
+    "Panasonic BGH1",
+    "Panasonic Lumix BGH1",
+    "BGH1"
+  ],
+  "modelCodes": [
+    "DC-BGH1"
+  ],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2020-10-13",
+  "launchPriceUsd": 1999.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "blackmagic-pocket-cinema-camera-4k",
+    "panasonic-lumix-gh5s",
+    "panasonic-lumix-bs1h",
+    "sony-fx30"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 10.28,
+    "isoMin": 160,
+    "isoMax": 51200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 16000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": false,
+    "weightG": 545,
+    "dimensionsMm": [
+      93,
+      93,
+      78
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

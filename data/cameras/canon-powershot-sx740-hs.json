@@ -1,0 +1,78 @@
+{
+  "slug": "canon-powershot-sx740-hs",
+  "brand": "canon",
+  "name": "Canon PowerShot SX740 HS",
+  "shortName": "PowerShot SX740 HS",
+  "aliases": [
+    "PowerShot SX740 HS",
+    "SX740 HS",
+    "SX740HS",
+    "SX740"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2018-07-31",
+  "launchPriceUsd": 399.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-zs70",
+    "panasonic-lumix-zs80",
+    "sony-hx99",
+    "nikon-coolpix-a1000"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      960
+    ],
+    "aperture": "f/3.3-6.9"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20.3,
+    "isoMin": 100,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 3200,
+    "shutterMaxElec": null,
+    "afPoints": 9,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "flip-up",
+    "touchscreen": false,
+    "weightG": 299,
+    "dimensionsMm": [
+      110.1,
+      63.8,
+      39.9
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 265,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

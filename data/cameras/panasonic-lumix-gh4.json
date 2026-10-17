@@ -1,0 +1,75 @@
+{
+  "slug": "panasonic-lumix-gh4",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix GH4",
+  "shortName": "Lumix GH4",
+  "aliases": [
+    "Lumix GH4",
+    "Lumix DMC-GH4",
+    "Panasonic GH4",
+    "GH4"
+  ],
+  "modelCodes": [
+    "DMC-GH4"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2014-02-07",
+  "launchPriceUsd": 1699,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7s",
+    "olympus-om-d-e-m1",
+    "fujifilm-x-t1",
+    "sony-a6300"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 16.05,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 12,
+    "burstElecFps": 12,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 560,
+    "dimensionsMm": [
+      132.9,
+      93.4,
+      83.9
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 530,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q17049200"
+}

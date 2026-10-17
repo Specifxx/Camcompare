@@ -1,0 +1,82 @@
+{
+  "slug": "panasonic-lumix-fz1000",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix FZ1000",
+  "shortName": "Lumix FZ1000",
+  "aliases": [
+    "Lumix FZ1000",
+    "Lumix DMC-FZ1000",
+    "Panasonic FZ1000",
+    "Panasonic Lumix FZ1000",
+    "FZ1000"
+  ],
+  "modelCodes": [
+    "DMC-FZ1000"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2014-06-12",
+  "launchPriceUsd": 899.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "panasonic-lumix-fz1000-ii",
+  "rivals": [
+    "sony-rx10-iii",
+    "panasonic-lumix-fz2500",
+    "nikon-coolpix-p900",
+    "panasonic-lumix-fz300"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      25,
+      400
+    ],
+    "aperture": "f/2.8-4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 12,
+    "burstElecFps": 12,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fully-articulating",
+    "touchscreen": false,
+    "weightG": 831,
+    "dimensionsMm": [
+      136.8,
+      98.5,
+      130.7
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 360,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q18386381"
+}

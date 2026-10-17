@@ -1,0 +1,70 @@
+{
+  "slug": "nikon-df",
+  "brand": "nikon",
+  "name": "Nikon Df",
+  "shortName": "Df",
+  "aliases": [
+    "Df",
+    "D f"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2013-11-04",
+  "launchPriceUsd": 2749.95,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "nikon-zf",
+    "nikon-d750",
+    "nikon-d610",
+    "canon-eos-6d"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 16.2,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5.5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 39,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": null,
+    "video4kMaxFps": null,
+    "video10bit": null,
+    "rawVideoInternal": null,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 0.921,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 765,
+    "dimensionsMm": [
+      143.5,
+      110,
+      66.5
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": false
+  }
+}

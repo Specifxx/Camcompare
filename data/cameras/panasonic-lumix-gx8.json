@@ -1,0 +1,76 @@
+{
+  "slug": "panasonic-lumix-gx8",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix GX8",
+  "shortName": "Lumix GX8",
+  "aliases": [
+    "Lumix GX8",
+    "Lumix DMC-GX8",
+    "Panasonic GX8",
+    "Panasonic Lumix GX8",
+    "DMC-GX8"
+  ],
+  "modelCodes": [
+    "DMC-GX8"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2015-07-16",
+  "launchPriceUsd": 1199,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "olympus-pen-f",
+    "olympus-om-d-e-m5-mark-ii",
+    "fujifilm-x-t1",
+    "sony-a6300"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 20.3,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": 10,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 487,
+    "dimensionsMm": [
+      133.2,
+      77.9,
+      63.1
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 330,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q20889187"
+}

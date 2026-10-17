@@ -1,0 +1,74 @@
+{
+  "slug": "nikon-d800",
+  "brand": "nikon",
+  "name": "Nikon D800",
+  "shortName": "D800",
+  "aliases": [
+    "D800",
+    "D 800"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2012-02-07",
+  "launchPriceUsd": 2999.95,
+  "launchPrices": {
+    "GBP": 2599.99
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "nikon-d810",
+  "rivals": [
+    "nikon-d810",
+    "canon-eos-5d-mark-iii",
+    "sony-a7r",
+    "nikon-d750"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 36.3,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 51,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 0.921,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 1000,
+    "dimensionsMm": [
+      146,
+      123,
+      81.5
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CF + SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": false,
+    "bluetooth": false
+  },
+  "wikidata": "Q1992016"
+}

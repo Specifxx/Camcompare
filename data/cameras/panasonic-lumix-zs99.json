@@ -1,0 +1,90 @@
+{
+  "slug": "panasonic-lumix-zs99",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix ZS99",
+  "shortName": "Lumix ZS99",
+  "aliases": [
+    "Lumix ZS99",
+    "Lumix DC-ZS99",
+    "Panasonic ZS99",
+    "Panasonic Lumix ZS99",
+    "ZS99",
+    "Lumix TZ99",
+    "Lumix DC-TZ99",
+    "Panasonic TZ99",
+    "Panasonic Lumix TZ99",
+    "TZ99"
+  ],
+  "modelCodes": [
+    "DC-ZS99",
+    "DC-TZ99"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2024-12-17",
+  "launchPriceUsd": 499.99,
+  "regionalNames": {
+    "uk": "Panasonic Lumix TZ99",
+    "eu": "Panasonic Lumix TZ99"
+  },
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-powershot-sx740-hs",
+    "sony-hx99",
+    "nikon-coolpix-a1000"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      720
+    ],
+    "aperture": "f/3.3-6.4"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.3,
+    "isoMin": 80,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.84,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 322,
+    "dimensionsMm": [
+      112,
+      67.8,
+      43.1
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 380,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

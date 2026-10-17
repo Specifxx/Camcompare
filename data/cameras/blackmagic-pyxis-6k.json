@@ -1,0 +1,72 @@
+{
+  "slug": "blackmagic-pyxis-6k",
+  "brand": "blackmagic",
+  "name": "Blackmagic PYXIS 6K",
+  "shortName": "PYXIS 6K",
+  "aliases": [
+    "PYXIS 6K",
+    "PYXIS 6K L-Mount",
+    "PYXIS 6K EF",
+    "PYXIS 6K PL"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2024-04-12",
+  "launchPriceUsd": 2995,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "blackmagic-cinema-camera-6k",
+    "red-komodo-6k",
+    "panasonic-lumix-bs1h",
+    "sony-fx3"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.6,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 4,
+    "screenDotsM": 6.22,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 1500,
+    "dimensionsMm": [
+      106,
+      119,
+      151
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B + CFexpress B",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": true
+  }
+}

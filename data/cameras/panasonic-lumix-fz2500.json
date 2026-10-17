@@ -1,0 +1,93 @@
+{
+  "slug": "panasonic-lumix-fz2500",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix FZ2500",
+  "shortName": "Lumix FZ2500",
+  "aliases": [
+    "Lumix FZ2500",
+    "Lumix DMC-FZ2500",
+    "Panasonic FZ2500",
+    "Panasonic Lumix FZ2500",
+    "FZ2500",
+    "Lumix FZ2000",
+    "Lumix DMC-FZ2000",
+    "Panasonic FZ2000",
+    "Panasonic Lumix FZ2000",
+    "FZ2000"
+  ],
+  "modelCodes": [
+    "DMC-FZ2500",
+    "DMC-FZ2000",
+    "DMC-FZH1"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2016-09-19",
+  "launchPriceUsd": 1199.99,
+  "regionalNames": {
+    "uk": "Panasonic Lumix FZ2000",
+    "eu": "Panasonic Lumix FZ2000"
+  },
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-rx10-iii",
+    "sony-rx10-iv",
+    "panasonic-lumix-fz1000",
+    "panasonic-lumix-fz1000-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      480
+    ],
+    "aperture": "f/2.8-4.5"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 12,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 966,
+    "dimensionsMm": [
+      137.6,
+      101.9,
+      134.7
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q105753164"
+}

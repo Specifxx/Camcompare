@@ -1,0 +1,72 @@
+{
+  "slug": "canon-eos-c70",
+  "brand": "canon",
+  "name": "Canon EOS C70",
+  "shortName": "EOS C70",
+  "aliases": [
+    "EOS C70",
+    "Cinema EOS C70",
+    "C70"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2020-09-24",
+  "launchPriceUsd": null,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-fx6",
+    "sony-fx3",
+    "red-komodo-6k",
+    "canon-eos-r5-c",
+    "canon-eos-c80"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "super-35",
+    "sensorType": "DGO CMOS",
+    "megapixels": 8.85,
+    "isoMin": 160,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.5,
+    "screenDotsM": 2.76,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 1420,
+    "dimensionsMm": [
+      160,
+      130,
+      116
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD + SD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": false
+  }
+}

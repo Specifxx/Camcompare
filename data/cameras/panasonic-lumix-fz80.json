@@ -1,0 +1,91 @@
+{
+  "slug": "panasonic-lumix-fz80",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix FZ80",
+  "shortName": "Lumix FZ80",
+  "aliases": [
+    "Lumix FZ80",
+    "Lumix DC-FZ80",
+    "Panasonic FZ80",
+    "Panasonic Lumix FZ80",
+    "FZ80",
+    "Lumix FZ82",
+    "Lumix DC-FZ82",
+    "Panasonic FZ82",
+    "Panasonic Lumix FZ82",
+    "FZ82"
+  ],
+  "modelCodes": [
+    "DC-FZ80",
+    "DC-FZ82",
+    "DC-FZ85"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2017-01-04",
+  "launchPriceUsd": 399.99,
+  "regionalNames": {
+    "uk": "Panasonic Lumix FZ82",
+    "eu": "Panasonic Lumix FZ82"
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "nikon-coolpix-b600",
+    "canon-powershot-sx70-hs",
+    "panasonic-lumix-fz300"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      20,
+      1200
+    ],
+    "aperture": "f/2.8-5.9"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "MOS",
+    "megapixels": 18.1,
+    "isoMin": 80,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.17,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 616,
+    "dimensionsMm": [
+      130.2,
+      94.3,
+      119.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 330,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

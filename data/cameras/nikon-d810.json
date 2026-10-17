@@ -1,0 +1,72 @@
+{
+  "slug": "nikon-d810",
+  "brand": "nikon",
+  "name": "Nikon D810",
+  "shortName": "D810",
+  "aliases": [
+    "D810",
+    "D 810"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2014-06-26",
+  "launchPriceUsd": 3299.95,
+  "status": "discontinued",
+  "predecessor": "nikon-d800",
+  "successor": null,
+  "rivals": [
+    "nikon-d850",
+    "nikon-d800",
+    "canon-eos-5ds",
+    "canon-eos-5d-mark-iv",
+    "sony-a7r-ii"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 36.3,
+    "isoMin": 64,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 51,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 1.23,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 980,
+    "dimensionsMm": [
+      146,
+      123,
+      81.5
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CF + SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": false,
+    "bluetooth": false
+  },
+  "wikidata": "Q17280707"
+}

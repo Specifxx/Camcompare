@@ -1,0 +1,77 @@
+{
+  "slug": "nikon-coolpix-p950",
+  "brand": "nikon",
+  "name": "Nikon COOLPIX P950",
+  "shortName": "COOLPIX P950",
+  "aliases": [
+    "COOLPIX P950",
+    "P950"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2020-01-06",
+  "launchPriceUsd": 799.95,
+  "status": "current",
+  "predecessor": "nikon-coolpix-p900",
+  "successor": null,
+  "rivals": [
+    "nikon-coolpix-p1000",
+    "nikon-coolpix-p1100",
+    "canon-powershot-sx70-hs",
+    "panasonic-lumix-fz1000-ii",
+    "nikon-coolpix-p900"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      2000
+    ],
+    "aperture": "f/2.8-6.5"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 16,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.359,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 0.921,
+    "screenType": "fully-articulating",
+    "touchscreen": false,
+    "weightG": 1005,
+    "dimensionsMm": [
+      140.2,
+      109.6,
+      149.8
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 290,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

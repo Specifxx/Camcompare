@@ -1,0 +1,75 @@
+{
+  "slug": "canon-powershot-v10",
+  "brand": "canon",
+  "name": "Canon PowerShot V10",
+  "shortName": "PowerShot V10",
+  "aliases": [
+    "PowerShot V10",
+    "Power Shot V10"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2023-05-11",
+  "launchPriceUsd": 429.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-zv-1f",
+    "dji-osmo-pocket-3",
+    "sony-zv-1",
+    "dji-pocket-2"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      19
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 15.2,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 2000,
+    "afPoints": 31,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2,
+    "screenDotsM": 0.46,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 211,
+    "dimensionsMm": [
+      63.4,
+      90,
+      34.3
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD UHS-I",
+    "batteryShotsCipa": 290,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

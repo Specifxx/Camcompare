@@ -1,0 +1,76 @@
+{
+  "slug": "panasonic-lumix-s1h",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix S1H",
+  "shortName": "Lumix S1H",
+  "aliases": [
+    "Lumix S1H",
+    "Lumix DC-S1H",
+    "Panasonic S1H",
+    "Panasonic Lumix S1H",
+    "DC-S1H"
+  ],
+  "modelCodes": [
+    "DC-S1H"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-08-28",
+  "launchPriceUsd": 3999.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7s-iii",
+    "sony-fx3",
+    "canon-eos-r5-c",
+    "panasonic-lumix-s5-iix"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 6.5,
+    "burstMechFps": 9,
+    "burstElecFps": 9,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.33,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 1164,
+    "dimensionsMm": [
+      151,
+      114.2,
+      110.4
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 400,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

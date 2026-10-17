@@ -1,0 +1,81 @@
+{
+  "slug": "canon-eos-rebel-sl2",
+  "brand": "canon",
+  "name": "Canon EOS Rebel SL2",
+  "shortName": "EOS Rebel SL2",
+  "aliases": [
+    "EOS Rebel SL2",
+    "Rebel SL2",
+    "EOS 200D",
+    "200D",
+    "EOS Kiss X9",
+    "Kiss X9"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2017-06-29",
+  "launchPriceUsd": 549.99,
+  "regionalNames": {
+    "uk": "Canon EOS 200D",
+    "eu": "Canon EOS 200D",
+    "au": "Canon EOS 200D",
+    "sg": "Canon EOS 200D"
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "nikon-d3400",
+    "nikon-d5600",
+    "canon-eos-rebel-t7i",
+    "canon-eos-m50"
+  ],
+  "mount": "canon-ef",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 9,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 453,
+    "dimensionsMm": [
+      122.4,
+      92.6,
+      69.8
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q31204845"
+}

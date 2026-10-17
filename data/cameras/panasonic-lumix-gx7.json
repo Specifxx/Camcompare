@@ -1,0 +1,75 @@
+{
+  "slug": "panasonic-lumix-gx7",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix GX7",
+  "shortName": "Lumix GX7",
+  "aliases": [
+    "Lumix GX7",
+    "Lumix DMC-GX7",
+    "Panasonic GX7",
+    "Panasonic Lumix GX7",
+    "DMC-GX7"
+  ],
+  "modelCodes": [
+    "DMC-GX7"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2013-08-01",
+  "launchPriceUsd": 999,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "panasonic-lumix-gx85",
+  "rivals": [
+    "olympus-om-d-e-m5",
+    "olympus-om-d-e-m10",
+    "sony-a6000"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 16,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": 10,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 23,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 402,
+    "dimensionsMm": [
+      122.6,
+      70.7,
+      54.6
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 320,
+    "usbC": false,
+    "micJack": null,
+    "headphoneJack": null,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q17049295"
+}

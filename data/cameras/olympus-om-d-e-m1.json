@@ -1,0 +1,70 @@
+{
+  "slug": "olympus-om-d-e-m1",
+  "brand": "om-system",
+  "name": "Olympus OM-D E-M1",
+  "shortName": "E-M1",
+  "aliases": [
+    "OM-D E-M1",
+    "E-M1",
+    "EM1"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2013-09-10",
+  "launchPriceUsd": 1399.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "olympus-om-d-e-m1-mark-ii",
+  "rivals": [
+    "fujifilm-x-t1",
+    "panasonic-lumix-gh4",
+    "sony-a7"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 16.3,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 4,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 81,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 497,
+    "dimensionsMm": [
+      130.4,
+      93.5,
+      63.1
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

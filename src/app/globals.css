@@ -75,3 +75,10 @@ a:hover { text-decoration: underline; }
 .prose-cc th { @apply bg-raised font-semibold; }
 .prose-cc strong { @apply font-semibold; }
 .prose-cc code { @apply rounded bg-raised px-1 font-mono text-[13px]; }
+
+/* Retailer buttons. Rows whose link earns (affiliate) get a filled button;
+   the order of rows is still price, never commission. */
+@layer components {
+  .btn-amazon { @apply btn bg-[#FF9900] text-[#111] hover:bg-[#f08804]; }
+  .btn-ebay { @apply btn bg-[#0654BA] text-white hover:bg-[#054a9f]; }
+}

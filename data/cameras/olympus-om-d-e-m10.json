@@ -1,0 +1,74 @@
+{
+  "slug": "olympus-om-d-e-m10",
+  "brand": "om-system",
+  "name": "Olympus OM-D E-M10",
+  "shortName": "E-M10",
+  "aliases": [
+    "OM-D E-M10",
+    "E-M10",
+    "EM10"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2014-01-29",
+  "launchPriceUsd": 699.99,
+  "launchPrices": {
+    "GBP": 529.99,
+    "EUR": 599
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "olympus-om-d-e-m10-mark-ii",
+  "rivals": [
+    "sony-a6000",
+    "panasonic-lumix-gx7",
+    "fujifilm-x-t10"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 16.1,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 3.5,
+    "burstMechFps": 8,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 81,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 396,
+    "dimensionsMm": [
+      119.1,
+      82.3,
+      45.9
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 320,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

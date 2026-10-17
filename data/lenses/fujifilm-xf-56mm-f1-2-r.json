@@ -10,7 +10,7 @@
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
-  "successor": null,
+  "successor": "fujifilm-xf-56mm-f1-2-r-wr",
   "rivals": [],
   "mounts": ["fujifilm-x"],
   "coverage": "aps-c",

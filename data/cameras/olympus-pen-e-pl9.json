@@ -1,0 +1,73 @@
+{
+  "slug": "olympus-pen-e-pl9",
+  "brand": "om-system",
+  "name": "Olympus PEN E-PL9",
+  "shortName": "PEN E-PL9",
+  "aliases": [
+    "PEN E-PL9",
+    "E-PL9",
+    "EPL9"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2018-02-07",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "EUR": 549
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "olympus-pen-e-pl10",
+  "rivals": [
+    "canon-eos-m100",
+    "fujifilm-x-a5",
+    "sony-a5100"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 16.1,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 3.5,
+    "burstMechFps": 8.6,
+    "burstElecFps": 14.1,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 121,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 380,
+    "dimensionsMm": [
+      117.1,
+      68,
+      39
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

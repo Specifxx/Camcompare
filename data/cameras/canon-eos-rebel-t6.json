@@ -1,0 +1,81 @@
+{
+  "slug": "canon-eos-rebel-t6",
+  "brand": "canon",
+  "name": "Canon EOS Rebel T6",
+  "shortName": "EOS Rebel T6",
+  "aliases": [
+    "EOS Rebel T6",
+    "Rebel T6",
+    "EOS 1300D",
+    "1300D",
+    "EOS Kiss X80",
+    "Kiss X80"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2016-03-10",
+  "launchPriceUsd": null,
+  "regionalNames": {
+    "uk": "Canon EOS 1300D",
+    "eu": "Canon EOS 1300D",
+    "au": "Canon EOS 1300D",
+    "sg": "Canon EOS 1300D"
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "nikon-d3300",
+    "nikon-d3400",
+    "canon-eos-rebel-t7",
+    "canon-eos-4000d"
+  ],
+  "mount": "canon-ef",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 18,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 3,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 9,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 485,
+    "dimensionsMm": [
+      129,
+      101.3,
+      77.6
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q23702407"
+}

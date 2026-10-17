@@ -1,0 +1,82 @@
+{
+  "slug": "panasonic-lumix-lx100",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix LX100",
+  "shortName": "Lumix LX100",
+  "aliases": [
+    "Lumix LX100",
+    "Lumix DMC-LX100",
+    "Panasonic LX100",
+    "Panasonic Lumix LX100",
+    "LX100"
+  ],
+  "modelCodes": [
+    "DMC-LX100"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2014-09-15",
+  "launchPriceUsd": 899.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "panasonic-lumix-lx100-ii",
+  "rivals": [
+    "sony-rx100-iii",
+    "sony-rx100-iv",
+    "fujifilm-x30",
+    "fujifilm-x100t"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      75
+    ],
+    "aperture": "f/1.7-2.8"
+  },
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "MOS",
+    "megapixels": 12.8,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": 11,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 393,
+    "dimensionsMm": [
+      114.8,
+      66.2,
+      55
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q18392303"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "canon-eos-m200",
+  "brand": "canon",
+  "name": "Canon EOS M200",
+  "shortName": "EOS M200",
+  "aliases": [
+    "EOS M200",
+    "M200"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-09-25",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": "canon-eos-m100",
+  "successor": null,
+  "rivals": [
+    "sony-a6000",
+    "sony-zv-e10",
+    "canon-eos-r100",
+    "canon-eos-m50"
+  ],
+  "mount": "canon-ef-m",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.1,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6.1,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 143,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 25,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 299,
+    "dimensionsMm": [
+      108.2,
+      67.1,
+      35.1
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 315,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q68693083"
+}

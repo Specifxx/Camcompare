@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import { AD_SLOTS } from "@/lib/ads";
+import EbayPanel from "@/components/EbayPanel";
 import OffersTable from "@/components/OffersTable";
 import PhotoCredit from "@/components/PhotoCredit";
 import PriceBox from "@/components/PriceBox";
@@ -87,7 +88,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
         <nav className="text-xs text-subtle" aria-label="Breadcrumb">
           <Link href={marketPath(m, "/lenses")}>Lenses</Link> / <Link href={marketPath(m, `/brands/${l.brand}`)}>{brandName(l.brand)}</Link> / <span>{short}</span>
         </nav>
-        <header className="grid gap-6 md:grid-cols-[minmax(0,360px)_1fr]">
+        <header className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
           <figure>
             <ProductThumb slug={l.slug} alt={name} priority className="border border-line" />
             <PhotoCredit credit={credit(l.slug)} />
@@ -118,7 +119,10 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
 
       <section id="prices">
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
-        <OffersTable product={l.slug} query={name} offers={offers} market={m} page={page} />
+        <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
+          <OffersTable product={l.slug} query={name} offers={offers} market={m} page={page} amazonAsin={l.amazonAsin} />
+          <EbayPanel product={l.slug} query={name} offers={offers} market={m} page={page} />
+        </div>
         {l.mounts.length > 1 && <p className="mt-2 text-xs text-subtle">Made in {l.mounts.length} mount versions. Check the version before you buy: each offer says which, when the retailer does.</p>}
       </section>
 

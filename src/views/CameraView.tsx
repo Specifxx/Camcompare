@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import { AD_SLOTS } from "@/lib/ads";
+import EbayPanel from "@/components/EbayPanel";
 import OffersTable from "@/components/OffersTable";
 import PeerRanks from "@/components/PeerRanks";
 import PhotoCredit from "@/components/PhotoCredit";
@@ -143,7 +144,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         <nav className="text-xs text-subtle" aria-label="Breadcrumb">
           <Link href={marketPath(m, "/cameras")}>Cameras</Link> / <Link href={marketPath(m, `/brands/${c.brand}`)}>{brandName(c.brand)}</Link> / <span>{short}</span>
         </nav>
-        <header className="grid gap-6 md:grid-cols-[minmax(0,360px)_1fr]">
+        <header className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
           <figure>
             <ProductThumb slug={c.slug} alt={name} priority className="border border-line" />
             <PhotoCredit credit={credit(c.slug)} />
@@ -173,7 +174,10 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
 
       <section id="prices">
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
-        <OffersTable product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} />
+        <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
+          <OffersTable product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} amazonAsin={c.amazonAsin} />
+          <EbayPanel product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} />
+        </div>
       </section>
 
       <section>

@@ -1,0 +1,90 @@
+{
+  "slug": "panasonic-lumix-zs80",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix ZS80",
+  "shortName": "Lumix ZS80",
+  "aliases": [
+    "Lumix ZS80",
+    "Lumix DC-ZS80",
+    "Panasonic ZS80",
+    "Panasonic Lumix ZS80",
+    "ZS80",
+    "Lumix TZ95",
+    "Lumix DC-TZ95",
+    "Panasonic TZ95",
+    "Panasonic Lumix TZ95",
+    "TZ95"
+  ],
+  "modelCodes": [
+    "DC-ZS80",
+    "DC-TZ95"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-02-18",
+  "launchPriceUsd": 449.99,
+  "regionalNames": {
+    "uk": "Panasonic Lumix TZ95",
+    "eu": "Panasonic Lumix TZ95"
+  },
+  "status": "discontinued",
+  "predecessor": "panasonic-lumix-zs70",
+  "successor": null,
+  "rivals": [
+    "canon-powershot-sx740-hs",
+    "sony-hx99",
+    "nikon-coolpix-a1000"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      720
+    ],
+    "aperture": "f/3.3-6.4"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.3,
+    "isoMin": 80,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.33,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 328,
+    "dimensionsMm": [
+      112,
+      68.8,
+      41.6
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 380,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "panasonic-lumix-fz300",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix FZ300",
+  "shortName": "Lumix FZ300",
+  "aliases": [
+    "Lumix FZ300",
+    "Lumix DMC-FZ300",
+    "Panasonic FZ300",
+    "Panasonic Lumix FZ300",
+    "FZ300",
+    "Lumix FZ330",
+    "Lumix DMC-FZ330",
+    "Panasonic FZ330",
+    "Panasonic Lumix FZ330",
+    "FZ330"
+  ],
+  "modelCodes": [
+    "DMC-FZ300",
+    "DMC-FZ330"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2015-07-16",
+  "launchPriceUsd": 599.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-fz80",
+    "panasonic-lumix-fz1000",
+    "nikon-coolpix-p900",
+    "canon-powershot-sx70-hs"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      25,
+      600
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "MOS",
+    "megapixels": 12.1,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 12,
+    "burstElecFps": 12,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 691,
+    "dimensionsMm": [
+      131.6,
+      91.5,
+      117.1
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 380,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q25043364"
+}

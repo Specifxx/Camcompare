@@ -1,0 +1,78 @@
+{
+  "slug": "canon-eos-4000d",
+  "brand": "canon",
+  "name": "Canon EOS 4000D",
+  "shortName": "EOS 4000D",
+  "aliases": [
+    "EOS 4000D",
+    "4000D",
+    "EOS 3000D",
+    "3000D",
+    "EOS Rebel T100",
+    "Rebel T100"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2018-02-25",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "GBP": 329.99
+  },
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-eos-rebel-t7",
+    "nikon-d3500",
+    "nikon-d3400",
+    "canon-eos-rebel-t6"
+  ],
+  "mount": "canon-ef",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 18,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 3,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 9,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 2.7,
+    "screenDotsM": 0.23,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 436,
+    "dimensionsMm": [
+      129,
+      101.6,
+      77.1
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q54747245"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "insta360-go-3s",
+  "brand": "insta360",
+  "name": "Insta360 GO 3S",
+  "shortName": "GO 3S",
+  "aliases": [
+    "GO 3S",
+    "GO3S"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "action",
+  "announced": "2024-06-13",
+  "launchPriceUsd": 399.99,
+  "status": "current",
+  "predecessor": "insta360-go-3",
+  "successor": null,
+  "rivals": [
+    "insta360-go-3",
+    "gopro-hero11-black-mini"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      16
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 12,
+    "isoMin": 100,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.2,
+    "screenDotsM": null,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 39.1,
+    "dimensionsMm": [
+      25.6,
+      54.4,
+      24.8
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 0,
+    "cardTypes": "Internal 64GB or 128GB",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

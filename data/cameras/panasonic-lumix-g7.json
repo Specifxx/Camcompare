@@ -1,0 +1,79 @@
+{
+  "slug": "panasonic-lumix-g7",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix G7",
+  "shortName": "Lumix G7",
+  "aliases": [
+    "Lumix G7",
+    "Lumix DMC-G7",
+    "Panasonic G7",
+    "Panasonic Lumix G7",
+    "Lumix G70",
+    "Lumix DMC-G70",
+    "Panasonic G70"
+  ],
+  "modelCodes": [
+    "DMC-G7",
+    "DMC-G70"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2015-05-18",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "panasonic-lumix-g85",
+  "rivals": [
+    "olympus-om-d-e-m10-mark-ii",
+    "sony-a6000",
+    "fujifilm-x-t10",
+    "nikon-d5500"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 16,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": 10,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 410,
+    "dimensionsMm": [
+      124.9,
+      86.2,
+      77.4
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q20649008"
+}

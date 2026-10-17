@@ -1,0 +1,76 @@
+{
+  "slug": "panasonic-lumix-bs1h",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix BS1H",
+  "shortName": "Lumix BS1H",
+  "aliases": [
+    "Lumix BS1H",
+    "Lumix DC-BS1H",
+    "Panasonic BS1H",
+    "Panasonic Lumix BS1H",
+    "BS1H"
+  ],
+  "modelCodes": [
+    "DC-BS1H"
+  ],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2021-10-07",
+  "launchPriceUsd": 3499.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-fx3",
+    "panasonic-lumix-s1h",
+    "panasonic-lumix-bgh1",
+    "red-komodo-6k"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": false,
+    "weightG": 585,
+    "dimensionsMm": [
+      93,
+      93,
+      78.8
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "panasonic-lumix-g95",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix G95",
+  "shortName": "Lumix G95",
+  "aliases": [
+    "Lumix G95",
+    "Lumix DC-G95",
+    "Panasonic G95",
+    "Panasonic Lumix G95",
+    "Lumix G90",
+    "Lumix DC-G90",
+    "Panasonic G90",
+    "Panasonic Lumix G90",
+    "Lumix G91",
+    "Lumix DC-G91",
+    "Lumix G99",
+    "Lumix DC-G99"
+  ],
+  "modelCodes": [
+    "DC-G95",
+    "DC-G90",
+    "DC-G91",
+    "DC-G99"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-04-10",
+  "launchPriceUsd": null,
+  "regionalNames": {
+    "uk": "Panasonic Lumix G90",
+    "eu": "Panasonic Lumix G90"
+  },
+  "status": "discontinued",
+  "predecessor": "panasonic-lumix-g85",
+  "successor": null,
+  "rivals": [
+    "olympus-om-d-e-m5-mark-iii",
+    "sony-a6400",
+    "fujifilm-x-t30",
+    "nikon-z50"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 20.3,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 9,
+    "burstElecFps": 9,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.24,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 536,
+    "dimensionsMm": [
+      130.4,
+      93.5,
+      77.4
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 290,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q131320594"
+}

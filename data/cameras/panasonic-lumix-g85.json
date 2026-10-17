@@ -1,0 +1,88 @@
+{
+  "slug": "panasonic-lumix-g85",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix G85",
+  "shortName": "Lumix G85",
+  "aliases": [
+    "Lumix G85",
+    "Lumix DMC-G85",
+    "Panasonic G85",
+    "Panasonic Lumix G85",
+    "Lumix G80",
+    "Lumix DMC-G80",
+    "Panasonic G80",
+    "Panasonic Lumix G80",
+    "Lumix G81",
+    "Lumix DMC-G81",
+    "Panasonic G81"
+  ],
+  "modelCodes": [
+    "DMC-G85",
+    "DMC-G80",
+    "DMC-G81"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2016-09-19",
+  "launchPriceUsd": 899,
+  "regionalNames": {
+    "uk": "Panasonic Lumix G80",
+    "eu": "Panasonic Lumix G80"
+  },
+  "status": "discontinued",
+  "predecessor": "panasonic-lumix-g7",
+  "successor": "panasonic-lumix-g95",
+  "rivals": [
+    "olympus-om-d-e-m5-mark-ii",
+    "fujifilm-x-t20",
+    "sony-a6300",
+    "olympus-om-d-e-m10-mark-iii"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 16,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 9,
+    "burstElecFps": 10,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 505,
+    "dimensionsMm": [
+      128.4,
+      89,
+      74.3
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 330,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q27963822"
+}

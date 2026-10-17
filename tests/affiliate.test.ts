@@ -67,6 +67,17 @@ test("retailer keys with dashes map to underscore env names", () => {
   });
 });
 
+test("append-style programmes add their parameters to the retailer's own URL", () => {
+  withEnv({ AFFILIATE_DEEPLINK_BH: "&BI=1234&KBID=5678" }, () => {
+    const u = new URL(affiliateUrl("bh", "https://www.bhphotovideo.com/c/product/1?sku=9", "cc-x"));
+    assert.equal(u.searchParams.get("BI"), "1234");
+    assert.equal(u.searchParams.get("KBID"), "5678");
+    assert.equal(u.searchParams.get("sku"), "9");
+    assert.equal(isPaid("bh"), true);
+  });
+  withEnv({ AFFILIATE_DEEPLINK_BH: "nonsense" }, () => assert.equal(isPaid("bh"), false));
+});
+
 test("sub-ids are short and safe", () => {
   assert.equal(subId("cam-sony-a7-iv", "offers"), "cc-cam-sony-a7-iv-offers");
   assert.ok(subId("x".repeat(100), "y").length <= 60);

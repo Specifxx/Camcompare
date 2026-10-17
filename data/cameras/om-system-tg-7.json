@@ -1,0 +1,75 @@
+{
+  "slug": "om-system-tg-7",
+  "brand": "om-system",
+  "name": "OM System Tough TG-7",
+  "shortName": "Tough TG-7",
+  "aliases": [
+    "Tough TG-7",
+    "TG-7",
+    "TG7"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2023-09-13",
+  "launchPriceUsd": 549.99,
+  "status": "current",
+  "predecessor": "olympus-tg-6",
+  "successor": null,
+  "rivals": [
+    "ricoh-wg-7",
+    "nikon-coolpix-w300"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      25,
+      100
+    ],
+    "aperture": "f/2-4.9"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 12,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": true,
+    "ibisStops": 2.5,
+    "burstMechFps": 5,
+    "burstElecFps": 20,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 249,
+    "dimensionsMm": [
+      113.9,
+      65.8,
+      32.7
+    ],
+    "weatherSealed": true,
+    "waterproofM": 15,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 330,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

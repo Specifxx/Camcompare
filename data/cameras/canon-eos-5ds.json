@@ -1,0 +1,75 @@
+{
+  "slug": "canon-eos-5ds",
+  "brand": "canon",
+  "name": "Canon EOS 5DS",
+  "shortName": "EOS 5DS",
+  "aliases": [
+    "EOS 5DS",
+    "5DS"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2015-02-06",
+  "launchPriceUsd": 3699,
+  "launchPrices": {
+    "GBP": 2999,
+    "EUR": 3999
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-eos-5ds-r",
+    "nikon-d810",
+    "nikon-d850",
+    "sony-a7r-ii"
+  ],
+  "mount": "canon-ef",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 50.6,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 61,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 930,
+    "dimensionsMm": [
+      152,
+      116.4,
+      76.4
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CF + SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": false
+  },
+  "wikidata": "Q18985697"
+}

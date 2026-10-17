@@ -1,0 +1,73 @@
+{
+  "slug": "insta360-one-rs",
+  "brand": "insta360",
+  "name": "Insta360 ONE RS",
+  "shortName": "ONE RS",
+  "aliases": [
+    "ONE RS",
+    "ONERS"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "action",
+  "announced": "2022-03-22",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "gopro-hero10-black",
+    "dji-osmo-action-2",
+    "dji-osmo-action-3",
+    "gopro-hero11-black"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      16
+    ],
+    "aperture": "f/2.4"
+  },
+  "specs": {
+    "sensorFormat": "1/2-inch",
+    "sensorType": "CMOS",
+    "megapixels": 48,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 60,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 125.3,
+    "dimensionsMm": [
+      70.1,
+      49.1,
+      32.6
+    ],
+    "weatherSealed": true,
+    "waterproofM": 5,
+    "cardSlots": 1,
+    "cardTypes": "microSD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

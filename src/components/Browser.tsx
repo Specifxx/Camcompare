@@ -154,7 +154,7 @@ export default function Browser(props: Props) {
   const budgets = kind === "camera" ? [500, 800, 1000, 1500, 2000, 3000, 5000] : [300, 500, 800, 1200, 2000, 3000];
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[230px_1fr]">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[230px_minmax(0,1fr)]">
       <aside className="flex flex-col gap-5">
         <div className="flex gap-2">
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${kind === "camera" ? "cameras" : "lenses"}`} aria-label="Search" className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm" />

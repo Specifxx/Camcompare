@@ -1,0 +1,94 @@
+{
+  "slug": "panasonic-lumix-lx10",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix LX10",
+  "shortName": "Lumix LX10",
+  "aliases": [
+    "Lumix LX10",
+    "Lumix DMC-LX10",
+    "Panasonic LX10",
+    "Panasonic Lumix LX10",
+    "LX10",
+    "Lumix LX15",
+    "Lumix DMC-LX15",
+    "Panasonic LX15",
+    "Panasonic Lumix LX15",
+    "LX15"
+  ],
+  "modelCodes": [
+    "DMC-LX10",
+    "DMC-LX15",
+    "DMC-LX9"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2016-09-19",
+  "launchPriceUsd": 699.99,
+  "regionalNames": {
+    "uk": "Panasonic Lumix LX15",
+    "eu": "Panasonic Lumix LX15"
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-powershot-g7-x-mark-ii",
+    "sony-rx100-v",
+    "sony-rx100-iv",
+    "panasonic-lumix-zs100",
+    "canon-powershot-g9-x-mark-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      72
+    ],
+    "aperture": "f/1.4-2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 310,
+    "dimensionsMm": [
+      105.5,
+      60,
+      42
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 260,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q55628502"
+}

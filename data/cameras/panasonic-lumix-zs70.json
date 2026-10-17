@@ -1,0 +1,90 @@
+{
+  "slug": "panasonic-lumix-zs70",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix ZS70",
+  "shortName": "Lumix ZS70",
+  "aliases": [
+    "Lumix ZS70",
+    "Lumix DC-ZS70",
+    "Panasonic ZS70",
+    "Panasonic Lumix ZS70",
+    "ZS70",
+    "Lumix TZ90",
+    "Lumix DC-TZ90",
+    "Panasonic TZ90",
+    "Panasonic Lumix TZ90",
+    "TZ90"
+  ],
+  "modelCodes": [
+    "DC-ZS70",
+    "DC-TZ90"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2017-04-18",
+  "launchPriceUsd": 449.99,
+  "regionalNames": {
+    "uk": "Panasonic Lumix TZ90",
+    "eu": "Panasonic Lumix TZ90"
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "panasonic-lumix-zs80",
+  "rivals": [
+    "canon-powershot-sx740-hs",
+    "sony-hx99",
+    "nikon-coolpix-a1000"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      720
+    ],
+    "aperture": "f/3.3-6.4"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.3,
+    "isoMin": 80,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.17,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 322,
+    "dimensionsMm": [
+      112,
+      67.3,
+      41.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 380,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

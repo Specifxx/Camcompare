@@ -1,0 +1,71 @@
+{
+  "slug": "insta360-x3",
+  "brand": "insta360",
+  "name": "Insta360 X3",
+  "shortName": "X3",
+  "aliases": [
+    "X3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "360",
+  "announced": "2022-09-08",
+  "launchPriceUsd": 449.99,
+  "status": "current",
+  "predecessor": "insta360-one-x2",
+  "successor": "insta360-x4",
+  "rivals": [
+    "insta360-x4",
+    "insta360-one-x2",
+    "gopro-max",
+    "ricoh-theta-x",
+    "insta360-one-rs-1-inch-360"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/1.9"
+  },
+  "specs": {
+    "sensorFormat": "1/2-inch",
+    "sensorType": "CMOS",
+    "megapixels": 72,
+    "isoMin": 100,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "5.7K",
+    "video4kMaxFps": 60,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.29,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 180,
+    "dimensionsMm": [
+      46,
+      114,
+      33.1
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

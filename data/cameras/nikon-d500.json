@@ -1,0 +1,71 @@
+{
+  "slug": "nikon-d500",
+  "brand": "nikon",
+  "name": "Nikon D500",
+  "shortName": "D500",
+  "aliases": [
+    "D500",
+    "D 500"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2016-01-06",
+  "launchPriceUsd": 1999.95,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-eos-7d-mark-ii",
+    "nikon-d7500",
+    "canon-eos-90d",
+    "canon-eos-r7"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 20.9,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 153,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.36,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 860,
+    "dimensionsMm": [
+      147,
+      115,
+      81
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "XQD + SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q21979928"
+}

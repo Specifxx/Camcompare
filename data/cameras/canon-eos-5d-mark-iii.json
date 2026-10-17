@@ -1,0 +1,81 @@
+{
+  "slug": "canon-eos-5d-mark-iii",
+  "brand": "canon",
+  "name": "Canon EOS 5D Mark III",
+  "shortName": "EOS 5D Mark III",
+  "aliases": [
+    "EOS 5D Mark III",
+    "5D Mark III",
+    "5D III",
+    "5DIII",
+    "5D Mk III",
+    "5D3",
+    "5DM3",
+    "5D Mark 3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2012-03-02",
+  "launchPriceUsd": 3499,
+  "launchPrices": {
+    "GBP": 2999
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "nikon-d800",
+    "nikon-d810",
+    "nikon-d750",
+    "canon-eos-5d-mark-iv",
+    "canon-eos-6d"
+  ],
+  "mount": "canon-ef",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 22.3,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 61,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 950,
+    "dimensionsMm": [
+      152,
+      116.4,
+      76.4
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CF + SD",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": false
+  },
+  "wikidata": "Q65054"
+}

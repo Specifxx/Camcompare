@@ -1,0 +1,74 @@
+{
+  "slug": "insta360-ace-pro",
+  "brand": "insta360",
+  "name": "Insta360 Ace Pro",
+  "shortName": "Ace Pro",
+  "aliases": [
+    "Ace Pro",
+    "AcePro"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "action",
+  "announced": "2023-11-21",
+  "launchPriceUsd": 449.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": "insta360-ace-pro-2",
+  "rivals": [
+    "gopro-hero12-black",
+    "dji-osmo-action-4",
+    "insta360-ace-pro-2",
+    "gopro-hero11-black",
+    "dji-osmo-action-5-pro"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      16
+    ],
+    "aperture": "f/2.6"
+  },
+  "specs": {
+    "sensorFormat": "1/1.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 48,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.4,
+    "screenDotsM": null,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 179.8,
+    "dimensionsMm": [
+      71.9,
+      52.15,
+      38.5
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

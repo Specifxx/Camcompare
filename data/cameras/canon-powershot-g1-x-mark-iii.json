@@ -1,0 +1,83 @@
+{
+  "slug": "canon-powershot-g1-x-mark-iii",
+  "brand": "canon",
+  "name": "Canon PowerShot G1 X Mark III",
+  "shortName": "PowerShot G1 X Mark III",
+  "aliases": [
+    "PowerShot G1 X Mark III",
+    "G1 X Mark III",
+    "G1X Mark III",
+    "G1 X III",
+    "G1X III",
+    "G1XIII",
+    "G1X Mk III",
+    "G1Xm3",
+    "G1X Mark 3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2017-10-16",
+  "launchPriceUsd": 1299.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-lx100-ii",
+    "sony-rx100-va",
+    "fujifilm-x100f",
+    "canon-powershot-g5-x-mark-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      72
+    ],
+    "aperture": "f/2.8-5.6"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 9,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 399,
+    "dimensionsMm": [
+      115,
+      77.9,
+      51.4
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 200,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

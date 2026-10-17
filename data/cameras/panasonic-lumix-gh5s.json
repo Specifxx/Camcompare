@@ -1,0 +1,76 @@
+{
+  "slug": "panasonic-lumix-gh5s",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix GH5S",
+  "shortName": "Lumix GH5S",
+  "aliases": [
+    "Lumix GH5S",
+    "Lumix DC-GH5S",
+    "Panasonic GH5S",
+    "GH5S"
+  ],
+  "modelCodes": [
+    "DC-GH5S"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2018-01-08",
+  "launchPriceUsd": 2499,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7s-ii",
+    "panasonic-lumix-gh5",
+    "blackmagic-pocket-cinema-camera-4k",
+    "fujifilm-x-t3"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 10.28,
+    "isoMin": 160,
+    "isoMax": 51200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 12,
+    "burstElecFps": 12,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.68,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 1.62,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 660,
+    "dimensionsMm": [
+      138.5,
+      98.1,
+      87.4
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 440,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q47487049"
+}

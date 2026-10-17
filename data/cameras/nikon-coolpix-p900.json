@@ -1,0 +1,76 @@
+{
+  "slug": "nikon-coolpix-p900",
+  "brand": "nikon",
+  "name": "Nikon COOLPIX P900",
+  "shortName": "COOLPIX P900",
+  "aliases": [
+    "COOLPIX P900",
+    "P900"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2015-03-01",
+  "launchPriceUsd": 599.95,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "nikon-coolpix-p950",
+  "rivals": [
+    "nikon-coolpix-p950",
+    "canon-powershot-sx70-hs",
+    "panasonic-lumix-fz300",
+    "nikon-coolpix-b600"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      2000
+    ],
+    "aperture": "f/2.8-6.5"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 16,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 0.921,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.921,
+    "screenType": "fully-articulating",
+    "touchscreen": false,
+    "weightG": 899,
+    "dimensionsMm": [
+      139.5,
+      103.2,
+      137.4
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 360,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

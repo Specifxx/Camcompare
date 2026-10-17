@@ -1,0 +1,70 @@
+{
+  "slug": "nikon-d6",
+  "brand": "nikon",
+  "name": "Nikon D6",
+  "shortName": "D6",
+  "aliases": [
+    "D6"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2020-02-12",
+  "launchPriceUsd": 6499.95,
+  "status": "current",
+  "predecessor": "nikon-d5",
+  "successor": null,
+  "rivals": [
+    "canon-eos-1d-x-mark-iii",
+    "sony-a9-ii",
+    "nikon-z9",
+    "nikon-d5"
+  ],
+  "mount": "nikon-f",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 20.8,
+    "isoMin": 100,
+    "isoMax": 102400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 14,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 105,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.36,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 1450,
+    "dimensionsMm": [
+      160,
+      163,
+      92
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B / XQD + CFexpress B / XQD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q84920017"
+}

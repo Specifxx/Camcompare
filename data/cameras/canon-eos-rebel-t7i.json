@@ -1,0 +1,82 @@
+{
+  "slug": "canon-eos-rebel-t7i",
+  "brand": "canon",
+  "name": "Canon EOS Rebel T7i",
+  "shortName": "EOS Rebel T7i",
+  "aliases": [
+    "EOS Rebel T7i",
+    "Rebel T7i",
+    "T7i",
+    "EOS 800D",
+    "800D",
+    "EOS Kiss X9i",
+    "Kiss X9i"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2017-02-14",
+  "launchPriceUsd": 749.99,
+  "regionalNames": {
+    "uk": "Canon EOS 800D",
+    "eu": "Canon EOS 800D",
+    "au": "Canon EOS 800D",
+    "sg": "Canon EOS 800D"
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "canon-eos-rebel-t8i",
+  "rivals": [
+    "nikon-d5600",
+    "canon-eos-77d",
+    "canon-eos-rebel-sl2",
+    "canon-eos-m50"
+  ],
+  "mount": "canon-ef",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 45,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "optical",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 532,
+    "dimensionsMm": [
+      131,
+      99.9,
+      76.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q28790013"
+}

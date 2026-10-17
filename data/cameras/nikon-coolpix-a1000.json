@@ -1,0 +1,76 @@
+{
+  "slug": "nikon-coolpix-a1000",
+  "brand": "nikon",
+  "name": "Nikon COOLPIX A1000",
+  "shortName": "COOLPIX A1000",
+  "aliases": [
+    "COOLPIX A1000",
+    "A1000"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-01-17",
+  "launchPriceUsd": 479.95,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-powershot-sx740-hs",
+    "sony-hx99",
+    "panasonic-lumix-zs80",
+    "panasonic-lumix-zs70"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      840
+    ],
+    "aperture": "f/3.4-6.9"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 16,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": 99,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.166,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.036,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 330,
+    "dimensionsMm": [
+      114.2,
+      71.7,
+      40.5
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 250,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

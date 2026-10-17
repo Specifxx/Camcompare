@@ -1,0 +1,87 @@
+{
+  "slug": "panasonic-lumix-lx100-ii",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix LX100 II",
+  "shortName": "Lumix LX100 II",
+  "aliases": [
+    "Lumix LX100 II",
+    "Lumix DC-LX100 II",
+    "Panasonic LX100 II",
+    "Panasonic Lumix LX100 II",
+    "LX100 II",
+    "LX100II",
+    "LX100 Mark II",
+    "LX100 Mk II",
+    "LX100M2",
+    "LX100 M2"
+  ],
+  "modelCodes": [
+    "DC-LX100M2"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2018-08-22",
+  "launchPriceUsd": 999.99,
+  "status": "discontinued",
+  "predecessor": "panasonic-lumix-lx100",
+  "successor": null,
+  "rivals": [
+    "leica-d-lux-7",
+    "sony-rx100-vii",
+    "canon-powershot-g1-x-mark-iii",
+    "canon-powershot-g5-x-mark-ii",
+    "ricoh-gr-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      75
+    ],
+    "aperture": "f/1.7-2.8"
+  },
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "MOS",
+    "megapixels": 17,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": 11,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.24,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 392,
+    "dimensionsMm": [
+      115,
+      66.2,
+      64.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 340,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "nikon-coolpix-b600",
+  "brand": "nikon",
+  "name": "Nikon COOLPIX B600",
+  "shortName": "COOLPIX B600",
+  "aliases": [
+    "COOLPIX B600",
+    "B600"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-01-17",
+  "launchPriceUsd": 329.95,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-fz80",
+    "canon-powershot-sx70-hs",
+    "nikon-coolpix-p900"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      1440
+    ],
+    "aperture": "f/3.3-6.5"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 16,
+    "isoMin": 125,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7,
+    "burstElecFps": null,
+    "shutterMaxMech": 1600,
+    "shutterMaxElec": null,
+    "afPoints": 99,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.921,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 500,
+    "dimensionsMm": [
+      121.6,
+      81.5,
+      99.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 280,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

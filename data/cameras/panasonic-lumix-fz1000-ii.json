@@ -1,0 +1,86 @@
+{
+  "slug": "panasonic-lumix-fz1000-ii",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix FZ1000 II",
+  "shortName": "Lumix FZ1000 II",
+  "aliases": [
+    "Lumix FZ1000 II",
+    "Lumix DC-FZ1000 II",
+    "Panasonic FZ1000 II",
+    "Panasonic Lumix FZ1000 II",
+    "FZ1000 II",
+    "FZ1000II",
+    "FZ1000 Mark II",
+    "FZ1000 Mk II",
+    "FZ1000M2",
+    "FZ1000 M2"
+  ],
+  "modelCodes": [
+    "DC-FZ1000M2"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-02-18",
+  "launchPriceUsd": 899.99,
+  "status": "discontinued",
+  "predecessor": "panasonic-lumix-fz1000",
+  "successor": null,
+  "rivals": [
+    "sony-rx10-iv",
+    "sony-rx10-iii",
+    "nikon-coolpix-p950",
+    "panasonic-lumix-fz2500"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      25,
+      400
+    ],
+    "aperture": "f/2.8-4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 12,
+    "burstElecFps": 12,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.24,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 810,
+    "dimensionsMm": [
+      136.2,
+      97.2,
+      131.5
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 440,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "red-v-raptor-8k-vv",
+  "brand": "red",
+  "name": "RED V-RAPTOR 8K VV",
+  "shortName": "V-RAPTOR 8K VV",
+  "aliases": [
+    "V-RAPTOR 8K VV",
+    "V-RAPTOR 8K VV + 6K S35"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2021-09-02",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-burano",
+    "canon-eos-c500-mark-ii",
+    "sony-fx9",
+    "red-komodo-x"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 35.4,
+    "isoMin": 250,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 240,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.4,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": null,
+    "weightG": 1828,
+    "dimensionsMm": [
+      107.95,
+      107.95,
+      152.4
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "CFexpress B",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

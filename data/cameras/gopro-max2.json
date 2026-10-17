@@ -27,21 +27,24 @@
   ],
   "mount": null,
   "fixedLens": {
-    "focalMm": null,
+    "focalMm": [
+      14,
+      26
+    ],
     "aperture": "f/1.8"
   },
   "specs": {
     "sensorFormat": "1/2.3-inch",
     "sensorType": "CMOS",
     "megapixels": 29.5,
-    "isoMin": null,
-    "isoMax": null,
+    "isoMin": 100,
+    "isoMax": 6400,
     "ibis": false,
     "ibisStops": null,
     "burstMechFps": null,
-    "burstElecFps": null,
+    "burstElecFps": 10,
     "shutterMaxMech": null,
-    "shutterMaxElec": null,
+    "shutterMaxElec": 2000,
     "afPoints": null,
     "afSubjects": [],
     "videoMaxRes": "8K",

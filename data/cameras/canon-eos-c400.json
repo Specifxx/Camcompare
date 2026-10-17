@@ -1,0 +1,73 @@
+{
+  "slug": "canon-eos-c400",
+  "brand": "canon",
+  "name": "Canon EOS C400",
+  "shortName": "EOS C400",
+  "aliases": [
+    "EOS C400",
+    "Cinema EOS C400",
+    "C400"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2024-06-07",
+  "launchPriceUsd": null,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-fx6",
+    "sony-fx9",
+    "canon-eos-c80",
+    "red-komodo-x",
+    "canon-eos-c300-mark-iii"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked BSI CMOS",
+    "megapixels": 24.1,
+    "isoMin": 160,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.5,
+    "screenDotsM": 2.76,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 1540,
+    "dimensionsMm": [
+      142,
+      135,
+      135
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B + SD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

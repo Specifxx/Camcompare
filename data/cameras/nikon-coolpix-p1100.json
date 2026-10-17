@@ -1,0 +1,77 @@
+{
+  "slug": "nikon-coolpix-p1100",
+  "brand": "nikon",
+  "name": "Nikon COOLPIX P1100",
+  "shortName": "COOLPIX P1100",
+  "aliases": [
+    "COOLPIX P1100",
+    "P1100"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2025-02-04",
+  "launchPriceUsd": 1099.95,
+  "status": "current",
+  "predecessor": "nikon-coolpix-p1000",
+  "successor": null,
+  "rivals": [
+    "nikon-coolpix-p1000",
+    "nikon-coolpix-p950",
+    "sony-rx10-iv",
+    "panasonic-lumix-fz1000-ii",
+    "canon-powershot-sx70-hs"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      3000
+    ],
+    "aperture": "f/2.8-8"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 16,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.359,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 0.921,
+    "screenType": "fully-articulating",
+    "touchscreen": false,
+    "weightG": 1410,
+    "dimensionsMm": [
+      146.3,
+      118.8,
+      181.3
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 260,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

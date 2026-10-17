@@ -4,19 +4,19 @@ description: Medium format to 1-inch and smaller, with typical dimensions, what 
 updated: 2026-10-17
 ---
 
-Sensor size shapes a camera system more than most specs. It affects how big the lenses are, how easily you can blur a background and how clean your pictures look in dim light. It does not decide everything, though, and a bigger sensor is not automatically the right choice. This guide covers the common formats, what size really changes and how to pick one.
+Sensor size shapes a camera system more than most specs: it affects how big the lenses are, how easily you can blur a background and how clean your pictures look in dim light. It does not decide everything, though, and a bigger sensor is not automatically the right choice.
 
 ## The formats, largest to smallest
 
 ### Medium format
 
-In digital cameras, "medium format" usually means a sensor of about 44 × 33 mm. Fujifilm's GFX cameras and Hasselblad's X and 907X bodies use this size. Some high-end digital backs, such as Phase One's, use larger sensors of about 53–54 × 40 mm.
+In digital cameras, "medium format" usually means a sensor of about 44 × 33 mm. Fujifilm's GFX cameras and Hasselblad's X and 907X bodies use this size. Some high-end digital backs, such as Phase One's IQ4 150MP, use larger sensors of about 53–54 × 40 mm.
 
-Both are smaller than medium-format film. The smallest common film frame, 6 × 4.5, measures about 56 × 41.5 mm. The 44 × 33 mm sensor has about 1.7 times the area of full frame and a squarer 4:3 shape. Bodies and lenses are bigger and dearer, and there are fewer lenses to choose from than for full frame.
+Both are smaller than medium-format film. The smallest common medium-format film frame, 6 × 4.5, measures about 56 × 41.5 mm. The 44 × 33 mm sensor has about 1.7 times the area of full frame and a squarer 4:3 shape. Bodies and lenses are usually bigger and dearer, and there are fewer lenses to choose from than for full frame.
 
 ### Full frame
 
-Full frame is about 36 × 24 mm, the size of a 35mm film frame, in a 3:2 shape. It is the reference point for crop factors and "equivalent" focal lengths. Canon, Nikon, Sony, Panasonic, Leica and Sigma all make full-frame cameras, from entry-level bodies to flagships.
+Full frame is about 36 × 24 mm, the size of a 35mm film frame, in a 3:2 shape. It is the reference point for crop factors and "equivalent" focal lengths. Canon, Nikon, Sony, Panasonic, Leica and Sigma all make full-frame cameras.
 
 ### APS-C
 
@@ -30,7 +30,7 @@ Micro Four Thirds sensors have an imaging area of 17.3 × 13.0 mm, in a 4:3 shap
 
 ### 1-inch type and smaller
 
-A "1-inch" sensor is about 13.2 × 8.8 mm. Its diagonal is about 16 mm, well under an inch. The names come from television camera tubes. A tube's quoted size was its outside diameter, and the usable image area was only about two-thirds of that.
+A "1-inch" sensor is about 13.2 × 8.8 mm. Its diagonal is about 16 mm, well under an inch. The names come from television camera tubes. A tube's quoted size was its outside diameter, and the diagonal of its usable image area was only about two-thirds of that.
 
 Smaller sizes follow the same convention. A 1/1.7-inch sensor is about 7.6 × 5.7 mm, and a 1/2.3-inch sensor about 6.2 × 4.6 mm. You'll find 1-inch sensors in pocket compacts such as Sony's RX100 series and Canon's PowerShot G7 X Mark III. The smaller types turn up in superzoom compacts, action cameras and phones.
 
@@ -81,11 +81,11 @@ Real cameras don't follow these figures exactly. Sensor generation and processin
 
 ### Lens size, weight and price
 
-Smaller formats need shorter focal lengths for the same view. That matters most with telephotos. A 300mm lens on Micro Four Thirds frames like a 600mm on full frame, and it is far smaller and lighter.
+Smaller formats need shorter focal lengths for the same view. That matters most with telephotos. A 300mm lens on Micro Four Thirds frames like a 600mm on full frame. The M.Zuiko 300mm f/4 weighs about 1.3 kg, while Sony's full-frame 600mm f/4 weighs about 3 kg.
 
 The advantage shrinks with bright lenses meant for shallow depth of field, because a small-format lens has to be faster to give the same look. As a rule, lenses for bigger formats are larger and dearer for a given view and brightness. Browse [lenses](/lenses) by mount to see what each system offers.
 
-Body size depends more on design than on format. For example, the Micro Four Thirds Panasonic Lumix G9 II weighs 658 g with battery and card, while the full-frame Canon EOS R8 weighs 461 g. Each was built for different buyers.
+Body size depends more on design than on format. For example, the Micro Four Thirds Panasonic Lumix G9 II weighs 658 g and the full-frame Canon EOS R8 461 g, both with battery.
 
 ### Reach and diffraction
 
@@ -95,7 +95,7 @@ The flip side is enlargement. A small sensor's image is enlarged more to reach a
 
 ## What sensor size does not change
 
-- **Exposure.** f/4 at 1/250 s and ISO 400 gives the same brightness on every format. Light meters and exposure settings work the same way.
+- **Exposure.** f/4 at 1/250 s and ISO 400 gives the same brightness on every format.
 - **The lens's focal length.** A 50mm lens is a 50mm lens on any body. A smaller sensor crops the view; it doesn't magnify anything.
 - **Perspective.** How near and far objects relate in size depends on where you stand, not on the sensor. Two formats framing the same scene from the same spot give the same perspective.
 - **Resolution.** Megapixels are a separate choice. The APS-C Fujifilm X-T5 has 40.2 megapixels, and the full-frame Sony a7S III has 12.1.
@@ -106,9 +106,9 @@ The flip side is enlargement. A small sensor's image is enlarged more to reach a
 
 Start with what you shoot and how much you want to carry, then pick the smallest format that does the job well.
 
-- **Pocket camera for travel and everyday shots:** a 1-inch-type compact gives a clear step up from most phones in a body that fits a jacket pocket.
-- **Wildlife and sport on a budget:** APS-C and Micro Four Thirds give more reach from smaller, cheaper telephotos. Micro Four Thirds has the edge for compact long lenses.
-- **Low light, events and shallow-focus portraits:** full frame makes these easier and has the widest choice of bright lenses.
+- **Pocket camera for travel and everyday shots:** a 1-inch-type compact has a larger sensor than most phones' main cameras, usually with an optical zoom, in a body that fits a jacket pocket. A few flagship phones now use a 1-inch-type sensor too.
+- **Wildlife and sport on a budget:** APS-C and Micro Four Thirds give more reach from smaller, often cheaper telephotos. Micro Four Thirds often has the edge for compact long lenses.
+- **Low light, events and shallow-focus portraits:** full frame makes these easier and has a wide choice of bright lenses.
 - **Landscape, studio and fine detail at a slow pace:** medium format gives the most light-gathering area. You pay for it in size, price and a smaller lens range.
 - **Video:** every format is used. Deeper depth of field on smaller sensors makes focusing easier for solo shooters, and full frame gives more background blur.
 
@@ -118,6 +118,6 @@ Lenses usually outlast bodies, so the mount matters as much as the sensor. Canon
 
 ### Check prices where you live
 
-The format is the same in every market, but prices aren't. The same body or lens can cost noticeably more or less in the US, UK, EU, Australia and Singapore, and bundles differ too. Compare current offers on [deals](/deals) before you commit.
+The format is the same in every market, but prices aren't. The same body or lens can cost noticeably more or less in the US, UK, EU, Australia and Singapore, and bundles differ too. Check that a listing is an official local import: makers often offer only a local warranty, so a grey import may not be covered. Compare current offers on [deals](/deals) before you commit.
 
-When you have a shortlist, the [camera finder](/finder) can filter by sensor size, and [compare](/compare) puts two models' specs side by side.
+To build a shortlist, [cameras](/cameras) filters by sensor size and the [camera finder](/finder) suggests models by use, size and budget. Then [compare](/compare) puts two models' specs side by side.

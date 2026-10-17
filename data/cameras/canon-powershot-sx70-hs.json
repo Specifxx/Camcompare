@@ -1,0 +1,76 @@
+{
+  "slug": "canon-powershot-sx70-hs",
+  "brand": "canon",
+  "name": "Canon PowerShot SX70 HS",
+  "shortName": "PowerShot SX70 HS",
+  "aliases": [
+    "PowerShot SX70 HS",
+    "SX70 HS",
+    "SX70HS",
+    "SX70"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2018-09-20",
+  "launchPriceUsd": 549.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "nikon-coolpix-p950",
+    "nikon-coolpix-b600",
+    "panasonic-lumix-fz80",
+    "panasonic-lumix-fz300"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      21,
+      1365
+    ],
+    "aperture": "f/3.4-6.5"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20.3,
+    "isoMin": 100,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fully-articulating",
+    "touchscreen": false,
+    "weightG": 610,
+    "dimensionsMm": [
+      127.1,
+      90.9,
+      116.6
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 325,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

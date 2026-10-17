@@ -1,0 +1,77 @@
+{
+  "slug": "panasonic-lumix-g9",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix G9",
+  "shortName": "Lumix G9",
+  "aliases": [
+    "Lumix G9",
+    "Lumix DC-G9",
+    "Panasonic G9",
+    "Panasonic Lumix G9",
+    "DC-G9"
+  ],
+  "modelCodes": [
+    "DC-G9"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2017-11-08",
+  "launchPriceUsd": 1699,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "olympus-om-d-e-m1-mark-ii",
+    "fujifilm-x-h1",
+    "sony-a6500",
+    "fujifilm-x-t3"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 20.3,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 6.5,
+    "burstMechFps": 12,
+    "burstElecFps": 60,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.68,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 658,
+    "dimensionsMm": [
+      136.9,
+      97.3,
+      91.6
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 400,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q47312693"
+}

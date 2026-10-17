@@ -1,0 +1,82 @@
+{
+  "slug": "canon-powershot-g9-x-mark-ii",
+  "brand": "canon",
+  "name": "Canon PowerShot G9 X Mark II",
+  "shortName": "PowerShot G9 X Mark II",
+  "aliases": [
+    "PowerShot G9 X Mark II",
+    "G9 X Mark II",
+    "G9X Mark II",
+    "G9 X II",
+    "G9X II",
+    "G9XII",
+    "G9X Mk II",
+    "G9Xm2",
+    "G9X Mark 2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2017-01-04",
+  "launchPriceUsd": 529.99,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-rx100-iii",
+    "panasonic-lumix-lx10",
+    "canon-powershot-g7-x-mark-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28,
+      84
+    ],
+    "aperture": "f/2-4.9"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8.1,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": null,
+    "afPoints": 31,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 206,
+    "dimensionsMm": [
+      98,
+      57.9,
+      31.3
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 235,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

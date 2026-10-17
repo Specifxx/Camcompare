@@ -1,6 +1,7 @@
 import type { MarketCode } from "../markets";
 import { RETAILERS } from "../retailers";
 import { amazonSource } from "./amazon";
+import { bestBuySource } from "./bestbuy";
 import { ebaySource } from "./ebay";
 import { feedSource } from "./feed";
 import { shopifySource } from "./shopify";
@@ -13,6 +14,8 @@ export function sourcesFor(market: MarketCode): PriceSource[] {
         return [amazonSource(r.key)];
       case "ebay-browse":
         return [ebaySource(r.key)];
+      case "bestbuy-api":
+        return [bestBuySource(r.key)];
       case "feed":
         return [feedSource(r.key)];
       case "shopify":
