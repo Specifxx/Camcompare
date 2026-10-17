@@ -8,7 +8,7 @@ Camera and lens prices often move in steps rather than drifting down smoothly: w
 
 ## Maker promotions: instant savings and cashback
 
-Many promotions on new gear are run by the maker rather than the shop, and they last for a set period.
+Many promotions on new gear are run by the maker, not the shop, for a set period.
 
 ### Instant savings in the US
 
@@ -16,7 +16,7 @@ In the US, makers' promotions often take the form of instant savings: the discou
 
 ### Cashback in the UK and the EU
 
-In the UK and the EU, makers often run cashback instead. You pay the shelf price, then claim money back from the maker. Fujifilm UK's lens cashback for June and July 2026 shows the kind of terms to expect:
+In the UK and the EU, makers such as Fujifilm often run cashback instead. You pay the shelf price, then claim money back from the maker. Fujifilm UK's lens cashback for June and July 2026 shows the kind of terms to expect:
 
 - the purchase had to be from a listed qualifying retailer in the UK;
 - only new lenses counted, not second-hand or refurbished ones;
@@ -44,7 +44,7 @@ Where a maker enforces such a policy, buyers see two effects:
 - **Authorised dealers tend to show the same price,** so shopping around between them saves less than you might expect.
 - **Drops tend to happen together.** Instant savings let a maker's dealers advertise the lower price for the same dates.
 
-A listing well below the usual price can be a grey import, an open-box or used item, or a marketplace seller. That can still be a good buy, but check what you are getting.
+A listing well below the usual price can be a grey import, an open-box or used item, or a marketplace seller. It can still be a good buy; check what you are getting.
 
 The UK, the EU and Australia take a different view. Their competition law generally forbids a maker from setting a fixed or minimum price for a shop to sell at, though makers may recommend a price. The European Commission's guidelines list minimum advertised prices as one indirect way of imposing resale prices. Shops in those markets set their own prices, so a drop at one doesn't have to appear at another.
 
@@ -52,7 +52,7 @@ The UK, the EU and Australia take a different view. Their competition law genera
 
 ### The older model, new
 
-When a maker replaces a camera or lens, the outgoing model may be discounted or put on promotion while stock lasts. Once that stock runs out, new copies can become scarce, or come mainly from grey or marketplace sellers. Some makers keep selling the older model alongside the new one. Our product pages say when a model is discontinued.
+When a maker replaces a camera or lens, the outgoing model may be discounted or put on promotion while stock lasts. Once that stock runs out, new copies can become scarce, or come mainly from grey or marketplace sellers. Our product pages say when a model is discontinued.
 
 ### The older model, used
 
@@ -72,7 +72,7 @@ A newly launched camera may not be discounted for some time, and popular models 
 | Australia | End of financial year (EOFY) sales in June, Black Friday, Boxing Day |
 | Singapore | Marketplace "double-date" sales such as 9.9, 11.11 and 12.12; Black Friday; Amazon's Prime events |
 
-In the US, Amazon's Prime Day has fallen in June or July in recent years (23 to 26 June in 2026), with a second Prime event, Prime Big Deal Days, in October. Dates vary by country. Australia's financial year ends on 30 June, which is why shops there run EOFY sales in June.
+In the US, Amazon's Prime Day has fallen in June or July in recent years (23 to 26 June in 2026), with a second Prime event, Prime Big Deal Days, in October. Dates vary by country. Australia's financial year ends on 30 June, which is why many shops there run EOFY sales in June.
 
 A sale label alone tells you little. Check two things:
 
@@ -84,7 +84,7 @@ A sale label alone tells you little. Check two things:
 The cheapest copy of a camera or lens is often not a new one:
 
 - **Open-box and ex-demo stock** is new or nearly new gear that has been unpacked, returned or used for display in a shop.
-- **Refurbished** gear has been checked and, where needed, repaired, by the maker or by a dealer. Makers such as Nikon cover their refurbished products with a warranty; check how long it lasts.
+- **Refurbished** gear has been checked and, where needed, repaired, by the maker or by a dealer. Some makers, such as Nikon in the US, cover their refurbished products with a warranty; check how long it lasts.
 - **Used** gear has had at least one owner. Its condition, and who is selling it, decide what it is worth.
 
 Who sells it matters as much as the price. The main protections apply when the seller is a business:
@@ -102,7 +102,7 @@ Once a day we record the lowest in-stock price for each camera and lens we find 
 
 ### The deals page
 
-[Deals](/deals) lists the cameras and lenses whose lowest price fell the most over the past week, new and used, comparing today's price with the one recorded a week earlier. It also lists where buying used currently saves the most against new. There are no sponsored placements.
+[Deals](/deals) lists the cameras and lenses whose lowest price fell the most over the past week, new and used, comparing today's price with the one recorded a week earlier. It also lists where buying used saves the most. There are no sponsored placements.
 
 ### Each product page
 

@@ -4,7 +4,7 @@
   "name": "OM System M.Zuiko Digital ED 14-42mm F3.5-5.6 EZ",
   "shortName": "M.Zuiko Digital ED 14-42mm F3.5-5.6 EZ",
   "aliases": ["M.Zuiko Digital ED 14-42mm F3.5-5.6 EZ", "M.Zuiko Digital ED 14-42mm f/3.5-5.6 EZ", "M.Zuiko 14-42mm F3.5-5.6 EZ", "M.Zuiko 14-42mm f/3.5-5.6 EZ", "ED 14-42mm F3.5-5.6 EZ", "14-42mm F3.5-5.6 EZ", "14-42mm f/3.5-5.6 EZ", "M.Zuiko 14-42mm EZ", "14-42mm EZ"],
-  "modelCodes": ["V335370BW000"],
+  "modelCodes": ["V335370BW000", "V335370SW000"],
   "gtins": [],
   "announced": "2014-01-29",
   "launchPriceUsd": null,

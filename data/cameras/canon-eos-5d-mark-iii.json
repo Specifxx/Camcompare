@@ -19,7 +19,8 @@
   "announced": "2012-03-02",
   "launchPriceUsd": 3499,
   "launchPrices": {
-    "GBP": 2999
+    "GBP": 2999,
+    "EUR": 3299
   },
   "status": "discontinued",
   "predecessor": null,
