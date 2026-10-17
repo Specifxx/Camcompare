@@ -16,6 +16,7 @@ import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
 import PriceAlert from "@/components/PriceAlert";
+import Discussion from "@/components/community/Discussion";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
 import SuggestedKit from "@/components/SuggestedKit";
@@ -223,6 +224,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         <SpecSheet item={c} groups={SPEC_GROUPS} />
       </section>
 
+      <Discussion target={`product:${c.slug}`} name={short} />
       <AdSlot slot={AD_SLOTS.product} />
     </article>
   );

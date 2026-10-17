@@ -9,6 +9,15 @@ module.exports = {
   async redirects() {
     return [{ source: "/:path*", has: [{ type: "host", value: "camcompare.vercel.app" }], destination: "https://www.camcompare.app/:path*", permanent: true }];
   },
+  // Community threads and member pages are client-rendered over one static
+  // shell each, so a new thread or member costs no build, ISR write or server
+  // render (DECISIONS.md, 2026-10-17 "Community v1").
+  async rewrites() {
+    return [
+      { source: "/community/t/:id(\\d{1,18})", destination: "/community/t" },
+      { source: "/u/:username([A-Za-z][A-Za-z0-9_]{2,19})", destination: "/u" },
+    ];
+  },
   async headers() {
     return [{ source: "/products/:file*.webp", headers: [{ key: "Cache-Control", value: "public, max-age=604800" }] }];
   },

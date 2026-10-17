@@ -207,7 +207,7 @@ export function UsernamePicker({ onDone }: { onDone?: () => void }) {
 }
 
 /** The email box: sends a sign-in link. With a member but no username, the username picker instead. */
-export function SignInBox({ prompt = "Sign in to post, vote and report." }: { prompt?: string }) {
+export function SignInBox({ prompt = "Sign in to post, vote and report.", next }: { prompt?: string; /** Where the emailed link lands after sign-in (default: this page). */ next?: string }) {
   const { user, loaded } = useMe();
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
@@ -222,7 +222,7 @@ export function SignInBox({ prompt = "Sign in to post, vote and report." }: { pr
       onSubmit={async (e) => {
         e.preventDefault();
         setStatus({ phase: "sending" });
-        const r = await api("/api/community/auth/request", { method: "POST", body: { email: email.trim(), next: location.pathname + location.hash, website } });
+        const r = await api("/api/community/auth/request", { method: "POST", body: { email: email.trim(), next: next ?? location.pathname + location.hash, website } });
         setStatus(r.ok ? { phase: "sent" } : { phase: "error", error: r.error });
       }}
     >

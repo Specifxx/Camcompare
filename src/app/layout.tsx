@@ -7,15 +7,13 @@ import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
-import { Caveat, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 
 // One clean sans for headings and body: Inter (globals.css points
 // --font-display at it, so font-display is the same face). JetBrains Mono is
 // only for the few spots that ask for font-mono.
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
-// Handwriting, used sparingly (the home page's notes and annotations, `.cc-hand`).
-const hand = Caveat({ subsets: ["latin"], variable: "--font-hand", display: "swap", weight: ["500", "700"] });
 
 // AdSense loads only when the owner sets NEXT_PUBLIC_ADSENSE_CLIENT (see AdSlot).
 const ADSENSE = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "";
@@ -43,7 +41,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable} ${hand.variable}`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       {VERIFY.impact && (
         <head>
           {/* Impact reads the non-standard `value` attribute. */}

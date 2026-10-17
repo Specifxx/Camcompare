@@ -13,6 +13,7 @@ import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
 import PriceAlert from "@/components/PriceAlert";
+import Discussion from "@/components/community/Discussion";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
 import ReviewHub from "@/components/ReviewHub";
@@ -182,6 +183,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
         <SpecSheet item={l} groups={LENS_SPEC_GROUPS} />
       </section>
 
+      <Discussion target={`product:${l.slug}`} name={short} />
       <AdSlot slot={AD_SLOTS.product} />
     </article>
   );

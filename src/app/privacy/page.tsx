@@ -8,8 +8,16 @@ export default function Privacy() {
     <div className="max-w-2xl space-y-4 text-sm leading-relaxed">
       <h1 className="text-2xl font-extrabold tracking-tight">Privacy</h1>
       <p>
-        {SITE_NAME} has no accounts. We store only two things on our servers, both only if you choose to send them: feedback (your message, the page and
-        market it&apos;s about, your browser type, and your email only if you give one, used only to reply) and price alerts.
+        We store only three things on our servers, each only if you choose to: feedback (your message, the page and market it&apos;s about, your
+        browser type, and your email only if you give one, used only to reply), price alerts, and a community account if you join the community.
+      </p>
+      <h2 className="h-section pt-2">Community accounts</h2>
+      <p>
+        To comment, review, vote or post on the boards you sign in with an emailed link. We keep your email address (to sign you in; it is never shown
+        to anyone), the username you pick, what you post and your votes. Comments, reviews, threads and your username are public. A sign-in cookie
+        (<code>cc_session</code>, with <code>cc_member</code> beside it) keeps you signed in for 30 days; signing out removes both. To limit abuse we
+        keep a one-way scrambled form of the IP address that asked for a sign-in link, never the address itself, and delete it after two days.
+        To delete your account and everything you posted, use the feedback form with the email you signed in with.
       </p>
       <h2 className="h-section pt-2">Price alerts</h2>
       <p>

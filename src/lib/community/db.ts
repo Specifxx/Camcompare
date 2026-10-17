@@ -362,8 +362,9 @@ export async function getThread(id: string): Promise<ThreadItem | null> {
   return toThread(r, await authorsFor([r]));
 }
 
-export async function threadVisible(id: string): Promise<boolean> {
-  return (await q("SELECT 1 FROM community_threads t JOIN community_users u ON u.id = t.user_id AND NOT u.banned WHERE t.id = $1::bigint AND NOT t.hidden AND NOT t.deleted", [id])).length > 0;
+/** A thread people can see (`open`: and still take comments, i.e. not deleted). */
+export async function threadVisible(id: string, open = true): Promise<boolean> {
+  return (await q(`SELECT 1 FROM community_threads t JOIN community_users u ON u.id = t.user_id AND NOT u.banned WHERE t.id = $1::bigint AND NOT t.hidden ${open ? "AND NOT t.deleted" : ""}`, [id])).length > 0;
 }
 
 export async function createThread(userId: string, board: BoardSlug, title: string, body: string): Promise<string> {

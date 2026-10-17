@@ -3,6 +3,7 @@ import { indexedPairs, offersFor, pairSlug, publishedCameras, publishedLenses } 
 import { MARKET_CODES, marketPath } from "@/lib/markets";
 import { guides } from "@/lib/guides";
 import { abs } from "@/lib/site";
+import { BOARDS } from "@/lib/community/rules";
 import { categorySummaries } from "@/lib/accessory-rows";
 import { liveBrands } from "@/views/BrandView";
 import { dealsIndexable } from "@/views/DealsView";
@@ -26,5 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const [a, b] of indexedPairs()) out.push({ url: abs(`/compare/${pairSlug(a.item, b.item)}`) });
   out.push({ url: abs("/guides") }, ...guides().map((g) => ({ url: abs(`/guides/${g.slug}`), lastModified: g.updated || undefined })));
   out.push({ url: abs("/about") });
+  out.push({ url: abs("/community") }, ...BOARDS.map((b) => ({ url: abs(`/community/${b.slug}`) })));
   return out;
 }

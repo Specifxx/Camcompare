@@ -155,15 +155,7 @@ h1, h2 { letter-spacing: -0.015em; }
 .cc-iris-intro .cc-blade { animation: cc-iris-open 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s backwards; }
 @keyframes cc-iris-open { from { transform: translate(-5.2px, 1.3px); } to { transform: translate(0, 0); } }
 
-/* ---- Still used by the home page (views/HomeView.tsx, components/home/*). */
-.cc-h1-em { font-style: italic; font-weight: 500; }
-.cc-live-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: rgb(var(--c-buy)); }
-.cc-live-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: rgb(var(--c-buy)); animation: cc-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite; }
-@keyframes cc-ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
-.cc-zoom img { transition: transform 0.4s var(--ease-out); }
-.group:hover .cc-zoom img { transform: scale(1.05); }
-
-/* No motion at all under reduced motion. Must stay last (before the home block). */
+/* No motion at all under reduced motion. Must stay after every animated rule. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -172,73 +164,17 @@ h1, h2 { letter-spacing: -0.015em; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .cc-iris-intro .cc-blade, .cc-live-dot::after { animation: none !important; }
-  .group:hover .cc-zoom img { transform: none; }
+  .cc-iris-intro .cc-blade { animation: none !important; }
 }
 
-/* home deals ------------------------------------------------------------------
-   The home page's best-deals board and its hand-made touches (views/HomeView.tsx,
-   components/home/*). Only .hd-* and .cc-hand live here; nothing restyles other
-   components. Static tilts only (no motion), so reduced motion has nothing to stop. */
-.cc-hand { font-family: var(--font-hand), "Segoe Print", "Bradley Hand", cursive; font-weight: 700; letter-spacing: 0; }
-.hd-hero { padding-top: 0.5rem; }
-/* Views: DealTabs.tsx sets data-mode / data-kind; rows not in the view hide. */
-.hd-board[data-mode="used"] [data-list="new"], .hd-board[data-mode="new"] [data-list="used"] { display: none; }
-.hd-board[data-kind="all"] li[data-all="0"],
-.hd-board[data-kind="camera"] li[data-k="lens"],
-.hd-board[data-kind="lens"] li[data-k="camera"] { display: none; }
-.hd-list { display: grid; gap: 1.4rem 0.9rem; padding-top: 0.5rem; }
-@media (min-width: 640px) { .hd-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1024px) { .hd-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.hd-card { position: relative; display: flex; height: 100%; align-items: flex-start; gap: 0.85rem; padding: 0.75rem; }
-/* The photo as a print stuck down a touch crooked. */
-.hd-photo { position: relative; display: block; width: 6.75rem; flex-shrink: 0; padding: 4px 4px 12px; background: #fff; border-radius: 2px; box-shadow: 0 1px 2px rgb(60 40 20 / 0.18), 0 4px 10px -6px rgb(60 40 20 / 0.35); rotate: calc(var(--tag, 0deg) * -0.4); }
-@media (min-width: 400px) { .hd-photo { width: 7.5rem; } }
-/* A price sticker slapped on the corner. Dark ink on Kodak yellow (AA). */
-.hd-tag { position: absolute; left: -7px; top: -8px; rotate: var(--tag, -3deg); padding: 2px 7px; border-radius: 3px; background: rgb(245 170 35); color: #211a14; font-family: var(--font-mono), monospace; font-size: 12px; font-weight: 700; box-shadow: 0 2px 4px -1px rgb(0 0 0 / 0.3); }
-.hd-save { font-family: var(--font-display), Georgia, serif; font-size: 1.3rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; color: rgb(var(--c-win)); }
-.hd-save .price { font-family: var(--font-display), Georgia, serif; }
-.hd-save-pct { font-size: 0.95rem; font-weight: 600; }
-/* A handwritten note pinned on the card's top edge, clear of the text. */
-.hd-note { position: absolute; right: 10px; top: -16px; rotate: -3deg; padding: 0 8px; border-radius: 2px; background: rgb(var(--c-paper)); border: 1px solid rgb(var(--c-line)); color: rgb(var(--c-accent)); font-size: 1.15rem; line-height: 1.35; box-shadow: 0 2px 5px -3px rgb(60 40 20 / 0.4); pointer-events: none; }
-li:nth-child(even) > .hd-card .hd-note { rotate: 2deg; }
-/* The makers' note: a sheet of paper taped up, slightly off square. */
-.hd-letter { position: relative; padding: 1.1rem 1.15rem 1rem; background: rgb(var(--c-paper)); border: 1px solid rgb(var(--c-line)); border-radius: 3px; box-shadow: var(--shadow-card); rotate: 0.6deg; }
-.hd-letter::before { content: ""; position: absolute; top: -9px; left: 50%; width: 84px; height: 18px; margin-left: -42px; rotate: -3deg; background: rgb(var(--c-spark) / 0.4); border-left: 1px dashed rgb(var(--c-fg) / 0.12); border-right: 1px dashed rgb(var(--c-fg) / 0.12); }
-/* Tabs. */
-.hd-seg { display: inline-flex; padding: 3px; gap: 2px; border: 1px solid rgb(var(--c-line)); border-radius: 6px; background: rgb(var(--c-surface)); }
+/* Home deal feed controls (components/home/DealFeed.tsx): a segmented
+   new/used switch and filter pills. */
+.hd-seg { display: inline-flex; padding: 2px; gap: 2px; border: 1px solid rgb(var(--c-line)); border-radius: 6px; background: rgb(var(--c-surface)); }
 .hd-seg-btn { padding: 0.35rem 0.8rem; border-radius: 4px; font-size: 0.875rem; font-weight: 600; color: rgb(var(--c-muted)); transition: background-color 0.15s, color 0.15s; }
 .hd-seg-btn:hover { color: rgb(var(--c-fg)); }
 .hd-seg-btn[aria-pressed="true"] { background: rgb(var(--c-accent)); color: rgb(var(--c-accent-fg)); }
-.hd-pill { display: inline-flex; align-items: center; padding: 0.25rem 0.7rem; border-radius: 999px; border: 1px solid rgb(var(--c-line)); background: rgb(var(--c-raised)); font-size: 0.8125rem; font-weight: 500; color: rgb(var(--c-muted)); }
-.hd-pill:hover:not(:disabled) { border-color: rgb(var(--c-accent)); color: rgb(var(--c-fg)); }
+.hd-pill { display: inline-flex; align-items: center; padding: 0.25rem 0.7rem; border-radius: 999px; border: 1px solid rgb(var(--c-line)); background: rgb(var(--c-surface)); font-size: 0.8125rem; font-weight: 500; color: rgb(var(--c-muted)); transition: border-color 0.15s, color 0.15s; }
+.hd-pill:hover:not(:disabled) { border-color: rgb(var(--c-fg) / 0.3); color: rgb(var(--c-fg)); }
 .hd-pill[aria-pressed="true"] { border-color: rgb(var(--c-accent)); background: rgb(var(--c-accent-soft)); color: rgb(var(--c-fg)); font-weight: 600; }
 .hd-pill:disabled { opacity: 0.45; cursor: not-allowed; }
 .hd-seg-btn:focus-visible, .hd-pill:focus-visible { outline: 2px solid rgb(var(--c-accent)); outline-offset: 2px; }
-@media (prefers-color-scheme: dark) {
-  .hd-photo { background: #f4efe6; box-shadow: 0 4px 12px -6px rgb(0 0 0 / 0.8); }
-  .hd-tag { background: rgb(255 190 70); color: #1a120a; }
-}
-
-/* The deal feed (components/home/DealFeed.tsx): dense rows, OzBargain style.
-   A gone deal stays greyed with a stamp; its photo is desaturated. */
-.hf-list { border-top: 1px solid rgb(var(--c-line)); }
-.hf-row { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 0.4rem 0.85rem; align-items: start; padding: 0.8rem 0.25rem; border-bottom: 1px solid rgb(var(--c-line)); }
-@media (min-width: 640px) { .hf-row { grid-template-columns: 5.25rem minmax(0, 1fr) auto; align-items: center; padding: 0.85rem 0.5rem; } }
-.hf-row:hover { background: rgb(var(--c-raised)); }
-.hf-thumb { display: block; padding: 3px; background: #fff; border-radius: 2px; box-shadow: 0 1px 2px rgb(60 40 20 / 0.18); }
-.hf-act { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
-@media (min-width: 640px) { .hf-act { grid-column: auto; flex-direction: column; align-items: flex-end; justify-content: center; gap: 0.4rem; min-width: 9rem; } }
-.hf-save { font-family: var(--font-display), Georgia, serif; font-size: 1.35rem; font-weight: 700; line-height: 1; color: rgb(var(--c-win)); text-align: left; }
-@media (min-width: 640px) { .hf-save { text-align: right; } }
-.hf-go { display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem; min-width: 8.5rem; padding: 0.55rem 1rem; font-size: 0.95rem; font-weight: 700; white-space: nowrap; }
-.hf-chip { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0 0.45rem; border-radius: 3px; font-size: 10.5px; font-weight: 700; line-height: 1.6; text-transform: uppercase; letter-spacing: 0.04em; }
-.hf-chip-new { background: rgb(var(--c-spark) / 0.35); color: rgb(var(--c-fg)); }
-.hf-chip-drop { background: rgb(var(--c-win) / 0.12); color: rgb(var(--c-win)); }
-.hf-chip-drop s { font-weight: 500; }
-.hf-chip-low { background: rgb(var(--c-accent-soft)); color: rgb(var(--c-accent)); }
-.hf-gone > :not(.hf-act) { opacity: 0.5; }
-.hf-gone .hf-thumb { filter: grayscale(1); }
-.hf-gone .hf-save { color: rgb(var(--c-subtle)); text-decoration: line-through; }
-.hf-stamp { display: inline-block; rotate: -6deg; padding: 0.1rem 0.6rem; border: 2px solid rgb(var(--c-warn)); border-radius: 3px; color: rgb(var(--c-warn)); font-family: var(--font-mono), monospace; font-size: 0.9rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; line-height: 1.15; }
-@media (prefers-color-scheme: dark) { .hf-thumb { background: #f4efe6; } }

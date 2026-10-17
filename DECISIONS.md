@@ -590,3 +590,38 @@ from, where a deal that sells says so when you refresh, and a historical price.
 - Sort tabs Hot (biggest %), New (first seen), Biggest $ off; filters by
   used/new and camera/lens. Each row's title says the whole deal ("Sony α7S
   II body — used $895 at Camera West (RRP $3,000, save 70%)").
+
+## 2026-10-17: Logo iris on transforms, suggested kits, a reviews hub
+
+Friends' feedback; owner: "UI needs to be cleaner. No random shapes and graphics."
+
+- **The iris animates with `transform` only.** It used to animate the CSS `d`
+  property, which Safari and every iOS browser ignore, so the mark never
+  opened there. Each blade is now a 60° cone (apex on a hexagon round the
+  centre) clipped to the circle, the six drawn as one shape turned 60° apart
+  (`components/brand/Logo.tsx`). Opening slides each apex out from the
+  centre: one `translate`, the same in every blade's own frame, so a single
+  keyframe serves all six. 0.6 s, once, nothing else (no twist, no hover);
+  still under reduced motion. Checked frame by frame in Chromium and WebKit.
+- **Suggested kit** (`lib/kit.ts`, `components/SuggestedKit.tsx`) is a rule,
+  not a recommendation engine and not AI: native autofocus lenses only (no
+  APS-C lens on full frame), by 35mm-equivalent range on that body: a
+  standard zoom, a fast prime (f/2 or brighter, nearest 50mm), and a
+  telephoto zoom, else a wide. Each role has a target share of the body's
+  price and a cap (new today, else used, else launch, in the market's own
+  currency); priced lenses, the maker's own (or its mount alliance: L-Mount,
+  Micro Four Thirds), then Sigma/Tamron/Samyang/Zeiss/Tokina/Viltrox, current
+  over discontinued. The reason sentence states only what the spec sheet
+  shows; it never says "most people buy". Prices are today's lowest new
+  (non-Amazon, as `lowest`), never converted; the total says when it leaves
+  unpriced items out. Fixed-lens bodies and mounts without such lenses get
+  nothing rather than a weak kit.
+- **Reviews hub** (`lib/reviews.ts`, `components/ReviewHub.tsx`) links to
+  each review site's own search for the product, built from its name
+  (`searchName`, shared with `lib/lowlight.ts`). Nothing is copied or
+  fetched: a review's words are its site's. Each pattern was opened with a
+  camera and a lens name and returned that site's results: Digital Camera
+  World, Camera Labs, Imaging Resource, Amateur Photographer, YouTube,
+  Reddit r/photography. Left out: DPReview and PetaPixel (their search
+  answers with a Cloudflare challenge, 403; DPReview stays in the Low light
+  panel as before) and the Lensrentals blog (it has no search URL).

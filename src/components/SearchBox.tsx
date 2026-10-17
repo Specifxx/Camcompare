@@ -72,7 +72,7 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
         }}
         className={
           hero
-            ? "h-14 w-full rounded-2xl border border-line bg-surface/85 pl-12 pr-4 text-base shadow-lift outline-none backdrop-blur transition-colors placeholder:text-subtle focus:border-accent"
+            ? "h-14 w-full rounded-lg border border-line bg-surface pl-12 pr-4 text-base outline-none transition-colors placeholder:text-subtle focus:border-accent"
             : "w-full rounded-lg border border-line bg-raised/80 px-3 py-1.5 text-sm transition-colors focus:border-accent focus:bg-surface"
         }
       />
@@ -84,7 +84,7 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
           role="listbox"
           className={
             hero
-              ? "absolute inset-x-0 top-full z-40 mt-2 overflow-hidden rounded-xl border border-line bg-surface text-left shadow-lift"
+              ? "absolute inset-x-0 top-full z-40 mt-2 overflow-hidden rounded-lg border border-line bg-surface text-left shadow-lift"
               : "fixed inset-x-4 top-14 z-40 mt-1 overflow-hidden rounded-lg border border-line bg-surface shadow-lg md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-[22rem]"
           }
         >

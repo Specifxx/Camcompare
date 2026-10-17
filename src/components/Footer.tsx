@@ -33,6 +33,7 @@ export default function Footer() {
         <nav className="flex flex-col gap-1" aria-label="About">
           <p className="eyebrow mb-1 text-subtle">About</p>
           <Link href="/guides" prefetch={false}>Guides</Link>
+          <Link href="/community" prefetch={false}>Community</Link>
           <Link href={marketPath(here, "/mounts")} prefetch={false}>Camera systems</Link>
           <Link href="/about" prefetch={false}>How we price &amp; check specs</Link>
           <Link href="/disclosure" prefetch={false}>Affiliate disclosure</Link>

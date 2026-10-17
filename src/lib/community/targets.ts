@@ -4,10 +4,14 @@ import { product, productPath } from "../catalog";
 import { threadVisible } from "./db";
 import { threadPath, type Target } from "./rules";
 
-/** Whether people may comment on this target: a published product, a visible thread, or any well-formed deal key. */
-export async function targetExists(t: Target): Promise<boolean> {
+/**
+ * Whether this target exists: a published product, a visible thread, or any
+ * well-formed deal key. `forWrite`: and takes new comments (a deleted thread
+ * still shows its replies but takes no more).
+ */
+export async function targetExists(t: Target, forWrite = false): Promise<boolean> {
   if (t.kind === "product") return product(t.slug) !== null;
-  if (t.kind === "thread") return threadVisible(t.id);
+  if (t.kind === "thread") return threadVisible(t.id, forWrite);
   return true;
 }
 

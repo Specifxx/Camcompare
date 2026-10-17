@@ -47,7 +47,7 @@ export default function Header() {
           <MarketSwitcher current={m} />
         </div>
       </div>
-      <nav className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-line px-4 py-2.5 text-[13px] font-medium md:hidden" aria-label="Sections">
+      <nav className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-t border-line px-4 py-2.5 text-xs font-medium min-[380px]:text-[13px] md:hidden" aria-label="Sections">
         {NAV.map((n) => {
           const href = marketPath(m, n.path);
           const active = pathname === href || pathname.startsWith(`${href}/`);

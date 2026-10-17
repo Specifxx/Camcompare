@@ -45,7 +45,7 @@ export async function POST(req: Request) {
   const target = targetKey(t);
   try {
     if ((await recentPosts(m.user.id, POST_WINDOW_MIN)) >= POSTS_PER_WINDOW) return tooMany(POST_WINDOW_MIN * 60, "That's a lot of posts in a short time");
-    if (!(await targetExists(t))) return fail(404, "That discussion isn't open.");
+    if (!(await targetExists(t, true))) return fail(404, "That discussion isn't open.");
     let parentId: string | null = null;
     if (parsed.data.parentId) {
       const p = await getComment(parsed.data.parentId);
