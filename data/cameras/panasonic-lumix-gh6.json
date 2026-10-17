@@ -1,0 +1,75 @@
+{
+  "slug": "panasonic-lumix-gh6",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix GH6",
+  "shortName": "Lumix GH6",
+  "aliases": [
+    "Lumix GH6",
+    "Lumix DC-GH6",
+    "Panasonic GH6",
+    "GH6"
+  ],
+  "modelCodes": [
+    "DC-GH6"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2022-02-22",
+  "launchPriceUsd": 2199,
+  "status": "current",
+  "predecessor": "panasonic-lumix-gh5",
+  "successor": "panasonic-lumix-gh7",
+  "rivals": [
+    "sony-fx30",
+    "fujifilm-x-h2s",
+    "om-system-om-1",
+    "panasonic-lumix-s5-ii"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 25.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 7.5,
+    "burstMechFps": 14,
+    "burstElecFps": 75,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 315,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "5.7K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.68,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.84,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 823,
+    "dimensionsMm": [
+      138.4,
+      100.3,
+      99.6
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B + SD UHS-II",
+    "batteryShotsCipa": 360,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q131703691"
+}

@@ -61,8 +61,8 @@ RiftCompare Premium does.
 | Dealer prices (B&H, Adorama, Best Buy, MPB, KEH) | **Affiliate-network product feeds** (Impact, CJ, Awin, FlexOffers): a daily file with price, UPC, MPN, condition and stock | Generic streaming feed importer, done (`src/lib/sources/feed.ts`). Each feed needs an approved affiliate account. |
 | eBay new and used | Browse API with the EPN campaign, as RiftCompare runs it | Done (`src/lib/sources/ebay.ts`) |
 | Amazon | Creators API (PA-API 5 shut down April/May 2026) | Written from the docs, untested until credentials exist (`src/lib/sources/amazon.ts`) |
-| Specs | No free licensed database exists, so curated by hand: about 10–15 new bodies a year | 120 bodies drafted (2016+), schema-validated, cross-checked against Wikidata. **Verify against the makers' spec sheets before launch.** |
-| Thumbnails | Wikimedia Commons photos found through Wikidata, with credits | Pipeline done; covers the cameras Commons has. The rest need press images, which is the owner's call (`docs/images.md`). |
+| Specs | No free licensed database exists, so curated by hand: about 10–15 new bodies a year | 121 bodies (2016+) across 10 makers, taken mostly from the makers' own spec pages, schema-validated and cross-checked against Wikidata. Values that couldn't be confirmed are left blank. **Give the 2025 bodies a final human pass before launch.** |
+| Thumbnails | Wikimedia Commons photos found through Wikidata, with credits | 110 of 121 cameras have a free-licensed photo, each checked by eye. The 11 without one stay unpublished until a press image is added, which is the owner's call (`docs/images.md`). |
 | Barcodes (GTIN) for exact matching | Wikidata plus the feeds themselves | Filled where Wikidata has them |
 
 Scraping is not an option. B&H and MPB return 403 to plain requests (tested

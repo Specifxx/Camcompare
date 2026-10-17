@@ -1,0 +1,75 @@
+{
+  "slug": "sony-a6600",
+  "brand": "sony",
+  "name": "Sony α6600",
+  "shortName": "α6600",
+  "aliases": [
+    "a6600",
+    "Alpha 6600",
+    "Alpha a6600",
+    "α6600"
+  ],
+  "modelCodes": [
+    "ILCE-6600"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-08-28",
+  "launchPriceUsd": 1399,
+  "status": "current",
+  "predecessor": null,
+  "successor": "sony-a6700",
+  "rivals": [
+    "fujifilm-x-s10",
+    "fujifilm-x-t4",
+    "canon-eos-r7",
+    "nikon-z50"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 11,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 425,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 503,
+    "dimensionsMm": [
+      120,
+      66.9,
+      69.3
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 810,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q96309118"
+}

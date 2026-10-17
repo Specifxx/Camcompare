@@ -25,6 +25,7 @@ const SENSOR_LABEL: Record<Specs["sensorFormat"], string> = {
   "aps-h": "APS-H",
   "aps-c": "APS-C",
   "micro-four-thirds": "Micro Four Thirds",
+  "1.4-inch": '1.4"',
   "1-inch": '1"',
   "1/1.3-inch": '1/1.3"',
   "1/2.3-inch": '1/2.3"',
@@ -37,6 +38,7 @@ const SENSOR_AREA: Record<Specs["sensorFormat"], number> = {
   "aps-h": 548,
   "aps-c": 370,
   "micro-four-thirds": 225,
+  "1.4-inch": 226, // Canon's 1.4-type: ~18.4 x 12.3 mm, a hair over Four Thirds by area
   "1-inch": 116,
   "1/1.3-inch": 69,
   "1/2.3-inch": 28,
@@ -191,7 +193,7 @@ export function keyDifferences(a: Camera, b: Camera, limit = 6): string[] {
       const [x, y] = row.cells;
       if (!x.text || !y.text || x.win === y.win) continue;
       const [w, l, wt, lt] = x.win ? [a, b, x.text, y.text] : [b, a, y.text, x.text];
-      out.push(`${w.shortName}: ${row.def.label.toLowerCase()} ${wt}, against ${lt} on the ${l.shortName}.`);
+      out.push(`${row.def.label}: ${wt} on the ${w.shortName}, against ${lt} on the ${l.shortName}.`);
     }
   }
   return out.slice(0, limit);

@@ -1,0 +1,76 @@
+{
+  "slug": "fujifilm-x100v",
+  "brand": "fujifilm",
+  "name": "Fujifilm X100V",
+  "shortName": "X100V",
+  "aliases": [
+    "X100V",
+    "X100 V",
+    "X-100V"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2020-02-04",
+  "launchPriceUsd": 1399,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-x100vi",
+  "rivals": [
+    "ricoh-gr-iii",
+    "ricoh-gr-iiix",
+    "leica-q2",
+    "fujifilm-x-e4"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      35
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS 4",
+    "megapixels": 26.1,
+    "isoMin": 160,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": 30,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "hybrid",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 478,
+    "dimensionsMm": [
+      128,
+      74.8,
+      53.3
+    ],
+    "weatherSealed": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 370,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q124998434"
+}

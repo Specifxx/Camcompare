@@ -1,0 +1,83 @@
+{
+  "slug": "sony-a7cr",
+  "brand": "sony",
+  "name": "Sony α7CR",
+  "shortName": "α7CR",
+  "aliases": [
+    "a7CR",
+    "a7C R",
+    "Alpha 7CR",
+    "Alpha 7C R",
+    "Alpha a7CR",
+    "α7CR",
+    "α7C R"
+  ],
+  "modelCodes": [
+    "ILCE-7CR"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-08-29",
+  "launchPriceUsd": 2999,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7r-v",
+    "nikon-z7-ii",
+    "sigma-fp-l",
+    "leica-q3"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 61,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 7,
+    "burstMechFps": 8,
+    "burstElecFps": 7,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 8000,
+    "afPoints": 693,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 515,
+    "dimensionsMm": [
+      124,
+      71.1,
+      63.4
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 530,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q123194442"
+}

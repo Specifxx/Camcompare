@@ -1,0 +1,72 @@
+{
+  "slug": "sony-fx3",
+  "brand": "sony",
+  "name": "Sony FX3",
+  "shortName": "FX3",
+  "aliases": [
+    "Sony FX3",
+    "FX3"
+  ],
+  "modelCodes": [
+    "ILME-FX3"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2021-02-23",
+  "launchPriceUsd": 3899,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7s-iii",
+    "panasonic-lumix-s5-iix",
+    "panasonic-lumix-s1-ii",
+    "nikon-z6-iii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 12.1,
+    "isoMin": 80,
+    "isoMax": 102400,
+    "ibis": true,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.44,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 715,
+    "dimensionsMm": [
+      129.7,
+      77.8,
+      84.5
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q105883413"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "canon-eos-r5",
+  "brand": "canon",
+  "name": "Canon EOS R5",
+  "shortName": "EOS R5",
+  "aliases": [
+    "EOS R5"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2020-07-09",
+  "launchPriceUsd": 3899,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "canon-eos-r5-mark-ii",
+  "rivals": [
+    "sony-a7r-iv",
+    "nikon-z7-ii",
+    "sony-a7r-v",
+    "nikon-z8"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 45,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 8,
+    "burstMechFps": 12,
+    "burstElecFps": 20,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 1053,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 738,
+    "dimensionsMm": [
+      138.5,
+      97.5,
+      88
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B + SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q85750498"
+}

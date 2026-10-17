@@ -1,0 +1,71 @@
+{
+  "slug": "canon-eos-r10",
+  "brand": "canon",
+  "name": "Canon EOS R10",
+  "shortName": "EOS R10",
+  "aliases": [
+    "EOS R10"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2022-05-24",
+  "launchPriceUsd": 979.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a6400",
+    "nikon-z50-ii",
+    "fujifilm-x-t30-ii",
+    "nikon-z50"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 15,
+    "burstElecFps": 23,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 651,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 429,
+    "dimensionsMm": [
+      122.5,
+      87.8,
+      83.4
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q112176953"
+}

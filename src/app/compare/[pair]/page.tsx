@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
 import CompareTable from "@/components/CompareTable";
-import { comparePairs, offersFor, pairSlug, parsePairSlug } from "@/lib/catalog";
+import { comparePairs, isIndexedPair, offersFor, pairSlug, parsePairSlug } from "@/lib/catalog";
 import { centsToUsd } from "@/lib/format";
 import { breadcrumb, ldJson } from "@/lib/jsonld";
 import { lowest } from "@/lib/offers";
@@ -23,6 +23,7 @@ export function generateMetadata({ params }: { params: { pair: string } }): Meta
     title: `${a.name} vs ${b.name}: specs and prices compared`,
     description: `${a.name} (${a.specs.megapixels} MP ${sensorLabel(a.specs.sensorFormat)}) against ${b.name} (${b.specs.megapixels} MP ${sensorLabel(b.specs.sensorFormat)}): every spec side by side and today's lowest new and used prices.`,
     alternates: { canonical: `/compare/${pairSlug(a, b)}` },
+    ...(isIndexedPair(a, b) ? {} : { robots: { index: false, follow: true } }),
   };
 }
 

@@ -1,0 +1,75 @@
+{
+  "slug": "sony-a6000",
+  "brand": "sony",
+  "name": "Sony α6000",
+  "shortName": "α6000",
+  "aliases": [
+    "a6000",
+    "Alpha 6000",
+    "Alpha a6000",
+    "α6000"
+  ],
+  "modelCodes": [
+    "ILCE-6000"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2014-02-12",
+  "launchPriceUsd": 649,
+  "status": "current",
+  "predecessor": null,
+  "successor": "sony-a6100",
+  "rivals": [
+    "canon-eos-rebel-t7",
+    "nikon-d3500",
+    "canon-eos-m50-mark-ii",
+    "sony-a6100"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.3,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 179,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 344,
+    "dimensionsMm": [
+      120,
+      66.9,
+      45.1
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Pro Duo",
+    "batteryShotsCipa": 360,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "keepReason": "Still sold new in 2026 and one of the best-selling used bodies.",
+  "wikidata": "Q15726427"
+}

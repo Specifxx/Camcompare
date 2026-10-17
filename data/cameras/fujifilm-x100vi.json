@@ -1,0 +1,81 @@
+{
+  "slug": "fujifilm-x100vi",
+  "brand": "fujifilm",
+  "name": "Fujifilm X100VI",
+  "shortName": "X100VI",
+  "aliases": [
+    "X100VI",
+    "X100 VI",
+    "X-100VI"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2024-02-20",
+  "launchPriceUsd": 1599,
+  "status": "current",
+  "predecessor": "fujifilm-x100v",
+  "successor": null,
+  "rivals": [
+    "ricoh-gr-iiix",
+    "ricoh-gr-iv",
+    "leica-q3",
+    "fujifilm-x-e5"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      35
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS 5 HR",
+    "megapixels": 40.2,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": true,
+    "ibisStops": 6,
+    "burstMechFps": 11,
+    "burstElecFps": 20,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 180000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "vehicle",
+      "aircraft",
+      "train"
+    ],
+    "videoMaxRes": "6.2K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "hybrid",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 521,
+    "dimensionsMm": [
+      128,
+      74.8,
+      55.3
+    ],
+    "weatherSealed": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 320,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q125698831"
+}

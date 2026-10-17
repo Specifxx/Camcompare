@@ -51,3 +51,49 @@ headline. Spec comparison supports them.
 camera spec database exists. The first catalog was drafted from the makers'
 published specs and cross-checked against Wikidata
 (`npm run wikidata:crosscheck`). Unknown values are `null`, shown as a dash.
+
+## 2026-10-17: First catalog, how it was checked
+
+121 bodies across 10 makers. Most values come from the makers' own spec
+pages (Nikon, Fujifilm, Ricoh, OM System, Sigma, Hasselblad, regional Canon
+pages), with DPReview and press launch coverage for dates and prices.
+Anything sources disagreed on is `null`.
+
+Conventions the data follows. Change them only together with the data.
+
+- `burstElecFps`: the fastest full-resolution electronic rate, crop modes
+  included (Fujifilm's 1.29x figures), but not reduced-resolution JPEG modes
+  (Nikon's C30/C60/C120).
+- `video10bit`: internal recording only. 10-bit over HDMI alone is `false`.
+- `afSubjects`: the maker's own categories. Canon's "vehicle" covers trains
+  and planes, so it isn't expanded.
+- `afPoints` for Canon mirrorless is the AF zone count. The compare table
+  never ranks AF points, because makers count them differently.
+- `batteryShotsCipa` is the rear-screen figure. DSLRs are rated through the
+  viewfinder, so theirs are `null`.
+- `launchPriceUsd` is body-only. A camera sold in the US only as a kit
+  (D3500, Rebel T7, G100) gets `null`.
+
+`npm run wikidata:crosscheck` linked 108 cameras and flagged 14
+disagreements, all reviewed on this date:
+
+- 10 are Wikidata quoting body-only weight (ours includes battery and card);
+- the R5's "February 2020" was its development announcement;
+- the Sigma BF and ZV-1 II Wikidata dates are wrong;
+- the a7C II and a7CR Wikidata weights are wrong.
+
+None changed the catalog.
+
+Thumbnails: 110 of 121 cameras have a checked Commons photo. Two automatic
+picks were wrong and were rejected:
+
+- a landscape photo whose file name was a keyword dump including "rx100 vii";
+- a photo of two different cameras.
+
+The file-name filter now refuses both patterns. Wikidata also folds the Lumix
+S5IIX into the S5II item, so `linkAll` now gives a shared item only to the
+camera whose name is that item's label.
+
+**One-sided rival pairs are noindex.** 275 rival pairs have a compare page,
+but only the 120 where both cameras name each other are indexed and in the
+sitemap. The rest keep their page for visitors, with noindex.

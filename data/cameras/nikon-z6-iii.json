@@ -1,0 +1,81 @@
+{
+  "slug": "nikon-z6-iii",
+  "brand": "nikon",
+  "name": "Nikon Z6III",
+  "shortName": "Z6III",
+  "aliases": [
+    "Z6 III",
+    "Z6III",
+    "Z 6III",
+    "Z 6 III",
+    "Z6 Mark III"
+  ],
+  "modelCodes": [],
+  "gtins": [
+    "018208018901"
+  ],
+  "type": "mirrorless",
+  "announced": "2024-06-17",
+  "launchPriceUsd": 2499,
+  "status": "current",
+  "predecessor": "nikon-z6-ii",
+  "successor": null,
+  "rivals": [
+    "sony-a7-iv",
+    "sony-a7-v",
+    "canon-eos-r6-mark-ii",
+    "canon-eos-r6-mark-iii",
+    "panasonic-lumix-s5-iix"
+  ],
+  "mount": "nikon-z",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Partially stacked CMOS",
+    "megapixels": 24.5,
+    "isoMin": 100,
+    "isoMax": 64000,
+    "ibis": true,
+    "ibisStops": 8,
+    "burstMechFps": 14,
+    "burstElecFps": 20,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 273,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "vehicle",
+      "aircraft",
+      "train"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 760,
+    "dimensionsMm": [
+      138.5,
+      101.5,
+      74
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B / XQD + SD UHS-II",
+    "batteryShotsCipa": 390,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q126959969"
+}

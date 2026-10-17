@@ -1,0 +1,72 @@
+{
+  "slug": "leica-q2",
+  "brand": "leica",
+  "name": "Leica Q2",
+  "shortName": "Q2",
+  "aliases": [
+    "Leica Q2",
+    "Leica Q 2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-03-07",
+  "launchPriceUsd": 4995,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "leica-q3",
+  "rivals": [
+    "leica-q3",
+    "sony-a7cr",
+    "fujifilm-x100v"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/1.7"
+  },
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 47.3,
+    "isoMin": 50,
+    "isoMax": 50000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": 20,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 40000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.68,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 734,
+    "dimensionsMm": [
+      130,
+      80,
+      91.9
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q65054932"
+}

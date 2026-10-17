@@ -1,0 +1,79 @@
+{
+  "slug": "panasonic-lumix-s1-ii",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix S1 II",
+  "shortName": "Lumix S1 II",
+  "aliases": [
+    "Lumix S1 II",
+    "Lumix S1II",
+    "S1II",
+    "S1 II",
+    "S1 Mark II",
+    "Lumix S1 Mark II",
+    "Panasonic S1 II"
+  ],
+  "modelCodes": [
+    "DC-S1M2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2025-05-13",
+  "launchPriceUsd": 3199,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7-v",
+    "canon-eos-r6-mark-iii",
+    "nikon-z6-iii",
+    "panasonic-lumix-s5-iix"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Partially stacked CMOS",
+    "megapixels": 24.1,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 8,
+    "burstMechFps": 10,
+    "burstElecFps": 70,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 779,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.84,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 800,
+    "dimensionsMm": [
+      134.3,
+      102.3,
+      91.8
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B + SD UHS-II",
+    "batteryShotsCipa": 350,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q139854486"
+}

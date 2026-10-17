@@ -35,9 +35,10 @@ deploy (`vercel.json`).
 - Cameras announced before `CATALOG_FLOOR_YEAR` (2016) need a `keepReason`.
 - **Every published camera has a thumbnail and a credit.** A camera without
   them is unpublished, not shown with a placeholder (`docs/images.md`).
-- `rivals` decides which `/compare/<a>-vs-<b>` pages exist and are indexed.
-  Only list cameras buyers really cross-shop. Don't generate every pair:
-  that is scaled content.
+- `rivals` decides which `/compare/<a>-vs-<b>` pages exist. Only list
+  cameras buyers really cross-shop. A pair is indexed only when both cameras
+  name each other (`isIndexedPair`). Don't generate every pair: that is
+  scaled content.
 - After editing the catalog, run `npm run catalog:check`. It also runs first
   in `npm run build`.
 

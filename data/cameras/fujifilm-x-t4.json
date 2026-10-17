@@ -1,0 +1,71 @@
+{
+  "slug": "fujifilm-x-t4",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-T4",
+  "shortName": "X-T4",
+  "aliases": [
+    "X-T4",
+    "XT4",
+    "X T4"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2020-02-26",
+  "launchPriceUsd": 1699,
+  "status": "discontinued",
+  "predecessor": "fujifilm-x-t3",
+  "successor": "fujifilm-x-t5",
+  "rivals": [
+    "sony-a6600",
+    "canon-eos-r7",
+    "panasonic-lumix-gh5",
+    "fujifilm-x-s10"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS 4",
+    "megapixels": 26.1,
+    "isoMin": 160,
+    "isoMax": 12800,
+    "ibis": true,
+    "ibisStops": 6.5,
+    "burstMechFps": 15,
+    "burstElecFps": 30,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 607,
+    "dimensionsMm": [
+      134.6,
+      92.8,
+      63.8
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 500,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q92415719"
+}

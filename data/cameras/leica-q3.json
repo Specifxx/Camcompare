@@ -1,0 +1,74 @@
+{
+  "slug": "leica-q3",
+  "brand": "leica",
+  "name": "Leica Q3",
+  "shortName": "Q3",
+  "aliases": [
+    "Leica Q3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2023-05-25",
+  "launchPriceUsd": 5995,
+  "status": "current",
+  "predecessor": "leica-q2",
+  "successor": null,
+  "rivals": [
+    "leica-q3-43",
+    "fujifilm-x100vi",
+    "sony-a7cr",
+    "leica-m11"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/1.7"
+  },
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 60.3,
+    "isoMin": 50,
+    "isoMax": 100000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 15,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.84,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 743,
+    "dimensionsMm": [
+      130,
+      80.3,
+      92.6
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 350,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q124408765"
+}

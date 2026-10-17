@@ -1,0 +1,74 @@
+{
+  "slug": "ricoh-gr-iii",
+  "brand": "ricoh",
+  "name": "Ricoh GR III",
+  "shortName": "GR III",
+  "aliases": [
+    "GR III",
+    "GRIII",
+    "GR 3",
+    "GR3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-02-21",
+  "launchPriceUsd": 899.95,
+  "status": "current",
+  "predecessor": null,
+  "successor": "ricoh-gr-iv",
+  "rivals": [
+    "fujifilm-x100v",
+    "ricoh-gr-iiix",
+    "canon-powershot-g7-x-mark-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 102400,
+    "ibis": true,
+    "ibisStops": 4,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.037,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 257,
+    "dimensionsMm": [
+      109.4,
+      61.9,
+      33.2
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I + 2GB internal",
+    "batteryShotsCipa": 200,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q123224058"
+}

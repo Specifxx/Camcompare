@@ -45,6 +45,8 @@ const BRAND_WORDS: Record<string, string[]> = {
 // Listings that are not the camera itself. Checked on the lowercased title.
 const NOT_A_CAMERA =
   /\b(battery|batteries|charger|grip|cage|strap|case|bag|protector|skin|decal|cover|eyecup|eye cup|cap|hood|filter|remote|cable|adapter|bracket|plate|hot ?shoe|microphone|gimbal|tripod|speedlite|flash unit|memory card|sd card|cfexpress card|manual|box only|empty box|dummy|replacement|repair|for parts|not working|broken|parts only|as[- ]is|shutter unit|mainboard|motherboard|lcd screen|sensor cleaning|rental|lens only|teleconverter|extension tube|viewfinder only|evf only)\b/;
+// Film bodies share names with digital ones (Olympus OM-1, Canon EOS 5).
+const FILM = /\b(film|35mm slr|slr film|half[- ]frame)\b/;
 // "for Sony a7 IV", "compatible with Canon R6": accessory phrasing.
 const FOR_PHRASE = /\b(for|fits|compatible with)\s+(the\s+)?(sony|canon|nikon|fuji|fujifilm|panasonic|lumix|olympus|om system|leica|ricoh|pentax|sigma|hasselblad)\b/;
 // A zoom or prime named next to an interchangeable-lens body means a kit.
@@ -87,6 +89,7 @@ export function matchListing(listing: Listing, index: CatalogIndex): MatchResult
   const lower = listing.title.toLowerCase();
   if (NOT_A_CAMERA.test(lower)) return { camera: null, reason: "accessory/part" };
   if (FOR_PHRASE.test(lower)) return { camera: null, reason: "accessory phrasing" };
+  if (FILM.test(lower)) return { camera: null, reason: "film camera" };
 
   const kitFor = (c: Camera) => c.mount !== null && KIT.test(lower) && !BODY_ONLY.test(lower);
 

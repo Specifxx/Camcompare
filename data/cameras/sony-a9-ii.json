@@ -1,0 +1,77 @@
+{
+  "slug": "sony-a9-ii",
+  "brand": "sony",
+  "name": "Sony α9 II",
+  "shortName": "α9 II",
+  "aliases": [
+    "a9 II",
+    "a9II",
+    "Alpha 9 II",
+    "Alpha a9 II",
+    "A9M2",
+    "α9 II"
+  ],
+  "modelCodes": [
+    "ILCE-9M2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-10-03",
+  "launchPriceUsd": 4499,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "sony-a9-iii",
+  "rivals": [
+    "canon-eos-1d-x-mark-iii",
+    "canon-eos-r3",
+    "nikon-z9",
+    "sony-a1"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 10,
+    "burstElecFps": 20,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 693,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.44,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 678,
+    "dimensionsMm": [
+      128.9,
+      96.4,
+      77.5
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 690,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q97279440"
+}

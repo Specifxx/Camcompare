@@ -1,0 +1,71 @@
+{
+  "slug": "nikon-z7",
+  "brand": "nikon",
+  "name": "Nikon Z7",
+  "shortName": "Z7",
+  "aliases": [
+    "Z7",
+    "Z 7"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2018-08-23",
+  "launchPriceUsd": 3399,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "nikon-z7-ii",
+  "rivals": [
+    "sony-a7r-iii",
+    "sony-a7r-iv",
+    "canon-eos-r",
+    "nikon-d850"
+  ],
+  "mount": "nikon-z",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 45.7,
+    "isoMin": 64,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 9,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 493,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 675,
+    "dimensionsMm": [
+      134,
+      100.5,
+      67.5
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "XQD / CFexpress B",
+    "batteryShotsCipa": 400,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q56239873"
+}

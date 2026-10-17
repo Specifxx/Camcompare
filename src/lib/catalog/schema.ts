@@ -16,6 +16,7 @@ export const SENSOR_FORMATS = [
   "aps-h",
   "aps-c",
   "micro-four-thirds",
+  "1.4-inch",
   "1-inch",
   "1/1.3-inch",
   "1/2.3-inch",

@@ -54,9 +54,9 @@ export function rivalsOf(c: Camera): Camera[] {
 }
 
 /**
- * The comparisons that get their own indexed page: every rival pair named in
- * the catalog, once, in slug order. Only pairs a buyer genuinely cross-shops —
- * a page for every possible pair is the "scaled content" Google demotes.
+ * The comparisons that get their own page: every rival pair named in the
+ * catalog, once, in slug order. Never every possible pair — that is the
+ * "scaled content" Google demotes.
  */
 export function comparePairs(): [Camera, Camera][] {
   const seen = new Set<string>();
@@ -89,3 +89,11 @@ export function parsePairSlug(s: string): [Camera, Camera] | null {
 export function brandName(slug: string) {
   return brand(slug)?.name ?? slug;
 }
+
+/**
+ * A pair is indexed (sitemap, no noindex) only when BOTH cameras name each
+ * other as rivals: the strongest cross-shops. One-sided pairs still get a page
+ * for visitors, marked noindex. RiftCompare's lesson: publish fewer pages.
+ */
+export const isIndexedPair = (a: Camera, b: Camera) => a.rivals.includes(b.slug) && b.rivals.includes(a.slug);
+export const indexedPairs = () => comparePairs().filter(([a, b]) => isIndexedPair(a, b));

@@ -1,0 +1,71 @@
+{
+  "slug": "canon-eos-r3",
+  "brand": "canon",
+  "name": "Canon EOS R3",
+  "shortName": "EOS R3",
+  "aliases": [
+    "EOS R3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2021-09-14",
+  "launchPriceUsd": 5999,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a9-iii",
+    "nikon-z9",
+    "sony-a9-ii",
+    "sony-a1"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked BSI CMOS",
+    "megapixels": 24.1,
+    "isoMin": 100,
+    "isoMax": 102400,
+    "ibis": true,
+    "ibisStops": 8,
+    "burstMechFps": 12,
+    "burstElecFps": 30,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 64000,
+    "afPoints": 1053,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 4.15,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 1015,
+    "dimensionsMm": [
+      150,
+      142.6,
+      87.2
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B + SD UHS-II",
+    "batteryShotsCipa": 860,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q106963109"
+}

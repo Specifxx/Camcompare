@@ -85,26 +85,54 @@ const MAKER_WORD: Record<string, RegExp> = {
 };
 
 /**
- * The Wikidata item for a catalog camera: an explicit `wikidata` id wins;
- * otherwise the item whose label, alt label or Exif model equals one of our
- * names once both are compacted, from the same maker. Only an UNAMBIGUOUS
- * match is returned.
+ * The Wikidata item for a catalog camera: an explicit `wikidata` id wins.
+ * Otherwise the item from the same maker whose label, alt label or Exif
+ * model equals one of our names once both are compacted. Wikidata holds
+ * thousands of phone and point-and-shoot stubs ("QMobile Noir Z9", "Ricoh GR
+ * Digital III" alias "GR 3"), so candidates are ranked: the label equal to
+ * our full name, then any label, then a brand-stripped or Exif match. Only an
+ * unambiguous best match is returned.
  */
 export function linkCamera(camera: Camera, items: WikidataCamera[]): WikidataCamera | null {
   if (camera.wikidata) return items.find((i) => i.qid === camera.wikidata) ?? null;
   const ours = new Set([camera.name, ...camera.aliases, ...camera.modelCodes].map(compact));
   const brandName = compact(camera.brand === "om-system" ? "olympus" : camera.brand);
-  const stripBrand = (s: string) => s.replace(new RegExp(`^(${brandName}|omsystem|omdigital|pentax|fujifilm|fuji|lumix|panasonic)+`), "");
-  for (const n of [...ours]) ours.add(stripBrand(n));
+  const stripBrand = (s: string) => s.replace(new RegExp(`^(${brandName}|omsystem|omdigital|olympus|pentax|ricoh|fujifilm|fuji|lumix|panasonic|canon|nikon|sony|leica|sigma|hasselblad)+`), "");
+  const oursStripped = new Set([...ours].map(stripBrand));
+  const full = compact(camera.name);
   const maker = MAKER_WORD[camera.brand];
-  const hits = items.filter((i) => {
-    if (i.maker && maker && !maker.test(i.maker)) return false;
-    return [i.label, ...i.altLabels, ...i.exifModels].some((n) => {
-      const k = compact(n);
-      return ours.has(k) || ours.has(stripBrand(k));
-    });
-  });
-  return hits.length === 1 ? hits[0] : null;
+  const scored = items
+    .filter((i) => (i.maker ? !maker || maker.test(i.maker) : maker?.test(i.label)))
+    .map((i) => {
+      const labels = [i.label, ...i.altLabels].map(compact);
+      const score = compact(i.label) === full ? 3 : labels.some((l) => ours.has(l)) ? 2 : [...labels, ...i.exifModels.map(compact)].some((l) => ours.has(l) || oursStripped.has(stripBrand(l))) ? 1 : 0;
+      return { i, score };
+    })
+    .filter((x) => x.score > 0);
+  const best = Math.max(0, ...scored.map((x) => x.score));
+  const top = scored.filter((x) => x.score === best);
+  return top.length === 1 ? top[0].i : null;
+}
+
+/**
+ * linkCamera for the whole catalog. Wikidata sometimes folds a variant into
+ * its parent (the Lumix S5IIX is an alt label of the S5II item); when two
+ * cameras land on one item, only the one whose name IS the item's label
+ * keeps it.
+ */
+export function linkAll(cameras: Camera[], items: WikidataCamera[]): Map<string, WikidataCamera> {
+  const links = new Map<string, WikidataCamera>();
+  const byQid = new Map<string, Camera[]>();
+  for (const c of cameras) {
+    const w = linkCamera(c, items);
+    if (w) byQid.set(w.qid, [...(byQid.get(w.qid) ?? []), c]);
+  }
+  for (const [qid, cams] of byQid) {
+    const w = items.find((i) => i.qid === qid)!;
+    const keep = cams.length === 1 ? cams : cams.filter((c) => c.wikidata === qid || compact(c.name) === compact(w.label));
+    if (keep.length === 1) links.set(keep[0].slug, w);
+  }
+  return links;
 }
 
 export type CommonsImage = {
@@ -139,3 +167,22 @@ export async function commonsImage(file: string, width = 960): Promise<CommonsIm
     licenseUrl: meta.LicenseUrl?.value ?? null,
   };
 }
+
+/**
+ * Fallback when Wikidata has no photo: search Commons file names. A file only
+ * qualifies if the listing matcher would call its NAME this camera (brand
+ * named, model as whole words, no accessory words), and it is not a sample
+ * shot taken WITH the camera. Results are reviewed by eye before publishing
+ * (scripts/fetch-thumbnails.ts writes a contact sheet).
+ */
+export async function searchCommonsFiles(query: string, limit = 20): Promise<string[]> {
+  const params = new URLSearchParams({ action: "query", list: "search", srnamespace: "6", srsearch: query, srlimit: String(limit), format: "json", formatversion: "2" });
+  const res = await fetch(`${COMMONS_API}?${params}`, { headers: { "User-Agent": USER_AGENT } });
+  if (!res.ok) throw new Error(`Commons search ${res.status}`);
+  const body = (await res.json()) as { query?: { search?: { title: string }[] } };
+  return (body.query?.search ?? []).map((r) => r.title.replace(/^File:/, "")).filter((t) => /\.(jpe?g|png|webp)$/i.test(t));
+}
+
+// Sample photos taken WITH the camera, keyword-dump file names (a church
+// tagged "rx100 vii"), and shots of two cameras together.
+export const SAMPLE_SHOT = /\b(sample|taken|shot with|shot on|example|test ?shot|crop|100 ?%|photographed with|image quality|vs)\b|[;&]| and /i;

@@ -1,0 +1,76 @@
+{
+  "slug": "nikon-z6-ii",
+  "brand": "nikon",
+  "name": "Nikon Z6II",
+  "shortName": "Z6II",
+  "aliases": [
+    "Z6 II",
+    "Z6II",
+    "Z 6II",
+    "Z 6 II",
+    "Z6 Mark II"
+  ],
+  "modelCodes": [],
+  "gtins": [
+    "04960759905901"
+  ],
+  "type": "mirrorless",
+  "announced": "2020-10-14",
+  "launchPriceUsd": 1999,
+  "status": "current",
+  "predecessor": "nikon-z6",
+  "successor": "nikon-z6-iii",
+  "rivals": [
+    "sony-a7-iii",
+    "sony-a7-iv",
+    "canon-eos-r6",
+    "panasonic-lumix-s5"
+  ],
+  "mount": "nikon-z",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 24.5,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 14,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 273,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 705,
+    "dimensionsMm": [
+      134,
+      100.5,
+      69.5
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B / XQD + SD UHS-II",
+    "batteryShotsCipa": 410,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q104864100"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "canon-eos-r7",
+  "brand": "canon",
+  "name": "Canon EOS R7",
+  "shortName": "EOS R7",
+  "aliases": [
+    "EOS R7"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2022-05-24",
+  "launchPriceUsd": 1499,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a6700",
+    "fujifilm-x-t5",
+    "fujifilm-x-h2",
+    "nikon-z50-ii"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 32.5,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 8,
+    "burstMechFps": 15,
+    "burstElecFps": 30,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 651,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 612,
+    "dimensionsMm": [
+      132,
+      90.4,
+      91.7
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q112175477"
+}

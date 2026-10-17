@@ -31,3 +31,13 @@ test("credits point at cameras that exist", () => {
   const slugs = new Set(readCameraFiles().cameras.map((c) => c.slug));
   assert.deepEqual(Object.keys(readCredits()).filter((s) => !slugs.has(s)), []);
 });
+
+test("no two cameras share a photo", () => {
+  const seen = new Map<string, string>();
+  const dupes: string[] = [];
+  for (const [slug, c] of Object.entries(readCredits())) {
+    if (seen.has(c.file)) dupes.push(`${slug} and ${seen.get(c.file)}: ${c.file}`);
+    seen.set(c.file, slug);
+  }
+  assert.deepEqual(dupes, []);
+});

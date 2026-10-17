@@ -1,0 +1,82 @@
+{
+  "slug": "sony-a9-iii",
+  "brand": "sony",
+  "name": "Sony α9 III",
+  "shortName": "α9 III",
+  "aliases": [
+    "a9 III",
+    "a9III",
+    "Alpha 9 III",
+    "Alpha a9 III",
+    "A9M3",
+    "α9 III"
+  ],
+  "modelCodes": [
+    "ILCE-9M3"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-11-07",
+  "launchPriceUsd": 5999,
+  "status": "current",
+  "predecessor": "sony-a9-ii",
+  "successor": null,
+  "rivals": [
+    "canon-eos-r1",
+    "canon-eos-r3",
+    "nikon-z9",
+    "sony-a1-ii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Global shutter stacked CMOS",
+    "megapixels": 24.6,
+    "isoMin": 250,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 8,
+    "burstMechFps": null,
+    "burstElecFps": 120,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 80000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 9.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 702,
+    "dimensionsMm": [
+      136.1,
+      96.9,
+      82.9
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": 530,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q123362476"
+}

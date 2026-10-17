@@ -1,0 +1,76 @@
+{
+  "slug": "hasselblad-x2d-ii-100c",
+  "brand": "hasselblad",
+  "name": "Hasselblad X2D II 100C",
+  "shortName": "X2D II 100C",
+  "aliases": [
+    "Hasselblad X2D II 100C",
+    "X2D II 100C",
+    "X2D II",
+    "X2DII",
+    "X2D Mark II"
+  ],
+  "modelCodes": [],
+  "gtins": [
+    "7392544119274"
+  ],
+  "type": "medium-format",
+  "announced": "2025-08-26",
+  "launchPriceUsd": 7399,
+  "status": "current",
+  "predecessor": "hasselblad-x2d-100c",
+  "successor": null,
+  "rivals": [
+    "fujifilm-gfx100s-ii",
+    "fujifilm-gfx100-ii",
+    "hasselblad-x2d-100c"
+  ],
+  "mount": "hasselblad-xcd",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "medium-format",
+    "sensorType": "BSI CMOS",
+    "megapixels": 100,
+    "isoMin": 50,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 10,
+    "burstMechFps": 3,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 6000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": null,
+    "video4kMaxFps": null,
+    "video10bit": null,
+    "rawVideoInternal": null,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.6,
+    "screenDotsM": 2.36,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 840,
+    "dimensionsMm": [
+      148.5,
+      106,
+      75
+    ],
+    "weatherSealed": null,
+    "cardSlots": 1,
+    "cardTypes": "CFexpress B + 1TB internal SSD",
+    "batteryShotsCipa": 327,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": null,
+    "bluetooth": null
+  },
+  "wikidata": "Q136049027"
+}

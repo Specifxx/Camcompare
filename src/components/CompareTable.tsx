@@ -25,7 +25,7 @@ export default function CompareTable({ cameras }: { cameras: Camera[] }) {
               {cameras.map((c) => (
                 <th key={c.slug} className="p-3 text-left font-normal">
                   <Link href={`/cameras/${c.slug}`} className="block text-fg no-underline hover:no-underline">
-                    <CameraThumb slug={c.slug} alt={c.name} className="mb-2" />
+                    <CameraThumb slug={c.slug} alt={c.name} className="mb-2 max-w-[220px]" />
                     <span className="font-semibold hover:text-accent">{c.name}</span>
                   </Link>
                 </th>

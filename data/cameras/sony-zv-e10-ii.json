@@ -1,0 +1,76 @@
+{
+  "slug": "sony-zv-e10-ii",
+  "brand": "sony",
+  "name": "Sony ZV-E10 II",
+  "shortName": "ZV-E10 II",
+  "aliases": [
+    "ZV-E10 II",
+    "ZV-E10II",
+    "ZVE10 II",
+    "ZV-E10 Mark II"
+  ],
+  "modelCodes": [
+    "ZV-E10M2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2024-07-10",
+  "launchPriceUsd": 999,
+  "status": "current",
+  "predecessor": "sony-zv-e10",
+  "successor": null,
+  "rivals": [
+    "canon-eos-r50-v",
+    "nikon-z30",
+    "fujifilm-x-m5",
+    "canon-eos-r50"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "BSI CMOS",
+    "megapixels": 26,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 11,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 377,
+    "dimensionsMm": [
+      114.8,
+      67.5,
+      54.2
+    ],
+    "weatherSealed": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": null,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q131620297"
+}

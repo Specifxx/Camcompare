@@ -98,7 +98,7 @@ export default function CameraPage({ params }: { params: { slug: string } }) {
                 <p className="price text-xl font-bold text-buy">{n ? centsToUsd(n.priceCents) : "—"}</p>
               </div>
               <div className="card p-3">
-                <p className="text-xs text-subtle">Lowest used</p>
+                <p className="text-xs text-subtle">Lowest used/refurb</p>
                 <p className="price text-xl font-bold">{u ? centsToUsd(u.priceCents) : "—"}</p>
               </div>
             </div>

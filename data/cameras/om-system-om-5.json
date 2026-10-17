@@ -1,0 +1,70 @@
+{
+  "slug": "om-system-om-5",
+  "brand": "om-system",
+  "name": "OM System OM-5",
+  "shortName": "OM-5",
+  "aliases": [
+    "OM-5",
+    "OM5",
+    "OM System OM-5"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2022-10-27",
+  "launchPriceUsd": 1199.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "fujifilm-x-s20",
+    "fujifilm-x-t30-ii",
+    "sony-a6700"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 20.4,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 7.5,
+    "burstMechFps": 10,
+    "burstElecFps": 30,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 121,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 414,
+    "dimensionsMm": [
+      125.3,
+      85.2,
+      49.7
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 310,
+    "usbC": null,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q114900532"
+}

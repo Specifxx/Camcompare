@@ -1,0 +1,69 @@
+{
+  "slug": "canon-eos-rp",
+  "brand": "canon",
+  "name": "Canon EOS RP",
+  "shortName": "EOS RP",
+  "aliases": [
+    "EOS RP"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-02-13",
+  "launchPriceUsd": 1299,
+  "status": "current",
+  "predecessor": null,
+  "successor": "canon-eos-r8",
+  "rivals": [
+    "nikon-z5",
+    "sony-a7c",
+    "panasonic-lumix-s5",
+    "sony-a7-iii"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 26.2,
+    "isoMin": 100,
+    "isoMax": 40000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 143,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 25,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 485,
+    "dimensionsMm": [
+      132.5,
+      85,
+      70
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 250,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q61729446"
+}

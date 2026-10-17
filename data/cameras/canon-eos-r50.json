@@ -1,0 +1,71 @@
+{
+  "slug": "canon-eos-r50",
+  "brand": "canon",
+  "name": "Canon EOS R50",
+  "shortName": "EOS R50",
+  "aliases": [
+    "EOS R50"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-02-08",
+  "launchPriceUsd": 679.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-zv-e10-ii",
+    "nikon-z30",
+    "fujifilm-x-m5",
+    "sony-a6100"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 15,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": 651,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 375,
+    "dimensionsMm": [
+      116.3,
+      85.5,
+      68.8
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q116742920"
+}

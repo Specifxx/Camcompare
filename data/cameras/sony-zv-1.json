@@ -1,0 +1,78 @@
+{
+  "slug": "sony-zv-1",
+  "brand": "sony",
+  "name": "Sony ZV-1",
+  "shortName": "ZV-1",
+  "aliases": [
+    "ZV-1",
+    "ZV1"
+  ],
+  "modelCodes": [
+    "DC-ZV1"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2020-05-26",
+  "launchPriceUsd": 799,
+  "status": "current",
+  "predecessor": null,
+  "successor": "sony-zv-1-ii",
+  "rivals": [
+    "canon-powershot-g7-x-mark-iii",
+    "sony-zv-1-ii",
+    "sony-rx100-vii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      70
+    ],
+    "aperture": "f/1.8-2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 24,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 32000,
+    "afPoints": 315,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 294,
+    "dimensionsMm": [
+      105.5,
+      60,
+      43.5
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": 260,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q107185293"
+}

@@ -45,6 +45,11 @@ test("accessories and parts are refused", () => {
   assert.equal(slug("Sony NP-FZ100 battery for a7 IV"), null);
 });
 
+test("film cameras that share a digital name are refused", () => {
+  assert.equal(slug("Sony a7 IV 35mm film SLR"), null);
+  assert.equal(slug("Fujifilm X100V Digital Camera"), "fujifilm-x100v");
+});
+
 test("the brand must be named for a title match", () => {
   assert.equal(slug("R5 body excellent condition"), null);
 });

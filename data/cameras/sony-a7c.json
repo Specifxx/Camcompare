@@ -1,0 +1,76 @@
+{
+  "slug": "sony-a7c",
+  "brand": "sony",
+  "name": "Sony α7C",
+  "shortName": "α7C",
+  "aliases": [
+    "Sony a7C",
+    "a7C",
+    "Alpha 7C",
+    "Alpha a7C",
+    "α7C"
+  ],
+  "modelCodes": [
+    "ILCE-7C"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2020-09-15",
+  "launchPriceUsd": 1799,
+  "status": "current",
+  "predecessor": null,
+  "successor": "sony-a7c-ii",
+  "rivals": [
+    "nikon-z5",
+    "canon-eos-rp",
+    "panasonic-lumix-s5",
+    "sony-a7-iii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 8000,
+    "afPoints": 693,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 509,
+    "dimensionsMm": [
+      124,
+      71.1,
+      59.7
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 740,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q101247282"
+}

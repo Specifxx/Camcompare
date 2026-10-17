@@ -3,16 +3,33 @@
   "brand": "sony",
   "name": "Sony α7 IV",
   "shortName": "α7 IV",
-  "aliases": ["a7 IV", "a7IV", "a7 4", "Alpha 7 IV", "Alpha a7 IV", "A7M4", "α7 IV"],
-  "modelCodes": ["ILCE-7M4"],
-  "gtins": [],
+  "aliases": [
+    "a7 IV",
+    "a7IV",
+    "a7 4",
+    "Alpha 7 IV",
+    "Alpha a7 IV",
+    "A7M4",
+    "α7 IV"
+  ],
+  "modelCodes": [
+    "ILCE-7M4"
+  ],
+  "gtins": [
+    "0027242923577"
+  ],
   "type": "mirrorless",
   "announced": "2021-10-21",
   "launchPriceUsd": 2499,
   "status": "current",
   "predecessor": "sony-a7-iii",
   "successor": "sony-a7-v",
-  "rivals": ["canon-eos-r6-mark-ii", "nikon-z6-iii", "panasonic-lumix-s5-ii", "nikon-z6-ii"],
+  "rivals": [
+    "canon-eos-r6-mark-ii",
+    "nikon-z6-iii",
+    "panasonic-lumix-s5-ii",
+    "nikon-z6-ii"
+  ],
   "mount": "sony-e",
   "fixedLens": null,
   "specs": {
@@ -28,7 +45,11 @@
     "shutterMaxMech": 8000,
     "shutterMaxElec": 8000,
     "afPoints": 759,
-    "afSubjects": ["human", "animal", "bird"],
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird"
+    ],
     "videoMaxRes": "4K",
     "video4kMaxFps": 60,
     "video10bit": true,
@@ -40,7 +61,11 @@
     "screenType": "fully-articulating",
     "touchscreen": true,
     "weightG": 658,
-    "dimensionsMm": [131.3, 96.4, 79.8],
+    "dimensionsMm": [
+      131.3,
+      96.4,
+      79.8
+    ],
     "weatherSealed": true,
     "cardSlots": 2,
     "cardTypes": "CFexpress A / SD UHS-II + SD UHS-II",
@@ -51,5 +76,6 @@
     "builtInFlash": false,
     "wifi": true,
     "bluetooth": true
-  }
+  },
+  "wikidata": "Q110068968"
 }

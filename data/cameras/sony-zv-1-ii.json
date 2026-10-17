@@ -1,0 +1,80 @@
+{
+  "slug": "sony-zv-1-ii",
+  "brand": "sony",
+  "name": "Sony ZV-1 II",
+  "shortName": "ZV-1 II",
+  "aliases": [
+    "ZV-1 II",
+    "ZV-1II",
+    "ZV1 II",
+    "ZV-1 Mark II"
+  ],
+  "modelCodes": [
+    "ZV-1M2"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2023-05-30",
+  "launchPriceUsd": 899,
+  "status": "current",
+  "predecessor": "sony-zv-1",
+  "successor": null,
+  "rivals": [
+    "canon-powershot-g7-x-mark-iii",
+    "sony-zv-1",
+    "canon-powershot-v1"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      18,
+      50
+    ],
+    "aperture": "f/1.8-4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 24,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 32000,
+    "afPoints": 315,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 292,
+    "dimensionsMm": [
+      105.5,
+      60,
+      46.2
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD / Memory Stick Duo",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q123239870"
+}

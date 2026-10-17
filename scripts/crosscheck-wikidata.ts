@@ -9,7 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { readCameraFiles } from "../src/lib/catalog/load";
-import { fetchWikidataCameras, linkCamera } from "../src/lib/wikidata";
+import { fetchWikidataCameras, linkAll } from "../src/lib/wikidata";
 
 const MOUNT_WORDS: Record<string, RegExp> = {
   "sony-e": /sony e/i,
@@ -22,7 +22,7 @@ const MOUNT_WORDS: Record<string, RegExp> = {
   "fujifilm-g": /fujifilm g|g mount/i,
   "l-mount": /l-mount|l mount|leica l/i,
   "micro-four-thirds": /micro four thirds/i,
-  "pentax-k": /pentax k/i,
+  "pentax-k": /pentax k|^k-mount/i,
   "leica-m": /leica m/i,
   "hasselblad-xcd": /xcd/i,
 };
@@ -33,8 +33,9 @@ async function main() {
   const unlinked: string[] = [];
   const problems: string[] = [];
   let gtinsAdded = 0;
+  const links = linkAll(cameras, items);
   for (const c of cameras) {
-    const w = linkCamera(c, items);
+    const w = links.get(c.slug);
     if (!w) {
       unlinked.push(c.slug);
       continue;
@@ -46,7 +47,8 @@ async function main() {
     if (w.massG && c.specs.weightG && Math.abs(w.massG - c.specs.weightG) / c.specs.weightG > 0.05) {
       problems.push(`${c.slug}: weight ${c.specs.weightG} g, Wikidata ${w.massG} g (${w.qid}; may be body-only)`);
     }
-    if (w.mount && c.mount && MOUNT_WORDS[c.mount] && !MOUNT_WORDS[c.mount].test(w.mount)) {
+    // P2935 "connector" also lists hot shoes and HDMI: only compare lens mounts.
+    if (w.mount && /mount|bayonet/i.test(w.mount) && c.mount && MOUNT_WORDS[c.mount] && !MOUNT_WORDS[c.mount].test(w.mount)) {
       problems.push(`${c.slug}: mount ${c.mount}, Wikidata "${w.mount}" (${w.qid})`);
     }
     if (process.env.WRITE) {

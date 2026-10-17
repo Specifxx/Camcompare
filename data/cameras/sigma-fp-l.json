@@ -1,0 +1,70 @@
+{
+  "slug": "sigma-fp-l",
+  "brand": "sigma",
+  "name": "Sigma fp L",
+  "shortName": "fp L",
+  "aliases": [
+    "Sigma fp L",
+    "Sigma fpL",
+    "Sigma fp-L"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2021-03-30",
+  "launchPriceUsd": 2499,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a7cr",
+    "sony-a7r-iv",
+    "sigma-fp"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 61,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 10,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": true,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.15,
+    "screenDotsM": 2.1,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 427,
+    "dimensionsMm": [
+      112.6,
+      69.9,
+      45.3
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 240,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": null,
+    "bluetooth": null
+  },
+  "wikidata": "Q137874226"
+}

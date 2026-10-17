@@ -1,0 +1,76 @@
+{
+  "slug": "panasonic-lumix-s9",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix S9",
+  "shortName": "Lumix S9",
+  "aliases": [
+    "Lumix S9",
+    "Lumix DC-S9",
+    "Panasonic S9",
+    "Panasonic Lumix S9"
+  ],
+  "modelCodes": [
+    "DC-S9"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2024-05-22",
+  "launchPriceUsd": 1499,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-zv-e1",
+    "sony-a7c-ii",
+    "nikon-zf",
+    "canon-eos-r8"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 6.5,
+    "burstMechFps": null,
+    "burstElecFps": 30,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.84,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 486,
+    "dimensionsMm": [
+      126,
+      73.9,
+      46.7
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 470,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q126114965"
+}

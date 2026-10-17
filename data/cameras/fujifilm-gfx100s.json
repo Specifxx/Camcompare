@@ -1,0 +1,71 @@
+{
+  "slug": "fujifilm-gfx100s",
+  "brand": "fujifilm",
+  "name": "Fujifilm GFX100S",
+  "shortName": "GFX100S",
+  "aliases": [
+    "GFX100S",
+    "GFX 100S",
+    "GFX-100S"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "medium-format",
+  "announced": "2021-01-27",
+  "launchPriceUsd": 5999,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-gfx100s-ii",
+  "rivals": [
+    "hasselblad-x2d-100c",
+    "sony-a7r-v",
+    "canon-eos-r5",
+    "fujifilm-gfx50s-ii"
+  ],
+  "mount": "fujifilm-g",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "medium-format",
+    "sensorType": "BSI CMOS",
+    "megapixels": 102,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": true,
+    "ibisStops": 6,
+    "burstMechFps": 5,
+    "burstElecFps": 2.9,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.36,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 900,
+    "dimensionsMm": [
+      150,
+      104.2,
+      87.2
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 460,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q105102556"
+}

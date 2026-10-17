@@ -1,0 +1,75 @@
+{
+  "slug": "sony-a6400",
+  "brand": "sony",
+  "name": "Sony α6400",
+  "shortName": "α6400",
+  "aliases": [
+    "a6400",
+    "Alpha 6400",
+    "Alpha a6400",
+    "α6400"
+  ],
+  "modelCodes": [
+    "ILCE-6400"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-01-15",
+  "launchPriceUsd": 899,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "fujifilm-x-t30-ii",
+    "canon-eos-r10",
+    "nikon-z50",
+    "fujifilm-x-s10"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 425,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 403,
+    "dimensionsMm": [
+      120,
+      66.9,
+      59.7
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 410,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q60772970"
+}

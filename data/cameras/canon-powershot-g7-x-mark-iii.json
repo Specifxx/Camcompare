@@ -1,0 +1,80 @@
+{
+  "slug": "canon-powershot-g7-x-mark-iii",
+  "brand": "canon",
+  "name": "Canon PowerShot G7 X Mark III",
+  "shortName": "PowerShot G7 X Mark III",
+  "aliases": [
+    "PowerShot G7 X Mark III",
+    "G7 X Mark III",
+    "G7X Mark III",
+    "G7 X III",
+    "G7X III",
+    "G7XIII",
+    "G7X Mk III",
+    "G7Xm3",
+    "G7X Mark 3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-07-09",
+  "launchPriceUsd": 749.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-zv-1",
+    "sony-rx100-vii",
+    "sony-zv-1-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      100
+    ],
+    "aperture": "f/1.8-2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked BSI CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 30,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 25600,
+    "afPoints": 31,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 304,
+    "dimensionsMm": [
+      105.5,
+      60.9,
+      41.4
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 235,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q98729248"
+}

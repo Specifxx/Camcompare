@@ -15,7 +15,8 @@ import path from "node:path";
 import sharp from "sharp";
 import { readCameraFiles } from "../src/lib/catalog/load";
 import { readCredits, writeCredits, thumbPath, THUMB_WIDTH, type ImageCredit } from "../src/lib/images";
-import { USER_AGENT, commonsImage, fetchWikidataCameras, linkCamera } from "../src/lib/wikidata";
+import { buildIndex, matchListing } from "../src/lib/matching";
+import { SAMPLE_SHOT, USER_AGENT, commonsImage, fetchWikidataCameras, linkAll, searchCommonsFiles } from "../src/lib/wikidata";
 
 const MAX_BYTES = 150_000;
 
@@ -25,19 +26,31 @@ async function main() {
   const credits = readCredits();
   const items = await fetchWikidataCameras();
   console.log(`${items.length} Wikidata camera items`);
+  const index = buildIndex(cameras);
+  const links = linkAll(cameras, items);
   const missing: string[] = [];
+  const fromSearch: string[] = [];
   for (const camera of cameras) {
     if (only && !only.includes(camera.slug)) continue;
     const out = thumbPath(camera.slug);
     if (!process.env.FORCE && fs.existsSync(out) && credits[camera.slug]) continue;
-    const item = linkCamera(camera, items);
-    if (!item?.image) {
-      missing.push(`${camera.slug}${item ? ` (${item.qid} has no image)` : " (no Wikidata match)"}`);
+    const item = links.get(camera.slug) ?? null;
+    let file = item?.image ?? null;
+    let why = item ? `${item.qid} has no image` : "no Wikidata match";
+    if (!file) {
+      // Fallback: a Commons file whose NAME is unmistakably this camera.
+      const names = await searchCommonsFiles(`${camera.name.replace(/α/g, "a")} camera`);
+      file = names.find((n) => !SAMPLE_SHOT.test(n) && matchListing({ title: n.replace(/\.[a-z]+$/i, "") }, index).camera?.slug === camera.slug) ?? null;
+      if (file) fromSearch.push(camera.slug);
+      else why += ", no Commons file named for it";
+    }
+    if (!file) {
+      missing.push(`${camera.slug} (${why})`);
       continue;
     }
-    const img = await commonsImage(item.image);
+    const img = await commonsImage(file);
     if (!img) {
-      missing.push(`${camera.slug} (${item.image}: not freely licensed)`);
+      missing.push(`${camera.slug} (${file}: not freely licensed)`);
       continue;
     }
     const res = await fetch(img.thumbUrl, { headers: { "User-Agent": USER_AGENT } });
@@ -62,7 +75,7 @@ async function main() {
       author: img.author,
       license: img.license,
       licenseUrl: img.licenseUrl,
-      wikidata: item.qid,
+      wikidata: item?.qid ?? null,
       width: meta.width ?? THUMB_WIDTH,
       height: meta.height ?? 0,
     };
@@ -71,6 +84,7 @@ async function main() {
     console.log(`${camera.slug}: ${img.file} (${img.license}, ${Math.round(webp.length / 1024)} KB)`);
     await new Promise((r) => setTimeout(r, 500));
   }
+  if (fromSearch.length) console.log(`\nFound by Commons search (check these by eye): ${fromSearch.join(", ")}`);
   if (missing.length) console.log(`\nNo thumbnail for ${missing.length}:\n  ${missing.join("\n  ")}`);
 }
 

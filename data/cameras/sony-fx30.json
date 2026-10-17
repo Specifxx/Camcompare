@@ -1,0 +1,72 @@
+{
+  "slug": "sony-fx30",
+  "brand": "sony",
+  "name": "Sony FX30",
+  "shortName": "FX30",
+  "aliases": [
+    "Sony FX30",
+    "FX30"
+  ],
+  "modelCodes": [
+    "ILME-FX30"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2022-09-28",
+  "launchPriceUsd": 1799,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-gh6",
+    "panasonic-lumix-gh7",
+    "fujifilm-x-h2s",
+    "sony-a6700"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "BSI CMOS",
+    "megapixels": 26,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.44,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 646,
+    "dimensionsMm": [
+      129.7,
+      77.8,
+      84.5
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q115264767"
+}

@@ -1,0 +1,80 @@
+{
+  "slug": "sony-a6700",
+  "brand": "sony",
+  "name": "Sony α6700",
+  "shortName": "α6700",
+  "aliases": [
+    "a6700",
+    "Alpha 6700",
+    "Alpha a6700",
+    "α6700"
+  ],
+  "modelCodes": [
+    "ILCE-6700"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-07-12",
+  "launchPriceUsd": 1399,
+  "status": "current",
+  "predecessor": "sony-a6600",
+  "successor": null,
+  "rivals": [
+    "fujifilm-x-s20",
+    "canon-eos-r7",
+    "nikon-z50-ii",
+    "fujifilm-x-t5"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "BSI CMOS",
+    "megapixels": 26,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 11,
+    "burstElecFps": 11,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 8000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 493,
+    "dimensionsMm": [
+      122,
+      69,
+      75.1
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 570,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q121091189"
+}

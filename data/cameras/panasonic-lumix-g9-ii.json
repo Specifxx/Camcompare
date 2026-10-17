@@ -1,0 +1,79 @@
+{
+  "slug": "panasonic-lumix-g9-ii",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix G9 II",
+  "shortName": "Lumix G9 II",
+  "aliases": [
+    "Lumix G9 II",
+    "Lumix G9II",
+    "G9II",
+    "G9 II",
+    "G9 Mark II",
+    "Lumix G9 Mark II",
+    "Panasonic G9 II"
+  ],
+  "modelCodes": [
+    "DC-G9M2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-09-12",
+  "launchPriceUsd": 1899,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "om-system-om-1-mark-ii",
+    "fujifilm-x-t5",
+    "canon-eos-r7",
+    "panasonic-lumix-gh7"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 25.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 8,
+    "burstMechFps": 14,
+    "burstElecFps": 75,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 779,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "5.7K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.68,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.84,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 658,
+    "dimensionsMm": [
+      134.3,
+      102.3,
+      90.1
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 390,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q122731398"
+}

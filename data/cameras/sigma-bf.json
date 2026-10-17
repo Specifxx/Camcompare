@@ -1,0 +1,71 @@
+{
+  "slug": "sigma-bf",
+  "brand": "sigma",
+  "name": "Sigma BF",
+  "shortName": "BF",
+  "aliases": [
+    "Sigma BF",
+    "Sigma bf camera"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2025-02-26",
+  "launchPriceUsd": 1999,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-s9",
+    "sony-a7c-ii",
+    "nikon-zf",
+    "sigma-fp"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 24.6,
+    "isoMin": 100,
+    "isoMax": 102400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 8,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 25600,
+    "afPoints": null,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 30,
+    "video10bit": null,
+    "rawVideoInternal": null,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.15,
+    "screenDotsM": 2.1,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 446,
+    "dimensionsMm": [
+      130.1,
+      72.8,
+      36.8
+    ],
+    "weatherSealed": true,
+    "cardSlots": 0,
+    "cardTypes": "230GB internal memory",
+    "batteryShotsCipa": 260,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": null,
+    "bluetooth": null
+  },
+  "wikidata": "Q134462960"
+}

@@ -32,5 +32,5 @@ test("video widths rank 6.2K above 6K above 4K", () => {
 
 test("key differences name the better camera with both values", () => {
   const d = keyDifferences(a, b);
-  assert.ok(d.includes("Alpha: resolution 33 MP, against 24.2 MP on the Bravo."), d.join("\n"));
+  assert.ok(d.includes("Resolution: 33 MP on the Alpha, against 24.2 MP on the Bravo."), d.join("\n"));
 });

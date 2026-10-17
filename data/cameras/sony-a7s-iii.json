@@ -1,0 +1,78 @@
+{
+  "slug": "sony-a7s-iii",
+  "brand": "sony",
+  "name": "Sony α7S III",
+  "shortName": "α7S III",
+  "aliases": [
+    "a7S III",
+    "a7SIII",
+    "a7S 3",
+    "Alpha 7S III",
+    "Alpha a7S III",
+    "A7SM3",
+    "α7S III"
+  ],
+  "modelCodes": [
+    "ILCE-7SM3"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2020-07-28",
+  "launchPriceUsd": 3499,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-fx3",
+    "panasonic-lumix-s5-iix",
+    "canon-eos-r6-mark-ii",
+    "nikon-z6-iii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 12.1,
+    "isoMin": 80,
+    "isoMax": 102400,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 9.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.44,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 699,
+    "dimensionsMm": [
+      128.9,
+      96.9,
+      80.8
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": 600,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q100775896"
+}

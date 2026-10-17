@@ -1,0 +1,73 @@
+{
+  "slug": "nikon-z6",
+  "brand": "nikon",
+  "name": "Nikon Z6",
+  "shortName": "Z6",
+  "aliases": [
+    "Z6",
+    "Z 6"
+  ],
+  "modelCodes": [],
+  "gtins": [
+    "0018208015955"
+  ],
+  "type": "mirrorless",
+  "announced": "2018-08-23",
+  "launchPriceUsd": 1995,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "nikon-z6-ii",
+  "rivals": [
+    "sony-a7-iii",
+    "canon-eos-r",
+    "panasonic-lumix-s5",
+    "nikon-z5"
+  ],
+  "mount": "nikon-z",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 24.5,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 12,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 273,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 675,
+    "dimensionsMm": [
+      134,
+      100.5,
+      67.5
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "XQD / CFexpress B",
+    "batteryShotsCipa": 380,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q56239870"
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "sony-a7-v",
+  "brand": "sony",
+  "name": "Sony α7 V",
+  "shortName": "α7 V",
+  "aliases": [
+    "a7 V",
+    "a7V",
+    "a7 5",
+    "Alpha 7 V",
+    "Alpha a7 V",
+    "A7M5",
+    "α7 V"
+  ],
+  "modelCodes": [
+    "ILCE-7M5"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2025-12-02",
+  "launchPriceUsd": 2899,
+  "status": "current",
+  "predecessor": "sony-a7-iv",
+  "successor": null,
+  "rivals": [
+    "canon-eos-r6-mark-iii",
+    "nikon-z6-iii",
+    "panasonic-lumix-s1-ii",
+    "sony-a7-iv"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Partially stacked CMOS",
+    "megapixels": 33,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 7.5,
+    "burstMechFps": 10,
+    "burstElecFps": 30,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 695,
+    "dimensionsMm": [
+      130.3,
+      96.4,
+      82.4
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 750,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q137191233"
+}

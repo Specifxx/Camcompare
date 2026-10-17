@@ -1,0 +1,77 @@
+{
+  "slug": "sony-a1",
+  "brand": "sony",
+  "name": "Sony α1",
+  "shortName": "α1",
+  "aliases": [
+    "Sony a1",
+    "Sony A1",
+    "Alpha 1",
+    "Alpha a1",
+    "α1"
+  ],
+  "modelCodes": [
+    "ILCE-1"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2021-01-26",
+  "launchPriceUsd": 6499,
+  "status": "current",
+  "predecessor": null,
+  "successor": "sony-a1-ii",
+  "rivals": [
+    "canon-eos-r5",
+    "nikon-z9",
+    "canon-eos-r3",
+    "nikon-z8"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 50.1,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 10,
+    "burstElecFps": 30,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird"
+    ],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 9.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.44,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 737,
+    "dimensionsMm": [
+      128.9,
+      96.9,
+      80.8
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": 530,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q105086737"
+}

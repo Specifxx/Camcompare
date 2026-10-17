@@ -1,0 +1,83 @@
+{
+  "slug": "sony-a7r-v",
+  "brand": "sony",
+  "name": "Sony α7R V",
+  "shortName": "α7R V",
+  "aliases": [
+    "a7R V",
+    "a7RV",
+    "a7R 5",
+    "Alpha 7R V",
+    "Alpha a7R V",
+    "A7RM5",
+    "α7R V"
+  ],
+  "modelCodes": [
+    "ILCE-7RM5"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2022-10-26",
+  "launchPriceUsd": 3899,
+  "status": "current",
+  "predecessor": "sony-a7r-iv",
+  "successor": null,
+  "rivals": [
+    "canon-eos-r5-mark-ii",
+    "nikon-z8",
+    "panasonic-lumix-s1r-ii",
+    "fujifilm-gfx100s-ii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 61,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 8,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 693,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 9.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 723,
+    "dimensionsMm": [
+      131.3,
+      96.9,
+      82.4
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": 530,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q114869951"
+}

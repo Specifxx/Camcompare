@@ -1,0 +1,71 @@
+{
+  "slug": "fujifilm-x-s10",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-S10",
+  "shortName": "X-S10",
+  "aliases": [
+    "X-S10",
+    "XS10",
+    "X S10"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2020-10-15",
+  "launchPriceUsd": 999,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-x-s20",
+  "rivals": [
+    "sony-a6400",
+    "nikon-z50",
+    "canon-eos-m50-mark-ii",
+    "olympus-om-d-e-m10-mark-iv"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS 4",
+    "megapixels": 26.1,
+    "isoMin": 160,
+    "isoMax": 12800,
+    "ibis": true,
+    "ibisStops": 6,
+    "burstMechFps": 8,
+    "burstElecFps": 30,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 465,
+    "dimensionsMm": [
+      126,
+      85.1,
+      65.4
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 325,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q102348262"
+}

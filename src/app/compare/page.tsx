@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CompareTable from "@/components/CompareTable";
 import ComparePicker from "@/components/ComparePicker";
-import { brandName, camera, comparePairs, pairSlug, publishedCameras } from "@/lib/catalog";
+import { brandName, camera, indexedPairs, pairSlug, publishedCameras } from "@/lib/catalog";
 import type { Camera } from "@/lib/catalog/schema";
 
 // Any combination a visitor builds. Not indexed: the indexed comparisons are
@@ -40,7 +40,7 @@ export default function ComparePage({ searchParams }: { searchParams: { c?: stri
         <section>
           <h2 className="h-section mb-3">Popular comparisons</h2>
           <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {comparePairs().slice(0, 24).map(([a, b]) => (
+            {indexedPairs().slice(0, 30).map(([a, b]) => (
               <li key={pairSlug(a, b)}><Link href={`/compare/${pairSlug(a, b)}`}>{a.name} vs {b.name}</Link></li>
             ))}
           </ul>

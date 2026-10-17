@@ -1,0 +1,71 @@
+{
+  "slug": "fujifilm-x-e4",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-E4",
+  "shortName": "X-E4",
+  "aliases": [
+    "X-E4",
+    "XE4",
+    "X E4"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2021-01-27",
+  "launchPriceUsd": 849,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-x-e5",
+  "rivals": [
+    "sony-a6400",
+    "nikon-zfc",
+    "olympus-om-d-e-m10-mark-iv",
+    "fujifilm-x-t30-ii"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS 4",
+    "megapixels": 26.1,
+    "isoMin": 160,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": 30,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 364,
+    "dimensionsMm": [
+      121.3,
+      72.9,
+      32.7
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 460,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q105102586"
+}

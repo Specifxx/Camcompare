@@ -1,0 +1,80 @@
+{
+  "slug": "sony-a7r-iii",
+  "brand": "sony",
+  "name": "Sony α7R III",
+  "shortName": "α7R III",
+  "aliases": [
+    "a7R III",
+    "a7RIII",
+    "a7R 3",
+    "Alpha 7R III",
+    "Alpha a7R III",
+    "A7RM3",
+    "α7R III",
+    "a7R IIIA",
+    "ILCE-7RM3A"
+  ],
+  "modelCodes": [
+    "ILCE-7RM3"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2017-10-25",
+  "launchPriceUsd": 3199,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "sony-a7r-iv",
+  "rivals": [
+    "nikon-z7",
+    "nikon-d850",
+    "canon-eos-5d-mark-iv",
+    "canon-eos-r"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 42.4,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 399,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.44,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 657,
+    "dimensionsMm": [
+      126.9,
+      95.6,
+      73.7
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-I",
+    "batteryShotsCipa": 650,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q42421205"
+}

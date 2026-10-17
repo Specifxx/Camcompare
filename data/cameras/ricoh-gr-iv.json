@@ -1,0 +1,74 @@
+{
+  "slug": "ricoh-gr-iv",
+  "brand": "ricoh",
+  "name": "Ricoh GR IV",
+  "shortName": "GR IV",
+  "aliases": [
+    "GR IV",
+    "GRIV",
+    "GR 4",
+    "GR4"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2025-08-20",
+  "launchPriceUsd": 1499.95,
+  "status": "current",
+  "predecessor": "ricoh-gr-iii",
+  "successor": null,
+  "rivals": [
+    "fujifilm-x100vi",
+    "ricoh-gr-iiix",
+    "ricoh-gr-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 25.7,
+    "isoMin": 100,
+    "isoMax": 204800,
+    "ibis": true,
+    "ibisStops": 6,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.037,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 262,
+    "dimensionsMm": [
+      109.4,
+      61.1,
+      32.7
+    ],
+    "weatherSealed": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD UHS-I + 53GB internal",
+    "batteryShotsCipa": 250,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q136412497"
+}

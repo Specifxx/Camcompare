@@ -1,0 +1,74 @@
+{
+  "slug": "canon-powershot-v1",
+  "brand": "canon",
+  "name": "Canon PowerShot V1",
+  "shortName": "PowerShot V1",
+  "aliases": [
+    "PowerShot V1"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2025-03-26",
+  "launchPriceUsd": 899.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-zv-1-ii",
+    "canon-powershot-g7-x-mark-iii",
+    "sony-rx100-vii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      16,
+      50
+    ],
+    "aperture": "f/2.8-4.5"
+  },
+  "specs": {
+    "sensorFormat": "1.4-inch",
+    "sensorType": "CMOS",
+    "megapixels": 22.3,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 15,
+    "burstElecFps": 30,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": null,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 426,
+    "dimensionsMm": [
+      118.3,
+      68.0,
+      52.5
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": null,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

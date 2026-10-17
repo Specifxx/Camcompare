@@ -1,0 +1,79 @@
+{
+  "slug": "sony-zv-e1",
+  "brand": "sony",
+  "name": "Sony ZV-E1",
+  "shortName": "ZV-E1",
+  "aliases": [
+    "ZV-E1",
+    "ZVE1",
+    "ZV E1"
+  ],
+  "modelCodes": [
+    "ILCZV-E1"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-03-29",
+  "launchPriceUsd": 2199,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-s9",
+    "sony-fx3",
+    "sony-a7c-ii",
+    "canon-eos-r8"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 12.1,
+    "isoMin": 80,
+    "isoMax": 102400,
+    "ibis": true,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 10,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 483,
+    "dimensionsMm": [
+      121,
+      71.9,
+      54.3
+    ],
+    "weatherSealed": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 570,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q119877326"
+}

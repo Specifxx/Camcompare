@@ -1,15 +1,20 @@
 import Link from "next/link";
 import CameraCard from "@/components/CameraCard";
 import CameraThumb from "@/components/CameraThumb";
-import { brands, comparePairs, pairSlug, publishedCameras } from "@/lib/catalog";
+import { brands, indexedPairs, pairSlug, publishedCameras } from "@/lib/catalog";
 
+import type { Camera } from "@/lib/catalog/schema";
 import { summarize } from "@/lib/summary";
 
 
 export default function Home() {
   const cameras = publishedCameras();
   const latest = cameras.slice(0, 8).map(summarize);
-  const pairs = comparePairs().slice(0, 9);
+  // Pairs with the newest camera first, so the homepage shows current cross-shops.
+  const newest = ([a, b]: [Camera, Camera]) => (a.announced > b.announced ? a.announced : b.announced);
+  const pairs = indexedPairs()
+    .sort((p, q) => newest(q).localeCompare(newest(p)))
+    .slice(0, 9);
   const live = brands().filter((b) => cameras.some((c) => c.brand === b.slug));
   return (
     <div className="flex flex-col gap-10">

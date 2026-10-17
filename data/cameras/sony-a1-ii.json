@@ -1,0 +1,82 @@
+{
+  "slug": "sony-a1-ii",
+  "brand": "sony",
+  "name": "Sony α1 II",
+  "shortName": "α1 II",
+  "aliases": [
+    "a1 II",
+    "a1II",
+    "Alpha 1 II",
+    "Alpha a1 II",
+    "A1M2",
+    "α1 II"
+  ],
+  "modelCodes": [
+    "ILCE-1M2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2024-11-19",
+  "launchPriceUsd": 6499,
+  "status": "current",
+  "predecessor": "sony-a1",
+  "successor": null,
+  "rivals": [
+    "canon-eos-r5-mark-ii",
+    "nikon-z8",
+    "nikon-z9",
+    "canon-eos-r1"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 50.1,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 8.5,
+    "burstMechFps": 10,
+    "burstElecFps": 30,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 9.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 743,
+    "dimensionsMm": [
+      136.1,
+      96.9,
+      82.9
+    ],
+    "weatherSealed": true,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": 520,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q131160191"
+}

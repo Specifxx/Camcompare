@@ -1,0 +1,74 @@
+{
+  "slug": "sony-zv-e10",
+  "brand": "sony",
+  "name": "Sony ZV-E10",
+  "shortName": "ZV-E10",
+  "aliases": [
+    "ZV-E10",
+    "ZVE10",
+    "ZV E10"
+  ],
+  "modelCodes": [
+    "ILCZV-E10"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2021-07-27",
+  "launchPriceUsd": 699,
+  "status": "current",
+  "predecessor": null,
+  "successor": "sony-zv-e10-ii",
+  "rivals": [
+    "canon-eos-r50",
+    "nikon-z30",
+    "panasonic-lumix-g100",
+    "sony-zv-1"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 425,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 343,
+    "dimensionsMm": [
+      115.2,
+      64.2,
+      44.8
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 440,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q119877840"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "sony-a6100",
+  "brand": "sony",
+  "name": "Sony α6100",
+  "shortName": "α6100",
+  "aliases": [
+    "a6100",
+    "Alpha 6100",
+    "Alpha a6100",
+    "α6100"
+  ],
+  "modelCodes": [
+    "ILCE-6100"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-08-28",
+  "launchPriceUsd": 749,
+  "status": "current",
+  "predecessor": "sony-a6000",
+  "successor": null,
+  "rivals": [
+    "canon-eos-r10",
+    "nikon-z50",
+    "fujifilm-x-t30-ii",
+    "canon-eos-m50-mark-ii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 425,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 1.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 396,
+    "dimensionsMm": [
+      120,
+      66.9,
+      59.4
+    ],
+    "weatherSealed": false,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 420,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q99390289"
+}

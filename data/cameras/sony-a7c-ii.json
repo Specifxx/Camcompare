@@ -1,0 +1,82 @@
+{
+  "slug": "sony-a7c-ii",
+  "brand": "sony",
+  "name": "Sony α7C II",
+  "shortName": "α7C II",
+  "aliases": [
+    "a7C II",
+    "a7CII",
+    "Alpha 7C II",
+    "Alpha a7C II",
+    "A7CM2",
+    "α7C II"
+  ],
+  "modelCodes": [
+    "ILCE-7CM2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-08-29",
+  "launchPriceUsd": 2199,
+  "status": "current",
+  "predecessor": "sony-a7c",
+  "successor": null,
+  "rivals": [
+    "nikon-zf",
+    "canon-eos-r8",
+    "panasonic-lumix-s9",
+    "sony-a7-iv"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 33,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 7,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 8000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 514,
+    "dimensionsMm": [
+      124,
+      71.1,
+      63.4
+    ],
+    "weatherSealed": true,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 560,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q123386686"
+}

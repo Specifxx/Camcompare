@@ -11,7 +11,7 @@ const SENSORS: [CameraSummary["sensor"], string][] = [
   ["full-frame", "Full frame"],
   ["aps-c", "APS-C"],
   ["micro-four-thirds", "Micro Four Thirds"],
-  ["1-inch", '1" and smaller'],
+  ["1-inch", '1.4" and smaller'],
 ];
 const TYPES: [CameraSummary["type"], string][] = [
   ["mirrorless", "Mirrorless"],
@@ -29,7 +29,7 @@ const SORTS = {
 
 /** Today's lowest price, else the launch price: what "under $X" filters on. */
 const priceOf = (c: CameraSummary) => (c.lowestNewCents ?? c.lowestUsedCents ?? null) !== null ? (c.lowestNewCents ?? c.lowestUsedCents)! / 100 : c.launchPriceUsd;
-const smallSensor = (s: CameraSummary["sensor"]) => s === "1-inch" || s === "1/1.3-inch" || s === "1/2.3-inch";
+const smallSensor = (s: CameraSummary["sensor"]) => s === "1.4-inch" || s === "1-inch" || s === "1/1.3-inch" || s === "1/2.3-inch";
 
 export default function CameraBrowser({ cameras, brands }: { cameras: CameraSummary[]; brands: { slug: string; name: string }[] }) {
   const [q, setQ] = useState("");
@@ -42,6 +42,7 @@ export default function CameraBrowser({ cameras, brands }: { cameras: CameraSumm
   const [sealed, setSealed] = useState(false);
   const [sort, setSort] = useState<keyof typeof SORTS>("newest");
   const [picked, setPicked] = useState<string[]>([]);
+  const [filtersOpen, setFiltersOpen] = useState(false); // phones only: the sidebar is always open on desktop
 
   const shown = useMemo(() => {
     const needle = q.trim().toLowerCase().replace(/α/g, "a");
@@ -75,29 +76,36 @@ export default function CameraBrowser({ cameras, brands }: { cameras: CameraSumm
   return (
     <div className="grid gap-6 lg:grid-cols-[220px_1fr]">
       <aside className="flex flex-col gap-5">
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search cameras" aria-label="Search cameras" className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm" />
-        <Checks title="Brand" options={brands.map((b) => [b.slug, b.name])} value={brand} set={setBrand} />
-        <Checks title="Sensor" options={SENSORS} value={sensor} set={setSensor} />
-        <Checks title="Type" options={TYPES} value={type} set={setType} />
-        <fieldset className="flex flex-col gap-2 text-sm">
-          <legend className="mb-1 text-xs font-bold uppercase tracking-wide text-subtle">Features</legend>
-          <label className="flex items-center gap-2"><input type="checkbox" checked={ibis} onChange={(e) => setIbis(e.target.checked)} className="h-4 w-4" />In-body stabilisation</label>
-          <label className="flex items-center gap-2"><input type="checkbox" checked={sealed} onChange={(e) => setSealed(e.target.checked)} className="h-4 w-4" />Weather sealed</label>
-        </fieldset>
-        <label className="text-sm">
-          <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-subtle">Budget</span>
-          <select value={maxPrice ?? ""} onChange={(e) => setMaxPrice(e.target.value ? Number(e.target.value) : null)} className="w-full rounded-lg border border-line bg-surface px-2 py-1.5">
-            <option value="">Any price</option>
-            {[500, 800, 1000, 1500, 2000, 3000, 5000].map((p) => <option key={p} value={p}>Under ${p.toLocaleString("en-US")}</option>)}
-          </select>
-        </label>
-        <label className="text-sm">
-          <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-subtle">Announced</span>
-          <select value={fromYear ?? ""} onChange={(e) => setFromYear(e.target.value ? Number(e.target.value) : null)} className="w-full rounded-lg border border-line bg-surface px-2 py-1.5">
-            <option value="">Any year</option>
-            {[2025, 2024, 2023, 2022, 2020, 2018].map((y) => <option key={y} value={y}>{y} or later</option>)}
-          </select>
-        </label>
+        <div className="flex gap-2">
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search cameras" aria-label="Search cameras" className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm" />
+          <button type="button" onClick={() => setFiltersOpen((o) => !o)} aria-expanded={filtersOpen} className="btn-ghost lg:hidden">
+            Filters
+          </button>
+        </div>
+        <div className={`${filtersOpen ? "flex" : "hidden"} flex-col gap-5 lg:flex`}>
+          <Checks title="Brand" options={brands.map((b) => [b.slug, b.name])} value={brand} set={setBrand} />
+          <Checks title="Sensor" options={SENSORS} value={sensor} set={setSensor} />
+          <Checks title="Type" options={TYPES} value={type} set={setType} />
+          <fieldset className="flex flex-col gap-2 text-sm">
+            <legend className="mb-1 text-xs font-bold uppercase tracking-wide text-subtle">Features</legend>
+            <label className="flex items-center gap-2"><input type="checkbox" checked={ibis} onChange={(e) => setIbis(e.target.checked)} className="h-4 w-4" />In-body stabilisation</label>
+            <label className="flex items-center gap-2"><input type="checkbox" checked={sealed} onChange={(e) => setSealed(e.target.checked)} className="h-4 w-4" />Weather sealed</label>
+          </fieldset>
+          <label className="text-sm">
+            <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-subtle">Budget</span>
+            <select value={maxPrice ?? ""} onChange={(e) => setMaxPrice(e.target.value ? Number(e.target.value) : null)} className="w-full rounded-lg border border-line bg-surface px-2 py-1.5">
+              <option value="">Any price</option>
+              {[500, 800, 1000, 1500, 2000, 3000, 5000].map((p) => <option key={p} value={p}>Under ${p.toLocaleString("en-US")}</option>)}
+            </select>
+          </label>
+          <label className="text-sm">
+            <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-subtle">Announced</span>
+            <select value={fromYear ?? ""} onChange={(e) => setFromYear(e.target.value ? Number(e.target.value) : null)} className="w-full rounded-lg border border-line bg-surface px-2 py-1.5">
+              <option value="">Any year</option>
+              {[2025, 2024, 2023, 2022, 2020, 2018].map((y) => <option key={y} value={y}>{y} or later</option>)}
+            </select>
+          </label>
+        </div>
       </aside>
       <section>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2 text-sm">

@@ -1,0 +1,71 @@
+{
+  "slug": "canon-eos-r8",
+  "brand": "canon",
+  "name": "Canon EOS R8",
+  "shortName": "EOS R8",
+  "aliases": [
+    "EOS R8"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2023-02-08",
+  "launchPriceUsd": 1499,
+  "status": "current",
+  "predecessor": "canon-eos-rp",
+  "successor": null,
+  "rivals": [
+    "nikon-z5-ii",
+    "sony-a7c-ii",
+    "panasonic-lumix-s5-ii",
+    "nikon-z6-ii"
+  ],
+  "mount": "canon-rf",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 102400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 40,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 16000,
+    "afPoints": 1053,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 461,
+    "dimensionsMm": [
+      132.5,
+      86.1,
+      70
+    ],
+    "weatherSealed": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q116742776"
+}
