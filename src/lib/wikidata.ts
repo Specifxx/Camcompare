@@ -211,7 +211,9 @@ export async function searchCommonsFiles(query: string, limit = 20): Promise<str
 
 // Sample photos taken WITH the camera, keyword-dump file names (a church
 // tagged "rx100 vii"), and shots of two cameras together.
-export const SAMPLE_SHOT = /\b(sample|taken|shot with|shot on|example|test ?shot|crop|100 ?%|photographed with|image quality|vs)\b|[;&]| and /i;
+// Also street-level captures (Mapillary), cutaways, launch slides and caps,
+// all found among search hits by the 2026-10-17 review.
+export const SAMPLE_SHOT = /\b(sample|taken|shot with|shot on|example|test ?shot|crop|100 ?%|photographed with|image quality|vs|mapillary|cutaway|presentation|cap of|lens cap|bokeh|montage)\b|[;&]| and /i;
 
 // ------------------------------------------------------------- Openverse
 

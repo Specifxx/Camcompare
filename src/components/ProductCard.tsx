@@ -13,10 +13,14 @@ export function subline(p: ProductSummary): string {
   return `${focal} ${p.apertureTele ? `${aperture(p.aperture)}–${p.apertureTele}` : aperture(p.aperture)} · ${year(p.announced)}`;
 }
 
+// No prefetch: a grid holds up to 240 cards, and each prefetch is the whole
+// product page's payload. Outside the US an unpriced product's page is
+// rendered on its first request, so a prefetch would also be an ISR write
+// for a noindex page nobody opened.
 export default function ProductCard({ p, market }: { p: ProductSummary; market: MarketCode }) {
   const now = p.lowestNew ?? p.lowestUsed;
   return (
-    <Link href={marketPath(market, `/${p.kind === "camera" ? "cameras" : "lenses"}/${p.slug}`)} className="card group flex h-full flex-col gap-2 p-3 text-fg no-underline hover:border-accent hover:no-underline">
+    <Link href={marketPath(market, `/${p.kind === "camera" ? "cameras" : "lenses"}/${p.slug}`)} prefetch={false} className="card group flex h-full flex-col gap-2 p-3 text-fg no-underline hover:border-accent hover:no-underline">
       <ProductThumb slug={p.slug} alt={p.name} />
       <div className="flex-1">
         <p className="text-xs font-medium text-subtle">{p.brandName}</p>

@@ -14,19 +14,24 @@ export type Market = {
   short: string; // "UK"
   currency: Currency;
   locale: string; // number and date formatting
-  hreflang: string;
+  hreflang: string[]; // every language-region code this market's pages are for
   prefix: string; // "" for the US, "/uk" …
   flag: string;
 };
 
+/** The countries the EU market serves: its hreflang set, and whose visitors get the EU suggestion. */
+export const EU_COUNTRIES = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"] as const;
+
 export const MARKETS: Record<MarketCode, Market> = {
-  us: { code: "us", name: "United States", short: "US", currency: "USD", locale: "en-US", hreflang: "en-US", prefix: "", flag: "🇺🇸" },
-  uk: { code: "uk", name: "United Kingdom", short: "UK", currency: "GBP", locale: "en-GB", hreflang: "en-GB", prefix: "/uk", flag: "🇬🇧" },
-  // One English-language EU market priced in euros. hreflang "en-IE" is the
-  // English-speaking euro locale; retailers carry their own country.
-  eu: { code: "eu", name: "Europe", short: "EU", currency: "EUR", locale: "en-IE", hreflang: "en-IE", prefix: "/eu", flag: "🇪🇺" },
-  au: { code: "au", name: "Australia", short: "AU", currency: "AUD", locale: "en-AU", hreflang: "en-AU", prefix: "/au", flag: "🇦🇺" },
-  sg: { code: "sg", name: "Singapore", short: "SG", currency: "SGD", locale: "en-SG", hreflang: "en-SG", prefix: "/sg", flag: "🇸🇬" },
+  us: { code: "us", name: "United States", short: "US", currency: "USD", locale: "en-US", hreflang: ["en-US"], prefix: "", flag: "🇺🇸" },
+  uk: { code: "uk", name: "United Kingdom", short: "UK", currency: "GBP", locale: "en-GB", hreflang: ["en-GB"], prefix: "/uk", flag: "🇬🇧" },
+  // One English-language EU market priced in euros; retailers carry their own
+  // country. "en-IE" formats the numbers. hreflang names every EU country:
+  // "en-IE" alone would tell Google the pages are for Ireland, and English
+  // searches from Germany or France would get the US page (x-default).
+  eu: { code: "eu", name: "Europe", short: "EU", currency: "EUR", locale: "en-IE", hreflang: EU_COUNTRIES.map((c) => `en-${c}`), prefix: "/eu", flag: "🇪🇺" },
+  au: { code: "au", name: "Australia", short: "AU", currency: "AUD", locale: "en-AU", hreflang: ["en-AU"], prefix: "/au", flag: "🇦🇺" },
+  sg: { code: "sg", name: "Singapore", short: "SG", currency: "SGD", locale: "en-SG", hreflang: ["en-SG"], prefix: "/sg", flag: "🇸🇬" },
 };
 
 export const DEFAULT_MARKET: MarketCode = "us";
@@ -37,11 +42,16 @@ export const market = (code: MarketCode) => MARKETS[code];
 /** A site path for a market: marketPath("uk", "/cameras/x") → "/uk/cameras/x". */
 export const marketPath = (code: MarketCode, path: string) => `${MARKETS[code].prefix}${path === "/" && MARKETS[code].prefix ? "" : path}`;
 
-/** Whole units in the market's currency, no decimals: "£1,899", "A$2,999". */
+/**
+ * An amount in the market's currency, with cents only when it has them:
+ * "£1,899", "£1,898.99". Never rounded: the page must show what the retailer
+ * charges, and the same figure as the JSON-LD price.
+ */
 export function money(amount: number, currency: Currency, cents = false): string {
   const value = cents ? amount / 100 : amount;
+  const whole = Number.isInteger(Math.round(value * 100) / 100);
   const symbol = { USD: "$", GBP: "£", EUR: "€", AUD: "A$", SGD: "S$" }[currency];
-  return `${symbol}${Math.round(value).toLocaleString("en-US")}`;
+  return `${symbol}${value.toLocaleString("en-US", { minimumFractionDigits: whole ? 0 : 2, maximumFractionDigits: 2 })}`;
 }
 
 // Reference rates (USD base) for SANITY CHECKS ONLY — never to show a

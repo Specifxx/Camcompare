@@ -64,7 +64,7 @@ export const shopifySource = (retailerKey: string): PriceSource => ({
             if (!m.product) continue;
             const cond = shopifyCondition(p, v.title);
             const price = toMinor(v.price);
-            if (!price || !plausiblePrice(m.product, cond, price / 100, currency)) continue;
+            if (!price || !plausiblePrice(m.product, cond, price / 100, currency, m.via)) continue;
             offers.push({
               product: m.product.slug,
               kind: m.kind,

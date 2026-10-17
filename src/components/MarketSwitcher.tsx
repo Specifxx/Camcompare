@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import { MARKET_CODES, MARKETS, type MarketCode } from "@/lib/markets";
-import { rememberMarket, switchMarketPath } from "@/lib/market-client";
+import { isGlobalPath, rememberMarket, switchMarketPath } from "@/lib/market-client";
 
 export default function MarketSwitcher({ current }: { current: MarketCode }) {
   const router = useRouter();
@@ -14,7 +14,9 @@ export default function MarketSwitcher({ current }: { current: MarketCode }) {
         onChange={(e) => {
           const to = e.target.value as MarketCode;
           rememberMarket(to);
-          router.push(switchMarketPath(pathname, to));
+          // A global page has no other-market URL: remembering is the switch
+          // (the header and price row follow it). The query (?c=, ?mount=) stays.
+          if (!isGlobalPath(pathname)) router.push(switchMarketPath(pathname, to) + window.location.search);
         }}
         className="rounded-lg border border-line bg-surface py-1.5 pl-2 pr-1 text-sm"
       >

@@ -3,7 +3,7 @@
   "brand": "samyang",
   "name": "Samyang AF 85mm F1.4 FE",
   "shortName": "AF 85mm F1.4 FE",
-  "aliases": ["AF 85mm F1.4 FE", "85mm F1.4 FE", "AF 85mm F1.4 Sony FE", "AF 85mm F1.4 RF"],
+  "aliases": ["AF 85mm F1.4 FE", "85mm F1.4 FE", "AF 85mm F1.4 Sony FE"],
   "modelCodes": ["IO85AF-E"],
   "gtins": [],
   "announced": "2019-03-15",
@@ -12,7 +12,7 @@
   "predecessor": null,
   "successor": null,
   "rivals": [],
-  "mounts": ["sony-e", "canon-rf"],
+  "mounts": ["sony-e"],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

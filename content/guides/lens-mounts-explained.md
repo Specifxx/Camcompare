@@ -67,7 +67,7 @@ Leica introduced the mount in 2014. In 2018 Leica, Panasonic and Sigma formed th
 
 ### Micro Four Thirds
 
-Olympus and Panasonic launched Micro Four Thirds in 2008. It is a shared standard, so Panasonic and OM System (the former Olympus camera business) lenses fit each other's bodies. The crop factor is 2, so telephotos are small for their reach. Combined lens-and-body stabilisation needs lens and body from the same brand.
+Olympus and Panasonic launched Micro Four Thirds in 2008. It is a shared standard, so Panasonic and OM System (the former Olympus camera business) lenses fit each other's bodies. The crop factor is 2, so telephotos are small for their reach. Combined lens-and-body stabilisation needs a supported lens and body from the same brand.
 
 ## The legacy DSLR mounts
 
@@ -97,7 +97,7 @@ Pentax introduced K-mount in 1975, and Ricoh still sells K-mount DSLRs under the
 An adapter is mostly a precise spacer, which gives one firm rule:
 
 - **Long to short works.** A lens goes on a body with a shorter flange distance if the adapter fills the difference. EF lenses (44 mm) go on RF bodies (20 mm) through a 24 mm adapter.
-- **Short to long does not.** The reverse needs glass in the adapter, which usually costs some light and sharpness. Without it, the lens cannot focus to infinity.
+- **Short to long does not.** Without glass in the adapter the lens cannot focus to infinity, and that glass acts as a weak teleconverter, costing some light and usually sharpness.
 
 So mirrorless lenses do not go on DSLRs, and Canon's own EF-M lenses (18 mm) cannot go on RF (20 mm). Nikon Z lenses cannot go on any other mount here. Between the 16 to 20 mm mirrorless mounts the gaps are tiny, but thin electronic adapters exist for some pairs, such as Sony E lenses on Nikon Z bodies.
 
@@ -117,7 +117,7 @@ Leica M rangefinder lenses (27.8 mm) adapt to almost any mirrorless mount with a
 
 ### Sensor coverage
 
-An APS-C lens on a full-frame body leaves dark corners unless the camera crops; Canon, Nikon and Sony full-frame bodies can crop automatically for their own APS-C lenses. A full-frame lens on a smaller sensor frames tighter: a 50 mm lens frames like about 75–80 mm on APS-C and 100 mm on Micro Four Thirds. A focal reducer, an adapter with glass, narrows that difference and makes the lens brighter, but only from a larger format to a smaller one.
+An APS-C lens on a full-frame body leaves dark corners unless the camera crops; Canon, Nikon and Sony full-frame bodies can crop automatically for their mount's APS-C lenses. A full-frame lens on a smaller sensor frames tighter: a 50 mm lens frames like about 75–80 mm on APS-C and 100 mm on Micro Four Thirds. A focal reducer, an adapter with glass, narrows that difference and makes the lens brighter, but only from a larger format to a smaller one.
 
 Adapting is a good bridge between systems, but expect compromises if it is your whole plan.
 
@@ -149,7 +149,7 @@ Some manufacturer warranties cover only the country or region of sale, so a lens
 - **UK:** the Consumer Rights Act 2015 gives you 30 days to reject a faulty item for a refund.
 - **EU:** sellers owe at least a two-year legal guarantee, and a defect that appears within a year of delivery (two years in some countries) is presumed present at delivery.
 - **Australia:** consumer guarantees apply alongside any warranty, cannot be taken away and have no fixed end date.
-- **Singapore:** under the Lemon Law, a defect reported within six months of delivery is presumed present at delivery unless the seller proves otherwise.
+- **Singapore:** under the Lemon Law, a defect that appears within six months of delivery is presumed present at delivery unless the seller proves otherwise.
 - **US:** there is no national guarantee like these. You rely on the warranty, the return policy and state-law implied warranties, which some states let sellers exclude by selling "as is".
 
 These rights cover buying from a business; a private second-hand sale gets far less protection. Our [deals page](/deals) shows retailer prices in each market.

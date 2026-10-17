@@ -11,7 +11,7 @@ A used camera or lens can cost far less than a new one and take exactly the same
 The saving depends on the item, its condition and the timing, so there is no single figure. A few things move it:
 
 - **A successor can push prices down.** A replacement's launch can lower the older model's used price.
-- **Recent releases may save little.** A new camera on promotion or with cashback can even cost less than a used one.
+- **Recent releases may save little.** Check new prices too: a promotion or cashback can narrow the gap.
 - **Where you buy changes the price.** A dealer's graded, warrantied item costs more than the same thing from a private seller; the difference buys inspection and the right to return it.
 
 Each product page under [cameras](/cameras) and [lenses](/lenses) shows today's lowest new and used prices side by side. [Deals](/deals) lists this week's price drops and where buying used currently saves the most.
@@ -36,15 +36,15 @@ Classified sites and selling apps are usually cheapest, and you can handle the i
 
 A mechanical shutter wears out eventually. Some makers quote a rated life in shutter cycles; treat it as a guide, not a guarantee. A worn shutter can be replaced.
 
-Some brands write the count into each photo's metadata, which free tools can read; others need a service centre or special software. Ask the seller for a recent, unedited JPEG straight from the camera. The file number is not the shutter count: it rolls over and can be reset.
+Some cameras write the count into each photo's metadata, which free tools can read; others need a service centre or special software. Ask the seller for a recent, unedited JPEG straight from the camera. The file number is not the shutter count: it rolls over and can be reset.
 
 Many mirrorless cameras also have an electronic shutter that doesn't wear the mechanical one; Nikon's Z9 has no mechanical shutter at all. On some models the count includes electronic-shutter shots.
 
 ### Sensor
 
-Take a photo with the lens cap on and look at it enlarged for bright dots, which are hot or stuck pixels. A few on long exposures are common, and some cameras have a pixel-mapping function for them. Then photograph a plain sky or white wall at f/16 to show dust. Dust can be cleaned; a scratch on the glass in front of the sensor is a repair job.
+Take a photo with the lens cap on and look at it enlarged for bright dots, which are hot or stuck pixels. A few on long exposures are common, and some cameras have a pixel-mapping function for them. Then photograph a plain sky or white wall at about f/11 to f/16 to show dust. Dust can be cleaned; a scratch on the glass in front of the sensor is a repair job.
 
-Also check the camera hasn't been converted for infrared or astrophotography, which gives ordinary photos odd colour.
+Also check the camera hasn't been converted for infrared or astrophotography, which can give ordinary photos odd colour.
 
 ### Mount, screen, battery and firmware
 
@@ -60,8 +60,8 @@ Also check the camera hasn't been converted for infrared or astrophotography, wh
 
 Shine a bright torch through the lens from both ends, looking at an angle, with the aperture as wide open as the lens allows.
 
-- **Fungus** looks like thin threads or a spider's web, often starting at the edge of an element. It grows when gear is stored somewhere humid and poorly ventilated, can spread and can damage the coatings. Avoid a lens with fungus unless the price allows for a professional clean.
-- **Haze** is an even, milky fog across an element. It lowers contrast and isn't always removable.
+- **Fungus** looks like thin threads or a spider's web. It grows when gear is stored somewhere humid and poorly ventilated, can spread and can damage the coatings. Avoid a lens with fungus unless the price allows for a professional clean.
+- **Haze** is an even, milky fog across an element. It can lower contrast; ask a repairer whether it will clean off.
 - **Separation**, mostly in older lenses, shows as a patch where glued elements have started to come apart.
 - **Dust:** a few specks inside are normal and rarely show in photos.
 
@@ -69,9 +69,9 @@ Shine a bright torch through the lens from both ends, looking at an angle, with 
 
 Small marks on the front element usually have little visible effect; marks on the rear element are more likely to show. Autofocus should be quick and consistent near and far. The zoom and focus rings should turn evenly, without grinding. Stabilisation, if fitted, should settle the view when you half-press the shutter.
 
-Photograph a flat, detailed subject such as a brick wall, square on, wide open and stopped down. If one side is clearly softer than the other, the lens may be decentred, often after a knock.
+Photograph a flat, detailed subject such as a brick wall, exactly square on, wide open and stopped down. If one side is clearly softer than the other, the lens may be decentred; a knock can cause this.
 
-Check the lens is made for your mount, not just your brand: some lenses come in several mounts, and an adapted lens can lose autofocus speed or features. [Mounts](/mounts) lists the bodies and lenses for each mount.
+Check the lens is made for your mount, not just your brand: some lenses come in several mounts, and an adapted lens can lose autofocus speed or features. [Mounts](/mounts) lists the bodies and lenses we track for each mount.
 
 ## Returns, warranties and payment protection
 
@@ -100,13 +100,13 @@ These are the general rules for buying from a business. Private sales get much l
 
 ### United States
 
-The FTC's Cooling-Off Rule doesn't cover online purchases, so returns depend on the seller. To dispute a credit card charge for goods not delivered as agreed, your letter should reach the issuer within 60 days after the first bill showing it was sent. Disputes about quality have extra conditions under federal rules.
+The FTC's Cooling-Off Rule doesn't cover online purchases, so returns depend on the seller. To dispute a credit card charge for goods not delivered as agreed, your letter should reach the issuer within 60 days after it sent the first bill showing the charge. Disputes about quality have extra conditions under federal rules.
 
 ### United Kingdom
 
 From a trader, satisfactory quality is judged against the item's description and price. You have 30 days to reject a faulty item for a refund, and a fault in the first six months is presumed present at delivery unless the trader proves otherwise. From a private seller, the item must be as described, but the satisfactory-quality rule doesn't apply.
 
-Section 75 makes your credit card provider jointly liable with the seller for single items costing more than £100 and up to £30,000. Debit cards have chargeback.
+Section 75 makes your credit card provider jointly liable with the seller for single items costing more than £100 and up to £30,000. Paying through an intermediary such as PayPal usually loses this protection. Debit cards have chargeback.
 
 ### European Union
 
@@ -124,4 +124,4 @@ Ask whether a body is a local set or a parallel import, because the maker's loca
 
 ## Before you buy
 
-Decide what you need first: the [finder](/finder) suggests cameras for how you shoot and your budget, and [compare](/compare) puts two side by side. [About](/about) explains how we collect prices.
+Decide what you need first: the [finder](/finder) suggests cameras for how you shoot and your budget, and [compare](/compare) puts up to four side by side. [About](/about) explains how we collect prices.

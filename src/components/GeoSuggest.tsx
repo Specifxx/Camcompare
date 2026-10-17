@@ -5,14 +5,16 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MARKETS, type MarketCode } from "@/lib/markets";
-import { marketForCountry, marketFromPath, rememberMarket, rememberedMarket, switchMarketPath } from "@/lib/market-client";
+import { isGlobalPath, marketForCountry, rememberMarket, rememberedMarket, switchMarketPath, useMarket } from "@/lib/market-client";
 
 export default function GeoSuggest() {
   const pathname = usePathname() ?? "/";
   const router = useRouter();
   const [suggest, setSuggest] = useState<MarketCode | null>(null);
-  const here = marketFromPath(pathname);
+  const here = useMarket(pathname);
 
+  // Once per page load (the layout stays mounted across navigations); the
+  // render compares the country's market with the page's.
   useEffect(() => {
     if (rememberedMarket()) return;
     let dismissed = false;
@@ -24,12 +26,9 @@ export default function GeoSuggest() {
     if (dismissed) return;
     fetch("/api/geo")
       .then((r) => r.json())
-      .then((d: { country: string | null }) => {
-        const m = marketForCountry(d.country);
-        if (m && m !== here) setSuggest(m);
-      })
+      .then((d: { country: string | null }) => setSuggest(marketForCountry(d.country)))
       .catch(() => {});
-  }, [here]);
+  }, []);
 
   if (!suggest || suggest === here) return null;
   const close = () => {
@@ -50,7 +49,7 @@ export default function GeoSuggest() {
           className="font-semibold text-accent"
           onClick={() => {
             rememberMarket(suggest);
-            router.push(switchMarketPath(pathname, suggest));
+            if (!isGlobalPath(pathname)) router.push(switchMarketPath(pathname, suggest) + window.location.search);
             setSuggest(null);
           }}
         >

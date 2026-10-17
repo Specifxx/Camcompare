@@ -7,11 +7,10 @@
 // bot walls (B&H and MPB return 403 to plain requests) and a ToS breach.
 //
 // Configure one retailer with FEED_URL_<KEY> (CSV, TSV or Google Shopping
-// XML; `.gz` is unzipped). Rows are streamed, so a 400k-row dealer feed never
+// XML; gzip is unzipped). Rows are streamed, so a 400k-row dealer feed never
 // sits in memory; only rows that match a catalog camera are kept.
 import { Readable } from "node:stream";
 import { createGunzip } from "node:zlib";
-import readline from "node:readline";
 import { matchListing, plausiblePrice } from "../matching";
 import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
@@ -43,8 +42,13 @@ export function headerMap(header: string[]): Map<number, keyof typeof FIELDS> {
   return m;
 }
 
-/** One delimited line → cells; supports "quoted, cells" and "" escapes. */
+/** One delimited line → cells; supports "quoted, cells" and "" escapes. A quote opens only at the start of a cell. */
 export function splitDelimited(line: string, delim: string): string[] {
+  return scanDelimited(line, delim).cells;
+}
+
+/** splitDelimited, and whether the text ends inside a quoted cell (one that holds a newline). */
+function scanDelimited(line: string, delim: string): { cells: string[]; open: boolean } {
   const out: string[] = [];
   let cur = "";
   let q = false;
@@ -59,7 +63,7 @@ export function splitDelimited(line: string, delim: string): string[] {
     else cur += ch;
   }
   out.push(cur);
-  return out;
+  return { cells: out, open: q };
 }
 
 export function feedCondition(v: string | undefined): Condition | null {
@@ -73,50 +77,80 @@ export function feedCondition(v: string | undefined): Condition | null {
 
 export const inStock = (v: string | undefined) => !v || /^(in.?stock|yes|true|1|available|limited)/i.test(v.trim());
 
+/**
+ * The body as text pieces: the lines of a CSV or TSV, or for XML one piece
+ * per <item>/<entry>, cut at its closing tag, so a feed written on a single
+ * line still streams item by item.
+ */
+async function* pieces(stream: Readable): AsyncGenerator<{ xml: boolean; text: string }> {
+  let buf = "";
+  let xml: boolean | null = null;
+  for await (const chunk of stream.setEncoding("utf8")) {
+    buf += chunk;
+    if (xml === null) {
+      if (buf.trimStart().length < 5) continue;
+      xml = /^\s*<(\?xml|rss|feed)/.test(buf);
+    }
+    let from = 0;
+    for (const m of buf.matchAll(xml ? /<\/(?:item|entry)>/g : /\r?\n|\r(?!\n|$)/g)) {
+      yield { xml, text: buf.slice(from, xml ? m.index + m[0].length : m.index) };
+      from = m.index + m[0].length;
+    }
+    buf = buf.slice(from);
+  }
+  if (buf) yield { xml: xml ?? false, text: buf };
+}
+
 async function* rows(url: string): AsyncGenerator<FeedRow> {
   const res = await fetch(url);
   if (!res.ok || !res.body) throw new Error(`feed ${res.status}`);
-  let stream = Readable.fromWeb(res.body as import("node:stream/web").ReadableStream);
-  if (/\.gz($|\?)/.test(url) || res.headers.get("content-type")?.includes("gzip")) stream = stream.pipe(createGunzip());
-  const lines = readline.createInterface({ input: stream, crlfDelay: Infinity });
+  yield* feedRows(res.body);
+}
+
+/** A feed's body → rows, whatever its format. Exported for tests. */
+export async function* feedRows(input: ReadableStream<Uint8Array>): AsyncGenerator<FeedRow> {
+  // Gzip is sniffed (magic bytes 1f 8b), not read from the URL or content
+  // type: fetch has already undone a Content-Encoding: gzip (an S3 .gz
+  // object often carries one), and networks serve gzipped feeds as
+  // application/octet-stream from URLs without ".gz".
+  const [probe, body] = input.tee();
+  const reader = probe.getReader();
+  const { value: head } = await reader.read();
+  void reader.cancel();
+  let stream = Readable.fromWeb(body as import("node:stream/web").ReadableStream);
+  if (head?.[0] === 0x1f && head[1] === 0x8b) stream = stream.pipe(createGunzip());
 
   let header: Map<number, keyof typeof FIELDS> | null = null;
   let delim = ",";
-  let xml = false;
-  let item: FeedRow | null = null;
   let pending = "";
-  for await (const raw of lines) {
-    if (header === null && !xml) {
-      if (/^\s*<\?xml|^\s*<rss|^\s*<feed/.test(raw)) {
-        xml = true;
-      } else {
-        delim = raw.includes("\t") ? "\t" : raw.includes("|") && !raw.includes(",") ? "|" : ",";
-        header = headerMap(splitDelimited(raw, delim));
-        continue;
-      }
-    }
+  for await (const { xml, text: raw } of pieces(stream)) {
     if (xml) {
-      // Google Shopping XML: <item> … <g:price>1999.00 USD</g:price> … </item>
-      if (/<(item|entry)\b/.test(raw)) item = {};
-      if (item) {
-        for (const m of raw.matchAll(/<(?:g:)?([a-z_]+)>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/(?:g:)?\1>/g)) {
-          const field = Object.entries(FIELDS).find(([, names]) => names.includes(m[1]))?.[0] as keyof typeof FIELDS | undefined;
-          if (field && !item[field]) item[field] = decode(m[2]);
-        }
+      // Google Shopping XML: <item> … <g:price>1999.00 USD</g:price> … </item>.
+      // Fields are read after the opening tag, so the channel's own <title> never counts.
+      const start = raw.search(/<(item|entry)\b/);
+      if (start < 0) continue;
+      const item: FeedRow = {};
+      for (const m of raw.slice(raw.indexOf(">", start) + 1).matchAll(/<(?:g:)?([a-z_]+)>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/(?:g:)?\1>/g)) {
+        const field = Object.entries(FIELDS).find(([, names]) => names.includes(m[1]))?.[0] as keyof typeof FIELDS | undefined;
+        if (field && !item[field]) item[field] = decode(m[2]);
       }
-      if (/<\/(item|entry)>/.test(raw) && item) {
-        yield item;
-        item = null;
-      }
+      yield item;
       continue;
     }
-    // A quoted cell can hold a newline: keep reading until quotes balance.
+    if (header === null) {
+      delim = raw.includes("\t") ? "\t" : raw.includes("|") && !raw.includes(",") ? "|" : ",";
+      header = headerMap(splitDelimited(raw, delim));
+      continue;
+    }
+    // A quoted cell can hold a newline: keep reading while one is open. Quotes
+    // are read as splitDelimited reads them, so an inch mark in a cell
+    // (`Ninja V 5" Monitor`) doesn't swallow the rows after it.
     pending = pending ? `${pending}\n${raw}` : raw;
-    if ((pending.match(/"/g)?.length ?? 0) % 2) continue;
-    const cells = splitDelimited(pending, delim);
+    const { cells, open } = scanDelimited(pending, delim);
+    if (open) continue;
     pending = "";
     const row: FeedRow = {};
-    for (const [i, field] of header!) row[field] = cells[i]?.trim();
+    for (const [i, field] of header) row[field] = cells[i]?.trim();
     yield row;
   }
 }
@@ -172,7 +206,7 @@ function rowToOffer(key: string, r: FeedRow, { index, now, market }: RowCtx): Of
   const sale = r.salePrice ? toMinor(r.salePrice) : 0;
   const full = r.price ? toMinor(r.price) : 0;
   const price = sale > 0 && (!full || sale < full) ? sale : full;
-  if (!price || !plausiblePrice(m.product, cond, price / 100, currency)) return null;
+  if (!price || !plausiblePrice(m.product, cond, price / 100, currency, m.via)) return null;
   return {
     product: m.product.slug,
     kind: m.kind,

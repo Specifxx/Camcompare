@@ -6,7 +6,7 @@
 // product. Quota: 5,000 Browse calls a day shared by every eBay market, so
 // each market gets an equal share and walks the catalog in a daily rotation;
 // products it skips keep their earlier offers (`covered`).
-import { matchListing, plausiblePrice, type Matchable } from "../matching";
+import { launchIn, matchListing, plausiblePrice, type Matchable } from "../matching";
 import { MARKETS, refRate, type Currency } from "../markets";
 import type { Offer } from "../offers";
 import { RETAILERS, type Condition } from "../retailers";
@@ -70,7 +70,7 @@ async function token(id: string, secret: string): Promise<string> {
  * otherwise straps and batteries, and the body never makes the page.
  */
 export function priceFloor(p: Pick<Matchable, "launchPriceUsd" | "launchPrices">, currency: Currency): number {
-  const launch = currency === "USD" ? p.launchPriceUsd : p.launchPrices?.[currency] ?? (p.launchPriceUsd ? p.launchPriceUsd * refRate(currency) : null);
+  const launch = launchIn(p, currency);
   return Math.floor(launch ? launch * 0.12 : 30 * refRate(currency));
 }
 
@@ -94,7 +94,11 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
     const ebayMarkets = RETAILERS.filter((x) => x.ebay).length;
     const budget = Math.floor(Number(process.env.EBAY_MAX_CALLS || 4600) / ebayMarkets);
     const day = Math.floor(Date.parse(now) / 86400_000);
-    const products = dailyWindow([...cameras.map((c) => ({ kind: "camera" as const, item: c })), ...lenses.map((l) => ({ kind: "lens" as const, item: l }))], budget, day);
+    // eBay matches are title-only, and plausiblePrice trusts no title match for
+    // a product without a launch price: searching those would spend quota on
+    // results that are all refused.
+    const priceable = [...cameras.map((c) => ({ kind: "camera" as const, item: c })), ...lenses.map((l) => ({ kind: "lens" as const, item: l }))].filter(({ item }) => launchIn(item, currency));
+    const products = dailyWindow(priceable, budget, day);
     const bearer = await token(id, secret);
     const offers: Offer[] = [];
     const covered: string[] = [];
@@ -132,7 +136,7 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
         const m = matchListing({ title: it.title }, index, kind);
         if (!m.product || m.product.slug !== item.slug || m.kit) continue;
         const price = toMinor(it.price.value);
-        if (!plausiblePrice(m.product, cond, price / 100, currency)) continue;
+        if (!plausiblePrice(m.product, cond, price / 100, currency, m.via)) continue;
         const n = kept.get(cond) ?? 0;
         if (n >= KEEP_PER_CONDITION) continue;
         kept.set(cond, n + 1);

@@ -90,19 +90,29 @@ const MOUNT_WORDS: [RegExp, string][] = [
   [/\b(leica\s*m|m-?mount)\b/, "leica-m"],
 ];
 
-// Listings that are not a working camera or lens. Checked on the lowercased title.
-const PARTS = /\b(for parts|parts only|not working|broken|as[- ]is|repair|spares|faulty|box only|empty box|dummy|replica|manual only|rental)\b/;
+// Listings that are not a working camera or lens, parts pulled from one
+// included. Checked on the lowercased title. Never a bare spec word ("CMOS
+// sensor", "LCD display"): real titles list those.
+const PARTS =
+  /\b(for parts|parts only|not working|broken|as[- ]is|repair|replacement|untested|spares|faulty|box only|empty box|dummy|replica|manual only|rental|(image )?sensor (unit|assembly|board)|main ?board|logic board|flex cable|shutter (assembly|unit|block)|(lcd|display|screen) (assembly|module)|(lens|glass) (element|group)|element (glass|group))\b/;
 // Accessories sold "for" a camera: batteries, grips, cages… (camera listings only).
 const CAMERA_ACCESSORY =
-  /\b(battery|batteries|charger|grip|cage|strap|case|bag|protector|skin|decal|cover|eyecup|eye cup|body cap|remote|cable|bracket|plate|hot ?shoe|microphone|gimbal|tripod|speedlite|flash unit|memory card|sd card|cfexpress card|shutter unit|mainboard|motherboard|lcd screen|sensor cleaning|lens only|teleconverter|extension tube|viewfinder only|evf only|housing|mount adapter)\b/;
+  /\b(battery|batteries|charger|grip|cage|strap|case|bag|protector|skin|decal|cover|eyecup|eye cup|body cap|remote|cable|bracket|plate|hot ?shoe|microphone|gimbal|tripod|speedlite|flash unit|memory card|sd card|cfexpress card|motherboard|lcd screen|eyepiece|top handle|handle unit|(lens|media|light|display|filter) mods?|sensor cleaning|lens only|teleconverter|extension tube|viewfinder only|evf only|housing|mount adapter)\b/;
 const FOR_PHRASE = /\b(for|fits|compatible with)\s+(the\s+)?(sony|canon|nikon|fuji|fujifilm|panasonic|lumix|olympus|om system|leica|ricoh|pentax|sigma|hasselblad|gopro|dji|insta360|blackmagic)\b/;
 // Lens accessories name the lens after "for": "Lens hood for Sony FE 24-70mm GM II".
 const LENS_ACCESSORY = /\b(hood|cap|caps|filter|case|pouch|collar|tripod foot|adapter|cover|protector|skin|wrap|bag|ring|teleconverter|extender|extension tube)\b[^,()]*\b(for|fits|compatible with)\b/;
+// …or after the lens ("Canon EF 24-70mm f/2.8L II USM Lens Hood EW-88C"),
+// unless something before it says it comes with the lens ("w/ hood & caps").
+const LENS_PART = /\b(lens hood|hood only|(lens|front|rear) caps?|tripod (mount )?ring|tripod (collar|foot))\b/;
+const INCLUDED = /\bwith\b|\bw\/|\bincl|\band\b|[+&]/;
 // Film bodies share names with digital ones (Olympus OM-1, Canon EOS 5).
 const FILM = /\b(film|35mm slr|slr film|half[- ]frame)\b/;
-// A zoom or prime named next to an interchangeable-lens body means a kit.
-const KIT = /\bkit\b|\bw\/\s*\d|\bwith\s+(an?\s+)?(\w+\s+)?\d{2,3}(-\d{2,3})?\s*mm|\+\s*(\w+\s+)?\d{2,3}(-\d{2,3})?\s*mm|\b\d{2,3}-\d{2,3}\s*mm\b|\blens(es)? (kit|bundle)\b/;
+// A zoom or prime named next to an interchangeable-lens body means a kit,
+// its lens prefix glued on or not ("with XC15-45mm", "RF-S18-45mm").
+const KIT = /\bkit\b|\bw\/\s*\d|\bwith\s+(an?\s+)?(\w+\s+)?[a-z-]*\d{2,3}(-\d{2,3})?\s*mm|\b[a-z]{0,4}-?\d{2,3}-\d{2,3}\s*mm\b|\blens(es)? (kit|bundle)\b/;
 const BODY_ONLY = /\bbody( only)?\b/;
+// "Body" cancels KIT ("body only, fits 24-70mm"), but not a lens added with "+".
+const KIT_PLUS = /\+\s*(\w+\s+)?[a-z-]*\d{2,3}(-\d{2,3})?\s*mm/;
 
 /** What the matcher needs from a camera or a lens. */
 export type Matchable = {
@@ -195,8 +205,9 @@ export function normalizeGtin(g: string): string {
 }
 
 export type Listing = { title: string; gtin?: string | null; mpn?: string | null };
+export type MatchVia = "gtin" | "mpn" | "title";
 export type MatchResult =
-  | { product: Matchable; kind: ProductKind; via: "gtin" | "mpn" | "title"; kit: boolean; mount: string | null }
+  | { product: Matchable; kind: ProductKind; via: MatchVia; kit: boolean; mount: string | null }
   | { product: null; reason: string };
 
 function brandNamed(p: Matchable, words: string[], compactTitle: string): boolean {
@@ -242,14 +253,16 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
   if (PARTS.test(lower)) return { product: null, reason: "parts/broken" };
   if (FILM.test(lower)) return { product: null, reason: "film camera" };
 
-  const finish = (p: Matchable, via: "gtin" | "mpn" | "title"): MatchResult => {
+  const finish = (p: Matchable, via: MatchVia): MatchResult => {
     if (want && p.kind !== want) return { product: null, reason: `is a ${p.kind}` };
     if (p.kind === "camera") {
       if (CAMERA_ACCESSORY.test(lower)) return { product: null, reason: "accessory/part" };
       if (FOR_PHRASE.test(lower)) return { product: null, reason: "accessory phrasing" };
-      return { product: p, kind: "camera", via, kit: p.interchangeable && KIT.test(lower) && !BODY_ONLY.test(lower), mount: p.mounts[0] ?? null };
+      return { product: p, kind: "camera", via, kit: p.interchangeable && (KIT_PLUS.test(lower) || (KIT.test(lower) && !BODY_ONLY.test(lower))), mount: p.mounts[0] ?? null };
     }
     if (LENS_ACCESSORY.test(lower)) return { product: null, reason: "lens accessory" };
+    const part = LENS_PART.exec(lower);
+    if (part && !INCLUDED.test(lower.slice(0, part.index))) return { product: null, reason: "lens accessory" };
     const named = mountInTitle(lower);
     if (named && !p.mounts.includes(named)) return { product: null, reason: `mount ${named} is not a version of this lens` };
     return { product: p, kind: "lens", via, kit: false, mount: named ?? (p.mounts.length === 1 ? p.mounts[0] : null) };
@@ -296,15 +309,28 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
 }
 
 /**
+ * The launch price in `currency`, for sanity floors only (never shown): the
+ * market's own if we have it, else the US one, else any other market's, at
+ * reference rates.
+ */
+export function launchIn(p: Pick<Matchable, "launchPriceUsd" | "launchPrices">, currency: Currency): number | null {
+  const own = currency === "USD" ? p.launchPriceUsd : p.launchPrices?.[currency];
+  if (own) return own;
+  const [from, v] = p.launchPriceUsd ? ["USD", p.launchPriceUsd] : (Object.entries(p.launchPrices ?? {})[0] ?? []);
+  return v ? (v / refRate(from as Currency)) * refRate(currency) : null;
+}
+
+/**
  * Last line of defence against a mismatched listing: a price far below what
  * the product has ever sold for is a part, a scam or a different product.
- * Floors are a share of the launch price in the listing's currency (the
- * market launch price if we have it, else the US one at a reference rate);
- * with no launch price, only a token floor.
+ * Floors are a share of the launch price in the listing's currency
+ * (`launchIn`). With no launch price at all there is nothing to hold a price
+ * against, and a hood or a top handle titled with the product's name would
+ * pass: then only a GTIN or part-number match is trusted, over a token floor.
  */
-export function plausiblePrice(p: Pick<Matchable, "launchPriceUsd" | "launchPrices">, condition: Condition, price: number, currency: Currency = "USD"): boolean {
-  const launch = currency === "USD" ? p.launchPriceUsd : p.launchPrices?.[currency] ?? (p.launchPriceUsd ? p.launchPriceUsd * refRate(currency) : null);
-  if (!launch) return price > 30 * refRate(currency);
+export function plausiblePrice(p: Pick<Matchable, "launchPriceUsd" | "launchPrices">, condition: Condition, price: number, currency: Currency = "USD", via: MatchVia = "title"): boolean {
+  const launch = launchIn(p, currency);
+  if (!launch) return via !== "title" && price > 30 * refRate(currency);
   const floor = condition === "new" ? 0.4 : 0.12;
   return price >= launch * floor && price <= launch * 2.5;
 }

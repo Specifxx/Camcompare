@@ -9,7 +9,7 @@ import { SITE_NAME } from "./site";
 
 export function alternates(path: string, indexable: (m: MarketCode) => boolean = () => true): NonNullable<Metadata["alternates"]> {
   const languages: Record<string, string> = {};
-  for (const m of MARKET_CODES) if (m === "us" || indexable(m)) languages[MARKETS[m].hreflang] = marketPath(m, path);
+  for (const m of MARKET_CODES) if (m === "us" || indexable(m)) for (const code of MARKETS[m].hreflang) languages[code] = marketPath(m, path);
   languages["x-default"] = path;
   return { languages };
 }

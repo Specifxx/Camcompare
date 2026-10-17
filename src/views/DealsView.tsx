@@ -10,30 +10,8 @@ import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { lowest } from "@/lib/offers";
 import { pageMeta } from "@/lib/seo";
 
-export function dealsMetadata(m: MarketCode): Metadata {
-  return pageMeta({
-    title: "Camera and lens price drops",
-    description: `Cameras and lenses whose lowest price in ${MARKETS[m].name} fell this week, and where buying used saves the most. From our daily price history.`,
-    path: "/deals",
-    market: m,
-  });
-}
-
-function Row({ slug, m, right }: { slug: string; m: MarketCode; right: React.ReactNode }) {
-  const p = product(slug)!;
-  return (
-    <li>
-      <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`)} className="card flex items-center gap-3 p-3 text-fg no-underline hover:border-accent hover:no-underline">
-        <ProductThumb slug={slug} alt="" className="w-20 shrink-0" />
-        <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
-        <span className="shrink-0 text-right text-sm">{right}</span>
-      </Link>
-    </li>
-  );
-}
-
-export default function DealsView({ market: m }: { market: MarketCode }) {
-  const cur = MARKETS[m].currency;
+/** A market's deals. `empty` until it has a week of history or a used saving. */
+export function deals(m: MarketCode) {
   const history = historyAll(m);
   const newDrops = priceDrops(history, "new").slice(0, 24);
   const usedDrops = priceDrops(history, "used").slice(0, 12);
@@ -47,8 +25,42 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
     .filter((x) => x.pct !== null && x.pct >= 15)
     .sort((a, b) => b.pct! - a.pct!)
     .slice(0, 12);
+  return { newDrops, usedDrops, savings, empty: !newDrops.length && !usedDrops.length && !savings.length };
+}
+
+// An empty deals page is one line of "nothing yet": noindex, out of the
+// sitemap and hreflang, and without the ad slot (an ad on a page with no
+// content is an AdSense violation) until the market has some.
+export const dealsIndexable = (m: MarketCode) => !deals(m).empty;
+
+export function dealsMetadata(m: MarketCode): Metadata {
+  return pageMeta({
+    title: "Camera and lens price drops",
+    description: `Cameras and lenses whose lowest price in ${MARKETS[m].name} fell this week, and where buying used saves the most. From our daily price history.`,
+    path: "/deals",
+    market: m,
+    index: dealsIndexable(m),
+    indexable: dealsIndexable,
+  });
+}
+
+function Row({ slug, m, right }: { slug: string; m: MarketCode; right: React.ReactNode }) {
+  const p = product(slug)!;
+  return (
+    <li>
+      <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`)} prefetch={false} className="card flex items-center gap-3 p-3 text-fg no-underline hover:border-accent hover:no-underline">
+        <ProductThumb slug={slug} alt="" className="w-20 shrink-0" />
+        <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
+        <span className="shrink-0 text-right text-sm">{right}</span>
+      </Link>
+    </li>
+  );
+}
+
+export default function DealsView({ market: m }: { market: MarketCode }) {
+  const cur = MARKETS[m].currency;
+  const { newDrops, usedDrops, savings, empty } = deals(m);
   const updated = offersGeneratedAt(m);
-  const empty = !newDrops.length && !usedDrops.length && !savings.length;
   return (
     <div className="flex flex-col gap-10">
       <div>
@@ -94,7 +106,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
           </ul>
         </section>
       )}
-      <AdSlot slot={AD_SLOTS.listing} />
+      {!empty && <AdSlot slot={AD_SLOTS.listing} />}
     </div>
   );
 }

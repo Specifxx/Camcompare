@@ -2,8 +2,12 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { recommend } from "../src/lib/finder";
 import { dealSignal, priceDrops, usedSaving, vsLaunch } from "../src/lib/insights";
-import { marketForCountry, marketFromPath, switchMarketPath } from "../src/lib/market-client";
+import { productLd } from "../src/lib/jsonld";
+import { isGlobalPath, marketForCountry, marketFromPath, rememberMarket, switchMarketPath, visitorMarket } from "../src/lib/market-client";
 import { marketPath, money } from "../src/lib/markets";
+import type { Offer } from "../src/lib/offers";
+import { alternates } from "../src/lib/seo";
+import { CAMERAS } from "./fixtures";
 import { searchRank, type SearchRow } from "../src/lib/search";
 import type { CameraSummary } from "../src/lib/summary";
 
@@ -22,6 +26,46 @@ test("switching market keeps the page, and global pages stay put", () => {
   assert.equal(switchMarketPath("/sg", "au"), "/au");
   assert.equal(switchMarketPath("/au", "us"), "/");
   assert.equal(switchMarketPath("/compare/a-vs-b", "uk"), "/compare/a-vs-b");
+  // The builder is per market; only a pair page is global.
+  assert.equal(switchMarketPath("/uk/compare", "eu"), "/eu/compare");
+  assert.ok(isGlobalPath("/compare/a-vs-b") && isGlobalPath("/guides/sensor-sizes") && !isGlobalPath("/compare") && !isGlobalPath("/uk/cameras"));
+});
+
+test("a global page follows the market the visitor chose or was last in", () => {
+  const store = () => {
+    const m = new Map<string, string>();
+    return { getItem: (k: string) => m.get(k) ?? null, setItem: (k: string, v: string) => void m.set(k, v) };
+  };
+  const g = globalThis as Record<string, unknown>;
+  const events: string[] = [];
+  Object.assign(g, { localStorage: store(), sessionStorage: store(), document: { cookie: "" }, window: { dispatchEvent: (e: Event) => events.push(e.type) } });
+  try {
+    assert.equal(visitorMarket(), null);
+    rememberMarket("uk");
+    assert.equal(visitorMarket(), "uk");
+    assert.deepEqual(events, ["cc-market"]);
+    // A later market page in this tab wins over the remembered choice.
+    (g.sessionStorage as Storage).setItem("cc_market_seen", "eu");
+    assert.equal(visitorMarket(), "eu");
+  } finally {
+    for (const k of ["localStorage", "sessionStorage", "document", "window"]) delete g[k];
+  }
+});
+
+test("a switched path is always one site path, never a //host URL", () => {
+  assert.equal(switchMarketPath("/uk//evil.example/x", "us"), "/evil.example/x");
+  assert.equal(switchMarketPath("//evil.example", "uk"), "/uk/evil.example");
+  assert.equal(marketFromPath("/uk//x"), "uk");
+});
+
+test("the EU market's hreflang names every EU country, while it is indexable", () => {
+  const all = alternates("/cameras/x").languages as Record<string, string>;
+  assert.equal(all["en-DE"], "/eu/cameras/x");
+  assert.equal(all["en-IE"], "/eu/cameras/x");
+  assert.equal(all["en-GB"], "/uk/cameras/x");
+  assert.equal(all["x-default"], "/cameras/x");
+  const usOnly = alternates("/cameras/x", () => false).languages as Record<string, string>;
+  assert.deepEqual(Object.keys(usOnly).sort(), ["en-US", "x-default"]);
 });
 
 test("countries map to markets; elsewhere gets no suggestion", () => {
@@ -32,10 +76,25 @@ test("countries map to markets; elsewhere gets no suggestion", () => {
   assert.equal(marketForCountry(null), null);
 });
 
-test("money formats whole units per currency", () => {
+test("money shows what the retailer charges, cents only when there are some", () => {
   assert.equal(money(189900, "GBP", true), "£1,899");
+  assert.equal(money(189899, "GBP", true), "£1,898.99");
+  assert.equal(money(249850, "AUD", true), "A$2,498.50");
   assert.equal(money(2999, "AUD"), "A$2,999");
   assert.equal(money(1299, "SGD"), "S$1,299");
+});
+
+test("product JSON-LD prices only what the page prices, and is absent without it", () => {
+  const offer = (o: Partial<Offer>): Offer => ({
+    product: "sony-a7-iv", kind: "camera", retailer: "test-shop", condition: "new", price: 199900, currency: "GBP", url: "https://shop.example/a7iv",
+    title: "Sony a7 IV", seller: null, inStock: true, kit: false, mount: null, seenAt: "2026-10-17T00:00:00Z", sourceId: null, ...o,
+  });
+  const a7iv = CAMERAS[0];
+  const ld = productLd(a7iv, "camera", [offer({}), offer({ condition: "used", price: 120000, inStock: false })], "uk");
+  assert.equal(ld?.offers.lowPrice, "1999.00");
+  assert.equal(ld?.offers.offerCount, 1);
+  assert.equal(productLd(a7iv, "camera", [offer({ inStock: false }), offer({ kit: true })], "uk"), null);
+  assert.equal(productLd(a7iv, "camera", [], "us"), null);
 });
 
 test("search finds squashed and spaced spellings, best match first", () => {

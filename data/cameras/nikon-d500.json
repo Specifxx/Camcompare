@@ -12,7 +12,7 @@
   "type": "dslr",
   "announced": "2016-01-06",
   "launchPriceUsd": 1999.95,
-  "status": "current",
+  "status": "discontinued",
   "predecessor": null,
   "successor": null,
   "rivals": [
@@ -49,7 +49,7 @@
     "screenDotsM": 2.36,
     "screenType": "tilting",
     "touchscreen": true,
-    "weightG": 860,
+    "weightG": 850,
     "dimensionsMm": [
       147,
       115,

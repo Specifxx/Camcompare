@@ -41,6 +41,8 @@ type Item = { asin: string; detailPageURL?: string; itemInfo?: { title?: { displ
 
 const cond = (v: string | undefined): Condition | null => (v === "New" ? "new" : v === "Used" ? "used" : v === "Refurbished" ? "refurbished" : null);
 const RECHECK_MISSING_DAYS = 30;
+// OffersV2 availability types that can be bought today; IN_STOCK_SCARCE is "Only 3 left".
+const IN_STOCK = new Set(["IN_STOCK", "IN_STOCK_SCARCE"]);
 
 type Call = (op: "searchItems" | "getItems", body: object) => Promise<{ searchResult?: { items?: Item[] }; itemsResult?: { items?: Item[] } }>;
 
@@ -149,7 +151,7 @@ export async function amazonPrices(r: Retailer, market: MarketCode, cameras: Cam
           url: it.detailPageURL || `https://${marketplace}/dp/${it.asin}`,
           title: it.itemInfo?.title?.displayValue ?? p.item.name,
           seller: l.merchantInfo?.name && !/^amazon/i.test(l.merchantInfo.name) ? l.merchantInfo.name : null,
-          inStock: l.availability?.type === "IN_STOCK",
+          inStock: IN_STOCK.has(l.availability?.type ?? ""),
           kit: false,
           mount: null,
           seenAt: now,

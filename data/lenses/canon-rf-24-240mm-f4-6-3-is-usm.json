@@ -6,7 +6,7 @@
   "aliases": ["RF 24-240mm F4-6.3 IS USM", "24-240mm F4-6.3 IS USM", "RF 24-240mm IS USM", "RF 24-240 IS USM", "RF 24-240mm"],
   "modelCodes": [],
   "gtins": [],
-  "announced": "2019-07-08",
+  "announced": "2019-07-09",
   "launchPriceUsd": 899.99,
   "status": "current",
   "predecessor": null,
@@ -19,7 +19,7 @@
     "focalMaxMm": 240,
     "apertureMax": 4,
     "apertureMaxTele": 6.3,
-    "apertureMin": 22,
+    "apertureMin": null,
     "autofocus": true,
     "afMotor": "Nano USM",
     "stabilized": true,
@@ -33,7 +33,7 @@
     "elements": 21,
     "groups": 15,
     "apertureBlades": 7,
-    "internalZoom": null,
+    "internalZoom": false,
     "apertureRing": false,
     "teleconverter": false
   }

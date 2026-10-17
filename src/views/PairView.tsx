@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { FollowLink } from "@/components/ComparePrices";
 import CompareTable from "@/components/CompareTable";
 import SizeCompare from "@/components/SizeCompare";
 import { isIndexedPair, pairSlug, parsePairSlug } from "@/lib/catalog";
@@ -9,8 +9,8 @@ import { SPEC_GROUPS, keyDifferences, sensorLabel } from "@/lib/specs/definition
 import { LENS_SPEC_GROUPS, apertureLabel, focalLabel } from "@/lib/specs/lens";
 
 // One URL per pair for every market: the specs don't change by country.
-// Prices are server-rendered for the US and switch to the visitor's chosen
-// market in the browser (ComparePrices).
+// Prices are server-rendered for the US and switch to the visitor's market in
+// the browser (ComparePrices); so does the link to the builder (FollowLink).
 
 export function pairMetadata(pair: string): Metadata {
   const p = parsePairSlug(pair);
@@ -57,7 +57,7 @@ export default function PairView({ pair }: { pair: string }) {
         </section>
       )}
       <p className="text-sm">
-        <Link href={`/compare?c=${a.item.slug},${b.item.slug}`}>Add a third to this comparison →</Link>
+        <FollowLink path={`/compare?c=${a.item.slug},${b.item.slug}`}>Add a third to this comparison →</FollowLink>
       </p>
     </div>
   );

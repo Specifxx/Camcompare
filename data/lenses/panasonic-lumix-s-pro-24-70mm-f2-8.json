@@ -34,7 +34,7 @@
     "groups": 16,
     "apertureBlades": 11,
     "internalZoom": false,
-    "apertureRing": null,
+    "apertureRing": false,
     "teleconverter": false
   }
 }

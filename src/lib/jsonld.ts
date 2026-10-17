@@ -6,8 +6,8 @@ import { retailer } from "./retailers";
 import { abs, SITE_NAME } from "./site";
 import { thumbSrc } from "./thumb";
 
-/** `<` escaped so a title can never close the script tag. */
-export const ldJson = (data: unknown) => ({ __html: JSON.stringify(data).replace(/</g, "\\u003c") });
+/** `<` escaped so a title can never close the script tag. Null (no item) is `[]`, an empty but valid JSON-LD document. */
+export const ldJson = (data: unknown) => ({ __html: JSON.stringify(data ?? []).replace(/</g, "\\u003c") });
 
 export function breadcrumb(items: { name: string; path: string }[]) {
   return {
@@ -25,14 +25,16 @@ const ITEM_CONDITION: Record<Offer["condition"], string> = {
 };
 
 /**
- * Product + AggregateOffer from the offers actually on the page, in the
- * market's currency. With no offers there is no `offers` key at all: a
- * Product claiming a price we don't show is the mismatch Google's
- * rich-result checks flag.
+ * Product + AggregateOffer from the offers the page prices, in the market's
+ * currency: in stock, not a kit, not Amazon (the same rule as `lowest`), so
+ * "from" is the page's headline price. Null when there are none: a Product
+ * without offers, review or rating is an invalid item to Google, and a price
+ * nobody can buy at is the mismatch its rich-result checks flag.
  */
 export function productLd(p: Camera | Lens, kind: "camera" | "lens", offers: Offer[], m: MarketCode) {
   const path = marketPath(m, `/${kind === "camera" ? "cameras" : "lenses"}/${p.slug}`);
-  const body = offers.filter((o) => !o.kit && !isAmazonOffer(o));
+  const body = offers.filter((o) => !o.kit && o.inStock && !isAmazonOffer(o));
+  if (!body.length) return null;
   const prices = body.map((o) => o.price / 100);
   const validUntil = new Date(Date.now() + 86400_000).toISOString().slice(0, 10);
   return {
@@ -45,26 +47,22 @@ export function productLd(p: Camera | Lens, kind: "camera" | "lens", offers: Off
     ...(p.modelCodes[0] ? { mpn: p.modelCodes[0] } : {}),
     ...(p.gtins[0] ? { gtin: p.gtins[0] } : {}),
     category: kind === "camera" ? "Cameras" : "Camera Lenses",
-    ...(body.length
-      ? {
-          offers: {
-            "@type": "AggregateOffer",
-            priceCurrency: MARKETS[m].currency,
-            lowPrice: Math.min(...prices).toFixed(2),
-            highPrice: Math.max(...prices).toFixed(2),
-            offerCount: body.length,
-            offers: body.slice(0, 10).map((o) => ({
-              "@type": "Offer",
-              price: (o.price / 100).toFixed(2),
-              priceCurrency: o.currency,
-              itemCondition: ITEM_CONDITION[o.condition],
-              availability: o.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-              seller: { "@type": "Organization", name: o.seller ?? retailer(o.retailer)?.name ?? o.retailer },
-              priceValidUntil: validUntil,
-            })),
-          },
-        }
-      : {}),
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: MARKETS[m].currency,
+      lowPrice: Math.min(...prices).toFixed(2),
+      highPrice: Math.max(...prices).toFixed(2),
+      offerCount: body.length,
+      offers: body.slice(0, 10).map((o) => ({
+        "@type": "Offer",
+        price: (o.price / 100).toFixed(2),
+        priceCurrency: o.currency,
+        itemCondition: ITEM_CONDITION[o.condition],
+        availability: "https://schema.org/InStock",
+        seller: { "@type": "Organization", name: o.seller ?? retailer(o.retailer)?.name ?? o.retailer },
+        priceValidUntil: validUntil,
+      })),
+    },
     isPartOf: { "@type": "WebSite", name: SITE_NAME, url: abs("/") },
   };
 }

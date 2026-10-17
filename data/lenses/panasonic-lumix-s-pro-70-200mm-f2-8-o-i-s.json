@@ -21,7 +21,7 @@
     "apertureMaxTele": null,
     "apertureMin": 22,
     "autofocus": true,
-    "afMotor": "Linear motor",
+    "afMotor": "Linear and stepping motors",
     "stabilized": true,
     "weatherSealed": true,
     "weightG": 1570,

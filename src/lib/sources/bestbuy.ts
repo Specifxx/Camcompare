@@ -50,7 +50,7 @@ export const bestBuySource = (retailerKey: string): PriceSource => ({
         if (!cond || !price || !p.url) continue;
         const m = matchListing({ title: p.name, gtin: p.upc }, index, kind);
         if (!m.product || m.product.slug !== item.slug) continue;
-        if (!plausiblePrice(m.product, cond, price, "USD")) continue;
+        if (!plausiblePrice(m.product, cond, price, "USD", m.via)) continue;
         offers.push({
           product: item.slug,
           kind,

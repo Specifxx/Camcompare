@@ -34,7 +34,7 @@ export default function CompareView({ market: m, c }: { market: MarketCode; c?: 
       </div>
       <div className="flex flex-wrap items-center gap-2">
         {chosen.map((p) => (
-          <Link key={p.item.slug} href={`${base}?c=${chosen.filter((x) => x !== p).map((x) => x.item.slug).join(",")}`} className="chip no-underline hover:no-underline" aria-label={`Remove ${p.item.name}`}>
+          <Link key={p.item.slug} href={`${base}?c=${chosen.filter((x) => x !== p).map((x) => x.item.slug).join(",")}`} prefetch={false} className="chip no-underline hover:no-underline" aria-label={`Remove ${p.item.name}`}>
             {displayName(p.item, m)} ✕
           </Link>
         ))}

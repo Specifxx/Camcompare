@@ -4,14 +4,17 @@ import { MARKET_CODES, marketPath } from "@/lib/markets";
 import { guides } from "@/lib/guides";
 import { abs } from "@/lib/site";
 import { liveBrands } from "@/views/BrandView";
+import { dealsIndexable } from "@/views/DealsView";
 import { liveMounts } from "@/views/MountView";
 
 // Only pages that are indexed: every US product page, and a market's product
 // page once that market has prices for it (the same rule as the noindex).
+// Deals pages once they have deals (dealsIndexable).
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = [];
   for (const m of MARKET_CODES) {
-    for (const p of ["/", "/cameras", "/lenses", "/deals", "/finder", "/brands", "/mounts"]) out.push({ url: abs(marketPath(m, p)) });
+    for (const p of ["/", "/cameras", "/lenses", "/finder", "/brands", "/mounts"]) out.push({ url: abs(marketPath(m, p)) });
+    if (dealsIndexable(m)) out.push({ url: abs(marketPath(m, "/deals")) });
     for (const b of liveBrands()) out.push({ url: abs(marketPath(m, `/brands/${b.slug}`)) });
     for (const mt of liveMounts()) out.push({ url: abs(marketPath(m, `/mounts/${mt.slug}`)) });
     for (const c of publishedCameras()) if (m === "us" || offersFor(c.slug, m).length) out.push({ url: abs(marketPath(m, `/cameras/${c.slug}`)) });

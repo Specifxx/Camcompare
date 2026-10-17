@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import SavedList from "@/components/SavedList";
 import { marketParam } from "../market";
 
+export const dynamicParams = false; // see ../page.tsx
+
 export const metadata: Metadata = { title: "Saved", robots: { index: false, follow: false } };
 export default function Page({ params }: { params: { market: string } }) {
   return (
