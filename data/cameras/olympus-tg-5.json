@@ -35,12 +35,12 @@
     "isoMin": 100,
     "isoMax": 12800,
     "ibis": true,
-    "ibisStops": 2.5,
+    "ibisStops": null,
     "burstMechFps": 5,
     "burstElecFps": 20,
     "shutterMaxMech": 2000,
     "shutterMaxElec": null,
-    "afPoints": 25,
+    "afPoints": null,
     "afSubjects": [
       "human"
     ],

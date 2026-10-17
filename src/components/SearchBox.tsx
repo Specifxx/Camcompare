@@ -28,6 +28,7 @@ export default function SearchBox({ market }: { market: MarketCode }) {
     document.addEventListener("mousedown", close);
     return () => document.removeEventListener("mousedown", close);
   }, []);
+  const listed = open && hits.length > 0;
   const go = (r: SearchRow) => {
     setOpen(false);
     setQ("");
@@ -42,8 +43,10 @@ export default function SearchBox({ market }: { market: MarketCode }) {
         placeholder="Search cameras & lenses"
         aria-label="Search cameras and lenses"
         role="combobox"
-        aria-expanded={open && hits.length > 0}
-        aria-controls="site-search-results"
+        aria-autocomplete="list"
+        aria-expanded={listed}
+        aria-controls={listed ? "site-search-results" : undefined}
+        aria-activedescendant={listed && hits[active] ? `site-search-opt-${active}` : undefined}
         onFocus={() => {
           load();
           setOpen(true);
@@ -60,10 +63,12 @@ export default function SearchBox({ market }: { market: MarketCode }) {
         }}
         className="w-full rounded-lg border border-line bg-raised px-3 py-1.5 text-sm"
       />
-      {open && hits.length > 0 && (
-        <ul id="site-search-results" role="listbox" className="absolute right-0 z-40 mt-1 w-[min(22rem,90vw)] overflow-hidden rounded-lg border border-line bg-surface shadow-lg">
+      {/* On a phone the box is narrow and right of centre, so the list spans the
+          screen under the header row instead of hanging off the box's right edge. */}
+      {listed && (
+        <ul id="site-search-results" role="listbox" className="fixed inset-x-4 top-14 z-40 mt-1 overflow-hidden rounded-lg border border-line bg-surface shadow-lg md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-[22rem]">
           {hits.map((r, i) => (
-            <li key={r.s} role="option" aria-selected={i === active}>
+            <li key={r.s} id={`site-search-opt-${i}`} role="option" aria-selected={i === active}>
               <button
                 type="button"
                 onMouseDown={(e) => e.preventDefault()}

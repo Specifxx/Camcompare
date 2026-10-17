@@ -19,7 +19,7 @@ import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
 import { readBrands, readCameraFiles, readLensFiles } from "../src/lib/catalog/load";
-import { readCredits, readRejects, thumbPath, THUMB_MAX_BYTES, THUMB_WIDTH, writeCredit, type ImageCredit } from "../src/lib/images";
+import { photoKeys, readCredits, readRejects, thumbPath, THUMB_MAX_BYTES, THUMB_WIDTH, writeCredit, type ImageCredit } from "../src/lib/images";
 import { buildIndex, matchListing } from "../src/lib/matching";
 import { SAMPLE_SHOT, USER_AGENT, commonsImage, fetchWikidataCameras, linkAll, openverseSearch, searchCommonsFiles } from "../src/lib/wikidata";
 
@@ -70,14 +70,22 @@ async function main() {
   const missing: string[] = [];
   const byKind: Record<string, string[]> = { wikidata: [], commons: [], openverse: [] };
   let openverseOff = !sources.has("openverse");
+  // One photo, one product: a kit shot ("a6000 with 16-50mm lens") belongs to
+  // the body it is named after, so it is never taken again for the lens.
+  const inUse = new Map<string, string>();
+  const claimPhoto = (slug: string, ...names: string[]) => names.flatMap(photoKeys).forEach((k) => inUse.set(k, slug));
+  for (const [slug, c] of Object.entries(credits)) claimPhoto(slug, c.file, c.pageUrl);
   for (const { kind, p } of products) {
-    const rejected = new Set(readRejects(p.slug));
+    // By photo, not file name: a rejected Flickr import must not come back
+    // as its Openverse original or a renamed crop.
+    const rejected = new Set(readRejects(p.slug).flatMap(photoKeys));
+    const isRejected = (...names: string[]) => names.some((n) => photoKeys(n).some((k) => rejected.has(k) || (inUse.has(k) && inUse.get(k) !== p.slug)));
     const isThis = (title: string) => !SAMPLE_SHOT.test(title) && matchListing({ title }, index, kind).product?.slug === p.slug;
     const tried: string[] = [];
     let cand: Candidate | null = null;
 
     const w = links.get(p.slug);
-    if (w?.image && !rejected.has(w.image)) {
+    if (w?.image && !isRejected(w.image)) {
       const img = await commonsImage(w.image);
       if (img) cand = { url: img.thumbUrl, via: "wikidata", credit: { source: "wikimedia-commons", provider: "wikimedia", file: img.file, pageUrl: img.pageUrl, author: img.author, license: img.license, licenseUrl: img.licenseUrl, wikidata: w.qid } };
       else tried.push(`${w.image}: not free`);
@@ -85,7 +93,7 @@ async function main() {
 
     if (!cand && sources.has("commons")) {
       for (const name of await searchCommonsFiles(`${p.name.replace(/α/g, "a")}`)) {
-        if (rejected.has(name) || !isThis(name.replace(/\.[a-z]+$/i, ""))) continue;
+        if (isRejected(name) || !isThis(name.replace(/\.[a-z]+$/i, ""))) continue;
         const img = await commonsImage(name);
         if (!img) continue;
         cand = { url: img.thumbUrl, via: "commons", credit: { source: "wikimedia-commons", provider: "wikimedia", file: img.file, pageUrl: img.pageUrl, author: img.author, license: img.license, licenseUrl: img.licenseUrl, wikidata: w?.qid ?? null } };
@@ -98,7 +106,7 @@ async function main() {
       try {
         const focal = kind === "lens" && "specs" in p && "focalMinMm" in p.specs ? (p.specs.focalMaxMm > p.specs.focalMinMm ? `${p.specs.focalMinMm}-${p.specs.focalMaxMm}mm` : `${p.specs.focalMinMm}mm`) : undefined;
         const hits = await openverseSearch(openverseQuery(kind, p, focal));
-        const hit = hits.find((h) => !rejected.has(h.url) && h.title && isThis(h.title));
+        const hit = hits.find((h) => !isRejected(h.url, h.landing) && h.title && isThis(h.title));
         if (hit) cand = { url: hit.url, via: "openverse", credit: { source: "openverse", provider: hit.provider, file: hit.url, pageUrl: hit.landing, author: hit.creator, license: hit.license, licenseUrl: hit.licenseUrl || null, wikidata: w?.qid ?? null } };
         else tried.push("no Openverse photo titled for it");
         await new Promise((r) => setTimeout(r, 3200)); // 20 a minute
@@ -121,6 +129,7 @@ async function main() {
     fs.writeFileSync(thumbPath(p.slug), webp);
     const meta = await sharp(webp).metadata();
     writeCredit(p.slug, { ...cand.credit, width: meta.width ?? THUMB_WIDTH, height: meta.height ?? 0 });
+    claimPhoto(p.slug, cand.credit.file, cand.credit.pageUrl);
     byKind[cand.via].push(p.slug);
     console.log(`${p.slug}: ${cand.via} ${cand.credit.license} (${Math.round(webp.length / 1024)} KB)`);
   }

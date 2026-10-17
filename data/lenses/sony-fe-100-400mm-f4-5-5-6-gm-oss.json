@@ -7,7 +7,7 @@
   "modelCodes": ["SEL100400GM"],
   "gtins": [],
   "announced": "2017-04-19",
-  "launchPriceUsd": 2499.99,
+  "launchPriceUsd": 2500,
   "launchPrices": {"GBP": 2500},
   "status": "current",
   "predecessor": null,

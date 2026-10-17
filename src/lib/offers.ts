@@ -91,12 +91,20 @@ export function readAmazonOffers(m: MarketCode, file = amazonOffersFile(m)): Off
   return z.object({ offers: z.array(offerSchema) }).parse(JSON.parse(fs.readFileSync(file, "utf8"))).offers;
 }
 
-export function readHistory(m: MarketCode, dir = historyDir(m)): HistoryDay[] {
+/**
+ * Pages show at most this many days of history. The folder grows by one file
+ * a day per market, and a page should never read more than a year and a bit
+ * (a year's low still needs a year of points).
+ */
+export const HISTORY_DAYS = 400;
+
+export function readHistory(m: MarketCode, dir = historyDir(m), days = HISTORY_DAYS): HistoryDay[] {
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
     .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
     .sort()
+    .slice(-days)
     .map((f) => historyDaySchema.parse(JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"))));
 }
 

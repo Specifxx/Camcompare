@@ -51,6 +51,19 @@ export function removeThumb(slug: string) {
   for (const p of [thumbPath(slug), path.join(CREDITS_DIR, `${slug}.json`)]) if (fs.existsSync(p)) fs.unlinkSync(p);
 }
 
+/**
+ * The keys a photo is known by: its file title or URL, plus its Flickr photo
+ * id when it has one. Commons keeps that id in the title of a Flickr import
+ * ("… (52546794891).jpg", "(51084105452, cropped)"), Openverse in the image
+ * and landing URLs, so a rejected photo is known again whichever way it
+ * comes back.
+ */
+export function photoKeys(fileOrUrl: string): string[] {
+  const flickr =
+    fileOrUrl.match(/\((\d{9,11})(?:,[^)]*)?\)/)?.[1] ?? fileOrUrl.match(/staticflickr\.com\/\d+\/(\d+)_/)?.[1] ?? fileOrUrl.match(/flickr\.com\/photos\/[^/]+\/(\d+)/)?.[1];
+  return flickr ? [fileOrUrl, `flickr:${flickr}`] : [fileOrUrl];
+}
+
 export function readRejects(slug: string): string[] {
   const p = path.join(REJECTS_DIR, `${slug}.json`);
   return fs.existsSync(p) ? (JSON.parse(fs.readFileSync(p, "utf8")) as { files: string[] }).files : [];
@@ -62,5 +75,6 @@ export function addReject(slug: string, file: string) {
   fs.writeFileSync(path.join(REJECTS_DIR, `${slug}.json`), JSON.stringify({ files }, null, 2) + "\n");
 }
 
-export const thumbPath = (slug: string) => path.join(process.cwd(), "public", "products", `${slug}.webp`);
+export const THUMBS_DIR = path.join(process.cwd(), "public", "products");
+export const thumbPath = (slug: string) => path.join(THUMBS_DIR, `${slug}.webp`);
 export { thumbSrc } from "./thumb";

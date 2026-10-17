@@ -9,7 +9,7 @@
   "announced": "2023-07-12",
   "launchPriceUsd": 1699.99,
   "status": "current",
-  "predecessor": null,
+  "predecessor": "sony-fe-70-200mm-f4-g-oss",
   "successor": null,
   "rivals": [],
   "mounts": ["sony-e"],

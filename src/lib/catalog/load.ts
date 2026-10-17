@@ -3,7 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { z } from "zod";
-import { aliasKeys } from "../matching";
+import { aliasKeys, normalizeGtin } from "../matching";
 import { brandSchema, cameraSchema, lensSchema, mountSchema, type Brand, type Camera, type Lens, type Mount } from "./schema";
 
 export const DATA_DIR = path.join(process.cwd(), "data");
@@ -51,6 +51,15 @@ export function readMounts(): Mount[] {
   return mountSchema.array().parse(JSON.parse(fs.readFileSync(path.join(DATA_DIR, "mounts.json"), "utf8")));
 }
 
+/** A GS1 check digit that adds up (GTIN-8, UPC-A, EAN-13, GTIN-14). */
+export function validGtin(g: string): boolean {
+  if (!/^(\d{8}|\d{12,14})$/.test(g)) return false;
+  const d = [...g].map(Number);
+  const check = d.pop()!;
+  const sum = d.reverse().reduce((t, x, i) => t + x * (i % 2 ? 1 : 3), 0);
+  return (10 - (sum % 10)) % 10 === check;
+}
+
 /** Cross-file rules a single-file schema cannot see. */
 export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], lenses: Lens[] = []): CatalogIssue[] {
   const issues: CatalogIssue[] = [];
@@ -69,6 +78,17 @@ export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], 
       aliasOwner.set(`${p.brand}:${key}`, p.slug);
     }
   };
+  // A GTIN sends a feed row straight to its product, past every title check
+  // (matching.ts): one left in a copied file would price the wrong product.
+  const gtinOwner = new Map<string, string>();
+  const claimGtins = (file: string, p: Camera | Lens) => {
+    for (const g of p.gtins) {
+      if (!validGtin(g)) issues.push({ file, message: `GTIN ${g} has a wrong check digit` });
+      const owner = gtinOwner.get(normalizeGtin(g));
+      if (owner && owner !== p.slug) issues.push({ file, message: `GTIN ${g} also belongs to ${owner}` });
+      gtinOwner.set(normalizeGtin(g), p.slug);
+    }
+  };
   for (const s of cameraSlugs) if (lensSlugs.has(s)) issues.push({ file: `${s}.json`, message: "slug used by both a camera and a lens" });
 
   for (const c of cameras) {
@@ -84,6 +104,7 @@ export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], 
     }
     if (c.rivals.includes(c.slug)) issues.push({ file, message: "lists itself as a rival" });
     claim(file, c);
+    claimGtins(file, c);
   }
   for (const l of lenses) {
     const file = `lenses/${l.slug}.json`;
@@ -95,6 +116,7 @@ export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], 
     }
     if (l.rivals.includes(l.slug)) issues.push({ file, message: "lists itself as a rival" });
     claim(file, l);
+    claimGtins(file, l);
   }
   for (const list of [cameras, lenses] as { slug: string; successor: string | null; predecessor: string | null }[][]) {
     const bySlug = new Map(list.map((x) => [x.slug, x]));

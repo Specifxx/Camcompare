@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import type { MarketCode } from "@/lib/markets";
 import { readSaved, writeSaved } from "@/lib/saved";
 
-export default function SaveButton({ slug, kind, market, seen }: { slug: string; kind: "camera" | "lens"; market: MarketCode; seen: number | null }) {
+// `cond`: the condition `seen` is priced in, so /saved compares like with like.
+export default function SaveButton({ slug, kind, market, seen, cond }: { slug: string; kind: "camera" | "lens"; market: MarketCode; seen: number | null; cond?: "new" | "used" }) {
   const [saved, setSaved] = useState(false);
   useEffect(() => {
     const sync = () => setSaved(readSaved().some((s) => s.slug === slug));
@@ -17,7 +18,7 @@ export default function SaveButton({ slug, kind, market, seen }: { slug: string;
       aria-pressed={saved}
       onClick={() => {
         const list = readSaved().filter((s) => s.slug !== slug);
-        writeSaved(saved ? list : [{ slug, kind: kind === "camera" ? "c" : "l", market, at: new Date().toISOString(), seen }, ...list]);
+        writeSaved(saved ? list : [{ slug, kind: kind === "camera" ? "c" : "l", market, at: new Date().toISOString(), seen, cond }, ...list]);
       }}
       className="btn-ghost"
     >

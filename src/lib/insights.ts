@@ -41,18 +41,21 @@ export function peerRanks(c: Camera, minPeers = 8): PeerRank[] {
 export type DealSignal = { kind: "low-90" | "below-avg" | "above-avg"; text: string } | null;
 
 /**
- * How today's lowest new price compares with our own history in this market.
- * Needs two weeks of history; says nothing rather than guess.
+ * How today's lowest new price compares with our own history in this market
+ * before `today` (the import day, whose history point is today's own price).
+ * Needs two weeks of history; says nothing rather than guess. "Lowest" means
+ * below every earlier price: a flat price is not a deal.
  */
-export function dealSignal(history: HistoryPoint[], todayMinor: number | null, field: "new" | "used" = "new"): DealSignal {
+export function dealSignal(history: HistoryPoint[], todayMinor: number | null, field: "new" | "used" = "new", today?: string | null): DealSignal {
   if (todayMinor === null) return null;
-  const pts = history.filter((p) => p[field] !== undefined).slice(-90);
+  const pts = history.filter((p) => p[field] !== undefined && (!today || p.day < today)).slice(-90);
   if (pts.length < 14) return null;
   const vals = pts.map((p) => p[field]!);
   const min90 = Math.min(...vals);
   const last30 = vals.slice(-30);
   const avg30 = last30.reduce((a, b) => a + b, 0) / last30.length;
-  if (todayMinor <= min90) return { kind: "low-90", text: `Lowest ${field} price we've seen in ${pts.length} days` };
+  const days = Math.round((Date.parse(today ?? pts[pts.length - 1].day) - Date.parse(pts[0].day)) / 86400_000) + 1;
+  if (todayMinor < min90) return { kind: "low-90", text: `Lowest ${field} price we've seen in ${days} days` };
   const pct = Math.round(((avg30 - todayMinor) / avg30) * 100);
   if (pct >= 3) return { kind: "below-avg", text: `${pct}% below its 30-day average` };
   if (pct <= -3) return { kind: "above-avg", text: `${-pct}% above its 30-day average` };
@@ -71,16 +74,21 @@ export function vsLaunch(todayMinor: number | null, launch: number | null): numb
   return Math.round(((todayMinor / 100 - launch) / launch) * 100);
 }
 
-/** Biggest drops: today's lowest vs the same product's lowest 7 days ago. */
+/**
+ * Biggest drops this week: the lowest price on the market's latest history
+ * day against the same product's 7 to 10 days earlier. A product not priced
+ * on the latest day is left out: its last price is no longer on sale.
+ */
 export function priceDrops(history: Map<string, HistoryPoint[]>, field: "new" | "used", minPct = 3): { slug: string; from: number; to: number; pct: number }[] {
   const out: { slug: string; from: number; to: number; pct: number }[] = [];
+  const latest = [...history.values()].reduce((d, pts) => (pts.length && pts[pts.length - 1].day > d ? pts[pts.length - 1].day : d), "");
+  const ago = (p: HistoryPoint) => (Date.parse(latest) - Date.parse(p.day)) / 86400_000;
   for (const [slug, pts] of history) {
     const withVal = pts.filter((p) => p[field] !== undefined);
-    if (withVal.length < 2) continue;
     const last = withVal[withVal.length - 1];
-    const lastDay = Date.parse(last.day);
-    const before = [...withVal].reverse().find((p) => lastDay - Date.parse(p.day) >= 7 * 86400_000) ?? withVal[0];
-    if (before === last) continue;
+    if (!last || last.day !== latest) continue;
+    const before = [...withVal].reverse().find((p) => ago(p) >= 7);
+    if (!before || ago(before) > 10) continue;
     const pct = Math.round(((before[field]! - last[field]!) / before[field]!) * 100);
     if (pct >= minPct) out.push({ slug, from: before[field]!, to: last[field]!, pct });
   }

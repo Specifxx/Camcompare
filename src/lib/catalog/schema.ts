@@ -45,7 +45,14 @@ export const SCREEN_TYPES = ["fully-articulating", "tilting", "multi-angle", "fl
 export const CATALOG_FLOOR_YEAR = 2012;
 
 const slug = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, "kebab-case slug");
-const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "YYYY-MM-DD");
+const isoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, "YYYY-MM-DD")
+  .refine((d) => {
+    // 2024-02-30 would show as "Mar 2024"; 2023-13-01 as "Invalid Date".
+    const t = Date.parse(`${d}T00:00:00Z`);
+    return !Number.isNaN(t) && new Date(t).toISOString().slice(0, 10) === d;
+  }, "not a real date");
 const nullableNumber = z.number().positive().nullable();
 
 export const specsSchema = z

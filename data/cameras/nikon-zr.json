@@ -32,7 +32,7 @@
     "isoMin": 100,
     "isoMax": 64000,
     "ibis": true,
-    "ibisStops": null,
+    "ibisStops": 7.5,
     "burstMechFps": null,
     "burstElecFps": 20,
     "shutterMaxMech": null,
@@ -43,7 +43,8 @@
       "animal",
       "bird",
       "vehicle",
-      "aircraft"
+      "aircraft",
+      "train"
     ],
     "videoMaxRes": "6K",
     "video4kMaxFps": 120,
@@ -65,7 +66,7 @@
     "waterproofM": null,
     "cardSlots": 2,
     "cardTypes": "CFexpress B / XQD + microSD UHS-I",
-    "batteryShotsCipa": null,
+    "batteryShotsCipa": 350,
     "usbC": true,
     "micJack": true,
     "headphoneJack": true,

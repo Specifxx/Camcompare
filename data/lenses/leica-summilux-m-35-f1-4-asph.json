@@ -8,6 +8,7 @@
   "gtins": [],
   "announced": "2022-09-15",
   "launchPriceUsd": 5395,
+  "launchPrices": {"EUR": 5650},
   "status": "current",
   "predecessor": null,
   "successor": null,

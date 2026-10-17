@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MarketCode } from "@/lib/markets";
 import { recommend, SIZES, USES, type Size, type Use } from "@/lib/finder";
+import { replaceQuery } from "@/lib/search";
 import { priceOf, type CameraSummary } from "@/lib/summary-types";
 import ProductCard from "./ProductCard";
 
@@ -9,6 +10,25 @@ export default function Finder({ cameras, market }: { cameras: CameraSummary[]; 
   const [use, setUse] = useState<Use | null>(null);
   const [size, setSize] = useState<Size>("any");
   const [budget, setBudget] = useState<number | null>(null);
+  // The answers live in the URL too (as in Browser), so Back from a camera
+  // page restores them. Read once; written on every change after that read.
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const u = sp.get("use");
+    const s = sp.get("size");
+    const b = Number(sp.get("budget"));
+    if (u && Object.keys(USES).includes(u)) setUse(u as Use);
+    if (s && Object.keys(SIZES).includes(s)) setSize(s as Size);
+    if (b > 0) setBudget(b);
+  }, []);
+  const restored = useRef(false);
+  useEffect(() => {
+    if (!restored.current) {
+      restored.current = true;
+      return;
+    }
+    replaceQuery({ use, size: size === "any" ? null : size, budget });
+  }, [use, size, budget]);
   const cur = cameras[0]?.currency ?? "USD";
   const sym = { USD: "$", GBP: "£", EUR: "€", AUD: "A$", SGD: "S$" }[cur];
   const results = use ? recommend(cameras, use, size, budget, priceOf).slice(0, 12) : [];

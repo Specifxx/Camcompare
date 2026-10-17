@@ -35,7 +35,7 @@
     "ibis": true,
     "ibisStops": 3.5,
     "burstMechFps": 8.6,
-    "burstElecFps": 14.1,
+    "burstElecFps": null,
     "shutterMaxMech": 4000,
     "shutterMaxElec": 16000,
     "afPoints": 121,

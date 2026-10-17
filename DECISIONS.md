@@ -266,3 +266,42 @@ R5 is listed) matched the older model, putting its price on the wrong page.
   5-digit numbers that other makers' accessories reuse.
 - `catalog:check` uses the matcher's own keys, per brand, so a clash it
   passes can't make two products unmatchable.
+
+## 2026-10-17: What the code review changed, and what it left alone
+
+A six-part review (prices, markets and SEO, interface, security, cost, data)
+raised 72 findings. Each was checked against the code by a second agent before
+anything changed. Two weren't real. Most were fixed with tests. The decisions
+worth keeping:
+
+- **No launch price anywhere means no title-only prices.** 181 products had no
+  US launch price. On a $30 token floor, lens hoods, tripod rings and main
+  boards passed as the product. `plausiblePrice` now falls back to any
+  market's launch price at reference rates. With none at all, it trusts only
+  a barcode or part-number match. eBay matches only on titles, so it skips
+  those products instead of spending quota on them.
+- **"Paid link" follows the link, not only the environment.** An eBay or
+  network feed link already carries the affiliate id the daily import ran
+  with, and `isPaid(retailer, href)` sees it. The note and the filled button
+  stay honest even when Vercel's variables lag GitHub's.
+- **Junk first path segments are static 404s.** Every `[market]` page without
+  a deeper dynamic segment sets `dynamicParams = false`, so `/wp-login.php`
+  and `/favicon.ico` never render or cache anything.
+- **Unpriced market product pages still render on first visit.** The cost is
+  one render and one cache write per page per deploy, and only for pages
+  something actually requests. The amplifier was link prefetching from the
+  market hubs, which rendered every card on a visitor's screen; product cards
+  no longer prefetch. Prerendering every market × product (about five times
+  the build), or serving those pages dynamically behind a CDN header, would
+  only be worth it if the Vercel usage page ever shows ISR writes mattering.
+- **A reversed pair URL is a 404.** Every link, canonical and sitemap entry
+  goes through `pairSlug`. Prerendering a redirect for each reversed slug
+  would double the pair pages for URLs nothing produces.
+- **Pages read at most 400 days of history** (`HISTORY_DAYS`). The folder
+  still grows by one file per market per day. Merging old days into monthly
+  files is the fix once that matters; until then the read is bounded.
+- **One photo, one product.** A kit shot ("a6000 with 16-50mm lens") is the
+  body's photo. The fetcher skips any photo another product already uses,
+  matched by photo (Commons file, Flickr id), not file name.
+- **Browse and finder state lives in the URL** (`history.replaceState`), so
+  Back returns to the same filters and picks.

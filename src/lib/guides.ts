@@ -2,11 +2,28 @@
 // frontmatter block (title, description, updated). Rendered to HTML at build.
 import fs from "node:fs";
 import path from "node:path";
-import { marked } from "marked";
+import { Marked } from "marked";
 
 const DIR = path.join(process.cwd(), "content", "guides");
 
 export type Guide = { slug: string; title: string; description: string; updated: string; html: string; words: number };
+
+// Site-internal links only (the writers' rule). marked doesn't sanitize, so
+// the renderer enforces it: a link or image whose target isn't a path on this
+// site ("/x", never "//host" or "/\host") renders as its text, and raw HTML
+// renders as escaped text, so no guide ships an external link or a script.
+// Returning false hands an internal one to marked's own renderer.
+const internal = (href: string) => /^\/(?![/\\])/.test(href);
+const escapeHtml = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const md = new Marked({
+  async: false,
+  renderer: {
+    link: (href, _title, text) => (internal(href) ? false : text),
+    image: (href, _title, text) => (internal(href) ? false : text),
+    html: (html) => escapeHtml(html),
+  },
+});
+export const guideHtml = (body: string) => md.parse(body) as string;
 
 function parse(slug: string, raw: string): Guide {
   const m = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
@@ -16,9 +33,7 @@ function parse(slug: string, raw: string): Guide {
     if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim().replace(/^["']|["']$/g, "");
   }
   const body = m?.[2] ?? raw;
-  // Site-internal links only (the writers' rule); anything else renders as text.
-  const html = marked.parse(body, { async: false }) as string;
-  return { slug, title: meta.title ?? slug, description: meta.description ?? "", updated: meta.updated ?? "", html: html.replace(/<a href="(?!\/)[^"]*">([\s\S]*?)<\/a>/g, "$1"), words: body.split(/\s+/).filter(Boolean).length };
+  return { slug, title: meta.title ?? slug, description: meta.description ?? "", updated: meta.updated ?? "", html: guideHtml(body), words: body.split(/\s+/).filter(Boolean).length };
 }
 
 let memo: Guide[] | null = null;

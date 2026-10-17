@@ -36,3 +36,28 @@ export function searchRank(rows: SearchRow[], q: string): SearchRow[] {
   }
   return scored.sort((a, b) => b.score - a.score).map((x) => x.r);
 }
+
+// ------------------------------------------------------------ URL state
+
+/**
+ * Mirrors a page's filter state into its query string without adding a
+ * history entry, so Back from a product restores the list and the URL can be
+ * shared. Empty values drop their key; other keys (?utm_…) stay. Data must be
+ * null: Next's patched replaceState then copies its own history state and
+ * keeps the router's URL in step. Client-only.
+ */
+export function replaceQuery(state: Record<string, string | number | null>) {
+  const { pathname, search, hash } = window.location;
+  const sp = new URLSearchParams(search);
+  for (const [k, v] of Object.entries(state)) {
+    if (v === null || v === "") sp.delete(k);
+    else sp.set(k, String(v));
+  }
+  const qs = sp.toString().replace(/%2C/g, ",");
+  if (`?${qs}` === search || (!qs && !search)) return;
+  try {
+    window.history.replaceState(null, "", `${pathname}${qs ? `?${qs}` : ""}${hash}`);
+  } catch {
+    /* Safari caps replaceState calls per second; the URL just lags */
+  }
+}

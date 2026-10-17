@@ -12,7 +12,7 @@
   "gtins": [],
   "type": "mirrorless",
   "announced": "2012-02-08",
-  "launchPriceUsd": null,
+  "launchPriceUsd": 999.99,
   "launchPrices": {
     "EUR": 1099
   },
@@ -33,7 +33,7 @@
     "isoMin": 200,
     "isoMax": 25600,
     "ibis": true,
-    "ibisStops": null,
+    "ibisStops": 4,
     "burstMechFps": 9,
     "burstElecFps": null,
     "shutterMaxMech": 4000,

@@ -9,7 +9,7 @@
   "announced": "2023-08-29",
   "launchPriceUsd": 2299.99,
   "status": "current",
-  "predecessor": null,
+  "predecessor": "sony-fe-16-35mm-f2-8-gm",
   "successor": null,
   "rivals": [],
   "mounts": ["sony-e"],

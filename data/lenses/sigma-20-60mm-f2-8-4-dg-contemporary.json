@@ -33,7 +33,7 @@
     "elements": 15,
     "groups": 13,
     "apertureBlades": 9,
-    "internalZoom": false,
+    "internalZoom": null,
     "apertureRing": false,
     "teleconverter": false
   }

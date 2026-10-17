@@ -13,8 +13,8 @@ const MOUNT_SHORT: Record<string, string> = {
 };
 
 /** Filled button for links that earn (Amazon in its own colours), outline for the rest. */
-export function buttonClass(r: Retailer | undefined): string {
-  if (!r || !isPaid(r.key)) return "btn-ghost";
+export function buttonClass(r: Retailer | undefined, href?: string): string {
+  if (!r || !isPaid(r.key, href)) return "btn-ghost";
   if (r.amazon) return "btn-amazon";
   if (r.ebay) return "btn-ebay";
   return "btn-buy";
@@ -47,6 +47,9 @@ export default function OffersTable({ product, query, offers, market, page, amaz
       <ul className="card divide-y divide-line">
         {priced.map((o, i) => {
           const r = retailer(o.retailer);
+          // A feed or eBay link may already carry the affiliate id the import ran with.
+          const href = affiliateUrl(o.retailer, o.url, subId(page, "offers"));
+          const paid = isPaid(o.retailer, href);
           return (
             <li key={`${o.retailer}-${o.sourceId ?? i}`} className="flex items-center gap-3 px-4 py-3">
               <div className="min-w-0 flex-1">
@@ -63,10 +66,10 @@ export default function OffersTable({ product, query, offers, market, page, amaz
                 {r?.amazon ? <TimedPrice text={price(o.price, o.currency)} seenAt={o.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : price(o.price, o.currency)}
               </p>
               <div className="w-24 shrink-0 text-right">
-                <OutboundLink href={affiliateUrl(o.retailer, o.url, subId(page, "offers"))} retailer={o.retailer} product={product} placement="offers" className={`${buttonClass(r)} w-full`}>
+                <OutboundLink href={href} retailer={o.retailer} product={product} placement="offers" className={`${buttonClass(r, href)} w-full`}>
                   View
                 </OutboundLink>
-                {isPaid(o.retailer) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
+                {paid && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
               </div>
             </li>
           );
@@ -78,10 +81,10 @@ export default function OffersTable({ product, query, offers, market, page, amaz
               <p className="text-xs text-subtle">{r.amazon ? "Price shown on Amazon" : r.conditions.includes("used") && r.conditions.length === 1 ? "Used stock, graded and warrantied" : "Check today's price"}</p>
             </div>
             <div className="shrink-0 text-right">
-              <OutboundLink href={checkHref(r)} retailer={r.key} product={product} placement="check" className={buttonClass(r)}>
+              <OutboundLink href={checkHref(r)} retailer={r.key} product={product} placement="check" className={buttonClass(r, checkHref(r))}>
                 {r.amazon ? "Check price on Amazon" : "Check price"}
               </OutboundLink>
-              {isPaid(r.key) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
+              {isPaid(r.key, checkHref(r)) && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}
             </div>
           </li>
         ))}

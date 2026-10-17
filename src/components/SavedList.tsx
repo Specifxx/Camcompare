@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { price } from "@/lib/format";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
-import { readSaved, writeSaved, type SavedItem } from "@/lib/saved";
+import { readSaved, savedChange, writeSaved, type SavedItem } from "@/lib/saved";
 import type { SearchRow } from "@/lib/search";
 
 export default function SavedList({ market }: { market: MarketCode }) {
@@ -25,8 +25,7 @@ export default function SavedList({ market }: { market: MarketCode }) {
     <ul className="card divide-y divide-line">
       {items.map((it) => {
         const row = names[it.slug];
-        const now = prices[it.slug]?.[0] ?? prices[it.slug]?.[1] ?? null;
-        const delta = it.market === market && it.seen !== null && now !== null ? now - it.seen : null;
+        const { now, cond, delta } = savedChange(it, prices[it.slug], market);
         return (
           <li key={it.slug} className="flex items-center gap-3 px-4 py-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -36,6 +35,7 @@ export default function SavedList({ market }: { market: MarketCode }) {
             </Link>
             <span className="shrink-0 text-right text-sm">
               {now !== null ? <span className="price font-bold">{price(now, cur)}</span> : <span className="text-subtle">no price</span>}
+              {cond === "used" && <span className="text-xs text-subtle"> used</span>}
               {delta !== null && delta !== 0 && (
                 <span className={`block text-xs ${delta < 0 ? "text-win" : "text-warn"}`}>
                   {delta < 0 ? "▼" : "▲"} {price(Math.abs(delta), cur)} since saved

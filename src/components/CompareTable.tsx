@@ -5,7 +5,7 @@ import { marketPath, type MarketCode } from "@/lib/markets";
 import { lowest } from "@/lib/offers";
 import { SPEC_GROUPS, compareRows, type CompareRow } from "@/lib/specs/definitions";
 import { LENS_SPEC_GROUPS } from "@/lib/specs/lens";
-import ComparePrices from "./ComparePrices";
+import ComparePrices, { FollowLink } from "./ComparePrices";
 import CompareToggle from "./CompareToggle";
 import ProductThumb from "./ProductThumb";
 
@@ -34,14 +34,29 @@ export default function CompareTable({ items, market, followVisitorMarket = fals
           <thead>
             <tr className="border-b border-line align-top">
               <th className="p-3" />
-              {items.map((p) => (
-                <th key={p.item.slug} className="p-3 text-left font-normal">
-                  <Link href={marketPath(market, productPath(p))} className="block text-fg no-underline hover:no-underline">
+              {items.map((p) => {
+                const head = (
+                  <>
                     <ProductThumb slug={p.item.slug} alt={p.item.name} className="mb-2 max-w-[220px]" />
                     <span className="font-semibold hover:text-accent">{displayName(p.item, market)}</span>
-                  </Link>
-                </th>
-              ))}
+                  </>
+                );
+                const cls = "block text-fg no-underline hover:no-underline";
+                return (
+                  <th key={p.item.slug} className="p-3 text-left font-normal">
+                    {/* A global pair page links to the product in the visitor's market. */}
+                    {followVisitorMarket ? (
+                      <FollowLink path={productPath(p)} className={cls}>
+                        {head}
+                      </FollowLink>
+                    ) : (
+                      <Link href={marketPath(market, productPath(p))} className={cls}>
+                        {head}
+                      </Link>
+                    )}
+                  </th>
+                );
+              })}
             </tr>
             <tr className="border-b border-line">
               <th className="p-3 text-left text-xs font-medium uppercase tracking-wide text-subtle">Lowest price today</th>

@@ -35,6 +35,6 @@
     "apertureBlades": 9,
     "internalZoom": null,
     "apertureRing": false,
-    "teleconverter": null
+    "teleconverter": false
   }
 }

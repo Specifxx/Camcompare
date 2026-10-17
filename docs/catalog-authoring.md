@@ -66,6 +66,9 @@ runs of whole words, with the brand also named in the title. So:
   ever sold it as a kit, or you aren't sure, write `null`.
 - `launchPrices`: launch prices in GBP, EUR, AUD and SGD, only those you can
   confirm, VAT/GST included. Omit the key entirely when unknown.
+- A launch price in at least one market is what lets eBay and title-only feeds
+  price a product: with none anywhere, only a barcode or part-number match is
+  trusted (`plausiblePrice`). It is worth a search before writing `null`.
 - `status`: `"discontinued"` only when the maker has stopped selling it (a
   successor replaced it, or it is gone from the maker's site). Otherwise
   `"current"`.

@@ -8,6 +8,7 @@
   "gtins": [],
   "announced": "2023-04-13",
   "launchPriceUsd": 4495,
+  "launchPrices": {"EUR": 4550},
   "status": "current",
   "predecessor": null,
   "successor": null,

@@ -7,7 +7,7 @@
   "modelCodes": ["SEL24105G"],
   "gtins": [],
   "announced": "2017-10-25",
-  "launchPriceUsd": 1299.99,
+  "launchPriceUsd": 1300,
   "launchPrices": {"EUR": 1350},
   "status": "current",
   "predecessor": null,
@@ -34,7 +34,7 @@
     "elements": 17,
     "groups": 14,
     "apertureBlades": 9,
-    "internalZoom": null,
+    "internalZoom": false,
     "apertureRing": false,
     "teleconverter": false
   }

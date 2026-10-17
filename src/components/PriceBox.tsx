@@ -1,3 +1,4 @@
+import { offersGeneratedAt } from "@/lib/catalog";
 import { listPrice, price } from "@/lib/format";
 import { dealSignal, usedSaving, vsLaunch } from "@/lib/insights";
 import { MARKETS, type Currency, type MarketCode } from "@/lib/markets";
@@ -10,7 +11,8 @@ const shown = (o: Offer, cur: Currency) => (isAmazonOffer(o) ? <TimedPrice text=
 
 export default function PriceBox({ newOffer, usedOffer, history, launch, market, extra }: { newOffer: Offer | null; usedOffer: Offer | null; history: HistoryPoint[]; launch: { amount: number; currency: Currency } | null; market: MarketCode; extra?: string }) {
   const cur = MARKETS[market].currency;
-  const deal = dealSignal(history, newOffer?.price ?? null);
+  // Today's history point is the import day's: deals compare with the days before it.
+  const deal = dealSignal(history, newOffer?.price ?? null, "new", offersGeneratedAt(market)?.slice(0, 10));
   const saving = usedSaving(newOffer?.price ?? null, usedOffer?.price ?? null);
   const launchDelta = launch && launch.currency === cur ? vsLaunch(newOffer?.price ?? null, launch.amount) : null;
   if (!newOffer && !usedOffer) {

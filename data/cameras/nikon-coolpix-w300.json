@@ -37,7 +37,7 @@
     "isoMax": 6400,
     "ibis": false,
     "ibisStops": null,
-    "burstMechFps": 7,
+    "burstMechFps": 7.5,
     "burstElecFps": null,
     "shutterMaxMech": 1500,
     "shutterMaxElec": null,

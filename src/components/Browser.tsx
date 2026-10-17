@@ -1,10 +1,12 @@
 "use client";
 // The /cameras and /lenses finders. The whole published catalog is a few
 // hundred small records per kind, so filtering happens in the browser: no
-// API, no database. Filters can be preset from the URL (?mount=sony-e&brand=sigma).
+// API, no database. Filters can be preset from the URL (?mount=sony-e&brand=sigma),
+// and every filter, the sort and the compare picks are kept there as they change.
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { marketPath, type MarketCode } from "@/lib/markets";
+import { replaceQuery } from "@/lib/search";
 import { priceOf, type CameraSummary, type LensSummary, type ProductSummary } from "@/lib/summary-types";
 import ProductCard from "./ProductCard";
 
@@ -103,13 +105,47 @@ export default function Browser(props: Props) {
   useEffect(() => {
     const sp = new URLSearchParams(window.location.search);
     const list = (k: string) => sp.get(k)?.split(",").filter(Boolean) ?? [];
+    const num = (k: string) => (Number(sp.get(k)) > 0 ? Number(sp.get(k)) : null);
     if (sp.get("brand")) setBrand(list("brand"));
     if (sp.get("mount")) setMount(list("mount"));
     if (sp.get("type")) setType(list("type"));
     if (sp.get("sensor")) setSensor(list("sensor"));
     if (sp.get("category")) setCats(list("category"));
+    if (sp.get("coverage")) setCoverage(list("coverage"));
     if (sp.get("q")) setQ(sp.get("q")!);
-  }, []);
+    setMaxPrice(num("budget"));
+    setFromYear(num("year"));
+    setMaxAperture(num("aperture"));
+    if (sp.get("features")) setFlags(Object.fromEntries(list("features").map((f) => [f, true])));
+    const s = sp.get("sort");
+    if (s && Object.keys(SORTS).includes(s) && SORTS[s as SortKey].kinds.includes(kind)) setSort(s as SortKey);
+    if (sp.get("pick")) setPicked(list("pick").filter((x) => items.some((p) => p.slug === x)).slice(0, 4));
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Written back on every change after that read (its first run would write
+  // the defaults over the URL being read), so Back from a product restores it.
+  const restored = useRef(false);
+  useEffect(() => {
+    if (!restored.current) {
+      restored.current = true;
+      return;
+    }
+    replaceQuery({
+      q: q.trim(),
+      brand: brand.join(","),
+      mount: mount.join(","),
+      type: type.join(","),
+      sensor: sensor.join(","),
+      category: cats.join(","),
+      coverage: coverage.join(","),
+      budget: maxPrice,
+      year: fromYear,
+      aperture: maxAperture,
+      features: Object.keys(flags).filter((k) => flags[k]).join(","),
+      sort: sort === "newest" ? null : sort,
+      pick: picked.join(","),
+    });
+  }, [q, brand, mount, type, sensor, cats, coverage, maxPrice, fromYear, maxAperture, flags, sort, picked]);
 
   const shown = useMemo(() => {
     const needle = q.trim().toLowerCase().replace(/α/g, "a");
@@ -242,7 +278,7 @@ export default function Browser(props: Props) {
             <div key={p.slug} className="relative">
               <ProductCard p={p} market={market} />
               <label className="absolute right-2 top-2 flex cursor-pointer items-center gap-1 rounded-md border border-line bg-surface/95 px-1.5 py-0.5 text-[11px] font-medium">
-                <input type="checkbox" checked={picked.includes(p.slug)} onChange={() => pick(p.slug)} className="h-3.5 w-3.5" />
+                <input type="checkbox" checked={picked.includes(p.slug)} onChange={() => pick(p.slug)} aria-label={`Compare ${p.name}`} className="h-3.5 w-3.5" />
                 Compare
               </label>
             </div>

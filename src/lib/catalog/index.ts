@@ -3,13 +3,13 @@
 import fs from "node:fs";
 import { readBrands, readCameraFiles, readLensFiles, readMounts } from "./load";
 import type { Brand, Camera, Lens, LensCoverage, Mount, ProductKind, SensorFormat } from "./schema";
-import { readCredits, thumbPath, type ImageCredit } from "../images";
-import { MARKET_CODES, MARKETS, type Currency, type MarketCode } from "../markets";
+import { readCredits, THUMBS_DIR, type ImageCredit } from "../images";
+import { MARKETS, type Currency, type MarketCode } from "../markets";
 import { readAmazonOffers, readHistory, readOffersFile, sortOffers, type HistoryPoint, type Offer } from "../offers";
 
 export type AnyProduct = { kind: "camera"; item: Camera } | { kind: "lens"; item: Lens };
 
-type MarketData = { offers: Map<string, Offer[]>; history: Map<string, HistoryPoint[]>; generatedAt: string | null };
+type MarketOffers = { offers: Map<string, Offer[]>; generatedAt: string | null };
 
 type Catalog = {
   cameras: Camera[];
@@ -18,7 +18,10 @@ type Catalog = {
   brands: Brand[];
   mounts: Mount[];
   credits: Record<string, ImageCredit>;
-  markets: Record<MarketCode, MarketData>;
+  // Parsed per market on first use: price history grows every day, and a
+  // page reads one market's (a compare page none).
+  offers: Partial<Record<MarketCode, MarketOffers>>;
+  history: Partial<Record<MarketCode, Map<string, HistoryPoint[]>>>;
 };
 
 let memo: Catalog | null = null;
@@ -28,25 +31,37 @@ const newestFirst = <T extends { announced: string; name: string }>(a: T, b: T) 
 function load(): Catalog {
   if (memo) return memo;
   const credits = readCredits();
-  const published = (slug: string) => Boolean(credits[slug]) && fs.existsSync(thumbPath(slug));
+  // A server function has no public/ (the CDN serves it; next.config.js keeps
+  // the thumbnails out of every function): there the credits decide, which
+  // tests/catalog.test.ts holds to the files.
+  const thumbs = fs.existsSync(THUMBS_DIR) ? new Set(fs.readdirSync(THUMBS_DIR)) : null;
+  const published = (slug: string) => Boolean(credits[slug]) && (!thumbs || thumbs.has(`${slug}.webp`));
   const cameras = readCameraFiles().cameras.filter((c) => published(c.slug)).sort(newestFirst);
   const lenses = readLensFiles().lenses.filter((l) => published(l.slug)).sort(newestFirst);
   const bySlug = new Map<string, AnyProduct>([
     ...cameras.map((c) => [c.slug, { kind: "camera", item: c }] as const),
     ...lenses.map((l) => [l.slug, { kind: "lens", item: l }] as const),
   ]);
-  const markets = {} as Record<MarketCode, MarketData>;
-  for (const m of MARKET_CODES) {
-    const file = readOffersFile(m);
-    const offers = new Map<string, Offer[]>();
-    for (const o of [...file.offers, ...readAmazonOffers(m)]) if (bySlug.has(o.product)) (offers.get(o.product) ?? offers.set(o.product, []).get(o.product)!).push(o);
-    for (const [k, v] of offers) offers.set(k, sortOffers(v));
-    const history = new Map<string, HistoryPoint[]>();
-    for (const d of readHistory(m)) for (const [slug, p] of Object.entries(d.prices)) if (bySlug.has(slug)) (history.get(slug) ?? history.set(slug, []).get(slug)!).push({ day: d.day, ...p });
-    markets[m] = { offers, history, generatedAt: file.generatedAt };
-  }
-  memo = { cameras, lenses, bySlug, brands: readBrands(), mounts: readMounts(), credits, markets };
+  memo = { cameras, lenses, bySlug, brands: readBrands(), mounts: readMounts(), credits, offers: {}, history: {} };
   return memo;
+}
+
+function marketOffers(m: MarketCode): MarketOffers {
+  const c = load();
+  if (c.offers[m]) return c.offers[m];
+  const file = readOffersFile(m);
+  const offers = new Map<string, Offer[]>();
+  for (const o of [...file.offers, ...readAmazonOffers(m)]) if (c.bySlug.has(o.product)) (offers.get(o.product) ?? offers.set(o.product, []).get(o.product)!).push(o);
+  for (const [k, v] of offers) offers.set(k, sortOffers(v));
+  return (c.offers[m] = { offers, generatedAt: file.generatedAt });
+}
+
+function marketHistory(m: MarketCode): Map<string, HistoryPoint[]> {
+  const c = load();
+  if (c.history[m]) return c.history[m];
+  const history = new Map<string, HistoryPoint[]>();
+  for (const d of readHistory(m)) for (const [slug, p] of Object.entries(d.prices)) if (c.bySlug.has(slug)) (history.get(slug) ?? history.set(slug, []).get(slug)!).push({ day: d.day, ...p });
+  return (c.history[m] = history);
 }
 
 export const publishedCameras = () => load().cameras;
@@ -66,11 +81,11 @@ export const brandName = (slug: string) => brand(slug)?.name ?? slug;
 export const mounts = () => load().mounts;
 export const mount = (slug: string) => load().mounts.find((m) => m.slug === slug) ?? null;
 export const credit = (slug: string) => load().credits[slug] ?? null;
-export const offersFor = (slug: string, m: MarketCode) => load().markets[m].offers.get(slug) ?? [];
-export const historyFor = (slug: string, m: MarketCode) => load().markets[m].history.get(slug) ?? [];
-export const offersGeneratedAt = (m: MarketCode) => load().markets[m].generatedAt;
-export const pricedSlugs = (m: MarketCode) => [...load().markets[m].offers.keys()];
-export const historyAll = (m: MarketCode) => load().markets[m].history;
+export const offersFor = (slug: string, m: MarketCode) => marketOffers(m).offers.get(slug) ?? [];
+export const historyFor = (slug: string, m: MarketCode) => marketHistory(m).get(slug) ?? [];
+export const offersGeneratedAt = (m: MarketCode) => marketOffers(m).generatedAt;
+export const pricedSlugs = (m: MarketCode) => [...marketOffers(m).offers.keys()];
+export const historyAll = (m: MarketCode) => marketHistory(m);
 
 /** The name a market sells it under ("Canon EOS 2000D" outside North America). */
 export function displayName(p: Camera | Lens, m: MarketCode): string {

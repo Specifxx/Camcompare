@@ -36,7 +36,7 @@ import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { lowest } from "@/lib/offers";
 import { pageMeta } from "@/lib/seo";
 import { SPEC_GROUPS, lensLabel, sensorLabel, typeLabel } from "@/lib/specs/definitions";
-import { CATEGORY_LABEL, lensCategories, type LensCategory } from "@/lib/specs/lens";
+import { CATEGORY_LABEL, cropOn, lensCategories, type LensCategory } from "@/lib/specs/lens";
 import { summarizeLens } from "@/lib/summary";
 import { longMonthYear } from "@/lib/format";
 
@@ -94,8 +94,9 @@ function LensesForCamera({ c, m }: { c: Camera; m: MarketCode }) {
   // Within each group: priced lenses first (cheapest), then the newest.
   const rank = (a: ReturnType<typeof summarizeLens>, b: ReturnType<typeof summarizeLens>) =>
     Number(a.lowestNew === null) - Number(b.lowestNew === null) || (a.lowestNew ?? 0) - (b.lowestNew ?? 0) || b.announced.localeCompare(a.announced);
-  const sums = lenses.map((l) => ({ l, s: summarizeLens(l, m) }));
-  const groups = LENS_GROUPS.map((g) => ({ g, list: sums.filter(({ l }) => lensCategories(l).includes(g)).sort((a, b) => rank(a.s, b.s)).slice(0, 4) })).filter((x) => x.list.length);
+  // Grouped by what each lens is on THIS body: an RF 14-35mm is no ultra-wide on an EOS R7.
+  const sums = lenses.map((l) => ({ l, s: summarizeLens(l, m), cats: lensCategories(l, cropOn(l, c)) }));
+  const groups = LENS_GROUPS.map((g) => ({ g, list: sums.filter(({ cats }) => cats.includes(g)).sort((a, b) => rank(a.s, b.s)).slice(0, 4) })).filter((x) => x.list.length);
   return (
     <section>
       <div className="mb-3 flex items-baseline justify-between gap-4">
@@ -162,7 +163,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
             <KeySpecs c={c} />
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(c.slug, m)} launch={launchPrice(c, m)} market={m} extra={c.mount ? " (body only)" : ""} />
             <div className="flex flex-wrap gap-2">
-              <SaveButton slug={c.slug} kind="camera" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} />
+              <SaveButton slug={c.slug} kind="camera" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} cond={lowest(offers, "new") ? "new" : "used"} />
               {rivals[0] && (
                 <Link href={isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)} className="btn-ghost">
                   Compare with {displayShortName(rivals[0].item, m)}

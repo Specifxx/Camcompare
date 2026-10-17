@@ -15,7 +15,8 @@ export default function EbayPanel({ product, query, offers, market, page }: { pr
   const r = ebayFor(market);
   if (!r || !r.searchUrl) return null;
   const listings = offers.filter((o) => o.retailer === r.key && o.inStock).sort((a, b) => a.price - b.price).slice(0, 4);
-  const paid = isPaid(r.key);
+  // Listings come with the campaign the daily import ran with, even before Vercel has it.
+  const paid = isPaid(r.key) || listings.some((o) => isPaid(r.key, o.url));
   return (
     <aside className="card flex flex-col gap-3 p-4" aria-label="On eBay">
       <div className="flex items-baseline justify-between">

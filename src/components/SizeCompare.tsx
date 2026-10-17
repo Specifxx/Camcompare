@@ -9,7 +9,10 @@ const COLORS = ["rgb(var(--c-accent))", "rgb(var(--c-warn))", "rgb(var(--c-win))
  */
 export default function SizeCompare({ cameras }: { cameras: Camera[] }) {
   const known = cameras.filter((c) => c.specs.dimensionsMm);
-  if (known.length < 2) return null;
+  const missing = cameras.filter((c) => !c.specs.dimensionsMm);
+  // The pages put their "Size, to scale" heading above this, so say why
+  // nothing is drawn rather than leave the heading empty.
+  if (known.length < 2) return missing.length ? <p className="text-sm text-muted">We don&apos;t have the maker&apos;s dimensions for the {missing.map((c) => c.name).join(" or the ")}, so there&apos;s nothing to draw to scale.</p> : null;
   const maxW = Math.max(...known.map((c) => c.specs.dimensionsMm![0]));
   const maxH = Math.max(...known.map((c) => c.specs.dimensionsMm![1]));
   const maxD = Math.max(...known.map((c) => c.specs.dimensionsMm![2]));
@@ -43,6 +46,7 @@ export default function SizeCompare({ cameras }: { cameras: Camera[] }) {
             {c.shortName}: {c.specs.dimensionsMm!.join(" × ")} mm{c.specs.weightG ? `, ${c.specs.weightG} g` : ""}
           </span>
         ))}
+        {missing.length > 0 && <span>Not drawn (no published dimensions): {missing.map((c) => c.shortName).join(", ")}</span>}
       </figcaption>
     </figure>
   );

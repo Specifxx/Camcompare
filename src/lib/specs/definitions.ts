@@ -9,8 +9,11 @@ export type Better = "higher" | "lower" | null;
 export type SpecDef<T = Camera> = {
   key: string;
   label: string;
-  /** Number used to rank values when `better` is set; null = not comparable. */
-  rank?: (c: T) => number | null;
+  /**
+   * Number used to rank values when `better` is set; null = not comparable.
+   * Several numbers (a zoom's aperture at both ends) win only together.
+   */
+  rank?: (c: T) => number | number[] | null;
   better: Better;
   format: (c: T) => string | null;
   /** One line shown under the label on the compare page. */
@@ -126,7 +129,8 @@ export const SPEC_GROUPS: SpecGroup<Camera>[] = [
       { key: "sensorType", label: "Sensor type", better: null, format: s("sensorType") },
       { key: "megapixels", label: "Resolution", better: "higher", rank: s("megapixels"), format: (c) => num(c.specs.megapixels, " MP") },
       { key: "isoRange", label: "Native ISO", better: "higher", rank: s("isoMax"), format: (c) => (c.specs.isoMin && c.specs.isoMax ? `${c.specs.isoMin.toLocaleString("en-US")}–${c.specs.isoMax.toLocaleString("en-US")}` : null) },
-      { key: "ibis", label: "In-body stabilisation", better: "higher", rank: (c) => (c.specs.ibis === null ? null : c.specs.ibis ? c.specs.ibisStops ?? 1 : 0), format: (c) => (c.specs.ibis === null ? null : c.specs.ibis ? (c.specs.ibisStops ? `Yes, ${num(c.specs.ibisStops)} stops` : "Yes") : "No") },
+      // An unrated "Yes" is not ranked: it is not fewer stops than a rated one.
+      { key: "ibis", label: "In-body stabilisation", better: "higher", rank: (c) => (c.specs.ibis === null ? null : c.specs.ibis ? c.specs.ibisStops : 0), format: (c) => (c.specs.ibis === null ? null : c.specs.ibis ? (c.specs.ibisStops ? `Yes, ${num(c.specs.ibisStops)} stops` : "Yes") : "No") },
     ],
   },
   {
@@ -138,7 +142,7 @@ export const SPEC_GROUPS: SpecGroup<Camera>[] = [
       { key: "shutterMaxMech", label: "Fastest shutter (mech.)", better: "higher", rank: s("shutterMaxMech"), format: (c) => (c.specs.shutterMaxMech ? `1/${c.specs.shutterMaxMech.toLocaleString("en-US")}s` : null) },
       { key: "shutterMaxElec", label: "Fastest shutter (elec.)", better: "higher", rank: s("shutterMaxElec"), format: (c) => (c.specs.shutterMaxElec ? `1/${c.specs.shutterMaxElec.toLocaleString("en-US")}s` : null) },
       { key: "afPoints", label: "AF points", better: null, format: (c) => num(c.specs.afPoints), help: "Makers count points differently, so this is not ranked." },
-      { key: "afSubjects", label: "Subject detection", better: "higher", rank: (c) => c.specs.afSubjects?.length ?? null, format: (c) => (c.specs.afSubjects === null ? null : c.specs.afSubjects.length ? c.specs.afSubjects.map((x) => x[0].toUpperCase() + x.slice(1)).join(", ") : "None") },
+      { key: "afSubjects", label: "Subject detection", better: "higher", rank: (c) => (c.specs.afSubjects === null ? null : c.specs.afSubjects.length ? 1 : 0), format: (c) => (c.specs.afSubjects === null ? null : c.specs.afSubjects.length ? c.specs.afSubjects.map((x) => x[0].toUpperCase() + x.slice(1)).join(", ") : "None"), help: "Makers group subjects differently (Canon's \"animal\" includes birds), so only having it is ranked." },
     ],
   },
   {
@@ -157,7 +161,8 @@ export const SPEC_GROUPS: SpecGroup<Camera>[] = [
     id: "handling",
     title: "Viewfinder & screen",
     specs: [
-      { key: "viewfinder", label: "Viewfinder", better: "higher", rank: (c) => (c.specs.viewfinderType === "none" ? 0 : c.specs.evfDotsM ?? 1), format: (c) => ({ electronic: c.specs.evfDotsM ? `Electronic, ${num(c.specs.evfDotsM, "M dots", 2)}` : "Electronic", optical: "Optical", hybrid: c.specs.evfDotsM ? `Hybrid optical/EVF, ${num(c.specs.evfDotsM, "M dots", 2)}` : "Hybrid optical/EVF", none: "None" })[c.specs.viewfinderType] },
+      // Optical and electronic finders do not rank against each other; dots rank EVFs.
+      { key: "viewfinder", label: "Viewfinder", better: "higher", rank: (c) => (c.specs.viewfinderType === "none" ? 0 : c.specs.viewfinderType === "optical" ? null : c.specs.evfDotsM), format: (c) => ({ electronic: c.specs.evfDotsM ? `Electronic, ${num(c.specs.evfDotsM, "M dots", 2)}` : "Electronic", optical: "Optical", hybrid: c.specs.evfDotsM ? `Hybrid optical/EVF, ${num(c.specs.evfDotsM, "M dots", 2)}` : "Hybrid optical/EVF", none: "None" })[c.specs.viewfinderType] },
       { key: "screen", label: "Rear screen", better: "higher", rank: s("screenDotsM"), format: (c) => (c.specs.screenType === "none" ? "None" : [c.specs.screenSizeIn ? `${c.specs.screenSizeIn}"` : null, c.specs.screenDotsM ? `${num(c.specs.screenDotsM, "M dots", 2)}` : null].filter(Boolean).join(", ") || null) },
       { key: "screenType", label: "Screen articulation", better: null, format: (c) => SCREEN_LABEL[c.specs.screenType] },
       { key: "touchscreen", label: "Touchscreen", better: "higher", rank: (c) => yesRank(c.specs.touchscreen), format: (c) => yesNo(c.specs.touchscreen) },
@@ -183,19 +188,28 @@ export const SPEC_GROUPS: SpecGroup<Camera>[] = [
 export type CompareCell = { text: string | null; win: boolean };
 export type CompareRow<T = Camera> = { def: SpecDef<T>; cells: CompareCell[]; allSame: boolean };
 
-/** One row per spec, with the winning column(s) marked. A tie marks nobody. */
+/**
+ * One row per spec, with the winning column(s) marked. A tie marks nobody,
+ * and neither does a value the row shows as "—". A column wins only when it
+ * is best on every number its rank gives.
+ */
 export function compareRows<T>(cameras: T[], group: SpecGroup<T>): CompareRow<T>[] {
   return group.specs.map((def) => {
     const texts = cameras.map((c) => def.format(c));
     const allSame = texts.every((t) => t === texts[0]);
     let wins = cameras.map(() => false);
     if (def.better && def.rank && cameras.length > 1 && !allSame) {
-      const ranks = cameras.map((c) => def.rank!(c));
-      const known = ranks.filter((r): r is number => r !== null);
+      const ranks = cameras.map((c, i) => {
+        const r = texts[i] === null ? null : def.rank!(c);
+        return r === null ? null : ([] as number[]).concat(r);
+      });
+      const known = ranks.filter((r): r is number[] => r !== null);
       if (known.length >= 2) {
-        const best = def.better === "higher" ? Math.max(...known) : Math.min(...known);
-        const nBest = known.filter((r) => r === best).length;
-        if (nBest < known.length) wins = ranks.map((r) => r === best);
+        const pick = def.better === "higher" ? Math.max : Math.min;
+        const best = known[0].map((_, j) => pick(...known.map((r) => r[j])));
+        const isBest = (r: number[] | null) => r !== null && r.every((v, j) => v === best[j]);
+        const nBest = known.filter(isBest).length;
+        if (nBest < known.length) wins = ranks.map(isBest);
       }
     }
     return { def, cells: texts.map((text, i) => ({ text, win: wins[i] })), allSame };

@@ -19,7 +19,7 @@
   "announced": "2025-06-17",
   "launchPriceUsd": 1199.99,
   "status": "current",
-  "predecessor": null,
+  "predecessor": "om-system-om-5",
   "successor": null,
   "rivals": [
     "fujifilm-x-s20",
@@ -37,7 +37,7 @@
     "isoMax": 25600,
     "ibis": true,
     "ibisStops": 7.5,
-    "burstMechFps": 6,
+    "burstMechFps": 10,
     "burstElecFps": 30,
     "shutterMaxMech": 8000,
     "shutterMaxElec": 32000,
@@ -59,7 +59,7 @@
     "dimensionsMm": [
       125.3,
       85.2,
-      52
+      49.7
     ],
     "weatherSealed": true,
     "waterproofM": null,

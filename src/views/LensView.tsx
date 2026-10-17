@@ -112,7 +112,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
             <KeySpecs l={l} />
             <PriceBox newOffer={n} usedOffer={u} history={historyFor(l.slug, m)} launch={launchPrice(l, m)} market={m} />
             <div className="flex flex-wrap gap-2">
-              <SaveButton slug={l.slug} kind="lens" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} />
+              <SaveButton slug={l.slug} kind="lens" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} cond={lowest(offers, "new") ? "new" : "used"} />
             </div>
           </div>
         </header>

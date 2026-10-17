@@ -23,7 +23,7 @@ export type WikidataCamera = {
   image: string | null; // Commons file name, without "File:"
   massG: number | null;
   announced: string | null;
-  mount: string | null;
+  mounts: string[]; // every P2935 "connector": lens mounts, but also hot shoes, HDMI, USB
   gtins: string[];
 };
 
@@ -53,7 +53,7 @@ export async function fetchWikidataCameras(kind: keyof typeof WD_CLASS = "camera
       OPTIONAL { ?cam wdt:P176 ?maker }
       OPTIONAL { ?cam wdt:P2009 ?exif }
       OPTIONAL { ?cam wdt:P18 ?image }
-      OPTIONAL { ?cam wdt:P2067 ?mass }
+      OPTIONAL { ?cam p:P2067/psn:P2067/wikibase:quantityAmount ?mass }
       OPTIONAL { ?cam wdt:P6949 ?ann }
       OPTIONAL { ?cam wdt:P577 ?pub }
       OPTIONAL { ?cam wdt:P2935 ?mount }
@@ -65,18 +65,18 @@ export async function fetchWikidataCameras(kind: keyof typeof WD_CLASS = "camera
     const qid = r.cam!.value.split("/").pop()!;
     let c = byQid.get(qid);
     if (!c) {
-      c = { qid, label: r.label!.value, altLabels: [], maker: r.makerLabel?.value ?? null, exifModels: [], image: null, massG: null, announced: null, mount: null, gtins: [] };
+      c = { qid, label: r.label!.value, altLabels: [], maker: r.makerLabel?.value ?? null, exifModels: [], image: null, massG: null, announced: null, mounts: [], gtins: [] };
       byQid.set(qid, c);
     }
     const add = (arr: string[], v?: string) => v && !arr.includes(v) && arr.push(v);
     add(c.altLabels, r.alt?.value);
     add(c.exifModels, r.exif?.value);
     add(c.gtins, r.gtin?.value);
+    add(c.mounts, r.mountLabel?.value);
     if (!c.image && r.image) c.image = decodeURIComponent(r.image.value.split("/Special:FilePath/").pop()!).replace(/_/g, " ");
-    if (c.massG === null && r.mass) c.massG = Number(r.mass.value);
+    if (c.massG === null && r.mass) c.massG = Math.round(Number(r.mass.value) * 1000); // normalised to kg, whatever unit was stated
     const date = r.ann?.value ?? r.pub?.value;
     if (!c.announced && date) c.announced = date.slice(0, 10);
-    if (!c.mount && r.mountLabel) c.mount = r.mountLabel.value;
   }
   return [...byQid.values()];
 }
