@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
+import CameraAccessories from "@/components/CameraAccessories";
 import { AD_SLOTS } from "@/lib/ads";
 import OffersTable from "@/components/OffersTable";
 import LowLight from "@/components/LowLight";
@@ -208,6 +209,8 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
       )}
 
       <LensesForCamera c={c} m={m} />
+
+      <CameraAccessories slug={c.slug} market={m} />
 
       <section>
         <h2 className="h-section mb-3">{short} specifications</h2>

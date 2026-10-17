@@ -1,3 +1,4 @@
+import type { AccessoryOffer } from "../accessories";
 import type { Camera, Lens } from "../catalog/schema";
 import type { MarketCode } from "../markets";
 import type { CatalogIndex } from "../matching";
@@ -19,7 +20,9 @@ export type SourceResult =
   // `covered`: products this run actually checked. When set, the import keeps
   // the retailer's earlier offers for every OTHER product (sources that rotate
   // through the catalog under a daily quota, like eBay).
-  | { status: "ok"; offers: Offer[]; note?: string; covered?: string[] }
+  // `accessories`: listings that are no camera or lens but a camera
+  // accessory (src/lib/accessories.ts), from sources that read whole shops.
+  | { status: "ok"; offers: Offer[]; note?: string; covered?: string[]; accessories?: AccessoryOffer[] }
   | { status: "skipped"; note: string } // not configured: keep nothing, report it
   | { status: "error"; note: string }; // configured but failed: the import keeps yesterday's offers
 

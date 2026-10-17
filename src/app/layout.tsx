@@ -7,7 +7,7 @@ import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
-import { Fraunces, JetBrains_Mono } from "next/font/google";
+import { Caveat, Fraunces, JetBrains_Mono } from "next/font/google";
 
 // Display face for headings and the wordmark: Fraunces, a soft "wonky" old-style
 // serif (variable, with its SOFT/WONK axes) so the site reads like a photo
@@ -15,6 +15,8 @@ import { Fraunces, JetBrains_Mono } from "next/font/google";
 // JetBrains Mono. Body text stays on the system stack for readability.
 const display = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap", axes: ["SOFT", "WONK", "opsz"] });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+// Handwriting, used sparingly (the home page's notes and annotations, `.cc-hand`).
+const hand = Caveat({ subsets: ["latin"], variable: "--font-hand", display: "swap", weight: ["500", "700"] });
 
 // AdSense loads only when the owner sets NEXT_PUBLIC_ADSENSE_CLIENT (see AdSlot).
 const ADSENSE = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "";
@@ -42,7 +44,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable}`}>
+    <html lang="en" className={`${display.variable} ${mono.variable} ${hand.variable}`}>
       {VERIFY.impact && (
         <head>
           {/* Impact reads the non-standard `value` attribute. */}

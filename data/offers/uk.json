@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-17T11:27:49.188Z",
+ "generatedAt": "2026-10-17T13:14:49.955Z",
  "market": "uk",
  "currency": "GBP",
  "sources": {
@@ -68,9 +68,31 @@
    "offers": 0,
    "note": "EBAY_CLIENT_ID / EBAY_CLIENT_SECRET not set",
    "at": "2026-10-17T11:27:49.188Z"
+  },
+  "cash-converters-uk": {
+   "status": "ok",
+   "offers": 20,
+   "note": "36000 sitemap URLs, 567 candidates, 200 pages read",
+   "at": "2026-10-17T13:14:49.955Z"
   }
  },
  "offers": [
+  {
+   "product": "blackmagic-pocket-cinema-camera-4k",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 54999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/compact-cameras/digital-camera/058500010969",
+   "title": "Blackmagic Pocket Cinema Camera 4K + Mount + Lens Adapter 4K / 8.8 Megapixels Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": "micro-four-thirds",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "058500010969"
+  },
   {
    "product": "canon-eos-4000d",
    "kind": "camera",
@@ -86,6 +108,22 @@
    "mount": "canon-ef",
    "seenAt": "2026-10-17T11:27:49.188Z",
    "sourceId": "57449375924489"
+  },
+  {
+   "product": "canon-eos-4000d",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 21999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/054900186240",
+   "title": "DSLR Camera Canon Eos 4000D 18Mp Dslr Camera - 28-80mm",
+   "seller": null,
+   "inStock": true,
+   "kit": true,
+   "mount": "canon-ef",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "054900186240"
   },
   {
    "product": "canon-eos-5d-mark-iii",
@@ -262,6 +300,22 @@
    "mount": "canon-ef",
    "seenAt": "2026-10-17T11:27:49.188Z",
    "sourceId": "48476119531785"
+  },
+  {
+   "product": "canon-eos-m50",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 31999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/046300115002",
+   "title": "Canon Eos M50 24.1Mp + 15-45mm Is Stm",
+   "seller": null,
+   "inStock": true,
+   "kit": true,
+   "mount": "canon-ef-m",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "046300115002"
   },
   {
    "product": "canon-eos-m50-mark-ii",
@@ -666,6 +720,22 @@
   {
    "product": "canon-eos-r50-v",
    "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 43999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera-body-only/019700221379",
+   "title": "Canon Eos R50 V 24.2 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": "canon-rf",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "019700221379"
+  },
+  {
+   "product": "canon-eos-r50-v",
+   "kind": "camera",
    "retailer": "harrison-cameras",
    "condition": "open-box",
    "price": 65900,
@@ -968,6 +1038,22 @@
    "sourceId": "48060134555913"
   },
   {
+   "product": "canon-eos-rebel-sl2",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 26999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera-body-only/026400249219",
+   "title": "Canon Eos200d 24.1 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": "canon-ef",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "026400249219"
+  },
+  {
    "product": "canon-eos-rebel-sl3",
    "kind": "camera",
    "retailer": "harrison-cameras",
@@ -1098,6 +1184,22 @@
   {
    "product": "canon-powershot-v10",
    "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 17999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/compact-cameras/digital-camera/018600243055",
+   "title": "The Canon Powershot V10 The Canon Powershot V10 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "018600243055"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
    "retailer": "harrison-cameras",
    "condition": "new",
    "price": 42900,
@@ -1142,6 +1244,22 @@
    "mount": "canon-rf",
    "seenAt": "2026-10-17T11:27:49.188Z",
    "sourceId": "48060163031305"
+  },
+  {
+   "product": "canon-rf-100-400mm-f5-6-8-is-usm",
+   "kind": "lens",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 48999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/lenses--filters/camera-lens/045600113960",
+   "title": "Canon Rf 100-400mm F/5.6-8 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": "canon-rf",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "045600113960"
   },
   {
    "product": "canon-rf-100-400mm-f5-6-8-is-usm",
@@ -1658,6 +1776,22 @@
   {
    "product": "canon-rf-50mm-f1-8-stm",
    "kind": "lens",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 14999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/lenses--filters/camera-lens/044800142507",
+   "title": "Canon Rf50mm F1.8 Stm Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": "canon-rf",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "044800142507"
+  },
+  {
+   "product": "canon-rf-50mm-f1-8-stm",
+   "kind": "lens",
    "retailer": "harrison-cameras",
    "condition": "new",
    "price": 21900,
@@ -2086,6 +2220,22 @@
    "mount": "canon-rf",
    "seenAt": "2026-10-17T11:27:49.188Z",
    "sourceId": "48640784924937"
+  },
+  {
+   "product": "dji-osmo-action-5-pro",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 27999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/compact-cameras/digital-camera/020400233659",
+   "title": "Dji Osmo Action 5 Pro Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "020400233659"
   },
   {
    "product": "dji-osmo-pocket-3",
@@ -4472,6 +4622,22 @@
    "sourceId": "57356186845449"
   },
   {
+   "product": "nikon-coolpix-b600",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 14999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/compact-cameras/digital-camera/053100199981",
+   "title": "Nikon Coolpix B600 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "053100199981"
+  },
+  {
    "product": "nikon-coolpix-p1100",
    "kind": "camera",
    "retailer": "harrison-cameras",
@@ -6426,6 +6592,22 @@
   {
    "product": "nikon-zfc",
    "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 59999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/048500421598",
+   "title": "Nikon Z Fc Mirrorless Camera 20.9Mp Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": "nikon-z",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "048500421598"
+  },
+  {
+   "product": "nikon-zfc",
+   "kind": "camera",
    "retailer": "harrison-cameras",
    "condition": "new",
    "price": 79900,
@@ -7450,6 +7632,22 @@
   {
    "product": "panasonic-lumix-fz80",
    "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 17999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/053700235316",
+   "title": "Panasonic Lumix DC-Fz82 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "053700235316"
+  },
+  {
+   "product": "panasonic-lumix-fz80",
+   "kind": "camera",
    "retailer": "harrison-cameras",
    "condition": "used",
    "price": 25000,
@@ -7494,6 +7692,38 @@
    "mount": "micro-four-thirds",
    "seenAt": "2026-10-17T11:27:49.188Z",
    "sourceId": "48061266166025"
+  },
+  {
+   "product": "panasonic-lumix-g85",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 34999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/compact-cameras/digital-camera/016200291243",
+   "title": "Panasonic Lumix Dmc-G80 16Mp + 12-60mm 16.0 Mp Black",
+   "seller": null,
+   "inStock": true,
+   "kit": true,
+   "mount": "micro-four-thirds",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "016200291243"
+  },
+  {
+   "product": "panasonic-lumix-g85",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 38999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/031200139224",
+   "title": "Panasonic Lumix G80 4K Video Mirrorless Camera, With 12-60 mm Lens Black",
+   "seller": null,
+   "inStock": true,
+   "kit": true,
+   "mount": "micro-four-thirds",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "031200139224"
   },
   {
    "product": "panasonic-lumix-g9",
@@ -9594,6 +9824,22 @@
   {
    "product": "sony-a6000",
    "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 29999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/compact-cameras/digital-camera/018600241548",
+   "title": "Sony Alpha 6000 With Meke 85mm 1.8 Ff Stm Black",
+   "seller": null,
+   "inStock": true,
+   "kit": true,
+   "mount": "sony-e",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "018600241548"
+  },
+  {
+   "product": "sony-a6000",
+   "kind": "camera",
    "retailer": "harrison-cameras",
    "condition": "used",
    "price": 32500,
@@ -9718,6 +9964,22 @@
    "mount": "sony-e",
    "seenAt": "2026-10-17T11:27:49.188Z",
    "sourceId": "57186074132745"
+  },
+  {
+   "product": "sony-a6400",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 64999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/029500143527",
+   "title": "Sony A6400 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": "sony-e",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "029500143527"
   },
   {
    "product": "sony-a6400",
@@ -11528,6 +11790,22 @@
    "sourceId": "57208397529353"
   },
   {
+   "product": "sony-rx100-iii",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 39900,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/compact-cameras/digital-camera/044400077126",
+   "title": "Sony Digital Camera Dsc-Rx100m3 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "044400077126"
+  },
+  {
    "product": "sony-rx100-iv",
    "kind": "camera",
    "retailer": "harrison-cameras",
@@ -11850,6 +12128,22 @@
   {
    "product": "sony-zv-e10",
    "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 48500,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/050500155053",
+   "title": "Sony Zv-E10 24.2 Black",
+   "seller": null,
+   "inStock": true,
+   "kit": false,
+   "mount": "sony-e",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "050500155053"
+  },
+  {
+   "product": "sony-zv-e10",
+   "kind": "camera",
    "retailer": "harrison-cameras",
    "condition": "used",
    "price": 50000,
@@ -11898,6 +12192,22 @@
   {
    "product": "sony-zv-e10",
    "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 59999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/046300116191",
+   "title": "Sony Zv-E10 4K Vlog Camera 24.2Mp W/ Sigma 30mm F1.4 DC Dn (Sony)",
+   "seller": null,
+   "inStock": true,
+   "kit": true,
+   "mount": "sony-e",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "046300116191"
+  },
+  {
+   "product": "sony-zv-e10",
+   "kind": "camera",
    "retailer": "harrison-cameras",
    "condition": "new",
    "price": 69900,
@@ -11942,6 +12252,22 @@
    "mount": "sony-e",
    "seenAt": "2026-10-17T11:27:49.188Z",
    "sourceId": "57420397641993"
+  },
+  {
+   "product": "sony-zv-e10-ii",
+   "kind": "camera",
+   "retailer": "cash-converters-uk",
+   "condition": "used",
+   "price": 74999,
+   "currency": "GBP",
+   "url": "https://www.cashconverters.co.uk/shop/phones-cameras--computers/cameras/dslr--slr-detachable-lens-cameras/dslr-camera/046300116250",
+   "title": "Sony Zv-E10 II Vlog Camera 26Mp + 16-50mm F/3.5-5.6 Selp16502 Oss II",
+   "seller": null,
+   "inStock": true,
+   "kit": true,
+   "mount": "sony-e",
+   "seenAt": "2026-10-17T13:14:49.955Z",
+   "sourceId": "046300116250"
   },
   {
    "product": "sony-zv-e10-ii",

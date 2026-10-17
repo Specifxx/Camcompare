@@ -7,6 +7,7 @@
 // condition. Never Amazon or eBay, never a path robots.txt disallows, never
 // past bot protection: a 403/429/challenge stops the run.
 import { gunzipSync } from "node:zlib";
+import { accessoryOffer, classifyAccessory, type AccessoryOffer } from "../accessories";
 import { matchListing, plausiblePrice } from "../matching";
 import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
@@ -198,10 +199,13 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
     const window = [...urls.slice(start), ...urls.slice(0, start)].slice(0, budget);
     const currency = MARKETS[market].currency;
     const offers: Offer[] = [];
+    const accessories: AccessoryOffer[] = [];
+    // Budget the catalog left unused goes to accessory pages (src/lib/accessories.ts).
+    const spare = spareAccessoryUrls(pages, ((taken) => (u: string) => !taken.has(u))(new Set(urls.map(([, x]) => x))), origin, robots, cfg.urlFilter, Math.min(60, budget - window.length), slot);
     const covered = new Set<string>();
     let fetched = 0;
     let stop = "";
-    for (const [, u] of window) {
+    for (const [, u] of [...window, ...spare]) {
       const p = await get(u).catch(() => null);
       await sleep(delay);
       if (!p) continue;
@@ -216,7 +220,11 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
         // A page priced in another currency is refused, never converted.
         if (l.currency !== currency) continue;
         const m = matchListing({ title: l.title, gtin: l.gtin, mpn: l.mpn }, index);
-        if (!m.product) continue;
+        if (!m.product) {
+          const a = accessoryOffer({ title: l.title, price: l.price, currency, url: u, inStock: l.inStock, condition: l.condition ?? shopifyCondition({ title: `${l.title} ${slugText(u)}` }, ""), sourceId: l.sku ?? null }, index, r.key, now);
+          if (a && !accessories.some((x) => x.url === u && x.title === a.title)) accessories.push(a);
+          continue;
+        }
         covered.add(m.product.slug);
         const fromTitle = shopifyCondition({ title: `${l.title} ${slugText(u)}` }, "");
         const cond = fromTitle !== "new" ? fromTitle : (l.condition ?? "new");
@@ -228,6 +236,25 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
     const note = `${pages.size} sitemap URLs, ${urls.length} candidates, ${fetched} pages read${stop ? `; ${stop}` : ""}`;
     log(`${r.key}: ${note}, ${offers.length} offers`);
     if (!fetched && window.length) return { status: "error", note };
-    return { status: "ok", offers: cheapestPerProduct(offers), covered: [...covered], note };
+    return { status: "ok", offers: cheapestPerProduct(offers), covered: [...covered], note, accessories };
   },
 });
+
+/** Sitemap URLs whose slug reads as a camera accessory, rotated per run, up to `n`. */
+function spareAccessoryUrls(pages: Set<string>, keep: (u: string) => boolean, origin: string, robots: string, filter: RegExp | undefined, n: number, slot: number): [string, string][] {
+  if (n <= 0) return [];
+  const out: string[] = [];
+  for (const u of pages) {
+    let url: URL;
+    try {
+      url = new URL(u);
+    } catch {
+      continue;
+    }
+    if (url.origin !== origin || (filter && !filter.test(u)) || !robotsAllows(robots, url.pathname + url.search) || !keep(u)) continue;
+    if (classifyAccessory({ title: slugText(u) })) out.push(u);
+  }
+  out.sort();
+  const start = out.length > n ? (slot * n) % out.length : 0;
+  return [...out.slice(start), ...out.slice(0, start)].slice(0, n).map((u) => ["", u]);
+}

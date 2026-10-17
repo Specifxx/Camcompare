@@ -5,6 +5,7 @@
 // Disallow, at one request every ~half second, with a contact header.
 // `country=` asks Shopify Markets for the market's own price, and the
 // store's currency (/meta.json) must be the market's.
+import { accessoryOffer, type AccessoryOffer } from "../accessories";
 import { matchListing, plausiblePrice } from "../matching";
 import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
@@ -30,7 +31,7 @@ export async function politeGet(url: string, headers: Record<string, string>, wa
 }
 
 type Variant = { id: number; title: string; price: string; available: boolean; sku?: string | null };
-type Product = { id: number; title: string; handle: string; product_type?: string; tags?: string[] | string; variants: Variant[] };
+type Product = { id: number; title: string; handle: string; vendor?: string; product_type?: string; tags?: string[] | string; variants: Variant[] };
 
 /**
  * Is `path` allowed for us by this robots.txt? RFC 9309 matching: `*` is any
@@ -99,6 +100,7 @@ export const shopifySource = (retailerKey: string): PriceSource => ({
     if (!storeCurrency) throw new Error("no store currency in /meta.json");
     if (storeCurrency !== currency) return { status: "skipped", note: `store charges in ${storeCurrency}, not ${currency}` };
     const offers: Offer[] = [];
+    const accessories: AccessoryOffer[] = [];
     let seen = 0;
     for (const path of paths) {
       for (let page = 1; page <= MAX_PAGES; page++) {
@@ -113,7 +115,12 @@ export const shopifySource = (retailerKey: string): PriceSource => ({
             const title = v.title && v.title !== "Default Title" ? `${p.title} ${v.title}` : p.title;
             const named = r.shopify.brand && !title.toLowerCase().includes(r.shopify.brand.toLowerCase()) ? `${r.shopify.brand} ${title}` : title;
             const m = matchListing({ title: named, mpn: v.sku }, index);
-            if (!m.product) continue;
+            if (!m.product) {
+              // Not a camera or lens: maybe an accessory (src/lib/accessories.ts).
+              const a = accessoryOffer({ title, productType: p.product_type, vendor: p.vendor, price: toMinor(v.price), currency, url: `${base}/products/${p.handle}?variant=${v.id}`, inStock: v.available, condition: shopifyCondition(p, v.title), sourceId: String(v.id) }, index, r.key, now);
+              if (a) accessories.push(a);
+              continue;
+            }
             const cond = shopifyCondition(p, v.title);
             const price = toMinor(v.price);
             if (!price || !plausiblePrice(m.product, cond, price / 100, currency, m.via)) continue;
@@ -138,7 +145,7 @@ export const shopifySource = (retailerKey: string): PriceSource => ({
         await sleep(500);
       }
     }
-    log(`${r.key}: ${seen} variants, ${offers.length} matched`);
-    return { status: "ok", offers, note: `${seen} variants` };
+    log(`${r.key}: ${seen} variants, ${offers.length} matched, ${accessories.length} accessories`);
+    return { status: "ok", offers, note: `${seen} variants`, accessories };
   },
 });

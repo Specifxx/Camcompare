@@ -1,241 +1,343 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ProductCard from "@/components/ProductCard";
 import ProductThumb from "@/components/ProductThumb";
-import Reveal from "@/components/Reveal";
-import Hero, { type HeroChip, type HeroStat } from "@/components/home/Hero";
+import QuickViewHost from "@/components/QuickView";
+import SearchBox from "@/components/SearchBox";
+import DealCard from "@/components/home/DealCard";
+import DealTabs from "@/components/home/DealTabs";
+import Freshness from "@/components/home/Freshness";
+import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
-import { brandName, brands, displayName, displayShortName, historyAll, indexedPairs, mounts, pairSlug, product, publishedCameras, publishedLenses, type AnyProduct } from "@/lib/catalog";
+import {
+  brandName,
+  brands,
+  displayName,
+  displayShortName,
+  historyFor,
+  indexedPairs,
+  launchPrice,
+  mounts,
+  offersFor,
+  offersGeneratedAt,
+  pairSlug,
+  product,
+  publishedCameras,
+  publishedLenses,
+  type AnyProduct,
+} from "@/lib/catalog";
+import { homeDealViews, type HomeDeal, type HomeDealInput } from "@/lib/deals-home";
 import { price } from "@/lib/format";
 import { guides } from "@/lib/guides";
-import { priceDrops } from "@/lib/insights";
-import { BargainCard, bargains } from "@/views/DealsView";
-import { MARKET_CODES, MARKETS, marketPath, type MarketCode } from "@/lib/markets";
-import { retailersFor } from "@/lib/retailers";
+import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
+import { quickViewAttrs } from "@/lib/quickview";
+import { retailer } from "@/lib/retailers";
 import { pageMeta } from "@/lib/seo";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
-import { summarizeCamera, summarizeLens } from "@/lib/summary";
+import { deals } from "@/views/DealsView";
 
 export function homeMetadata(m: MarketCode): Metadata {
   return pageMeta({
     title: `${SITE_NAME}: ${SITE_TAGLINE}`,
-    description: `Compare camera and lens specs side by side and find the lowest new and used price at retailers in ${MARKETS[m].name}.`,
+    description: `The best camera and lens deals in ${MARKETS[m].name}: used and new prices against the RRP, plus specs side by side, at retailers we check every day.`,
     path: "/",
     market: m,
   });
 }
 
 const newestOf = ([a, b]: [AnyProduct, AnyProduct]) => (a.item.announced > b.item.announced ? a.item.announced : b.item.announced);
-const PLACE: Record<MarketCode, string> = { us: "the US", uk: "the UK", eu: "Europe", au: "Australia", sg: "Singapore" };
+const PLACE: Record<MarketCode, string> = {
+  us: "the US",
+  uk: "the UK",
+  eu: "Europe",
+  au: "Australia",
+  sg: "Singapore",
+};
+/** Below this many RRP deals a market gets the fallback lists instead (markets without launch prices). */
+const MIN_DEALS = 6;
+const SHOW = 24;
 
-const PILLARS = [
-  { title: "New and used, side by side", text: "Shop prices for new kit next to used and refurb from the second-hand specialists and marketplaces. Checked every day.", icon: "M4 7h16M4 12h10M4 17h7M17 14l3 3-3 3" },
-  { title: "Specs off the maker's sheet", text: "Every number comes from the maker's own spec sheet. If we can't check one, you get a dash, not a guess.", icon: "M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6" },
-  { title: "Cheapest first. Always.", text: "Some links earn us a small commission. That never moves anything up the list: the lowest price is on top.", icon: "M7 4v16M4 17l3 3 3-3M14 6h6M14 11h4M14 16h2" },
-];
+const stamp = (iso: string) => {
+  const d = new Date(iso);
+  return `${d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" })}, ${d.toISOString().slice(11, 16)} UTC`;
+};
 
 export default function HomeView({ market: m }: { market: MarketCode }) {
+  const cur = MARKETS[m].currency;
   const cameras = publishedCameras();
   const lenses = publishedLenses();
   const all = [...cameras, ...lenses];
-  const pairs = indexedPairs("camera").sort((p, q) => newestOf(q).localeCompare(newestOf(p))).slice(0, 9);
-  const drops = priceDrops(historyAll(m), "new").slice(0, 4);
-  // Top bargains: new furthest under RRP, topped up with used under the typical used price.
-  const top = (() => {
-    const b = bargains(m, 4);
-    return [...b.newBargains, ...b.usedBargains.filter((u) => !b.newBargains.some((n) => n.slug === u.slug))].slice(0, 4);
-  })();
-  const live = brands().filter((b) => cameras.some((c) => c.brand === b.slug) || lenses.some((l) => l.brand === b.slug));
-  const systems = mounts().filter((mt) => mt.status === "current" && cameras.some((c) => c.mount === mt.slug));
-  const shops = [...new Set(retailersFor(m).map((r) => r.name))];
+  const generatedAt = offersGeneratedAt(m);
 
-  // "Popular" = most cross-shopped: named as a rival by the most products.
-  const named = new Map<string, number>();
-  for (const p of all) for (const r of p.rivals) named.set(r, (named.get(r) ?? 0) + 1);
-  const popular = <T extends { slug: string; status: string; announced: string }>(list: T[]) =>
-    list.filter((p) => p.status === "current" && p.announced >= "2020").sort((a, b) => (named.get(b.slug) ?? 0) - (named.get(a.slug) ?? 0) || b.announced.localeCompare(a.announced));
-  const chips: HeroChip[] = [...popular(cameras).slice(0, 4), ...popular(lenses).slice(0, 2)].map((p) => ({
-    href: marketPath(m, `/${cameras.includes(p as never) ? "cameras" : "lenses"}/${p.slug}`),
-    label: cameras.includes(p as never) ? displayName(p, m) : `${brandName(p.brand)} ${displayShortName(p, m)}`,
-  }));
-  const stats: HeroStat[] = [
-    { value: all.length.toLocaleString("en-US"), label: "Cameras & lenses" },
-    { value: String(shops.length), label: `Retailers in ${MARKETS[m].short}` },
-    { value: String(MARKET_CODES.length), label: "Markets" },
-    { value: String(live.length), label: "Brands" },
-  ];
-  const brandTiles = live
-    .map((b) => ({ ...b, n: all.filter((p) => p.brand === b.slug).length }))
-    .sort((a, b) => b.n - a.n)
-    .slice(0, 12);
-  // Newest first, all of them: the articles are what search and ad crawlers read.
-  const guideList = [...guides()].sort((a, b) => b.updated.localeCompare(a.updated) || a.title.localeCompare(b.title)).slice(0, 10);
+  // ---- best deals: cheapest used (or new) offer against this market's RRP
+  const items: HomeDealInput[] = [...cameras.map((p) => ({ p, kind: "camera" as const })), ...lenses.map((p) => ({ p, kind: "lens" as const }))].map(({ p, kind }) => {
+    const l = launchPrice(p, m);
+    return {
+      slug: p.slug,
+      kind,
+      offers: offersFor(p.slug, m),
+      rrpMinor: l && l.currency === cur ? Math.round(l.amount * 100) : null,
+    };
+  });
+  const views = {
+    used: homeDealViews(items, "used", SHOW),
+    new: homeDealViews(items, "new", SHOW),
+  };
+  const count = (list: (HomeDeal & { inAll: boolean })[]) => ({
+    all: list.filter((d) => d.inAll).length,
+    camera: list.filter((d) => d.kind === "camera").length,
+    lens: list.filter((d) => d.kind === "lens").length,
+  });
+  const counts = { used: count(views.used), new: count(views.new) };
+  const board = counts.used.all >= MIN_DEALS || counts.new.all >= MIN_DEALS;
+  const defaultMode = counts.used.all >= MIN_DEALS || counts.used.all >= counts.new.all ? "used" : "new";
+  const fallback = board ? null : deals(m);
+
+  // A handwritten note only where the numbers back it: the lowest price in at
+  // least two weeks of our own history, or more than half off RRP.
+  const noteFor = (d: HomeDeal, rank: number) => {
+    const field = d.condition === "new" ? "new" : "used";
+    const pts = historyFor(d.slug, m).filter((p) => p[field] !== undefined);
+    if (pts.length >= 14 && d.price <= Math.min(...pts.map((p) => p[field]!))) return "lowest we've seen";
+    if (rank === 0) return "biggest saving today";
+    if (d.pct >= 50 && rank < 6) return "over half off!";
+    return null;
+  };
+
+  const pairs = indexedPairs("camera")
+    .sort((p, q) => newestOf(q).localeCompare(newestOf(p)))
+    .slice(0, 6);
+  const live = brands().filter((b) => all.some((p) => p.brand === b.slug));
+  const brandTiles = live.map((b) => ({ ...b, n: all.filter((p) => p.brand === b.slug).length })).sort((a, b) => b.n - a.n);
+  const systems = mounts().filter((mt) => mt.status === "current" && cameras.some((c) => c.mount === mt.slug));
+  // Every guide, newest first: the articles are what search and ad crawlers read.
+  const guideList = [...guides()].sort((a, b) => b.updated.localeCompare(a.updated) || a.title.localeCompare(b.title));
+
+  const dealList = (mode: "used" | "new") =>
+    views[mode].length > 0 && (
+      <ul data-list={mode} className="hd-list">
+        {(() => {
+          let rankAll = 0;
+          return views[mode].map((d, i) => {
+            const p = product(d.slug)!;
+            const rank = d.inAll ? rankAll++ : SHOW;
+            return (
+              <li key={d.slug} data-all={d.inAll ? "1" : "0"} data-k={d.kind}>
+                <DealCard d={d} m={m} currency={cur} name={displayShortName(p.item, m)} brand={brandName(p.item.brand)} store={retailer(d.retailer)?.name ?? d.retailer} note={noteFor(d, rank)} i={i} />
+              </li>
+            );
+          });
+        })()}
+      </ul>
+    );
 
   return (
-    <div className="flex flex-col gap-16 sm:gap-20">
-      <Hero market={m} place={PLACE[m]} stats={stats} chips={chips} searchPlaceholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`}>
-        <Link href={marketPath(m, "/cameras")} className="btn-primary">Browse cameras</Link>
-        <Link href={marketPath(m, "/lenses")} className="btn-ghost">Browse lenses</Link>
-        <Link href={marketPath(m, "/finder")} className="btn-ghost">Help me choose</Link>
-        <Link href={marketPath(m, "/deals")} className="btn-ghost">Price drops</Link>
-      </Hero>
+    <div className="flex flex-col gap-14 sm:gap-16">
+      {/* ---- small hero: one line and the search box */}
+      <section aria-labelledby="hero-title" className="hd-hero">
+        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
+          {MARKETS[m].flag} Prices for {MARKETS[m].name} · {cur}
+        </p>
+        <h1 id="hero-title" className="mt-1.5 text-[1.6rem] font-semibold leading-tight tracking-[-0.02em] sm:text-[2.2rem]">
+          Camera &amp; lens prices, compared. <em className="cc-h1-em text-accent">Best deals first.</em>
+        </h1>
+        <div className="mt-4 max-w-2xl">
+          <SearchBox market={m} variant="hero" placeholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`} />
+        </div>
+        <p className="mt-3 text-sm text-muted">
+          or browse <Link href={marketPath(m, "/cameras")}>cameras</Link>, <Link href={marketPath(m, "/lenses")}>lenses</Link>, or let us <Link href={marketPath(m, "/finder")}>help you choose</Link>
+        </p>
+      </section>
 
-      {shops.length > 0 && (
-        <section aria-labelledby="shops-title" className="-mt-6 sm:-mt-8">
-          <h2 id="shops-title" className="eyebrow mb-3 text-center text-subtle">Shops we check in {PLACE[m]}</h2>
-          <div className="cc-marquee">
-            <div className="cc-marquee-inner">
-              {[0, 1].map((k) => (
-                <ul key={k} aria-hidden={k === 1 || undefined} className={`flex shrink-0 items-center gap-10 pr-10 ${k === 1 ? "cc-marquee-dup" : ""}`}>
-                  {shops.map((s) => (
-                    <li key={s} className="whitespace-nowrap font-display text-lg font-medium italic tracking-tight text-fg/55">{s}</li>
-                  ))}
-                </ul>
-              ))}
-            </div>
+      {/* ---- best deals */}
+      <section aria-labelledby="deals-title" className="-mt-4 sm:-mt-6">
+        {/* Mobile: heading, deals, then the note. Wide: the note beside the heading. */}
+        <div className="grid gap-6 lg:grid-cols-[1fr_20rem] lg:items-start">
+          <div className="order-1">
+            <p className="eyebrow flex items-center gap-2">
+              <span aria-hidden className="text-spark">
+                ▶
+              </span>
+              Best deals in {PLACE[m]}
+            </p>
+            <h2 id="deals-title" className="mt-1.5 text-[1.65rem] font-semibold leading-tight tracking-[-0.015em] sm:text-[2rem]">
+              {board ? <>The RRP, minus what it costs today</> : <>Today&apos;s best prices</>}
+            </h2>
+            <p className="mt-1.5 max-w-2xl text-sm text-muted">
+              {board
+                ? "The launch list price against the cheapest one in stock at a shop we check, body or lens only, no kits. Sorted by how much you keep in your pocket."
+                : `We don't have launch prices for ${PLACE[m]} on enough of the catalog yet, so we can't honestly do the RRP sum here. Until we do, here is what the prices themselves say.`}
+            </p>
+            {generatedAt && (
+              <p className="mt-2 inline-flex items-center gap-2 text-xs text-subtle">
+                <span aria-hidden className="cc-live-dot" />
+                Prices last checked <Freshness at={generatedAt} fallback={stamp(generatedAt)} />
+              </p>
+            )}
           </div>
-        </section>
-      )}
+          <div className="order-3 lg:order-2">
+            <MakersNote />
+          </div>
 
-      {top.length > 0 && (
-        <section aria-labelledby="bargains-title">
-          <SectionHeading id="bargains-title" eyebrow="Top bargains" title="Furthest under the usual price today" href={marketPath(m, "/deals")} link="All bargains" />
-          <Reveal as="ul" stagger className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-            {top.map((b) => (
-              <li key={`${b.condition}-${b.slug}`}>
-                <BargainCard b={b} m={m} />
-              </li>
-            ))}
-          </Reveal>
-        </section>
-      )}
+          {board && (
+            <div className="order-2 lg:order-3 lg:col-span-2">
+              <DealTabs counts={counts} defaultMode={defaultMode}>
+                {dealList("used")}
+                {dealList("new")}
+              </DealTabs>
+              <p className="mt-5 flex flex-wrap items-center justify-between gap-3 text-sm">
+                <Link href={marketPath(m, "/deals")} prefetch={false} className="btn-primary">
+                  All deals and price drops <span aria-hidden>→</span>
+                </Link>
+                <span className="text-xs text-subtle">RRP is the maker&apos;s launch list price in {PLACE[m]}. Used prices are asking prices at shops, checked every few hours.</span>
+              </p>
+            </div>
+          )}
 
-      {drops.length > 0 && (
-        <section aria-labelledby="drops-title">
-          <SectionHeading id="drops-title" eyebrow="Price drops" title="Got cheaper this week" href={marketPath(m, "/deals")} link="All deals" />
-          <Reveal as="ul" stagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {drops.map((d) => {
-              const p = product(d.slug)!;
-              return (
-                <li key={d.slug}>
-                  <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${d.slug}`)} className="card group flex h-full items-center gap-3 p-3 text-fg no-underline hover:no-underline">
-                    <ProductThumb slug={d.slug} alt="" className="cc-zoom w-20 shrink-0" />
-                    <span className="min-w-0 text-sm">
-                      <span className="block truncate font-semibold">{displayShortName(p.item, m)}</span>
-                      <span className="price font-bold text-buy">{price(d.to, MARKETS[m].currency)}</span>{" "}
-                      <span className="rounded-full bg-buy-soft px-1.5 py-0.5 text-xs font-semibold text-win">−{d.pct}%</span>
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </Reveal>
-        </section>
-      )}
+          {fallback && (
+            <div className="order-2 grid gap-8 md:grid-cols-2 lg:order-3 lg:col-span-2">
+              <FallbackList
+                m={m}
+                title="Got cheaper this week"
+                empty={`No new-price drops in ${PLACE[m]} this week. We need a week of prices to spot one.`}
+                rows={fallback.newDrops.slice(0, 8).map((d) => ({
+                  slug: d.slug,
+                  right: (
+                    <>
+                      <span className="price font-bold text-buy">{price(d.to, cur)}</span> <span className="block text-xs text-win">−{d.pct}% in a week</span>
+                    </>
+                  ),
+                }))}
+              />
+              <FallbackList
+                m={m}
+                title="Used for a lot less than new"
+                empty={`Not enough used and new prices side by side in ${PLACE[m]} yet.`}
+                rows={fallback.savings.slice(0, 8).map((s) => ({
+                  slug: s.slug,
+                  right: (
+                    <>
+                      <span className="price font-bold text-buy">{price(s.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span>
+                      <span className="block text-xs text-win">
+                        {s.pct}% under new {price(s.n!.price, cur)}
+                      </span>
+                    </>
+                  ),
+                }))}
+              />
+              <p className="text-sm md:col-span-2">
+                <Link href={marketPath(m, "/deals")} prefetch={false} className="font-semibold">
+                  Everything on the deals page <span aria-hidden>→</span>
+                </Link>
+              </p>
+            </div>
+          )}
+        </div>
+        <QuickViewHost />
+      </section>
 
+      {/* ---- the rest, compact */}
       {pairs.length > 0 && (
         <section aria-labelledby="pairs-title">
           <SectionHeading id="pairs-title" eyebrow="Head to head" title="Cameras people keep cross-shopping" href="/compare" link="Compare any two" />
-          <Reveal as="div" stagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {pairs.map(([a, b]) => (
-              <Link key={pairSlug(a.item, b.item)} href={`/compare/${pairSlug(a.item, b.item)}`} className="card group flex flex-col gap-3 p-3 text-fg no-underline hover:no-underline">
-                <span className="relative grid grid-cols-2 gap-2">
-                  <ProductThumb slug={a.item.slug} alt="" className="cc-zoom" />
-                  <ProductThumb slug={b.item.slug} alt="" className="cc-zoom" />
-                  <span aria-hidden className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 -rotate-6 items-center justify-center rounded-full border-2 border-surface bg-accent font-display text-sm font-semibold italic text-accent-fg shadow-lift">
-                    VS
+              <li key={pairSlug(a.item, b.item)}>
+                <Link href={`/compare/${pairSlug(a.item, b.item)}`} prefetch={false} className="card group flex items-center gap-2 p-2 text-sm font-semibold text-fg no-underline hover:no-underline">
+                  <ProductThumb slug={a.item.slug} alt="" className="w-14 shrink-0" />
+                  <span aria-hidden className="cc-hand shrink-0 text-lg text-accent">
+                    vs
                   </span>
-                </span>
-                <span className="grid grid-cols-2 gap-2 text-center text-sm font-semibold leading-tight">
-                  <span>{displayShortName(a.item, m)}</span>
-                  <span>{displayShortName(b.item, m)}</span>
-                </span>
-                <span className="sr-only">{displayShortName(a.item, m)} vs {displayShortName(b.item, m)}</span>
-              </Link>
+                  <ProductThumb slug={b.item.slug} alt="" className="w-14 shrink-0" />
+                  <span className="min-w-0 leading-tight group-hover:text-accent">
+                    {displayShortName(a.item, m)} <span className="font-normal text-subtle">vs</span> {displayShortName(b.item, m)}
+                  </span>
+                </Link>
+              </li>
             ))}
-          </Reveal>
+          </ul>
         </section>
       )}
 
       {guideList.length > 0 && (
         <section aria-labelledby="guides-title">
-          <SectionHeading id="guides-title" eyebrow="Read before you buy" title="Camera buying guides, minus the fluff" href="/guides" link="All guides" />
-          <Reveal as="ul" stagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {guideList.map((g, i) => (
-              <li key={g.slug} className={i === 0 ? "sm:col-span-2 lg:row-span-2" : ""}>
-                <Link href={`/guides/${g.slug}`} prefetch={false} className="card group flex h-full flex-col p-5 text-fg no-underline hover:no-underline">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-subtle">Guide · {Math.max(1, Math.round(g.words / 220))} min read</span>
-                  <span className={`mt-2 font-display font-semibold ${i === 0 ? "text-2xl sm:text-3xl" : "text-lg"} leading-snug tracking-tight group-hover:text-accent`}>{g.title}</span>
-                  <span className="mt-2 line-clamp-3 flex-1 text-sm text-muted">{g.description}</span>
-                  <span className="mt-4 text-sm font-semibold text-accent">Read <span aria-hidden>→</span></span>
+          <SectionHeading id="guides-title" eyebrow="Read before you buy" title="Buying guides, minus the fluff" href="/guides" link="All guides" />
+          <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+            {guideList.map((g) => (
+              <li key={g.slug} className="border-b border-dashed border-line py-2">
+                <Link href={`/guides/${g.slug}`} prefetch={false} className="group block text-fg no-underline hover:no-underline">
+                  <span className="font-display font-semibold leading-snug group-hover:text-accent">{g.title}</span>
+                  <span className="ml-2 font-mono text-[10.5px] uppercase tracking-[0.08em] text-subtle">{Math.max(1, Math.round(g.words / 220))} min</span>
                 </Link>
               </li>
             ))}
-          </Reveal>
+          </ul>
         </section>
       )}
-
-      <section aria-labelledby="cams-title">
-        <SectionHeading id="cams-title" eyebrow="Just announced" title="Newest cameras" href={marketPath(m, "/cameras")} link="All cameras" />
-        <Reveal stagger className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {cameras.slice(0, 8).map((c) => (
-            <ProductCard key={c.slug} p={summarizeCamera(c, m)} market={m} />
-          ))}
-        </Reveal>
-      </section>
 
       <section aria-labelledby="brands-title">
         <SectionHeading id="brands-title" eyebrow="Makers" title="Pick your camp" href={marketPath(m, "/brands")} link="All brands" />
-        <Reveal as="ul" stagger className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <ul className="flex flex-wrap gap-2">
           {brandTiles.map((b) => (
             <li key={b.slug}>
-              <Link href={marketPath(m, `/brands/${b.slug}`)} className="card group relative flex h-full flex-col justify-between gap-4 overflow-hidden p-4 text-fg no-underline hover:no-underline">
-                <span aria-hidden className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-spark/25 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <span className="font-display text-xl font-semibold tracking-[-0.01em]">{b.name}</span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-subtle">
-                  {b.n} products · {b.country}
-                </span>
+              <Link href={marketPath(m, `/brands/${b.slug}`)} prefetch={false} className="chip-link px-3 py-1 text-sm">
+                {b.name} <span className="ml-1 font-mono text-[10px] text-subtle">{b.n}</span>
               </Link>
             </li>
           ))}
-        </Reveal>
+        </ul>
         {systems.length > 0 && (
-          <Reveal className="mt-6 flex flex-wrap items-center gap-2">
+          <div className="mt-4 flex flex-wrap items-center gap-2">
             <span className="eyebrow mr-1 text-subtle">Camera systems</span>
             {systems.map((s) => (
-              <Link key={s.slug} href={marketPath(m, `/mounts/${s.slug}`)} className="chip-link px-3 py-1 text-sm">
+              <Link key={s.slug} href={marketPath(m, `/mounts/${s.slug}`)} prefetch={false} className="chip-link px-3 py-1 text-sm">
                 {s.name}
               </Link>
             ))}
-          </Reveal>
+          </div>
         )}
       </section>
 
-      {lenses.length > 0 && (
-        <section aria-labelledby="lenses-title">
-          <SectionHeading id="lenses-title" eyebrow="Glass" title="Newest lenses" href={marketPath(m, "/lenses")} link="All lenses" />
-          <Reveal stagger className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {lenses.slice(0, 8).map((l) => (
-              <ProductCard key={l.slug} p={summarizeLens(l, m)} market={m} />
-            ))}
-          </Reveal>
-        </section>
+      <section aria-label="Tell us" className="hd-letter mx-auto max-w-xl text-center">
+        <p className="cc-hand text-2xl text-accent">Something missing or wrong?</p>
+        <p className="mt-1 text-sm text-muted">
+          A camera we don&apos;t list, a shop we should check, a price that looks off:{" "}
+          <Link href="/feedback" prefetch={false} className="font-semibold">
+            tell us what to fix or add
+          </Link>
+          . It comes straight to us.
+        </p>
+      </section>
+    </div>
+  );
+}
+
+function FallbackList({ m, title, rows, empty }: { m: MarketCode; title: string; rows: { slug: string; right: React.ReactNode }[]; empty: string }) {
+  return (
+    <div>
+      <h3 className="font-display text-lg font-semibold">{title}</h3>
+      {rows.length === 0 ? (
+        <p className="mt-2 text-sm text-muted">{empty}</p>
+      ) : (
+        <ul className="mt-3 flex flex-col gap-2">
+          {rows.map((r) => {
+            const p = product(r.slug)!;
+            return (
+              <li key={r.slug}>
+                <Link
+                  href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${r.slug}`)}
+                  prefetch={false}
+                  {...quickViewAttrs(r.slug, m, displayName(p.item, m))}
+                  className="card flex items-center gap-3 p-2.5 text-fg no-underline hover:border-accent hover:no-underline"
+                >
+                  <ProductThumb slug={r.slug} alt="" className="w-16 shrink-0" />
+                  <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
+                  <span className="shrink-0 text-right text-sm">{r.right}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       )}
-
-
-      <Reveal as="section" stagger className="grid gap-3 md:grid-cols-3">
-        {PILLARS.map((p) => (
-          <div key={p.title} className="card cc-note relative p-6">
-            <span aria-hidden className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-accent/70 text-accent">
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d={p.icon} />
-              </svg>
-            </span>
-            <h2 className="mt-4 text-xl font-semibold tracking-[-0.01em]">{p.title}</h2>
-            <p className="mt-1 text-sm text-muted">{p.text}</p>
-          </div>
-        ))}
-      </Reveal>
     </div>
   );
 }

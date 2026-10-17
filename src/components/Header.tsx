@@ -19,6 +19,7 @@ const NAV = [
   { path: "/cameras", label: "Cameras" },
   { path: "/lenses", label: "Lenses" },
   { path: "/deals", label: "Deals" },
+  { path: "/accessories", label: "Accessories" },
   { path: "/finder", label: "Finder" },
   { path: "/compare", label: "Compare" },
 ];

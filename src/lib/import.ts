@@ -4,6 +4,8 @@
 // `historyFor` directly.
 import fs from "node:fs";
 import path from "node:path";
+import { mergeAccessories, perGbHistory, type AccessoryRun } from "./accessories";
+import { readAccessoriesFile, writeAccessoriesFile, writeAccessoryHistory } from "./accessory-data";
 import type { Camera, Lens } from "./catalog/schema";
 import { MARKETS, type MarketCode } from "./markets";
 import { buildIndex } from "./matching";
@@ -90,7 +92,22 @@ export async function runMarket(market: MarketCode, cameras: Camera[], lenses: L
     fs.writeFileSync(path.join(historyDir(market), `${day}.json`), JSON.stringify(history) + "\n");
   }
   log(`[${market}] ${offers.length} offers for ${new Set(offers.map((o) => o.product)).size} products`);
+  writeAccessories(market, results, now, log);
   return file;
+}
+
+/**
+ * data/accessories/<market>.json and today's price-per-GB history, from the
+ * listings sources passed along as accessories (src/lib/accessories.ts). A
+ * source that rotates (`covered`) keeps its earlier rows it did not re-read.
+ */
+function writeAccessories(market: MarketCode, results: Record<string, SourceResult>, now: string, log: (m: string) => void) {
+  const runs: Record<string, AccessoryRun> = {};
+  for (const [k, r] of Object.entries(results)) runs[k] = r.status === "ok" ? { status: "ok", accessories: r.accessories ?? [], rotating: Boolean(r.covered) } : { status: r.status };
+  const accessories = mergeAccessories(readAccessoriesFile(market).accessories, runs, now, OFFER_MAX_AGE_H, (k) => Boolean(retailer(k)));
+  writeAccessoriesFile({ generatedAt: now, market, currency: MARKETS[market].currency, accessories });
+  writeAccessoryHistory(market, now.slice(0, 10), perGbHistory(accessories));
+  log(`[${market}] ${accessories.length} accessory listings`);
 }
 
 export async function runImport(markets: MarketCode[], cameras: Camera[], lenses: Lens[], only?: string[], log = console.log) {
