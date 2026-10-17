@@ -35,6 +35,15 @@ export function mergeOffers(prev: OffersFile, results: Record<string, SourceResu
   return out.filter((o) => slugs.has(o.product)).sort((a, b) => a.product.localeCompare(b.product) || a.price - b.price);
 }
 
+// Run notes are committed with the offers, and a fetch error can quote the
+// URL it failed on: a feed URL carries the account's credentials.
+const SECRET_ENV = /^(FEED_URL_|AFFILIATE_DEEPLINK_|AMAZON_|EBAY_|BESTBUY_)/;
+export function redact(note: string, env: Record<string, string | undefined> = process.env): string {
+  let out = note;
+  for (const [k, v] of Object.entries(env)) if (SECRET_ENV.test(k) && v && v.length >= 8) out = out.split(v).join(`[${k}]`);
+  return out.replace(/https?:\/\/[^\s"')]+[?&][^\s"')]*/g, (u) => u.split("?")[0] + "?[…]");
+}
+
 export function historyFor(market: MarketCode, day: string, offers: Offer[]): HistoryDay {
   const byProduct = new Map<string, Offer[]>();
   for (const o of offers) (byProduct.get(o.product) ?? byProduct.set(o.product, []).get(o.product)!).push(o);
@@ -60,8 +69,9 @@ export async function runMarket(market: MarketCode, cameras: Camera[], lenses: L
     try {
       res = await s.run({ market, retailer: r, cameras, lenses, index, now, prev, log });
     } catch (e) {
-      res = { status: "error", note: (e as Error).message.slice(0, 300) };
+      res = { status: "error", note: (e as Error).message };
     }
+    if (res.note) res = { ...res, note: redact(res.note).slice(0, 300) };
     results[s.retailer] = res;
     runs[s.retailer] = { status: res.status, offers: res.status === "ok" ? res.offers.length : 0, ...(res.note ? { note: res.note } : {}), at: now };
     log(`[${market}] ${s.retailer}: ${res.status}${res.status === "ok" ? ` ${res.offers.length} offers` : ""}${res.note ? ` (${res.note})` : ""}`);

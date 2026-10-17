@@ -6,8 +6,8 @@
 // product. Quota: 5,000 Browse calls a day shared by every eBay market, so
 // each market gets an equal share and walks the catalog in a daily rotation;
 // products it skips keep their earlier offers (`covered`).
-import { matchListing, plausiblePrice } from "../matching";
-import { MARKETS } from "../markets";
+import { matchListing, plausiblePrice, type Matchable } from "../matching";
+import { MARKETS, refRate, type Currency } from "../markets";
 import type { Offer } from "../offers";
 import { RETAILERS, type Condition } from "../retailers";
 import { searchPhrase, sleep, toMinor, type PriceSource } from "./types";
@@ -43,7 +43,7 @@ function condition(id: string | undefined): Condition | null {
 type Summary = {
   itemId: string;
   title: string;
-  price?: { value: string; currency: string };
+  price?: { value: string; currency: string; convertedFromCurrency?: string };
   conditionId?: string;
   itemWebUrl: string;
   itemAffiliateWebUrl?: string;
@@ -62,6 +62,16 @@ async function token(id: string, secret: string): Promise<string> {
   const body = (await res.json()) as { access_token: string; expires_in: number };
   cachedToken = { value: body.access_token, until: Date.now() + (body.expires_in - 120) * 1000 };
   return cachedToken.value;
+}
+
+/**
+ * The lowest price worth asking eBay for: plausiblePrice's used floor, in
+ * whole units. Sorted by price, a camera search's first hundred results are
+ * otherwise straps and batteries, and the body never makes the page.
+ */
+export function priceFloor(p: Pick<Matchable, "launchPriceUsd" | "launchPrices">, currency: Currency): number {
+  const launch = currency === "USD" ? p.launchPriceUsd : p.launchPrices?.[currency] ?? (p.launchPriceUsd ? p.launchPriceUsd * refRate(currency) : null);
+  return Math.floor(launch ? launch * 0.12 : 30 * refRate(currency));
 }
 
 const KEEP_PER_CONDITION = 3;
@@ -92,7 +102,7 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
       const params = new URLSearchParams({
         q: searchPhrase(item),
         category_ids: CATEGORY[kind],
-        filter: `buyingOptions:{FIXED_PRICE},itemLocationCountry:${r.country},deliveryCountry:${r.country},priceCurrency:${currency}`,
+        filter: `buyingOptions:{FIXED_PRICE},itemLocationCountry:${r.country},deliveryCountry:${r.country},price:[${priceFloor(item, currency)}..],priceCurrency:${currency}`,
         sort: "price",
         limit: "100",
       });
@@ -116,7 +126,8 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
       const kept = new Map<Condition, number>();
       for (const it of items) {
         const cond = condition(it.conditionId);
-        if (!cond || !it.price || it.price.currency !== currency) continue;
+        // A price eBay converted from another currency breaks the never-convert rule.
+        if (!cond || !it.price || it.price.currency !== currency || it.price.convertedFromCurrency) continue;
         if (Number(it.seller?.feedbackPercentage ?? 0) < MIN_SELLER_FEEDBACK) continue;
         const m = matchListing({ title: it.title }, index, kind);
         if (!m.product || m.product.slug !== item.slug || m.kit) continue;
@@ -144,6 +155,9 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
       }
       await sleep(200);
     }
-    return { status: "ok", offers, covered, note: `${covered.length}/${cameras.length + lenses.length} products searched` };
+    const note = `${covered.length}/${cameras.length + lenses.length} products searched`;
+    // Every search failing is a broken run, not an empty one: say so, so check-sources alerts.
+    if (products.length && !covered.length) return { status: "error", note: `no search succeeded (${note})` };
+    return { status: "ok", offers, covered, note };
   },
 });

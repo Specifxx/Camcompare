@@ -4,6 +4,6 @@ module.exports = {
   // server-rendered route too.
   experimental: { outputFileTracingIncludes: { "/**": ["./data/**/*.json"] } },
   async headers() {
-    return [{ source: "/cameras/:file*.webp", headers: [{ key: "Cache-Control", value: "public, max-age=604800" }] }];
+    return [{ source: "/products/:file*.webp", headers: [{ key: "Cache-Control", value: "public, max-age=604800" }] }];
   },
 };

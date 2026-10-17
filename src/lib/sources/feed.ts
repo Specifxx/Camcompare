@@ -29,6 +29,7 @@ const FIELDS: Record<string, string[]> = {
   condition: ["condition", "product condition"],
   gtin: ["gtin", "upc", "ean", "product_gtin", "upc or ean"],
   mpn: ["mpn", "manufacturer part number", "model_number", "mfr part number"],
+  currency: ["currency", "currency_code", "currencycode", "price currency"],
 };
 
 export type FeedRow = Partial<Record<keyof typeof FIELDS, string>>;
@@ -144,15 +145,27 @@ export function rowsToOffers(key: string, input: Iterable<FeedRow>, ctx: RowCtx)
   return out;
 }
 
+/** A product link we can put behind a button: absolute http(s) only. */
+function safeLink(v: string): string | null {
+  try {
+    const u = new URL(v.trim());
+    return u.protocol === "https:" || u.protocol === "http:" ? u.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
 function rowToOffer(key: string, r: FeedRow, { index, now, market }: RowCtx): Offer | null {
-  if (!r.title || !r.link) return null;
+  const link = r.link ? safeLink(r.link) : null;
+  if (!r.title || !link) return null;
   const allowed = getRetailer(key)?.conditions ?? ["new"];
   const cond = feedCondition(r.condition);
   if (!cond || !allowed.includes(cond)) return null;
   // A feed priced in another currency is refused, never converted
   // (RiftCompare's offer-currency rule, after a CAD-as-USD store).
   const currency = MARKETS[market].currency;
-  const named = priceCurrency(r.salePrice || r.price);
+  // Awin, CJ and Impact name it in a column; Google Shopping in the price.
+  const named = r.currency?.trim().toUpperCase() || priceCurrency(r.salePrice || r.price);
   if (named && named !== currency) return null;
   const m = matchListing({ title: r.title, gtin: r.gtin, mpn: r.mpn }, index);
   if (!m.product) return null;
@@ -167,7 +180,7 @@ function rowToOffer(key: string, r: FeedRow, { index, now, market }: RowCtx): Of
     condition: cond,
     price,
     currency,
-    url: r.link,
+    url: link,
     title: r.title,
     seller: null,
     inStock: inStock(r.availability),

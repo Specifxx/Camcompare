@@ -3,7 +3,7 @@ import { test } from "node:test";
 import { historyFor, mergeOffers } from "../src/lib/import";
 import { buildIndex } from "../src/lib/matching";
 import type { Offer, OffersFile } from "../src/lib/offers";
-import { dailyWindow } from "../src/lib/sources/ebay";
+import { dailyWindow, priceFloor } from "../src/lib/sources/ebay";
 import { cheapestPerProduct, feedCondition, headerMap, priceCurrency, rowsToOffers, splitDelimited } from "../src/lib/sources/feed";
 import { robotsAllows, shopifyCondition } from "../src/lib/sources/shopify";
 import { toMinor } from "../src/lib/sources/types";
@@ -133,4 +133,27 @@ test("Amazon prices are never kept past a day, and stay out of stored and derive
   assert.equal(lowest(both, "new", true)?.retailer, "amazon");
   assert.deepEqual(Object.keys(historyFor("us", "2026-10-17", both).prices), ["sony-a7-iv"]);
   assert.equal(historyFor("us", "2026-10-17", both).prices["sony-a7-iv"].new, 219900);
+});
+
+test("eBay searches start at the used price floor, in the market's currency", () => {
+  assert.equal(priceFloor({ launchPriceUsd: 2499, launchPrices: {} }, "USD"), 299);
+  assert.equal(priceFloor({ launchPriceUsd: 2499, launchPrices: { GBP: 2399 } }, "GBP"), 287);
+  assert.equal(priceFloor({ launchPriceUsd: null, launchPrices: {} }, "USD"), 30);
+});
+
+test("run notes never carry a feed URL or its query string", async () => {
+  const { redact } = await import("../src/lib/import");
+  const env = { FEED_URL_WEX: "https://feeds.example.com/p?key=s3cret123" };
+  assert.equal(redact("fetch failed: https://feeds.example.com/p?key=s3cret123", env), "fetch failed: [FEED_URL_WEX]");
+  assert.equal(redact("404 at https://x.example/feed.csv?token=abc&id=2", {}), "404 at https://x.example/feed.csv?[…]");
+});
+
+test("feed rows need an http(s) link and their currency column must match", () => {
+  const index = buildIndex(CAMERAS, LENSES);
+  const base = { id: "1", title: "Sony a7 IV Body", price: "2198.00", availability: "in stock" };
+  const run = (row: Record<string, string>) => rowsToOffers("bh", [row], { index, now: NOW, market: "us" });
+  assert.equal(run({ ...base, link: "javascript:alert(1)" }).length, 0);
+  assert.equal(run({ ...base, link: "/relative/path" }).length, 0);
+  assert.equal(run({ ...base, link: "https://www.bhphotovideo.com/a", currency: "CAD" }).length, 0);
+  assert.equal(run({ ...base, link: "https://www.bhphotovideo.com/a", currency: "usd" }).length, 1);
 });
