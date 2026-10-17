@@ -27,12 +27,17 @@ import type { Condition } from "./retailers";
 
 const ROMAN: Record<string, string> = { "1": "i", "2": "ii", "3": "iii", "4": "iv", "5": "v", "6": "vi" };
 
-/** Lowercase, "Mark II"/"Mk2"/"MkII" → "ii", α → a, split on anything but a-z0-9. */
+/**
+ * Lowercase, "Mark II"/"Mk2"/"MkII" → "ii", α → a, split on anything but
+ * a-z0-9. A decimal stays one word ("2.8" → "28"), so "GM 2.8" can't read
+ * as "GM2".
+ */
 export function tokens(s: string): string[] {
   return s
     .toLowerCase()
     .normalize("NFKD")
     .replace(/α/g, "a")
+    .replace(/(\d)\.(?=\d)/g, "$1")
     .replace(/\b(?:mark|mk)\.?\s*([1-6]|i{1,3}|iv|vi?)\b/g, (_, n: string) => ` ${ROMAN[n] ?? n}`)
     .split(/[^a-z0-9]+/)
     .filter(Boolean);
