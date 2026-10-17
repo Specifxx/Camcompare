@@ -127,7 +127,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
 
       <WorldPrices slug={l.slug} path={`/lenses/${l.slug}`} market={m} name={short} />
 
-      <section>
+      <section id="history" className="scroll-mt-20">
         <h2 className="h-section mb-3">Price history</h2>
         <div className="card p-4">
           <PriceHistory points={historyFor(l.slug, m)} currency={MARKETS[m].currency} />

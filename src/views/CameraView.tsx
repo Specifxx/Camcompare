@@ -170,7 +170,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
 
       <WorldPrices slug={c.slug} path={`/cameras/${c.slug}`} market={m} name={short} />
 
-      <section>
+      <section id="history" className="scroll-mt-20">
         <h2 className="h-section mb-3">Price history</h2>
         <div className="card p-4">
           <PriceHistory points={historyFor(c.slug, m)} currency={MARKETS[m].currency} />
