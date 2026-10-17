@@ -15,6 +15,7 @@ import SaveButton from "@/components/SaveButton";
 import PriceAlert from "@/components/PriceAlert";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
+import ReviewHub from "@/components/ReviewHub";
 import { lensHighlights } from "@/lib/highlights";
 import { brandName, camerasFor, credit, displayName, displayShortName, historyFor, isIndexedPair, launchPrice, lens as getLens, mount, offersFor, pairSlug, product, rivalsOf } from "@/lib/catalog";
 import type { Lens } from "@/lib/catalog/schema";
@@ -173,6 +174,8 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
           {l.coverage === "aps-c" && <p className="mt-2 text-xs text-subtle">An APS-C lens also mounts on full-frame bodies of the same mount, where it crops the frame; those aren&apos;t listed.</p>}
         </section>
       )}
+
+      <ReviewHub p={l} kind="lens" />
 
       <section>
         <h2 className="h-section mb-3">{short} specifications</h2>

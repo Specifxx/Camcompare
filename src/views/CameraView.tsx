@@ -18,6 +18,8 @@ import SaveButton from "@/components/SaveButton";
 import PriceAlert from "@/components/PriceAlert";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
+import SuggestedKit from "@/components/SuggestedKit";
+import ReviewHub from "@/components/ReviewHub";
 import { cameraHighlights } from "@/lib/highlights";
 import {
   brandName,
@@ -208,9 +210,13 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         </section>
       )}
 
+      <SuggestedKit c={c} m={m} />
+
       <LensesForCamera c={c} m={m} />
 
       <CameraAccessories slug={c.slug} market={m} />
+
+      <ReviewHub p={c} kind="camera" />
 
       <section>
         <h2 className="h-section mb-3">{short} specifications</h2>

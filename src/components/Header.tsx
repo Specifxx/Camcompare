@@ -6,9 +6,7 @@
 // targets are the catalog's biggest payloads (or, for /compare, a function).
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import Logo from "./brand/Logo";
-import { prefersReducedMotion, supportsScrollTimeline } from "@/lib/motion";
 import { MARKETS, marketPath } from "@/lib/markets";
 import { useMarket } from "@/lib/market-client";
 import { SITE_NAME } from "@/lib/site";
@@ -27,18 +25,8 @@ const NAV = [
 export default function Header() {
   const pathname = usePathname() ?? "/";
   const m = useMarket(pathname);
-  // Clear at the top of the page, glass once scrolled. Scroll timelines do it
-  // in CSS (globals.css); elsewhere this flag does. Glass without JS.
-  const [top, setTop] = useState<boolean | null>(null);
-  useEffect(() => {
-    if (supportsScrollTimeline() && !prefersReducedMotion()) return;
-    const on = () => setTop(window.scrollY < 8);
-    on();
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
-  }, []);
   return (
-    <header className="cc-header glass sticky top-0 z-30" data-top={top ? "true" : undefined}>
+    <header className="cc-header glass sticky top-0 z-30">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:gap-5">
         <Link href={marketPath(m, "/")} className="flex shrink-0 items-center text-fg no-underline hover:no-underline" aria-label={`${SITE_NAME} home`}>
           <Logo compact intro />
@@ -59,7 +47,7 @@ export default function Header() {
           <MarketSwitcher current={m} />
         </div>
       </div>
-      <nav className="flex h-10 items-center gap-5 overflow-x-auto border-t border-line/60 px-4 text-sm font-medium md:hidden" aria-label="Sections">
+      <nav className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-line px-4 py-2.5 text-[13px] font-medium md:hidden" aria-label="Sections">
         {NAV.map((n) => {
           const href = marketPath(m, n.path);
           const active = pathname === href || pathname.startsWith(`${href}/`);

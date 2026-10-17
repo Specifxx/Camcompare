@@ -108,7 +108,7 @@ export default function DealFeed({ rows, m, currency }: { rows: FeedRow[]; m: Ma
         </div>
         {goneN > 0 && <span className="text-xs text-subtle">{goneN} snatched or expired in the last 48 hours</span>}
       </div>
-      <ol className="hf-list">
+      <ol className="border-t border-line">
         {list.slice(0, shown).map((r, i) => (
           <FeedItem key={r.key} r={r} m={m} currency={currency} now={now} i={i} />
         ))}
@@ -130,67 +130,69 @@ function Ago({ at, now }: { at: string; now: number | null }) {
   return <time dateTime={at}>{(now !== null && shortAgo(at, now)) || day(at)}</time>;
 }
 
+const TAG = "inline-flex items-center rounded border border-line px-1.5 text-[11px] font-medium leading-5 text-muted";
+
 function FeedItem({ r, m, currency, now, i }: { r: FeedRow; m: MarketCode; currency: Currency; now: number | null; i: number }) {
   const gone = r.gone;
   const fresh = now !== null && !gone && now - Date.parse(r.firstSeen) < 6 * 3_600_000;
+  const dim = gone ? "opacity-50" : "";
   return (
-    <li className={`hf-row${gone ? " hf-gone" : ""}`}>
-      <Link href={r.href} prefetch={false} {...quickViewAttrs(r.slug, m, r.name)} className="hf-thumb" tabIndex={-1} aria-hidden>
-        <ProductThumb slug={r.slug} alt="" priority={i < 3} className="rounded-[3px]" />
+    <li className="grid grid-cols-[4rem_minmax(0,1fr)] items-start gap-x-3 gap-y-2 border-b border-line py-3 sm:grid-cols-[4.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-x-4">
+      <Link href={r.href} prefetch={false} {...quickViewAttrs(r.slug, m, r.name)} className={`block ${gone ? "opacity-50 grayscale" : ""}`} tabIndex={-1} aria-hidden>
+        <ProductThumb slug={r.slug} alt="" priority={i < 3} />
       </Link>
-      <div className="min-w-0 flex-1">
-        <h3 className="text-[0.95rem] font-semibold leading-snug sm:text-base">
-          <Link href={r.href} prefetch={false} {...quickViewAttrs(r.slug, m, r.name)} className="text-fg no-underline hover:text-accent hover:no-underline">
-            {r.name} — {r.cond} <span className="price">{price(r.price, currency)}</span> at {r.store}{" "}
+      <div className={`min-w-0 ${dim}`}>
+        <h3 className="text-[0.95rem] font-semibold leading-snug">
+          <Link href={r.href} prefetch={false} {...quickViewAttrs(r.slug, m, r.name)} className="text-fg no-underline hover:underline">
+            {r.name} — {r.cond} {price(r.price, currency)} at {r.store}{" "}
             <span className="font-normal text-muted">
-              (RRP <span className="price">{price(r.rrp, currency)}</span>, save {r.pct}%)
+              (RRP {price(r.rrp, currency)}, save {r.pct}%)
             </span>
           </Link>
         </h3>
         <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted">
-          <span className="font-medium text-fg">{r.store}</span>
+          <span>{r.store}</span>
           <span aria-hidden>·</span>
           <span className="capitalize">{r.cond}</span>
           <span aria-hidden>·</span>
           <span>
             found <Ago at={r.firstSeen} now={now} />
           </span>
-          {fresh && <span className="hf-chip hf-chip-new">new</span>}
+          {fresh && <span className={TAG}>New</span>}
           {r.was !== null && !gone && (
-            <span className="hf-chip hf-chip-drop" title={r.droppedAt ? `Dropped ${day(r.droppedAt)}` : undefined}>
-              ▼ price dropped · was <s className="price">{price(r.was, currency)}</s>
+            <span className={TAG} title={r.droppedAt ? `Dropped ${day(r.droppedAt)}` : undefined}>
+              Price dropped, was&nbsp;<s>{price(r.was, currency)}</s>
             </span>
           )}
-          {r.low90 && !gone && <span className="hf-chip hf-chip-low">lowest in 90 days</span>}
+          {r.low90 && !gone && <span className={TAG}>Lowest in 90 days</span>}
         </p>
         <p className="mt-1 flex items-center gap-2 text-xs">
           {r.spark.length >= 2 && <Spark pts={r.spark} />}
-          <Link href={`${r.href}#history`} prefetch={false} className="text-subtle hover:text-accent">
-            Price history <span aria-hidden>→</span>
+          <Link href={`${r.href}#history`} prefetch={false} className="text-muted hover:text-fg">
+            Price history
           </Link>
         </p>
       </div>
-      <div className="hf-act">
-        <span className="hf-save">
-          −{r.pct}%<span className="block font-sans text-[11px] font-medium text-muted">save {price(r.save, currency)}</span>
+      <div className="col-span-2 flex items-center justify-between gap-3 sm:col-span-1 sm:min-w-[9rem] sm:flex-col sm:items-end sm:gap-1.5">
+        <span className={`text-left sm:text-right ${dim}`}>
+          <span className={`block text-lg font-bold leading-tight ${gone ? "text-muted" : "text-win"}`}>Save {r.pct}%</span>
+          <span className="block text-xs text-muted">{price(r.save, currency)} off RRP</span>
         </span>
         {gone ? (
-          <>
-            <span className="hf-stamp" aria-label={`${gone.why === "sold" ? "Sold" : "Expired"}, gone ${shortAgo(gone.at, now ?? Date.parse(gone.at)) ?? ""}`}>
-              {gone.why === "sold" ? "Sold" : "Expired"}
-              <span className="block text-[10px] font-medium tracking-normal">
-                gone <Ago at={gone.at} now={now} />
-              </span>
+          <span className="flex flex-col items-end gap-1 text-right">
+            <span className="rounded border border-line px-1.5 text-[11px] font-semibold uppercase leading-5 tracking-wide text-muted">{gone.why === "sold" ? "Sold" : "Expired"}</span>
+            <span className="text-[11px] text-subtle">
+              gone <Ago at={gone.at} now={now} />
             </span>
-            <Link href={r.href} prefetch={false} className="text-xs font-semibold">
-              Other prices <span aria-hidden>→</span>
+            <Link href={r.href} prefetch={false} className="text-xs">
+              Other prices
             </Link>
-          </>
+          </span>
         ) : (
           r.buy && (
             <span className="text-center">
-              <OutboundLink href={r.buy.href} retailer={r.buy.retailer} product={r.slug} placement="home-feed" className={`${retailerButtonClass(r.buy.retailer, r.buy.paid)} hf-go`}>
-                Go to deal <span aria-hidden>↗</span>
+              <OutboundLink href={r.buy.href} retailer={r.buy.retailer} product={r.slug} placement="home-feed" className={`${retailerButtonClass(r.buy.retailer, r.buy.paid)} whitespace-nowrap px-4`}>
+                Go to deal
               </OutboundLink>
               {r.buy.paid && <span className="mt-0.5 block text-[10px] leading-none text-subtle">Paid link</span>}
             </span>
@@ -210,8 +212,7 @@ function Spark({ pts }: { pts: number[] }) {
   const xy = pts.map((v, i) => `${((i / (pts.length - 1)) * (W - 2) + 1).toFixed(1)},${(H - 2 - ((v - lo) / span) * (H - 4)).toFixed(1)}`);
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} role="img" aria-label={`Price over the last ${pts.length} days`} className="shrink-0">
-      <polyline fill="none" stroke="rgb(var(--c-accent))" strokeWidth="1.5" points={xy.join(" ")} />
-      <circle cx={xy[xy.length - 1].split(",")[0]} cy={xy[xy.length - 1].split(",")[1]} r="2" fill="rgb(var(--c-accent))" />
+      <polyline fill="none" stroke="rgb(var(--c-subtle))" strokeWidth="1.25" points={xy.join(" ")} />
     </svg>
   );
 }

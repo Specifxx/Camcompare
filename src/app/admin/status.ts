@@ -71,6 +71,7 @@ export function envStatus(): { label: string; set: number; of: number }[] {
   return [
     group("Site URL override (optional; www.camcompare.app is built in)", ["NEXT_PUBLIC_SITE_URL"]),
     group("Feedback database (DATABASE_URL)", ["DATABASE_URL"]),
+    group("Community sign-in and owner emails (AUTH_SECRET, OWNER_EMAIL)", ["AUTH_SECRET", "OWNER_EMAIL"]),
     group("Amazon store tags", ["AMAZON_TAG_US", "AMAZON_TAG_UK", "AMAZON_TAG_DE", "AMAZON_TAG_AU", "AMAZON_TAG_SG"]),
     group("Amazon Creators API", ["AMAZON_CREATORS_NA_CLIENT_ID", "AMAZON_CREATORS_EU_CLIENT_ID", "AMAZON_CREATORS_FE_CLIENT_ID"]),
     group("eBay campaign", ["EBAY_AFFILIATE_CAMPAIGN"]),

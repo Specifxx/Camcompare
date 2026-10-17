@@ -1,99 +1,83 @@
 /* =============================================================================
-   CamCompare design system: "film stock"
+   CamCompare design system: plain and clean
    -----------------------------------------------------------------------------
-   Made to feel like a photo magazine / contact sheet, not a SaaS page: cream
-   paper and warm ink in light mode, darkroom browns in dark mode, film grain
-   over every page (body::after), warm light leaks in the hero.
+   A neutral price-comparison look: off-white page, white panels, thin 1px
+   borders, one accent (rust, the logo's colour), green (--c-buy) only for
+   money: buy buttons and lowest prices. No ornaments, textures or tilts;
+   hover states change colour and border only.
    Colours are RGB triplets (--c-*) used through Tailwind (bg-surface, text-muted,
    border-line, text-accent, bg-buy …): light by default, dark under
-   prefers-color-scheme. Brand: a six-blade iris (components/brand/Logo.tsx) in
-   safelight rust; rust is brand and accent (AA as text on every surface), the
-   Kodak-yellow blade (--c-spark) is decoration only. Green (--c-buy) still
-   means money: buy buttons and lowest prices.
-   Type: Fraunces (font-display, headings, h1/h2 by default), JetBrains Mono
-   (font-mono: prices, labels, EXIF lines), system sans for body text.
+   prefers-color-scheme.
+   Type: Inter for everything (font-sans; font-display is the same face, kept
+   as a name), JetBrains Mono only where a component asks for font-mono.
 
    Classes other components may use:
-     .card              a print: paper panel; an <a class="card"> (or .card-hover) lifts and tilts on hover
-     .btn .btn-primary  rust primary button          .btn-ghost  outline (link doesn't earn)
+     .card              white panel; an <a class="card"> (or .card-hover) gets a border/shadow hover
+     .btn .btn-primary  accent button                 .btn-ghost  outline (link doesn't earn)
      .btn-buy           filled buy button (link earns)  .btn-amazon / .btn-ebay  retailer colours
      .chip / .chip-link small pill / pill that is a link
      .price             tabular price figures
-     .exif              EXIF-style mono metadata line ("24.2MP · FF · IBIS")
-     .h-section         section heading (display font)   .eyebrow  small uppercase mono label
-     .text-gradient     accent text (legacy name)        .hairline-brand  1px rust-to-yellow rule
-     .glass             frosted surface                  .font-display  Fraunces (Tailwind)
-     .cc-film           35mm strip with sprocket holes   .cc-frame  contact-sheet frame round a photo
-     .cc-note           panel with a strip of masking tape .cc-mark  grease-pencil underline (svg)
-     shadow-lift, shadow-glow (Tailwind)
-     <Reveal> (components/Reveal.tsx)  scroll reveal; `stagger` on a grid cascades its children
-   Motion: nothing is hidden in the server HTML; the block at the end stills
-   everything under prefers-reduced-motion.
+     .exif              small spec line ("24.2MP · FF · IBIS")
+     .h-section         section heading                .eyebrow  small uppercase label
+     .glass             header surface
    ========================================================================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Film-stock palette: cream paper and warm ink by day, a darkroom by night.
-   Accent is a safelight / Portra rust (passes AA as text on every surface);
-   --c-spark is Kodak yellow, decoration only. --c-azure is the accent's warm
-   partner in gradients (the name is historical). */
 :root {
-  --c-bg: 244 238 226;
-  --c-surface: 252 249 242;
-  --c-raised: 236 228 213;
-  --c-line: 222 210 190;
-  --c-fg: 33 26 20;
-  --c-muted: 88 76 64;
-  --c-subtle: 108 95 82;
+  --c-bg: 248 248 247;
+  --c-surface: 255 255 255;
+  --c-raised: 243 244 246;
+  --c-line: 229 231 235;
+  --c-fg: 17 24 39;
+  --c-muted: 75 85 99;
+  --c-subtle: 107 114 128;
   --c-accent: 178 62 22;
-  --c-accent-2: 214 98 42;
-  --c-azure: 200 122 18;
+  --c-accent-2: 178 62 22;
+  --c-azure: 178 62 22;
   --c-accent-fg: 255 255 255;
-  --c-accent-soft: 248 228 212;
+  --c-accent-soft: 252 238 230;
   --c-spark: 245 170 35;
   --c-buy: 17 110 50;
-  --c-buy-2: 30 138 66;
+  --c-buy-2: 17 110 50;
   --c-buy-fg: 255 255 255;
-  --c-buy-soft: 224 238 220;
+  --c-buy-soft: 226 241 230;
   --c-win: 17 110 50;
   --c-warn: 150 88 0;
-  --c-paper: 255 253 248;
+  --c-paper: 255 255 255;
   --iris-0: #8f2f10; --iris-1: #b23e16; --iris-2: #cf5a24; --iris-3: #e07a3a; --iris-4: #c94d1c; --iris-spark: #f5aa23;
-  --shadow-card: 0 1px 1px rgb(60 40 20 / 0.06), 0 2px 6px -2px rgb(60 40 20 / 0.12);
-  --shadow-lift: 0 18px 30px -16px rgb(60 35 15 / 0.38), 0 6px 12px -8px rgb(60 35 15 / 0.18);
+  --shadow-card: none;
+  --shadow-lift: 0 4px 14px -6px rgb(17 24 39 / 0.14);
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --hdr: 97px;
-  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  --font-display: var(--font-sans);
   color-scheme: light;
 }
-@media (min-width: 768px) { :root { --hdr: 57px; } }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-bg: 22 18 15;
-    --c-surface: 32 27 23;
-    --c-raised: 44 38 32;
-    --c-line: 66 56 47;
-    --c-fg: 242 234 220;
-    --c-muted: 200 188 170;
-    --c-subtle: 168 155 138;
+    --c-bg: 17 17 19;
+    --c-surface: 26 26 30;
+    --c-raised: 36 36 41;
+    --c-line: 52 52 59;
+    --c-fg: 236 236 239;
+    --c-muted: 184 184 192;
+    --c-subtle: 152 152 162;
     --c-accent: 255 145 90;
-    --c-accent-2: 255 186 120;
-    --c-azure: 255 196 92;
+    --c-accent-2: 255 145 90;
+    --c-azure: 255 145 90;
     --c-accent-fg: 30 14 6;
-    --c-accent-soft: 62 34 20;
+    --c-accent-soft: 58 34 22;
     --c-spark: 255 190 70;
     --c-buy: 52 199 110;
-    --c-buy-2: 90 220 140;
+    --c-buy-2: 52 199 110;
     --c-buy-fg: 6 20 12;
     --c-buy-soft: 20 44 28;
     --c-win: 74 212 128;
     --c-warn: 234 179 8;
-    --c-paper: 38 32 27;
+    --c-paper: 26 26 30;
     --iris-0: #c2471a; --iris-1: #e0632c; --iris-2: #f07a3e; --iris-3: #ff9a5c; --iris-4: #e86a30; --iris-spark: #ffbe46;
-    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4);
-    --shadow-lift: 0 18px 36px -16px rgb(0 0 0 / 0.75);
+    --shadow-lift: 0 4px 14px -6px rgb(0 0 0 / 0.6);
     color-scheme: dark;
   }
 }
@@ -102,78 +86,38 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   @apply bg-bg text-fg antialiased;
   overflow-x: clip;
-  /* Warm light on every page: a faint leak from the top corners. */
-  background-image: radial-gradient(900px 380px at 92% -140px, rgb(var(--c-spark) / 0.16), transparent 70%), radial-gradient(800px 420px at -4% -180px, rgb(var(--c-accent) / 0.1), transparent 70%);
-  background-repeat: no-repeat;
 }
-/* Film grain over everything: fixed, decoration, never takes a click. */
-body::after {
-  content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none;
-  background-image: var(--grain); opacity: 0.09; mix-blend-mode: multiply;
-}
-@media (prefers-color-scheme: dark) { body::after { opacity: 0.14; mix-blend-mode: screen; filter: invert(1); } }
 a { @apply text-accent; }
 a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-::selection { background: rgb(var(--c-spark) / 0.4); }
-h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settings: "SOFT" 50, "WONK" 0; }
+::selection { background: rgb(var(--c-accent) / 0.2); }
+h1, h2 { letter-spacing: -0.015em; }
 
 @layer components {
-  /* A print on the table: paper, square-ish corners, a soft drop shadow. */
-  .card { @apply rounded-[5px] border border-line bg-surface; box-shadow: var(--shadow-card); }
-  :where(a.card, .card-hover) { transition: transform 0.3s cubic-bezier(0.3, 1.25, 0.5, 1), box-shadow 0.25s var(--ease-out), border-color 0.2s ease; }
-  /* Picked up off the table: lift and a small tilt (alternates across a grid). */
+  .card { @apply rounded-lg border border-line bg-surface; }
+  :where(a.card, .card-hover) { transition: border-color 0.15s ease, box-shadow 0.15s ease; }
   :where(a.card, .card-hover):hover,
   :where(a.card):focus-visible {
-    transform: translateY(-4px) rotate(var(--tilt, -0.7deg));
-    border-color: rgb(var(--c-accent) / 0.45);
+    border-color: rgb(var(--c-fg) / 0.25);
     box-shadow: var(--shadow-lift);
   }
-  :where(:nth-child(even) > a.card, :nth-child(even) > .card-hover, a.card:nth-child(even)) { --tilt: 0.7deg; }
   .btn {
     @apply inline-flex items-center justify-center gap-1.5 rounded-md px-3.5 py-2 text-sm font-semibold no-underline;
-    transition: transform 0.15s var(--ease-out), box-shadow 0.2s ease, background-color 0.15s ease, border-color 0.15s ease, filter 0.15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease, filter 0.15s ease;
   }
   .btn:hover { text-decoration: none; }
-  .btn:active { transform: translateY(1px); }
-  .btn-primary {
-    @apply btn;
-    color: rgb(var(--c-accent-fg));
-    background: rgb(var(--c-accent));
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2), 0 2px 0 rgb(var(--c-fg) / 0.18);
-  }
-  .btn-primary:hover { filter: brightness(1.08); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2), 0 6px 16px -8px rgb(var(--c-accent) / 0.8); }
-  .btn-buy {
-    @apply btn;
-    color: rgb(var(--c-buy-fg));
-    background: linear-gradient(180deg, rgb(var(--c-buy-2)) -30%, rgb(var(--c-buy)) 70%);
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.2), 0 6px 16px -8px rgb(var(--c-buy) / 0.7);
-  }
-  .btn-buy:hover { filter: brightness(1.07); }
+  .btn-primary { @apply btn; color: rgb(var(--c-accent-fg)); background: rgb(var(--c-accent)); }
+  .btn-primary:hover { filter: brightness(1.08); }
+  .btn-buy { @apply btn; color: rgb(var(--c-buy-fg)); background: rgb(var(--c-buy)); }
+  .btn-buy:hover { filter: brightness(1.1); }
   .btn-ghost { @apply btn border border-line bg-surface text-fg hover:bg-raised; }
   .btn-ghost:hover { border-color: rgb(var(--c-fg) / 0.3); }
   .chip { @apply inline-flex items-center rounded-full border border-line bg-raised px-2.5 py-0.5 text-xs font-medium text-muted; }
   .chip-link { @apply chip no-underline transition-colors hover:border-accent hover:text-fg hover:no-underline; }
-  .price { @apply font-mono tabular-nums; }
-  .h-section { @apply text-xl font-semibold tracking-tight sm:text-2xl; font-family: var(--font-display), Georgia, serif; }
-  .eyebrow { @apply font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-accent; }
-  /* EXIF-style metadata line: "24.2MP · FF · IBIS". */
-  .exif { @apply font-mono text-[10.5px] uppercase leading-snug tracking-[0.06em] text-muted; }
-  .glass { background: rgb(var(--c-bg) / 0.82); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); }
-  .hairline-brand { height: 1px; background: linear-gradient(90deg, transparent, rgb(var(--c-accent) / 0.6) 30%, rgb(var(--c-spark) / 0.8) 70%, transparent); }
-  .text-gradient { color: rgb(var(--c-accent)); }
-  /* A strip of 35mm film: sprocket holes top and bottom (decoration). */
-  .cc-film {
-    --hole: rgb(var(--c-bg));
-    background-color: #1c1612;
-    background-image:
-      linear-gradient(90deg, var(--hole) 0 9px, transparent 9px 18px),
-      linear-gradient(90deg, var(--hole) 0 9px, transparent 9px 18px);
-    background-size: 18px 6px, 18px 6px;
-    background-position: 4px 5px, 4px calc(100% - 5px);
-    background-repeat: repeat-x, repeat-x;
-    padding: 16px 0;
-  }
-  @media (prefers-color-scheme: dark) { .cc-film { background-color: #000; --hole: rgb(var(--c-subtle) / 0.45); } }
+  .price { @apply tabular-nums; }
+  .h-section { @apply text-xl font-semibold tracking-tight sm:text-2xl; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-wide text-accent; }
+  .exif { @apply text-xs leading-snug text-muted; }
+  .glass { background: rgb(var(--c-surface)); }
 }
 
 /* "Differences only" on the compare table (CompareToggle.tsx). */
@@ -196,16 +140,14 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
 /* Retailer buttons. Rows whose link earns get a filled button; the order of
    rows is still price, never commission. */
 @layer components {
-  .btn-amazon { @apply btn bg-[#FF9900] text-[#111] hover:bg-[#f08804]; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35); }
-  .btn-ebay { @apply btn bg-[#0654BA] text-white hover:bg-[#054a9f]; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18); }
+  .btn-amazon { @apply btn bg-[#FF9900] text-[#111] hover:bg-[#f08804]; }
+  .btn-ebay { @apply btn bg-[#0654BA] text-white hover:bg-[#054a9f]; }
 }
 
-/* ---- Header: transparent at the top, frosted glass once scrolled. Default is
-   glass (no JS); scroll timelines or Header.tsx's data-top make the top clear. */
-.cc-header { border-bottom: 1px solid rgb(var(--c-line) / 0.8); box-shadow: 0 6px 20px -16px rgb(0 0 0 / 0.35); transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s; }
-.cc-header[data-top="true"] { background-color: transparent; border-color: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+/* ---- Header: a plain surface with a 1px rule under it. */
+.cc-header { border-bottom: 1px solid rgb(var(--c-line)); }
 .cc-nav-link { position: relative; }
-.cc-nav-link[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, rgb(var(--c-accent)), rgb(var(--c-azure))); }
+.cc-nav-link[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: rgb(var(--c-accent)); }
 
 /* ---- Iris (Logo.tsx): opens once on load, quickly. Transforms only (no CSS `d`, which
    Safari/iOS can't animate): each blade slides its apex out from the centre in its own
@@ -213,147 +155,15 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
 .cc-iris-intro .cc-blade { animation: cc-iris-open 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s backwards; }
 @keyframes cc-iris-open { from { transform: translate(-5.2px, 1.3px); } to { transform: translate(0, 0); } }
 
-/* ---- Hero (components/home/Hero.tsx) ---- */
-.cc-hero-bg {
-  position: absolute; z-index: -1; overflow: hidden; pointer-events: none;
-  top: calc(-1 * var(--hdr)); bottom: 0; left: 50%; width: 100vw; margin-left: -50vw;
-  background: linear-gradient(180deg, #f8efdc 0%, rgb(var(--c-bg)) 100%);
-}
-.cc-leak { position: absolute; border-radius: 50%; will-change: transform; animation: cc-drift var(--t, 26s) ease-in-out infinite alternate; }
-.cc-leak-warm { width: 70vmax; height: 55vmax; right: -22vmax; top: -26vmax; background: radial-gradient(closest-side, rgb(255 150 50 / 0.45), transparent); }
-.cc-leak-rose { width: 46vmax; height: 40vmax; right: -14vmax; top: 18%; background: radial-gradient(closest-side, rgb(235 70 50 / 0.2), transparent); --t: 31s; }
-.cc-leak-cool { width: 66vmax; height: 52vmax; left: -26vmax; top: -22vmax; background: radial-gradient(closest-side, rgb(220 60 40 / 0.22), transparent); --t: 23s; }
-.cc-leak-azure { width: 50vmax; height: 34vmax; left: 18%; bottom: -16vmax; background: radial-gradient(closest-side, rgb(255 200 60 / 0.22), transparent); --t: 35s; }
-.cc-bokeh {
-  position: absolute; border-radius: 50%; width: var(--s); height: var(--s); top: var(--y); left: var(--x);
-  background: radial-gradient(circle closest-side, rgb(var(--b) / 0.12) 0 58%, rgb(var(--b) / 0.4) 82%, rgb(var(--b) / 0.14) 94%, transparent 100%);
-  animation: cc-float var(--t, 14s) ease-in-out var(--dl, 0s) infinite alternate;
-}
-.cc-bokeh.hex { border-radius: 0; clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%); }
-.cc-flare-core { position: absolute; right: 8%; top: calc(var(--hdr) + 40px); width: 280px; height: 280px; margin: -140px -140px 0 0; border-radius: 50%; background: radial-gradient(closest-side, rgb(255 250 235 / 0.9), rgb(255 184 90 / 0.35) 35%, transparent); animation: cc-pulse 7s ease-in-out infinite alternate; }
-.cc-flare-streak { position: absolute; left: 0; right: 0; top: calc(var(--hdr) + 40px); height: 2px; background: linear-gradient(90deg, transparent 15%, rgb(255 170 90 / 0.35) 60%, rgb(255 236 200 / 0.85) 92%, rgb(255 170 90 / 0.3) 98%, transparent); filter: blur(0.5px); }
-.cc-ghost { position: absolute; border-radius: 50%; width: var(--s); height: var(--s); left: var(--x); top: var(--y); background: radial-gradient(closest-side, rgb(var(--b) / 0.05), rgb(var(--b) / 0.16) 85%, transparent); }
-.cc-ghost.hex { border-radius: 0; clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%); }
-.cc-grain { position: absolute; inset: 0; opacity: 0.05; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
-.cc-hero-fade { position: absolute; inset: auto 0 0 0; height: 35%; background: linear-gradient(180deg, transparent, rgb(var(--c-bg))); }
-.cc-vf { position: absolute; width: 22px; height: 22px; border-color: rgb(var(--c-fg) / 0.18); }
-/* AF brackets: the H1's highlight and the search box ("focus locks" on focus). */
-.cc-af { position: relative; }
-.cc-af::before {
-  content: ""; position: absolute; inset: var(--af-in, -10px); pointer-events: none;
-  --af-c: rgb(var(--c-accent) / 0.7);
-  background:
-    linear-gradient(var(--af-c), var(--af-c)) left top / 14px 2px, linear-gradient(var(--af-c), var(--af-c)) left top / 2px 14px,
-    linear-gradient(var(--af-c), var(--af-c)) right top / 14px 2px, linear-gradient(var(--af-c), var(--af-c)) right top / 2px 14px,
-    linear-gradient(var(--af-c), var(--af-c)) left bottom / 14px 2px, linear-gradient(var(--af-c), var(--af-c)) left bottom / 2px 14px,
-    linear-gradient(var(--af-c), var(--af-c)) right bottom / 14px 2px, linear-gradient(var(--af-c), var(--af-c)) right bottom / 2px 14px;
-  background-repeat: no-repeat;
-  transition: inset 0.3s cubic-bezier(0.3, 1.4, 0.5, 1);
-}
-.cc-af-search { --af-in: -9px; }
-.cc-af-search:focus-within { --af-in: -5px; }
-.cc-af-search:focus-within::before { --af-c: rgb(var(--c-buy)); }
+/* ---- Still used by the home page (views/HomeView.tsx, components/home/*). */
+.cc-h1-em { font-style: italic; font-weight: 500; }
 .cc-live-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: rgb(var(--c-buy)); }
 .cc-live-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: rgb(var(--c-buy)); animation: cc-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite; }
-
-@media (prefers-color-scheme: dark) {
-  .cc-hero-bg { background: linear-gradient(180deg, #0f0a08 0%, rgb(var(--c-bg)) 100%); }
-  .cc-leak { mix-blend-mode: screen; }
-  .cc-leak-warm { background: radial-gradient(closest-side, rgb(255 130 30 / 0.3), transparent); }
-  .cc-leak-rose { background: radial-gradient(closest-side, rgb(230 40 30 / 0.2), transparent); }
-  .cc-leak-cool { background: radial-gradient(closest-side, rgb(200 30 20 / 0.32), transparent); }
-  .cc-leak-azure { background: radial-gradient(closest-side, rgb(255 190 40 / 0.14), transparent); }
-  .cc-flare-core { background: radial-gradient(closest-side, rgb(255 244 220 / 0.75), rgb(255 160 60 / 0.28) 35%, transparent); }
-  .cc-grain { opacity: 0.07; }
-}
-
-/* ---- Film and print motifs ---- */
-/* Hero H1: Fraunces at display size, soft corners; the em goes "wonky" italic. */
-.cc-h1 { font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; }
-.cc-h1-em { font-style: italic; font-weight: 500; font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144; }
-/* Contact-sheet frame round a card's photo: film base with sprocket holes. */
-.cc-frame {
-  --hole: rgb(var(--c-surface) / 0.9);
-  padding: 8px 3px; border-radius: 3px; background-color: #1f1813;
-  background-image: linear-gradient(90deg, var(--hole) 0 5px, transparent 5px 11px), linear-gradient(90deg, var(--hole) 0 5px, transparent 5px 11px);
-  background-size: 11px 3px, 11px 3px; background-position: 3px 3px, 3px calc(100% - 3px); background-repeat: repeat-x;
-}
-@media (prefers-color-scheme: dark) { .cc-frame { background-color: #000; --hole: rgb(var(--c-subtle) / 0.45); } }
-/* Pinned-up note: a strip of masking tape across the top (decoration). */
-.cc-note { overflow: visible; }
-.cc-note::before { content: ""; position: absolute; top: -9px; left: 50%; width: 76px; height: 18px; margin-left: -38px; rotate: -2deg; background: rgb(var(--c-spark) / 0.35); border-left: 1px dashed rgb(var(--c-fg) / 0.12); border-right: 1px dashed rgb(var(--c-fg) / 0.12); }
-.cc-note:nth-child(2)::before { rotate: 3deg; }
-/* Hand-drawn underline under a section title (a grease-pencil mark). */
-.cc-mark { display: block; width: 64px; height: 8px; color: rgb(var(--c-spark)); }
-
-/* Entrance on load: the H1 racks into focus (no opacity change, so it paints
-   for LCP at once); the rest rises in, staggered by --i. */
-.cc-in { animation: cc-rise 0.8s var(--ease-out) calc(0.12s + var(--i, 0) * 0.09s) both; }
-.cc-focus { animation: cc-focus 1s var(--ease-out) 0.05s both; }
-.cc-af-word::before { animation: cc-af-lock 0.7s cubic-bezier(0.3, 1.4, 0.5, 1) 0.55s both; }
-@keyframes cc-rise { from { opacity: 0; translate: 0 18px; } }
-@keyframes cc-focus { from { filter: blur(12px); letter-spacing: 0.01em; } }
-@keyframes cc-af-lock { from { opacity: 0; inset: -26px; } }
-@keyframes cc-drift { to { transform: translate3d(-6vmax, 4vmax, 0) scale(1.12); } }
-@keyframes cc-float { to { translate: var(--dx, 12px) var(--dy, -20px); opacity: 0.55; } }
-@keyframes cc-pulse { to { opacity: 0.7; scale: 0.92; } }
 @keyframes cc-ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
-
-/* Retailer marquee (HomeView). Static and wrapped under reduced motion. */
-.cc-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.cc-marquee-inner { display: flex; width: max-content; animation: cc-marquee 45s linear infinite; }
-.cc-marquee:hover .cc-marquee-inner { animation-play-state: paused; }
-@keyframes cc-marquee { to { transform: translateX(-50%); } }
-
-/* Thumbnails zoom a touch inside a hovered card. */
 .cc-zoom img { transition: transform 0.4s var(--ease-out); }
 .group:hover .cc-zoom img { transform: scale(1.05); }
 
-/* ---- Reveal on scroll (components/Reveal.tsx). Fallback classes are added by
-   JS only, so the server HTML is always visible. `translate`/`scale` (not
-   `transform`) so a card's hover lift still applies after the reveal. */
-.reveal-init { opacity: 0; translate: 0 26px; transition: opacity 0.45s var(--ease-out), translate 0.45s var(--ease-out); }
-.reveal-init.reveal-in { opacity: 1; translate: none; }
-.reveal-stagger > * { opacity: 0; translate: 0 22px; transition: opacity 0.4s var(--ease-out), translate 0.4s var(--ease-out); }
-.reveal-stagger.reveal-in > * { opacity: 1; translate: none; }
-.reveal-stagger.reveal-in > :nth-child(4n + 2) { transition-delay: 50ms; }
-.reveal-stagger.reveal-in > :nth-child(4n + 3) { transition-delay: 100ms; }
-.reveal-stagger.reveal-in > :nth-child(4n + 4) { transition-delay: 150ms; }
-
-/* Scroll-driven: progress IS the scroll position, on the compositor. */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .cc-sd { animation: cc-sd-in linear both; animation-timeline: view(); animation-range: entry 0% entry 220px; }
-    .cc-sd-stagger > * { animation: cc-sd-in linear both; animation-timeline: view(); animation-range: entry 0% entry 200px; }
-    .cc-sd-stagger > :nth-child(4n + 2) { animation-range: entry 20px entry 230px; }
-    .cc-sd-stagger > :nth-child(4n + 3) { animation-range: entry 40px entry 260px; }
-    .cc-sd-stagger > :nth-child(4n + 4) { animation-range: entry 60px entry 290px; }
-    .cc-header { animation: cc-hdr-clear linear both; animation-timeline: scroll(root); animation-range: 0 56px; }
-    /* Hero: the words rise and fade, light leaks sink, bokeh drifts up, the
-       flare's ghosts slide along their axis. */
-    .cc-hero-copy { animation: cc-hero-out linear both; animation-timeline: scroll(root); animation-range: 0 75vh; }
-    .cc-depth-slow { animation: cc-depth-slow linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
-    .cc-depth-fast { animation: cc-depth-fast linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
-    .cc-ghost { animation: cc-ghost linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
-  }
-}
-@keyframes cc-sd-in { from { opacity: 0; translate: 0 26px; scale: 0.985; } }
-@keyframes cc-hdr-clear { from { background-color: transparent; border-color: transparent; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; } }
-@keyframes cc-hero-out { to { translate: 0 -48px; opacity: 0.2; } }
-@keyframes cc-depth-slow { to { translate: 0 18vh; } }
-@keyframes cc-depth-fast { to { translate: 0 -12vh; } }
-@keyframes cc-ghost { to { translate: calc(var(--k, 1) * -70px) calc(var(--k, 1) * 60px); } }
-
-/* No scroll timelines: HeroScroll.tsx writes --hero-p (0..1). */
-@supports not (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .cc-hero-copy { translate: 0 calc(var(--hero-p, 0) * -48px); opacity: calc(1 - var(--hero-p, 0) * 0.8); }
-    .cc-depth-slow { translate: 0 calc(var(--hero-p, 0) * 18vh); }
-    .cc-depth-fast { translate: 0 calc(var(--hero-p, 0) * -12vh); }
-  }
-}
-
-/* No motion at all under reduced motion. Must stay last. */
+/* No motion at all under reduced motion. Must stay last (before the home block). */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
@@ -362,11 +172,7 @@ h1, h2 { font-family: var(--font-display), Georgia, serif; font-variation-settin
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .cc-leak, .cc-bokeh, .cc-flare-core, .cc-in, .cc-focus, .cc-af-word::before, .cc-iris-intro .cc-blade, .cc-live-dot::after, .cc-marquee-inner { animation: none !important; }
-  :where(a.card, .card-hover):hover { transform: none; }
-  .cc-marquee { -webkit-mask-image: none; mask-image: none; }
-  .cc-marquee-inner { flex-wrap: wrap; width: auto; justify-content: center; }
-  .cc-marquee-dup { display: none; }
+  .cc-iris-intro .cc-blade, .cc-live-dot::after { animation: none !important; }
   .group:hover .cc-zoom img { transform: none; }
 }
 

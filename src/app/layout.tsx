@@ -7,13 +7,12 @@ import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
-import { Caveat, Fraunces, JetBrains_Mono } from "next/font/google";
+import { Caveat, Inter, JetBrains_Mono } from "next/font/google";
 
-// Display face for headings and the wordmark: Fraunces, a soft "wonky" old-style
-// serif (variable, with its SOFT/WONK axes) so the site reads like a photo
-// magazine, not a SaaS page. Small labels, prices and EXIF-style metadata use
-// JetBrains Mono. Body text stays on the system stack for readability.
-const display = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap", axes: ["SOFT", "WONK", "opsz"] });
+// One clean sans for headings and body: Inter (globals.css points
+// --font-display at it, so font-display is the same face). JetBrains Mono is
+// only for the few spots that ask for font-mono.
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 // Handwriting, used sparingly (the home page's notes and annotations, `.cc-hand`).
 const hand = Caveat({ subsets: ["latin"], variable: "--font-hand", display: "swap", weight: ["500", "700"] });
@@ -37,14 +36,14 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4eee2" },
-    { media: "(prefers-color-scheme: dark)", color: "#16120f" },
+    { media: "(prefers-color-scheme: light)", color: "#f8f8f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#111113" },
   ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable} ${hand.variable}`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable} ${hand.variable}`}>
       {VERIFY.impact && (
         <head>
           {/* Impact reads the non-standard `value` attribute. */}
@@ -56,10 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Header />
-        {/* Above the home hero's full-bleed background, which reaches up behind the header. */}
-        <div className="relative z-20">
-          <GeoSuggest />
-        </div>
+        <GeoSuggest />
         <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
           {children}
         </main>

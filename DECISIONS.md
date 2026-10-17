@@ -576,7 +576,7 @@ from, where a deal that sells says so when you refresh, and a historical price.
   cheaper one becomes its own deal). It goes **"sold"** when the retailer no
   longer has it in stock and **"expired"** when its price leaves deal
   territory; gone deals are dropped after 7 days, and the page shows those
-  gone in the last 48 hours, greyed and stamped. A relisted deal is a fresh
+  gone in the last 48 hours, greyed with a plain "Sold" or "Expired" label (no stamps or stickers: owner, "UI needs to be cleaner"). A relisted deal is a fresh
   find. A price drop keeps `firstSeen` and records `was` ("price dropped ·
   was $X"); a rise clears it.
 - **No URLs and nothing of Amazon's in the file**: the page wraps the live

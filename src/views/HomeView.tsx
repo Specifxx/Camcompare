@@ -135,13 +135,13 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   return (
     <div className="flex flex-col gap-14 sm:gap-16">
       {/* ---- small hero: one line and the search box */}
-      <section aria-labelledby="hero-title" className="hd-hero lg:grid lg:grid-cols-[1fr_21rem] lg:items-center lg:gap-12">
+      <section aria-labelledby="hero-title" className="pt-2">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-subtle">
+          <p className="text-xs font-medium uppercase tracking-wide text-subtle">
             {MARKETS[m].flag} Prices for {MARKETS[m].name} · {cur}
           </p>
-          <h1 id="hero-title" className="mt-1.5 text-[1.6rem] font-semibold leading-tight tracking-[-0.02em] sm:text-[2.2rem]">
-            Camera &amp; lens prices, compared. <em className="cc-h1-em text-accent">Best deals first.</em>
+          <h1 id="hero-title" className="mt-1 text-2xl font-semibold leading-tight sm:text-3xl">
+            Camera &amp; lens prices, compared. Best deals first.
           </h1>
           <div className="mt-4 max-w-2xl">
             <SearchBox market={m} variant="hero" placeholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`} />
@@ -149,40 +149,30 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
           <p className="mt-3 text-sm text-muted">
             or browse <Link href={marketPath(m, "/cameras")}>cameras</Link>, <Link href={marketPath(m, "/lenses")}>lenses</Link>, or let us <Link href={marketPath(m, "/finder")}>help you choose</Link>
           </p>
-        </div>
-        {/* Wide screens: the note beside the hero. Narrow: after the deals (below). */}
-        <div className="hidden lg:block">
-          <MakersNote board={board} place={PLACE[m]} />
+          <div className="mt-3">
+            <MakersNote board={board} place={PLACE[m]} />
+          </div>
         </div>
       </section>
 
       {/* ---- best deals */}
-      <section aria-labelledby="deals-title" className="-mt-4 sm:-mt-6">
+      <section aria-labelledby="deals-title" className="-mt-6 sm:-mt-8">
         <div className="grid gap-6">
           <div className="order-1">
-            <p className="eyebrow flex items-center gap-2">
-              <span aria-hidden className="text-spark">
-                ▶
-              </span>
-              Best deals in {PLACE[m]}
-            </p>
-            <h2 id="deals-title" className="mt-1.5 text-[1.65rem] font-semibold leading-tight tracking-[-0.015em] sm:text-[2rem]">
+            <p className="text-xs font-medium uppercase tracking-wide text-subtle">Best deals in {PLACE[m]}</p>
+            <h2 id="deals-title" className="mt-1 text-xl font-semibold leading-tight sm:text-2xl">
               {board ? <>The RRP, minus what it costs today</> : <>Today&apos;s best prices</>}
             </h2>
             <p className="mt-1.5 max-w-2xl text-sm text-muted">
               {board
-                ? "The launch list price against the cheapest one in stock at a shop we check, body or lens only, no kits. When one sells or goes out of stock it stays here, stamped, so you can see what got snatched."
+                ? "The launch list price against the cheapest one in stock at a shop we check, body or lens only, no kits. When one sells or goes out of stock it stays here, marked sold, so you can see what got snatched."
                 : `We don't have launch prices for ${PLACE[m]} on enough of the catalog yet, so we can't honestly do the RRP sum here. Until we do, here is what the prices themselves say.`}
             </p>
             {generatedAt && (
-              <p className="mt-2 inline-flex items-center gap-2 text-xs text-subtle">
-                <span aria-hidden className="cc-live-dot" />
+              <p className="mt-2 text-xs text-subtle">
                 Prices last checked <Freshness at={generatedAt} fallback={stamp(generatedAt)} />
               </p>
             )}
-          </div>
-          <div className="order-3 mx-auto w-full max-w-xl lg:hidden">
-            <MakersNote board={board} place={PLACE[m]} />
           </div>
 
           {board && (
@@ -257,9 +247,9 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
           <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {pairs.map(([a, b]) => (
               <li key={pairSlug(a.item, b.item)}>
-                <Link href={`/compare/${pairSlug(a.item, b.item)}`} prefetch={false} className="card group flex items-center gap-2 p-2 text-sm font-semibold text-fg no-underline hover:no-underline">
+                <Link href={`/compare/${pairSlug(a.item, b.item)}`} prefetch={false} className="group flex items-center gap-2 border-b border-line py-2 text-sm font-semibold text-fg no-underline hover:no-underline">
                   <ProductThumb slug={a.item.slug} alt="" className="w-14 shrink-0" />
-                  <span aria-hidden className="cc-hand shrink-0 text-lg text-accent">
+                  <span aria-hidden className="shrink-0 text-xs text-subtle">
                     vs
                   </span>
                   <ProductThumb slug={b.item.slug} alt="" className="w-14 shrink-0" />
@@ -302,7 +292,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         </ul>
         {systems.length > 0 && (
           <div className="mt-4 flex flex-wrap items-center gap-2">
-            <span className="eyebrow mr-1 text-subtle">Camera systems</span>
+            <span className="mr-1 text-xs font-medium uppercase tracking-wide text-subtle">Camera systems</span>
             {systems.map((s) => (
               <Link key={s.slug} href={marketPath(m, `/mounts/${s.slug}`)} prefetch={false} className="chip-link px-3 py-1 text-sm">
                 {s.name}
@@ -312,8 +302,8 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         )}
       </section>
 
-      <section aria-label="Tell us" className="hd-letter mx-auto max-w-xl text-center">
-        <p className="cc-hand text-2xl text-accent">Something missing or wrong?</p>
+      <section aria-label="Tell us" className="border-t border-line pt-6">
+        <p className="font-semibold">Something missing or wrong?</p>
         <p className="mt-1 text-sm text-muted">
           A camera we don&apos;t list, a shop we should check, a price that looks off:{" "}
           <Link href="/feedback" prefetch={false} className="font-semibold">

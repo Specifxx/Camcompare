@@ -27,8 +27,11 @@ export function ptpName(c: Camera): string | null {
 
 export type LowLightLink = { label: string; note: string; href: string };
 
+/** A product's name as review sites and search boxes spell it: "Sony a7 IV" (α as a). Also used by lib/reviews.ts. */
+export const searchName = (p: { shortName: string }, brandName: string) => `${brandName} ${p.shortName.replace(/α/g, "a")}`;
+
 export function lowLightLinks(cams: { c: Camera; brandName: string }[]): LowLightLink[] {
-  const names = cams.map(({ c, brandName }) => `${brandName} ${c.shortName.replace(/α/g, "a")}`);
+  const names = cams.map(({ c, brandName }) => searchName(c, brandName));
   const q = encodeURIComponent(names.join(" vs "));
   // Only bodies Photons to Photos has measured; with none, the chart opens empty to pick from.
   const ptp = cams.map(({ c }) => ptpName(c)).filter(Boolean).join(",");
