@@ -62,7 +62,8 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
     .map((b) => ({ ...b, n: all.filter((p) => p.brand === b.slug).length }))
     .sort((a, b) => b.n - a.n)
     .slice(0, 12);
-  const guideList = guides().slice(0, 6);
+  // Newest first, all of them: the articles are what search and ad crawlers read.
+  const guideList = [...guides()].sort((a, b) => b.updated.localeCompare(a.updated) || a.title.localeCompare(b.title)).slice(0, 10);
 
   return (
     <div className="flex flex-col gap-16 sm:gap-20">
@@ -137,6 +138,24 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         </section>
       )}
 
+      {guideList.length > 0 && (
+        <section aria-labelledby="guides-title">
+          <SectionHeading id="guides-title" eyebrow="Read before you buy" title="Camera buying guides" href="/guides" link="All guides" />
+          <Reveal as="ul" stagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {guideList.map((g, i) => (
+              <li key={g.slug} className={i === 0 ? "sm:col-span-2 lg:row-span-2" : ""}>
+                <Link href={`/guides/${g.slug}`} prefetch={false} className="card group flex h-full flex-col p-5 text-fg no-underline hover:no-underline">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-subtle">Guide · {Math.max(1, Math.round(g.words / 220))} min read</span>
+                  <span className={`mt-2 font-display font-bold ${i === 0 ? "text-2xl sm:text-3xl" : "text-lg"} leading-snug tracking-tight group-hover:text-accent`}>{g.title}</span>
+                  <span className="mt-2 line-clamp-3 flex-1 text-sm text-muted">{g.description}</span>
+                  <span className="mt-4 text-sm font-semibold text-accent">Read <span aria-hidden>→</span></span>
+                </Link>
+              </li>
+            ))}
+          </Reveal>
+        </section>
+      )}
+
       <section aria-labelledby="cams-title">
         <SectionHeading id="cams-title" eyebrow="Just announced" title="Newest cameras" href={marketPath(m, "/cameras")} link="All cameras" />
         <Reveal stagger className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -184,23 +203,6 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         </section>
       )}
 
-      {guideList.length > 0 && (
-        <section aria-labelledby="guides-title">
-          <SectionHeading id="guides-title" eyebrow="Learn" title="Guides" href="/guides" link="All guides" />
-          <Reveal as="ul" stagger className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {guideList.map((g) => (
-              <li key={g.slug}>
-                <Link href={`/guides/${g.slug}`} prefetch={false} className="card group flex h-full flex-col p-5 text-fg no-underline hover:no-underline">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-subtle">Guide · {Math.max(1, Math.round(g.words / 220))} min read</span>
-                  <span className="mt-2 font-display text-lg font-bold leading-snug tracking-tight group-hover:text-accent">{g.title}</span>
-                  <span className="mt-2 line-clamp-3 flex-1 text-sm text-muted">{g.description}</span>
-                  <span className="mt-4 text-sm font-semibold text-accent">Read <span aria-hidden>→</span></span>
-                </Link>
-              </li>
-            ))}
-          </Reveal>
-        </section>
-      )}
 
       <Reveal as="section" stagger className="grid gap-3 md:grid-cols-3">
         {PILLARS.map((p) => (

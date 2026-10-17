@@ -31,7 +31,8 @@ export function pageMeta(opts: {
     title: marketTitle(opts.title, opts.market),
     description: opts.description,
     alternates: { canonical: url, ...alternates(opts.path, opts.indexable) },
-    openGraph: { title: opts.title, description: opts.description, url, siteName: SITE_NAME, type: "website", locale: MARKETS[opts.market].locale.replace("-", "_"), ...(opts.image ? { images: [opts.image] } : {}) },
+    openGraph: { title: opts.title, description: opts.description, url, siteName: SITE_NAME, type: "website", locale: MARKETS[opts.market].locale.replace("-", "_"), images: [opts.image ?? "/opengraph-image"] },
+    twitter: { card: "summary_large_image", title: opts.title, description: opts.description, images: [opts.image ?? "/opengraph-image"] },
     ...(opts.index === false ? { robots: { index: false, follow: true } } : {}),
   };
 }

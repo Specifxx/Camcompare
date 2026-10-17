@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import FeedbackButton from "@/components/FeedbackButton";
 import Footer from "@/components/Footer";
 import GeoSuggest from "@/components/GeoSuggest";

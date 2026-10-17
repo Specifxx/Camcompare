@@ -1,4 +1,5 @@
 "use client";
+import { track } from "@vercel/analytics";
 // The feedback form: in the floating panel (FeedbackWidget, `compact`) and on
 // /feedback. What it's about, the message, an optional email for a reply;
 // the page and market are added for us and shown to the visitor. Spam guards
@@ -93,6 +94,11 @@ export default function FeedbackForm({ connected, compact = false }: { connected
       if (res.status === 503) return setStatus({ phase: "offline" });
       const d = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
       if (!res.ok || !d.ok) return setStatus({ phase: "error", error: d.error ?? "Something went wrong. Please try again." });
+      try {
+        track("feedback_sent", { kind: kind ?? "other" });
+      } catch {
+        /* analytics never blocks */
+      }
       setStatus({ phase: "done" });
     } catch {
       setStatus({ phase: "error", error: "We couldn't reach the server. Check your connection and try again." });
