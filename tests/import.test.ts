@@ -217,3 +217,23 @@ test("structured data: JSON-LD offers and OpenGraph prices are read, slugs becom
 test("an Open Box listing tagged used stays open-box", () => {
   assert.equal(shopifyCondition({ title: "Panasonic Lumix DMC-FZ300 - Open Box", tags: ["used"] }, "Default Title"), "open-box");
 });
+
+test("Shopify requests back off on 429/5xx and give up after four retries", async () => {
+  const { politeGet } = await import("../src/lib/sources/shopify");
+  const real = globalThis.fetch;
+  const waits: number[] = [];
+  let calls = 0;
+  const statuses = [503, 503, 200];
+  globalThis.fetch = (async () => new Response("{}", { status: statuses[Math.min(calls++, statuses.length - 1)] })) as typeof fetch;
+  try {
+    assert.equal((await politeGet("https://x.test/products.json", {}, async (ms) => void waits.push(ms))).status, 200);
+    assert.deepEqual(waits, [2000, 4000]);
+    calls = 0;
+    waits.length = 0;
+    statuses.splice(0, 3, 503);
+    assert.equal((await politeGet("https://x.test/products.json", {}, async (ms) => void waits.push(ms))).status, 503);
+    assert.equal(waits.length, 4);
+  } finally {
+    globalThis.fetch = real;
+  }
+});

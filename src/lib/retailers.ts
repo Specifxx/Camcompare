@@ -55,7 +55,15 @@ export type Retailer = {
   amazon?: { marketplace: string; tagEnv: string };
   ebay?: { marketplaceId: string; rotationId: string; siteId: string };
   /** Public Shopify catalogue; `collections` limits the crawl to camera/lens collections. */
-  shopify?: { base: string; collections?: string[] };
+  /**
+   * `currency`: the store's known currency, used only when /meta.json can't be
+   * read (a meta.json naming another currency still refuses the store).
+   * `disabled`: why this store's catalogue can't price anything; the source
+   * reports "skip" with it instead of running.
+   * `brand`: a maker's own store, whose titles leave the maker out ("EOS R8
+   * Body only"); the brand is put in front before matching.
+   */
+  shopify?: { base: string; collections?: string[]; currency?: string; disabled?: string; brand?: string };
   /** schema.org data on the shop's own product pages (sources/structured.ts); a feed retailer's fallback until its feed exists. */
   structured?: StructuredConfig;
 };
@@ -102,7 +110,7 @@ const used = (r: Omit<Retailer, "source" | "conditions" | "authorized"> & Partia
   authorized: false,
   ...r,
 });
-const shop = (base: string, collections?: string[]) => ({ source: "shopify" as const, shopify: { base, ...(collections ? { collections } : {}) } });
+const shop = (base: string, extra: { collections?: string[]; currency?: string; disabled?: string; brand?: string } = {}) => ({ source: "shopify" as const, shopify: { base, ...extra } });
 const pages = (structured: StructuredConfig = {}) => ({ source: "structured" as const, structured });
 
 // Sources and programmes from the 2026-10-17 retailer research (docs/retailers.md).
@@ -114,7 +122,7 @@ export const RETAILERS: Retailer[] = [
   dealer({ key: "bestbuy", name: "Best Buy", market: "us", country: "US", site: "https://www.bestbuy.com", network: "impact", source: "bestbuy-api", conditions: ["new", "open-box", "refurbished"], searchUrl: (q) => `https://www.bestbuy.com/site/searchpage.jsp?st=${enc(q)}` }),
   dealer({ key: "walmart", name: "Walmart", market: "us", country: "US", site: "https://www.walmart.com", network: "impact", searchUrl: (q) => `https://www.walmart.com/search?q=${enc(q)}` }),
   dealer({ key: "abt", name: "Abt", market: "us", country: "US", site: "https://www.abt.com", network: "cj", structured: { sitemapFilter: /sitemap-product/i }, searchUrl: (q) => `https://www.abt.com/resources/pages/search.php?keywords=${enc(q)}` }),
-  dealer({ key: "moment", name: "Moment", market: "us", country: "US", site: "https://www.shopmoment.com", network: "impact", ...shop("https://www.shopmoment.com"), searchUrl: (q) => `https://www.shopmoment.com/search?q=${enc(q)}` }),
+  dealer({ key: "moment", name: "Moment", market: "us", country: "US", site: "https://www.shopmoment.com", network: "impact", ...shop("https://www.shopmoment.com", { disabled: "products.json lists only Moment's own mobile lenses and bags, no catalog cameras or lenses (checked 2026-10-17)" }), searchUrl: (q) => `https://www.shopmoment.com/search?q=${enc(q)}` }),
   dealer({ key: "focus-camera", name: "Focus Camera", market: "us", country: "US", site: "https://focuscamera.com", network: null, ...shop("https://focuscamera.com") }),
   dealer({ key: "beach-camera", name: "Beach Camera", market: "us", country: "US", site: "https://www.beachcamera.com", network: null, ...shop("https://www.beachcamera.com") }),
   dealer({ key: "camera-west", name: "Camera West", market: "us", country: "US", site: "https://camerawest.com", network: "direct", ...shop("https://camerawest.com"), conditions: ["new", "used"] }),
@@ -169,12 +177,12 @@ export const RETAILERS: Retailer[] = [
   { ...amazon("sg", "SG", "www.amazon.sg", "AMAZON_TAG_SG"), checkRow: true },
   { key: "lazada-sg", name: "Lazada", market: "sg", country: "SG", site: "https://www.lazada.sg", source: "link-only", conditions: ["new"], authorized: null, network: "lazada", checkRow: true, searchUrl: (q) => `https://www.lazada.sg/catalog/?q=${enc(q)}` },
   { key: "shopee-sg", name: "Shopee", market: "sg", country: "SG", site: "https://shopee.sg", source: "link-only", conditions: ["new"], authorized: null, network: "shopee", checkRow: true, searchUrl: (q) => `https://shopee.sg/search?keyword=${enc(q)}` },
-  dealer({ key: "challenger-sg", name: "Challenger", market: "sg", country: "SG", site: "https://online.challenger.sg", network: null, ...shop("https://online.challenger.sg"), searchUrl: (q) => `https://online.challenger.sg/search?q=${enc(q)}` }),
+  dealer({ key: "challenger-sg", name: "Challenger", market: "sg", country: "SG", site: "https://online.challenger.sg", network: null, ...shop("https://online.challenger.sg", { currency: "SGD" }), searchUrl: (q) => `https://online.challenger.sg/search?q=${enc(q)}` }),
   dealer({ key: "cathay-photo", name: "Cathay Photo", market: "sg", country: "SG", site: "https://www.cathayphoto.com.sg", network: null, source: "link-only", checkRow: true, searchUrl: (q) => `https://www.cathayphoto.com.sg/catalogsearch/results?q=${enc(q)}` }),
-  dealer({ key: "canon-store-sg", name: "Canon Store", market: "sg", country: "SG", site: "https://shop.sg.canon", network: null, ...shop("https://shop.sg.canon") }),
+  dealer({ key: "canon-store-sg", name: "Canon Store", market: "sg", country: "SG", site: "https://shop.sg.canon", network: null, ...shop("https://shop.sg.canon", { currency: "SGD", brand: "Canon" }) }),
   // Online it sells Cinema Line and pro units, not consumer Alpha bodies
   // (checked 2026-10-17), so it only ever prices the few it lists.
-  dealer({ key: "sony-store-sg", name: "Sony Store", market: "sg", country: "SG", site: "https://store.sony.com.sg", network: null, ...shop("https://store.sony.com.sg") }),
+  dealer({ key: "sony-store-sg", name: "Sony Store", market: "sg", country: "SG", site: "https://store.sony.com.sg", network: null, ...shop("https://store.sony.com.sg", { currency: "SGD", brand: "Sony" }) }),
   dealer({ key: "leica-store-sg", name: "Leica Store", market: "sg", country: "SG", site: "https://leica-store.sg", network: null, ...shop("https://leica-store.sg") }),
   dealer({ key: "tk-foto", name: "TK Foto", market: "sg", country: "SG", site: "https://tkfoto.com.sg", network: null, ...shop("https://tkfoto.com.sg"), authorized: null }),
   used({ key: "cash-converters-sg", name: "Cash Converters", market: "sg", country: "SG", site: "https://cashconverters.sg", network: null, ...shop("https://cashconverters.sg") }),
