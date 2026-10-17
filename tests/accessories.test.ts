@@ -145,7 +145,7 @@ test("merge keeps a failed retailer's rows until stale, caps per category and ca
   assert.equal(out.length, 2);
   const many = Array.from({ length: 450 }, (_, i) => ao({ url: `https://focuscamera.com/products/${i}`, price: 1000 + i, cameras: i >= 440 ? ["sony-a7-iv"] : [] }));
   const capped = capAccessories(many);
-  assert.equal(capped.length, 410); // 400 cheapest + the 10 for the a7 IV
+  assert.equal(capped.length, 310); // 300 cheapest + the 10 for the a7 IV
 });
 
 test("price-per-GB history: lowest per format and capacity", () => {
@@ -155,4 +155,14 @@ test("price-per-GB history: lowest per format and capacity", () => {
     ao({ category: "memory-cards", specs: { format: "sd", capacityGB: 128 }, price: 900, inStock: false }),
   ]);
   assert.deepEqual(rows, [{ category: "memory-cards", format: "sd", capacityGB: 128, lowest: 1800, lowestPerGB: 14.06 }]);
+});
+
+test("spot-check fixes from the first import", () => {
+  assert.equal(cat("Leica Battery Charger BC-SCL7 for M11"), "chargers");
+  assert.equal(cat("Godox S-Type Speedlite Bracket (Bowens)"), "modifiers");
+  assert.equal(cat("Sony BDP-S1700 Blu-Ray Disc Player Bundle with HDMI Cable"), null);
+  assert.equal(cat("Spypoint 128GB Micro-SD Card for Trail Cameras"), null);
+  assert.equal(c("Lexar 128GB Micro-SD Card UHS-I")?.specs.format, "microsd");
+  assert.equal(c("Atomos Right angle MICRO to FULL HDMI Cable (50cm)")?.specs.hdmi, "Micro HDMI to HDMI");
+  assert.deepEqual(c("Canon Mount Adapter EF-EOS R")?.cameras, []);
 });
