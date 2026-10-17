@@ -5,6 +5,7 @@
 // that measure noise or shoot the same scene at high ISO. Their images and
 // charts are theirs: we link, never copy (owner feedback, 2026-10-17).
 import type { Camera } from "./catalog/schema";
+import PTP_NAMES from "../../data/ptp-names.json";
 import { sensorArea } from "./specs/definitions";
 
 /** Approximate light-gathering area per pixel, in square micrometres. */
@@ -16,14 +17,12 @@ export function pixelAreaUm2(c: Camera): number {
 export const pixelPitchUm = (c: Camera) => Math.sqrt(pixelAreaUm2(c));
 
 /**
- * The name Photons to Photos uses: Sony and Panasonic by model code
- * ("Sony ILCE-7M4", "Panasonic DC-S5M2"), everyone else by name.
- * A name it doesn't know just doesn't plot; the chart lets you add it.
+ * The camera's name on Photons to Photos ("Nikon Z 6II", "Sony ILCE-7M4"),
+ * from its own list (data/ptp-names.json, `npx tsx scripts/sync-ptp-names.ts`),
+ * or null when it hasn't measured that body.
  */
-export function ptpName(c: Camera, brandName: string): string {
-  const code = c.modelCodes[0];
-  if ((c.brand === "sony" || c.brand === "panasonic") && code) return `${brandName} ${code}`;
-  return `${brandName} ${c.shortName.replace(/α/g, "a")}`;
+export function ptpName(c: Camera): string | null {
+  return (PTP_NAMES as Record<string, string>)[c.slug] ?? null;
 }
 
 export type LowLightLink = { label: string; note: string; href: string };
@@ -31,10 +30,12 @@ export type LowLightLink = { label: string; note: string; href: string };
 export function lowLightLinks(cams: { c: Camera; brandName: string }[]): LowLightLink[] {
   const names = cams.map(({ c, brandName }) => `${brandName} ${c.shortName.replace(/α/g, "a")}`);
   const q = encodeURIComponent(names.join(" vs "));
-  const ptp = cams.map(({ c, brandName }) => ptpName(c, brandName)).join(",");
+  // Only bodies Photons to Photos has measured; with none, the chart opens empty to pick from.
+  const ptp = cams.map(({ c }) => ptpName(c)).filter(Boolean).join(",");
+  const hash = ptp ? `#${encodeURI(ptp)}` : "";
   return [
-    { label: "Photons to Photos: dynamic range", note: "Measured noise and dynamic range at every ISO, charted together", href: `https://www.photonstophotos.net/Charts/PDR.htm#${encodeURI(ptp)}` },
-    { label: "Photons to Photos: read noise", note: "Input-referred read noise by ISO: lower is cleaner in the shadows", href: `https://www.photonstophotos.net/Charts/RN_e.htm#${encodeURI(ptp)}` },
+    { label: "Photons to Photos: dynamic range vs ISO", note: "Photographic dynamic range measured at every ISO, bodies on one chart", href: `https://www.photonstophotos.net/Charts/PDR.htm${hash}` },
+    { label: "Photons to Photos: noise vs ISO", note: "Read noise at every ISO from lab tests: lower is cleaner in the shadows", href: `https://www.photonstophotos.net/Charts/RN_ADU.htm${hash}` },
     { label: "DPReview studio scene", note: "The same scene shot by each camera at the ISO you pick, side by side", href: "https://www.dpreview.com/reviews/image-comparison" },
     { label: "DPReview reviews", note: "Full reviews with high-ISO samples", href: `https://www.dpreview.com/search?query=${encodeURIComponent(names[0])}` },
     { label: "Low-light video tests", note: "Real-world high-ISO footage on YouTube", href: `https://www.youtube.com/results?search_query=${q}+low+light+test` },
