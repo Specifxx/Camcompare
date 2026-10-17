@@ -1,0 +1,70 @@
+{
+  "slug": "leica-cl",
+  "brand": "leica",
+  "name": "Leica CL",
+  "shortName": "CL",
+  "aliases": [
+    "Leica CL"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2017-11-21",
+  "launchPriceUsd": 2795,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "leica-tl2",
+    "fujifilm-x-pro2",
+    "fujifilm-x-pro3",
+    "fujifilm-x-e4",
+    "sony-a6600"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.24,
+    "isoMin": 100,
+    "isoMax": 50000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 25000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 403,
+    "dimensionsMm": [
+      131,
+      78,
+      45
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 220,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

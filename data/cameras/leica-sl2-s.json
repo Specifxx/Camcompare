@@ -1,0 +1,73 @@
+{
+  "slug": "leica-sl2-s",
+  "brand": "leica",
+  "name": "Leica SL2-S",
+  "shortName": "SL2-S",
+  "aliases": [
+    "Leica SL2-S",
+    "SL2-S",
+    "SL2S",
+    "SL2 S"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2020-12-10",
+  "launchPriceUsd": 4895,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "leica-sl3-s",
+  "rivals": [
+    "leica-sl2",
+    "panasonic-lumix-s5-ii",
+    "sony-a7-iv",
+    "sony-a7s-iii",
+    "nikon-z6-ii"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 24.6,
+    "isoMin": 50,
+    "isoMax": 100000,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 9,
+    "burstElecFps": 25,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 931,
+    "dimensionsMm": [
+      146,
+      107,
+      83
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 510,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -28,7 +28,7 @@
   "specs": {
     "sensorFormat": "full-frame",
     "sensorType": "CMOS",
-    "megapixels": 24.6,
+    "megapixels": 24.4,
     "isoMin": 100,
     "isoMax": 25600,
     "ibis": false,

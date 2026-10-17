@@ -1,0 +1,76 @@
+{
+  "slug": "fujifilm-x-t20",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-T20",
+  "shortName": "X-T20",
+  "aliases": [
+    "X-T20",
+    "XT20",
+    "X T20"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2017-01-19",
+  "launchPriceUsd": 899,
+  "launchPrices": {
+    "GBP": 799
+  },
+  "status": "discontinued",
+  "predecessor": "fujifilm-x-t10",
+  "successor": "fujifilm-x-t30",
+  "rivals": [
+    "sony-a6300",
+    "canon-eos-m5",
+    "panasonic-lumix-g85",
+    "olympus-om-d-e-m10-mark-iii",
+    "pentax-kp"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS III",
+    "megapixels": 24.3,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": 14,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 325,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 383,
+    "dimensionsMm": [
+      118.4,
+      82.8,
+      41.4
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q28454844"
+}

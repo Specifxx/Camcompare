@@ -1,0 +1,76 @@
+{
+  "slug": "fujifilm-x-pro2",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-Pro2",
+  "shortName": "X-Pro2",
+  "aliases": [
+    "X-Pro2",
+    "XPro2",
+    "X Pro2",
+    "X-Pro 2",
+    "X Pro 2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2016-01-15",
+  "launchPriceUsd": 1699,
+  "launchPrices": {
+    "GBP": 1349
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "fujifilm-x-t2",
+    "fujifilm-x100f",
+    "olympus-pen-f",
+    "sony-a6500"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS III",
+    "megapixels": 24.3,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 325,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "hybrid",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 495,
+    "dimensionsMm": [
+      140.5,
+      82.8,
+      45.9
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-I",
+    "batteryShotsCipa": 280,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

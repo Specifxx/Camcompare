@@ -4,7 +4,7 @@
   "name": "Panasonic Lumix S 100mm F2.8 Macro",
   "shortName": "Lumix S 100mm F2.8 Macro",
   "aliases": ["Lumix S 100mm F2.8 Macro", "S 100mm F2.8 Macro", "Lumix S 100mm Macro"],
-  "modelCodes": ["S-E100"],
+  "modelCodes": ["S-E100", "S-E100J"],
   "gtins": [],
   "announced": "2024-01-08",
   "launchPriceUsd": 999.99,

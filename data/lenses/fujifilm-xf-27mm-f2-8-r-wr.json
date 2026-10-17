@@ -10,7 +10,7 @@
   "launchPriceUsd": 399.95,
   "launchPrices": {"EUR": 449},
   "status": "current",
-  "predecessor": null,
+  "predecessor": "fujifilm-xf-27mm-f2-8",
   "successor": null,
   "rivals": [],
   "mounts": ["fujifilm-x"],

@@ -7,7 +7,7 @@
   "modelCodes": ["V335230BW000"],
   "gtins": [],
   "announced": "2012-05-24",
-  "launchPriceUsd": 899.99,
+  "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,

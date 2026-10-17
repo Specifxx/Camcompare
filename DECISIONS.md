@@ -244,3 +244,25 @@ generated from the retailer registry (`scripts/gen-setup-prompt.ts`), so every
 variable name in it matches the code. Site-ownership codes for Google, Bing
 and Impact come from Vercel variables and render nothing until set; a
 placeholder code fails verification silently.
+
+## 2026-10-17: The matcher drops brand words from names and refuses unknown generations
+
+A review probe showed that "Sony a7C II Body", "Sony A1 II", "Lumix S5 II" and
+"OM-1 Mark II" matched nothing. The predecessor's brand-prefixed alias ("Sony
+a7C") overlapped the successor's name without lying inside it, so both
+survived and the listing was refused as ambiguous. The reverse failure was
+worse: a generation missing from the catalog ("EOS R5 Mark II" when only the
+R5 is listed) matched the older model, putting its price on the wrong page.
+
+- **Names are matched without leading brand words** (`aliasKeys`). The brand
+  is checked on its own, and only products whose brand the title names are
+  candidates, so cutting the brand loses nothing.
+- **A generation mark right after a name refuses the match** unless that
+  longer name is in the catalog: "ii" to "ix" for anything; for bodies also a
+  digit or a variant letter or word ("s", "r", "c", "pro", "max"…), except
+  "E mount" and the like. A refused listing costs one offer. A wrong match
+  costs trust.
+- **A part number needs the brand in the title too.** Nikon's are bare 4- or
+  5-digit numbers that other makers' accessories reuse.
+- `catalog:check` uses the matcher's own keys, per brand, so a clash it
+  passes can't make two products unmatchable.

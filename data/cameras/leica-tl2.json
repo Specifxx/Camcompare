@@ -1,0 +1,71 @@
+{
+  "slug": "leica-tl2",
+  "brand": "leica",
+  "name": "Leica TL2",
+  "shortName": "TL2",
+  "aliases": [
+    "Leica TL2",
+    "TL2",
+    "TL 2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2017-07-10",
+  "launchPriceUsd": 1950,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "leica-cl",
+    "fujifilm-x-e4",
+    "canon-eos-m6-mark-ii",
+    "sony-a6400"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.24,
+    "isoMin": 100,
+    "isoMax": 50000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7,
+    "burstElecFps": 20,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 40000,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.7,
+    "screenDotsM": 1.3,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 399,
+    "dimensionsMm": [
+      134,
+      69,
+      33
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 250,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

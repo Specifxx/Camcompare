@@ -1,0 +1,72 @@
+{
+  "slug": "leica-sl2",
+  "brand": "leica",
+  "name": "Leica SL2",
+  "shortName": "SL2",
+  "aliases": [
+    "Leica SL2",
+    "SL2",
+    "SL 2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-11-06",
+  "launchPriceUsd": 5999,
+  "status": "discontinued",
+  "predecessor": "leica-sl-typ-601",
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-s1r",
+    "sony-a7r-iv",
+    "nikon-z7-ii",
+    "canon-eos-r5",
+    "leica-sl2-s"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 47.3,
+    "isoMin": 50,
+    "isoMax": 50000,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 10,
+    "burstElecFps": 20,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 40000,
+    "afPoints": 225,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "5K",
+    "video4kMaxFps": 60,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 920,
+    "dimensionsMm": [
+      146.4,
+      107.5,
+      82.3
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 450,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "fujifilm-x-t30",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-T30",
+  "shortName": "X-T30",
+  "aliases": [
+    "X-T30",
+    "XT30",
+    "X T30"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2019-02-14",
+  "launchPriceUsd": 899,
+  "status": "discontinued",
+  "predecessor": "fujifilm-x-t20",
+  "successor": null,
+  "rivals": [
+    "sony-a6400",
+    "canon-eos-m6-mark-ii",
+    "nikon-z50",
+    "olympus-om-d-e-m5-mark-iii",
+    "panasonic-lumix-g95"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS 4",
+    "megapixels": 26.1,
+    "isoMin": 160,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": 30,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 383,
+    "dimensionsMm": [
+      118.4,
+      82.8,
+      46.8
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 380,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q61996962"
+}

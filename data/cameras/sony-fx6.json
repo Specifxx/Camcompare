@@ -8,8 +8,7 @@
     "FX6"
   ],
   "modelCodes": [
-    "ILME-FX6V",
-    "ILME-FX6"
+    "ILME-FX6V"
   ],
   "gtins": [],
   "type": "cinema",
@@ -53,7 +52,7 @@
     "screenDotsM": 2.76,
     "screenType": "multi-angle",
     "touchscreen": true,
-    "weightG": 890,
+    "weightG": null,
     "dimensionsMm": [
       114,
       116,

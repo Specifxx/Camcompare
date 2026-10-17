@@ -1,0 +1,72 @@
+{
+  "slug": "fujifilm-x-t200",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-T200",
+  "shortName": "X-T200",
+  "aliases": [
+    "X-T200",
+    "XT200",
+    "X T200"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2020-01-23",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": "fujifilm-x-t100",
+  "successor": null,
+  "rivals": [
+    "canon-eos-m50-mark-ii",
+    "sony-a6100",
+    "olympus-om-d-e-m10-mark-iv",
+    "fujifilm-x-a7"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.5,
+    "screenDotsM": 2.76,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 370,
+    "dimensionsMm": [
+      121,
+      83.7,
+      55.1
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 270,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q85116337"
+}

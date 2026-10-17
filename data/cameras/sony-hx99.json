@@ -14,9 +14,8 @@
   "gtins": [],
   "type": "compact",
   "announced": "2018-08-31",
-  "launchPriceUsd": null,
+  "launchPriceUsd": 449.99,
   "launchPrices": {
-    "GBP": 450,
     "EUR": 520
   },
   "status": "discontinued",

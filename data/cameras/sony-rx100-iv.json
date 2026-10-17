@@ -17,7 +17,7 @@
   "gtins": [],
   "type": "compact",
   "announced": "2015-06-10",
-  "launchPriceUsd": null,
+  "launchPriceUsd": 1000,
   "launchPrices": {
     "EUR": 1150
   },

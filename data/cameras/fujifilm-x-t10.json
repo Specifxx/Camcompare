@@ -1,0 +1,72 @@
+{
+  "slug": "fujifilm-x-t10",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-T10",
+  "shortName": "X-T10",
+  "aliases": [
+    "X-T10",
+    "XT10",
+    "X T10"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2015-05-18",
+  "launchPriceUsd": 799,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-x-t20",
+  "rivals": [
+    "olympus-om-d-e-m10-mark-ii",
+    "panasonic-lumix-g7",
+    "sony-a6000",
+    "olympus-om-d-e-m5-mark-ii"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS II",
+    "megapixels": 16.3,
+    "isoMin": 200,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 77,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 381,
+    "dimensionsMm": [
+      118.4,
+      82.8,
+      40.8
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q20647321"
+}

@@ -5,7 +5,6 @@
   "shortName": "KOMODO 6K",
   "aliases": [
     "KOMODO 6K",
-    "KOMODO",
     "KOMODO 6K S35"
   ],
   "modelCodes": [],
@@ -60,7 +59,7 @@
     "cardSlots": 1,
     "cardTypes": "CFast 2.0",
     "batteryShotsCipa": null,
-    "usbC": true,
+    "usbC": false,
     "micJack": true,
     "headphoneJack": true,
     "builtInFlash": false,

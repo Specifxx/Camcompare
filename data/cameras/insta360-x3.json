@@ -42,7 +42,7 @@
     "afSubjects": [],
     "videoMaxRes": "5.7K",
     "video4kMaxFps": 60,
-    "video10bit": null,
+    "video10bit": false,
     "rawVideoInternal": false,
     "evfDotsM": null,
     "viewfinderType": "none",

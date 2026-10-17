@@ -4,7 +4,7 @@
   "name": "Canon EF-S 35mm f/2.8 Macro IS STM",
   "shortName": "EF-S 35mm f/2.8 Macro IS STM",
   "aliases": ["EF-S 35mm f/2.8 Macro IS STM", "EF-S 35mm F2.8 Macro IS STM", "EF-S35mm f/2.8 Macro IS STM", "35mm f/2.8 Macro IS STM", "35mm F2.8 Macro IS STM", "EF-S 35mm Macro IS STM", "EF-S 35mm f/2.8 Macro", "EF-S 35mm Macro"],
-  "modelCodes": ["2220C002", "2220C001"],
+  "modelCodes": ["2220C002"],
   "gtins": [],
   "announced": "2017-04-06",
   "launchPriceUsd": 349.99,

@@ -1,0 +1,79 @@
+{
+  "slug": "leica-q-typ-116",
+  "brand": "leica",
+  "name": "Leica Q (Typ 116)",
+  "shortName": "Q (Typ 116)",
+  "aliases": [
+    "Leica Q (Typ 116)",
+    "Leica Q Typ 116",
+    "Leica Q 116",
+    "Q Typ 116",
+    "Leica Q"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2015-06-10",
+  "launchPriceUsd": 4250,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "leica-q2",
+    "fujifilm-x100v",
+    "fujifilm-x100f",
+    "sony-rx1r-ii",
+    "leica-m-typ-240"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/1.7"
+  },
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 50000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": null,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.68,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 640,
+    "dimensionsMm": [
+      130,
+      80,
+      93
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  }
+}

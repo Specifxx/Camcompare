@@ -49,8 +49,12 @@
     "screenDotsM": null,
     "screenType": "fixed",
     "touchscreen": true,
-    "weightG": null,
-    "dimensionsMm": null,
+    "weightG": 900,
+    "dimensionsMm": [
+      178.1,
+      96,
+      101.3
+    ],
     "weatherSealed": null,
     "waterproofM": null,
     "cardSlots": 2,

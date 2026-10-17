@@ -1,0 +1,76 @@
+{
+  "slug": "fujifilm-x-e3",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-E3",
+  "shortName": "X-E3",
+  "aliases": [
+    "X-E3",
+    "XE3",
+    "X E3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2017-09-07",
+  "launchPriceUsd": 899,
+  "launchPrices": {
+    "GBP": 849
+  },
+  "status": "discontinued",
+  "predecessor": "fujifilm-x-e2s",
+  "successor": null,
+  "rivals": [
+    "canon-eos-m6",
+    "panasonic-lumix-gx9",
+    "sony-a6300",
+    "olympus-pen-f",
+    "fujifilm-x100f"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS III",
+    "megapixels": 24.3,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": 14,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 325,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 337,
+    "dimensionsMm": [
+      121.3,
+      73.9,
+      42.7
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q42950865"
+}

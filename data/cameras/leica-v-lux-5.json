@@ -1,0 +1,79 @@
+{
+  "slug": "leica-v-lux-5",
+  "brand": "leica",
+  "name": "Leica V-Lux 5",
+  "shortName": "V-Lux 5",
+  "aliases": [
+    "Leica V-Lux 5",
+    "V-Lux 5",
+    "V-Lux5",
+    "VLux 5",
+    "V Lux 5"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2019-07-10",
+  "launchPriceUsd": null,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-fz1000-ii",
+    "sony-rx10-iv",
+    "sony-rx10-iii",
+    "panasonic-lumix-fz2500"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      25,
+      400
+    ],
+    "aperture": "f/2.8-4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "MOS",
+    "megapixels": 20.1,
+    "isoMin": null,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 12,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.24,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 812,
+    "dimensionsMm": [
+      136.7,
+      97.2,
+      131.5
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 360,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

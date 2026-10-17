@@ -48,7 +48,7 @@
     "screenSizeIn": 2.4,
     "screenDotsM": null,
     "screenType": "fixed",
-    "touchscreen": null,
+    "touchscreen": false,
     "weightG": 1828,
     "dimensionsMm": [
       107.95,

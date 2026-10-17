@@ -1,0 +1,72 @@
+{
+  "slug": "fujifilm-x-h1",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-H1",
+  "shortName": "X-H1",
+  "aliases": [
+    "X-H1",
+    "XH1",
+    "X H1"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2018-02-15",
+  "launchPriceUsd": 1899,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-g9",
+    "panasonic-lumix-gh5",
+    "sony-a6500",
+    "olympus-om-d-e-m1-mark-ii",
+    "sony-a7-iii"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS III",
+    "megapixels": 24.3,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": 8,
+    "burstElecFps": 14,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 325,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 673,
+    "dimensionsMm": [
+      139.8,
+      97.3,
+      85.5
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-II",
+    "batteryShotsCipa": 310,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

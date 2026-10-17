@@ -23,7 +23,7 @@
     "autofocus": true,
     "afMotor": "STM",
     "stabilized": false,
-    "weatherSealed": true,
+    "weatherSealed": null,
     "weightG": 135,
     "diameterMm": 70,
     "lengthMm": 40,

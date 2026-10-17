@@ -1,0 +1,75 @@
+{
+  "slug": "fujifilm-x-e2s",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-E2S",
+  "shortName": "X-E2S",
+  "aliases": [
+    "X-E2S",
+    "XE2S",
+    "X E2S"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2016-01-15",
+  "launchPriceUsd": 699,
+  "launchPrices": {
+    "GBP": 549
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-x-e3",
+  "rivals": [
+    "panasonic-lumix-gx85",
+    "sony-a6000",
+    "olympus-om-d-e-m10-mark-ii",
+    "fujifilm-x100t"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS II",
+    "megapixels": 16.3,
+    "isoMin": 200,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 7,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 77,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 350,
+    "dimensionsMm": [
+      129,
+      74.9,
+      37.2
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q126029768"
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "leica-q2-monochrom",
+  "brand": "leica",
+  "name": "Leica Q2 Monochrom",
+  "shortName": "Q2 Monochrom",
+  "aliases": [
+    "Leica Q2 Monochrom",
+    "Q2 Monochrom",
+    "Leica Q2 Monochrome",
+    "Q2 Monochrome"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2020-11-10",
+  "launchPriceUsd": 5995,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "leica-q2",
+    "leica-m10-monochrom",
+    "leica-m11-monochrom",
+    "leica-q3"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/1.7"
+  },
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Monochrome CMOS",
+    "megapixels": 47.3,
+    "isoMin": 100,
+    "isoMax": 100000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": 20,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 40000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.68,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 718,
+    "dimensionsMm": [
+      130,
+      80,
+      87
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 340,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

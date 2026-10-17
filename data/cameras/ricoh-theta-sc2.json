@@ -26,7 +26,7 @@
   },
   "specs": {
     "sensorFormat": "1/2.3-inch",
-    "sensorType": "BSI CMOS",
+    "sensorType": "CMOS",
     "megapixels": 14,
     "isoMin": 64,
     "isoMax": 3200,

@@ -12,7 +12,10 @@
   "gtins": [],
   "type": "dslr",
   "announced": "2015-02-09",
-  "launchPriceUsd": 699.95,
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "GBP": 549.99
+  },
   "status": "discontinued",
   "predecessor": null,
   "successor": null,

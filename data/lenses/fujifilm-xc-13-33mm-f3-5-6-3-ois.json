@@ -22,7 +22,7 @@
     "apertureMaxTele": 6.3,
     "apertureMin": 22,
     "autofocus": true,
-    "afMotor": "Stepping Motor",
+    "afMotor": null,
     "stabilized": true,
     "weatherSealed": false,
     "weightG": 125,

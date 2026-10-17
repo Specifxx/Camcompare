@@ -61,7 +61,7 @@
     "weatherSealed": true,
     "waterproofM": 20,
     "cardSlots": 1,
-    "cardTypes": "SD UHS-I + 27MB internal",
+    "cardTypes": "SD + 27MB internal",
     "batteryShotsCipa": 340,
     "usbC": true,
     "micJack": false,

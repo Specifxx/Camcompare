@@ -1,0 +1,80 @@
+{
+  "slug": "leica-d-lux-7",
+  "brand": "leica",
+  "name": "Leica D-Lux 7",
+  "shortName": "D-Lux 7",
+  "aliases": [
+    "Leica D-Lux 7",
+    "D-Lux 7",
+    "D-Lux7",
+    "DLux 7",
+    "D Lux 7"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2018-11-20",
+  "launchPriceUsd": 1195,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "leica-d-lux-8",
+  "rivals": [
+    "panasonic-lumix-lx100-ii",
+    "leica-d-lux-8",
+    "sony-rx100-vii",
+    "canon-powershot-g5-x-mark-ii",
+    "ricoh-gr-iii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      75
+    ],
+    "aperture": "f/1.7-2.8"
+  },
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "MOS",
+    "megapixels": 17,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": 11,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.24,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 403,
+    "dimensionsMm": [
+      118,
+      66,
+      64
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 340,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

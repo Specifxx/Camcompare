@@ -1,0 +1,84 @@
+{
+  "slug": "leica-d-lux-8",
+  "brand": "leica",
+  "name": "Leica D-Lux 8",
+  "shortName": "D-Lux 8",
+  "aliases": [
+    "Leica D-Lux 8",
+    "D-Lux 8",
+    "D-Lux8",
+    "DLux 8",
+    "D Lux 8"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2024-05-23",
+  "launchPriceUsd": 1595,
+  "launchPrices": {
+    "GBP": 1450,
+    "EUR": 1590
+  },
+  "status": "current",
+  "predecessor": "leica-d-lux-7",
+  "successor": null,
+  "rivals": [
+    "leica-d-lux-7",
+    "panasonic-lumix-lx100-ii",
+    "fujifilm-x100vi",
+    "ricoh-gr-iiix",
+    "sony-rx100-vii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      75
+    ],
+    "aperture": "f/1.7-2.8"
+  },
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "CMOS",
+    "megapixels": 17,
+    "isoMin": 100,
+    "isoMax": 25000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.84,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 397,
+    "dimensionsMm": [
+      130,
+      69,
+      62
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

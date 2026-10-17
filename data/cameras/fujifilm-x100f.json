@@ -1,0 +1,80 @@
+{
+  "slug": "fujifilm-x100f",
+  "brand": "fujifilm",
+  "name": "Fujifilm X100F",
+  "shortName": "X100F",
+  "aliases": [
+    "X100F",
+    "X100 F",
+    "X-100F"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2017-01-19",
+  "launchPriceUsd": 1299,
+  "launchPrices": {
+    "GBP": 1249
+  },
+  "status": "discontinued",
+  "predecessor": "fujifilm-x100t",
+  "successor": null,
+  "rivals": [
+    "ricoh-gr-ii",
+    "canon-powershot-g1-x-mark-iii",
+    "fujifilm-x-e3",
+    "fujifilm-x-pro2"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      35
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS III",
+    "megapixels": 24.3,
+    "isoMin": 200,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 325,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "hybrid",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fixed",
+    "touchscreen": false,
+    "weightG": 469,
+    "dimensionsMm": [
+      126.5,
+      74.8,
+      52.4
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 280,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q126029978"
+}

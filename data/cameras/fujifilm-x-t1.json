@@ -1,0 +1,76 @@
+{
+  "slug": "fujifilm-x-t1",
+  "brand": "fujifilm",
+  "name": "Fujifilm X-T1",
+  "shortName": "X-T1",
+  "aliases": [
+    "X-T1",
+    "XT1",
+    "X T1"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2014-01-28",
+  "launchPriceUsd": 1299.95,
+  "launchPrices": {
+    "GBP": 1049.99,
+    "EUR": 1199
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "fujifilm-x-t2",
+  "rivals": [
+    "olympus-om-d-e-m1",
+    "olympus-om-d-e-m5-mark-ii",
+    "panasonic-lumix-gh4",
+    "sony-a6000"
+  ],
+  "mount": "fujifilm-x",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "X-Trans CMOS II",
+    "megapixels": 16.3,
+    "isoMin": 200,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 8,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 32000,
+    "afPoints": 77,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 440,
+    "dimensionsMm": [
+      129,
+      89.8,
+      46.7
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q15714407"
+}

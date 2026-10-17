@@ -4,7 +4,7 @@
   "name": "Panasonic Leica DG Summilux 15mm F1.7 ASPH.",
   "shortName": "Leica DG Summilux 15mm F1.7 ASPH.",
   "aliases": ["Leica DG Summilux 15mm F1.7 ASPH", "Leica DG Summilux 15mm F1.7", "DG Summilux 15mm F1.7", "Summilux 15mm F1.7", "Leica DG 15mm F1.7", "Leica 15mm F1.7 ASPH"],
-  "modelCodes": ["H-X015", "H-X015K"],
+  "modelCodes": ["H-X015", "H-X015K", "H-X015S"],
   "gtins": [],
   "announced": "2014-03-24",
   "launchPriceUsd": 599,

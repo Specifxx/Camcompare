@@ -16,7 +16,7 @@
   "announced": "2024-01-24",
   "launchPriceUsd": 8199,
   "status": "current",
-  "predecessor": null,
+  "predecessor": "hasselblad-907x-50c",
   "successor": null,
   "rivals": [
     "hasselblad-x2d-100c",
@@ -52,7 +52,7 @@
     "screenDotsM": 2.36,
     "screenType": "tilting",
     "touchscreen": true,
-    "weightG": 780,
+    "weightG": null,
     "dimensionsMm": [
       102,
       92,
@@ -68,6 +68,6 @@
     "headphoneJack": false,
     "builtInFlash": false,
     "wifi": true,
-    "bluetooth": true
+    "bluetooth": null
   }
 }

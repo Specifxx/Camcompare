@@ -7,7 +7,7 @@
   "modelCodes": ["V335320BW000"],
   "gtins": [],
   "announced": "2015-05-12",
-  "launchPriceUsd": 1299.99,
+  "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
