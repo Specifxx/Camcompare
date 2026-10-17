@@ -2,7 +2,9 @@
 // the catalog and our own price history — no opinions, no scores.
 import type { Camera } from "./catalog/schema";
 import { publishedCameras } from "./catalog";
-import type { HistoryPoint } from "./offers";
+import { convert, type Fx } from "./fx";
+import { MARKET_CODES, MARKETS, type Currency, type MarketCode } from "./markets";
+import { lowest, type HistoryPoint, type Offer } from "./offers";
 import { sensorLabel, typeLabel } from "./specs/definitions";
 
 type Metric = { key: string; label: string; phrase: string; better: "higher" | "lower"; get: (c: Camera) => number | null; unit: (v: number) => string };
@@ -93,4 +95,86 @@ export function priceDrops(history: Map<string, HistoryPoint[]>, field: "new" | 
     if (pct >= minPct) out.push({ slug, from: before[field]!, to: last[field]!, pct });
   }
   return out.sort((a, b) => b.pct - a.pct);
+}
+
+// ------------------------------------------------------------ top bargains
+
+export type BargainInput = { slug: string; offers: Offer[]; rrpMinor: number | null; usedTypicalMinor: number | null };
+export type Bargain = { slug: string; condition: "new" | "used"; price: number; ref: number; pct: number; retailer: string };
+
+/**
+ * Today's biggest bargains in one market. New: the cheapest new offer against
+ * this market's launch RRP, biggest % under first. Used: the cheapest used or
+ * refurbished offer against the typical used price (lib/value.ts). Only
+ * in-stock, body-only, non-Amazon offers count (`lowest`), and only a saving
+ * of at least `minPct`.
+ */
+export function topBargains(items: BargainInput[], field: "new" | "used", minPct = 5, max = 12): Bargain[] {
+  const out: Bargain[] = [];
+  for (const it of items) {
+    const ref = field === "new" ? it.rrpMinor : it.usedTypicalMinor;
+    if (!ref || ref <= 0) continue;
+    const o = lowest(it.offers, field);
+    if (!o || o.price >= ref) continue;
+    const pct = Math.round(((ref - o.price) / ref) * 100);
+    if (pct < minPct) continue;
+    out.push({ slug: it.slug, condition: field, price: o.price, ref, pct, retailer: o.retailer });
+  }
+  return out.sort((a, b) => b.pct - a.pct || a.price - b.price || a.slug.localeCompare(b.slug)).slice(0, max);
+}
+
+// ------------------------------------------------------------ price around the world
+
+export type WorldRow = {
+  market: MarketCode;
+  currency: Currency;
+  new: number | null; // minor units, the market's own currency
+  used: number | null;
+  /** The same, converted approximately into the page market's currency (minor units). */
+  newHere: number | null;
+  usedHere: number | null;
+};
+
+/** Each market's lowest new and used price, with an approximate conversion into `here`'s currency. */
+export function worldRows(offersByMarket: Record<MarketCode, Offer[]>, here: MarketCode, fx: Fx): WorldRow[] {
+  const to = MARKETS[here].currency;
+  return MARKET_CODES.map((m) => {
+    const cur = MARKETS[m].currency;
+    const n = lowest(offersByMarket[m] ?? [], "new")?.price ?? null;
+    const u = lowest(offersByMarket[m] ?? [], "used")?.price ?? null;
+    const conv = (v: number | null) => (v === null ? null : cur === to ? v : Math.round(convert(v, cur, to, fx)));
+    return { market: m, currency: cur, new: n, used: u, newHere: conv(n), usedHere: conv(u) };
+  });
+}
+
+const ADJ: Record<MarketCode, string> = { us: "US", uk: "UK", eu: "European", au: "Australian", sg: "Singapore" };
+
+export type WorldVerdict = { field: "new" | "used"; cheapest: MarketCode; here: MarketCode; pct: number | null; text: string };
+
+/**
+ * Where it is cheapest, converted at today's rate, against this market:
+ * "Cheapest in Australia: about 12% under the US price". New prices decide;
+ * used ones only when fewer than two markets price it new. Needs two markets.
+ * A gap under 2% is called "about the same".
+ */
+export function worldVerdict(rows: WorldRow[], here: MarketCode): WorldVerdict | null {
+  for (const field of ["new", "used"] as const) {
+    const key = field === "new" ? "newHere" : "usedHere";
+    const priced = rows.filter((r) => r[key] !== null);
+    if (priced.length < 2) continue;
+    const best = priced.reduce((a, b) => (b[key]! < a[key]! ? b : a));
+    const mine = rows.find((r) => r.market === here)?.[key] ?? null;
+    const place = (m: MarketCode) => (m === "us" ? "the US" : m === "uk" ? "the UK" : m === "eu" ? "Europe" : MARKETS[m].name);
+    const label = field === "new" ? "" : " used";
+    if (mine === null) return { field, cheapest: best.market, here, pct: null, text: `Cheapest${label} in ${place(best.market)}. Not priced${label} in ${place(here)} yet.` };
+    if (best.market === here) {
+      const next = priced.filter((r) => r.market !== here).reduce((a, b) => (b[key]! < a[key]! ? b : a));
+      const pct = Math.round(((next[key]! - mine) / next[key]!) * 100);
+      return { field, cheapest: here, here, pct, text: pct < 2 ? `About the same${label} price in ${place(here)} as in ${place(next.market)}, the next cheapest.` : `Cheapest${label} right here in ${place(here)}: about ${pct}% under ${place(next.market)}, the next cheapest.` };
+    }
+    const pct = Math.round(((mine - best[key]!) / mine) * 100);
+    if (pct < 2) return { field, cheapest: best.market, here, pct, text: `About the same${label} price in ${place(here)} as anywhere else we track.` };
+    return { field, cheapest: best.market, here, pct, text: `Cheapest${label} in ${place(best.market)}: about ${pct}% under the ${ADJ[here]} price before shipping and import tax.` };
+  }
+  return null;
 }

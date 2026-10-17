@@ -1,8 +1,9 @@
-import { product as getProduct } from "@/lib/catalog";
+import { historyFor, launchPrice, product as getProduct } from "@/lib/catalog";
 import { MARKETS, type MarketCode } from "@/lib/markets";
 import { AMAZON_MAX_AGE_H, type Offer } from "@/lib/offers";
 import { alsoCheckLinks, ebayRows, offerRows, packKind } from "@/lib/offer-rows";
 import { price } from "@/lib/format";
+import { usedValue } from "@/lib/value";
 import EbayPanel from "./EbayPanel";
 import { AlsoCheck, OfferRowItem } from "./OfferRows";
 import TimedPrice from "./TimedPrice";
@@ -22,6 +23,10 @@ export default function OffersTable({ product, query, offers, market, page, amaz
   const listings = ebayRows(offers, market, { page, placement: "ebay", pack });
   const checks = alsoCheckLinks({ product, query, offers, market, page, amazonAsin, placement: "check", amazonShown: rows.some((r) => r.amazon) });
   const side = listings.length > 0 || checks.length > 0;
+  // Warnings on rows above this market's RRP or the typical used price (OfferRows).
+  const launch = p ? launchPrice(p.item, market) : null;
+  const rrp = launch && launch.currency === MARKETS[market].currency ? Math.round(launch.amount * 100) : null;
+  const usedTypical = usedValue(historyFor(product, market))?.value ?? null;
   return (
     <div className={`grid grid-cols-1 items-start gap-4 ${side ? "lg:grid-cols-[minmax(0,1fr)_300px]" : ""}`}>
       <div>
@@ -29,7 +34,7 @@ export default function OffersTable({ product, query, offers, market, page, amaz
           <>
             <ul className="card divide-y divide-line">
               {rows.map((r) => (
-                <OfferRowItem key={r.id} row={r} product={product} placement="offers" priceNode={r.amazon && r.seenAt ? <TimedPrice text={price(r.price, r.currency)} seenAt={r.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : undefined} />
+                <OfferRowItem key={r.id} row={r} product={product} placement="offers" rrp={rrp} usedTypical={usedTypical} priceNode={r.amazon && r.seenAt ? <TimedPrice text={price(r.price, r.currency)} seenAt={r.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : undefined} />
               ))}
             </ul>
             <p className="mt-2 text-[11px] text-subtle">Sorted by price, cheapest in-stock first. Some links earn us a commission; it never changes the order.</p>

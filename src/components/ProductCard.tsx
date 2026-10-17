@@ -58,10 +58,15 @@ export default function ProductCard({ p, market }: { p: ProductSummary; market: 
                 </span>
               )}
               {p.stores > 0 && <span className="block text-xs text-subtle">at {p.stores} store{p.stores === 1 ? "" : "s"}</span>}
+              {p.launch !== null && (
+                <span className="block text-xs text-subtle">
+                  Launch RRP <span className="price">{listPrice(p.launch, p.currency)}</span>
+                </span>
+              )}
             </>
           ) : p.launch ? (
             <span>
-              <span className="text-xs text-subtle">Launched at </span>
+              <span className="text-xs text-subtle">Launch RRP </span>
               <span className="price font-semibold">{listPrice(p.launch, p.currency)}</span>
             </span>
           ) : (

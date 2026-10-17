@@ -5,6 +5,7 @@
 import { price } from "@/lib/format";
 import type { CheckLink, OfferRow } from "@/lib/quickview";
 import { retailer } from "@/lib/retailers";
+import { rowWarning } from "@/lib/rrp";
 import OutboundLink from "./OutboundLink";
 
 /** Filled button for a link that earns (Amazon and eBay in their own colours), outlined for the rest. */
@@ -18,7 +19,13 @@ export function retailerButtonClass(key: string, paid: boolean): string {
 
 const PaidNote = ({ paid }: { paid: boolean }) => (paid ? <p className="mt-0.5 text-[10px] leading-none text-subtle">Paid link</p> : null);
 
-export function OfferRowItem({ row, product, placement, priceNode, dense = false }: { row: OfferRow; product: string; placement: string; priceNode?: React.ReactNode; dense?: boolean }) {
+/**
+ * One offer. `rrp` (this market's launch RRP) and `usedTypical` (the typical
+ * used price), both in minor units, add a warning badge to a row priced above
+ * them. The badge flags the price, never the seller.
+ */
+export function OfferRowItem({ row, product, placement, priceNode, dense = false, rrp, usedTypical }: { row: OfferRow; product: string; placement: string; priceNode?: React.ReactNode; dense?: boolean; rrp?: number | null; usedTypical?: number | null }) {
+  const warn = rowWarning(row, rrp, usedTypical);
   const who = row.seller ? `Seller: ${row.seller}` : row.authorized ? "Authorized dealer" : null;
   const details = [who, row.variant ? `${row.variant} version` : null].filter(Boolean).join(" · ");
   return (
@@ -32,6 +39,14 @@ export function OfferRowItem({ row, product, placement, priceNode, dense = false
           <span className={row.inStock ? "text-win" : "font-medium text-warn"}>{row.inStock ? "In stock" : "Out of stock"}</span>
         </p>
         {details && <p className="truncate text-xs text-subtle">{details}</p>}
+        {warn && (
+          <p className="mt-1">
+            <span className="inline-flex items-center gap-1 rounded-full border border-warn/50 bg-warn/10 px-2 py-0.5 text-[11px] font-semibold text-warn" title={warn.kind === "rrp" ? "Priced above the maker's launch RRP in this market" : "Priced above the typical used asking price we've recorded"}>
+              <span aria-hidden>▲</span>
+              {warn.text}
+            </span>
+          </p>
+        )}
       </div>
       <p className={`price shrink-0 text-right font-bold ${dense ? "text-[15px]" : "text-base"} ${row.inStock ? "" : "text-muted"}`}>{priceNode ?? price(row.price, row.currency)}</p>
       <div className={`${dense ? "w-[4.5rem]" : "w-24"} shrink-0 text-right`}>

@@ -12,10 +12,11 @@
 // Server-only: links are wrapped with this build's affiliate ids.
 import { affiliateUrl, isPaid, subId } from "./affiliate";
 import { asinFor } from "./amazon-asins";
-import { brandName, displayName, offersGeneratedAt, offersFor, type AnyProduct } from "./catalog";
+import { brandName, displayName, historyFor, launchPrice, offersGeneratedAt, offersFor, type AnyProduct } from "./catalog";
 import { cameraHighlights, cardSubline, lensHighlights } from "./highlights";
 import { MARKETS, marketPath, type MarketCode } from "./markets";
-import { isAmazonOffer, sortOffers, type Offer } from "./offers";
+import { isAmazonOffer, lowest, sortOffers, type Offer } from "./offers";
+import { usedValue } from "./value";
 import type { CheckLink, OfferRow, QuickViewData } from "./quickview";
 import { CONDITION_LABEL, ebayFor, retailer, retailersFor } from "./retailers";
 import { summarizeCamera, summarizeLens } from "./summary";
@@ -121,6 +122,12 @@ export const retailerQuery = (p: AnyProduct, m: MarketCode) => displayName(p.ite
  * One product's quick-view file for one market. Amazon's offers are left out
  * entirely (only a link to Amazon); every href is wrapped here, at build.
  */
+/** This market's launch RRP in minor units, when the catalog has it in this currency. */
+export function rrpMinor(p: AnyProduct, m: MarketCode): number | null {
+  const l = launchPrice(p.item, m);
+  return l && l.currency === MARKETS[m].currency ? Math.round(l.amount * 100) : null;
+}
+
 export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = offersFor(p.item.slug, m), updated: string | null = offersGeneratedAt(m)): QuickViewData {
   const slug = p.item.slug;
   const page = `qv-${m}-${slug}`;
@@ -143,5 +150,8 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
     alsoCheck: alsoCheckLinks({ product: slug, query, offers, market: m, page, amazonAsin: p.item.amazonAsin, placement: "quickview-check", amazonShown: false }),
     updated,
     mounts: p.kind === "lens" ? p.item.mounts.length : 1,
+    rrp: rrpMinor(p, m),
+    usedTypical: usedValue(historyFor(slug, m))?.value ?? null,
+    lowestUsed: lowest(offers, "used")?.price ?? null,
   };
 }

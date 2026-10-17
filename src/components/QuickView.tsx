@@ -232,6 +232,24 @@ function Dialog({ target }: { target: Target }) {
                   )}
                 </p>
               )}
+              {data && (data.rrp || data.usedTypical || data.lowestUsed) ? (
+                <p className="mt-1 flex flex-wrap gap-x-3 text-xs text-muted">
+                  {data.rrp ? (
+                    <span>
+                      Launch RRP <span className="price font-semibold text-fg">{price(data.rrp, data.currency)}</span>
+                    </span>
+                  ) : null}
+                  {data.usedTypical ? (
+                    <span>
+                      Used, typically <span className="price font-semibold text-fg">{price(data.usedTypical, data.currency)}</span>
+                    </span>
+                  ) : data.lowestUsed ? (
+                    <span>
+                      Used from <span className="price font-semibold text-fg">{price(data.lowestUsed, data.currency)}</span>
+                    </span>
+                  ) : null}
+                </p>
+              ) : null}
             </div>
           </header>
 
@@ -263,7 +281,7 @@ function Dialog({ target }: { target: Target }) {
                 {data.rows.length ? (
                   <ul className="card divide-y divide-line">
                     {data.rows.map((r) => (
-                      <OfferRowItem key={r.id} row={r} product={data.slug} placement="quickview" dense />
+                      <OfferRowItem key={r.id} row={r} product={data.slug} placement="quickview" dense rrp={data.rrp} usedTypical={data.usedTypical} />
                     ))}
                   </ul>
                 ) : (

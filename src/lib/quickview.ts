@@ -55,6 +55,11 @@ export type QuickViewData = {
   alsoCheck: CheckLink[];
   updated: string | null; // when this market's offers were imported
   mounts: number; // a lens made in several mount versions
+  /** This market's launch RRP and the typical used price, minor units: the header line and the rows' warnings. */
+  rrp?: number | null;
+  usedTypical?: number | null;
+  /** Today's cheapest used, minor units, for "Used from" when there is no typical value yet. */
+  lowestUsed?: number | null;
 };
 
 export const QUICKVIEW_PARAM = "view";

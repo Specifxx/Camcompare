@@ -71,6 +71,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
           From our own daily record of the lowest in-stock price at each retailer: today against a week ago. No sponsored placements.
           {updated ? ` Prices checked ${new Date(updated).toUTCString().slice(5, 16)}.` : ""}
         </p>
+        <p className="mt-1 text-sm"><Link href={marketPath(m, "/board")} prefetch={false}>Deals board (plain HTML)</Link></p>
       </div>
       {empty && (
         <p className="card p-6 text-sm text-muted">

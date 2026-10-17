@@ -40,6 +40,19 @@ const LENS_CATS: Opt[] = [
   ["super-telephoto", "Super-telephoto"],
   ["macro", "Macro"],
 ];
+// Focal-length ranges, in mm as printed on the lens. A lens matches a range
+// when any part of its own range falls in it (a 24-70 is wide and standard).
+const FOCAL_RANGES: { key: string; label: string; lo: number; hi: number }[] = [
+  { key: "ultra-wide", label: "Ultra-wide (under 20mm)", lo: 0, hi: 19.99 },
+  { key: "wide", label: "Wide (20-35mm)", lo: 20, hi: 35 },
+  { key: "standard", label: "Standard (35-70mm)", lo: 35, hi: 70 },
+  { key: "short-tele", label: "Short tele (70-135mm)", lo: 70, hi: 135 },
+  { key: "tele", label: "Tele (135-300mm)", lo: 135, hi: 300 },
+  { key: "super-tele", label: "Super-tele (over 300mm)", lo: 300.01, hi: Infinity },
+];
+const FOCAL_OPTS: Opt[] = FOCAL_RANGES.map((r) => [r.key, r.label]);
+const overlaps = (p: LensSummary, lo: number, hi: number) => p.focalMin <= hi && p.focalMax >= lo;
+
 const COVERAGE: Opt[] = [
   ["full-frame", "Full frame"],
   ["aps-c", "APS-C"],
@@ -96,6 +109,9 @@ export default function Browser(props: Props) {
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [fromYear, setFromYear] = useState<number | null>(null);
   const [maxAperture, setMaxAperture] = useState<number | null>(null);
+  const [focal, setFocal] = useState<string[]>([]);
+  const [fMin, setFMin] = useState<number | null>(null);
+  const [fMax, setFMax] = useState<number | null>(null);
   const [flags, setFlags] = useState<Record<string, boolean>>({});
   const [sort, setSort] = useState<SortKey>("newest");
   const [picked, setPicked] = useState<string[]>([]);
@@ -117,6 +133,9 @@ export default function Browser(props: Props) {
     setMaxPrice(num("budget"));
     setFromYear(num("year"));
     setMaxAperture(num("aperture"));
+    if (sp.get("focal")) setFocal(list("focal").filter((f) => FOCAL_RANGES.some((r) => r.key === f)));
+    setFMin(num("fmin"));
+    setFMax(num("fmax"));
     if (sp.get("features")) setFlags(Object.fromEntries(list("features").map((f) => [f, true])));
     const s = sp.get("sort");
     if (s && Object.keys(SORTS).includes(s) && SORTS[s as SortKey].kinds.includes(kind)) setSort(s as SortKey);
@@ -142,11 +161,14 @@ export default function Browser(props: Props) {
       budget: maxPrice,
       year: fromYear,
       aperture: maxAperture,
+      focal: focal.join(","),
+      fmin: fMin,
+      fmax: fMax,
       features: Object.keys(flags).filter((k) => flags[k]).join(","),
       sort: sort === "newest" ? null : sort,
       pick: picked.join(","),
     });
-  }, [q, brand, mount, type, sensor, cats, coverage, maxPrice, fromYear, maxAperture, flags, sort, picked]);
+  }, [q, brand, mount, type, sensor, cats, coverage, maxPrice, fromYear, maxAperture, flags, sort, picked, focal, fMin, fMax]);
 
   const shown = useMemo(() => {
     const needle = q.trim().toLowerCase().replace(/α/g, "a");
@@ -177,6 +199,8 @@ export default function Browser(props: Props) {
           (!coverage.length || coverage.includes(p.coverage)) &&
           (!cats.length || p.categories.some((c) => cats.includes(c))) &&
           (maxAperture === null || p.aperture <= maxAperture) &&
+          (!focal.length || FOCAL_RANGES.some((r) => focal.includes(r.key) && overlaps(p, r.lo, r.hi))) &&
+          ((fMin === null && fMax === null) || overlaps(p, fMin ?? 0, fMax ?? Infinity)) &&
           (!flag("zoom") || p.focalMax > p.focalMin) &&
           (!flag("prime") || p.focalMax === p.focalMin) &&
           (!flag("af") || p.autofocus) &&
@@ -184,11 +208,15 @@ export default function Browser(props: Props) {
         );
       })
       .sort(SORTS[sort].fn);
-  }, [items, q, brand, mount, sensor, type, cats, coverage, maxPrice, fromYear, maxAperture, flags, sort]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [items, q, brand, mount, sensor, type, cats, coverage, maxPrice, fromYear, maxAperture, flags, sort, focal, fMin, fMax]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const pick = (slug: string) => setPicked((p) => (p.includes(slug) ? p.filter((x) => x !== slug) : p.length >= 4 ? p : [...p, slug]));
   const cur = items[0]?.currency ?? "USD";
   const sym = { USD: "$", GBP: "£", EUR: "€", AUD: "A$", SGD: "S$" }[cur];
+  const active =
+    [brand, mount, type, sensor, cats, coverage, focal].reduce((n, l) => n + l.length, 0) +
+    [maxPrice, fromYear, maxAperture, fMin, fMax].filter((x) => x !== null).length +
+    Object.values(flags).filter(Boolean).length;
   const budgets = kind === "camera" ? [500, 800, 1000, 1500, 2000, 3000, 5000] : [300, 500, 800, 1200, 2000, 3000];
 
   return (
@@ -197,12 +225,30 @@ export default function Browser(props: Props) {
         <div className="flex gap-2">
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${kind === "camera" ? "cameras" : "lenses"}`} aria-label="Search" className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm" />
           <button type="button" onClick={() => setFiltersOpen((o) => !o)} aria-expanded={filtersOpen} className="btn-ghost lg:hidden">
-            Filters
+            Filters{active > 0 ? ` (${active})` : ""}
           </button>
+        </div>
+        {/* On a phone the filter panel starts closed: the brands stay one tap away. */}
+        <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:hidden" role="group" aria-label="Brand">
+          {brands.map(([v, label]) => (
+            <button key={v} type="button" aria-pressed={brand.includes(v)} onClick={() => setBrand(brand.includes(v) ? brand.filter((x) => x !== v) : [...brand, v])} className={`shrink-0 rounded-full border px-3 py-1 text-xs ${brand.includes(v) ? "border-accent bg-accent text-accent-fg" : "border-line bg-surface"}`}>
+              {label}
+            </button>
+          ))}
         </div>
         <div className={`${filtersOpen ? "flex" : "hidden"} flex-col gap-5 lg:flex`}>
           {kind === "lens" && <Checks title="Mount" options={mounts} value={mount} set={setMount} />}
           {kind === "lens" && <Checks title="Type" options={LENS_CATS} value={cats} set={setCats} />}
+          {kind === "lens" && (
+            <div className="flex flex-col gap-2">
+              <Checks title="Focal length" options={FOCAL_OPTS} value={focal} set={setFocal} />
+              <div className="flex items-center gap-2 text-sm">
+                <input type="number" inputMode="numeric" min={1} placeholder="Min mm" aria-label="Focal length from (mm)" value={fMin ?? ""} onChange={(e) => setFMin(Number(e.target.value) > 0 ? Number(e.target.value) : null)} className="w-full rounded-lg border border-line bg-surface px-2 py-1.5" />
+                <span className="text-subtle">to</span>
+                <input type="number" inputMode="numeric" min={1} placeholder="Max mm" aria-label="Focal length to (mm)" value={fMax ?? ""} onChange={(e) => setFMax(Number(e.target.value) > 0 ? Number(e.target.value) : null)} className="w-full rounded-lg border border-line bg-surface px-2 py-1.5" />
+              </div>
+            </div>
+          )}
           {kind === "camera" && <Checks title="Type" options={TYPES} value={type} set={setType} />}
           {kind === "camera" && <Checks title="Sensor" options={SENSORS} value={sensor} set={setSensor} />}
           <Checks title="Brand" options={brands} value={brand} set={setBrand} />

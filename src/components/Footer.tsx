@@ -43,6 +43,7 @@ export default function Footer() {
           <Link href="/privacy" prefetch={false}>Privacy</Link>
           <Link href="/credits" prefetch={false}>Photo credits</Link>
           <Link href={marketPath(here, "/saved")} prefetch={false}>Saved</Link>
+          <Link href={marketPath(here, "/board")} prefetch={false}>Deals board (plain HTML)</Link>
         </nav>
         <p className="text-xs leading-relaxed">
           {SITE_NAME} earns a commission when you buy through some retailer links, at no cost to you. It never changes the order of offers, which are always sorted by price. As an Amazon Associate we earn from qualifying purchases.

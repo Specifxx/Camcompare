@@ -74,6 +74,11 @@ jobs:
           FEED_URL_JBHIFI: ${{ secrets.FEED_URL_JBHIFI }}
           # FEEDS-END
         run: npm run import:prices
+      - name: Exchange rates
+        # For the "Price around the world" panel only. Never fails the job:
+        # on any error the script keeps the last data/fx.json.
+        continue-on-error: true
+        run: npx tsx scripts/fetch-fx.ts && git add data/fx.json
       - name: Commit data
         run: |
           git config user.name "camcompare-bot"
