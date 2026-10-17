@@ -118,3 +118,13 @@ test("the quick view lives in ?view and leaves other keys alone", () => {
   assert.equal(viewParam("?view=sony-a7-iv"), "sony-a7-iv");
   assert.equal(viewParam("?view=../etc"), null);
 });
+
+test("low light: pixel pitch from sensor area and megapixels, links pre-filled", async () => {
+  const { pixelPitchUm, lowLightLinks, ptpName } = await import("../src/lib/lowlight");
+  const { CAMERAS } = await import("./fixtures");
+  const a7iv = CAMERAS.find((c) => c.slug === "sony-a7-iv")!;
+  assert.ok(Math.abs(pixelPitchUm(a7iv) - 5.12) < 0.1); // 864 mm² / 33 MP
+  assert.equal(ptpName(a7iv, "Sony"), "Sony ILCE-7M4");
+  const links = lowLightLinks([{ c: a7iv, brandName: "Sony" }]);
+  assert.ok(links[0].href.includes("photonstophotos.net") && links[0].href.includes("ILCE-7M4"));
+});

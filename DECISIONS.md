@@ -364,3 +364,20 @@ price" rows.
 - **Prices refresh every six hours** (refresh-prices.yml), so four data
   builds a day. CamCompare has no database or ISR, so a build costs build
   minutes only, not RiftCompare's Neon egress.
+
+## 2026-10-17: Low light is linked, not guessed; used prices up front
+
+From the first user feedback: comparing noise at ISO 6400 took "20 tabs", and
+used prices matter more than new.
+
+- **Low light & noise** on camera and pair pages: pixel pitch from the spec
+  sheet (sensor area ÷ megapixels) as the one honest number we have, then
+  links to sites that measure noise or shoot the same scene at high ISO.
+  Photons to Photos' dynamic-range and read-noise charts are pre-filled
+  with the models; DPReview's studio scene, reviews and video tests are also
+  linked. Their samples and charts are theirs: we link, never copy them.
+- **Used first-class**: a "Used price: low to high" sort, an "Available used"
+  filter, and a "Used from" line on cards alongside the new price.
+- **MPB and KEH** block automated reading (Cloudflare), so their used
+  prices can only come from their affiliate feeds (Partnerize, Awin). The
+  setup prompt now applies to those two first.

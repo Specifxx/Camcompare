@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { FollowLink } from "@/components/ComparePrices";
 import CompareTable from "@/components/CompareTable";
+import LowLight from "@/components/LowLight";
 import SizeCompare from "@/components/SizeCompare";
-import { isIndexedPair, pairSlug, parsePairSlug } from "@/lib/catalog";
+import { brandName, isIndexedPair, pairSlug, parsePairSlug } from "@/lib/catalog";
 import type { Camera, Lens } from "@/lib/catalog/schema";
 import { breadcrumb, ldJson } from "@/lib/jsonld";
 import { SPEC_GROUPS, keyDifferences, sensorLabel } from "@/lib/specs/definitions";
@@ -50,6 +51,12 @@ export default function PairView({ pair }: { pair: string }) {
         </section>
       )}
       <CompareTable items={[a, b]} market="us" followVisitorMarket />
+      {a.kind === "camera" && (
+        <section>
+          <h2 className="h-section mb-3">Low light & noise</h2>
+          <LowLight cams={[a, b].map((p) => ({ c: p.item as Camera, brandName: brandName(p.item.brand) }))} />
+        </section>
+      )}
       {a.kind === "camera" && (
         <section>
           <h2 className="h-section mb-3">Size, to scale</h2>

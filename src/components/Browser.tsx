@@ -49,10 +49,11 @@ const COVERAGE: Opt[] = [
 
 const sensorGroup = (s: CameraSummary["sensor"]) => (s === "super-35" ? "aps-c" : s === "aps-h" ? "full-frame" : ["medium-format", "full-frame", "aps-c", "micro-four-thirds"].includes(s) ? s : "small");
 
-type SortKey = "newest" | "price" | "weight" | "mp" | "aperture" | "focal";
+type SortKey = "newest" | "price" | "used" | "weight" | "mp" | "aperture" | "focal";
 const SORTS: Record<SortKey, { label: string; kinds: ("camera" | "lens")[]; fn: (a: ProductSummary, b: ProductSummary) => number }> = {
   newest: { label: "Newest", kinds: ["camera", "lens"], fn: (a, b) => b.announced.localeCompare(a.announced) },
   price: { label: "Price: low to high", kinds: ["camera", "lens"], fn: (a, b) => (priceOf(a) ?? Infinity) - (priceOf(b) ?? Infinity) },
+  used: { label: "Used price: low to high", kinds: ["camera", "lens"], fn: (a, b) => (a.lowestUsed ?? Infinity) - (b.lowestUsed ?? Infinity) },
   weight: { label: "Lightest", kinds: ["camera", "lens"], fn: (a, b) => (a.weightG ?? Infinity) - (b.weightG ?? Infinity) },
   mp: { label: "Resolution", kinds: ["camera"], fn: (a, b) => (b.kind === "camera" ? b.megapixels : 0) - (a.kind === "camera" ? a.megapixels : 0) },
   aperture: { label: "Brightest aperture", kinds: ["lens"], fn: (a, b) => (a.kind === "lens" ? a.aperture : 99) - (b.kind === "lens" ? b.aperture : 99) },
@@ -157,6 +158,7 @@ export default function Browser(props: Props) {
       .filter((p) => !flag("sealed") || p.sealed)
       .filter((p) => !flag("current") || p.status === "current")
       .filter((p) => !flag("priced") || p.lowestNew !== null || p.lowestUsed !== null)
+      .filter((p) => !flag("used") || p.lowestUsed !== null)
       .filter((p) => {
         if (p.kind === "camera") {
           return (
@@ -227,6 +229,7 @@ export default function Browser(props: Props) {
             <Toggle label="Weather sealed" on={flag("sealed")} set={setFlag("sealed")} />
             <Toggle label="Still sold new" on={flag("current")} set={setFlag("current")} />
             <Toggle label="Has prices today" on={flag("priced")} set={setFlag("priced")} />
+            <Toggle label="Available used" on={flag("used")} set={setFlag("used")} />
           </fieldset>
           {kind === "lens" && (
             <label className="text-sm">

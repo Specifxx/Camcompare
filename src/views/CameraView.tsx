@@ -3,6 +3,7 @@ import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 import { AD_SLOTS } from "@/lib/ads";
 import OffersTable from "@/components/OffersTable";
+import LowLight from "@/components/LowLight";
 import PeerRanks from "@/components/PeerRanks";
 import PhotoCredit from "@/components/PhotoCredit";
 import PriceBox from "@/components/PriceBox";
@@ -163,6 +164,11 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         <div className="card p-4">
           <PriceHistory points={historyFor(c.slug, m)} currency={MARKETS[m].currency} />
         </div>
+      </section>
+
+      <section>
+        <h2 className="h-section mb-3">Low light & noise</h2>
+        <LowLight cams={[{ c, brandName: brandName(c.brand) }]} />
       </section>
 
       <section>
