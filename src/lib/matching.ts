@@ -94,7 +94,7 @@ const MOUNT_WORDS: [RegExp, string][] = [
 // included. Checked on the lowercased title. Never a bare spec word ("CMOS
 // sensor", "LCD display"): real titles list those.
 const PARTS =
-  /\b(for parts|parts only|not working|broken|as[- ]is|repair|replacement|untested|spares|faulty|box only|empty box|dummy|replica|manual only|rental|(image )?sensor (unit|assembly|board)|main ?board|logic board|flex cable|shutter (assembly|unit|block)|(lcd|display|screen) (assembly|module)|(lens|glass) (element|group)|element (glass|group))\b/;
+  /\b(for parts|parts only|not working|(doesn['’]?t|does not|don['’]?t|do not) work(ing|s)?|not functioning|defective|damaged|broken|as[- ]is|repair|replacement|untested|spares|faulty|box only|empty box|dummy|replica|manual only|rental|(image )?sensor (unit|assembly|board)|main ?board|logic board|flex cable|shutter (assembly|unit|block)|(lcd|display|screen) (assembly|module)|(lens|glass) (element|group)|element (glass|group))\b/;
 // Accessories sold "for" a camera: batteries, grips, cages… (camera listings only).
 const CAMERA_ACCESSORY =
   /\b(battery|batteries|charger|grip|cage|strap|case|bag|protector|skin|decal|cover|eyecup|eye cup|body cap|remote|cable|bracket|plate|hot ?shoe|microphone|gimbal|tripod|speedlite|flash unit|memory card|sd card|cfexpress card|motherboard|lcd screen|eyepiece|top handle|handle unit|(lens|media|light|display|filter) mods?|sensor cleaning|lens only|teleconverter|extension tube|viewfinder only|evf only|housing|mount adapter)\b/;

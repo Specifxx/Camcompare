@@ -42,6 +42,8 @@ test("camera accessories and parts are refused", () => {
   assert.equal(slug("SmallRig Cage for Sony a7 IV"), null);
   assert.equal(slug("Screen Protector compatible with Canon R6 Mark II"), null);
   assert.equal(slug("Sony a7 III for parts not working"), null);
+  assert.equal(slug("Sony (View Finder Doesn't Work) Sony a7 III Body"), null);
+  assert.equal(slug("Sony a7 III - shutter does not work"), null);
   assert.equal(slug("Sony NP-FZ100 battery for a7 IV"), null);
 });
 
