@@ -60,3 +60,28 @@ export default function MountView({ slug, market: m }: { slug: string; market: M
     </div>
   );
 }
+
+export function mountsMetadata(m: MarketCode): Metadata {
+  return pageMeta({ title: "Camera systems and lens mounts", description: `Every lens mount we track, with its bodies and lenses and prices in ${MARKETS[m].name}.`, path: "/mounts", market: m });
+}
+
+export function MountsIndex({ market: m }: { market: MarketCode }) {
+  const list = liveMounts().map((mt) => ({ mt, bodies: publishedCameras().filter((c) => c.mount === mt.slug).length, lenses: publishedLenses().filter((l) => l.mounts.includes(mt.slug)).length }));
+  return (
+    <div>
+      <h1 className="mb-6 text-2xl font-extrabold tracking-tight">Camera systems</h1>
+      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {list.map(({ mt, bodies, lenses }) => (
+          <li key={mt.slug}>
+            <Link href={marketPath(m, `/mounts/${mt.slug}`)} className="card flex flex-col p-4 text-fg no-underline hover:border-accent hover:no-underline">
+              <span className="font-semibold">{mt.name}</span>
+              <span className="text-sm text-subtle">
+                {mt.formats.map((f) => sensorLabel(f)).join(" / ")} · {bodies} bodies · {lenses} lenses{mt.status === "legacy" ? " · legacy" : ""}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

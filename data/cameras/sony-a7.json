@@ -1,0 +1,79 @@
+{
+  "slug": "sony-a7",
+  "brand": "sony",
+  "name": "Sony α7",
+  "shortName": "α7",
+  "aliases": [
+    "a7",
+    "a7 Mark I",
+    "Alpha 7",
+    "Alpha a7",
+    "α7"
+  ],
+  "modelCodes": [
+    "ILCE-7"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2013-10-16",
+  "launchPriceUsd": 1699.99,
+  "launchPrices": {
+    "GBP": 1299
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "sony-a7-ii",
+  "rivals": [
+    "canon-eos-6d",
+    "nikon-d610",
+    "nikon-d750",
+    "sony-a7-ii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.3,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 117,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 474,
+    "dimensionsMm": [
+      126.9,
+      94.4,
+      54.8
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 340,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q15138399"
+}

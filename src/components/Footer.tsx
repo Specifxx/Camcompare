@@ -20,6 +20,8 @@ export default function Footer() {
         </nav>
         <nav className="flex flex-col gap-1" aria-label="About">
           <p className="font-semibold text-fg">About</p>
+          <Link href="/guides">Guides</Link>
+          <Link href="/mounts">Camera systems</Link>
           <Link href="/about">How we price &amp; check specs</Link>
           <Link href="/disclosure">Affiliate disclosure</Link>
           <Link href="/privacy">Privacy</Link>

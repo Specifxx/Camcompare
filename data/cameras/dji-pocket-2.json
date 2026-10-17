@@ -1,0 +1,72 @@
+{
+  "slug": "dji-pocket-2",
+  "brand": "dji",
+  "name": "DJI Pocket 2",
+  "shortName": "Pocket 2",
+  "aliases": [
+    "Pocket 2",
+    "Osmo Pocket 2"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2020-10-20",
+  "launchPriceUsd": 349,
+  "status": "discontinued",
+  "predecessor": "dji-osmo-pocket",
+  "successor": "dji-osmo-pocket-3",
+  "rivals": [
+    "sony-zv-1",
+    "sony-zv-1f",
+    "gopro-hero9-black"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      20
+    ],
+    "aperture": "f/1.8"
+  },
+  "specs": {
+    "sensorFormat": "1/1.7-inch",
+    "sensorType": "CMOS",
+    "megapixels": 64,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 117,
+    "dimensionsMm": [
+      38.1,
+      124.7,
+      30
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "sony-a9",
+  "brand": "sony",
+  "name": "Sony α9",
+  "shortName": "α9",
+  "aliases": [
+    "a9",
+    "Alpha 9",
+    "Alpha a9",
+    "α9"
+  ],
+  "modelCodes": [
+    "ILCE-9"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2017-04-19",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-eos-1d-x-mark-ii",
+    "nikon-d5",
+    "sony-a9-ii",
+    "sony-a7r-iii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": 5,
+    "burstElecFps": 20,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 32000,
+    "afPoints": 693,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.44,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 673,
+    "dimensionsMm": [
+      126.9,
+      95.6,
+      73.7
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-II + SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 650,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q29513438"
+}

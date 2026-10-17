@@ -1,0 +1,78 @@
+{
+  "slug": "sony-a7s-ii",
+  "brand": "sony",
+  "name": "Sony α7S II",
+  "shortName": "α7S II",
+  "aliases": [
+    "a7S II",
+    "a7SII",
+    "a7S 2",
+    "Alpha 7S II",
+    "Alpha a7S II",
+    "A7SM2",
+    "α7S II"
+  ],
+  "modelCodes": [
+    "ILCE-7SM2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2015-09-11",
+  "launchPriceUsd": 3000,
+  "status": "discontinued",
+  "predecessor": "sony-a7s",
+  "successor": null,
+  "rivals": [
+    "panasonic-lumix-gh5",
+    "panasonic-lumix-gh5s",
+    "sony-a7s-iii",
+    "sony-a7-iii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 12.2,
+    "isoMin": 100,
+    "isoMax": 102400,
+    "ibis": true,
+    "ibisStops": 4.5,
+    "burstMechFps": 5,
+    "burstElecFps": 5,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 169,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 627,
+    "dimensionsMm": [
+      126.9,
+      95.7,
+      60.3
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 370,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q21233294"
+}

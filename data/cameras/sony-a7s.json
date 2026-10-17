@@ -1,0 +1,76 @@
+{
+  "slug": "sony-a7s",
+  "brand": "sony",
+  "name": "Sony α7S",
+  "shortName": "α7S",
+  "aliases": [
+    "a7S",
+    "a7S Mark I",
+    "Alpha 7S",
+    "Alpha a7S",
+    "α7S"
+  ],
+  "modelCodes": [
+    "ILCE-7S"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2014-04-06",
+  "launchPriceUsd": 2499,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "sony-a7s-ii",
+  "rivals": [
+    "panasonic-lumix-gh4",
+    "sony-a7s-ii",
+    "sony-a7",
+    "canon-eos-5d-mark-iii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 12.2,
+    "isoMin": 100,
+    "isoMax": 102400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 489,
+    "dimensionsMm": [
+      126.9,
+      94.4,
+      54.8
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 380,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q16261752"
+}

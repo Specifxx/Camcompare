@@ -1,0 +1,79 @@
+{
+  "slug": "sony-a7r",
+  "brand": "sony",
+  "name": "Sony α7R",
+  "shortName": "α7R",
+  "aliases": [
+    "a7R",
+    "a7R Mark I",
+    "Alpha 7R",
+    "Alpha a7R",
+    "α7R"
+  ],
+  "modelCodes": [
+    "ILCE-7R"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2013-10-16",
+  "launchPriceUsd": 2299.99,
+  "launchPrices": {
+    "GBP": 1699
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "sony-a7r-ii",
+  "rivals": [
+    "nikon-d800",
+    "nikon-d810",
+    "canon-eos-5d-mark-iii",
+    "sony-a7r-ii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 36.4,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 4,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 25,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 465,
+    "dimensionsMm": [
+      126.9,
+      94.4,
+      54.8
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 340,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q20653320"
+}

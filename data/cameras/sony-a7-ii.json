@@ -1,0 +1,79 @@
+{
+  "slug": "sony-a7-ii",
+  "brand": "sony",
+  "name": "Sony α7 II",
+  "shortName": "α7 II",
+  "aliases": [
+    "a7 II",
+    "a7II",
+    "a7 2",
+    "Alpha 7 II",
+    "Alpha a7 II",
+    "A7M2",
+    "α7 II"
+  ],
+  "modelCodes": [
+    "ILCE-7M2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2014-11-20",
+  "launchPriceUsd": 1699,
+  "status": "discontinued",
+  "predecessor": "sony-a7",
+  "successor": null,
+  "rivals": [
+    "canon-eos-rp",
+    "nikon-z5",
+    "nikon-d750",
+    "canon-eos-6d-mark-ii",
+    "sony-a7-iii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "CMOS",
+    "megapixels": 24.3,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 4.5,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 117,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 599,
+    "dimensionsMm": [
+      126.9,
+      95.7,
+      59.7
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 350,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q18560037"
+}

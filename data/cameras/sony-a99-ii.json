@@ -1,0 +1,78 @@
+{
+  "slug": "sony-a99-ii",
+  "brand": "sony",
+  "name": "Sony α99 II",
+  "shortName": "α99 II",
+  "aliases": [
+    "a99 II",
+    "a99II",
+    "a99 2",
+    "Alpha 99 II",
+    "Alpha a99 II",
+    "A99M2",
+    "α99 II"
+  ],
+  "modelCodes": [
+    "ILCA-99M2"
+  ],
+  "gtins": [],
+  "type": "dslr",
+  "announced": "2016-09-19",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-eos-5d-mark-iv",
+    "nikon-d810",
+    "nikon-d850",
+    "pentax-k-1"
+  ],
+  "mount": "sony-a",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 42.4,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 4.5,
+    "burstMechFps": 12,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": null,
+    "afPoints": 79,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "multi-angle",
+    "touchscreen": false,
+    "weightG": 849,
+    "dimensionsMm": [
+      142.6,
+      104.2,
+      76.1
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "SD UHS-I + SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 490,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  },
+  "wikidata": "Q28127163"
+}

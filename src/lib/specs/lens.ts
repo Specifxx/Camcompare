@@ -21,7 +21,7 @@ export function cropFactor(l: Pick<Lens, "coverage" | "brand" | "mounts">): numb
 
 export const isZoom = (l: Lens) => l.specs.focalMaxMm > l.specs.focalMinMm;
 
-export const fNumber = (n: number) => `f/${Number.isInteger(n) ? n.toFixed(1) : String(n)}`;
+export const fNumber = (n: number) => `f/${n}`;
 
 export function focalLabel(l: Lens): string {
   const { focalMinMm: a, focalMaxMm: b } = l.specs;

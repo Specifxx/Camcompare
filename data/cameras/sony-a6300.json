@@ -1,0 +1,80 @@
+{
+  "slug": "sony-a6300",
+  "brand": "sony",
+  "name": "Sony α6300",
+  "shortName": "α6300",
+  "aliases": [
+    "a6300",
+    "Alpha 6300",
+    "Alpha a6300",
+    "α6300"
+  ],
+  "modelCodes": [
+    "ILCE-6300"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2016-02-03",
+  "launchPriceUsd": 1000,
+  "launchPrices": {
+    "GBP": 1000,
+    "EUR": 1250
+  },
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "fujifilm-x-t20",
+    "fujifilm-x-t2",
+    "panasonic-lumix-g85",
+    "canon-eos-m5",
+    "sony-a6400"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.2,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": 3,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 425,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 404,
+    "dimensionsMm": [
+      120,
+      66.9,
+      59.6
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 400,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q25383515"
+}

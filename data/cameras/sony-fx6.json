@@ -1,0 +1,75 @@
+{
+  "slug": "sony-fx6",
+  "brand": "sony",
+  "name": "Sony FX6",
+  "shortName": "FX6",
+  "aliases": [
+    "Sony FX6",
+    "FX6"
+  ],
+  "modelCodes": [
+    "ILME-FX6V",
+    "ILME-FX6"
+  ],
+  "gtins": [],
+  "type": "cinema",
+  "announced": "2020-11-17",
+  "launchPriceUsd": null,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "canon-eos-c70",
+    "canon-eos-c80",
+    "red-komodo-6k",
+    "sony-fx3",
+    "canon-eos-c400"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 10.2,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": 627,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.5,
+    "screenDotsM": 2.76,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 890,
+    "dimensionsMm": [
+      114,
+      116,
+      153
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD + CFexpress A / SD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": null
+  },
+  "wikidata": "Q123857992"
+}

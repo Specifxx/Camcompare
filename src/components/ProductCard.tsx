@@ -5,7 +5,7 @@ import { sensorLabel } from "@/lib/specs/definitions";
 import type { ProductSummary } from "@/lib/summary-types";
 import ProductThumb from "./ProductThumb";
 
-const aperture = (a: number) => `f/${Number.isInteger(a) ? a.toFixed(1) : a}`;
+const aperture = (a: number) => `f/${a}`;
 
 export function subline(p: ProductSummary): string {
   if (p.kind === "camera") return `${sensorLabel(p.sensor)} · ${p.megapixels} MP · ${year(p.announced)}`;

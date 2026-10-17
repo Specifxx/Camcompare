@@ -61,3 +61,17 @@ a:hover { text-decoration: underline; }
 
 /* "Differences only" on the compare table (CompareToggle.tsx). */
 [data-diff-only="true"] tr[data-same="true"] { display: none; }
+
+/* Guide articles: rendered Markdown. */
+.prose-cc { @apply text-[15px] leading-relaxed; }
+.prose-cc h2 { @apply mt-8 mb-2 text-xl font-bold tracking-tight; }
+.prose-cc h3 { @apply mt-6 mb-2 text-lg font-semibold; }
+.prose-cc p { @apply my-3; }
+.prose-cc ul { @apply my-3 list-disc pl-6; }
+.prose-cc ol { @apply my-3 list-decimal pl-6; }
+.prose-cc li { @apply my-1; }
+.prose-cc table { @apply my-4 w-full border-collapse text-sm; }
+.prose-cc th, .prose-cc td { @apply border border-line px-3 py-2 text-left align-top; }
+.prose-cc th { @apply bg-raised font-semibold; }
+.prose-cc strong { @apply font-semibold; }
+.prose-cc code { @apply rounded bg-raised px-1 font-mono text-[13px]; }

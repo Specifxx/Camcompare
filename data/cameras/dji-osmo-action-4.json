@@ -1,0 +1,71 @@
+{
+  "slug": "dji-osmo-action-4",
+  "brand": "dji",
+  "name": "DJI Osmo Action 4",
+  "shortName": "Osmo Action 4",
+  "aliases": [
+    "Osmo Action 4",
+    "Action 4"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "action",
+  "announced": "2023-08-02",
+  "launchPriceUsd": 399,
+  "status": "current",
+  "predecessor": "dji-osmo-action-3",
+  "successor": "dji-osmo-action-5-pro",
+  "rivals": [
+    "gopro-hero12-black",
+    "gopro-hero13-black",
+    "insta360-ace-pro",
+    "gopro-hero11-black"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "1/1.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 10,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.25,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 145,
+    "dimensionsMm": [
+      70.5,
+      44.2,
+      32.8
+    ],
+    "weatherSealed": true,
+    "waterproofM": 18,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

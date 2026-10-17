@@ -1,0 +1,71 @@
+{
+  "slug": "dji-osmo-pocket",
+  "brand": "dji",
+  "name": "DJI Osmo Pocket",
+  "shortName": "Osmo Pocket",
+  "aliases": [
+    "Osmo Pocket"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2018-11-29",
+  "launchPriceUsd": 349,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": "dji-pocket-2",
+  "rivals": [
+    "sony-rx0-ii",
+    "gopro-hero7-black",
+    "dji-osmo-action"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      26
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 12,
+    "isoMin": 100,
+    "isoMax": 3200,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 60,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 1,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 116,
+    "dimensionsMm": [
+      36.9,
+      121.9,
+      28.6
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": false,
+    "bluetooth": false
+  }
+}

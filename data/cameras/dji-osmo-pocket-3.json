@@ -1,0 +1,73 @@
+{
+  "slug": "dji-osmo-pocket-3",
+  "brand": "dji",
+  "name": "DJI Osmo Pocket 3",
+  "shortName": "Osmo Pocket 3",
+  "aliases": [
+    "Osmo Pocket 3",
+    "Pocket 3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2023-10-25",
+  "launchPriceUsd": 519,
+  "status": "current",
+  "predecessor": "dji-pocket-2",
+  "successor": null,
+  "rivals": [
+    "sony-zv-1f",
+    "sony-zv-1-ii",
+    "canon-powershot-v10",
+    "gopro-hero12-black"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      20
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 9.4,
+    "isoMin": 50,
+    "isoMax": 6400,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 179,
+    "dimensionsMm": [
+      42.2,
+      139.7,
+      33.5
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

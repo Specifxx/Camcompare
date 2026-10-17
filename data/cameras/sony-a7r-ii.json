@@ -1,0 +1,79 @@
+{
+  "slug": "sony-a7r-ii",
+  "brand": "sony",
+  "name": "Sony α7R II",
+  "shortName": "α7R II",
+  "aliases": [
+    "a7R II",
+    "a7RII",
+    "a7R 2",
+    "Alpha 7R II",
+    "Alpha a7R II",
+    "A7RM2",
+    "α7R II"
+  ],
+  "modelCodes": [
+    "ILCE-7RM2"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2015-06-10",
+  "launchPriceUsd": null,
+  "status": "discontinued",
+  "predecessor": "sony-a7r",
+  "successor": null,
+  "rivals": [
+    "nikon-d810",
+    "canon-eos-5ds-r",
+    "nikon-d850",
+    "canon-eos-5d-mark-iv",
+    "sony-a7r-iii"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 42.4,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 4.5,
+    "burstMechFps": 5,
+    "burstElecFps": null,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 399,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.23,
+    "screenType": "tilting",
+    "touchscreen": false,
+    "weightG": 625,
+    "dimensionsMm": [
+      126.9,
+      95.7,
+      60.3
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 340,
+    "usbC": false,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q20160259"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "sony-a5100",
+  "brand": "sony",
+  "name": "Sony α5100",
+  "shortName": "α5100",
+  "aliases": [
+    "a5100",
+    "Alpha 5100",
+    "Alpha a5100",
+    "α5100"
+  ],
+  "modelCodes": [
+    "ILCE-5100"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2014-08-18",
+  "launchPriceUsd": 549,
+  "status": "discontinued",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-a6000",
+    "sony-zv-e10",
+    "canon-eos-m100",
+    "olympus-pen-e-pl9"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "CMOS",
+    "megapixels": 24.3,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 6,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": null,
+    "afPoints": 179,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 0.92,
+    "screenType": "flip-up",
+    "touchscreen": true,
+    "weightG": 283,
+    "dimensionsMm": [
+      109.6,
+      62.8,
+      35.7
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I / Memory Stick Pro Duo",
+    "batteryShotsCipa": 400,
+    "usbC": false,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": false
+  },
+  "wikidata": "Q20889279"
+}
