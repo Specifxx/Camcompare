@@ -84,5 +84,3 @@ export function lowest(offers: Offer[], group: "new" | "used"): Offer | null {
   return ok.reduce<Offer | null>((best, o) => (!best || o.priceCents < best.priceCents ? o : best), null);
 }
 
-export const usd = (cents: number) =>
-  `$${(cents / 100).toLocaleString("en-US", { minimumFractionDigits: cents % 100 ? 2 : 0, maximumFractionDigits: 2 })}`;
