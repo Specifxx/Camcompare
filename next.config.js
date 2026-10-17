@@ -5,6 +5,10 @@ module.exports = {
   // thumbnail check in lib/catalog would otherwise copy every
   // public/products/*.webp into every function.
   experimental: { outputFileTracingIncludes: { "/**": ["./data/**/*.json"] }, outputFileTracingExcludes: { "/**": ["./public/**"] } },
+  // No image goes through Vercel's optimiser: thumbnails are pre-sized WebPs
+  // (scripts/fetch-thumbnails.ts) served as static files. Belt and braces in
+  // case a next/image creeps back: never optimise, and keep results 30 days.
+  images: { unoptimized: true, minimumCacheTTL: 2592000, formats: ["image/webp"] },
   // The old deployment address sends people and crawlers to the domain.
   async redirects() {
     return [{ source: "/:path*", has: [{ type: "host", value: "camcompare.vercel.app" }], destination: "https://www.camcompare.app/:path*", permanent: true }];
@@ -19,6 +23,6 @@ module.exports = {
     ];
   },
   async headers() {
-    return [{ source: "/products/:file*.webp", headers: [{ key: "Cache-Control", value: "public, max-age=604800" }] }];
+    return [{ source: "/products/:file*.webp", headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }] }];
   },
 };
