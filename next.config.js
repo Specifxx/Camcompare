@@ -5,6 +5,10 @@ module.exports = {
   // thumbnail check in lib/catalog would otherwise copy every
   // public/products/*.webp into every function.
   experimental: { outputFileTracingIncludes: { "/**": ["./data/**/*.json"] }, outputFileTracingExcludes: { "/**": ["./public/**"] } },
+  // The old deployment address sends people and crawlers to the domain.
+  async redirects() {
+    return [{ source: "/:path*", has: [{ type: "host", value: "camcompare.vercel.app" }], destination: "https://www.camcompare.app/:path*", permanent: true }];
+  },
   async headers() {
     return [{ source: "/products/:file*.webp", headers: [{ key: "Cache-Control", value: "public, max-age=604800" }] }];
   },

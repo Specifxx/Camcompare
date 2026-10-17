@@ -1,8 +1,12 @@
 export const SITE_NAME = "CamCompare";
 export const SITE_TAGLINE = "Camera prices and specs, side by side";
-// Set NEXT_PUBLIC_SITE_URL on Vercel once the domain is chosen; canonical
-// URLs, the sitemap and JSON-LD all read it.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
+// The canonical address: canonical URLs, the sitemap, og tags and JSON-LD all
+// read it. NEXT_PUBLIC_SITE_URL can override it (a staging domain), but never
+// with a *.vercel.app host: those are deployment addresses, and a canonical
+// pointing at one tells Google the real site is elsewhere.
+export const CANONICAL_ORIGIN = "https://www.camcompare.app";
+const fromEnv = (process.env.NEXT_PUBLIC_SITE_URL || "").trim().replace(/\/$/, "");
+export const SITE_URL = fromEnv && !/\.vercel\.app$/i.test(fromEnv) ? fromEnv : CANONICAL_ORIGIN;
 export const abs = (p: string) => `${SITE_URL}${p.startsWith("/") ? p : `/${p}`}`;
 
 // Site-ownership codes, each from a Vercel variable so a new network or

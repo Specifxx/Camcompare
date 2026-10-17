@@ -381,3 +381,11 @@ used prices matter more than new.
 - **MPB and KEH** block automated reading (Cloudflare), so their used
   prices can only come from their affiliate feeds (Partnerize, Awin). The
   setup prompt now applies to those two first.
+
+## 2026-10-17: www.camcompare.app is the canonical address
+
+The site moved from camcompare.vercel.app to www.camcompare.app (the apex
+redirects to www). `SITE_URL` defaults to the domain in code and ignores a
+`*.vercel.app` value in `NEXT_PUBLIC_SITE_URL`, so a stale Vercel variable
+can't point canonical tags, the sitemap or og:image at a deployment address
+again. camcompare.vercel.app redirects (308) to the same path on the domain.
