@@ -3,7 +3,10 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 56mm F1.2 R",
   "shortName": "XF 56mm F1.2 R",
-  "aliases": ["XF 56mm F1.2 R", "XF 56 F1.2 R"],
+  "aliases": [
+    "XF 56mm F1.2 R",
+    "XF 56 F1.2 R"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2014-01-06",
@@ -11,8 +14,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": "fujifilm-xf-56mm-f1-2-r-wr",
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "sirui-sniper-56mm-f1-2",
+    "viltrox-af-56mm-f1-2-pro",
+    "sigma-56mm-f1-4-dc-dn-contemporary"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 56,

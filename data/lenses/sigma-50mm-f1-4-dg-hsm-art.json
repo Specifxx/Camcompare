@@ -3,7 +3,13 @@
   "brand": "sigma",
   "name": "Sigma 50mm F1.4 DG HSM | Art",
   "shortName": "50mm F1.4 DG HSM | Art",
-  "aliases": ["50mm F1.4 DG HSM Art", "50mm f/1.4 DG HSM A", "50mm F1.4 Art DG HSM", "50mm 1.4 DG HSM Art", "50 F1.4 DG HSM Art"],
+  "aliases": [
+    "50mm F1.4 DG HSM Art",
+    "50mm f/1.4 DG HSM A",
+    "50mm F1.4 Art DG HSM",
+    "50mm 1.4 DG HSM Art",
+    "50 F1.4 DG HSM Art"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2014-01-06",
@@ -11,8 +17,18 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a", "sony-e", "l-mount"],
+  "rivals": [
+    "panasonic-lumix-s-pro-50mm-f1-4",
+    "samyang-af-50mm-f1-4-fe",
+    "samyang-af-50mm-f1-4-fe-ii"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a",
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

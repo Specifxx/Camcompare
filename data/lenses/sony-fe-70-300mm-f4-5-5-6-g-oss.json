@@ -3,16 +3,31 @@
   "brand": "sony",
   "name": "Sony FE 70-300mm F4.5-5.6 G OSS",
   "shortName": "FE 70-300mm F4.5-5.6 G OSS",
-  "aliases": ["FE 70-300mm F4.5-5.6 G OSS", "70-300mm F4.5-5.6 G OSS", "70-300mm f/4.5-5.6 G OSS", "FE 70-300mm f/4.5-5.6 G OSS", "FE 70-300mm G OSS", "70-300 G OSS"],
-  "modelCodes": ["SEL70300G"],
+  "aliases": [
+    "FE 70-300mm F4.5-5.6 G OSS",
+    "70-300mm F4.5-5.6 G OSS",
+    "70-300mm f/4.5-5.6 G OSS",
+    "FE 70-300mm f/4.5-5.6 G OSS",
+    "FE 70-300mm G OSS",
+    "70-300 G OSS"
+  ],
+  "modelCodes": [
+    "SEL70300G"
+  ],
   "gtins": [],
   "announced": "2016-03-29",
   "launchPriceUsd": 1200,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "tamron-70-300mm-f4-5-6-3-di-iii-rxd",
+    "tamron-50-300mm-f4-5-6-3-di-iii-vc-vxd",
+    "sony-fe-100-400mm-f4-5-5-6-gm-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

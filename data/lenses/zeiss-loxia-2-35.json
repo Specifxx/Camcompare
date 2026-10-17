@@ -3,7 +3,14 @@
   "brand": "zeiss",
   "name": "Zeiss Loxia 2/35",
   "shortName": "Loxia 2/35",
-  "aliases": ["Loxia 2/35", "Loxia 2.0/35", "Loxia 35mm f/2", "Loxia 35mm F2", "Loxia Biogon T* 2/35", "Loxia 35mm"],
+  "aliases": [
+    "Loxia 2/35",
+    "Loxia 2.0/35",
+    "Loxia 35mm f/2",
+    "Loxia 35mm F2",
+    "Loxia Biogon T* 2/35",
+    "Loxia 35mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2014-09-02",
@@ -11,8 +18,12 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "voigtlander-apo-lanthar-35mm-f2-aspherical"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

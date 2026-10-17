@@ -3,7 +3,15 @@
   "brand": "voigtlander",
   "name": "Voigtländer Nokton 50mm F1 Aspherical",
   "shortName": "Nokton 50mm F1 Aspherical",
-  "aliases": ["Nokton 50mm F1 Aspherical", "Nokton 50mm f/1 Aspherical", "Nokton 50mm F1.0 Aspherical", "Nokton 50mm f/1.0 Aspherical", "Nokton 50mm F1 Asph", "Nokton 50mm F1.0", "Nokton 50mm f/1.0"],
+  "aliases": [
+    "Nokton 50mm F1 Aspherical",
+    "Nokton 50mm f/1 Aspherical",
+    "Nokton 50mm F1.0 Aspherical",
+    "Nokton 50mm f/1.0 Aspherical",
+    "Nokton 50mm F1 Asph",
+    "Nokton 50mm F1.0",
+    "Nokton 50mm f/1.0"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-01-16",
@@ -11,8 +19,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z", "canon-rf", "sony-e"],
+  "rivals": [
+    "laowa-argus-45mm-f0-95-ff"
+  ],
+  "mounts": [
+    "nikon-z",
+    "canon-rf",
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

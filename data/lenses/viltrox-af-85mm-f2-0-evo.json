@@ -3,7 +3,11 @@
   "brand": "viltrox",
   "name": "Viltrox AF 85mm F2.0 EVO",
   "shortName": "AF 85mm F2.0 EVO",
-  "aliases": ["AF 85mm F2.0 EVO", "85mm F2.0 EVO", "85mm F2 EVO"],
+  "aliases": [
+    "AF 85mm F2.0 EVO",
+    "85mm F2.0 EVO",
+    "85mm F2 EVO"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-10-20",
@@ -11,8 +15,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "ttartisan-af-75mm-f2",
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-pro"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

@@ -3,16 +3,27 @@
   "brand": "sony",
   "name": "Sony E PZ 18-110mm F4 G OSS",
   "shortName": "E PZ 18-110mm F4 G OSS",
-  "aliases": ["E PZ 18-110mm F4 G OSS", "PZ 18-110mm F4 G OSS", "18-110mm F4 G OSS", "PZ 18-110 G"],
-  "modelCodes": ["SELP18110G"],
+  "aliases": [
+    "E PZ 18-110mm F4 G OSS",
+    "PZ 18-110mm F4 G OSS",
+    "18-110mm F4 G OSS",
+    "PZ 18-110 G"
+  ],
+  "modelCodes": [
+    "SELP18110G"
+  ],
   "gtins": [],
   "announced": "2016-09-09",
   "launchPriceUsd": 3500,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-e-pz-18-105mm-f4-g-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 18,

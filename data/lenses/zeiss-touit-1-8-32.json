@@ -3,7 +3,13 @@
   "brand": "zeiss",
   "name": "Zeiss Touit 1.8/32",
   "shortName": "Touit 1.8/32",
-  "aliases": ["Touit 1.8/32", "Touit 32mm f/1.8", "Touit 32mm F1.8", "Touit Planar T* 1.8/32", "Touit 32mm"],
+  "aliases": [
+    "Touit 1.8/32",
+    "Touit 32mm f/1.8",
+    "Touit 32mm F1.8",
+    "Touit Planar T* 1.8/32",
+    "Touit 32mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2013-04-30",
@@ -11,8 +17,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x"],
+  "rivals": [
+    "sony-e-35mm-f1-8-oss",
+    "ttartisan-af-35mm-f1-8-ii",
+    "viltrox-af-35mm-f1-7-air"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 32,

@@ -3,7 +3,15 @@
   "brand": "fujifilm",
   "name": "Fujifilm XC 50-230mm F4.5-6.7 OIS II",
   "shortName": "XC 50-230mm F4.5-6.7 OIS II",
-  "aliases": ["XC 50-230mm F4.5-6.7 OIS II", "XC50-230mm F4.5-6.7 OIS II", "XC50-230mmF4.5-6.7 OIS II", "XC 50-230mm f/4.5-6.7 OIS II", "XC50-230mm f/4.5-6.7 OIS II", "50-230mm F4.5-6.7 OIS II", "50-230mm f/4.5-6.7 OIS II"],
+  "aliases": [
+    "XC 50-230mm F4.5-6.7 OIS II",
+    "XC50-230mm F4.5-6.7 OIS II",
+    "XC50-230mmF4.5-6.7 OIS II",
+    "XC 50-230mm f/4.5-6.7 OIS II",
+    "XC50-230mm f/4.5-6.7 OIS II",
+    "50-230mm F4.5-6.7 OIS II",
+    "50-230mm f/4.5-6.7 OIS II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2015-01-15",
@@ -11,8 +19,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-70-300mm-f4-5-6-r-lm-ois-wr"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 50,

@@ -3,7 +3,16 @@
   "brand": "sigma",
   "name": "Sigma 70-200mm F2.8 DG DN OS | Sports",
   "shortName": "70-200mm F2.8 DG DN OS | Sports",
-  "aliases": ["70-200mm F2.8 DG DN OS Sports", "70-200mm F2.8 DG DN OS", "70-200mm F2.8 DG DN Sports", "70-200mm F2.8 DG DN", "70-200mm 2.8 DG DN", "70-200 F2.8 DG DN", "70-200mm DG DN OS", "70-200 DG DN"],
+  "aliases": [
+    "70-200mm F2.8 DG DN OS Sports",
+    "70-200mm F2.8 DG DN OS",
+    "70-200mm F2.8 DG DN Sports",
+    "70-200mm F2.8 DG DN",
+    "70-200mm 2.8 DG DN",
+    "70-200 F2.8 DG DN",
+    "70-200mm DG DN OS",
+    "70-200 DG DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-11-16",
@@ -11,8 +20,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "leica-vario-elmarit-sl-70-200-f2-8-asph",
+    "panasonic-lumix-s-pro-70-200mm-f2-8-o-i-s",
+    "sony-fe-70-200mm-f2-8-gm-oss"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

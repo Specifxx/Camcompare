@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony FE 200-600mm F5.6-6.3 G OSS",
   "shortName": "FE 200-600mm F5.6-6.3 G OSS",
-  "aliases": ["FE 200-600mm F5.6-6.3 G OSS", "200-600mm F5.6-6.3 G OSS", "200-600mm f/5.6-6.3 G OSS", "200-600mm G OSS", "200-600 G OSS"],
-  "modelCodes": ["SEL200600G"],
+  "aliases": [
+    "FE 200-600mm F5.6-6.3 G OSS",
+    "200-600mm F5.6-6.3 G OSS",
+    "200-600mm f/5.6-6.3 G OSS",
+    "200-600mm G OSS",
+    "200-600 G OSS"
+  ],
+  "modelCodes": [
+    "SEL200600G"
+  ],
   "gtins": [],
   "announced": "2019-06-11",
   "launchPriceUsd": 2000,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-150-600mm-f5-6-3-dg-dn-os-sports",
+    "tamron-150-500mm-f5-6-7-di-iii-vc-vxd"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 200,

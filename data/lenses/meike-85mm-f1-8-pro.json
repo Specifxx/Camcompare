@@ -3,16 +3,32 @@
   "brand": "meike",
   "name": "Meike 85mm F1.8 Pro",
   "shortName": "85mm F1.8 Pro",
-  "aliases": ["Meike 85mm F1.8 Pro", "Meike 85mm f/1.8 Pro", "Meike AF 85mm F1.8 Pro", "Meike 85mm F1.8 Pro STM"],
-  "modelCodes": ["MK-8518IIFFSTM"],
+  "aliases": [
+    "Meike 85mm F1.8 Pro",
+    "Meike 85mm f/1.8 Pro",
+    "Meike AF 85mm F1.8 Pro",
+    "Meike 85mm F1.8 Pro STM"
+  ],
+  "modelCodes": [
+    "MK-8518IIFFSTM"
+  ],
   "gtins": [],
   "announced": "2024-11-14",
   "launchPriceUsd": 339,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount", "fujifilm-x"],
+  "rivals": [
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-se-mark-ii",
+    "nikon-z-85mm-f1-8-s"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount",
+    "fujifilm-x"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

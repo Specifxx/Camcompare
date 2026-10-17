@@ -3,7 +3,10 @@
   "brand": "samyang",
   "name": "Samyang AF 24-60mm F2.8 FE",
   "shortName": "AF 24-60mm F2.8 FE",
-  "aliases": ["AF 24-60mm F2.8 FE", "24-60mm F2.8 FE"],
+  "aliases": [
+    "AF 24-60mm F2.8 FE",
+    "24-60mm F2.8 FE"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-09-12",
@@ -11,8 +14,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-24-70mm-f2-8-fe",
+    "sigma-24-70mm-f2-8-dg-dn-art-ii",
+    "sony-fe-24-70mm-f2-8-gm"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

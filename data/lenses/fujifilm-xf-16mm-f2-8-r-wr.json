@@ -3,7 +3,11 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 16mm F2.8 R WR",
   "shortName": "XF 16mm F2.8 R WR",
-  "aliases": ["XF 16mm F2.8 R WR", "16mm F2.8 R WR", "XF 16 F2.8 R WR"],
+  "aliases": [
+    "XF 16mm F2.8 R WR",
+    "16mm F2.8 R WR",
+    "XF 16 F2.8 R WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2019-02-14",
@@ -11,8 +15,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-14mm-f2-8-r"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 16,
@@ -25,7 +33,7 @@
     "stabilized": false,
     "weatherSealed": true,
     "weightG": 155,
-    "diameterMm": 60.0,
+    "diameterMm": 60,
     "lengthMm": 45.4,
     "filterMm": 49,
     "minFocusM": 0.17,

@@ -3,7 +3,12 @@
   "brand": "viltrox",
   "name": "Viltrox AF 35mm F1.2 LAB",
   "shortName": "AF 35mm F1.2 LAB",
-  "aliases": ["AF 35mm F1.2 LAB", "35mm F1.2 LAB", "35mm f/1.2 LAB", "AF 35/1.2 LAB"],
+  "aliases": [
+    "AF 35mm F1.2 LAB",
+    "35mm F1.2 LAB",
+    "35mm f/1.2 LAB",
+    "AF 35/1.2 LAB"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-04-16",
@@ -11,8 +16,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "nikon-z-35mm-f1-2-s",
+    "sigma-35mm-f1-2-dg-art-ii",
+    "nikon-z-35mm-f1-4"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

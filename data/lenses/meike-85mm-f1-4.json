@@ -3,16 +3,32 @@
   "brand": "meike",
   "name": "Meike 85mm F1.4",
   "shortName": "85mm F1.4",
-  "aliases": ["Meike 85mm F1.4", "Meike 85mm f/1.4", "Meike AF 85mm F1.4", "Meike 85mm F1.4 MIX", "Meike 85mm F1.4 STM"],
-  "modelCodes": ["MK-8514FFSTM"],
+  "aliases": [
+    "Meike 85mm F1.4",
+    "Meike 85mm f/1.4",
+    "Meike AF 85mm F1.4",
+    "Meike 85mm F1.4 MIX",
+    "Meike 85mm F1.4 STM"
+  ],
+  "modelCodes": [
+    "MK-8514FFSTM"
+  ],
   "gtins": [],
   "announced": "2023-09-26",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "samyang-af-85mm-f1-4-fe",
+    "samyang-af-85mm-f1-4-fe-ii",
+    "sigma-85mm-f1-4-dg-dn-art"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

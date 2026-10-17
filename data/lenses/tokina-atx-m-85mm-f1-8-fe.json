@@ -3,7 +3,16 @@
   "brand": "tokina",
   "name": "Tokina atx-m 85mm F1.8 FE",
   "shortName": "atx-m 85mm F1.8 FE",
-  "aliases": ["atx-m 85mm F1.8 FE", "atx-m 85mm f/1.8 FE", "atx-m 85mm F1.8 FE PLUS", "atx-m 85mm f/1.8 FE PLUS", "atx-m 85mm F1.8", "atx-m 85mm f/1.8", "atxm 85mm F1.8 FE", "atx-m 85 F1.8 FE"],
+  "aliases": [
+    "atx-m 85mm F1.8 FE",
+    "atx-m 85mm f/1.8 FE",
+    "atx-m 85mm F1.8 FE PLUS",
+    "atx-m 85mm f/1.8 FE PLUS",
+    "atx-m 85mm F1.8",
+    "atx-m 85mm f/1.8",
+    "atxm 85mm F1.8 FE",
+    "atx-m 85 F1.8 FE"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-01-17",
@@ -11,8 +20,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-pro",
+    "meike-85mm-f1-8-se-mark-ii"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

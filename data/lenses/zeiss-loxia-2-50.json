@@ -3,7 +3,14 @@
   "brand": "zeiss",
   "name": "Zeiss Loxia 2/50",
   "shortName": "Loxia 2/50",
-  "aliases": ["Loxia 2/50", "Loxia 2.0/50", "Loxia 50mm f/2", "Loxia 50mm F2", "Loxia Planar T* 2/50", "Loxia 50mm"],
+  "aliases": [
+    "Loxia 2/50",
+    "Loxia 2.0/50",
+    "Loxia 50mm f/2",
+    "Loxia 50mm F2",
+    "Loxia Planar T* 2/50",
+    "Loxia 50mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2014-09-02",
@@ -11,8 +18,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "voigtlander-apo-lanthar-50mm-f2-aspherical"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

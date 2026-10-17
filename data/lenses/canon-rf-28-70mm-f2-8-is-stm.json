@@ -3,16 +3,30 @@
   "brand": "canon",
   "name": "Canon RF 28-70mm F2.8 IS STM",
   "shortName": "RF 28-70mm F2.8 IS STM",
-  "aliases": ["RF 28-70mm F2.8 IS STM", "RF28-70mm F2.8 IS STM", "RF 28-70mm f/2.8 IS STM", "28-70mm F2.8 IS STM", "28-70mm f/2.8 IS STM", "RF 28-70 F2.8 IS STM", "RF 28-70mm F2.8 STM"],
-  "modelCodes": ["6535C002"],
+  "aliases": [
+    "RF 28-70mm F2.8 IS STM",
+    "RF28-70mm F2.8 IS STM",
+    "RF 28-70mm f/2.8 IS STM",
+    "28-70mm F2.8 IS STM",
+    "28-70mm f/2.8 IS STM",
+    "RF 28-70 F2.8 IS STM",
+    "RF 28-70mm F2.8 STM"
+  ],
+  "modelCodes": [
+    "6535C002"
+  ],
   "gtins": [],
   "announced": "2024-09-12",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-24-70mm-f2-8l-is-usm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

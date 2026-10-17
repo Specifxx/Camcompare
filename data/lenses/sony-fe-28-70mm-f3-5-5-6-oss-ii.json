@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony FE 28-70mm F3.5-5.6 OSS II",
   "shortName": "FE 28-70mm F3.5-5.6 OSS II",
-  "aliases": ["FE 28-70mm F3.5-5.6 OSS II", "28-70mm F3.5-5.6 OSS II", "28-70mm f/3.5-5.6 OSS II", "FE 28-70mm f/3.5-5.6 OSS II", "FE 28-70mm OSS II"],
-  "modelCodes": ["SEL28702"],
+  "aliases": [
+    "FE 28-70mm F3.5-5.6 OSS II",
+    "28-70mm F3.5-5.6 OSS II",
+    "28-70mm f/3.5-5.6 OSS II",
+    "FE 28-70mm f/3.5-5.6 OSS II",
+    "FE 28-70mm OSS II"
+  ],
+  "modelCodes": [
+    "SEL28702"
+  ],
   "gtins": [],
   "announced": "2025-12-02",
   "launchPriceUsd": 449,
   "status": "current",
   "predecessor": "sony-fe-28-70mm-f3-5-5-6-oss",
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-28-60mm-f4-5-6"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

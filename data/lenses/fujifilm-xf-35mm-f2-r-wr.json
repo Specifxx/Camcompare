@@ -3,7 +3,15 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 35mm F2 R WR",
   "shortName": "XF 35mm F2 R WR",
-  "aliases": ["XF 35mm F2 R WR", "XF35mm F2 R WR", "XF35mmF2 R WR", "XF 35mm f/2 R WR", "XF35mm f/2 R WR", "35mm F2 R WR", "35mm f/2 R WR"],
+  "aliases": [
+    "XF 35mm F2 R WR",
+    "XF35mm F2 R WR",
+    "XF35mmF2 R WR",
+    "XF 35mm f/2 R WR",
+    "XF35mm f/2 R WR",
+    "35mm F2 R WR",
+    "35mm f/2 R WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2015-10-21",
@@ -11,8 +19,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xc-35mm-f2",
+    "ttartisan-af-35mm-f1-8-ii",
+    "viltrox-af-35mm-f1-7-air"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 35,

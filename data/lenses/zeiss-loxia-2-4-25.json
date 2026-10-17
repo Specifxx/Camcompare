@@ -3,17 +3,30 @@
   "brand": "zeiss",
   "name": "Zeiss Loxia 2.4/25",
   "shortName": "Loxia 2.4/25",
-  "aliases": ["Loxia 2.4/25", "Loxia 25mm f/2.4", "Loxia 25mm F2.4", "Loxia Distagon T* 2.4/25", "Loxia 25mm"],
+  "aliases": [
+    "Loxia 2.4/25",
+    "Loxia 25mm f/2.4",
+    "Loxia 25mm F2.4",
+    "Loxia Distagon T* 2.4/25",
+    "Loxia 25mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-02-14",
   "launchPriceUsd": 1299,
-  "launchPrices": { "GBP": 1189.99, "EUR": 1299 },
+  "launchPrices": {
+    "GBP": 1189.99,
+    "EUR": 1299
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "laowa-25mm-f2-8-2-5-5x-ultra-macro"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 25,

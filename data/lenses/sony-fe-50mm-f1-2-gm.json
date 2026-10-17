@@ -3,16 +3,31 @@
   "brand": "sony",
   "name": "Sony FE 50mm F1.2 GM",
   "shortName": "FE 50mm F1.2 GM",
-  "aliases": ["FE 50mm F1.2 GM", "50mm F1.2 GM", "50mm f/1.2 GM", "FE 50mm f/1.2 GM", "50mm F1.2 G Master", "50mm f/1.2 G Master"],
-  "modelCodes": ["SEL50F12GM"],
+  "aliases": [
+    "FE 50mm F1.2 GM",
+    "50mm F1.2 GM",
+    "50mm f/1.2 GM",
+    "FE 50mm f/1.2 GM",
+    "50mm F1.2 G Master",
+    "50mm f/1.2 G Master"
+  ],
+  "modelCodes": [
+    "SEL50F12GM"
+  ],
   "gtins": [],
   "announced": "2021-03-16",
   "launchPriceUsd": 2000,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-50mm-f1-2-dg-dn-art",
+    "samyang-af-50mm-f1-4-fe",
+    "samyang-af-50mm-f1-4-fe-ii"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

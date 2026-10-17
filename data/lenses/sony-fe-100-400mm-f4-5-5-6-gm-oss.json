@@ -3,17 +3,32 @@
   "brand": "sony",
   "name": "Sony FE 100-400mm F4.5-5.6 GM OSS",
   "shortName": "FE 100-400mm F4.5-5.6 GM OSS",
-  "aliases": ["FE 100-400mm F4.5-5.6 GM OSS", "100-400mm F4.5-5.6 GM OSS", "100-400mm f/4.5-5.6 G Master OSS", "100-400mm F4.5-5.6 GM"],
-  "modelCodes": ["SEL100400GM"],
+  "aliases": [
+    "FE 100-400mm F4.5-5.6 GM OSS",
+    "100-400mm F4.5-5.6 GM OSS",
+    "100-400mm f/4.5-5.6 G Master OSS",
+    "100-400mm F4.5-5.6 GM"
+  ],
+  "modelCodes": [
+    "SEL100400GM"
+  ],
   "gtins": [],
   "announced": "2017-04-19",
   "launchPriceUsd": 2500,
-  "launchPrices": {"GBP": 2500},
+  "launchPrices": {
+    "GBP": 2500
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-100-400mm-f5-6-3-dg-dn-os-contemporary",
+    "sony-fe-70-300mm-f4-5-5-6-g-oss",
+    "tamron-70-300mm-f4-5-6-3-di-iii-rxd"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

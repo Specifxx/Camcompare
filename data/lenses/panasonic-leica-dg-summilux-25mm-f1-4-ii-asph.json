@@ -3,16 +3,30 @@
   "brand": "panasonic",
   "name": "Panasonic Leica DG Summilux 25mm F1.4 II ASPH.",
   "shortName": "Leica DG Summilux 25mm F1.4 II ASPH.",
-  "aliases": ["Leica DG Summilux 25mm F1.4 II ASPH", "Leica DG Summilux 25mm F1.4 II", "DG Summilux 25mm F1.4 II", "Summilux 25mm F1.4 II", "Leica DG 25mm F1.4 II", "Leica 25mm F1.4 II"],
-  "modelCodes": ["H-XA025"],
+  "aliases": [
+    "Leica DG Summilux 25mm F1.4 II ASPH",
+    "Leica DG Summilux 25mm F1.4 II",
+    "DG Summilux 25mm F1.4 II",
+    "Summilux 25mm F1.4 II",
+    "Leica DG 25mm F1.4 II",
+    "Leica 25mm F1.4 II"
+  ],
+  "modelCodes": [
+    "H-XA025"
+  ],
   "gtins": [],
   "announced": "2019-08-27",
   "launchPriceUsd": 699.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-25mm-f1-2-pro",
+    "panasonic-lumix-g-25mm-f1-7-asph"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 25,

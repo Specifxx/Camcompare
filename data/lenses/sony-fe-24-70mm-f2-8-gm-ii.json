@@ -3,16 +3,30 @@
   "brand": "sony",
   "name": "Sony FE 24-70mm F2.8 GM II",
   "shortName": "FE 24-70mm F2.8 GM II",
-  "aliases": ["FE 24-70mm F2.8 GM II", "24-70mm F2.8 GM II", "24-70mm f/2.8 G Master II", "24-70 GM II", "24-70 GM2"],
-  "modelCodes": ["SEL2470GM2"],
+  "aliases": [
+    "FE 24-70mm F2.8 GM II",
+    "24-70mm F2.8 GM II",
+    "24-70mm f/2.8 G Master II",
+    "24-70 GM II",
+    "24-70 GM2"
+  ],
+  "modelCodes": [
+    "SEL2470GM2"
+  ],
   "gtins": [],
   "announced": "2022-04-26",
   "launchPriceUsd": 2299.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-24-70mm-f2-8-fe",
+    "sigma-24-70mm-f2-8-dg-dn-art-ii",
+    "sony-fe-24-70mm-f2-8-gm"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

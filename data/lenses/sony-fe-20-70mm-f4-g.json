@@ -3,16 +3,27 @@
   "brand": "sony",
   "name": "Sony FE 20-70mm F4 G",
   "shortName": "FE 20-70mm F4 G",
-  "aliases": ["FE 20-70mm F4 G", "20-70mm F4 G", "20-70mm f/4 G", "20-70 F4 G"],
-  "modelCodes": ["SEL2070G"],
+  "aliases": [
+    "FE 20-70mm F4 G",
+    "20-70mm F4 G",
+    "20-70mm f/4 G",
+    "20-70 F4 G"
+  ],
+  "modelCodes": [
+    "SEL2070G"
+  ],
   "gtins": [],
   "announced": "2023-01-17",
   "launchPriceUsd": 1099,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-vario-tessar-t-fe-24-70mm-f4-za-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 20,

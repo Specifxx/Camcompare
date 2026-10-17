@@ -3,16 +3,27 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 17-28mm f/2.8",
   "shortName": "NIKKOR Z 17-28mm f/2.8",
-  "aliases": ["NIKKOR Z 17-28mm f/2.8", "Z 17-28mm f/2.8", "Z 17-28 f/2.8", "Z 17-28mm"],
-  "modelCodes": ["20115"],
+  "aliases": [
+    "NIKKOR Z 17-28mm f/2.8",
+    "Z 17-28mm f/2.8",
+    "Z 17-28 f/2.8",
+    "Z 17-28mm"
+  ],
+  "modelCodes": [
+    "20115"
+  ],
   "gtins": [],
   "announced": "2022-09-20",
   "launchPriceUsd": 1199.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "tamron-16-30mm-f2-8-di-iii-vxd-g2"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 17,

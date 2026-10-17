@@ -3,17 +3,31 @@
   "brand": "leica",
   "name": "Leica Summilux-M 35 f/1.4 ASPH.",
   "shortName": "Summilux-M 35 f/1.4 ASPH.",
-  "aliases": ["Summilux-M 35 f/1.4 ASPH.", "Summilux-M 35mm f/1.4 ASPH", "35mm f/1.4 Summilux-M ASPH", "Summilux-M 1:1.4/35 ASPH"],
-  "modelCodes": ["11726", "11727"],
+  "aliases": [
+    "Summilux-M 35 f/1.4 ASPH.",
+    "Summilux-M 35mm f/1.4 ASPH",
+    "35mm f/1.4 Summilux-M ASPH",
+    "Summilux-M 1:1.4/35 ASPH"
+  ],
+  "modelCodes": [
+    "11726",
+    "11727"
+  ],
   "gtins": [],
   "announced": "2022-09-15",
   "launchPriceUsd": 5395,
-  "launchPrices": {"EUR": 5650},
+  "launchPrices": {
+    "EUR": 5650
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["leica-m"],
+  "rivals": [
+    "leica-noctilux-m-35-f1-2-asph"
+  ],
+  "mounts": [
+    "leica-m"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

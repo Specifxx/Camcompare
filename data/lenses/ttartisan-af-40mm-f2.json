@@ -3,7 +3,11 @@
   "brand": "ttartisan",
   "name": "TTArtisan AF 40mm F2",
   "shortName": "AF 40mm F2",
-  "aliases": ["TTArtisan AF 40mm F2", "TTArtisan AF 40mm f/2", "TT Artisan AF 40mm F2"],
+  "aliases": [
+    "TTArtisan AF 40mm F2",
+    "TTArtisan AF 40mm f/2",
+    "TT Artisan AF 40mm F2"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-08-08",
@@ -11,8 +15,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "nikon-z-40mm-f2",
+    "panasonic-lumix-s-40mm-f2",
+    "zeiss-batis-2-40-cf"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 40,

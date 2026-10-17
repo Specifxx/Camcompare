@@ -3,17 +3,36 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 16-55mm F2.8 R LM WR II",
   "shortName": "XF 16-55mm F2.8 R LM WR II",
-  "aliases": ["XF 16-55mm F2.8 R LM WR II", "XF16-55mm F2.8 R LM WR II", "XF16-55mmF2.8 R LM WR II", "XF 16-55mm f/2.8 R LM WR II", "XF16-55mm f/2.8 R LM WR II", "16-55mm F2.8 R LM WR II", "16-55mm f/2.8 R LM WR II", "XF 16-55mm F2.8 II", "XF16-55mm F2.8 II", "XF 16-55mm f/2.8 II"],
+  "aliases": [
+    "XF 16-55mm F2.8 R LM WR II",
+    "XF16-55mm F2.8 R LM WR II",
+    "XF16-55mmF2.8 R LM WR II",
+    "XF 16-55mm f/2.8 R LM WR II",
+    "XF16-55mm f/2.8 R LM WR II",
+    "16-55mm F2.8 R LM WR II",
+    "16-55mm f/2.8 R LM WR II",
+    "XF 16-55mm F2.8 II",
+    "XF16-55mm F2.8 II",
+    "XF 16-55mm f/2.8 II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-10-14",
   "launchPriceUsd": 1199.95,
-  "launchPrices": {"EUR": 1349},
+  "launchPrices": {
+    "EUR": 1349
+  },
   "status": "current",
   "predecessor": "fujifilm-xf-16-55mm-f2-8-r-lm-wr",
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "tamron-16-50mm-f2-8-a",
+    "sigma-18-50mm-f2-8-dc-dn-contemporary",
+    "tamron-17-70mm-f2-8-di-iii-a-vc-rxd"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 16,

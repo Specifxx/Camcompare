@@ -3,17 +3,30 @@
   "brand": "ricoh",
   "name": "Pentax HD DA 35mm F2.8 Macro Limited",
   "shortName": "HD DA 35mm F2.8 Macro Limited",
-  "aliases": ["HD PENTAX-DA 35mmF2.8 Macro Limited", "HD PENTAX-DA 35mm F2.8 Macro Limited", "HD DA 35mm F2.8 Macro Limited", "HD DA 35mm f/2.8 Macro Limited", "HD DA 35mm Macro Limited", "HD DA 35 Macro Limited"],
+  "aliases": [
+    "HD PENTAX-DA 35mmF2.8 Macro Limited",
+    "HD PENTAX-DA 35mm F2.8 Macro Limited",
+    "HD DA 35mm F2.8 Macro Limited",
+    "HD DA 35mm f/2.8 Macro Limited",
+    "HD DA 35mm Macro Limited",
+    "HD DA 35 Macro Limited"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2013-08-27",
   "launchPriceUsd": 749.95,
-  "launchPrices": {"GBP": 639.99},
+  "launchPrices": {
+    "GBP": 639.99
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["pentax-k"],
+  "rivals": [
+    "pentax-hd-da-40mm-f2-8-limited"
+  ],
+  "mounts": [
+    "pentax-k"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 35,

@@ -3,7 +3,13 @@
   "brand": "fujifilm",
   "name": "Fujifilm XC 35mm F2",
   "shortName": "XC 35mm F2",
-  "aliases": ["XC 35mm F2", "XC35mm F2", "XC35mmF2", "XC 35mm f/2", "XC35mm f/2"],
+  "aliases": [
+    "XC 35mm F2",
+    "XC35mm F2",
+    "XC35mmF2",
+    "XC 35mm f/2",
+    "XC35mm f/2"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-01-23",
@@ -11,8 +17,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-35mm-f2-r-wr",
+    "ttartisan-af-35mm-f1-8-ii",
+    "viltrox-af-35mm-f1-7-air"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 35,

@@ -3,7 +3,17 @@
   "brand": "tokina",
   "name": "Tokina atx-i 100mm F2.8 FF Macro",
   "shortName": "atx-i 100mm F2.8 FF Macro",
-  "aliases": ["atx-i 100mm F2.8 FF Macro", "atx-i 100mm f/2.8 FF Macro", "atx-i 100mm F2.8 FF Macro PLUS", "atx-i 100mm f/2.8 FF Macro PLUS", "atx-i 100mm F2.8 Macro FF", "atx-i 100mm f/2.8 Macro FF", "atx-i 100mm F2.8 Macro", "atx-i 100mm f/2.8 Macro", "atxi 100mm F2.8 FF Macro"],
+  "aliases": [
+    "atx-i 100mm F2.8 FF Macro",
+    "atx-i 100mm f/2.8 FF Macro",
+    "atx-i 100mm F2.8 FF Macro PLUS",
+    "atx-i 100mm f/2.8 FF Macro PLUS",
+    "atx-i 100mm F2.8 Macro FF",
+    "atx-i 100mm f/2.8 Macro FF",
+    "atx-i 100mm F2.8 Macro",
+    "atx-i 100mm f/2.8 Macro",
+    "atxi 100mm F2.8 FF Macro"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2019-11-15",
@@ -11,8 +21,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f"],
+  "rivals": [
+    "tamron-sp-90mm-f2-8-di-macro-1-1-vc-usd"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

@@ -3,16 +3,30 @@
   "brand": "nikon",
   "name": "Nikon AF-P NIKKOR 70-300mm f/4.5-5.6E ED VR",
   "shortName": "AF-P NIKKOR 70-300mm f/4.5-5.6E ED VR",
-  "aliases": ["AF-P NIKKOR 70-300mm f/4.5-5.6E ED VR", "AF-P 70-300mm f/4.5-5.6E ED VR", "70-300mm f/4.5-5.6E ED VR", "70-300mm f/4.5-5.6E", "AF-P 70-300mm f/4.5-5.6E"],
-  "modelCodes": ["20068"],
+  "aliases": [
+    "AF-P NIKKOR 70-300mm f/4.5-5.6E ED VR",
+    "AF-P 70-300mm f/4.5-5.6E ED VR",
+    "70-300mm f/4.5-5.6E ED VR",
+    "70-300mm f/4.5-5.6E",
+    "AF-P 70-300mm f/4.5-5.6E"
+  ],
+  "modelCodes": [
+    "20068"
+  ],
   "gtins": [],
   "announced": "2017-07-11",
   "launchPriceUsd": 749.95,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-f"],
+  "rivals": [
+    "nikon-af-s-80-400mm-f4-5-5-6g-ed-vr",
+    "sigma-100-400mm-f5-6-3-dg-os-hsm-contemporary",
+    "tamron-100-400mm-f4-5-6-3-di-vc-usd"
+  ],
+  "mounts": [
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

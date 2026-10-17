@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 135mm F1.8 DG HSM | Art",
   "shortName": "135mm F1.8 DG HSM | Art",
-  "aliases": ["135mm F1.8 DG HSM Art", "135mm F1.8 DG HSM", "135mm f/1.8 DG HSM A", "135mm 1.8 DG HSM", "135 F1.8 DG HSM", "135mm F1.8 Art"],
+  "aliases": [
+    "135mm F1.8 DG HSM Art",
+    "135mm F1.8 DG HSM",
+    "135mm f/1.8 DG HSM A",
+    "135mm 1.8 DG HSM",
+    "135 F1.8 DG HSM",
+    "135mm F1.8 Art"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2017-02-21",
@@ -11,8 +18,17 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-e", "l-mount"],
+  "rivals": [
+    "samyang-af-135mm-f1-8-fe",
+    "sony-fe-135mm-f1-8-gm",
+    "viltrox-af-135mm-f1-8-lab"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 135,

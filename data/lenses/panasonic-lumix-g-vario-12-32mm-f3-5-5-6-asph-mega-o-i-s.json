@@ -3,16 +3,32 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G Vario 12-32mm F3.5-5.6 ASPH. Mega O.I.S.",
   "shortName": "Lumix G Vario 12-32mm F3.5-5.6 ASPH. Mega O.I.S.",
-  "aliases": ["Lumix G Vario 12-32mm F3.5-5.6 ASPH. Mega O.I.S.", "Lumix G Vario 12-32mm F3.5-5.6", "G Vario 12-32mm F3.5-5.6", "G Vario 12-32mm f/3.5-5.6", "G Vario HD 12-32mm F3.5-5.6", "Lumix G 12-32mm F3.5-5.6", "Lumix G 12-32mm f/3.5-5.6"],
-  "modelCodes": ["H-FS12032"],
+  "aliases": [
+    "Lumix G Vario 12-32mm F3.5-5.6 ASPH. Mega O.I.S.",
+    "Lumix G Vario 12-32mm F3.5-5.6",
+    "G Vario 12-32mm F3.5-5.6",
+    "G Vario 12-32mm f/3.5-5.6",
+    "G Vario HD 12-32mm F3.5-5.6",
+    "Lumix G 12-32mm F3.5-5.6",
+    "Lumix G 12-32mm f/3.5-5.6"
+  ],
+  "modelCodes": [
+    "H-FS12032"
+  ],
   "gtins": [],
   "announced": "2013-10-17",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-14-42mm-f3-5-5-6-iii",
+    "om-system-m-zuiko-digital-ed-14-42mm-f3-5-5-6-ez",
+    "panasonic-lumix-g-vario-14-42mm-f3-5-5-6-ii-asph-mega-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 12,

@@ -3,7 +3,16 @@
   "brand": "sigma",
   "name": "Sigma 150-600mm F5-6.3 DG DN OS | Sports",
   "shortName": "150-600mm F5-6.3 DG DN OS | Sports",
-  "aliases": ["150-600mm F5-6.3 DG DN OS Sports", "150-600mm F5-6.3 DG DN OS", "150-600mm F5-6.3 DG DN Sports", "150-600mm F5-6.3 DG DN", "150-600mm 5-6.3 DG DN", "150-600 F5-6.3 DG DN", "150-600mm DG DN OS", "150-600 DG DN"],
+  "aliases": [
+    "150-600mm F5-6.3 DG DN OS Sports",
+    "150-600mm F5-6.3 DG DN OS",
+    "150-600mm F5-6.3 DG DN Sports",
+    "150-600mm F5-6.3 DG DN",
+    "150-600mm 5-6.3 DG DN",
+    "150-600 F5-6.3 DG DN",
+    "150-600mm DG DN OS",
+    "150-600 DG DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-08-04",
@@ -11,8 +20,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "sony-fe-200-600mm-f5-6-6-3-g-oss",
+    "tamron-150-500mm-f5-6-7-di-iii-vc-vxd",
+    "panasonic-lumix-s-100-500mm-f5-7-1-o-i-s"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 150,

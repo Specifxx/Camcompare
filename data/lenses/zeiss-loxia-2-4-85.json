@@ -3,17 +3,29 @@
   "brand": "zeiss",
   "name": "Zeiss Loxia 2.4/85",
   "shortName": "Loxia 2.4/85",
-  "aliases": ["Loxia 2.4/85", "Loxia 85mm f/2.4", "Loxia 85mm F2.4", "Loxia Sonnar T* 2.4/85", "Loxia 85mm"],
+  "aliases": [
+    "Loxia 2.4/85",
+    "Loxia 85mm f/2.4",
+    "Loxia 85mm F2.4",
+    "Loxia Sonnar T* 2.4/85",
+    "Loxia 85mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2016-09-15",
   "launchPriceUsd": 1399,
-  "launchPrices": { "EUR": 1399 },
+  "launchPrices": {
+    "EUR": 1399
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "laowa-90mm-f2-8-2x-ultra-macro-apo"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

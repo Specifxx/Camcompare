@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 85mm F1.8",
   "shortName": "Lumix S 85mm F1.8",
-  "aliases": ["Lumix S 85mm F1.8", "Lumix S 85mm f/1.8", "S 85mm F1.8", "S 85mm f/1.8"],
-  "modelCodes": ["S-S85"],
+  "aliases": [
+    "Lumix S 85mm F1.8",
+    "Lumix S 85mm f/1.8",
+    "S 85mm F1.8",
+    "S 85mm f/1.8"
+  ],
+  "modelCodes": [
+    "S-S85"
+  ],
   "gtins": [],
   "announced": "2020-11-04",
   "launchPriceUsd": 599,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-pro",
+    "meike-85mm-f1-8-se-mark-ii"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

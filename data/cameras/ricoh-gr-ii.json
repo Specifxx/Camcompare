@@ -16,7 +16,7 @@
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
-  "successor": null,
+  "successor": "ricoh-gr-iii",
   "rivals": [
     "fujifilm-x70",
     "fujifilm-x100t",

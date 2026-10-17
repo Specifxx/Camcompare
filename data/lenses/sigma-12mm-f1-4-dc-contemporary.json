@@ -3,7 +3,12 @@
   "brand": "sigma",
   "name": "Sigma 12mm F1.4 DC | Contemporary",
   "shortName": "12mm F1.4 DC | Contemporary",
-  "aliases": ["12mm F1.4 DC Contemporary", "12mm F1.4 DC", "12mm f/1.4 DC C", "12 F1.4 DC"],
+  "aliases": [
+    "12mm F1.4 DC Contemporary",
+    "12mm F1.4 DC",
+    "12mm f/1.4 DC C",
+    "12 F1.4 DC"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-08-19",
@@ -11,8 +16,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x", "canon-rf"],
+  "rivals": [
+    "viltrox-af-13mm-f1-4"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 12,

@@ -3,16 +3,31 @@
   "brand": "tamron",
   "name": "Tamron SP 150-600mm F/5-6.3 Di VC USD",
   "shortName": "SP 150-600mm F/5-6.3 Di VC USD",
-  "aliases": ["SP 150-600mm F/5-6.3 Di VC USD", "SP 150-600mm F5-6.3 Di VC USD", "150-600mm F/5-6.3 Di VC USD", "150-600mm F5-6.3 Di VC USD", "SP 150-600mm F/5-6.3 Di USD"],
-  "modelCodes": ["A011"],
+  "aliases": [
+    "SP 150-600mm F/5-6.3 Di VC USD",
+    "SP 150-600mm F5-6.3 Di VC USD",
+    "150-600mm F/5-6.3 Di VC USD",
+    "150-600mm F5-6.3 Di VC USD",
+    "SP 150-600mm F/5-6.3 Di USD"
+  ],
+  "modelCodes": [
+    "A011"
+  ],
   "gtins": [],
   "announced": "2013-11-26",
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
   "successor": "tamron-sp-150-600mm-f5-6-3-di-vc-usd-g2",
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "sigma-150-600mm-f5-6-3-dg-os-hsm-contemporary",
+    "sigma-150-600mm-f5-6-3-dg-os-hsm-sports"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 150,

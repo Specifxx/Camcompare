@@ -3,7 +3,16 @@
   "brand": "laowa",
   "name": "Laowa 25mm f/2.8 2.5-5X Ultra Macro",
   "shortName": "25mm f/2.8 2.5-5X Ultra Macro",
-  "aliases": ["25mm f/2.8 2.5-5X Ultra Macro", "25mm F2.8 2.5-5X Ultra Macro", "25mm f2.8 2.5-5X Ultra Macro", "25mm f/2.8 2.5-5X Ultra-Macro", "25mm f/2.8 Ultra Macro 2.5-5X", "25mm F2.8 Ultra Macro 2.5-5X", "25mm 2.5-5X Ultra Macro", "25mm f/2.8 2.5x-5x Ultra Macro"],
+  "aliases": [
+    "25mm f/2.8 2.5-5X Ultra Macro",
+    "25mm F2.8 2.5-5X Ultra Macro",
+    "25mm f2.8 2.5-5X Ultra Macro",
+    "25mm f/2.8 2.5-5X Ultra-Macro",
+    "25mm f/2.8 Ultra Macro 2.5-5X",
+    "25mm F2.8 Ultra Macro 2.5-5X",
+    "25mm 2.5-5X Ultra Macro",
+    "25mm f/2.8 2.5x-5x Ultra Macro"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-03-07",
@@ -11,8 +20,18 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "canon-rf", "nikon-f", "nikon-z", "sony-e", "pentax-k", "l-mount"],
+  "rivals": [
+    "zeiss-loxia-2-4-25"
+  ],
+  "mounts": [
+    "canon-ef",
+    "canon-rf",
+    "nikon-f",
+    "nikon-z",
+    "sony-e",
+    "pentax-k",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 25,

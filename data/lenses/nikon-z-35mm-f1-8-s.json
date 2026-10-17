@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 35mm f/1.8 S",
   "shortName": "NIKKOR Z 35mm f/1.8 S",
-  "aliases": ["NIKKOR Z 35mm f/1.8 S", "Z 35mm f/1.8 S", "35mm f/1.8 S", "Z 35 f/1.8 S"],
-  "modelCodes": ["20081"],
+  "aliases": [
+    "NIKKOR Z 35mm f/1.8 S",
+    "Z 35mm f/1.8 S",
+    "35mm f/1.8 S",
+    "Z 35 f/1.8 S"
+  ],
+  "modelCodes": [
+    "20081"
+  ],
   "gtins": [],
   "announced": "2018-08-23",
   "launchPriceUsd": 849.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "nikon-z-40mm-f2",
+    "ttartisan-af-40mm-f2"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

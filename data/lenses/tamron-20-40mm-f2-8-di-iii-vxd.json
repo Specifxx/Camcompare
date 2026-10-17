@@ -3,16 +3,29 @@
   "brand": "tamron",
   "name": "Tamron 20-40mm F/2.8 Di III VXD",
   "shortName": "20-40mm F/2.8 Di III VXD",
-  "aliases": ["20-40mm F/2.8 Di III VXD", "20-40mm F2.8 Di III VXD", "20-40mm F/2.8 VXD", "20-40mm F2.8 VXD"],
-  "modelCodes": ["A062"],
+  "aliases": [
+    "20-40mm F/2.8 Di III VXD",
+    "20-40mm F2.8 Di III VXD",
+    "20-40mm F/2.8 VXD",
+    "20-40mm F2.8 VXD"
+  ],
+  "modelCodes": [
+    "A062"
+  ],
   "gtins": [],
   "announced": "2022-09-28",
   "launchPriceUsd": 699,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "sony-fe-16-35mm-f2-8-gm",
+    "sony-fe-16-35mm-f2-8-gm-ii"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 20,

@@ -3,7 +3,15 @@
   "brand": "sigma",
   "name": "Sigma 24-70mm F2.8 DG DN | Art",
   "shortName": "24-70mm F2.8 DG DN | Art",
-  "aliases": ["24-70mm F2.8 DG DN Art", "24-70mm F2.8 DG DN", "24-70mm f/2.8 DG DN A", "24-70mm 2.8 DG DN", "24-70 F2.8 DG DN", "24-70mm DG DN", "24-70 DG DN Art"],
+  "aliases": [
+    "24-70mm F2.8 DG DN Art",
+    "24-70mm F2.8 DG DN",
+    "24-70mm f/2.8 DG DN A",
+    "24-70mm 2.8 DG DN",
+    "24-70 F2.8 DG DN",
+    "24-70mm DG DN",
+    "24-70 DG DN Art"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2019-11-06",
@@ -11,8 +19,15 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": "sigma-24-70mm-f2-8-dg-dn-art-ii",
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "leica-vario-elmarit-sl-24-70-f2-8-asph",
+    "panasonic-lumix-s-pro-24-70mm-f2-8",
+    "samyang-af-24-70mm-f2-8-fe"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

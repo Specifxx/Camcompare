@@ -3,17 +3,36 @@
   "brand": "leica",
   "name": "Leica Noctilux-M 35 f/1.2 ASPH.",
   "shortName": "Noctilux-M 35 f/1.2 ASPH.",
-  "aliases": ["Noctilux-M 35 f/1.2 ASPH.", "Noctilux-M 35mm f/1.2 ASPH", "Noctilux-M 35 f/1.2", "Noctilux-M 35mm f/1.2", "Noctilux-M 35mm F1.2 ASPH", "Noctilux 35mm f/1.2", "Noctilux 35 f/1.2", "35mm f/1.2 Noctilux-M ASPH", "35mm f/1.2 Noctilux-M", "M 35mm F1.2 Noctilux"],
-  "modelCodes": ["11635"],
+  "aliases": [
+    "Noctilux-M 35 f/1.2 ASPH.",
+    "Noctilux-M 35mm f/1.2 ASPH",
+    "Noctilux-M 35 f/1.2",
+    "Noctilux-M 35mm f/1.2",
+    "Noctilux-M 35mm F1.2 ASPH",
+    "Noctilux 35mm f/1.2",
+    "Noctilux 35 f/1.2",
+    "35mm f/1.2 Noctilux-M ASPH",
+    "35mm f/1.2 Noctilux-M",
+    "M 35mm F1.2 Noctilux"
+  ],
+  "modelCodes": [
+    "11635"
+  ],
   "gtins": [],
   "announced": "2026-01-29",
   "launchPriceUsd": 9650,
-  "launchPrices": {"EUR": 8950},
+  "launchPrices": {
+    "EUR": 8950
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["leica-m"],
+  "rivals": [
+    "leica-summilux-m-35-f1-4-asph"
+  ],
+  "mounts": [
+    "leica-m"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

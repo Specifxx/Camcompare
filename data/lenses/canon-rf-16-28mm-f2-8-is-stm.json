@@ -3,7 +3,13 @@
   "brand": "canon",
   "name": "Canon RF 16-28mm F2.8 IS STM",
   "shortName": "RF 16-28mm F2.8 IS STM",
-  "aliases": ["RF 16-28mm F2.8 IS STM", "16-28mm F2.8 IS STM", "RF 16-28mm IS STM", "RF 16-28 F2.8 IS STM", "RF 16-28mm F2.8"],
+  "aliases": [
+    "RF 16-28mm F2.8 IS STM",
+    "16-28mm F2.8 IS STM",
+    "RF 16-28mm IS STM",
+    "RF 16-28 F2.8 IS STM",
+    "RF 16-28mm F2.8"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-01-22",
@@ -11,8 +17,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-15-35mm-f2-8l-is-usm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

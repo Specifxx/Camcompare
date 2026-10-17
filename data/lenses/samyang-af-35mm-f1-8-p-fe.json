@@ -3,7 +3,11 @@
   "brand": "samyang",
   "name": "Samyang AF 35mm F1.8 P FE",
   "shortName": "AF 35mm F1.8 P FE",
-  "aliases": ["AF 35mm F1.8 P FE", "35mm F1.8 P FE", "AF 35mm F1.8 P Sony FE"],
+  "aliases": [
+    "AF 35mm F1.8 P FE",
+    "35mm F1.8 P FE",
+    "AF 35mm F1.8 P Sony FE"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2026-03-26",
@@ -11,8 +15,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-35mm-f1-8-fe",
+    "sony-fe-35mm-f1-8",
+    "ttartisan-af-40mm-f2"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron SP 24-70mm F/2.8 Di VC USD G2",
   "shortName": "SP 24-70mm F/2.8 Di VC USD G2",
-  "aliases": ["SP 24-70mm F/2.8 Di VC USD G2", "SP 24-70mm F2.8 Di VC USD G2", "24-70mm F/2.8 Di VC USD G2", "24-70mm F2.8 Di VC USD G2", "SP 24-70mm G2", "SP 24-70 G2"],
-  "modelCodes": ["A032"],
+  "aliases": [
+    "SP 24-70mm F/2.8 Di VC USD G2",
+    "SP 24-70mm F2.8 Di VC USD G2",
+    "24-70mm F/2.8 Di VC USD G2",
+    "24-70mm F2.8 Di VC USD G2",
+    "SP 24-70mm G2",
+    "SP 24-70 G2"
+  ],
+  "modelCodes": [
+    "A032"
+  ],
   "gtins": [],
   "announced": "2017-06-30",
   "launchPriceUsd": 1199,
   "status": "current",
   "predecessor": "tamron-sp-24-70mm-f2-8-di-vc-usd",
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f"],
+  "rivals": [
+    "nikon-af-s-24-70mm-f2-8e-ed-vr",
+    "canon-ef-24-70mm-f2-8l-ii-usm",
+    "sigma-24-70mm-f2-8-dg-os-hsm-art"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

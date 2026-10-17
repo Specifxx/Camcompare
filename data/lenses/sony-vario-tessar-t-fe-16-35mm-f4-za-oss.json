@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony Vario-Tessar T* FE 16-35mm F4 ZA OSS",
   "shortName": "Vario-Tessar T* FE 16-35mm F4 ZA OSS",
-  "aliases": ["Vario-Tessar T* FE 16-35mm F4 ZA OSS", "Vario-Tessar FE 16-35mm F4 ZA OSS", "FE 16-35mm F4 ZA OSS", "16-35mm F4 ZA OSS", "16-35mm F4 ZA"],
-  "modelCodes": ["SEL1635Z"],
+  "aliases": [
+    "Vario-Tessar T* FE 16-35mm F4 ZA OSS",
+    "Vario-Tessar FE 16-35mm F4 ZA OSS",
+    "FE 16-35mm F4 ZA OSS",
+    "16-35mm F4 ZA OSS",
+    "16-35mm F4 ZA"
+  ],
+  "modelCodes": [
+    "SEL1635Z"
+  ],
   "gtins": [],
   "announced": "2014-09-15",
   "launchPriceUsd": 1350,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-pz-16-35mm-f4-g"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

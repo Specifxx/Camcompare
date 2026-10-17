@@ -3,16 +3,30 @@
   "brand": "canon",
   "name": "Canon RF 100-400mm F5.6-8 IS USM",
   "shortName": "RF 100-400mm F5.6-8 IS USM",
-  "aliases": ["RF 100-400mm F5.6-8 IS USM", "RF100-400mm F5.6-8 IS USM", "RF 100-400mm f/5.6-8 IS USM", "100-400mm F5.6-8 IS USM", "100-400mm f/5.6-8 IS USM", "RF 100-400mm F5.6-8", "RF 100-400mm IS USM"],
-  "modelCodes": ["5050C002"],
+  "aliases": [
+    "RF 100-400mm F5.6-8 IS USM",
+    "RF100-400mm F5.6-8 IS USM",
+    "RF 100-400mm f/5.6-8 IS USM",
+    "100-400mm F5.6-8 IS USM",
+    "100-400mm f/5.6-8 IS USM",
+    "RF 100-400mm F5.6-8",
+    "RF 100-400mm IS USM"
+  ],
+  "modelCodes": [
+    "5050C002"
+  ],
   "gtins": [],
   "announced": "2021-09-14",
   "launchPriceUsd": 649.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-100-500mm-f4-5-7-1l-is-usm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

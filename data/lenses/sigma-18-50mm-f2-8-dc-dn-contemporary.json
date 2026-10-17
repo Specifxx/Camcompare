@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 18-50mm F2.8 DC DN | Contemporary",
   "shortName": "18-50mm F2.8 DC DN | Contemporary",
-  "aliases": ["18-50mm F2.8 DC DN Contemporary", "18-50mm F2.8 DC DN", "18-50mm 2.8 DC DN", "18-50 F2.8 DC DN", "18-50mm DC DN", "18-50 DC DN"],
+  "aliases": [
+    "18-50mm F2.8 DC DN Contemporary",
+    "18-50mm F2.8 DC DN",
+    "18-50mm 2.8 DC DN",
+    "18-50 F2.8 DC DN",
+    "18-50mm DC DN",
+    "18-50 DC DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-10-19",
@@ -11,8 +18,17 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount", "fujifilm-x", "canon-rf"],
+  "rivals": [
+    "tamron-16-50mm-f2-8-a",
+    "fujifilm-xf-16-55mm-f2-8-r-lm-wr",
+    "fujifilm-xf-16-55mm-f2-8-r-lm-wr-ii"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount",
+    "fujifilm-x",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 18,

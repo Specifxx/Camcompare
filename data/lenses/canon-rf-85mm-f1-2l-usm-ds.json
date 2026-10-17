@@ -3,16 +3,30 @@
   "brand": "canon",
   "name": "Canon RF 85mm F1.2L USM DS",
   "shortName": "RF 85mm F1.2L USM DS",
-  "aliases": ["RF 85mm F1.2L USM DS", "RF85mm F1.2 L USM DS", "RF 85mm f/1.2L USM DS", "85mm F1.2L USM DS", "RF 85mm F1.2L DS", "RF 85mm DS"],
-  "modelCodes": ["3450C002"],
+  "aliases": [
+    "RF 85mm F1.2L USM DS",
+    "RF85mm F1.2 L USM DS",
+    "RF 85mm f/1.2L USM DS",
+    "85mm F1.2L USM DS",
+    "RF 85mm F1.2L DS",
+    "RF 85mm DS"
+  ],
+  "modelCodes": [
+    "3450C002"
+  ],
   "gtins": [],
   "announced": "2019-10-24",
   "launchPriceUsd": 2999,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-85mm-f1-2l-usm",
+    "canon-rf-85mm-f1-4l-vcm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

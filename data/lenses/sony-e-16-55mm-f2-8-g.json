@@ -3,16 +3,30 @@
   "brand": "sony",
   "name": "Sony E 16-55mm F2.8 G",
   "shortName": "E 16-55mm F2.8 G",
-  "aliases": ["E 16-55mm F2.8 G", "E 16-55mm f/2.8 G", "16-55mm F2.8 G", "16-55mm f/2.8 G", "16-55 F2.8 G"],
-  "modelCodes": ["SEL1655G"],
+  "aliases": [
+    "E 16-55mm F2.8 G",
+    "E 16-55mm f/2.8 G",
+    "16-55mm F2.8 G",
+    "16-55mm f/2.8 G",
+    "16-55 F2.8 G"
+  ],
+  "modelCodes": [
+    "SEL1655G"
+  ],
   "gtins": [],
   "announced": "2019-08-28",
   "launchPriceUsd": 1400,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "tamron-16-50mm-f2-8-a",
+    "sigma-18-50mm-f2-8-dc-dn-contemporary",
+    "tamron-17-70mm-f2-8-di-iii-a-vc-rxd"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 16,

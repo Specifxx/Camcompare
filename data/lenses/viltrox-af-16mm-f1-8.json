@@ -3,7 +3,12 @@
   "brand": "viltrox",
   "name": "Viltrox AF 16mm F1.8",
   "shortName": "AF 16mm F1.8",
-  "aliases": ["Viltrox AF 16mm F1.8", "Viltrox 16mm F1.8", "Viltrox 16mm f/1.8", "AF 16/1.8"],
+  "aliases": [
+    "Viltrox AF 16mm F1.8",
+    "Viltrox 16mm F1.8",
+    "Viltrox 16mm f/1.8",
+    "AF 16/1.8"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-07-31",
@@ -11,8 +16,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "sony-fe-16mm-f1-8-g",
+    "panasonic-lumix-s-18mm-f1-8",
+    "sony-fe-14mm-f1-8-gm"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

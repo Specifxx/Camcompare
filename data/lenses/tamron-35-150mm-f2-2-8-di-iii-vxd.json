@@ -3,16 +3,29 @@
   "brand": "tamron",
   "name": "Tamron 35-150mm F/2-2.8 Di III VXD",
   "shortName": "35-150mm F/2-2.8 Di III VXD",
-  "aliases": ["35-150mm F/2-2.8 Di III VXD", "35-150mm F2-2.8 Di III VXD", "35-150mm F/2-2.8 VXD", "35-150mm F2-2.8 VXD"],
-  "modelCodes": ["A058", "A058Z"],
+  "aliases": [
+    "35-150mm F/2-2.8 Di III VXD",
+    "35-150mm F2-2.8 Di III VXD",
+    "35-150mm F/2-2.8 VXD",
+    "35-150mm F2-2.8 VXD"
+  ],
+  "modelCodes": [
+    "A058",
+    "A058Z"
+  ],
   "gtins": [],
   "announced": "2021-09-29",
   "launchPriceUsd": 1899,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "samyang-af-35-150mm-f2-2-8"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

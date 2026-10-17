@@ -3,16 +3,34 @@
   "brand": "panasonic",
   "name": "Panasonic Leica DG Vario-Elmar 100-400mm F4.0-6.3 ASPH. Power O.I.S.",
   "shortName": "Leica DG Vario-Elmar 100-400mm F4.0-6.3 ASPH. Power O.I.S.",
-  "aliases": ["Leica DG Vario-Elmar 100-400mm F4.0-6.3 ASPH. Power O.I.S.", "Leica DG Vario-Elmar 100-400mm F4.0-6.3 ASPH", "Leica DG Vario-Elmar 100-400mm F4-6.3 ASPH", "Vario-Elmar 100-400mm F4.0-6.3 ASPH", "Vario-Elmar 100-400mm F4-6.3 ASPH", "Leica DG 100-400mm F4.0-6.3 ASPH", "Leica DG 100-400mm F4-6.3 ASPH", "100-400mm F4.0-6.3 ASPH Power O.I.S.", "100-400mm F4-6.3 ASPH Power O.I.S."],
-  "modelCodes": ["H-RS100400"],
+  "aliases": [
+    "Leica DG Vario-Elmar 100-400mm F4.0-6.3 ASPH. Power O.I.S.",
+    "Leica DG Vario-Elmar 100-400mm F4.0-6.3 ASPH",
+    "Leica DG Vario-Elmar 100-400mm F4-6.3 ASPH",
+    "Vario-Elmar 100-400mm F4.0-6.3 ASPH",
+    "Vario-Elmar 100-400mm F4-6.3 ASPH",
+    "Leica DG 100-400mm F4.0-6.3 ASPH",
+    "Leica DG 100-400mm F4-6.3 ASPH",
+    "100-400mm F4.0-6.3 ASPH Power O.I.S.",
+    "100-400mm F4-6.3 ASPH Power O.I.S."
+  ],
+  "modelCodes": [
+    "H-RS100400"
+  ],
   "gtins": [],
   "announced": "2016-01-05",
   "launchPriceUsd": 1799.99,
   "status": "discontinued",
   "predecessor": null,
-  "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "successor": "panasonic-leica-dg-vario-elmar-100-400mm-f4-0-6-3-ii-asph-power-o-i-s",
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-100-400mm-f5-0-6-3-is-ii",
+    "panasonic-lumix-g-vario-100-300mm-f4-0-5-6-ii-power-o-i-s",
+    "om-system-m-zuiko-digital-ed-75-300mm-f4-8-6-7-ii"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 100,

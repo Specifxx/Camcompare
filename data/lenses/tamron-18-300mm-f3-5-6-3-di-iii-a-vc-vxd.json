@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron 18-300mm F/3.5-6.3 Di III-A VC VXD",
   "shortName": "18-300mm F/3.5-6.3 Di III-A VC VXD",
-  "aliases": ["18-300mm F/3.5-6.3 Di III-A VC VXD", "18-300mm F3.5-6.3 Di III-A VC VXD", "18-300mm F/3.5-6.3 VC VXD", "18-300mm F3.5-6.3 VC VXD", "18-300mm F/3.5-6.3 VC", "18-300mm F3.5-6.3 VC"],
-  "modelCodes": ["B061"],
+  "aliases": [
+    "18-300mm F/3.5-6.3 Di III-A VC VXD",
+    "18-300mm F3.5-6.3 Di III-A VC VXD",
+    "18-300mm F/3.5-6.3 VC VXD",
+    "18-300mm F3.5-6.3 VC VXD",
+    "18-300mm F/3.5-6.3 VC",
+    "18-300mm F3.5-6.3 VC"
+  ],
+  "modelCodes": [
+    "B061"
+  ],
   "gtins": [],
   "announced": "2021-08-25",
   "launchPriceUsd": 699,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x", "nikon-z", "canon-rf"],
+  "rivals": [
+    "sigma-16-300mm-f3-5-6-7-dc-os-contemporary"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x",
+    "nikon-z",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 18,

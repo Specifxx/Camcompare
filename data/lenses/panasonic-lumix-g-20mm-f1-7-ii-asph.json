@@ -3,16 +3,31 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G 20mm F1.7 II ASPH.",
   "shortName": "Lumix G 20mm F1.7 II ASPH.",
-  "aliases": ["Lumix G 20mm F1.7 II ASPH", "Lumix G 20mm F1.7 II", "G 20mm F1.7 II", "20mm F1.7 II ASPH", "20mm f/1.7 II Lumix G"],
-  "modelCodes": ["H-H020A", "H-H020AK", "H-H020AS"],
+  "aliases": [
+    "Lumix G 20mm F1.7 II ASPH",
+    "Lumix G 20mm F1.7 II",
+    "G 20mm F1.7 II",
+    "20mm F1.7 II ASPH",
+    "20mm f/1.7 II Lumix G"
+  ],
+  "modelCodes": [
+    "H-H020A",
+    "H-H020AK",
+    "H-H020AS"
+  ],
   "gtins": [],
   "announced": "2013-06-27",
   "launchPriceUsd": 399,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-17mm-f1-8-ii",
+    "om-system-m-zuiko-digital-ed-20mm-f1-4-pro"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 20,

@@ -3,16 +3,31 @@
   "brand": "meike",
   "name": "Meike 33mm F1.4",
   "shortName": "33mm F1.4",
-  "aliases": ["Meike 33mm F1.4", "Meike 33mm f/1.4", "Meike AF 33mm F1.4", "Meike 33mm F1.4 STM"],
-  "modelCodes": ["MK-3314CFSTM"],
+  "aliases": [
+    "Meike 33mm F1.4",
+    "Meike 33mm f/1.4",
+    "Meike AF 33mm F1.4",
+    "Meike 33mm F1.4 STM"
+  ],
+  "modelCodes": [
+    "MK-3314CFSTM"
+  ],
   "gtins": [],
   "announced": "2024-08-01",
   "launchPriceUsd": 229.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z", "sony-e", "fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-33mm-f1-4-r-lm-wr",
+    "tokina-atx-m-33mm-f1-4",
+    "viltrox-af-33mm-f1-4"
+  ],
+  "mounts": [
+    "nikon-z",
+    "sony-e",
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 33,

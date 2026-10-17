@@ -3,16 +3,32 @@
   "brand": "canon",
   "name": "Canon RF 100-500mm F4.5-7.1L IS USM",
   "shortName": "RF 100-500mm F4.5-7.1L IS USM",
-  "aliases": ["RF 100-500mm F4.5-7.1L IS USM", "RF100-500mm F4.5-7.1 L IS USM", "RF 100-500mm f/4.5-7.1L IS USM", "RF 100-500mm F4.5-7.1 L IS USM", "100-500mm F4.5-7.1L IS USM", "100-500mm f/4.5-7.1L IS USM", "RF 100-500mm F4.5-7.1L", "RF 100-500mm L IS USM", "RF 100-500 L"],
-  "modelCodes": ["4112C002"],
+  "aliases": [
+    "RF 100-500mm F4.5-7.1L IS USM",
+    "RF100-500mm F4.5-7.1 L IS USM",
+    "RF 100-500mm f/4.5-7.1L IS USM",
+    "RF 100-500mm F4.5-7.1 L IS USM",
+    "100-500mm F4.5-7.1L IS USM",
+    "100-500mm f/4.5-7.1L IS USM",
+    "RF 100-500mm F4.5-7.1L",
+    "RF 100-500mm L IS USM",
+    "RF 100-500 L"
+  ],
+  "modelCodes": [
+    "4112C002"
+  ],
   "gtins": [],
   "announced": "2020-07-09",
   "launchPriceUsd": 2699,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-100-400mm-f5-6-8-is-usm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

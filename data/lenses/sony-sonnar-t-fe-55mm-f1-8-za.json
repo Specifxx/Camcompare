@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony Sonnar T* FE 55mm F1.8 ZA",
   "shortName": "Sonnar T* FE 55mm F1.8 ZA",
-  "aliases": ["Sonnar T* FE 55mm F1.8 ZA", "Sonnar FE 55mm F1.8 ZA", "FE 55mm F1.8 ZA", "55mm F1.8 ZA"],
-  "modelCodes": ["SEL55F18Z"],
+  "aliases": [
+    "Sonnar T* FE 55mm F1.8 ZA",
+    "Sonnar FE 55mm F1.8 ZA",
+    "FE 55mm F1.8 ZA",
+    "55mm F1.8 ZA"
+  ],
+  "modelCodes": [
+    "SEL55F18Z"
+  ],
   "gtins": [],
   "announced": "2013-10-16",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "7artisans-af-50mm-f1-8",
+    "meike-50mm-f1-8",
+    "sony-fe-50mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 55,

@@ -3,16 +3,32 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital 14-42mm F3.5-5.6 III",
   "shortName": "M.Zuiko Digital 14-42mm F3.5-5.6 III",
-  "aliases": ["M.Zuiko Digital 14-42mm F3.5-5.6 III", "M.Zuiko Digital 14-42mm f/3.5-5.6 III", "M.Zuiko 14-42mm F3.5-5.6 III", "M.Zuiko 14-42mm f/3.5-5.6 III", "14-42mm F3.5-5.6 III", "14-42mm f/3.5-5.6 III", "M.Zuiko 14-42mm III"],
-  "modelCodes": ["V336070BW000"],
+  "aliases": [
+    "M.Zuiko Digital 14-42mm F3.5-5.6 III",
+    "M.Zuiko Digital 14-42mm f/3.5-5.6 III",
+    "M.Zuiko 14-42mm F3.5-5.6 III",
+    "M.Zuiko 14-42mm f/3.5-5.6 III",
+    "14-42mm F3.5-5.6 III",
+    "14-42mm f/3.5-5.6 III",
+    "M.Zuiko 14-42mm III"
+  ],
+  "modelCodes": [
+    "V336070BW000"
+  ],
   "gtins": [],
   "announced": "2026-09-09",
   "launchPriceUsd": 349.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-14-42mm-f3-5-5-6-ez",
+    "panasonic-lumix-g-vario-14-42mm-f3-5-5-6-ii-asph-mega-o-i-s",
+    "panasonic-lumix-g-vario-12-32mm-f3-5-5-6-asph-mega-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 14,

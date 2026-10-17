@@ -3,16 +3,32 @@
   "brand": "nikon",
   "name": "Nikon AF-S NIKKOR 70-200mm f/2.8E FL ED VR",
   "shortName": "AF-S NIKKOR 70-200mm f/2.8E FL ED VR",
-  "aliases": ["AF-S NIKKOR 70-200mm f/2.8E FL ED VR", "AF-S 70-200mm f/2.8E FL ED VR", "70-200mm f/2.8E FL ED VR", "70-200mm f/2.8E FL", "70-200mm f/2.8E", "70-200 f/2.8E FL", "70-200 FL ED VR"],
-  "modelCodes": ["20063"],
+  "aliases": [
+    "AF-S NIKKOR 70-200mm f/2.8E FL ED VR",
+    "AF-S 70-200mm f/2.8E FL ED VR",
+    "70-200mm f/2.8E FL ED VR",
+    "70-200mm f/2.8E FL",
+    "70-200mm f/2.8E",
+    "70-200 f/2.8E FL",
+    "70-200 FL ED VR"
+  ],
+  "modelCodes": [
+    "20063"
+  ],
   "gtins": [],
   "announced": "2016-10-19",
   "launchPriceUsd": 2799.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-f"],
+  "rivals": [
+    "sigma-70-200mm-f2-8-dg-os-hsm-sports",
+    "tamron-sp-70-200mm-f2-8-di-vc-usd",
+    "tamron-sp-70-200mm-f2-8-di-vc-usd-g2"
+  ],
+  "mounts": [
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

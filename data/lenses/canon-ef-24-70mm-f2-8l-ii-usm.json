@@ -3,7 +3,15 @@
   "brand": "canon",
   "name": "Canon EF 24-70mm f/2.8L II USM",
   "shortName": "EF 24-70mm f/2.8L II USM",
-  "aliases": ["EF 24-70mm f/2.8L II USM", "EF24-70mm f/2.8L II USM", "24-70mm f/2.8L II", "24-70mm F2.8L II", "24-70mm f/2.8 L II", "24-70 f/2.8L II", "24-70 F2.8L II"],
+  "aliases": [
+    "EF 24-70mm f/2.8L II USM",
+    "EF24-70mm f/2.8L II USM",
+    "24-70mm f/2.8L II",
+    "24-70mm F2.8L II",
+    "24-70mm f/2.8 L II",
+    "24-70 f/2.8L II",
+    "24-70 F2.8L II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2012-02-07",
@@ -11,8 +19,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef"],
+  "rivals": [
+    "tamron-sp-24-70mm-f2-8-di-vc-usd-g2",
+    "sigma-24-70mm-f2-8-dg-os-hsm-art",
+    "tamron-sp-24-70mm-f2-8-di-vc-usd"
+  ],
+  "mounts": [
+    "canon-ef"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

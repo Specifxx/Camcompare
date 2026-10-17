@@ -3,7 +3,13 @@
   "brand": "sigma",
   "name": "Sigma 23mm F1.4 DC DN | Contemporary",
   "shortName": "23mm F1.4 DC DN | Contemporary",
-  "aliases": ["23mm F1.4 DC DN Contemporary", "23mm F1.4 DC DN", "23mm 1.4 DC DN", "23 F1.4 DC DN", "23mm DC DN"],
+  "aliases": [
+    "23mm F1.4 DC DN Contemporary",
+    "23mm F1.4 DC DN",
+    "23mm 1.4 DC DN",
+    "23 F1.4 DC DN",
+    "23mm DC DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-04-03",
@@ -11,8 +17,17 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount", "fujifilm-x", "canon-rf"],
+  "rivals": [
+    "fujifilm-xf-23mm-f1-4-r-lm-wr",
+    "tokina-atx-m-23mm-f1-4",
+    "viltrox-af-23mm-f1-4"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount",
+    "fujifilm-x",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 23,

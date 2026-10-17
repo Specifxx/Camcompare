@@ -3,16 +3,30 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 58mm f/0.95 S Noct",
   "shortName": "NIKKOR Z 58mm f/0.95 S Noct",
-  "aliases": ["NIKKOR Z 58mm f/0.95 S Noct", "Z 58mm f/0.95 S Noct", "58mm f/0.95 S Noct", "Z 58mm f0.95 S Noct", "Z 58mm f/0.95 Noct", "Z 58mm f/0.95", "Z 58mm Noct"],
-  "modelCodes": ["20086"],
+  "aliases": [
+    "NIKKOR Z 58mm f/0.95 S Noct",
+    "Z 58mm f/0.95 S Noct",
+    "58mm f/0.95 S Noct",
+    "Z 58mm f0.95 S Noct",
+    "Z 58mm f/0.95 Noct",
+    "Z 58mm f/0.95",
+    "Z 58mm Noct"
+  ],
+  "modelCodes": [
+    "20086"
+  ],
   "gtins": [],
   "announced": "2019-10-10",
   "launchPriceUsd": 7999.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "voigtlander-nokton-50mm-f1-aspherical"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 58,

@@ -3,16 +3,29 @@
   "brand": "samyang",
   "name": "Samyang AF 35mm F1.8 FE",
   "shortName": "AF 35mm F1.8 FE",
-  "aliases": ["AF 35mm F1.8 FE", "35mm F1.8 FE", "AF 35mm F1.8 Sony FE", "AF 35/1.8 FE"],
-  "modelCodes": ["IO3518-E"],
+  "aliases": [
+    "AF 35mm F1.8 FE",
+    "35mm F1.8 FE",
+    "AF 35mm F1.8 Sony FE",
+    "AF 35/1.8 FE"
+  ],
+  "modelCodes": [
+    "IO3518-E"
+  ],
   "gtins": [],
   "announced": "2020-09-14",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-35mm-f1-8-p-fe",
+    "sony-fe-35mm-f1-8",
+    "ttartisan-af-40mm-f2"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

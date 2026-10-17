@@ -3,7 +3,12 @@
   "brand": "meike",
   "name": "Meike 85mm F1.8 SE Mark II",
   "shortName": "85mm F1.8 SE Mark II",
-  "aliases": ["85mm F1.8 SE Mark II", "AF 85mm F1.8 SE II", "85mm F1.8 II SE", "85/1.8 SE II"],
+  "aliases": [
+    "85mm F1.8 SE Mark II",
+    "AF 85mm F1.8 SE II",
+    "85mm F1.8 II SE",
+    "85/1.8 SE II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-10-29",
@@ -11,8 +16,18 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "canon-ef", "l-mount", "nikon-f"],
+  "rivals": [
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-pro",
+    "nikon-af-s-85mm-f1-8g"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "canon-ef",
+    "l-mount",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

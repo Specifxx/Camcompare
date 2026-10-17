@@ -3,17 +3,30 @@
   "brand": "zeiss",
   "name": "Zeiss Otus ML 1.4/85",
   "shortName": "Otus ML 1.4/85",
-  "aliases": ["Otus ML 1.4/85", "Otus ML 85mm f/1.4", "Otus ML 85mm F1.4", "Otus ML 85mm"],
+  "aliases": [
+    "Otus ML 1.4/85",
+    "Otus ML 85mm f/1.4",
+    "Otus ML 85mm F1.4",
+    "Otus ML 85mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-02-25",
   "launchPriceUsd": 2999,
-  "launchPrices": {"EUR": 2799},
+  "launchPrices": {
+    "EUR": 2799
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "canon-rf", "nikon-z"],
+  "rivals": [
+    "voigtlander-nokton-75mm-f1-5-aspherical"
+  ],
+  "mounts": [
+    "sony-e",
+    "canon-rf",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

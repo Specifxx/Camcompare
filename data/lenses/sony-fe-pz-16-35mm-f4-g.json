@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony FE PZ 16-35mm F4 G",
   "shortName": "FE PZ 16-35mm F4 G",
-  "aliases": ["FE PZ 16-35mm F4 G", "PZ 16-35mm F4 G", "PZ 16-35mm f/4 G", "FE PZ 16-35mm f/4 G", "PZ 16-35 G"],
-  "modelCodes": ["SELP1635G"],
+  "aliases": [
+    "FE PZ 16-35mm F4 G",
+    "PZ 16-35mm F4 G",
+    "PZ 16-35mm f/4 G",
+    "FE PZ 16-35mm f/4 G",
+    "PZ 16-35 G"
+  ],
+  "modelCodes": [
+    "SELP1635G"
+  ],
   "gtins": [],
   "announced": "2022-03-22",
   "launchPriceUsd": 1200,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-vario-tessar-t-fe-16-35mm-f4-za-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

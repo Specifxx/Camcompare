@@ -3,7 +3,15 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 100-400mm F4.5-5.6 R LM OIS WR",
   "shortName": "XF 100-400mm F4.5-5.6 R LM OIS WR",
-  "aliases": ["XF 100-400mm F4.5-5.6 R LM OIS WR", "XF100-400mm F4.5-5.6 R LM OIS WR", "XF100-400mmF4.5-5.6 R LM OIS WR", "XF 100-400mm f/4.5-5.6 R LM OIS WR", "XF100-400mm f/4.5-5.6 R LM OIS WR", "100-400mm F4.5-5.6 R LM OIS WR", "100-400mm f/4.5-5.6 R LM OIS WR"],
+  "aliases": [
+    "XF 100-400mm F4.5-5.6 R LM OIS WR",
+    "XF100-400mm F4.5-5.6 R LM OIS WR",
+    "XF100-400mmF4.5-5.6 R LM OIS WR",
+    "XF 100-400mm f/4.5-5.6 R LM OIS WR",
+    "XF100-400mm f/4.5-5.6 R LM OIS WR",
+    "100-400mm F4.5-5.6 R LM OIS WR",
+    "100-400mm f/4.5-5.6 R LM OIS WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2016-01-14",
@@ -11,8 +19,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-70-300mm-f4-5-6-r-lm-ois-wr"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 100,

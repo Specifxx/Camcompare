@@ -3,16 +3,26 @@
   "brand": "nikon",
   "name": "Nikon AF-S NIKKOR 28mm f/1.8G",
   "shortName": "AF-S NIKKOR 28mm f/1.8G",
-  "aliases": ["AF-S NIKKOR 28mm f/1.8G", "AF-S 28mm f/1.8G", "28mm f/1.8G"],
-  "modelCodes": ["2203"],
+  "aliases": [
+    "AF-S NIKKOR 28mm f/1.8G",
+    "AF-S 28mm f/1.8G",
+    "28mm f/1.8G"
+  ],
+  "modelCodes": [
+    "2203"
+  ],
   "gtins": [],
   "announced": "2012-04-19",
   "launchPriceUsd": 699.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-f"],
+  "rivals": [
+    "nikon-af-s-24mm-f1-8g-ed"
+  ],
+  "mounts": [
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

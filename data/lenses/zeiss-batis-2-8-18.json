@@ -3,7 +3,13 @@
   "brand": "zeiss",
   "name": "Zeiss Batis 2.8/18",
   "shortName": "Batis 2.8/18",
-  "aliases": ["Batis 2.8/18", "Batis 18mm f/2.8", "Batis 18mm F2.8", "Batis Distagon T* 2.8/18", "Batis 18mm"],
+  "aliases": [
+    "Batis 2.8/18",
+    "Batis 18mm f/2.8",
+    "Batis 18mm F2.8",
+    "Batis Distagon T* 2.8/18",
+    "Batis 18mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2016-04-14",
@@ -11,8 +17,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-18mm-f2-8-fe",
+    "samyang-af-16mm-f2-8-p-fe",
+    "viltrox-af-20mm-f2-8-air"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 18,

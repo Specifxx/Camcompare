@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony Planar T* FE 50mm F1.4 ZA",
   "shortName": "Planar T* FE 50mm F1.4 ZA",
-  "aliases": ["Planar T* FE 50mm F1.4 ZA", "Planar FE 50mm F1.4 ZA", "FE 50mm F1.4 ZA"],
-  "modelCodes": ["SEL50F14Z"],
+  "aliases": [
+    "Planar T* FE 50mm F1.4 ZA",
+    "Planar FE 50mm F1.4 ZA",
+    "FE 50mm F1.4 ZA"
+  ],
+  "modelCodes": [
+    "SEL50F14Z"
+  ],
   "gtins": [],
   "announced": "2016-07-11",
   "launchPriceUsd": 1500,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-50mm-f1-4-fe",
+    "samyang-af-50mm-f1-4-fe-ii",
+    "sigma-50mm-f1-4-dg-dn-art"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

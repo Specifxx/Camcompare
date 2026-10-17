@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony FE 24-240mm F3.5-6.3 OSS",
   "shortName": "FE 24-240mm F3.5-6.3 OSS",
-  "aliases": ["FE 24-240mm F3.5-6.3 OSS", "24-240mm F3.5-6.3 OSS", "FE 24-240mm OSS"],
-  "modelCodes": ["SEL24240"],
+  "aliases": [
+    "FE 24-240mm F3.5-6.3 OSS",
+    "24-240mm F3.5-6.3 OSS",
+    "FE 24-240mm OSS"
+  ],
+  "modelCodes": [
+    "SEL24240"
+  ],
   "gtins": [],
   "announced": "2015-03-03",
   "launchPriceUsd": 1000,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-20-200mm-f3-5-6-3-dg-contemporary",
+    "tamron-28-300mm-f4-7-1-di-iii-vc-vxd",
+    "tamron-25-200mm-f2-8-5-6-di-iii-vxd-g2"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

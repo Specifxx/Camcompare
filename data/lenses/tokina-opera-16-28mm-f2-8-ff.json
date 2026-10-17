@@ -3,7 +3,14 @@
   "brand": "tokina",
   "name": "Tokina opera 16-28mm F2.8 FF",
   "shortName": "opera 16-28mm F2.8 FF",
-  "aliases": ["opera 16-28mm F2.8 FF", "opera 16-28mm f/2.8 FF", "opera 16-28mm F2.8", "opera 16-28mm f/2.8", "opera 16-28 F2.8 FF", "opera 16-28mm f2.8 FF"],
+  "aliases": [
+    "opera 16-28mm F2.8 FF",
+    "opera 16-28mm f/2.8 FF",
+    "opera 16-28mm F2.8",
+    "opera 16-28mm f/2.8",
+    "opera 16-28 F2.8 FF",
+    "opera 16-28mm f2.8 FF"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2019-02-22",
@@ -11,8 +18,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f"],
+  "rivals": [
+    "canon-ef-16-35mm-f2-8l-iii-usm",
+    "tamron-sp-15-30mm-f2-8-di-vc-usd",
+    "tamron-sp-15-30mm-f2-8-di-vc-usd-g2"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

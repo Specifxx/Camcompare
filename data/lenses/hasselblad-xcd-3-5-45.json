@@ -3,16 +3,29 @@
   "brand": "hasselblad",
   "name": "Hasselblad XCD 3,5/45",
   "shortName": "XCD 3,5/45",
-  "aliases": ["XCD 3,5/45", "XCD 3.5/45", "XCD 3.5/45mm", "XCD 45mm f/3.5", "XCD 45mm F3.5", "XCD 45 f/3.5"],
-  "modelCodes": ["CP.QT.00000203.01"],
+  "aliases": [
+    "XCD 3,5/45",
+    "XCD 3.5/45",
+    "XCD 3.5/45mm",
+    "XCD 45mm f/3.5",
+    "XCD 45mm F3.5",
+    "XCD 45 f/3.5"
+  ],
+  "modelCodes": [
+    "CP.QT.00000203.01"
+  ],
   "gtins": [],
   "announced": "2016-06-22",
   "launchPriceUsd": 2295,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["hasselblad-xcd"],
+  "rivals": [
+    "hasselblad-xcd-4-45p"
+  ],
+  "mounts": [
+    "hasselblad-xcd"
+  ],
   "coverage": "medium-format",
   "specs": {
     "focalMinMm": 45,

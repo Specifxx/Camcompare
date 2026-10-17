@@ -3,7 +3,13 @@
   "brand": "7artisans",
   "name": "7Artisans AF 27mm F2.8",
   "shortName": "AF 27mm F2.8",
-  "aliases": ["7Artisans AF 27mm F2.8", "7Artisans AF 27mm f/2.8", "7Artisans 27mm F2.8", "7 Artisans AF 27mm F2.8", "7 Artisans 27mm F2.8"],
+  "aliases": [
+    "7Artisans AF 27mm F2.8",
+    "7Artisans AF 27mm f/2.8",
+    "7Artisans 27mm F2.8",
+    "7 Artisans AF 27mm F2.8",
+    "7 Artisans 27mm F2.8"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-04-25",
@@ -11,8 +17,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-27mm-f2-8-r-wr",
+    "ttartisan-af-27mm-f2-8",
+    "fujifilm-xf-30mm-f2-8-r-lm-wr-macro"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 27,

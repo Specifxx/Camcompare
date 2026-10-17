@@ -3,16 +3,28 @@
   "brand": "tamron",
   "name": "Tamron 28-200mm F/2.8-5.6 Di III RXD",
   "shortName": "28-200mm F/2.8-5.6 Di III RXD",
-  "aliases": ["28-200mm F/2.8-5.6 Di III RXD", "28-200mm F2.8-5.6 Di III RXD", "28-200mm F/2.8-5.6 RXD", "28-200mm F2.8-5.6 RXD"],
-  "modelCodes": ["A071"],
+  "aliases": [
+    "28-200mm F/2.8-5.6 Di III RXD",
+    "28-200mm F2.8-5.6 Di III RXD",
+    "28-200mm F/2.8-5.6 RXD",
+    "28-200mm F2.8-5.6 RXD"
+  ],
+  "modelCodes": [
+    "A071"
+  ],
   "gtins": [],
   "announced": "2020-06-10",
   "launchPriceUsd": 729,
   "status": "current",
   "predecessor": null,
   "successor": "tamron-25-200mm-f2-8-5-6-di-iii-vxd-g2",
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-20-200mm-f3-5-6-3-dg-contemporary",
+    "sony-fe-24-240mm-f3-5-6-3-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

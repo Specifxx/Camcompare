@@ -3,7 +3,10 @@
   "brand": "samyang",
   "name": "Samyang AF 45mm F1.8 FE",
   "shortName": "AF 45mm F1.8 FE",
-  "aliases": ["AF 45mm F1.8 FE", "45mm F1.8 FE"],
+  "aliases": [
+    "AF 45mm F1.8 FE",
+    "45mm F1.8 FE"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2019-05-13",
@@ -11,8 +14,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "7artisans-af-50mm-f1-8",
+    "meike-50mm-f1-8",
+    "sony-fe-50mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 45,

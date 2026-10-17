@@ -3,7 +3,17 @@
   "brand": "laowa",
   "name": "Laowa 14mm f/4 FF RL Zero-D",
   "shortName": "14mm f/4 FF RL Zero-D",
-  "aliases": ["14mm f/4 FF RL Zero-D", "14mm F4 FF RL Zero-D", "14mm f/4.0 FF RL Zero-D", "14mm F4.0 FF RL Zero-D", "14mm f4 FF RL Zero-D", "14mm f/4 FF RL", "14mm F4 FF RL", "14mm f/4 RL Zero-D", "14mm F4 RL Zero-D"],
+  "aliases": [
+    "14mm f/4 FF RL Zero-D",
+    "14mm F4 FF RL Zero-D",
+    "14mm f/4.0 FF RL Zero-D",
+    "14mm F4.0 FF RL Zero-D",
+    "14mm f4 FF RL Zero-D",
+    "14mm f/4 FF RL",
+    "14mm F4 FF RL",
+    "14mm f/4 RL Zero-D",
+    "14mm F4 RL Zero-D"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-09-18",
@@ -11,8 +21,17 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "canon-rf", "l-mount", "leica-m"],
+  "rivals": [
+    "laowa-15mm-f4-wide-angle-macro",
+    "laowa-15mm-f4-5-zero-d-shift"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "canon-rf",
+    "l-mount",
+    "leica-m"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 14,

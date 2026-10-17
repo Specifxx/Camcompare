@@ -3,7 +3,10 @@
   "brand": "samyang",
   "name": "Samyang AF 24mm F1.8 FE",
   "shortName": "AF 24mm F1.8 FE",
-  "aliases": ["AF 24mm F1.8 FE", "24mm F1.8 FE"],
+  "aliases": [
+    "AF 24mm F1.8 FE",
+    "24mm F1.8 FE"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-04-09",
@@ -11,8 +14,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "viltrox-af-24mm-f1-8",
+    "zeiss-batis-2-25",
+    "sigma-24mm-f2-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

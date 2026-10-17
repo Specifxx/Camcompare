@@ -3,16 +3,33 @@
   "brand": "sony",
   "name": "Sony FE 90mm F2.8 Macro G OSS",
   "shortName": "FE 90mm F2.8 Macro G OSS",
-  "aliases": ["FE 90mm F2.8 Macro G OSS", "90mm F2.8 Macro G OSS", "90mm f/2.8 Macro G OSS", "FE 90mm F2.8 Macro G", "FE 90mm f/2.8 Macro G", "90mm F2.8 Macro G", "90mm f/2.8 Macro G", "90mm Macro G OSS"],
-  "modelCodes": ["SEL90M28G"],
+  "aliases": [
+    "FE 90mm F2.8 Macro G OSS",
+    "90mm F2.8 Macro G OSS",
+    "90mm f/2.8 Macro G OSS",
+    "FE 90mm F2.8 Macro G",
+    "FE 90mm f/2.8 Macro G",
+    "90mm F2.8 Macro G",
+    "90mm f/2.8 Macro G",
+    "90mm Macro G OSS"
+  ],
+  "modelCodes": [
+    "SEL90M28G"
+  ],
   "gtins": [],
   "announced": "2015-03-03",
   "launchPriceUsd": 1100,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "tamron-90mm-f2-8-di-iii-macro-vxd",
+    "sony-fe-100mm-f2-8-macro-gm-oss",
+    "sony-fe-100mm-f2-8-stf-gm-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 90,

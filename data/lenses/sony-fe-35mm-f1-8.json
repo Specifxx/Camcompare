@@ -3,17 +3,30 @@
   "brand": "sony",
   "name": "Sony FE 35mm F1.8",
   "shortName": "FE 35mm F1.8",
-  "aliases": ["FE 35mm F1.8", "FE 35mm f/1.8"],
-  "modelCodes": ["SEL35F18F"],
+  "aliases": [
+    "FE 35mm F1.8",
+    "FE 35mm f/1.8"
+  ],
+  "modelCodes": [
+    "SEL35F18F"
+  ],
   "gtins": [],
   "announced": "2019-07-09",
   "launchPriceUsd": 750,
-  "launchPrices": {"EUR": 700},
+  "launchPrices": {
+    "EUR": 700
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-35mm-f1-8-fe",
+    "samyang-af-35mm-f1-8-p-fe",
+    "ttartisan-af-40mm-f2"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

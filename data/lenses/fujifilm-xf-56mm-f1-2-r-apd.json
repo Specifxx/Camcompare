@@ -3,7 +3,17 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 56mm F1.2 R APD",
   "shortName": "XF 56mm F1.2 R APD",
-  "aliases": ["XF 56mm F1.2 R APD", "XF56mm F1.2 R APD", "XF56mmF1.2 R APD", "XF 56mm f/1.2 R APD", "XF56mm f/1.2 R APD", "56mm F1.2 R APD", "56mm f/1.2 R APD", "XF 56mm APD", "56mm APD"],
+  "aliases": [
+    "XF 56mm F1.2 R APD",
+    "XF56mm F1.2 R APD",
+    "XF56mmF1.2 R APD",
+    "XF 56mm f/1.2 R APD",
+    "XF56mm f/1.2 R APD",
+    "56mm F1.2 R APD",
+    "56mm f/1.2 R APD",
+    "XF 56mm APD",
+    "56mm APD"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2014-09-10",
@@ -11,8 +21,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-56mm-f1-2-r-wr",
+    "sirui-sniper-56mm-f1-2",
+    "viltrox-af-56mm-f1-2-pro"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 56,

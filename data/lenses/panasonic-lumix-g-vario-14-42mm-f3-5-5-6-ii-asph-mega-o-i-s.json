@@ -3,16 +3,32 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G Vario 14-42mm F3.5-5.6 II ASPH. Mega O.I.S.",
   "shortName": "Lumix G Vario 14-42mm F3.5-5.6 II ASPH. Mega O.I.S.",
-  "aliases": ["Lumix G Vario 14-42mm F3.5-5.6 II ASPH. Mega O.I.S.", "Lumix G Vario 14-42mm F3.5-5.6 II", "G Vario 14-42mm F3.5-5.6 II", "Lumix 14-42mm F3.5-5.6 II", "14-42mm F3.5-5.6 II ASPH", "14-42mm F3.5-5.6 II Mega O.I.S."],
-  "modelCodes": ["H-FS1442A", "H-FS1442AKA"],
+  "aliases": [
+    "Lumix G Vario 14-42mm F3.5-5.6 II ASPH. Mega O.I.S.",
+    "Lumix G Vario 14-42mm F3.5-5.6 II",
+    "G Vario 14-42mm F3.5-5.6 II",
+    "Lumix 14-42mm F3.5-5.6 II",
+    "14-42mm F3.5-5.6 II ASPH",
+    "14-42mm F3.5-5.6 II Mega O.I.S."
+  ],
+  "modelCodes": [
+    "H-FS1442A",
+    "H-FS1442AKA"
+  ],
   "gtins": [],
   "announced": "2013-01-28",
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-14-42mm-f3-5-5-6-iii",
+    "om-system-m-zuiko-digital-ed-14-42mm-f3-5-5-6-ez",
+    "panasonic-lumix-g-vario-12-32mm-f3-5-5-6-asph-mega-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 14,

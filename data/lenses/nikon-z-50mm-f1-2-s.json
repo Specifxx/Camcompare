@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 50mm f/1.2 S",
   "shortName": "NIKKOR Z 50mm f/1.2 S",
-  "aliases": ["NIKKOR Z 50mm f/1.2 S", "Z 50mm f/1.2 S", "50mm f/1.2 S", "Z 50 f/1.2 S"],
-  "modelCodes": ["20095"],
+  "aliases": [
+    "NIKKOR Z 50mm f/1.2 S",
+    "Z 50mm f/1.2 S",
+    "50mm f/1.2 S",
+    "Z 50 f/1.2 S"
+  ],
+  "modelCodes": [
+    "20095"
+  ],
   "gtins": [],
   "announced": "2020-09-16",
   "launchPriceUsd": 2099.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "nikon-z-50mm-f1-4",
+    "viltrox-af-50mm-f1-4-pro"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

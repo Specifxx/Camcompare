@@ -3,16 +3,30 @@
   "brand": "tamron",
   "name": "Tamron 11-20mm F/2.8 Di III-A RXD",
   "shortName": "11-20mm F/2.8 Di III-A RXD",
-  "aliases": ["11-20mm F/2.8 Di III-A RXD", "11-20mm F2.8 Di III-A RXD", "11-20mm F/2.8 RXD", "11-20mm F2.8 RXD"],
-  "modelCodes": ["B060"],
+  "aliases": [
+    "11-20mm F/2.8 Di III-A RXD",
+    "11-20mm F2.8 Di III-A RXD",
+    "11-20mm F/2.8 RXD",
+    "11-20mm F2.8 RXD"
+  ],
+  "modelCodes": [
+    "B060"
+  ],
   "gtins": [],
   "announced": "2021-04-22",
   "launchPriceUsd": 829,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x", "canon-rf"],
+  "rivals": [
+    "tokina-atx-m-11-18mm-f2-8",
+    "sigma-10-18mm-f2-8-dc-dn-contemporary"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 11,

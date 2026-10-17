@@ -3,16 +3,28 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 100mm F2.8 Macro",
   "shortName": "Lumix S 100mm F2.8 Macro",
-  "aliases": ["Lumix S 100mm F2.8 Macro", "S 100mm F2.8 Macro", "Lumix S 100mm Macro"],
-  "modelCodes": ["S-E100", "S-E100J"],
+  "aliases": [
+    "Lumix S 100mm F2.8 Macro",
+    "S 100mm F2.8 Macro",
+    "Lumix S 100mm Macro"
+  ],
+  "modelCodes": [
+    "S-E100",
+    "S-E100J"
+  ],
   "gtins": [],
   "announced": "2024-01-08",
   "launchPriceUsd": 999.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "sigma-105mm-f2-8-dg-dn-macro-art",
+    "sigma-90mm-f2-8-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

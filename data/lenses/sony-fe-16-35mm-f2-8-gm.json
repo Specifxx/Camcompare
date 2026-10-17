@@ -3,16 +3,30 @@
   "brand": "sony",
   "name": "Sony FE 16-35mm F2.8 GM",
   "shortName": "FE 16-35mm F2.8 GM",
-  "aliases": ["FE 16-35mm F2.8 GM", "16-35mm F2.8 GM", "16-35mm f/2.8 G Master", "FE 16-35 GM", "16-35 GM"],
-  "modelCodes": ["SEL1635GM"],
+  "aliases": [
+    "FE 16-35mm F2.8 GM",
+    "16-35mm F2.8 GM",
+    "16-35mm f/2.8 G Master",
+    "FE 16-35 GM",
+    "16-35 GM"
+  ],
+  "modelCodes": [
+    "SEL1635GM"
+  ],
   "gtins": [],
   "announced": "2017-05-17",
   "launchPriceUsd": 2200,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-16-35mm-f2-8-gm-ii",
+    "tamron-16-30mm-f2-8-di-iii-vxd-g2",
+    "sigma-16-28mm-f2-8-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

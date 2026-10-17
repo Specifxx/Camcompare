@@ -3,16 +3,33 @@
   "brand": "tamron",
   "name": "Tamron SP 15-30mm F/2.8 Di VC USD",
   "shortName": "SP 15-30mm F/2.8 Di VC USD",
-  "aliases": ["SP 15-30mm F/2.8 Di VC USD", "SP 15-30mm F2.8 Di VC USD", "SP 15-30mm F/2.8 Di USD", "SP 15-30mm F2.8 Di USD", "15-30mm F/2.8 Di VC USD", "15-30mm F2.8 Di VC USD"],
-  "modelCodes": ["A012"],
+  "aliases": [
+    "SP 15-30mm F/2.8 Di VC USD",
+    "SP 15-30mm F2.8 Di VC USD",
+    "SP 15-30mm F/2.8 Di USD",
+    "SP 15-30mm F2.8 Di USD",
+    "15-30mm F/2.8 Di VC USD",
+    "15-30mm F2.8 Di VC USD"
+  ],
+  "modelCodes": [
+    "A012"
+  ],
   "gtins": [],
   "announced": "2015-01-23",
   "launchPriceUsd": 1199,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "tokina-opera-16-28mm-f2-8-ff",
+    "tamron-sp-15-30mm-f2-8-di-vc-usd-g2",
+    "canon-ef-16-35mm-f2-8l-iii-usm"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 15,

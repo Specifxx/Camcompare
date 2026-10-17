@@ -3,16 +3,32 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital ED 40-150mm F2.8 PRO",
   "shortName": "M.Zuiko Digital ED 40-150mm F2.8 PRO",
-  "aliases": ["M.Zuiko Digital ED 40-150mm F2.8 PRO", "M.Zuiko ED 40-150mm F2.8 PRO", "M.Zuiko 40-150mm F2.8 PRO", "M.Zuiko 40-150mm f/2.8 PRO", "ED 40-150mm F2.8 PRO", "40-150mm F2.8 PRO", "40-150mm f/2.8 PRO", "40-150 F2.8 PRO"],
-  "modelCodes": ["V335310BW000", "V315050BU000"],
+  "aliases": [
+    "M.Zuiko Digital ED 40-150mm F2.8 PRO",
+    "M.Zuiko ED 40-150mm F2.8 PRO",
+    "M.Zuiko 40-150mm F2.8 PRO",
+    "M.Zuiko 40-150mm f/2.8 PRO",
+    "ED 40-150mm F2.8 PRO",
+    "40-150mm F2.8 PRO",
+    "40-150mm f/2.8 PRO",
+    "40-150 F2.8 PRO"
+  ],
+  "modelCodes": [
+    "V335310BW000",
+    "V315050BU000"
+  ],
   "gtins": [],
   "announced": "2014-09-16",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-50-200mm-f2-8-is-pro"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 40,

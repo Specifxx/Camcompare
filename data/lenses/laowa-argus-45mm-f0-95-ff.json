@@ -3,7 +3,18 @@
   "brand": "laowa",
   "name": "Laowa Argus 45mm f/0.95 FF",
   "shortName": "Argus 45mm f/0.95 FF",
-  "aliases": ["Argus 45mm f/0.95 FF", "Argus 45mm F0.95 FF", "Argus 45mm f0.95 FF", "Argus 45mm f/0.95", "Argus 45mm F0.95", "Argus FF II 45mm f/0.95", "Argus FF II 45mm F0.95", "Argus FFII 45mm F0.95", "FF II Argus 45mm F0.95", "FFII Argus 45mm F0.95"],
+  "aliases": [
+    "Argus 45mm f/0.95 FF",
+    "Argus 45mm F0.95 FF",
+    "Argus 45mm f0.95 FF",
+    "Argus 45mm f/0.95",
+    "Argus 45mm F0.95",
+    "Argus FF II 45mm f/0.95",
+    "Argus FF II 45mm F0.95",
+    "Argus FFII 45mm F0.95",
+    "FF II Argus 45mm F0.95",
+    "FFII Argus 45mm F0.95"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-12-28",
@@ -11,8 +22,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "canon-rf"],
+  "rivals": [
+    "voigtlander-nokton-50mm-f1-aspherical",
+    "voigtlander-nokton-40mm-f1-2-aspherical"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 45,

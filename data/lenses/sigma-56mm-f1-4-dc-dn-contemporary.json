@@ -3,7 +3,13 @@
   "brand": "sigma",
   "name": "Sigma 56mm F1.4 DC DN | Contemporary",
   "shortName": "56mm F1.4 DC DN | Contemporary",
-  "aliases": ["56mm F1.4 DC DN Contemporary", "56mm F1.4 DC DN", "56mm 1.4 DC DN", "56 F1.4 DC DN", "56mm DC DN"],
+  "aliases": [
+    "56mm F1.4 DC DN Contemporary",
+    "56mm F1.4 DC DN",
+    "56mm 1.4 DC DN",
+    "56 F1.4 DC DN",
+    "56mm DC DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-09-25",
@@ -11,8 +17,20 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "micro-four-thirds", "canon-ef-m", "l-mount", "fujifilm-x", "canon-rf", "nikon-z"],
+  "rivals": [
+    "tokina-atx-m-56mm-f1-4",
+    "viltrox-af-56mm-f1-4",
+    "meike-55mm-f1-4"
+  ],
+  "mounts": [
+    "sony-e",
+    "micro-four-thirds",
+    "canon-ef-m",
+    "l-mount",
+    "fujifilm-x",
+    "canon-rf",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 56,

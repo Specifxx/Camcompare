@@ -3,7 +3,16 @@
   "brand": "sigma",
   "name": "Sigma 100-400mm F5-6.3 DG DN OS | Contemporary",
   "shortName": "100-400mm F5-6.3 DG DN OS | Contemporary",
-  "aliases": ["100-400mm F5-6.3 DG DN OS Contemporary", "100-400mm F5-6.3 DG DN OS", "100-400mm F5-6.3 DG DN Contemporary", "100-400mm F5-6.3 DG DN", "100-400mm 5-6.3 DG DN", "100-400 F5-6.3 DG DN", "100-400mm DG DN OS", "100-400 DG DN"],
+  "aliases": [
+    "100-400mm F5-6.3 DG DN OS Contemporary",
+    "100-400mm F5-6.3 DG DN OS",
+    "100-400mm F5-6.3 DG DN Contemporary",
+    "100-400mm F5-6.3 DG DN",
+    "100-400mm 5-6.3 DG DN",
+    "100-400 F5-6.3 DG DN",
+    "100-400mm DG DN OS",
+    "100-400 DG DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-06-18",
@@ -11,8 +20,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount", "fujifilm-x"],
+  "rivals": [
+    "sony-fe-100-400mm-f4-5-5-6-gm-oss",
+    "sony-fe-100-400mm-f5-6-8-oss",
+    "panasonic-lumix-s-100-500mm-f5-7-1-o-i-s"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount",
+    "fujifilm-x"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

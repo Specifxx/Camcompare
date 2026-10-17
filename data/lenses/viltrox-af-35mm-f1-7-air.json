@@ -3,7 +3,10 @@
   "brand": "viltrox",
   "name": "Viltrox AF 35mm F1.7 Air",
   "shortName": "AF 35mm F1.7 Air",
-  "aliases": ["AF 35mm F1.7 Air", "35mm F1.7 Air"],
+  "aliases": [
+    "AF 35mm F1.7 Air",
+    "35mm F1.7 Air"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-12-18",
@@ -11,8 +14,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x", "sony-e", "nikon-z"],
+  "rivals": [
+    "nikon-z-dx-mc-35mm-f1-7",
+    "sony-e-35mm-f1-8-oss",
+    "ttartisan-af-35mm-f1-8-ii"
+  ],
+  "mounts": [
+    "fujifilm-x",
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 35,

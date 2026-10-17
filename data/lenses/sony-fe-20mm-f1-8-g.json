@@ -3,16 +3,27 @@
   "brand": "sony",
   "name": "Sony FE 20mm F1.8 G",
   "shortName": "FE 20mm F1.8 G",
-  "aliases": ["FE 20mm F1.8 G", "FE 20mm f/1.8 G", "FE 20mm F1.8G", "FE 20mm f/1.8G"],
-  "modelCodes": ["SEL20F18G"],
+  "aliases": [
+    "FE 20mm F1.8 G",
+    "FE 20mm f/1.8 G",
+    "FE 20mm F1.8G",
+    "FE 20mm f/1.8G"
+  ],
+  "modelCodes": [
+    "SEL20F18G"
+  ],
   "gtins": [],
   "announced": "2020-02-25",
   "launchPriceUsd": 899.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-20mm-f2-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 20,

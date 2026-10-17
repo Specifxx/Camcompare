@@ -3,17 +3,34 @@
   "brand": "panasonic",
   "name": "Panasonic Leica DG Summilux 15mm F1.7 ASPH.",
   "shortName": "Leica DG Summilux 15mm F1.7 ASPH.",
-  "aliases": ["Leica DG Summilux 15mm F1.7 ASPH", "Leica DG Summilux 15mm F1.7", "DG Summilux 15mm F1.7", "Summilux 15mm F1.7", "Leica DG 15mm F1.7", "Leica 15mm F1.7 ASPH"],
-  "modelCodes": ["H-X015", "H-X015K", "H-X015S"],
+  "aliases": [
+    "Leica DG Summilux 15mm F1.7 ASPH",
+    "Leica DG Summilux 15mm F1.7",
+    "DG Summilux 15mm F1.7",
+    "Summilux 15mm F1.7",
+    "Leica DG 15mm F1.7",
+    "Leica 15mm F1.7 ASPH"
+  ],
+  "modelCodes": [
+    "H-X015",
+    "H-X015K",
+    "H-X015S"
+  ],
   "gtins": [],
   "announced": "2014-03-24",
   "launchPriceUsd": 599,
-  "launchPrices": {"GBP": 549.99},
+  "launchPrices": {
+    "GBP": 549.99
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-17mm-f1-8-ii"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 15,

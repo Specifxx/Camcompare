@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 150-600mm F5-6.3 DG OS HSM | Sports",
   "shortName": "150-600mm F5-6.3 DG OS HSM | Sports",
-  "aliases": ["150-600mm F5-6.3 DG OS HSM Sports", "150-600mm F5-6.3 DG OS HSM S", "150-600mm F5-6.3 DG OS HSM Sport", "150-600mm 5-6.3 DG OS HSM Sports", "150-600mm DG OS HSM Sports", "150-600 DG OS HSM Sports"],
+  "aliases": [
+    "150-600mm F5-6.3 DG OS HSM Sports",
+    "150-600mm F5-6.3 DG OS HSM S",
+    "150-600mm F5-6.3 DG OS HSM Sport",
+    "150-600mm 5-6.3 DG OS HSM Sports",
+    "150-600mm DG OS HSM Sports",
+    "150-600 DG OS HSM Sports"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2014-09-12",
@@ -11,8 +18,15 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f"],
+  "rivals": [
+    "sigma-150-600mm-f5-6-3-dg-os-hsm-contemporary",
+    "tamron-sp-150-600mm-f5-6-3-di-vc-usd",
+    "tamron-sp-150-600mm-f5-6-3-di-vc-usd-g2"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 150,

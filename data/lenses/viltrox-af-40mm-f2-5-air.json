@@ -3,7 +3,15 @@
   "brand": "viltrox",
   "name": "Viltrox AF 40mm F2.5 Air",
   "shortName": "AF 40mm F2.5 Air",
-  "aliases": ["AF 40mm F2.5 Air", "40mm F2.5 Air", "40mm f/2.5 Air", "Viltrox AF 40mm F2.5", "Viltrox 40mm F2.5", "Viltrox 40mm f/2.5", "AF 40/2.5"],
+  "aliases": [
+    "AF 40mm F2.5 Air",
+    "40mm F2.5 Air",
+    "40mm f/2.5 Air",
+    "Viltrox AF 40mm F2.5",
+    "Viltrox 40mm F2.5",
+    "Viltrox 40mm f/2.5",
+    "AF 40/2.5"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-04-25",
@@ -11,8 +19,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "sony-fe-40mm-f2-5-g",
+    "samyang-af-35mm-f2-8-fe",
+    "sony-sonnar-t-fe-35mm-f2-8-za"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 40,

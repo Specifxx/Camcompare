@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony E 18-135mm F3.5-5.6 OSS",
   "shortName": "E 18-135mm F3.5-5.6 OSS",
-  "aliases": ["E 18-135mm F3.5-5.6 OSS", "E 18-135mm f/3.5-5.6 OSS", "18-135mm F3.5-5.6 OSS", "18-135mm f/3.5-5.6 OSS", "E 18-135mm OSS"],
-  "modelCodes": ["SEL18135"],
+  "aliases": [
+    "E 18-135mm F3.5-5.6 OSS",
+    "E 18-135mm f/3.5-5.6 OSS",
+    "18-135mm F3.5-5.6 OSS",
+    "18-135mm f/3.5-5.6 OSS",
+    "E 18-135mm OSS"
+  ],
+  "modelCodes": [
+    "SEL18135"
+  ],
   "gtins": [],
   "announced": "2018-01-05",
   "launchPriceUsd": 600,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-e-18-200mm-f3-5-6-3-oss-le",
+    "sony-e-pz-18-200mm-f3-5-6-3-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 18,

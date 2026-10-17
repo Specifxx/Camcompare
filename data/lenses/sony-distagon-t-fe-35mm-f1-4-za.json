@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony Distagon T* FE 35mm F1.4 ZA",
   "shortName": "Distagon T* FE 35mm F1.4 ZA",
-  "aliases": ["Distagon T* FE 35mm F1.4 ZA", "Distagon FE 35mm F1.4 ZA", "FE 35mm F1.4 ZA", "35mm F1.4 ZA"],
-  "modelCodes": ["SEL35F14Z"],
+  "aliases": [
+    "Distagon T* FE 35mm F1.4 ZA",
+    "Distagon FE 35mm F1.4 ZA",
+    "FE 35mm F1.4 ZA",
+    "35mm F1.4 ZA"
+  ],
+  "modelCodes": [
+    "SEL35F14Z"
+  ],
   "gtins": [],
   "announced": "2015-03-03",
   "launchPriceUsd": 1600,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-35mm-f1-4-fe",
+    "samyang-af-35mm-f1-4-fe-ii",
+    "samyang-af-35mm-f1-4-p-fe"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

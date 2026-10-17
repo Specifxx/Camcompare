@@ -3,16 +3,32 @@
   "brand": "sony",
   "name": "Sony FE 12-24mm F2.8 GM",
   "shortName": "FE 12-24mm F2.8 GM",
-  "aliases": ["FE 12-24mm F2.8 GM", "12-24mm F2.8 GM", "12-24mm f/2.8 GM", "FE 12-24mm f/2.8 GM", "12-24mm F2.8 G Master", "12-24mm f/2.8 G Master", "12-24 GM"],
-  "modelCodes": ["SEL1224GM"],
+  "aliases": [
+    "FE 12-24mm F2.8 GM",
+    "12-24mm F2.8 GM",
+    "12-24mm f/2.8 GM",
+    "FE 12-24mm f/2.8 GM",
+    "12-24mm F2.8 G Master",
+    "12-24mm f/2.8 G Master",
+    "12-24 GM"
+  ],
+  "modelCodes": [
+    "SEL1224GM"
+  ],
   "gtins": [],
   "announced": "2020-07-07",
   "launchPriceUsd": 2999.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-14-24mm-f2-8",
+    "sigma-14-24mm-f2-8-dg-dn-art",
+    "tamron-12-20mm-f2-8"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 12,

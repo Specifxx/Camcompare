@@ -3,16 +3,26 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 18mm F1.8",
   "shortName": "Lumix S 18mm F1.8",
-  "aliases": ["Lumix S 18mm F1.8", "S 18mm F1.8"],
-  "modelCodes": ["S-S18"],
+  "aliases": [
+    "Lumix S 18mm F1.8",
+    "S 18mm F1.8"
+  ],
+  "modelCodes": [
+    "S-S18"
+  ],
   "gtins": [],
   "announced": "2022-09-06",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "viltrox-af-16mm-f1-8",
+    "sigma-20mm-f2-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 18,

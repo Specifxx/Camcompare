@@ -3,7 +3,15 @@
   "brand": "canon",
   "name": "Canon EF 35mm f/1.4L II USM",
   "shortName": "EF 35mm f/1.4L II USM",
-  "aliases": ["EF 35mm f/1.4L II USM", "EF35mm f/1.4L II USM", "35mm f/1.4L II USM", "35mm F1.4L II USM", "35mm f/1.4L II", "35mm F1.4L II", "35mm f/1.4 L II"],
+  "aliases": [
+    "EF 35mm f/1.4L II USM",
+    "EF35mm f/1.4L II USM",
+    "35mm f/1.4L II USM",
+    "35mm F1.4L II USM",
+    "35mm f/1.4L II",
+    "35mm F1.4L II",
+    "35mm f/1.4 L II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2015-08-27",
@@ -11,8 +19,13 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef"],
+  "rivals": [
+    "sigma-35mm-f1-4-dg-hsm-art",
+    "tamron-sp-35mm-f1-4-di-usd"
+  ],
+  "mounts": [
+    "canon-ef"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

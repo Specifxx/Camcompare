@@ -3,16 +3,32 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital ED 40-150mm F4.0-5.6 R",
   "shortName": "M.Zuiko Digital ED 40-150mm F4.0-5.6 R",
-  "aliases": ["M.Zuiko Digital ED 40-150mm F4.0-5.6 R", "M.Zuiko Digital ED 40-150mm f/4-5.6 R", "M.Zuiko 40-150mm F4.0-5.6 R", "M.Zuiko 40-150mm f/4-5.6 R", "ED 40-150mm F4.0-5.6 R", "40-150mm F4.0-5.6 R", "40-150mm f/4-5.6 R", "M.Zuiko 40-150mm R"],
-  "modelCodes": ["V335390BW000"],
+  "aliases": [
+    "M.Zuiko Digital ED 40-150mm F4.0-5.6 R",
+    "M.Zuiko Digital ED 40-150mm f/4-5.6 R",
+    "M.Zuiko 40-150mm F4.0-5.6 R",
+    "M.Zuiko 40-150mm f/4-5.6 R",
+    "ED 40-150mm F4.0-5.6 R",
+    "40-150mm F4.0-5.6 R",
+    "40-150mm f/4-5.6 R",
+    "M.Zuiko 40-150mm R"
+  ],
+  "modelCodes": [
+    "V335390BW000"
+  ],
   "gtins": [],
   "announced": "2011-06-30",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-lumix-g-vario-45-150mm-f4-0-5-6-asph-mega-o-i-s",
+    "panasonic-lumix-g-vario-45-200mm-f4-0-5-6-ii-power-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 40,

@@ -3,16 +3,30 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 24-60mm F2.8",
   "shortName": "Lumix S 24-60mm F2.8",
-  "aliases": ["Lumix S 24-60mm F2.8", "Lumix S 24-60mm f/2.8", "S 24-60mm F2.8", "S 24-60mm f/2.8", "Lumix S 24-60mm"],
-  "modelCodes": ["S-E2460"],
+  "aliases": [
+    "Lumix S 24-60mm F2.8",
+    "Lumix S 24-60mm f/2.8",
+    "S 24-60mm F2.8",
+    "S 24-60mm f/2.8",
+    "Lumix S 24-60mm"
+  ],
+  "modelCodes": [
+    "S-E2460"
+  ],
   "gtins": [],
   "announced": "2025-05-13",
   "launchPriceUsd": 899,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "leica-vario-elmarit-sl-24-70-f2-8-asph",
+    "panasonic-lumix-s-pro-24-70mm-f2-8",
+    "sigma-24-70mm-f2-8-dg-dn-art-ii"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

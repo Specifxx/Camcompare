@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 40mm F2",
   "shortName": "Lumix S 40mm F2",
-  "aliases": ["Lumix S 40mm F2", "S 40mm F2"],
-  "modelCodes": ["S-S40", "S-S40K", "S-S40S"],
+  "aliases": [
+    "Lumix S 40mm F2",
+    "S 40mm F2"
+  ],
+  "modelCodes": [
+    "S-S40",
+    "S-S40K",
+    "S-S40S"
+  ],
   "gtins": [],
   "announced": "2026-04-21",
   "launchPriceUsd": 399.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "ttartisan-af-40mm-f2",
+    "leica-apo-summicron-sl-35-f2-asph",
+    "leica-summicron-sl-35-f2-asph"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 40,

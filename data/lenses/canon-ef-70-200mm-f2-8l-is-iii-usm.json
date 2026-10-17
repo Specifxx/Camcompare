@@ -3,7 +3,15 @@
   "brand": "canon",
   "name": "Canon EF 70-200mm f/2.8L IS III USM",
   "shortName": "EF 70-200mm f/2.8L IS III USM",
-  "aliases": ["EF 70-200mm f/2.8L IS III USM", "EF70-200mm f/2.8L IS III USM", "70-200mm f/2.8L IS III", "70-200mm F2.8L IS III", "70-200mm f/2.8 L IS III", "70-200 f/2.8L IS III", "70-200 F2.8L IS III"],
+  "aliases": [
+    "EF 70-200mm f/2.8L IS III USM",
+    "EF70-200mm f/2.8L IS III USM",
+    "70-200mm f/2.8L IS III",
+    "70-200mm F2.8L IS III",
+    "70-200mm f/2.8 L IS III",
+    "70-200 f/2.8L IS III",
+    "70-200 F2.8L IS III"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-06-07",
@@ -11,8 +19,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef"],
+  "rivals": [
+    "sigma-70-200mm-f2-8-dg-os-hsm-sports",
+    "tamron-sp-70-200mm-f2-8-di-vc-usd",
+    "tamron-sp-70-200mm-f2-8-di-vc-usd-g2"
+  ],
+  "mounts": [
+    "canon-ef"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

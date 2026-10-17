@@ -3,7 +3,11 @@
   "brand": "viltrox",
   "name": "Viltrox AF 24mm F1.8",
   "shortName": "AF 24mm F1.8",
-  "aliases": ["Viltrox AF 24mm F1.8", "Viltrox 24mm F1.8", "AF 24/1.8"],
+  "aliases": [
+    "Viltrox AF 24mm F1.8",
+    "Viltrox 24mm F1.8",
+    "AF 24/1.8"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-12-25",
@@ -11,8 +15,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "nikon-z-24mm-f1-8-s",
+    "samyang-af-24mm-f1-8-fe",
+    "zeiss-batis-2-25"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

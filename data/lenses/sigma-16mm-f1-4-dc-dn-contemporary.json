@@ -3,7 +3,13 @@
   "brand": "sigma",
   "name": "Sigma 16mm F1.4 DC DN | Contemporary",
   "shortName": "16mm F1.4 DC DN | Contemporary",
-  "aliases": ["16mm F1.4 DC DN Contemporary", "16mm F1.4 DC DN", "16mm 1.4 DC DN", "16 F1.4 DC DN", "16mm DC DN"],
+  "aliases": [
+    "16mm F1.4 DC DN Contemporary",
+    "16mm F1.4 DC DN",
+    "16mm 1.4 DC DN",
+    "16 F1.4 DC DN",
+    "16mm DC DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2017-10-23",
@@ -11,8 +17,20 @@
   "status": "current",
   "predecessor": null,
   "successor": "sigma-15mm-f1-4-dc-contemporary",
-  "rivals": [],
-  "mounts": ["sony-e", "micro-four-thirds", "canon-ef-m", "l-mount", "fujifilm-x", "canon-rf", "nikon-z"],
+  "rivals": [
+    "fujifilm-xf-16mm-f1-4-r-wr",
+    "sony-e-15mm-f1-4-g",
+    "fujifilm-xf-18mm-f1-4-r-lm-wr"
+  ],
+  "mounts": [
+    "sony-e",
+    "micro-four-thirds",
+    "canon-ef-m",
+    "l-mount",
+    "fujifilm-x",
+    "canon-rf",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 16,

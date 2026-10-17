@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony FE 16mm F1.8 G",
   "shortName": "FE 16mm F1.8 G",
-  "aliases": ["FE 16mm F1.8 G", "16mm F1.8 G", "16mm f/1.8 G", "FE 16mm f/1.8 G"],
-  "modelCodes": ["SEL16F18G"],
+  "aliases": [
+    "FE 16mm F1.8 G",
+    "16mm F1.8 G",
+    "16mm f/1.8 G",
+    "FE 16mm f/1.8 G"
+  ],
+  "modelCodes": [
+    "SEL16F18G"
+  ],
   "gtins": [],
   "announced": "2025-02-26",
   "launchPriceUsd": 799.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "viltrox-af-16mm-f1-8",
+    "sony-fe-14mm-f1-8-gm"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

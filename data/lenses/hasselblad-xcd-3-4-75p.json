@@ -3,17 +3,34 @@
   "brand": "hasselblad",
   "name": "Hasselblad XCD 3,4/75P",
   "shortName": "XCD 3,4/75P",
-  "aliases": ["XCD 3,4/75P", "XCD 3.4/75P", "XCD 3.4/75 P", "XCD 75P", "XCD 75mm f/3.4 P", "XCD 75mm F3.4 P", "XCD 75mm f/3.4", "XCD 75mm F3.4P"],
-  "modelCodes": ["CP.HB.00000894.01"],
+  "aliases": [
+    "XCD 3,4/75P",
+    "XCD 3.4/75P",
+    "XCD 3.4/75 P",
+    "XCD 75P",
+    "XCD 75mm f/3.4 P",
+    "XCD 75mm F3.4 P",
+    "XCD 75mm f/3.4",
+    "XCD 75mm F3.4P"
+  ],
+  "modelCodes": [
+    "CP.HB.00000894.01"
+  ],
   "gtins": [],
   "announced": "2024-11-07",
   "launchPriceUsd": 2229,
-  "launchPrices": {"EUR": 2529},
+  "launchPrices": {
+    "EUR": 2529
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["hasselblad-xcd"],
+  "rivals": [
+    "hasselblad-xcd-2-8-65"
+  ],
+  "mounts": [
+    "hasselblad-xcd"
+  ],
   "coverage": "medium-format",
   "specs": {
     "focalMinMm": 75,

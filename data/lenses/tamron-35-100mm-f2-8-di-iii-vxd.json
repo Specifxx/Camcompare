@@ -3,16 +3,29 @@
   "brand": "tamron",
   "name": "Tamron 35-100mm F/2.8 Di III VXD",
   "shortName": "35-100mm F/2.8 Di III VXD",
-  "aliases": ["35-100mm F/2.8 Di III VXD", "35-100mm F2.8 Di III VXD", "35-100mm f/2.8 VXD", "35-100mm F2.8 VXD", "35-100 Di III VXD"],
-  "modelCodes": ["A078"],
+  "aliases": [
+    "35-100mm F/2.8 Di III VXD",
+    "35-100mm F2.8 Di III VXD",
+    "35-100mm f/2.8 VXD",
+    "35-100mm F2.8 VXD",
+    "35-100 Di III VXD"
+  ],
+  "modelCodes": [
+    "A078"
+  ],
   "gtins": [],
   "announced": "2026-02-19",
   "launchPriceUsd": 899,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "sigma-28-105mm-f2-8-dg-dn-art"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

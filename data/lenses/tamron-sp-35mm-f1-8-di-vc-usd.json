@@ -3,16 +3,34 @@
   "brand": "tamron",
   "name": "Tamron SP 35mm F/1.8 Di VC USD",
   "shortName": "SP 35mm F/1.8 Di VC USD",
-  "aliases": ["SP 35mm F/1.8 Di VC USD", "SP 35mm F1.8 Di VC USD", "SP 35mm F/1.8 Di USD", "SP 35mm F1.8 Di USD", "35mm F/1.8 Di VC USD", "35mm F1.8 Di VC USD", "SP 35mm f/1.8", "SP 35mm F1.8"],
-  "modelCodes": ["F012"],
+  "aliases": [
+    "SP 35mm F/1.8 Di VC USD",
+    "SP 35mm F1.8 Di VC USD",
+    "SP 35mm F/1.8 Di USD",
+    "SP 35mm F1.8 Di USD",
+    "35mm F/1.8 Di VC USD",
+    "35mm F1.8 Di VC USD",
+    "SP 35mm f/1.8",
+    "SP 35mm F1.8"
+  ],
+  "modelCodes": [
+    "F012"
+  ],
   "gtins": [],
   "announced": "2015-09-02",
   "launchPriceUsd": 599,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "nikon-af-s-35mm-f1-8g-ed",
+    "canon-ef-35mm-f2-is-usm"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

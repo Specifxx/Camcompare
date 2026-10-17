@@ -3,16 +3,29 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z DX 16-50mm f/2.8 VR",
   "shortName": "NIKKOR Z DX 16-50mm f/2.8 VR",
-  "aliases": ["NIKKOR Z DX 16-50mm f/2.8 VR", "Z DX 16-50mm f/2.8 VR", "DX 16-50mm f/2.8 VR", "Z DX 16-50mm f2.8 VR", "Z DX 16-50mm f/2.8"],
-  "modelCodes": ["20133"],
+  "aliases": [
+    "NIKKOR Z DX 16-50mm f/2.8 VR",
+    "Z DX 16-50mm f/2.8 VR",
+    "DX 16-50mm f/2.8 VR",
+    "Z DX 16-50mm f2.8 VR",
+    "Z DX 16-50mm f/2.8"
+  ],
+  "modelCodes": [
+    "20133"
+  ],
   "gtins": [],
   "announced": "2025-10-16",
   "launchPriceUsd": 899.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "tamron-16-50mm-f2-8-a",
+    "tamron-17-70mm-f2-8-di-iii-a-vc-rxd"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 16,

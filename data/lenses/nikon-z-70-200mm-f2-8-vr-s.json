@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 70-200mm f/2.8 VR S",
   "shortName": "NIKKOR Z 70-200mm f/2.8 VR S",
-  "aliases": ["NIKKOR Z 70-200mm f/2.8 VR S", "Z 70-200mm f/2.8 VR S", "70-200mm f/2.8 VR S", "Z 70-200 f/2.8 VR S"],
-  "modelCodes": ["20091"],
+  "aliases": [
+    "NIKKOR Z 70-200mm f/2.8 VR S",
+    "Z 70-200mm f/2.8 VR S",
+    "70-200mm f/2.8 VR S",
+    "Z 70-200 f/2.8 VR S"
+  ],
+  "modelCodes": [
+    "20091"
+  ],
   "gtins": [],
   "announced": "2020-01-06",
   "launchPriceUsd": 2599.95,
   "status": "current",
   "predecessor": null,
   "successor": "nikon-z-70-200mm-f2-8-vr-s-ii",
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "nikon-z-70-180mm-f2-8",
+    "tamron-70-180mm-f2-8-di-iii-vc-vxd-g2"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

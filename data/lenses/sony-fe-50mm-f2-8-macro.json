@@ -3,16 +3,26 @@
   "brand": "sony",
   "name": "Sony FE 50mm F2.8 Macro",
   "shortName": "FE 50mm F2.8 Macro",
-  "aliases": ["FE 50mm F2.8 Macro", "FE 50mm f/2.8 Macro"],
-  "modelCodes": ["SEL50M28"],
+  "aliases": [
+    "FE 50mm F2.8 Macro",
+    "FE 50mm f/2.8 Macro"
+  ],
+  "modelCodes": [
+    "SEL50M28"
+  ],
   "gtins": [],
   "announced": "2016-08-30",
   "launchPriceUsd": 500,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-50mm-f2-5-g",
+    "sigma-45mm-f2-8-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

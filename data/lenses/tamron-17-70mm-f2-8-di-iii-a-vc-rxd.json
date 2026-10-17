@@ -3,16 +3,34 @@
   "brand": "tamron",
   "name": "Tamron 17-70mm F/2.8 Di III-A VC RXD",
   "shortName": "17-70mm F/2.8 Di III-A VC RXD",
-  "aliases": ["17-70mm F/2.8 Di III-A VC RXD", "17-70mm F2.8 Di III-A VC RXD", "17-70mm F/2.8 VC RXD", "17-70mm F2.8 VC RXD", "17-70mm F/2.8 VC", "17-70mm F2.8 VC"],
-  "modelCodes": ["B070"],
+  "aliases": [
+    "17-70mm F/2.8 Di III-A VC RXD",
+    "17-70mm F2.8 Di III-A VC RXD",
+    "17-70mm F/2.8 VC RXD",
+    "17-70mm F2.8 VC RXD",
+    "17-70mm F/2.8 VC",
+    "17-70mm F2.8 VC"
+  ],
+  "modelCodes": [
+    "B070"
+  ],
   "gtins": [],
   "announced": "2020-12-02",
   "launchPriceUsd": 799,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x", "nikon-z", "canon-rf"],
+  "rivals": [
+    "fujifilm-xf-16-55mm-f2-8-r-lm-wr",
+    "fujifilm-xf-16-55mm-f2-8-r-lm-wr-ii",
+    "sony-e-16-55mm-f2-8-g"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x",
+    "nikon-z",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 17,

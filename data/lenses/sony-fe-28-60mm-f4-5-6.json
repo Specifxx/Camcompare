@@ -3,16 +3,27 @@
   "brand": "sony",
   "name": "Sony FE 28-60mm F4-5.6",
   "shortName": "FE 28-60mm F4-5.6",
-  "aliases": ["FE 28-60mm F4-5.6", "FE 28-60mm f/4-5.6", "FE 28-60mm F4-F5.6"],
-  "modelCodes": ["SEL2860"],
+  "aliases": [
+    "FE 28-60mm F4-5.6",
+    "FE 28-60mm f/4-5.6",
+    "FE 28-60mm F4-F5.6"
+  ],
+  "modelCodes": [
+    "SEL2860"
+  ],
   "gtins": [],
   "announced": "2020-09-14",
   "launchPriceUsd": 499.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-28-70mm-f3-5-5-6-oss-ii",
+    "sony-fe-28-70mm-f3-5-5-6-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

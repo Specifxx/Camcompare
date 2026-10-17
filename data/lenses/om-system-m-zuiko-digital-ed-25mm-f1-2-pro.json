@@ -3,16 +3,31 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital ED 25mm F1.2 PRO",
   "shortName": "M.Zuiko Digital ED 25mm F1.2 PRO",
-  "aliases": ["M.Zuiko Digital ED 25mm F1.2 PRO", "M.Zuiko Digital ED 25mm f/1.2 PRO", "M.Zuiko 25mm F1.2 PRO", "M.Zuiko 25mm f/1.2 PRO", "ED 25mm F1.2 PRO", "25mm F1.2 PRO", "25mm f/1.2 PRO", "M.Zuiko 25mm F1.2"],
-  "modelCodes": ["V335260BW000"],
+  "aliases": [
+    "M.Zuiko Digital ED 25mm F1.2 PRO",
+    "M.Zuiko Digital ED 25mm f/1.2 PRO",
+    "M.Zuiko 25mm F1.2 PRO",
+    "M.Zuiko 25mm f/1.2 PRO",
+    "ED 25mm F1.2 PRO",
+    "25mm F1.2 PRO",
+    "25mm f/1.2 PRO",
+    "M.Zuiko 25mm F1.2"
+  ],
+  "modelCodes": [
+    "V335260BW000"
+  ],
   "gtins": [],
   "announced": "2016-09-19",
   "launchPriceUsd": 1199.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-leica-dg-summilux-25mm-f1-4-ii-asph"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 25,

@@ -3,7 +3,13 @@
   "brand": "laowa",
   "name": "Laowa 100mm f/2.8 2X Ultra Macro APO",
   "shortName": "100mm f/2.8 2X Ultra Macro APO",
-  "aliases": ["100mm f/2.8 2X Ultra Macro APO", "100mm f/2.8 2:1 Ultra Macro APO", "100mm f/2.8 Ultra Macro APO", "100mm f/2.8 2X Macro APO", "100mm F2.8 CA-Dreamer Macro 2X"],
+  "aliases": [
+    "100mm f/2.8 2X Ultra Macro APO",
+    "100mm f/2.8 2:1 Ultra Macro APO",
+    "100mm f/2.8 Ultra Macro APO",
+    "100mm f/2.8 2X Macro APO",
+    "100mm F2.8 CA-Dreamer Macro 2X"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2019-05-09",
@@ -11,8 +17,19 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "canon-rf", "nikon-f", "nikon-z", "sony-e", "pentax-k", "l-mount"],
+  "rivals": [
+    "laowa-90mm-f2-8-2x-ultra-macro-apo",
+    "zeiss-loxia-2-4-85"
+  ],
+  "mounts": [
+    "canon-ef",
+    "canon-rf",
+    "nikon-f",
+    "nikon-z",
+    "sony-e",
+    "pentax-k",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

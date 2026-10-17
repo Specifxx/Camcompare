@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony FE 50mm F1.4 GM",
   "shortName": "FE 50mm F1.4 GM",
-  "aliases": ["FE 50mm F1.4 GM", "50mm F1.4 GM", "50mm f/1.4 G Master", "FE 50mm f/1.4 G Master"],
-  "modelCodes": ["SEL50F14GM"],
+  "aliases": [
+    "FE 50mm F1.4 GM",
+    "50mm F1.4 GM",
+    "50mm f/1.4 G Master",
+    "FE 50mm f/1.4 G Master"
+  ],
+  "modelCodes": [
+    "SEL50F14GM"
+  ],
   "gtins": [],
   "announced": "2023-02-21",
   "launchPriceUsd": 1299.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-50mm-f1-4-fe",
+    "samyang-af-50mm-f1-4-fe-ii",
+    "sigma-50mm-f1-4-dg-dn-art"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

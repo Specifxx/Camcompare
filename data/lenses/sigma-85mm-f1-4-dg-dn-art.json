@@ -3,7 +3,12 @@
   "brand": "sigma",
   "name": "Sigma 85mm F1.4 DG DN | Art",
   "shortName": "85mm F1.4 DG DN | Art",
-  "aliases": ["85mm F1.4 DG DN Art", "85mm F1.4 DG DN", "85mm 1.4 DG DN", "85 F1.4 DG DN"],
+  "aliases": [
+    "85mm F1.4 DG DN Art",
+    "85mm F1.4 DG DN",
+    "85mm 1.4 DG DN",
+    "85 F1.4 DG DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-08-06",
@@ -11,8 +16,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "meike-85mm-f1-4",
+    "samyang-af-85mm-f1-4-fe",
+    "samyang-af-85mm-f1-4-fe-ii"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

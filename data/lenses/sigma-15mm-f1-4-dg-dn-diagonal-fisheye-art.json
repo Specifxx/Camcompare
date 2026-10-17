@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 15mm F1.4 DG DN Diagonal Fisheye | Art",
   "shortName": "15mm F1.4 DG DN Diagonal Fisheye | Art",
-  "aliases": ["15mm F1.4 DG DN Diagonal Fisheye Art", "15mm F1.4 DG DN Diagonal Fisheye", "15mm F1.4 Diagonal Fisheye", "15mm F1.4 DG DN Fisheye", "15mm F1.4 DG DN Art", "15mm f/1.4 DG DN A"],
+  "aliases": [
+    "15mm F1.4 DG DN Diagonal Fisheye Art",
+    "15mm F1.4 DG DN Diagonal Fisheye",
+    "15mm F1.4 Diagonal Fisheye",
+    "15mm F1.4 DG DN Fisheye",
+    "15mm F1.4 DG DN Art",
+    "15mm f/1.4 DG DN A"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-02-21",
@@ -11,8 +18,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "sigma-14mm-f1-4-dg-dn-art"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 15,

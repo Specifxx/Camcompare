@@ -3,7 +3,15 @@
   "brand": "canon",
   "name": "Canon EF 100-400mm f/4.5-5.6L IS II USM",
   "shortName": "EF 100-400mm f/4.5-5.6L IS II USM",
-  "aliases": ["EF 100-400mm f/4.5-5.6L IS II USM", "EF100-400mm f/4.5-5.6L IS II USM", "100-400mm f/4.5-5.6L IS II", "100-400mm F4.5-5.6L IS II", "100-400mm f/4.5-5.6 L IS II", "100-400 f/4.5-5.6L IS II", "100-400mm L IS II"],
+  "aliases": [
+    "EF 100-400mm f/4.5-5.6L IS II USM",
+    "EF100-400mm f/4.5-5.6L IS II USM",
+    "100-400mm f/4.5-5.6L IS II",
+    "100-400mm F4.5-5.6L IS II",
+    "100-400mm f/4.5-5.6 L IS II",
+    "100-400 f/4.5-5.6L IS II",
+    "100-400mm L IS II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2014-11-11",
@@ -11,8 +19,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef"],
+  "rivals": [
+    "sigma-100-400mm-f5-6-3-dg-os-hsm-contemporary",
+    "tamron-100-400mm-f4-5-6-3-di-vc-usd",
+    "canon-ef-70-300mm-f4-5-6-is-ii-usm"
+  ],
+  "mounts": [
+    "canon-ef"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

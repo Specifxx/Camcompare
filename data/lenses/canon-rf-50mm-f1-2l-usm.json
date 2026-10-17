@@ -3,16 +3,32 @@
   "brand": "canon",
   "name": "Canon RF 50mm F1.2L USM",
   "shortName": "RF 50mm F1.2L USM",
-  "aliases": ["RF 50mm F1.2L USM", "RF50mm F1.2 L USM", "RF 50mm f/1.2L USM", "RF 50mm F1.2 L USM", "RF 50mm f/1.2 L USM", "RF 50mm F1.2L", "RF 50mm f/1.2L", "RF 50 F1.2L"],
-  "modelCodes": ["2959C002"],
+  "aliases": [
+    "RF 50mm F1.2L USM",
+    "RF50mm F1.2 L USM",
+    "RF 50mm f/1.2L USM",
+    "RF 50mm F1.2 L USM",
+    "RF 50mm f/1.2 L USM",
+    "RF 50mm F1.2L",
+    "RF 50mm f/1.2L",
+    "RF 50 F1.2L"
+  ],
+  "modelCodes": [
+    "2959C002"
+  ],
   "gtins": [],
   "announced": "2018-09-05",
   "launchPriceUsd": 2299,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-45mm-f1-2-stm",
+    "canon-rf-50mm-f1-4l-vcm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

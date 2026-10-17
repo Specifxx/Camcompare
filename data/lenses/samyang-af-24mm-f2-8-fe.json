@@ -3,17 +3,31 @@
   "brand": "samyang",
   "name": "Samyang AF 24mm F2.8 FE",
   "shortName": "AF 24mm F2.8 FE",
-  "aliases": ["AF 24mm F2.8 FE", "24mm F2.8 FE", "AF 24mm F2.8 Sony FE", "AF 24/2.8 FE"],
-  "modelCodes": ["IO24AF-E"],
+  "aliases": [
+    "AF 24mm F2.8 FE",
+    "24mm F2.8 FE",
+    "AF 24mm F2.8 Sony FE",
+    "AF 24/2.8 FE"
+  ],
+  "modelCodes": [
+    "IO24AF-E"
+  ],
   "gtins": [],
   "announced": "2018-06-11",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 299},
+  "launchPrices": {
+    "EUR": 299
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-24mm-f2-8-g",
+    "sigma-24mm-f3-5-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

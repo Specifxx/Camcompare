@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony FE PZ 28-135mm F4 G OSS",
   "shortName": "FE PZ 28-135mm F4 G OSS",
-  "aliases": ["FE PZ 28-135mm F4 G OSS", "PZ 28-135mm F4 G OSS", "28-135mm F4 G OSS", "FE 28-135mm F4 G OSS", "PZ 28-135 G"],
-  "modelCodes": ["SELP28135G"],
+  "aliases": [
+    "FE PZ 28-135mm F4 G OSS",
+    "PZ 28-135mm F4 G OSS",
+    "28-135mm F4 G OSS",
+    "FE 28-135mm F4 G OSS",
+    "PZ 28-135 G"
+  ],
+  "modelCodes": [
+    "SELP28135G"
+  ],
   "gtins": [],
   "announced": "2014-09-12",
   "launchPriceUsd": 2500,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-24-105mm-f4-g-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

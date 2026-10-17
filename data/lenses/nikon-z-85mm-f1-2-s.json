@@ -3,16 +3,29 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 85mm f/1.2 S",
   "shortName": "NIKKOR Z 85mm f/1.2 S",
-  "aliases": ["NIKKOR Z 85mm f/1.2 S", "Z 85mm f/1.2 S", "85mm f/1.2 S", "Z 85 f/1.2 S"],
-  "modelCodes": ["20114"],
+  "aliases": [
+    "NIKKOR Z 85mm f/1.2 S",
+    "Z 85mm f/1.2 S",
+    "85mm f/1.2 S",
+    "Z 85 f/1.2 S"
+  ],
+  "modelCodes": [
+    "20114"
+  ],
   "gtins": [],
   "announced": "2023-02-06",
   "launchPriceUsd": 2799.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "meike-85mm-f1-4",
+    "sirui-aurora-85mm-f1-4",
+    "viltrox-af-85mm-f1-4-pro"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

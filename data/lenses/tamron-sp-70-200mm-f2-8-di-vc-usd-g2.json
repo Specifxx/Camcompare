@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron SP 70-200mm F/2.8 Di VC USD G2",
   "shortName": "SP 70-200mm F/2.8 Di VC USD G2",
-  "aliases": ["SP 70-200mm F/2.8 Di VC USD G2", "SP 70-200mm F2.8 Di VC USD G2", "70-200mm F/2.8 Di VC USD G2", "70-200mm F2.8 Di VC USD G2", "SP 70-200mm G2", "SP 70-200 G2"],
-  "modelCodes": ["A025"],
+  "aliases": [
+    "SP 70-200mm F/2.8 Di VC USD G2",
+    "SP 70-200mm F2.8 Di VC USD G2",
+    "70-200mm F/2.8 Di VC USD G2",
+    "70-200mm F2.8 Di VC USD G2",
+    "SP 70-200mm G2",
+    "SP 70-200 G2"
+  ],
+  "modelCodes": [
+    "A025"
+  ],
   "gtins": [],
   "announced": "2017-02-06",
   "launchPriceUsd": 1299,
   "status": "discontinued",
   "predecessor": "tamron-sp-70-200mm-f2-8-di-vc-usd",
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f"],
+  "rivals": [
+    "nikon-af-s-70-200mm-f2-8e-fl-ed-vr",
+    "canon-ef-70-200mm-f2-8l-is-iii-usm",
+    "sigma-70-200mm-f2-8-dg-os-hsm-sports"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 180-600mm f/5.6-6.3 VR",
   "shortName": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
-  "aliases": ["NIKKOR Z 180-600mm f/5.6-6.3 VR", "Z 180-600mm f/5.6-6.3 VR", "180-600mm f/5.6-6.3 VR", "Z 180-600mm VR", "Z 180-600 f/5.6-6.3 VR"],
-  "modelCodes": ["20117"],
+  "aliases": [
+    "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+    "Z 180-600mm f/5.6-6.3 VR",
+    "180-600mm f/5.6-6.3 VR",
+    "Z 180-600mm VR",
+    "Z 180-600 f/5.6-6.3 VR"
+  ],
+  "modelCodes": [
+    "20117"
+  ],
   "gtins": [],
   "announced": "2023-06-21",
   "launchPriceUsd": 1699.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "tamron-150-500mm-f5-6-7-di-iii-vc-vxd"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 180,

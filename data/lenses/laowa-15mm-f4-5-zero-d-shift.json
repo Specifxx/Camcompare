@@ -3,7 +3,14 @@
   "brand": "laowa",
   "name": "Laowa 15mm f/4.5 Zero-D Shift",
   "shortName": "15mm f/4.5 Zero-D Shift",
-  "aliases": ["15mm f/4.5 Zero-D Shift", "15mm F4.5 Zero-D Shift", "15mm f4.5 Zero-D Shift", "15mm f/4.5 Zero D Shift", "15mm f/4.5 ZeroD Shift", "15mm F4.5 ZERO-D Shift"],
+  "aliases": [
+    "15mm f/4.5 Zero-D Shift",
+    "15mm F4.5 Zero-D Shift",
+    "15mm f4.5 Zero-D Shift",
+    "15mm f/4.5 Zero D Shift",
+    "15mm f/4.5 ZeroD Shift",
+    "15mm F4.5 ZERO-D Shift"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-10-30",
@@ -11,8 +18,19 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "canon-rf", "nikon-f", "nikon-z", "sony-e", "pentax-k", "l-mount"],
+  "rivals": [
+    "laowa-15mm-f4-wide-angle-macro",
+    "laowa-14mm-f4-ff-rl-zero-d"
+  ],
+  "mounts": [
+    "canon-ef",
+    "canon-rf",
+    "nikon-f",
+    "nikon-z",
+    "sony-e",
+    "pentax-k",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 15,

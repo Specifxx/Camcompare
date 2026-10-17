@@ -3,7 +3,13 @@
   "brand": "fujifilm",
   "name": "Fujifilm GF 45mm F2.8 R WR",
   "shortName": "GF 45mm F2.8 R WR",
-  "aliases": ["GF 45mm F2.8 R WR", "GF45mm F2.8 R WR", "GF45mmF2.8 R WR", "GF 45mm f/2.8 R WR", "GF45mm f/2.8 R WR"],
+  "aliases": [
+    "GF 45mm F2.8 R WR",
+    "GF45mm F2.8 R WR",
+    "GF45mmF2.8 R WR",
+    "GF 45mm f/2.8 R WR",
+    "GF45mm f/2.8 R WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2017-09-07",
@@ -11,8 +17,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-g"],
+  "rivals": [
+    "fujifilm-gf-50mm-f3-5-r-lm-wr"
+  ],
+  "mounts": [
+    "fujifilm-g"
+  ],
   "coverage": "medium-format",
   "specs": {
     "focalMinMm": 45,

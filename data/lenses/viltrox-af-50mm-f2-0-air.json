@@ -3,7 +3,11 @@
   "brand": "viltrox",
   "name": "Viltrox AF 50mm F2.0 Air",
   "shortName": "AF 50mm F2.0 Air",
-  "aliases": ["AF 50mm F2.0 Air", "50mm F2.0 Air", "50mm F2 Air"],
+  "aliases": [
+    "AF 50mm F2.0 Air",
+    "50mm F2.0 Air",
+    "50mm F2 Air"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-04-02",
@@ -11,8 +15,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "leica-apo-summicron-sl-50-f2-asph",
+    "leica-summicron-sl-50-f2-asph",
+    "7artisans-af-50mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

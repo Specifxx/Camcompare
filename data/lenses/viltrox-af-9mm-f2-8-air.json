@@ -3,7 +3,10 @@
   "brand": "viltrox",
   "name": "Viltrox AF 9mm F2.8 Air",
   "shortName": "AF 9mm F2.8 Air",
-  "aliases": ["AF 9mm F2.8 Air", "9mm F2.8 Air"],
+  "aliases": [
+    "AF 9mm F2.8 Air",
+    "9mm F2.8 Air"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-09-19",
@@ -11,8 +14,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x", "sony-e", "nikon-z"],
+  "rivals": [
+    "fujifilm-xf-8mm-f3-5-r-wr"
+  ],
+  "mounts": [
+    "fujifilm-x",
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 9,

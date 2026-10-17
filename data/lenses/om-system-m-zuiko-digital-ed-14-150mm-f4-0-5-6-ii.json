@@ -3,16 +3,32 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital ED 14-150mm F4.0-5.6 II",
   "shortName": "M.Zuiko Digital ED 14-150mm F4.0-5.6 II",
-  "aliases": ["M.Zuiko Digital ED 14-150mm F4.0-5.6 II", "M.Zuiko Digital ED 14-150mm f/4-5.6 II", "M.Zuiko 14-150mm F4.0-5.6 II", "M.Zuiko 14-150mm f/4-5.6 II", "ED 14-150mm F4.0-5.6 II", "14-150mm F4.0-5.6 II", "14-150mm f/4-5.6 II", "M.Zuiko 14-150mm II"],
-  "modelCodes": ["V335170BW000"],
+  "aliases": [
+    "M.Zuiko Digital ED 14-150mm F4.0-5.6 II",
+    "M.Zuiko Digital ED 14-150mm f/4-5.6 II",
+    "M.Zuiko 14-150mm F4.0-5.6 II",
+    "M.Zuiko 14-150mm f/4-5.6 II",
+    "ED 14-150mm F4.0-5.6 II",
+    "14-150mm F4.0-5.6 II",
+    "14-150mm f/4-5.6 II",
+    "M.Zuiko 14-150mm II"
+  ],
+  "modelCodes": [
+    "V335170BW000"
+  ],
   "gtins": [],
   "announced": "2015-02-05",
   "launchPriceUsd": 599.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-lumix-g-vario-14-140mm-f3-5-5-6-ii-asph-power-o-i-s",
+    "panasonic-lumix-g-vario-14-140mm-f3-5-5-6-asph-power-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 14,

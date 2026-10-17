@@ -3,16 +3,27 @@
   "brand": "nikon",
   "name": "Nikon AF-S NIKKOR 85mm f/1.8G",
   "shortName": "AF-S NIKKOR 85mm f/1.8G",
-  "aliases": ["AF-S NIKKOR 85mm f/1.8G", "AF-S 85mm f/1.8G", "85mm f/1.8G"],
-  "modelCodes": ["2201"],
+  "aliases": [
+    "AF-S NIKKOR 85mm f/1.8G",
+    "AF-S 85mm f/1.8G",
+    "85mm f/1.8G"
+  ],
+  "modelCodes": [
+    "2201"
+  ],
   "gtins": [],
   "announced": "2012-01-05",
   "launchPriceUsd": 499.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-f"],
+  "rivals": [
+    "meike-85mm-f1-8-se-mark-ii",
+    "tamron-sp-85mm-f1-8-di-vc-usd"
+  ],
+  "mounts": [
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

@@ -3,16 +3,27 @@
   "brand": "sony",
   "name": "Sony FE 24-50mm F2.8 G",
   "shortName": "FE 24-50mm F2.8 G",
-  "aliases": ["FE 24-50mm F2.8 G", "24-50mm F2.8 G", "24-50mm f/2.8 G", "24-50 F2.8 G"],
-  "modelCodes": ["SEL2450G"],
+  "aliases": [
+    "FE 24-50mm F2.8 G",
+    "24-50mm F2.8 G",
+    "24-50mm f/2.8 G",
+    "24-50 F2.8 G"
+  ],
+  "modelCodes": [
+    "SEL2450G"
+  ],
   "gtins": [],
   "announced": "2024-02-21",
   "launchPriceUsd": 1099.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-24-60mm-f2-8-fe"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

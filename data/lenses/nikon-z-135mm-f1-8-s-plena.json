@@ -3,16 +3,29 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 135mm f/1.8 S Plena",
   "shortName": "NIKKOR Z 135mm f/1.8 S Plena",
-  "aliases": ["NIKKOR Z 135mm f/1.8 S Plena", "Z 135mm f/1.8 S Plena", "135mm f/1.8 S Plena", "Z 135mm f/1.8 S", "Z 135mm Plena", "135mm Plena"],
-  "modelCodes": ["20123"],
+  "aliases": [
+    "NIKKOR Z 135mm f/1.8 S Plena",
+    "Z 135mm f/1.8 S Plena",
+    "135mm f/1.8 S Plena",
+    "Z 135mm f/1.8 S",
+    "Z 135mm Plena",
+    "135mm Plena"
+  ],
+  "modelCodes": [
+    "20123"
+  ],
   "gtins": [],
   "announced": "2023-09-27",
   "launchPriceUsd": 2499.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "viltrox-af-135mm-f1-8-lab"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 135,

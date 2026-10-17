@@ -3,16 +3,31 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G X Vario 12-35mm F2.8 ASPH. Power O.I.S.",
   "shortName": "Lumix G X Vario 12-35mm F2.8 ASPH. Power O.I.S.",
-  "aliases": ["Lumix G X Vario 12-35mm F2.8 ASPH. Power O.I.S.", "Lumix G X Vario 12-35mm F2.8", "Lumix G X Vario 12-35mm f/2.8", "G X Vario 12-35mm F2.8", "X Vario 12-35mm F2.8", "Lumix X 12-35mm F2.8"],
-  "modelCodes": ["H-HS12035"],
+  "aliases": [
+    "Lumix G X Vario 12-35mm F2.8 ASPH. Power O.I.S.",
+    "Lumix G X Vario 12-35mm F2.8",
+    "Lumix G X Vario 12-35mm f/2.8",
+    "G X Vario 12-35mm F2.8",
+    "X Vario 12-35mm F2.8",
+    "Lumix X 12-35mm F2.8"
+  ],
+  "modelCodes": [
+    "H-HS12035"
+  ],
   "gtins": [],
   "announced": "2012-05-21",
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
   "successor": "panasonic-lumix-g-x-vario-12-35mm-f2-8-ii-asph-power-o-i-s",
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-leica-dg-vario-elmarit-12-35mm-f2-8-asph-power-o-i-s",
+    "om-system-m-zuiko-digital-ed-12-40mm-f2-8-pro-ii",
+    "om-system-m-zuiko-digital-ed-12-40mm-f2-8-pro"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 12,

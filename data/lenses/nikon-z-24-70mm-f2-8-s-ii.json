@@ -3,16 +3,29 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 24-70mm f/2.8 S II",
   "shortName": "NIKKOR Z 24-70mm f/2.8 S II",
-  "aliases": ["NIKKOR Z 24-70mm f/2.8 S II", "Z 24-70mm f/2.8 S II", "24-70mm f/2.8 S II", "Z 24-70 f/2.8 S II", "24-70 f/2.8 S II"],
-  "modelCodes": ["20129"],
+  "aliases": [
+    "NIKKOR Z 24-70mm f/2.8 S II",
+    "Z 24-70mm f/2.8 S II",
+    "24-70mm f/2.8 S II",
+    "Z 24-70 f/2.8 S II",
+    "24-70 f/2.8 S II"
+  ],
+  "modelCodes": [
+    "20129"
+  ],
   "gtins": [],
   "announced": "2025-08-22",
   "launchPriceUsd": 2799.95,
   "status": "current",
   "predecessor": "nikon-z-24-70mm-f2-8-s",
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "nikon-z-28-75mm-f2-8",
+    "tamron-28-75mm-f2-8-di-iii-vxd-g2"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

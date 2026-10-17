@@ -3,7 +3,12 @@
   "brand": "ttartisan",
   "name": "TTArtisan AF 23mm F1.8",
   "shortName": "AF 23mm F1.8",
-  "aliases": ["AF 23mm F1.8", "AF 1.8/23", "TTArtisan AF 23mm", "TTArtisan 23mm F1.8 AF"],
+  "aliases": [
+    "AF 23mm F1.8",
+    "AF 1.8/23",
+    "TTArtisan AF 23mm",
+    "TTArtisan 23mm F1.8 AF"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-01-13",
@@ -11,8 +16,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x", "sony-e", "nikon-z"],
+  "rivals": [
+    "sony-sonnar-t-e-24mm-f1-8-za",
+    "nikon-z-dx-24mm-f1-7",
+    "fujifilm-xf-23mm-f2-r-wr"
+  ],
+  "mounts": [
+    "fujifilm-x",
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 23,

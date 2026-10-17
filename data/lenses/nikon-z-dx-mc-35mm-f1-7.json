@@ -3,16 +3,30 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z DX MC 35mm f/1.7",
   "shortName": "NIKKOR Z DX MC 35mm f/1.7",
-  "aliases": ["NIKKOR Z DX MC 35mm f/1.7", "Z DX MC 35mm f/1.7", "DX MC 35mm f/1.7", "Z DX MC 35mm f1.7", "Z DX MC 35mm"],
-  "modelCodes": ["20131"],
+  "aliases": [
+    "NIKKOR Z DX MC 35mm f/1.7",
+    "Z DX MC 35mm f/1.7",
+    "DX MC 35mm f/1.7",
+    "Z DX MC 35mm f1.7",
+    "Z DX MC 35mm"
+  ],
+  "modelCodes": [
+    "20131"
+  ],
   "gtins": [],
   "announced": "2025-10-16",
   "launchPriceUsd": 449.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "viltrox-af-35mm-f1-7-air",
+    "ttartisan-af-35mm-f1-8-ii",
+    "meike-33mm-f1-4"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 35,

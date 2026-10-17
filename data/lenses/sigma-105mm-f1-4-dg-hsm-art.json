@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 105mm F1.4 DG HSM | Art",
   "shortName": "105mm F1.4 DG HSM | Art",
-  "aliases": ["105mm F1.4 DG HSM Art", "105mm F1.4 DG HSM", "105mm f/1.4 DG HSM A", "105mm 1.4 DG HSM", "105 F1.4 DG HSM", "105mm F1.4 Art"],
+  "aliases": [
+    "105mm F1.4 DG HSM Art",
+    "105mm F1.4 DG HSM",
+    "105mm f/1.4 DG HSM A",
+    "105mm 1.4 DG HSM",
+    "105 F1.4 DG HSM",
+    "105mm F1.4 Art"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-02-27",
@@ -11,8 +18,15 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-e", "l-mount"],
+  "rivals": [
+    "nikon-af-s-105mm-f1-4e-ed"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 105,

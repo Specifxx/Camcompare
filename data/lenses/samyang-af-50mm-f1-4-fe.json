@@ -3,17 +3,32 @@
   "brand": "samyang",
   "name": "Samyang AF 50mm F1.4 FE",
   "shortName": "AF 50mm F1.4 FE",
-  "aliases": ["AF 50mm F1.4 FE", "50mm F1.4 FE", "AF 50mm F1.4 Sony FE", "AF 50/1.4 FE"],
-  "modelCodes": ["IO50AF-E"],
+  "aliases": [
+    "AF 50mm F1.4 FE",
+    "50mm F1.4 FE",
+    "AF 50mm F1.4 Sony FE",
+    "AF 50/1.4 FE"
+  ],
+  "modelCodes": [
+    "IO50AF-E"
+  ],
   "gtins": [],
   "announced": "2016-05-03",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 579},
+  "launchPrices": {
+    "EUR": 579
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-50mm-f1-4-fe-ii",
+    "sigma-50mm-f1-4-dg-dn-art",
+    "sony-fe-50mm-f1-4-gm"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

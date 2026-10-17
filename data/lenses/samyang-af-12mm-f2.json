@@ -3,7 +3,13 @@
   "brand": "samyang",
   "name": "Samyang AF 12mm F2",
   "shortName": "AF 12mm F2",
-  "aliases": ["AF 12mm F2", "AF 12mm F2.0", "AF 12mm F2 E", "AF 12mm F2 X", "AF 12mm F2 RF-S"],
+  "aliases": [
+    "AF 12mm F2",
+    "AF 12mm F2.0",
+    "AF 12mm F2 E",
+    "AF 12mm F2 X",
+    "AF 12mm F2 RF-S"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-04-23",
@@ -11,8 +17,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x", "canon-rf"],
+  "rivals": [
+    "sony-e-11mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 12,

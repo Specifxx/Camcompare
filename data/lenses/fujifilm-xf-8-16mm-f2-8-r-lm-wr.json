@@ -3,7 +3,11 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 8-16mm F2.8 R LM WR",
   "shortName": "XF 8-16mm F2.8 R LM WR",
-  "aliases": ["XF 8-16mm F2.8 R LM WR", "8-16mm F2.8 R LM WR", "XF 8-16 F2.8 R LM WR"],
+  "aliases": [
+    "XF 8-16mm F2.8 R LM WR",
+    "8-16mm F2.8 R LM WR",
+    "XF 8-16 F2.8 R LM WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-07-20",
@@ -11,8 +15,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "sigma-10-18mm-f2-8-dc-dn-contemporary"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 8,

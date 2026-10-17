@@ -3,16 +3,27 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital 17mm F1.8 II",
   "shortName": "M.Zuiko Digital 17mm F1.8 II",
-  "aliases": ["M.Zuiko Digital 17mm F1.8 II", "M.Zuiko Digital 17mm f/1.8 II", "M.Zuiko 17mm F1.8 II", "M.Zuiko 17mm f/1.8 II"],
-  "modelCodes": ["V336020BW000"],
+  "aliases": [
+    "M.Zuiko Digital 17mm F1.8 II",
+    "M.Zuiko Digital 17mm f/1.8 II",
+    "M.Zuiko 17mm F1.8 II",
+    "M.Zuiko 17mm f/1.8 II"
+  ],
+  "modelCodes": [
+    "V336020BW000"
+  ],
   "gtins": [],
   "announced": "2025-02-06",
   "launchPriceUsd": 549.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-leica-dg-summilux-15mm-f1-7-asph"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 17,

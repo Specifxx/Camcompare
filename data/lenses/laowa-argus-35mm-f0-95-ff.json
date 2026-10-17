@@ -3,7 +3,12 @@
   "brand": "laowa",
   "name": "Laowa Argus 35mm f/0.95 FF",
   "shortName": "Argus 35mm f/0.95 FF",
-  "aliases": ["Argus 35mm f/0.95 FF", "Argus FF II 35mm F0.95", "Argus 35mm f/0.95", "35mm f/0.95 FF"],
+  "aliases": [
+    "Argus 35mm f/0.95 FF",
+    "Argus FF II 35mm F0.95",
+    "Argus 35mm f/0.95",
+    "35mm f/0.95 FF"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-09-10",
@@ -11,8 +16,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "canon-rf"],
+  "rivals": [
+    "voigtlander-nokton-40mm-f1-2-aspherical"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

@@ -3,16 +3,31 @@
   "brand": "leica",
   "name": "Leica Vario-Elmarit-SL 24-70 f/2.8 ASPH.",
   "shortName": "Vario-Elmarit-SL 24-70 f/2.8 ASPH.",
-  "aliases": ["Vario-Elmarit-SL 24-70 f/2.8 ASPH.", "Vario-Elmarit-SL 24-70mm f/2.8 ASPH", "Vario-Elmarit-SL 24-70mm f/2.8", "24-70mm f/2.8 Vario-Elmarit-SL ASPH", "Vario-Elmarit-SL 1:2.8/24-70 ASPH", "SL 24-70mm f/2.8 ASPH"],
-  "modelCodes": ["11189"],
+  "aliases": [
+    "Vario-Elmarit-SL 24-70 f/2.8 ASPH.",
+    "Vario-Elmarit-SL 24-70mm f/2.8 ASPH",
+    "Vario-Elmarit-SL 24-70mm f/2.8",
+    "24-70mm f/2.8 Vario-Elmarit-SL ASPH",
+    "Vario-Elmarit-SL 1:2.8/24-70 ASPH",
+    "SL 24-70mm f/2.8 ASPH"
+  ],
+  "modelCodes": [
+    "11189"
+  ],
   "gtins": [],
   "announced": "2021-05-06",
   "launchPriceUsd": 2795,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "panasonic-lumix-s-pro-24-70mm-f2-8",
+    "sigma-24-70mm-f2-8-dg-dn-art-ii",
+    "leica-vario-elmarit-sl-28-70-f2-8-asph"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

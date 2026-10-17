@@ -3,7 +3,15 @@
   "brand": "sigma",
   "name": "Sigma 24-70mm F2.8 DG OS HSM | Art",
   "shortName": "24-70mm F2.8 DG OS HSM | Art",
-  "aliases": ["24-70mm F2.8 DG OS HSM Art", "24-70mm F2.8 DG OS HSM", "24-70mm f/2.8 DG OS HSM A", "24-70mm 2.8 DG OS HSM", "24-70 F2.8 DG OS HSM", "24-70mm F2.8 OS HSM Art", "24-70mm F2.8 DG HSM OS Art"],
+  "aliases": [
+    "24-70mm F2.8 DG OS HSM Art",
+    "24-70mm F2.8 DG OS HSM",
+    "24-70mm f/2.8 DG OS HSM A",
+    "24-70mm 2.8 DG OS HSM",
+    "24-70 F2.8 DG OS HSM",
+    "24-70mm F2.8 OS HSM Art",
+    "24-70mm F2.8 DG HSM OS Art"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2017-02-21",
@@ -11,8 +19,15 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f"],
+  "rivals": [
+    "nikon-af-s-24-70mm-f2-8e-ed-vr",
+    "tamron-sp-24-70mm-f2-8-di-vc-usd-g2",
+    "canon-ef-24-70mm-f2-8l-ii-usm"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

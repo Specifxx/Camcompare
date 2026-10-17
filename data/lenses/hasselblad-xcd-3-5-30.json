@@ -3,16 +3,29 @@
   "brand": "hasselblad",
   "name": "Hasselblad XCD 3,5/30",
   "shortName": "XCD 3,5/30",
-  "aliases": ["XCD 3,5/30", "XCD 3.5/30", "XCD 3.5/30mm", "XCD 30mm f/3.5", "XCD 30mm F3.5", "XCD 30 f/3.5"],
-  "modelCodes": ["CP.QT.00000198.01"],
+  "aliases": [
+    "XCD 3,5/30",
+    "XCD 3.5/30",
+    "XCD 3.5/30mm",
+    "XCD 30mm f/3.5",
+    "XCD 30mm F3.5",
+    "XCD 30 f/3.5"
+  ],
+  "modelCodes": [
+    "CP.QT.00000198.01"
+  ],
   "gtins": [],
   "announced": "2016-09-19",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["hasselblad-xcd"],
+  "rivals": [
+    "hasselblad-xcd-4-28p"
+  ],
+  "mounts": [
+    "hasselblad-xcd"
+  ],
   "coverage": "medium-format",
   "specs": {
     "focalMinMm": 31,

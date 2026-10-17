@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony E 35mm F1.8 OSS",
   "shortName": "E 35mm F1.8 OSS",
-  "aliases": ["E 35mm F1.8 OSS", "E 35mm f/1.8 OSS", "35mm F1.8 OSS", "35mm f/1.8 OSS"],
-  "modelCodes": ["SEL35F18"],
+  "aliases": [
+    "E 35mm F1.8 OSS",
+    "E 35mm f/1.8 OSS",
+    "35mm F1.8 OSS",
+    "35mm f/1.8 OSS"
+  ],
+  "modelCodes": [
+    "SEL35F18"
+  ],
   "gtins": [],
   "announced": "2012-09-12",
   "launchPriceUsd": 450,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "ttartisan-af-35mm-f1-8-ii",
+    "viltrox-af-35mm-f1-7-air",
+    "zeiss-touit-1-8-32"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 35,

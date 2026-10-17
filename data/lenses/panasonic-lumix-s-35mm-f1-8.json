@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 35mm F1.8",
   "shortName": "Lumix S 35mm F1.8",
-  "aliases": ["Lumix S 35mm F1.8", "Lumix S 35mm f/1.8", "S 35mm F1.8", "S 35mm f/1.8"],
-  "modelCodes": ["S-S35"],
+  "aliases": [
+    "Lumix S 35mm F1.8",
+    "Lumix S 35mm f/1.8",
+    "S 35mm F1.8",
+    "S 35mm f/1.8"
+  ],
+  "modelCodes": [
+    "S-S35"
+  ],
   "gtins": [],
   "announced": "2021-11-09",
   "launchPriceUsd": 699.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "leica-apo-summicron-sl-35-f2-asph",
+    "leica-summicron-sl-35-f2-asph",
+    "panasonic-lumix-s-40mm-f2"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

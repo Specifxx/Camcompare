@@ -3,17 +3,37 @@
   "brand": "leica",
   "name": "Leica Vario-Elmarit-SL 70-200 f/2.8 ASPH.",
   "shortName": "Vario-Elmarit-SL 70-200 f/2.8 ASPH.",
-  "aliases": ["Vario-Elmarit-SL 70-200 f/2.8 ASPH.", "Vario-Elmarit-SL 70-200mm f/2.8 ASPH", "Vario-Elmarit-SL 70-200 f/2.8", "Vario-Elmarit-SL 70-200mm f/2.8", "Vario-Elmarit-SL 70-200mm F2.8 ASPH", "Vario-Elmarit-SL 70-200", "70-200mm f/2.8 Vario-Elmarit-SL ASPH", "70-200mm f/2.8 Vario-Elmarit-SL", "SL 70-200mm f/2.8 ASPH"],
-  "modelCodes": ["11096"],
+  "aliases": [
+    "Vario-Elmarit-SL 70-200 f/2.8 ASPH.",
+    "Vario-Elmarit-SL 70-200mm f/2.8 ASPH",
+    "Vario-Elmarit-SL 70-200 f/2.8",
+    "Vario-Elmarit-SL 70-200mm f/2.8",
+    "Vario-Elmarit-SL 70-200mm F2.8 ASPH",
+    "Vario-Elmarit-SL 70-200",
+    "70-200mm f/2.8 Vario-Elmarit-SL ASPH",
+    "70-200mm f/2.8 Vario-Elmarit-SL",
+    "SL 70-200mm f/2.8 ASPH"
+  ],
+  "modelCodes": [
+    "11096"
+  ],
   "gtins": [],
   "announced": "2024-09-05",
   "launchPriceUsd": 3295,
-  "launchPrices": {"EUR": 3150},
+  "launchPrices": {
+    "EUR": 3150
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "panasonic-lumix-s-pro-70-200mm-f2-8-o-i-s",
+    "sigma-70-200mm-f2-8-dg-dn-os-sports",
+    "samyang-af-60-180mm-f2-8"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

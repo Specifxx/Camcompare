@@ -3,16 +3,30 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 35mm f/1.2 S",
   "shortName": "NIKKOR Z 35mm f/1.2 S",
-  "aliases": ["NIKKOR Z 35mm f/1.2 S", "Z 35mm f/1.2 S", "35mm f/1.2 S", "Z 35mm f1.2 S", "Z 35 f/1.2 S"],
-  "modelCodes": ["20124"],
+  "aliases": [
+    "NIKKOR Z 35mm f/1.2 S",
+    "Z 35mm f/1.2 S",
+    "35mm f/1.2 S",
+    "Z 35mm f1.2 S",
+    "Z 35 f/1.2 S"
+  ],
+  "modelCodes": [
+    "20124"
+  ],
   "gtins": [],
   "announced": "2025-02-04",
   "launchPriceUsd": 2799.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "viltrox-af-35mm-f1-2-lab",
+    "nikon-z-35mm-f1-4",
+    "sirui-aurora-35mm-f1-4"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

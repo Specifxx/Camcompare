@@ -3,7 +3,12 @@
   "brand": "7artisans",
   "name": "7Artisans AF 85mm F1.8",
   "shortName": "AF 85mm F1.8",
-  "aliases": ["AF 85mm F1.8", "AF 85/1.8", "7Artisans 85mm F1.8 AF", "7Artisans AF 85mm"],
+  "aliases": [
+    "AF 85mm F1.8",
+    "AF 85/1.8",
+    "7Artisans 85mm F1.8 AF",
+    "7Artisans AF 85mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-07-19",
@@ -11,8 +16,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "meike-85mm-f1-8-pro",
+    "meike-85mm-f1-8-se-mark-ii",
+    "nikon-z-85mm-f1-8-s"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

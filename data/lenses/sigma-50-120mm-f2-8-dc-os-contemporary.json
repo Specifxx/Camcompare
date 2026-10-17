@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 50-120mm F2.8 DC OS | Contemporary",
   "shortName": "50-120mm F2.8 DC OS | Contemporary",
-  "aliases": ["50-120mm F2.8 DC OS Contemporary", "50-120mm F2.8 DC OS", "50-120mm F2.8 OS DC", "50-120mm f/2.8 DC OS C", "50-120mm F2.8 DC", "50-120 F2.8 DC OS"],
+  "aliases": [
+    "50-120mm F2.8 DC OS Contemporary",
+    "50-120mm F2.8 DC OS",
+    "50-120mm F2.8 OS DC",
+    "50-120mm f/2.8 DC OS C",
+    "50-120mm F2.8 DC",
+    "50-120 F2.8 DC OS"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2026-10-08",
@@ -11,8 +18,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x", "canon-rf"],
+  "rivals": [
+    "fujifilm-xf-50-140mm-f2-8-r-lm-ois-wr"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 50,

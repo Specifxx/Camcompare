@@ -3,17 +3,34 @@
   "brand": "hasselblad",
   "name": "Hasselblad XCD 4/28P",
   "shortName": "XCD 4/28P",
-  "aliases": ["XCD 4/28P", "XCD 4,0/28P", "XCD 4/28 P", "XCD 28P", "XCD 28mm f/4 P", "XCD 28mm F4 P", "XCD 28mm f/4", "XCD 28mm F4P"],
-  "modelCodes": ["CP.HB.00000830.01"],
+  "aliases": [
+    "XCD 4/28P",
+    "XCD 4,0/28P",
+    "XCD 4/28 P",
+    "XCD 28P",
+    "XCD 28mm f/4 P",
+    "XCD 28mm F4 P",
+    "XCD 28mm f/4",
+    "XCD 28mm F4P"
+  ],
+  "modelCodes": [
+    "CP.HB.00000830.01"
+  ],
   "gtins": [],
   "announced": "2023-08-23",
   "launchPriceUsd": 1679,
-  "launchPrices": {"EUR": 1899},
+  "launchPrices": {
+    "EUR": 1899
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["hasselblad-xcd"],
+  "rivals": [
+    "hasselblad-xcd-3-5-30"
+  ],
+  "mounts": [
+    "hasselblad-xcd"
+  ],
   "coverage": "medium-format",
   "specs": {
     "focalMinMm": 28,

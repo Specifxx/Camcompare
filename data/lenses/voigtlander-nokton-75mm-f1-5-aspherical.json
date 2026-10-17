@@ -3,7 +3,12 @@
   "brand": "voigtlander",
   "name": "Voigtländer Nokton 75mm F1.5 Aspherical",
   "shortName": "Nokton 75mm F1.5 Aspherical",
-  "aliases": ["Nokton 75mm F1.5 Aspherical", "Nokton 75mm f/1.5 Aspherical", "Nokton 75mm F1.5 Asph", "Nokton 75mm f/1.5 Asph"],
+  "aliases": [
+    "Nokton 75mm F1.5 Aspherical",
+    "Nokton 75mm f/1.5 Aspherical",
+    "Nokton 75mm F1.5 Asph",
+    "Nokton 75mm f/1.5 Asph"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-03-15",
@@ -11,8 +16,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf", "nikon-z", "sony-e"],
+  "rivals": [
+    "zeiss-otus-ml-1-4-85"
+  ],
+  "mounts": [
+    "canon-rf",
+    "nikon-z",
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 75,

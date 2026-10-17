@@ -3,17 +3,33 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 16-50mm F2.8-4.8 R LM WR",
   "shortName": "XF 16-50mm F2.8-4.8 R LM WR",
-  "aliases": ["XF 16-50mm F2.8-4.8 R LM WR", "XF16-50mm F2.8-4.8 R LM WR", "XF16-50mmF2.8-4.8 R LM WR", "XF 16-50mm f/2.8-4.8 R LM WR", "XF16-50mm f/2.8-4.8 R LM WR", "16-50mm F2.8-4.8 R LM WR", "16-50mm f/2.8-4.8 R LM WR"],
+  "aliases": [
+    "XF 16-50mm F2.8-4.8 R LM WR",
+    "XF16-50mm F2.8-4.8 R LM WR",
+    "XF16-50mmF2.8-4.8 R LM WR",
+    "XF 16-50mm f/2.8-4.8 R LM WR",
+    "XF16-50mm f/2.8-4.8 R LM WR",
+    "16-50mm F2.8-4.8 R LM WR",
+    "16-50mm f/2.8-4.8 R LM WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-05-16",
   "launchPriceUsd": 699.95,
-  "launchPrices": {"EUR": 799},
+  "launchPrices": {
+    "EUR": 799
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-18-55mm-f2-8-4-r-lm-ois",
+    "fujifilm-xc-15-45mm-f3-5-5-6-ois-pz",
+    "fujifilm-xc-16-50mm-f3-5-5-6-ois-ii"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 16,

@@ -3,7 +3,18 @@
   "brand": "om-system",
   "name": "Olympus M.Zuiko Digital ED 12-40mm F2.8 PRO",
   "shortName": "M.Zuiko Digital ED 12-40mm F2.8 PRO",
-  "aliases": ["M.Zuiko Digital ED 12-40mm F2.8 PRO", "M.Zuiko ED 12-40mm F2.8 PRO", "M.Zuiko 12-40mm F2.8 PRO", "M.Zuiko 12-40mm f/2.8 PRO", "ED 12-40mm F2.8 PRO", "12-40mm F2.8 PRO", "12-40mm f/2.8 PRO", "12-40 F2.8 PRO", "12-40mm PRO", "12-40 PRO"],
+  "aliases": [
+    "M.Zuiko Digital ED 12-40mm F2.8 PRO",
+    "M.Zuiko ED 12-40mm F2.8 PRO",
+    "M.Zuiko 12-40mm F2.8 PRO",
+    "M.Zuiko 12-40mm f/2.8 PRO",
+    "ED 12-40mm F2.8 PRO",
+    "12-40mm F2.8 PRO",
+    "12-40mm f/2.8 PRO",
+    "12-40 F2.8 PRO",
+    "12-40mm PRO",
+    "12-40 PRO"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2013-09-10",
@@ -11,8 +22,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": "om-system-m-zuiko-digital-ed-12-40mm-f2-8-pro-ii",
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-leica-dg-vario-elmarit-12-35mm-f2-8-asph-power-o-i-s",
+    "panasonic-lumix-g-x-vario-12-35mm-f2-8-asph-power-o-i-s",
+    "panasonic-lumix-g-x-vario-12-35mm-f2-8-ii-asph-power-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 12,

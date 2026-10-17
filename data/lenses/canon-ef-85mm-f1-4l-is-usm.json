@@ -3,7 +3,15 @@
   "brand": "canon",
   "name": "Canon EF 85mm f/1.4L IS USM",
   "shortName": "EF 85mm f/1.4L IS USM",
-  "aliases": ["EF 85mm f/1.4L IS USM", "EF85mm f/1.4L IS USM", "85mm f/1.4L IS USM", "85mm F1.4L IS USM", "85mm f/1.4L IS", "85mm F1.4L IS", "85mm f/1.4 L IS"],
+  "aliases": [
+    "EF 85mm f/1.4L IS USM",
+    "EF85mm f/1.4L IS USM",
+    "85mm f/1.4L IS USM",
+    "85mm F1.4L IS USM",
+    "85mm f/1.4L IS",
+    "85mm F1.4L IS",
+    "85mm f/1.4 L IS"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2017-08-29",
@@ -11,8 +19,12 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef"],
+  "rivals": [
+    "sigma-85mm-f1-4-dg-hsm-art"
+  ],
+  "mounts": [
+    "canon-ef"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

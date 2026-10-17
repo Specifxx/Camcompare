@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 28-135mm f/4 PZ",
   "shortName": "NIKKOR Z 28-135mm f/4 PZ",
-  "aliases": ["NIKKOR Z 28-135mm f/4 PZ", "Z 28-135mm f/4 PZ", "Z 28-135mm f4 PZ", "Z 28-135mm f/4", "Z 28-135mm PZ"],
-  "modelCodes": ["20127"],
+  "aliases": [
+    "NIKKOR Z 28-135mm f/4 PZ",
+    "Z 28-135mm f/4 PZ",
+    "Z 28-135mm f4 PZ",
+    "Z 28-135mm f/4",
+    "Z 28-135mm PZ"
+  ],
+  "modelCodes": [
+    "20127"
+  ],
   "gtins": [],
   "announced": "2025-02-12",
   "launchPriceUsd": 2599.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "nikon-z-24-120mm-f4-s"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

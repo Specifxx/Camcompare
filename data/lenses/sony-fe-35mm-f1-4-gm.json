@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony FE 35mm F1.4 GM",
   "shortName": "FE 35mm F1.4 GM",
-  "aliases": ["FE 35mm F1.4 GM", "35mm F1.4 GM", "35mm f/1.4 G Master", "FE 35mm f/1.4 G Master"],
-  "modelCodes": ["SEL35F14GM"],
+  "aliases": [
+    "FE 35mm F1.4 GM",
+    "35mm F1.4 GM",
+    "35mm f/1.4 G Master",
+    "FE 35mm f/1.4 G Master"
+  ],
+  "modelCodes": [
+    "SEL35F14GM"
+  ],
   "gtins": [],
   "announced": "2021-01-13",
   "launchPriceUsd": 1399.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-35mm-f1-4-fe",
+    "samyang-af-35mm-f1-4-fe-ii",
+    "samyang-af-35mm-f1-4-p-fe"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

@@ -3,16 +3,34 @@
   "brand": "tamron",
   "name": "Tamron SP 150-600mm F/5-6.3 Di VC USD G2",
   "shortName": "SP 150-600mm F/5-6.3 Di VC USD G2",
-  "aliases": ["SP 150-600mm F/5-6.3 Di VC USD G2", "SP 150-600mm F5-6.3 Di VC USD G2", "150-600mm F/5-6.3 Di VC USD G2", "150-600mm F5-6.3 Di VC USD G2", "SP 150-600mm F/5-6.3 Di USD G2", "SP 150-600mm G2", "150-600mm G2", "150-600 G2"],
-  "modelCodes": ["A022"],
+  "aliases": [
+    "SP 150-600mm F/5-6.3 Di VC USD G2",
+    "SP 150-600mm F5-6.3 Di VC USD G2",
+    "150-600mm F/5-6.3 Di VC USD G2",
+    "150-600mm F5-6.3 Di VC USD G2",
+    "SP 150-600mm F/5-6.3 Di USD G2",
+    "SP 150-600mm G2",
+    "150-600mm G2",
+    "150-600 G2"
+  ],
+  "modelCodes": [
+    "A022"
+  ],
   "gtins": [],
   "announced": "2016-09-01",
   "launchPriceUsd": 1399,
   "status": "discontinued",
   "predecessor": "tamron-sp-150-600mm-f5-6-3-di-vc-usd",
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "sigma-150-600mm-f5-6-3-dg-os-hsm-contemporary",
+    "sigma-150-600mm-f5-6-3-dg-os-hsm-sports"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 150,

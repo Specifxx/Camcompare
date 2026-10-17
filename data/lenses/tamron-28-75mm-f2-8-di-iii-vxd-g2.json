@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron 28-75mm F/2.8 Di III VXD G2",
   "shortName": "28-75mm F/2.8 Di III VXD G2",
-  "aliases": ["28-75mm F/2.8 Di III VXD G2", "28-75mm F2.8 Di III VXD G2", "28-75mm F/2.8 G2", "28-75mm F2.8 G2", "28-75mm G2", "28-75 G2"],
-  "modelCodes": ["A063"],
+  "aliases": [
+    "28-75mm F/2.8 Di III VXD G2",
+    "28-75mm F2.8 Di III VXD G2",
+    "28-75mm F/2.8 G2",
+    "28-75mm F2.8 G2",
+    "28-75mm G2",
+    "28-75 G2"
+  ],
+  "modelCodes": [
+    "A063"
+  ],
   "gtins": [],
   "announced": "2021-09-29",
   "launchPriceUsd": 899,
   "status": "current",
   "predecessor": "tamron-28-75mm-f2-8-di-iii-rxd",
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "nikon-z-28-75mm-f2-8",
+    "sigma-28-70mm-f2-8-dg-dn-contemporary",
+    "nikon-z-24-70mm-f2-8-s"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

@@ -3,17 +3,32 @@
   "brand": "samyang",
   "name": "Samyang AF 35mm F1.4 FE",
   "shortName": "AF 35mm F1.4 FE",
-  "aliases": ["AF 35mm F1.4 FE", "35mm F1.4 FE", "AF 35mm F1.4 Sony FE", "AF 35/1.4 FE"],
-  "modelCodes": ["IO3514-E"],
+  "aliases": [
+    "AF 35mm F1.4 FE",
+    "35mm F1.4 FE",
+    "AF 35mm F1.4 Sony FE",
+    "AF 35/1.4 FE"
+  ],
+  "modelCodes": [
+    "IO3514-E"
+  ],
   "gtins": [],
   "announced": "2017-10-10",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 649},
+  "launchPrices": {
+    "EUR": 649
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-35mm-f1-4-fe-ii",
+    "samyang-af-35mm-f1-4-p-fe",
+    "sigma-35mm-f1-4-dg-art-ii"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

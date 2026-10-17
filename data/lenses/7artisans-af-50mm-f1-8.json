@@ -3,7 +3,11 @@
   "brand": "7artisans",
   "name": "7Artisans AF 50mm F1.8",
   "shortName": "AF 50mm F1.8",
-  "aliases": ["7Artisans AF 50mm F1.8", "7Artisans AF 50mm f/1.8", "7 Artisans AF 50mm F1.8"],
+  "aliases": [
+    "7Artisans AF 50mm F1.8",
+    "7Artisans AF 50mm f/1.8",
+    "7 Artisans AF 50mm F1.8"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-03-18",
@@ -11,8 +15,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "meike-50mm-f1-8",
+    "nikon-z-50mm-f1-8-s",
+    "panasonic-lumix-s-50mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

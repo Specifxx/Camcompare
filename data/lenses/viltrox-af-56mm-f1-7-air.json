@@ -3,7 +3,13 @@
   "brand": "viltrox",
   "name": "Viltrox AF 56mm F1.7 Air",
   "shortName": "AF 56mm F1.7 Air",
-  "aliases": ["AF 56mm F1.7 Air", "56mm F1.7 Air", "Viltrox AF 56mm F1.7", "Viltrox 56mm F1.7", "AF 56/1.7"],
+  "aliases": [
+    "AF 56mm F1.7 Air",
+    "56mm F1.7 Air",
+    "Viltrox AF 56mm F1.7",
+    "Viltrox 56mm F1.7",
+    "AF 56/1.7"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-04-08",
@@ -11,8 +17,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x", "sony-e", "nikon-z"],
+  "rivals": [
+    "ttartisan-af-56mm-f1-8",
+    "sony-e-50mm-f1-8-oss",
+    "sigma-56mm-f1-4-dc-dn-contemporary"
+  ],
+  "mounts": [
+    "fujifilm-x",
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 56,

@@ -3,16 +3,29 @@
   "brand": "leica",
   "name": "Leica Summicron-M 35 f/2 ASPH.",
   "shortName": "Summicron-M 35 f/2 ASPH.",
-  "aliases": ["Summicron-M 35 f/2 ASPH.", "Summicron-M 35mm f/2 ASPH", "Summicron-M 35mm f/2.0 ASPH", "35mm f/2 Summicron-M ASPH", "Summicron-M 1:2/35 ASPH"],
-  "modelCodes": ["11673", "11674"],
+  "aliases": [
+    "Summicron-M 35 f/2 ASPH.",
+    "Summicron-M 35mm f/2 ASPH",
+    "Summicron-M 35mm f/2.0 ASPH",
+    "35mm f/2 Summicron-M ASPH",
+    "Summicron-M 1:2/35 ASPH"
+  ],
+  "modelCodes": [
+    "11673",
+    "11674"
+  ],
   "gtins": [],
   "announced": "2016-01-14",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["leica-m"],
+  "rivals": [
+    "leica-apo-summicron-m-35-f2-asph"
+  ],
+  "mounts": [
+    "leica-m"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

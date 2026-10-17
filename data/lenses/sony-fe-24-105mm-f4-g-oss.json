@@ -3,17 +3,30 @@
   "brand": "sony",
   "name": "Sony FE 24-105mm F4 G OSS",
   "shortName": "FE 24-105mm F4 G OSS",
-  "aliases": ["FE 24-105mm F4 G OSS", "24-105mm F4 G OSS", "24-105mm f/4 G OSS", "24-105 G OSS"],
-  "modelCodes": ["SEL24105G"],
+  "aliases": [
+    "FE 24-105mm F4 G OSS",
+    "24-105mm F4 G OSS",
+    "24-105mm f/4 G OSS",
+    "24-105 G OSS"
+  ],
+  "modelCodes": [
+    "SEL24105G"
+  ],
   "gtins": [],
   "announced": "2017-10-25",
   "launchPriceUsd": 1300,
-  "launchPrices": {"EUR": 1350},
+  "launchPrices": {
+    "EUR": 1350
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-pz-28-135mm-f4-g-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

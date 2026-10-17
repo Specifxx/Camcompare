@@ -3,7 +3,11 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 50mm F2 R WR",
   "shortName": "XF 50mm F2 R WR",
-  "aliases": ["XF 50mm F2 R WR", "50mm F2 R WR", "XF 50 F2 R WR"],
+  "aliases": [
+    "XF 50mm F2 R WR",
+    "50mm F2 R WR",
+    "XF 50 F2 R WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2017-01-19",
@@ -11,8 +15,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "ttartisan-af-56mm-f1-8",
+    "viltrox-af-56mm-f1-7-air"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 50,
@@ -25,7 +34,7 @@
     "stabilized": false,
     "weatherSealed": true,
     "weightG": 200,
-    "diameterMm": 60.0,
+    "diameterMm": 60,
     "lengthMm": 59.4,
     "filterMm": 46,
     "minFocusM": 0.39,

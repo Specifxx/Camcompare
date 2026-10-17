@@ -3,16 +3,31 @@
   "brand": "tamron",
   "name": "Tamron 70-300mm F/4.5-6.3 Di III RXD",
   "shortName": "70-300mm F/4.5-6.3 Di III RXD",
-  "aliases": ["70-300mm F/4.5-6.3 Di III RXD", "70-300mm F4.5-6.3 Di III RXD", "70-300mm F/4.5-6.3 RXD", "70-300mm F4.5-6.3 RXD"],
-  "modelCodes": ["A047", "A047Z"],
+  "aliases": [
+    "70-300mm F/4.5-6.3 Di III RXD",
+    "70-300mm F4.5-6.3 Di III RXD",
+    "70-300mm F/4.5-6.3 RXD",
+    "70-300mm F4.5-6.3 RXD"
+  ],
+  "modelCodes": [
+    "A047",
+    "A047Z"
+  ],
   "gtins": [],
   "announced": "2020-09-24",
   "launchPriceUsd": 549,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "tamron-50-300mm-f4-5-6-3-di-iii-vc-vxd",
+    "sony-fe-70-300mm-f4-5-5-6-g-oss",
+    "sigma-100-400mm-f5-6-3-dg-dn-os-contemporary"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

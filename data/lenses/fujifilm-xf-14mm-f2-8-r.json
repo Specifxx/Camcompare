@@ -3,7 +3,13 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 14mm F2.8 R",
   "shortName": "XF 14mm F2.8 R",
-  "aliases": ["XF 14mm F2.8 R", "XF14mm F2.8 R", "XF14mmF2.8 R", "XF 14mm f/2.8 R", "XF14mm f/2.8 R"],
+  "aliases": [
+    "XF 14mm F2.8 R",
+    "XF14mm F2.8 R",
+    "XF14mmF2.8 R",
+    "XF 14mm f/2.8 R",
+    "XF14mm f/2.8 R"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2012-09-06",
@@ -11,8 +17,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-16mm-f2-8-r-wr",
+    "zeiss-touit-2-8-12"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 14,

@@ -3,16 +3,30 @@
   "brand": "sony",
   "name": "Sony FE 100mm F2.8 STF GM OSS",
   "shortName": "FE 100mm F2.8 STF GM OSS",
-  "aliases": ["FE 100mm F2.8 STF GM OSS", "100mm F2.8 STF GM OSS", "100mm f/2.8 STF G Master OSS", "100mm F2.8 STF GM", "100mm STF GM"],
-  "modelCodes": ["SEL100F28GM"],
+  "aliases": [
+    "FE 100mm F2.8 STF GM OSS",
+    "100mm F2.8 STF GM OSS",
+    "100mm f/2.8 STF G Master OSS",
+    "100mm F2.8 STF GM",
+    "100mm STF GM"
+  ],
+  "modelCodes": [
+    "SEL100F28GM"
+  ],
   "gtins": [],
   "announced": "2017-02-07",
   "launchPriceUsd": 1500,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-100mm-f2-8-macro-gm-oss",
+    "sigma-105mm-f2-8-dg-dn-macro-art",
+    "sony-fe-90mm-f2-8-macro-g-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

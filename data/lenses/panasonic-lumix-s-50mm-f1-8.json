@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 50mm F1.8",
   "shortName": "Lumix S 50mm F1.8",
-  "aliases": ["Lumix S 50mm F1.8", "Lumix S 50mm f/1.8", "S 50mm F1.8", "S 50mm f/1.8"],
-  "modelCodes": ["S-S50"],
+  "aliases": [
+    "Lumix S 50mm F1.8",
+    "Lumix S 50mm f/1.8",
+    "S 50mm F1.8",
+    "S 50mm f/1.8"
+  ],
+  "modelCodes": [
+    "S-S50"
+  ],
   "gtins": [],
   "announced": "2021-06-01",
   "launchPriceUsd": 449.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "7artisans-af-50mm-f1-8",
+    "meike-50mm-f1-8",
+    "leica-apo-summicron-sl-50-f2-asph"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

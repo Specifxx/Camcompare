@@ -3,16 +3,32 @@
   "brand": "leica",
   "name": "Leica APO-Summicron-SL 28 f/2 ASPH.",
   "shortName": "APO-Summicron-SL 28 f/2 ASPH.",
-  "aliases": ["APO-Summicron-SL 28 f/2 ASPH.", "APO-Summicron-SL 28mm f/2 ASPH", "APO-Summicron-SL 28 f/2", "APO-Summicron-SL 28mm f/2", "APO-Summicron-SL 28mm F2 ASPH", "APO-Summicron-SL 28", "28mm f/2 APO-Summicron-SL ASPH", "28mm f/2 APO-Summicron-SL"],
-  "modelCodes": ["11183"],
+  "aliases": [
+    "APO-Summicron-SL 28 f/2 ASPH.",
+    "APO-Summicron-SL 28mm f/2 ASPH",
+    "APO-Summicron-SL 28 f/2",
+    "APO-Summicron-SL 28mm f/2",
+    "APO-Summicron-SL 28mm F2 ASPH",
+    "APO-Summicron-SL 28",
+    "28mm f/2 APO-Summicron-SL ASPH",
+    "28mm f/2 APO-Summicron-SL"
+  ],
+  "modelCodes": [
+    "11183"
+  ],
   "gtins": [],
   "announced": "2021-02-18",
   "launchPriceUsd": 5195,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "panasonic-lumix-s-24mm-f1-8",
+    "sigma-24mm-f2-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

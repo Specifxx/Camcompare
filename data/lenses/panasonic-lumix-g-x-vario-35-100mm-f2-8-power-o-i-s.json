@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G X Vario 35-100mm F2.8 Power O.I.S.",
   "shortName": "Lumix G X Vario 35-100mm F2.8 Power O.I.S.",
-  "aliases": ["Lumix G X Vario 35-100mm F2.8 Power O.I.S.", "Lumix G X Vario 35-100mm F2.8", "Lumix G X Vario 35-100mm f/2.8", "G X Vario 35-100mm F2.8", "X Vario 35-100mm F2.8", "Lumix X 35-100mm F2.8"],
-  "modelCodes": ["H-HS35100"],
+  "aliases": [
+    "Lumix G X Vario 35-100mm F2.8 Power O.I.S.",
+    "Lumix G X Vario 35-100mm F2.8",
+    "Lumix G X Vario 35-100mm f/2.8",
+    "G X Vario 35-100mm F2.8",
+    "X Vario 35-100mm F2.8",
+    "Lumix X 35-100mm F2.8"
+  ],
+  "modelCodes": [
+    "H-HS35100"
+  ],
   "gtins": [],
   "announced": "2012-09-17",
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
   "successor": "panasonic-lumix-g-x-vario-35-100mm-f2-8-ii-power-o-i-s",
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-leica-dg-vario-elmarit-35-100mm-f2-8-power-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 35,

@@ -3,7 +3,15 @@
   "brand": "voigtlander",
   "name": "Voigtländer Nokton 35mm F1.2",
   "shortName": "Nokton 35mm F1.2",
-  "aliases": ["Nokton 35mm F1.2 X-mount", "Nokton 35mm f/1.2 X-mount", "Nokton 35mm F1.2 X", "Nokton 35mm f/1.2 X", "Nokton D35mm F1.2", "Nokton D35mm f/1.2", "Nokton D35mm"],
+  "aliases": [
+    "Nokton 35mm F1.2 X-mount",
+    "Nokton 35mm f/1.2 X-mount",
+    "Nokton 35mm F1.2 X",
+    "Nokton 35mm f/1.2 X",
+    "Nokton D35mm F1.2",
+    "Nokton D35mm f/1.2",
+    "Nokton D35mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-07-15",
@@ -11,8 +19,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x", "nikon-z"],
+  "rivals": [
+    "laowa-argus-33mm-f0-95-cf-apo"
+  ],
+  "mounts": [
+    "fujifilm-x",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 35,

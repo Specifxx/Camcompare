@@ -3,17 +3,36 @@
   "brand": "leica",
   "name": "Leica Super-Vario-Elmarit-SL 14-24 f/2.8 ASPH.",
   "shortName": "Super-Vario-Elmarit-SL 14-24 f/2.8 ASPH.",
-  "aliases": ["Super-Vario-Elmarit-SL 14-24 f/2.8 ASPH.", "Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH", "Super-Vario-Elmarit-SL 14-24 f/2.8", "Super-Vario-Elmarit-SL 14-24mm f/2.8", "Super-Vario-Elmarit-SL 14-24mm F2.8 ASPH", "Super-Vario-Elmarit-SL 14-24", "14-24mm f/2.8 Super-Vario-Elmarit-SL ASPH", "14-24mm f/2.8 Super-Vario-Elmarit-SL", "SL 14-24mm f/2.8 ASPH"],
-  "modelCodes": ["11194"],
+  "aliases": [
+    "Super-Vario-Elmarit-SL 14-24 f/2.8 ASPH.",
+    "Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH",
+    "Super-Vario-Elmarit-SL 14-24 f/2.8",
+    "Super-Vario-Elmarit-SL 14-24mm f/2.8",
+    "Super-Vario-Elmarit-SL 14-24mm F2.8 ASPH",
+    "Super-Vario-Elmarit-SL 14-24",
+    "14-24mm f/2.8 Super-Vario-Elmarit-SL ASPH",
+    "14-24mm f/2.8 Super-Vario-Elmarit-SL",
+    "SL 14-24mm f/2.8 ASPH"
+  ],
+  "modelCodes": [
+    "11194"
+  ],
   "gtins": [],
   "announced": "2023-10-19",
   "launchPriceUsd": 2495,
-  "launchPrices": {"EUR": 2500},
+  "launchPrices": {
+    "EUR": 2500
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "samyang-af-14-24mm-f2-8",
+    "sigma-14-24mm-f2-8-dg-dn-art"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 14,

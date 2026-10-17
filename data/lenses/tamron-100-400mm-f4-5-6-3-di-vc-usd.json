@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron 100-400mm F/4.5-6.3 Di VC USD",
   "shortName": "100-400mm F/4.5-6.3 Di VC USD",
-  "aliases": ["100-400mm F/4.5-6.3 Di VC USD", "100-400mm F4.5-6.3 Di VC USD", "100-400mm f/4.5-6.3 Di VC", "100-400mm F4.5-6.3 Di VC", "100-400mm Di VC USD", "100-400 Di VC USD"],
-  "modelCodes": ["A035"],
+  "aliases": [
+    "100-400mm F/4.5-6.3 Di VC USD",
+    "100-400mm F4.5-6.3 Di VC USD",
+    "100-400mm f/4.5-6.3 Di VC",
+    "100-400mm F4.5-6.3 Di VC",
+    "100-400mm Di VC USD",
+    "100-400 Di VC USD"
+  ],
+  "modelCodes": [
+    "A035"
+  ],
   "gtins": [],
   "announced": "2017-10-26",
   "launchPriceUsd": 799,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f"],
+  "rivals": [
+    "sigma-100-400mm-f5-6-3-dg-os-hsm-contemporary",
+    "canon-ef-100-400mm-f4-5-5-6l-is-ii-usm",
+    "nikon-af-s-80-400mm-f4-5-5-6g-ed-vr"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

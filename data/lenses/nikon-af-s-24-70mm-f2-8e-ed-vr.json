@@ -3,16 +3,31 @@
   "brand": "nikon",
   "name": "Nikon AF-S NIKKOR 24-70mm f/2.8E ED VR",
   "shortName": "AF-S NIKKOR 24-70mm f/2.8E ED VR",
-  "aliases": ["AF-S NIKKOR 24-70mm f/2.8E ED VR", "AF-S 24-70mm f/2.8E ED VR", "24-70mm f/2.8E ED VR", "24-70mm f/2.8E VR", "24-70mm f/2.8E", "24-70 f/2.8E VR"],
-  "modelCodes": ["20052"],
+  "aliases": [
+    "AF-S NIKKOR 24-70mm f/2.8E ED VR",
+    "AF-S 24-70mm f/2.8E ED VR",
+    "24-70mm f/2.8E ED VR",
+    "24-70mm f/2.8E VR",
+    "24-70mm f/2.8E",
+    "24-70 f/2.8E VR"
+  ],
+  "modelCodes": [
+    "20052"
+  ],
   "gtins": [],
   "announced": "2015-08-04",
   "launchPriceUsd": 2399.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-f"],
+  "rivals": [
+    "tamron-sp-24-70mm-f2-8-di-vc-usd-g2",
+    "sigma-24-70mm-f2-8-dg-os-hsm-art",
+    "tamron-sp-24-70mm-f2-8-di-vc-usd"
+  ],
+  "mounts": [
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

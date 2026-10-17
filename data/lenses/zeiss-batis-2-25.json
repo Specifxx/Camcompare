@@ -3,7 +3,15 @@
   "brand": "zeiss",
   "name": "Zeiss Batis 2/25",
   "shortName": "Batis 2/25",
-  "aliases": ["Batis 2/25", "Batis 2.0/25", "Batis 25mm f/2", "Batis 25mm F2", "Batis 25mm f/2.0", "Batis Distagon T* 2/25", "Batis 25mm"],
+  "aliases": [
+    "Batis 2/25",
+    "Batis 2.0/25",
+    "Batis 25mm f/2",
+    "Batis 25mm F2",
+    "Batis 25mm f/2.0",
+    "Batis Distagon T* 2/25",
+    "Batis 25mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2015-04-22",
@@ -11,8 +19,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-28mm-f2",
+    "samyang-af-24mm-f1-8-fe",
+    "viltrox-af-24mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 25,

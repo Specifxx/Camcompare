@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron SP 85mm F/1.8 Di VC USD",
   "shortName": "SP 85mm F/1.8 Di VC USD",
-  "aliases": ["SP 85mm F/1.8 Di VC USD", "SP 85mm F1.8 Di VC USD", "85mm F/1.8 Di VC USD", "85mm F1.8 Di VC USD", "SP 85mm F/1.8 Di USD", "SP 85mm F/1.8"],
-  "modelCodes": ["F016"],
+  "aliases": [
+    "SP 85mm F/1.8 Di VC USD",
+    "SP 85mm F1.8 Di VC USD",
+    "85mm F/1.8 Di VC USD",
+    "85mm F1.8 Di VC USD",
+    "SP 85mm F/1.8 Di USD",
+    "SP 85mm F/1.8"
+  ],
+  "modelCodes": [
+    "F016"
+  ],
   "gtins": [],
   "announced": "2016-02-22",
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "meike-85mm-f1-8-se-mark-ii",
+    "nikon-af-s-85mm-f1-8g"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

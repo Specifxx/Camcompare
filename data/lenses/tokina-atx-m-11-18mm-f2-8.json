@@ -3,7 +3,12 @@
   "brand": "tokina",
   "name": "Tokina atx-m 11-18mm F2.8",
   "shortName": "atx-m 11-18mm F2.8",
-  "aliases": ["atx-m 11-18mm F2.8", "atx-m 11-18mm F2.8 E", "atx-m 11-18mm F2.8 X", "atx-m 11-18"],
+  "aliases": [
+    "atx-m 11-18mm F2.8",
+    "atx-m 11-18mm F2.8 E",
+    "atx-m 11-18mm F2.8 X",
+    "atx-m 11-18"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2022-09-14",
@@ -11,8 +16,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x"],
+  "rivals": [
+    "sigma-10-18mm-f2-8-dc-dn-contemporary",
+    "tamron-11-20mm-f2-8-di-iii-a-rxd"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 11,

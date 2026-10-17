@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 40mm f/2",
   "shortName": "NIKKOR Z 40mm f/2",
-  "aliases": ["NIKKOR Z 40mm f/2", "Z 40mm f/2", "Z 40 f/2"],
-  "modelCodes": ["20102"],
+  "aliases": [
+    "NIKKOR Z 40mm f/2",
+    "Z 40mm f/2",
+    "Z 40 f/2"
+  ],
+  "modelCodes": [
+    "20102"
+  ],
   "gtins": [],
   "announced": "2021-09-14",
   "launchPriceUsd": 299.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "ttartisan-af-40mm-f2",
+    "nikon-z-35mm-f1-8-s",
+    "viltrox-af-40mm-f2-5-air"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 40,

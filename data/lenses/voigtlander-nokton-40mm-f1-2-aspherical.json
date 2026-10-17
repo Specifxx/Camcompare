@@ -3,17 +3,34 @@
   "brand": "voigtlander",
   "name": "Voigtländer Nokton 40mm F1.2 Aspherical",
   "shortName": "Nokton 40mm F1.2 Aspherical",
-  "aliases": ["Nokton 40mm F1.2 Aspherical", "Nokton 40mm f/1.2 Aspherical", "Nokton 40mm F1.2 Asph", "Nokton 40mm f/1.2 Asph", "Nokton 40mm F1.2", "Nokton 40mm f/1.2"],
+  "aliases": [
+    "Nokton 40mm F1.2 Aspherical",
+    "Nokton 40mm f/1.2 Aspherical",
+    "Nokton 40mm F1.2 Asph",
+    "Nokton 40mm f/1.2 Asph",
+    "Nokton 40mm F1.2",
+    "Nokton 40mm f/1.2"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2017-09-28",
   "launchPriceUsd": null,
-  "launchPrices": {"GBP": 749},
+  "launchPrices": {
+    "GBP": 749
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "canon-rf"],
+  "rivals": [
+    "zeiss-otus-ml-1-4-35",
+    "laowa-argus-35mm-f0-95-ff",
+    "laowa-argus-45mm-f0-95-ff"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 40,

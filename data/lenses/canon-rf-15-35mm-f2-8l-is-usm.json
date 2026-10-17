@@ -3,16 +3,32 @@
   "brand": "canon",
   "name": "Canon RF 15-35mm F2.8L IS USM",
   "shortName": "RF 15-35mm F2.8L IS USM",
-  "aliases": ["RF 15-35mm F2.8L IS USM", "RF15-35mm F2.8 L IS USM", "RF 15-35mm f/2.8L IS USM", "RF 15-35mm F2.8 L IS USM", "15-35mm F2.8L IS USM", "15-35mm f/2.8L IS USM", "RF 15-35mm F2.8L IS", "RF 15-35mm f/2.8L", "RF 15-35 F2.8L"],
-  "modelCodes": ["3682C002"],
+  "aliases": [
+    "RF 15-35mm F2.8L IS USM",
+    "RF15-35mm F2.8 L IS USM",
+    "RF 15-35mm f/2.8L IS USM",
+    "RF 15-35mm F2.8 L IS USM",
+    "15-35mm F2.8L IS USM",
+    "15-35mm f/2.8L IS USM",
+    "RF 15-35mm F2.8L IS",
+    "RF 15-35mm f/2.8L",
+    "RF 15-35 F2.8L"
+  ],
+  "modelCodes": [
+    "3682C002"
+  ],
   "gtins": [],
   "announced": "2019-08-28",
   "launchPriceUsd": 2299,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-16-28mm-f2-8-is-stm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 15,

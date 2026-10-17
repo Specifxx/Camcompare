@@ -3,7 +3,13 @@
   "brand": "sigma",
   "name": "Sigma 105mm F2.8 DG DN Macro | Art",
   "shortName": "105mm F2.8 DG DN Macro | Art",
-  "aliases": ["105mm F2.8 DG DN Macro Art", "105mm F2.8 DG DN Macro", "105mm f/2.8 DG DN Macro A", "105mm F2.8 Macro DG DN", "105 F2.8 DG DN Macro"],
+  "aliases": [
+    "105mm F2.8 DG DN Macro Art",
+    "105mm F2.8 DG DN Macro",
+    "105mm f/2.8 DG DN Macro A",
+    "105mm F2.8 Macro DG DN",
+    "105 F2.8 DG DN Macro"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-09-30",
@@ -11,8 +17,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "panasonic-lumix-s-100mm-f2-8-macro",
+    "sony-fe-100mm-f2-8-macro-gm-oss",
+    "sony-fe-100mm-f2-8-stf-gm-oss"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 105,

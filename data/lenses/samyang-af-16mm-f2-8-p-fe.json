@@ -3,16 +3,28 @@
   "brand": "samyang",
   "name": "Samyang AF 16mm F2.8 P FE",
   "shortName": "AF 16mm F2.8 P FE",
-  "aliases": ["AF 16mm F2.8 P FE", "16mm F2.8 P FE", "AF 16mm F2.8 P Sony FE"],
-  "modelCodes": ["IO1628-E"],
+  "aliases": [
+    "AF 16mm F2.8 P FE",
+    "16mm F2.8 P FE",
+    "AF 16mm F2.8 P Sony FE"
+  ],
+  "modelCodes": [
+    "IO1628-E"
+  ],
   "gtins": [],
   "announced": "2025-07-15",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-14mm-f2-8-fe",
+    "samyang-af-18mm-f2-8-fe",
+    "zeiss-batis-2-8-18"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

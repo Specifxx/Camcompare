@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony FE 40mm F2.5 G",
   "shortName": "FE 40mm F2.5 G",
-  "aliases": ["FE 40mm F2.5 G", "40mm F2.5 G", "40mm f/2.5 G", "FE 40mm f/2.5 G"],
-  "modelCodes": ["SEL40F25G"],
+  "aliases": [
+    "FE 40mm F2.5 G",
+    "40mm F2.5 G",
+    "40mm f/2.5 G",
+    "FE 40mm f/2.5 G"
+  ],
+  "modelCodes": [
+    "SEL40F25G"
+  ],
   "gtins": [],
   "announced": "2021-03-23",
   "launchPriceUsd": 599,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "viltrox-af-40mm-f2-5-air",
+    "samyang-af-35mm-f2-8-fe",
+    "sony-sonnar-t-fe-35mm-f2-8-za"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 40,

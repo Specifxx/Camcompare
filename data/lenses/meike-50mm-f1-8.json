@@ -3,16 +3,31 @@
   "brand": "meike",
   "name": "Meike 50mm F1.8",
   "shortName": "50mm F1.8",
-  "aliases": ["Meike 50mm F1.8", "Meike 50mm f/1.8", "Meike AF 50mm F1.8", "Meike 50mm F1.8 STM"],
-  "modelCodes": ["MK-5018FFSTM"],
+  "aliases": [
+    "Meike 50mm F1.8",
+    "Meike 50mm f/1.8",
+    "Meike AF 50mm F1.8",
+    "Meike 50mm F1.8 STM"
+  ],
+  "modelCodes": [
+    "MK-5018FFSTM"
+  ],
   "gtins": [],
   "announced": "2024-01-22",
   "launchPriceUsd": 159.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "7artisans-af-50mm-f1-8",
+    "nikon-z-50mm-f1-8-s",
+    "panasonic-lumix-s-50mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

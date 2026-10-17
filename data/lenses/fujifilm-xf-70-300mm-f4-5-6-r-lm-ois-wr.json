@@ -3,17 +3,32 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 70-300mm F4-5.6 R LM OIS WR",
   "shortName": "XF 70-300mm F4-5.6 R LM OIS WR",
-  "aliases": ["XF 70-300mm F4-5.6 R LM OIS WR", "XF70-300mm F4-5.6 R LM OIS WR", "XF70-300mmF4-5.6 R LM OIS WR", "XF 70-300mm f/4-5.6 R LM OIS WR", "XF70-300mm f/4-5.6 R LM OIS WR", "70-300mm F4-5.6 R LM OIS WR", "70-300mm f/4-5.6 R LM OIS WR"],
+  "aliases": [
+    "XF 70-300mm F4-5.6 R LM OIS WR",
+    "XF70-300mm F4-5.6 R LM OIS WR",
+    "XF70-300mmF4-5.6 R LM OIS WR",
+    "XF 70-300mm f/4-5.6 R LM OIS WR",
+    "XF70-300mm f/4-5.6 R LM OIS WR",
+    "70-300mm F4-5.6 R LM OIS WR",
+    "70-300mm f/4-5.6 R LM OIS WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-01-27",
   "launchPriceUsd": 799.99,
-  "launchPrices": {"EUR": 799},
+  "launchPrices": {
+    "EUR": 799
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-100-400mm-f4-5-5-6-r-lm-ois-wr",
+    "fujifilm-xc-50-230mm-f4-5-6-7-ois-ii"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 70,

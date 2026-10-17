@@ -3,17 +3,31 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 8mm F3.5 R WR",
   "shortName": "XF 8mm F3.5 R WR",
-  "aliases": ["XF 8mm F3.5 R WR", "XF8mm F3.5 R WR", "XF8mmF3.5 R WR", "XF 8mm f/3.5 R WR", "XF8mm f/3.5 R WR", "8mm F3.5 R WR", "8mm f/3.5 R WR"],
+  "aliases": [
+    "XF 8mm F3.5 R WR",
+    "XF8mm F3.5 R WR",
+    "XF8mmF3.5 R WR",
+    "XF 8mm f/3.5 R WR",
+    "XF8mm f/3.5 R WR",
+    "8mm F3.5 R WR",
+    "8mm f/3.5 R WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-05-24",
   "launchPriceUsd": 799.95,
-  "launchPrices": {"EUR": 899},
+  "launchPrices": {
+    "EUR": 899
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "viltrox-af-9mm-f2-8-air"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 8,

@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 24-105mm F4 DG OS HSM | Art",
   "shortName": "24-105mm F4 DG OS HSM | Art",
-  "aliases": ["24-105mm F4 DG OS HSM Art", "24-105mm F4 DG OS HSM", "24-105mm f/4 DG OS HSM A", "24-105 F4 DG OS HSM", "24-105mm F4 Art", "24-105 F4 Art"],
+  "aliases": [
+    "24-105mm F4 DG OS HSM Art",
+    "24-105mm F4 DG OS HSM",
+    "24-105mm f/4 DG OS HSM A",
+    "24-105 F4 DG OS HSM",
+    "24-105mm F4 Art",
+    "24-105 F4 Art"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2013-10-16",
@@ -11,8 +18,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "canon-ef-24-105mm-f4l-is-ii-usm"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

@@ -3,16 +3,33 @@
   "brand": "panasonic",
   "name": "Panasonic Leica DG Vario-Elmar 100-400mm F4.0-6.3 II ASPH. Power O.I.S.",
   "shortName": "Leica DG Vario-Elmar 100-400mm F4.0-6.3 II ASPH. Power O.I.S.",
-  "aliases": ["Leica DG Vario-Elmar 100-400mm F4.0-6.3 II ASPH. Power O.I.S.", "Leica DG Vario-Elmar 100-400mm F4.0-6.3 II", "Leica DG Vario-Elmar 100-400mm f/4-6.3 II", "Vario-Elmar 100-400mm F4.0-6.3 II", "Leica DG 100-400mm F4.0-6.3 II", "Leica DG 100-400mm f/4-6.3 II", "Leica 100-400mm F4.0-6.3 II", "Leica 100-400mm II"],
-  "modelCodes": ["H-RSA100400"],
+  "aliases": [
+    "Leica DG Vario-Elmar 100-400mm F4.0-6.3 II ASPH. Power O.I.S.",
+    "Leica DG Vario-Elmar 100-400mm F4.0-6.3 II",
+    "Leica DG Vario-Elmar 100-400mm f/4-6.3 II",
+    "Vario-Elmar 100-400mm F4.0-6.3 II",
+    "Leica DG 100-400mm F4.0-6.3 II",
+    "Leica DG 100-400mm f/4-6.3 II",
+    "Leica 100-400mm F4.0-6.3 II",
+    "Leica 100-400mm II"
+  ],
+  "modelCodes": [
+    "H-RSA100400"
+  ],
   "gtins": [],
   "announced": "2023-09-12",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": "panasonic-leica-dg-vario-elmar-100-400mm-f4-0-6-3-asph-power-o-i-s",
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-100-400mm-f5-0-6-3-is-ii",
+    "panasonic-lumix-g-vario-100-300mm-f4-0-5-6-ii-power-o-i-s",
+    "om-system-m-zuiko-digital-ed-75-300mm-f4-8-6-7-ii"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 100,

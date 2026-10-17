@@ -3,16 +3,31 @@
   "brand": "sony",
   "name": "Sony FE 135mm F1.8 GM",
   "shortName": "FE 135mm F1.8 GM",
-  "aliases": ["FE 135mm F1.8 GM", "135mm F1.8 GM", "135mm f/1.8 GM", "FE 135mm f/1.8 GM", "135mm F1.8 G Master", "135mm f/1.8 G Master"],
-  "modelCodes": ["SEL135F18GM"],
+  "aliases": [
+    "FE 135mm F1.8 GM",
+    "135mm F1.8 GM",
+    "135mm f/1.8 GM",
+    "FE 135mm f/1.8 GM",
+    "135mm F1.8 G Master",
+    "135mm f/1.8 G Master"
+  ],
+  "modelCodes": [
+    "SEL135F18GM"
+  ],
   "gtins": [],
   "announced": "2019-02-26",
   "launchPriceUsd": 1900,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-135mm-f1-8-fe",
+    "viltrox-af-135mm-f1-8-lab",
+    "sigma-135mm-f1-8-dg-hsm-art"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 135,

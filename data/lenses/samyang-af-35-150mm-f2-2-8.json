@@ -3,7 +3,13 @@
   "brand": "samyang",
   "name": "Samyang AF 35-150mm F2-2.8",
   "shortName": "AF 35-150mm F2-2.8",
-  "aliases": ["AF 35-150mm F2-2.8", "AF 35-150mm F2-2.8 FE", "AF 35-150mm F2-2.8 L", "AF 35-150mm F2.0-2.8", "35-150mm F2-2.8 FE"],
+  "aliases": [
+    "AF 35-150mm F2-2.8",
+    "AF 35-150mm F2-2.8 FE",
+    "AF 35-150mm F2-2.8 L",
+    "AF 35-150mm F2.0-2.8",
+    "35-150mm F2-2.8 FE"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-04-06",
@@ -11,8 +17,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "tamron-35-150mm-f2-2-8-di-iii-vxd"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

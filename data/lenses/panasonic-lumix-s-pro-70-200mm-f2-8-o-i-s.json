@@ -3,16 +3,31 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S PRO 70-200mm F2.8 O.I.S.",
   "shortName": "Lumix S PRO 70-200mm F2.8 O.I.S.",
-  "aliases": ["Lumix S PRO 70-200mm F2.8 O.I.S.", "S PRO 70-200mm F2.8 OIS", "S PRO 70-200mm F2.8", "S Pro 70-200mm f/2.8", "Lumix S 70-200mm F2.8", "Lumix S 70-200mm f/2.8"],
-  "modelCodes": ["S-E70200"],
+  "aliases": [
+    "Lumix S PRO 70-200mm F2.8 O.I.S.",
+    "S PRO 70-200mm F2.8 OIS",
+    "S PRO 70-200mm F2.8",
+    "S Pro 70-200mm f/2.8",
+    "Lumix S 70-200mm F2.8",
+    "Lumix S 70-200mm f/2.8"
+  ],
+  "modelCodes": [
+    "S-E70200"
+  ],
   "gtins": [],
   "announced": "2019-11-06",
   "launchPriceUsd": 2599,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "leica-vario-elmarit-sl-70-200-f2-8-asph",
+    "sigma-70-200mm-f2-8-dg-dn-os-sports",
+    "samyang-af-60-180mm-f2-8"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

@@ -3,16 +3,31 @@
   "brand": "tamron",
   "name": "Tamron 28-300mm F/4-7.1 Di III VC VXD",
   "shortName": "28-300mm F/4-7.1 Di III VC VXD",
-  "aliases": ["28-300mm F/4-7.1 Di III VC VXD", "28-300mm F4-7.1 Di III VC VXD", "28-300mm F/4-7.1 VC VXD", "28-300mm F4-7.1 VC VXD", "28-300mm F/4-7.1 VC", "28-300mm F4-7.1 VC"],
-  "modelCodes": ["A074"],
+  "aliases": [
+    "28-300mm F/4-7.1 Di III VC VXD",
+    "28-300mm F4-7.1 Di III VC VXD",
+    "28-300mm F/4-7.1 VC VXD",
+    "28-300mm F4-7.1 VC VXD",
+    "28-300mm F/4-7.1 VC",
+    "28-300mm F4-7.1 VC"
+  ],
+  "modelCodes": [
+    "A074"
+  ],
   "gtins": [],
   "announced": "2024-07-31",
   "launchPriceUsd": 899,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-24-240mm-f3-5-6-3-oss",
+    "tamron-50-400mm-f4-5-6-3-di-iii-vc-vxd",
+    "sigma-20-200mm-f3-5-6-3-dg-contemporary"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

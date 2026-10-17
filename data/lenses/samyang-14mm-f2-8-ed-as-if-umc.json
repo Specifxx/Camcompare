@@ -3,17 +3,35 @@
   "brand": "samyang",
   "name": "Samyang 14mm F2.8 ED AS IF UMC",
   "shortName": "14mm F2.8 ED AS IF UMC",
-  "aliases": ["14mm F2.8 ED AS IF UMC", "14mm F2.8 IF ED UMC Aspherical", "14mm F2.8 IF ED UMC", "MF 14mm F2.8 ED AS IF UMC"],
+  "aliases": [
+    "14mm F2.8 ED AS IF UMC",
+    "14mm F2.8 IF ED UMC Aspherical",
+    "14mm F2.8 IF ED UMC",
+    "MF 14mm F2.8 ED AS IF UMC"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2010-02-03",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 329},
+  "launchPrices": {
+    "EUR": 329
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "pentax-k", "sony-a", "canon-ef-m", "fujifilm-x", "sony-e", "micro-four-thirds"],
+  "rivals": [
+    "laowa-12mm-f2-8-zero-d"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "pentax-k",
+    "sony-a",
+    "canon-ef-m",
+    "fujifilm-x",
+    "sony-e",
+    "micro-four-thirds"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 14,

@@ -3,16 +3,27 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 70-300mm F4.5-5.6 Macro O.I.S.",
   "shortName": "Lumix S 70-300mm F4.5-5.6 Macro O.I.S.",
-  "aliases": ["Lumix S 70-300mm F4.5-5.6 Macro O.I.S.", "S 70-300mm F4.5-5.6 Macro", "S 70-300mm F4.5-5.6 Macro OIS", "Lumix S 70-300mm"],
-  "modelCodes": ["S-R70300"],
+  "aliases": [
+    "Lumix S 70-300mm F4.5-5.6 Macro O.I.S.",
+    "S 70-300mm F4.5-5.6 Macro",
+    "S 70-300mm F4.5-5.6 Macro OIS",
+    "Lumix S 70-300mm"
+  ],
+  "modelCodes": [
+    "S-R70300"
+  ],
   "gtins": [],
   "announced": "2021-02-17",
   "launchPriceUsd": 1249,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "sigma-100-400mm-f5-6-3-dg-dn-os-contemporary"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

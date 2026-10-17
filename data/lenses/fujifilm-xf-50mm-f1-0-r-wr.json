@@ -3,7 +3,12 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 50mm F1.0 R WR",
   "shortName": "XF 50mm F1.0 R WR",
-  "aliases": ["XF 50mm F1.0 R WR", "50mm F1.0 R WR", "XF 50mm F1 R WR", "XF 50 F1.0 R WR"],
+  "aliases": [
+    "XF 50mm F1.0 R WR",
+    "50mm F1.0 R WR",
+    "XF 50mm F1 R WR",
+    "XF 50 F1.0 R WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-09-03",
@@ -11,13 +16,19 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-56mm-f1-2-r-wr",
+    "sirui-sniper-56mm-f1-2",
+    "viltrox-af-56mm-f1-2-pro"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 50,
     "focalMaxMm": 50,
-    "apertureMax": 1.0,
+    "apertureMax": 1,
     "apertureMaxTele": null,
     "apertureMin": 16,
     "autofocus": true,

@@ -3,7 +3,15 @@
   "brand": "fujifilm",
   "name": "Fujifilm GF 50mm F3.5 R LM WR",
   "shortName": "GF 50mm F3.5 R LM WR",
-  "aliases": ["GF 50mm F3.5 R LM WR", "GF50mm F3.5 R LM WR", "GF50mmF3.5 R LM WR", "GF 50mm f/3.5 R LM WR", "GF50mm f/3.5 R LM WR", "50mm F3.5 R LM WR", "50mm f/3.5 R LM WR"],
+  "aliases": [
+    "GF 50mm F3.5 R LM WR",
+    "GF50mm F3.5 R LM WR",
+    "GF50mmF3.5 R LM WR",
+    "GF 50mm f/3.5 R LM WR",
+    "GF50mm f/3.5 R LM WR",
+    "50mm F3.5 R LM WR",
+    "50mm f/3.5 R LM WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2019-07-18",
@@ -11,8 +19,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-g"],
+  "rivals": [
+    "fujifilm-gf-45mm-f2-8-r-wr"
+  ],
+  "mounts": [
+    "fujifilm-g"
+  ],
   "coverage": "medium-format",
   "specs": {
     "focalMinMm": 50,

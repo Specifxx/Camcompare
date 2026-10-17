@@ -3,17 +3,34 @@
   "brand": "leica",
   "name": "Leica Vario-Elmarit-SL 28-70 f/2.8 ASPH.",
   "shortName": "Vario-Elmarit-SL 28-70 f/2.8 ASPH.",
-  "aliases": ["Vario-Elmarit-SL 28-70 f/2.8 ASPH.", "Vario-Elmarit-SL 28-70mm f/2.8 ASPH", "Vario-Elmarit-SL 28-70mm f/2.8", "28-70mm f/2.8 Vario-Elmarit-SL ASPH", "Vario-Elmarit-SL 1:2.8/28-70 ASPH", "SL 28-70mm f/2.8 ASPH"],
-  "modelCodes": ["11196"],
+  "aliases": [
+    "Vario-Elmarit-SL 28-70 f/2.8 ASPH.",
+    "Vario-Elmarit-SL 28-70mm f/2.8 ASPH",
+    "Vario-Elmarit-SL 28-70mm f/2.8",
+    "28-70mm f/2.8 Vario-Elmarit-SL ASPH",
+    "Vario-Elmarit-SL 1:2.8/28-70 ASPH",
+    "SL 28-70mm f/2.8 ASPH"
+  ],
+  "modelCodes": [
+    "11196"
+  ],
   "gtins": [],
   "announced": "2025-06-12",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 1950},
+  "launchPrices": {
+    "EUR": 1950
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "sigma-28-70mm-f2-8-dg-dn-contemporary",
+    "leica-vario-elmarit-sl-24-70-f2-8-asph",
+    "panasonic-lumix-s-pro-24-70mm-f2-8"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

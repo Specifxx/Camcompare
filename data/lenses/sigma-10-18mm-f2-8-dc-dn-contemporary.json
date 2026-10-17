@@ -3,7 +3,12 @@
   "brand": "sigma",
   "name": "Sigma 10-18mm F2.8 DC DN | Contemporary",
   "shortName": "10-18mm F2.8 DC DN | Contemporary",
-  "aliases": ["10-18mm F2.8 DC DN Contemporary", "10-18mm F2.8 DC DN", "10-18mm f/2.8 DC DN C", "10-18 F2.8 DC DN"],
+  "aliases": [
+    "10-18mm F2.8 DC DN Contemporary",
+    "10-18mm F2.8 DC DN",
+    "10-18mm f/2.8 DC DN C",
+    "10-18 F2.8 DC DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-10-05",
@@ -11,8 +16,17 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount", "fujifilm-x", "canon-rf"],
+  "rivals": [
+    "tokina-atx-m-11-18mm-f2-8",
+    "tamron-11-20mm-f2-8-di-iii-a-rxd",
+    "fujifilm-xf-8-16mm-f2-8-r-lm-wr"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount",
+    "fujifilm-x",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 10,

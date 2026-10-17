@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony FE 100-400mm F5.6-8 OSS",
   "shortName": "FE 100-400mm F5.6-8 OSS",
-  "aliases": ["FE 100-400mm F5.6-8 OSS", "100-400mm F5.6-8 OSS", "100-400mm F5.6-8.0 OSS"],
-  "modelCodes": ["SEL100400"],
+  "aliases": [
+    "FE 100-400mm F5.6-8 OSS",
+    "100-400mm F5.6-8 OSS",
+    "100-400mm F5.6-8.0 OSS"
+  ],
+  "modelCodes": [
+    "SEL100400"
+  ],
   "gtins": [],
   "announced": "2026-08-04",
   "launchPriceUsd": 849.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-100-400mm-f5-6-3-dg-dn-os-contemporary",
+    "tamron-150-500mm-f5-6-7-di-iii-vc-vxd",
+    "tamron-70-300mm-f4-5-6-3-di-iii-rxd"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 100,

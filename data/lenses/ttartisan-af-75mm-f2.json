@@ -3,7 +3,13 @@
   "brand": "ttartisan",
   "name": "TTArtisan AF 75mm F2",
   "shortName": "AF 75mm F2",
-  "aliases": ["TTArtisan AF 75mm F2", "TTArtisan AF 75mm f/2", "TTArtisan 75mm F2", "TT Artisan AF 75mm F2", "TT Artisan 75mm F2"],
+  "aliases": [
+    "TTArtisan AF 75mm F2",
+    "TTArtisan AF 75mm f/2",
+    "TTArtisan 75mm F2",
+    "TT Artisan AF 75mm F2",
+    "TT Artisan 75mm F2"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-09-20",
@@ -11,8 +17,17 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount", "fujifilm-x"],
+  "rivals": [
+    "viltrox-af-85mm-f2-0-evo",
+    "samyang-af-75mm-f1-8",
+    "7artisans-af-85mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount",
+    "fujifilm-x"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 75,

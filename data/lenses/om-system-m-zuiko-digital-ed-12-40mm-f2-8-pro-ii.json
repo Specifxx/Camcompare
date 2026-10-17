@@ -3,16 +3,35 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital ED 12-40mm F2.8 PRO II",
   "shortName": "M.Zuiko Digital ED 12-40mm F2.8 PRO II",
-  "aliases": ["M.Zuiko Digital ED 12-40mm F2.8 PRO II", "M.Zuiko ED 12-40mm F2.8 PRO II", "M.Zuiko 12-40mm F2.8 PRO II", "M.Zuiko 12-40mm f/2.8 PRO II", "ED 12-40mm F2.8 PRO II", "12-40mm F2.8 PRO II", "12-40mm f/2.8 PRO II", "12-40 F2.8 PRO II", "12-40mm PRO II", "12-40 PRO II"],
-  "modelCodes": ["V335030BW000"],
+  "aliases": [
+    "M.Zuiko Digital ED 12-40mm F2.8 PRO II",
+    "M.Zuiko ED 12-40mm F2.8 PRO II",
+    "M.Zuiko 12-40mm F2.8 PRO II",
+    "M.Zuiko 12-40mm f/2.8 PRO II",
+    "ED 12-40mm F2.8 PRO II",
+    "12-40mm F2.8 PRO II",
+    "12-40mm f/2.8 PRO II",
+    "12-40 F2.8 PRO II",
+    "12-40mm PRO II",
+    "12-40 PRO II"
+  ],
+  "modelCodes": [
+    "V335030BW000"
+  ],
   "gtins": [],
   "announced": "2022-02-15",
   "launchPriceUsd": 999.99,
   "status": "current",
   "predecessor": "om-system-m-zuiko-digital-ed-12-40mm-f2-8-pro",
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-leica-dg-vario-elmarit-12-35mm-f2-8-asph-power-o-i-s",
+    "panasonic-lumix-g-x-vario-12-35mm-f2-8-asph-power-o-i-s",
+    "panasonic-lumix-g-x-vario-12-35mm-f2-8-ii-asph-power-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 12,

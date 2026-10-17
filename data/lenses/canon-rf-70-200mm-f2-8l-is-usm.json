@@ -3,16 +3,28 @@
   "brand": "canon",
   "name": "Canon RF 70-200mm F2.8L IS USM",
   "shortName": "RF 70-200mm F2.8L IS USM",
-  "aliases": ["RF 70-200mm F2.8L IS USM", "RF70-200mm F2.8 L IS USM", "RF 70-200mm f/2.8L IS USM", "RF 70-200mm F2.8 L IS USM", "RF 70-200mm f/2.8 L IS USM"],
-  "modelCodes": ["3792C002"],
+  "aliases": [
+    "RF 70-200mm F2.8L IS USM",
+    "RF70-200mm F2.8 L IS USM",
+    "RF 70-200mm f/2.8L IS USM",
+    "RF 70-200mm F2.8 L IS USM",
+    "RF 70-200mm f/2.8 L IS USM"
+  ],
+  "modelCodes": [
+    "3792C002"
+  ],
   "gtins": [],
   "announced": "2019-10-24",
   "launchPriceUsd": 2699,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-70-200mm-f2-8l-is-usm-z"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

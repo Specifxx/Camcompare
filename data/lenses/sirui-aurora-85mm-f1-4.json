@@ -3,7 +3,13 @@
   "brand": "sirui",
   "name": "Sirui Aurora 85mm F1.4",
   "shortName": "Aurora 85mm F1.4",
-  "aliases": ["Sirui Aurora 85mm F1.4", "Sirui Aurora 85mm f/1.4", "Aurora 85mm F1.4", "Sirui Aurora 85mm", "Sirui 85mm F1.4"],
+  "aliases": [
+    "Sirui Aurora 85mm F1.4",
+    "Sirui Aurora 85mm f/1.4",
+    "Aurora 85mm F1.4",
+    "Sirui Aurora 85mm",
+    "Sirui 85mm F1.4"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2024-10-25",
@@ -11,8 +17,17 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount", "fujifilm-x"],
+  "rivals": [
+    "meike-85mm-f1-4",
+    "samyang-af-85mm-f1-4-fe",
+    "samyang-af-85mm-f1-4-fe-ii"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount",
+    "fujifilm-x"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

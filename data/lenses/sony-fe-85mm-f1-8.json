@@ -3,16 +3,27 @@
   "brand": "sony",
   "name": "Sony FE 85mm F1.8",
   "shortName": "FE 85mm F1.8",
-  "aliases": ["FE 85mm F1.8", "FE 85mm f/1.8"],
-  "modelCodes": ["SEL85F18"],
+  "aliases": [
+    "FE 85mm F1.8",
+    "FE 85mm f/1.8"
+  ],
+  "modelCodes": [
+    "SEL85F18"
+  ],
   "gtins": [],
   "announced": "2017-02-07",
   "launchPriceUsd": 600,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-pro",
+    "meike-85mm-f1-8-se-mark-ii"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

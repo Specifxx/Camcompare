@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 35mm f/1.4",
   "shortName": "NIKKOR Z 35mm f/1.4",
-  "aliases": ["NIKKOR Z 35mm f/1.4", "Z 35mm f/1.4", "Z 35 f/1.4"],
-  "modelCodes": ["20126"],
+  "aliases": [
+    "NIKKOR Z 35mm f/1.4",
+    "Z 35mm f/1.4",
+    "Z 35 f/1.4"
+  ],
+  "modelCodes": [
+    "20126"
+  ],
   "gtins": [],
   "announced": "2024-06-26",
   "launchPriceUsd": 599.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "sirui-aurora-35mm-f1-4",
+    "nikon-z-35mm-f1-2-s",
+    "viltrox-af-35mm-f1-2-lab"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

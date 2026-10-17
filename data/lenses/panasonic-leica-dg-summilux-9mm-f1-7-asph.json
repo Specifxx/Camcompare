@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Leica DG Summilux 9mm F1.7 ASPH.",
   "shortName": "Leica DG Summilux 9mm F1.7 ASPH.",
-  "aliases": ["Leica DG Summilux 9mm F1.7 ASPH.", "Leica DG Summilux 9mm F1.7", "DG Summilux 9mm F1.7", "Summilux 9mm F1.7", "Leica DG 9mm F1.7", "Leica 9mm F1.7 ASPH"],
-  "modelCodes": ["H-X09"],
+  "aliases": [
+    "Leica DG Summilux 9mm F1.7 ASPH.",
+    "Leica DG Summilux 9mm F1.7",
+    "DG Summilux 9mm F1.7",
+    "Summilux 9mm F1.7",
+    "Leica DG 9mm F1.7",
+    "Leica 9mm F1.7 ASPH"
+  ],
+  "modelCodes": [
+    "H-X09"
+  ],
   "gtins": [],
   "announced": "2022-05-17",
   "launchPriceUsd": 499.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-8mm-f1-8-fisheye-pro"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 9,

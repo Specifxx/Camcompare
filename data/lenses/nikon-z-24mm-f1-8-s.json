@@ -3,16 +3,27 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 24mm f/1.8 S",
   "shortName": "NIKKOR Z 24mm f/1.8 S",
-  "aliases": ["NIKKOR Z 24mm f/1.8 S", "Z 24mm f/1.8 S", "24mm f/1.8 S", "Z 24 f/1.8 S"],
-  "modelCodes": ["20080"],
+  "aliases": [
+    "NIKKOR Z 24mm f/1.8 S",
+    "Z 24mm f/1.8 S",
+    "24mm f/1.8 S",
+    "Z 24 f/1.8 S"
+  ],
+  "modelCodes": [
+    "20080"
+  ],
   "gtins": [],
   "announced": "2019-09-04",
   "launchPriceUsd": 999.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "viltrox-af-24mm-f1-8"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

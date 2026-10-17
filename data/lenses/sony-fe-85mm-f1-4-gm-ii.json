@@ -3,16 +3,31 @@
   "brand": "sony",
   "name": "Sony FE 85mm F1.4 GM II",
   "shortName": "FE 85mm F1.4 GM II",
-  "aliases": ["FE 85mm F1.4 GM II", "85mm F1.4 GM II", "85mm f/1.4 G Master II", "85mm GM II", "85 GM II", "85mm F1.4 GM2"],
-  "modelCodes": ["SEL85F14GM2"],
+  "aliases": [
+    "FE 85mm F1.4 GM II",
+    "85mm F1.4 GM II",
+    "85mm f/1.4 G Master II",
+    "85mm GM II",
+    "85 GM II",
+    "85mm F1.4 GM2"
+  ],
+  "modelCodes": [
+    "SEL85F14GM2"
+  ],
   "gtins": [],
   "announced": "2024-08-28",
   "launchPriceUsd": 1799.99,
   "status": "current",
   "predecessor": "sony-fe-85mm-f1-4-gm",
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "meike-85mm-f1-4",
+    "samyang-af-85mm-f1-4-fe",
+    "samyang-af-85mm-f1-4-fe-ii"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

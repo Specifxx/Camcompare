@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G 14mm F2.5 II ASPH.",
   "shortName": "Lumix G 14mm F2.5 II ASPH.",
-  "aliases": ["Lumix G 14mm F2.5 II ASPH", "Lumix G 14mm F2.5 II", "G 14mm F2.5 II", "14mm F2.5 II ASPH", "14mm f/2.5 II Lumix G"],
-  "modelCodes": ["H-H014A", "H-H014AK"],
+  "aliases": [
+    "Lumix G 14mm F2.5 II ASPH",
+    "Lumix G 14mm F2.5 II",
+    "G 14mm F2.5 II",
+    "14mm F2.5 II ASPH",
+    "14mm f/2.5 II Lumix G"
+  ],
+  "modelCodes": [
+    "H-H014A",
+    "H-H014AK"
+  ],
   "gtins": [],
   "announced": "2014-09-15",
   "launchPriceUsd": 399,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-12mm-f2-0"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 14,

@@ -3,16 +3,25 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S 24mm F1.8",
   "shortName": "Lumix S 24mm F1.8",
-  "aliases": ["Lumix S 24mm F1.8", "S 24mm F1.8"],
-  "modelCodes": ["S-S24"],
+  "aliases": [
+    "Lumix S 24mm F1.8",
+    "S 24mm F1.8"
+  ],
+  "modelCodes": [
+    "S-S24"
+  ],
   "gtins": [],
   "announced": "2021-08-31",
   "launchPriceUsd": 899.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "sigma-24mm-f2-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

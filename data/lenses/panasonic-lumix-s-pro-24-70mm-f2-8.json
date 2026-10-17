@@ -3,16 +3,30 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S PRO 24-70mm F2.8",
   "shortName": "Lumix S PRO 24-70mm F2.8",
-  "aliases": ["Lumix S PRO 24-70mm F2.8", "S PRO 24-70mm F2.8", "S Pro 24-70mm f/2.8", "Lumix S 24-70mm F2.8", "Lumix S 24-70mm f/2.8"],
-  "modelCodes": ["S-E2470"],
+  "aliases": [
+    "Lumix S PRO 24-70mm F2.8",
+    "S PRO 24-70mm F2.8",
+    "S Pro 24-70mm f/2.8",
+    "Lumix S 24-70mm F2.8",
+    "Lumix S 24-70mm f/2.8"
+  ],
+  "modelCodes": [
+    "S-E2470"
+  ],
   "gtins": [],
   "announced": "2019-08-27",
   "launchPriceUsd": 2199.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "leica-vario-elmarit-sl-24-70-f2-8-asph",
+    "sigma-24-70mm-f2-8-dg-dn-art-ii",
+    "leica-vario-elmarit-sl-28-70-f2-8-asph"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

@@ -3,16 +3,30 @@
   "brand": "canon",
   "name": "Canon RF 50mm F1.4L VCM",
   "shortName": "RF 50mm F1.4L VCM",
-  "aliases": ["RF 50mm F1.4L VCM", "RF50mm F1.4 L VCM", "RF 50mm f/1.4L VCM", "50mm F1.4L VCM", "RF 50mm VCM", "RF 50 F1.4L VCM"],
-  "modelCodes": ["6908C002"],
+  "aliases": [
+    "RF 50mm F1.4L VCM",
+    "RF50mm F1.4 L VCM",
+    "RF 50mm f/1.4L VCM",
+    "50mm F1.4L VCM",
+    "RF 50mm VCM",
+    "RF 50 F1.4L VCM"
+  ],
+  "modelCodes": [
+    "6908C002"
+  ],
   "gtins": [],
   "announced": "2024-10-30",
   "launchPriceUsd": 1399,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-50mm-f1-2l-usm",
+    "canon-rf-45mm-f1-2-stm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

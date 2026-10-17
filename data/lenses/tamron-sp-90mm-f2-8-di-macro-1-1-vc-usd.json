@@ -3,16 +3,31 @@
   "brand": "tamron",
   "name": "Tamron SP 90mm F/2.8 Di MACRO 1:1 VC USD",
   "shortName": "SP 90mm F/2.8 Di MACRO 1:1 VC USD",
-  "aliases": ["SP 90mm F/2.8 Di MACRO 1:1 VC USD", "SP 90mm F2.8 Di Macro 1:1 VC USD", "SP 90mm f/2.8 Di Macro VC USD", "90mm F/2.8 Di MACRO 1:1 VC USD", "SP 90mm F/2.8 Di VC USD 1:1 Macro", "SP 90mm F/2.8 Di MACRO 1:1 USD"],
-  "modelCodes": ["F017"],
+  "aliases": [
+    "SP 90mm F/2.8 Di MACRO 1:1 VC USD",
+    "SP 90mm F2.8 Di Macro 1:1 VC USD",
+    "SP 90mm f/2.8 Di Macro VC USD",
+    "90mm F/2.8 Di MACRO 1:1 VC USD",
+    "SP 90mm F/2.8 Di VC USD 1:1 Macro",
+    "SP 90mm F/2.8 Di MACRO 1:1 USD"
+  ],
+  "modelCodes": [
+    "F017"
+  ],
   "gtins": [],
   "announced": "2016-02-22",
   "launchPriceUsd": 649,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "tokina-atx-i-100mm-f2-8-ff-macro"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 90,

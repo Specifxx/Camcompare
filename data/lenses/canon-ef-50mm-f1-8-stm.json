@@ -3,16 +3,28 @@
   "brand": "canon",
   "name": "Canon EF 50mm f/1.8 STM",
   "shortName": "EF 50mm f/1.8 STM",
-  "aliases": ["EF 50mm f/1.8 STM", "EF50mm f/1.8 STM", "EF 50mm F1.8 STM", "EF50mm F1.8 STM", "EF 50mm 1.8 STM"],
-  "modelCodes": ["0570C001"],
+  "aliases": [
+    "EF 50mm f/1.8 STM",
+    "EF50mm f/1.8 STM",
+    "EF 50mm F1.8 STM",
+    "EF50mm F1.8 STM",
+    "EF 50mm 1.8 STM"
+  ],
+  "modelCodes": [
+    "0570C001"
+  ],
   "gtins": [],
   "announced": "2015-05-11",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef"],
+  "rivals": [
+    "tamron-sp-45mm-f1-8-di-vc-usd"
+  ],
+  "mounts": [
+    "canon-ef"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

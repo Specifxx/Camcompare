@@ -3,7 +3,12 @@
   "brand": "viltrox",
   "name": "Viltrox AF 56mm F1.4",
   "shortName": "AF 56mm F1.4",
-  "aliases": ["Viltrox AF 56mm F1.4", "Viltrox 56mm F1.4", "Viltrox 56mm f/1.4", "AF 56/1.4"],
+  "aliases": [
+    "Viltrox AF 56mm F1.4",
+    "Viltrox 56mm F1.4",
+    "Viltrox 56mm f/1.4",
+    "AF 56/1.4"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-09-06",
@@ -11,8 +16,17 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x", "sony-e", "nikon-z", "canon-ef-m"],
+  "rivals": [
+    "sigma-56mm-f1-4-dc-dn-contemporary",
+    "tokina-atx-m-56mm-f1-4",
+    "meike-55mm-f1-4"
+  ],
+  "mounts": [
+    "fujifilm-x",
+    "sony-e",
+    "nikon-z",
+    "canon-ef-m"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 56,

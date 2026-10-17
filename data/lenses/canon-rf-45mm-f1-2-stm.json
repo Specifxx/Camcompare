@@ -3,16 +3,29 @@
   "brand": "canon",
   "name": "Canon RF 45mm F1.2 STM",
   "shortName": "RF 45mm F1.2 STM",
-  "aliases": ["RF 45mm F1.2 STM", "RF45mm F1.2 STM", "RF 45mm f/1.2 STM", "45mm F1.2 STM", "RF 45 F1.2 STM"],
-  "modelCodes": ["7198C002"],
+  "aliases": [
+    "RF 45mm F1.2 STM",
+    "RF45mm F1.2 STM",
+    "RF 45mm f/1.2 STM",
+    "45mm F1.2 STM",
+    "RF 45 F1.2 STM"
+  ],
+  "modelCodes": [
+    "7198C002"
+  ],
   "gtins": [],
   "announced": "2025-11-06",
   "launchPriceUsd": 469.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-50mm-f1-2l-usm",
+    "canon-rf-50mm-f1-4l-vcm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 45,

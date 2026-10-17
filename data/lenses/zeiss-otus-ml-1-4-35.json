@@ -3,17 +3,30 @@
   "brand": "zeiss",
   "name": "Zeiss Otus ML 1.4/35",
   "shortName": "Otus ML 1.4/35",
-  "aliases": ["Otus ML 1.4/35", "Otus ML 35mm f/1.4", "Otus ML 35mm F1.4", "Otus ML 35mm"],
+  "aliases": [
+    "Otus ML 1.4/35",
+    "Otus ML 35mm f/1.4",
+    "Otus ML 35mm F1.4",
+    "Otus ML 35mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2026-02-24",
   "launchPriceUsd": 2299,
-  "launchPrices": {"EUR": 2399},
+  "launchPrices": {
+    "EUR": 2399
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "canon-rf", "nikon-z"],
+  "rivals": [
+    "voigtlander-nokton-40mm-f1-2-aspherical"
+  ],
+  "mounts": [
+    "sony-e",
+    "canon-rf",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

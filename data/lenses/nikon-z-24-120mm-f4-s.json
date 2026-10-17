@@ -3,16 +3,27 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 24-120mm f/4 S",
   "shortName": "NIKKOR Z 24-120mm f/4 S",
-  "aliases": ["NIKKOR Z 24-120mm f/4 S", "Z 24-120mm f/4 S", "24-120mm f/4 S", "Z 24-120 f/4 S"],
-  "modelCodes": ["20105"],
+  "aliases": [
+    "NIKKOR Z 24-120mm f/4 S",
+    "Z 24-120mm f/4 S",
+    "24-120mm f/4 S",
+    "Z 24-120 f/4 S"
+  ],
+  "modelCodes": [
+    "20105"
+  ],
   "gtins": [],
   "announced": "2021-10-28",
   "launchPriceUsd": 1099.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "nikon-z-28-135mm-f4-pz"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

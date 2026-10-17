@@ -3,17 +3,30 @@
   "brand": "samyang",
   "name": "Samyang AF 14mm F2.8 FE",
   "shortName": "AF 14mm F2.8 FE",
-  "aliases": ["AF 14mm F2.8 FE", "14mm F2.8 FE", "AF 14mm F2.8 Sony FE", "AF 14/2.8 FE"],
-  "modelCodes": ["IO14AF-E"],
+  "aliases": [
+    "AF 14mm F2.8 FE",
+    "14mm F2.8 FE",
+    "AF 14mm F2.8 Sony FE",
+    "AF 14/2.8 FE"
+  ],
+  "modelCodes": [
+    "IO14AF-E"
+  ],
   "gtins": [],
   "announced": "2016-05-03",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 699},
+  "launchPrices": {
+    "EUR": 699
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-16mm-f2-8-p-fe"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 14,

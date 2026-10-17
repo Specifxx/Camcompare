@@ -3,16 +3,32 @@
   "brand": "canon",
   "name": "Canon EF 16-35mm f/2.8L III USM",
   "shortName": "EF 16-35mm f/2.8L III USM",
-  "aliases": ["EF 16-35mm f/2.8L III USM", "EF16-35mm f/2.8L III USM", "16-35mm f/2.8L III", "16-35mm F2.8L III", "16-35mm f/2.8 L III", "16-35 f/2.8L III", "16-35 F2.8L III"],
-  "modelCodes": ["0573C001"],
+  "aliases": [
+    "EF 16-35mm f/2.8L III USM",
+    "EF16-35mm f/2.8L III USM",
+    "16-35mm f/2.8L III",
+    "16-35mm F2.8L III",
+    "16-35mm f/2.8 L III",
+    "16-35 f/2.8L III",
+    "16-35 F2.8L III"
+  ],
+  "modelCodes": [
+    "0573C001"
+  ],
   "gtins": [],
   "announced": "2016-08-25",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef"],
+  "rivals": [
+    "tokina-opera-16-28mm-f2-8-ff",
+    "tamron-sp-15-30mm-f2-8-di-vc-usd",
+    "tamron-sp-15-30mm-f2-8-di-vc-usd-g2"
+  ],
+  "mounts": [
+    "canon-ef"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

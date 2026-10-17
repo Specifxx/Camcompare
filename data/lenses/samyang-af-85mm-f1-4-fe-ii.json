@@ -3,7 +3,10 @@
   "brand": "samyang",
   "name": "Samyang AF 85mm F1.4 FE II",
   "shortName": "AF 85mm F1.4 FE II",
-  "aliases": ["AF 85mm F1.4 FE II", "85mm F1.4 FE II"],
+  "aliases": [
+    "AF 85mm F1.4 FE II",
+    "85mm F1.4 FE II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2022-07-28",
@@ -11,8 +14,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "meike-85mm-f1-4",
+    "samyang-af-85mm-f1-4-fe",
+    "sigma-85mm-f1-4-dg-dn-art"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

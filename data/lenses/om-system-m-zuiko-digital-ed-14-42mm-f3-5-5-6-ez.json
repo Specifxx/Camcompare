@@ -3,17 +3,38 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital ED 14-42mm F3.5-5.6 EZ",
   "shortName": "M.Zuiko Digital ED 14-42mm F3.5-5.6 EZ",
-  "aliases": ["M.Zuiko Digital ED 14-42mm F3.5-5.6 EZ", "M.Zuiko Digital ED 14-42mm f/3.5-5.6 EZ", "M.Zuiko 14-42mm F3.5-5.6 EZ", "M.Zuiko 14-42mm f/3.5-5.6 EZ", "ED 14-42mm F3.5-5.6 EZ", "14-42mm F3.5-5.6 EZ", "14-42mm f/3.5-5.6 EZ", "M.Zuiko 14-42mm EZ", "14-42mm EZ"],
-  "modelCodes": ["V335370BW000", "V335370SW000"],
+  "aliases": [
+    "M.Zuiko Digital ED 14-42mm F3.5-5.6 EZ",
+    "M.Zuiko Digital ED 14-42mm f/3.5-5.6 EZ",
+    "M.Zuiko 14-42mm F3.5-5.6 EZ",
+    "M.Zuiko 14-42mm f/3.5-5.6 EZ",
+    "ED 14-42mm F3.5-5.6 EZ",
+    "14-42mm F3.5-5.6 EZ",
+    "14-42mm f/3.5-5.6 EZ",
+    "M.Zuiko 14-42mm EZ",
+    "14-42mm EZ"
+  ],
+  "modelCodes": [
+    "V335370BW000",
+    "V335370SW000"
+  ],
   "gtins": [],
   "announced": "2014-01-29",
   "launchPriceUsd": null,
-  "launchPrices": {"GBP": 299.99},
+  "launchPrices": {
+    "GBP": 299.99
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-14-42mm-f3-5-5-6-iii",
+    "panasonic-lumix-g-vario-14-42mm-f3-5-5-6-ii-asph-mega-o-i-s",
+    "panasonic-lumix-g-vario-12-32mm-f3-5-5-6-asph-mega-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 14,

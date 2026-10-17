@@ -3,7 +3,15 @@
   "brand": "fujifilm",
   "name": "Fujifilm XC 15-45mm F3.5-5.6 OIS PZ",
   "shortName": "XC 15-45mm F3.5-5.6 OIS PZ",
-  "aliases": ["XC 15-45mm F3.5-5.6 OIS PZ", "XC15-45mm F3.5-5.6 OIS PZ", "XC15-45mmF3.5-5.6 OIS PZ", "XC 15-45mm f/3.5-5.6 OIS PZ", "XC15-45mm f/3.5-5.6 OIS PZ", "15-45mm F3.5-5.6 OIS PZ", "15-45mm f/3.5-5.6 OIS PZ"],
+  "aliases": [
+    "XC 15-45mm F3.5-5.6 OIS PZ",
+    "XC15-45mm F3.5-5.6 OIS PZ",
+    "XC15-45mmF3.5-5.6 OIS PZ",
+    "XC 15-45mm f/3.5-5.6 OIS PZ",
+    "XC15-45mm f/3.5-5.6 OIS PZ",
+    "15-45mm F3.5-5.6 OIS PZ",
+    "15-45mm f/3.5-5.6 OIS PZ"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-01-31",
@@ -11,8 +19,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xc-16-50mm-f3-5-5-6-ois-ii",
+    "fujifilm-xf-16-50mm-f2-8-4-8-r-lm-wr"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 15,

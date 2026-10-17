@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron SP 24-70mm F/2.8 Di VC USD",
   "shortName": "SP 24-70mm F/2.8 Di VC USD",
-  "aliases": ["SP 24-70mm F/2.8 Di VC USD", "SP 24-70mm F2.8 Di VC USD", "24-70mm F/2.8 Di VC USD", "24-70mm F2.8 Di VC USD", "SP 24-70mm F/2.8 Di USD"],
-  "modelCodes": ["A007"],
+  "aliases": [
+    "SP 24-70mm F/2.8 Di VC USD",
+    "SP 24-70mm F2.8 Di VC USD",
+    "24-70mm F/2.8 Di VC USD",
+    "24-70mm F2.8 Di VC USD",
+    "SP 24-70mm F/2.8 Di USD"
+  ],
+  "modelCodes": [
+    "A007"
+  ],
   "gtins": [],
   "announced": "2012-04-05",
   "launchPriceUsd": 1299,
   "status": "discontinued",
   "predecessor": null,
   "successor": "tamron-sp-24-70mm-f2-8-di-vc-usd-g2",
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "nikon-af-s-24-70mm-f2-8e-ed-vr",
+    "canon-ef-24-70mm-f2-8l-ii-usm",
+    "sigma-24-70mm-f2-8-dg-os-hsm-art"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

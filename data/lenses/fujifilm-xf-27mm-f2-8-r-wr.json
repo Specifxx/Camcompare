@@ -3,17 +3,33 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 27mm F2.8 R WR",
   "shortName": "XF 27mm F2.8 R WR",
-  "aliases": ["XF 27mm F2.8 R WR", "XF27mm F2.8 R WR", "XF27mmF2.8 R WR", "XF 27mm f/2.8 R WR", "XF27mm f/2.8 R WR", "27mm F2.8 R WR", "27mm f/2.8 R WR"],
+  "aliases": [
+    "XF 27mm F2.8 R WR",
+    "XF27mm F2.8 R WR",
+    "XF27mmF2.8 R WR",
+    "XF 27mm f/2.8 R WR",
+    "XF27mm f/2.8 R WR",
+    "27mm F2.8 R WR",
+    "27mm f/2.8 R WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-01-27",
   "launchPriceUsd": 399.95,
-  "launchPrices": {"EUR": 449},
+  "launchPrices": {
+    "EUR": 449
+  },
   "status": "current",
   "predecessor": "fujifilm-xf-27mm-f2-8",
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "7artisans-af-27mm-f2-8",
+    "ttartisan-af-27mm-f2-8",
+    "fujifilm-xf-30mm-f2-8-r-lm-wr-macro"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 27,

@@ -3,7 +3,12 @@
   "brand": "sigma",
   "name": "Sigma 90mm F2.8 DG DN | Contemporary",
   "shortName": "90mm F2.8 DG DN | Contemporary",
-  "aliases": ["90mm F2.8 DG DN Contemporary", "90mm F2.8 DG DN", "90mm f/2.8 DG DN C", "90 F2.8 DG DN"],
+  "aliases": [
+    "90mm F2.8 DG DN Contemporary",
+    "90mm F2.8 DG DN",
+    "90mm f/2.8 DG DN C",
+    "90 F2.8 DG DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-09-09",
@@ -11,8 +16,15 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "sony-fe-90mm-f2-8-macro-g-oss",
+    "tamron-90mm-f2-8-di-iii-macro-vxd",
+    "panasonic-lumix-s-100mm-f2-8-macro"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 90,

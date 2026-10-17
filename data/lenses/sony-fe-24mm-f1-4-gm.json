@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony FE 24mm F1.4 GM",
   "shortName": "FE 24mm F1.4 GM",
-  "aliases": ["FE 24mm F1.4 GM", "24mm F1.4 GM", "24mm f/1.4 GM", "FE 24mm f/1.4 GM", "24mm F1.4 G Master", "24mm f/1.4 G Master"],
-  "modelCodes": ["SEL24F14GM"],
+  "aliases": [
+    "FE 24mm F1.4 GM",
+    "24mm F1.4 GM",
+    "24mm f/1.4 GM",
+    "FE 24mm f/1.4 GM",
+    "24mm F1.4 G Master",
+    "24mm f/1.4 G Master"
+  ],
+  "modelCodes": [
+    "SEL24F14GM"
+  ],
   "gtins": [],
   "announced": "2018-09-20",
   "launchPriceUsd": 1400,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-24mm-f1-4-dg-dn-art"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

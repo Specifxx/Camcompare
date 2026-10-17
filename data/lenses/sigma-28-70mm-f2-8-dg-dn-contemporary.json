@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 28-70mm F2.8 DG DN | Contemporary",
   "shortName": "28-70mm F2.8 DG DN | Contemporary",
-  "aliases": ["28-70mm F2.8 DG DN Contemporary", "28-70mm F2.8 DG DN", "28-70mm 2.8 DG DN", "28-70 F2.8 DG DN", "28-70mm DG DN", "28-70 DG DN"],
+  "aliases": [
+    "28-70mm F2.8 DG DN Contemporary",
+    "28-70mm F2.8 DG DN",
+    "28-70mm 2.8 DG DN",
+    "28-70 F2.8 DG DN",
+    "28-70mm DG DN",
+    "28-70 DG DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-02-24",
@@ -11,8 +18,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "leica-vario-elmarit-sl-28-70-f2-8-asph",
+    "leica-vario-elmarit-sl-24-70-f2-8-asph",
+    "panasonic-lumix-s-pro-24-70mm-f2-8"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

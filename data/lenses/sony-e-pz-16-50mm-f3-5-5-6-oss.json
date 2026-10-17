@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony E PZ 16-50mm F3.5-5.6 OSS",
   "shortName": "E PZ 16-50mm F3.5-5.6 OSS",
-  "aliases": ["E PZ 16-50mm F3.5-5.6 OSS", "PZ 16-50mm F3.5-5.6 OSS", "16-50mm F3.5-5.6 PZ OSS", "E 16-50mm F3.5-5.6 OSS", "PZ 16-50mm OSS"],
-  "modelCodes": ["SELP1650"],
+  "aliases": [
+    "E PZ 16-50mm F3.5-5.6 OSS",
+    "PZ 16-50mm F3.5-5.6 OSS",
+    "16-50mm F3.5-5.6 PZ OSS",
+    "E 16-50mm F3.5-5.6 OSS",
+    "PZ 16-50mm OSS"
+  ],
+  "modelCodes": [
+    "SELP1650"
+  ],
   "gtins": [],
   "announced": "2012-09-12",
   "launchPriceUsd": 350,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-e-pz-16-50mm-f3-5-5-6-oss-ii"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 16,

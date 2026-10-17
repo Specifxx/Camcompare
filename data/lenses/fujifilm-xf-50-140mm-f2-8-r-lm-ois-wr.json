@@ -3,7 +3,15 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 50-140mm F2.8 R LM OIS WR",
   "shortName": "XF 50-140mm F2.8 R LM OIS WR",
-  "aliases": ["XF 50-140mm F2.8 R LM OIS WR", "XF50-140mm F2.8 R LM OIS WR", "XF50-140mmF2.8 R LM OIS WR", "XF 50-140mm f/2.8 R LM OIS WR", "XF50-140mm f/2.8 R LM OIS WR", "50-140mm F2.8 R LM OIS WR", "50-140mm f/2.8 R LM OIS WR"],
+  "aliases": [
+    "XF 50-140mm F2.8 R LM OIS WR",
+    "XF50-140mm F2.8 R LM OIS WR",
+    "XF50-140mmF2.8 R LM OIS WR",
+    "XF 50-140mm f/2.8 R LM OIS WR",
+    "XF50-140mm f/2.8 R LM OIS WR",
+    "50-140mm F2.8 R LM OIS WR",
+    "50-140mm f/2.8 R LM OIS WR"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2014-09-10",
@@ -11,8 +19,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "sigma-50-120mm-f2-8-dc-os-contemporary"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 50,

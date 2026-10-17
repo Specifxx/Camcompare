@@ -3,7 +3,17 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 18-55mm F2.8-4 R LM OIS",
   "shortName": "XF 18-55mm F2.8-4 R LM OIS",
-  "aliases": ["XF 18-55mm F2.8-4 R LM OIS", "XF18-55mm F2.8-4 R LM OIS", "XF18-55mmF2.8-4 R LM OIS", "XF 18-55mm f/2.8-4 R LM OIS", "XF18-55mm f/2.8-4 R LM OIS", "18-55mm F2.8-4 R LM OIS", "18-55mm f/2.8-4 R LM OIS", "XF 18-55mm f/2.8-4.0 R LM OIS", "18-55mm f/2.8-4.0 R LM OIS"],
+  "aliases": [
+    "XF 18-55mm F2.8-4 R LM OIS",
+    "XF18-55mm F2.8-4 R LM OIS",
+    "XF18-55mmF2.8-4 R LM OIS",
+    "XF 18-55mm f/2.8-4 R LM OIS",
+    "XF18-55mm f/2.8-4 R LM OIS",
+    "18-55mm F2.8-4 R LM OIS",
+    "18-55mm f/2.8-4 R LM OIS",
+    "XF 18-55mm f/2.8-4.0 R LM OIS",
+    "18-55mm f/2.8-4.0 R LM OIS"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2012-09-06",
@@ -11,8 +21,12 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-16-50mm-f2-8-4-8-r-lm-wr"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 18,

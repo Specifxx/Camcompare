@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron 50-400mm F/4.5-6.3 Di III VC VXD",
   "shortName": "50-400mm F/4.5-6.3 Di III VC VXD",
-  "aliases": ["50-400mm F/4.5-6.3 Di III VC VXD", "50-400mm F4.5-6.3 Di III VC VXD", "50-400mm F/4.5-6.3 VC VXD", "50-400mm F4.5-6.3 VC VXD", "50-400mm F/4.5-6.3 VC", "50-400mm F4.5-6.3 VC"],
-  "modelCodes": ["A067"],
+  "aliases": [
+    "50-400mm F/4.5-6.3 Di III VC VXD",
+    "50-400mm F4.5-6.3 Di III VC VXD",
+    "50-400mm F/4.5-6.3 VC VXD",
+    "50-400mm F4.5-6.3 VC VXD",
+    "50-400mm F/4.5-6.3 VC",
+    "50-400mm F4.5-6.3 VC"
+  ],
+  "modelCodes": [
+    "A067"
+  ],
   "gtins": [],
   "announced": "2022-08-25",
   "launchPriceUsd": 1299,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "tamron-50-300mm-f4-5-6-3-di-iii-vc-vxd",
+    "sigma-60-600mm-f4-5-6-3-dg-dn-os-sports",
+    "tamron-28-300mm-f4-7-1-di-iii-vc-vxd"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

@@ -3,16 +3,30 @@
   "brand": "sony",
   "name": "Sony FE 14mm F1.8 GM",
   "shortName": "FE 14mm F1.8 GM",
-  "aliases": ["FE 14mm F1.8 GM", "14mm F1.8 GM", "14mm f/1.8 GM", "FE 14mm f/1.8 GM", "14mm F1.8 G Master", "14mm f/1.8 G Master"],
-  "modelCodes": ["SEL14F18GM"],
+  "aliases": [
+    "FE 14mm F1.8 GM",
+    "14mm F1.8 GM",
+    "14mm f/1.8 GM",
+    "FE 14mm f/1.8 GM",
+    "14mm F1.8 G Master",
+    "14mm f/1.8 G Master"
+  ],
+  "modelCodes": [
+    "SEL14F18GM"
+  ],
   "gtins": [],
   "announced": "2021-04-20",
   "launchPriceUsd": 1600,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-16mm-f1-8-g",
+    "viltrox-af-16mm-f1-8"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 14,

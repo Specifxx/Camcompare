@@ -3,16 +3,33 @@
   "brand": "tamron",
   "name": "Tamron 16-50mm F2.8 A",
   "shortName": "16-50mm F2.8 A",
-  "aliases": ["16-50mm F2.8 A", "16-50mm f/2.8 A", "Tamron 16-50mm F2.8 A", "Tamron 16-50mm F2.8", "Tamron 16-50mm f/2.8"],
-  "modelCodes": ["B091"],
+  "aliases": [
+    "16-50mm F2.8 A",
+    "16-50mm f/2.8 A",
+    "Tamron 16-50mm F2.8 A",
+    "Tamron 16-50mm F2.8",
+    "Tamron 16-50mm f/2.8"
+  ],
+  "modelCodes": [
+    "B091"
+  ],
   "gtins": [],
   "announced": "2026-10-14",
   "launchPriceUsd": 529,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "fujifilm-x", "canon-rf"],
+  "rivals": [
+    "nikon-z-dx-16-50mm-f2-8-vr",
+    "sigma-18-50mm-f2-8-dc-dn-contemporary",
+    "fujifilm-xf-16-55mm-f2-8-r-lm-wr"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "fujifilm-x",
+    "canon-rf"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 16,

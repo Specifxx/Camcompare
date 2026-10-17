@@ -3,16 +3,27 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 50mm f/1.4",
   "shortName": "NIKKOR Z 50mm f/1.4",
-  "aliases": ["NIKKOR Z 50mm f/1.4", "Z 50mm f/1.4", "Z 50 f/1.4"],
-  "modelCodes": ["20128"],
+  "aliases": [
+    "NIKKOR Z 50mm f/1.4",
+    "Z 50mm f/1.4",
+    "Z 50 f/1.4"
+  ],
+  "modelCodes": [
+    "20128"
+  ],
   "gtins": [],
   "announced": "2024-09-10",
   "launchPriceUsd": 499.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "viltrox-af-50mm-f1-4-pro",
+    "nikon-z-50mm-f1-2-s"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

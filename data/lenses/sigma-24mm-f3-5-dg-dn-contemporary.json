@@ -3,7 +3,12 @@
   "brand": "sigma",
   "name": "Sigma 24mm F3.5 DG DN | Contemporary",
   "shortName": "24mm F3.5 DG DN | Contemporary",
-  "aliases": ["24mm F3.5 DG DN Contemporary", "24mm F3.5 DG DN", "24mm f/3.5 DG DN C", "24 F3.5 DG DN"],
+  "aliases": [
+    "24mm F3.5 DG DN Contemporary",
+    "24mm F3.5 DG DN",
+    "24mm f/3.5 DG DN C",
+    "24 F3.5 DG DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-12-01",
@@ -11,8 +16,14 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "samyang-af-24mm-f2-8-fe",
+    "sony-fe-24mm-f2-8-g"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

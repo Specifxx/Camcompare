@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony FE 70-200mm F4 G OSS",
   "shortName": "FE 70-200mm F4 G OSS",
-  "aliases": ["FE 70-200mm F4 G OSS", "FE 70-200mm f/4 G OSS", "70-200mm F4 G OSS", "70-200mm f/4 G OSS", "70-200 F4 G OSS"],
-  "modelCodes": ["SEL70200G"],
+  "aliases": [
+    "FE 70-200mm F4 G OSS",
+    "FE 70-200mm f/4 G OSS",
+    "70-200mm F4 G OSS",
+    "70-200mm f/4 G OSS",
+    "70-200 F4 G OSS"
+  ],
+  "modelCodes": [
+    "SEL70200G"
+  ],
   "gtins": [],
   "announced": "2013-10-16",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-fe-70-200mm-f4-macro-g-oss-ii"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

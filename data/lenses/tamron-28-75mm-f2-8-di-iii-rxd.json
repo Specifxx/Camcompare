@@ -3,16 +3,31 @@
   "brand": "tamron",
   "name": "Tamron 28-75mm F/2.8 Di III RXD",
   "shortName": "28-75mm F/2.8 Di III RXD",
-  "aliases": ["28-75mm F/2.8 Di III RXD", "28-75mm F2.8 Di III RXD", "28-75mm f/2.8 RXD", "28-75mm F2.8 RXD", "28-75mm RXD", "28-75 Di III RXD"],
-  "modelCodes": ["A036"],
+  "aliases": [
+    "28-75mm F/2.8 Di III RXD",
+    "28-75mm F2.8 Di III RXD",
+    "28-75mm f/2.8 RXD",
+    "28-75mm F2.8 RXD",
+    "28-75mm RXD",
+    "28-75 Di III RXD"
+  ],
+  "modelCodes": [
+    "A036"
+  ],
   "gtins": [],
   "announced": "2018-04-27",
   "launchPriceUsd": 799,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "tamron-28-75mm-f2-8-di-iii-vxd-g2",
+    "sigma-28-70mm-f2-8-dg-dn-contemporary",
+    "samyang-af-24-70mm-f2-8-fe"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

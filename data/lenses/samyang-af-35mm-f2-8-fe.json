@@ -3,17 +3,32 @@
   "brand": "samyang",
   "name": "Samyang AF 35mm F2.8 FE",
   "shortName": "AF 35mm F2.8 FE",
-  "aliases": ["AF 35mm F2.8 FE", "35mm F2.8 FE", "AF 35mm F2.8 Sony FE", "AF 35/2.8 FE"],
-  "modelCodes": ["IO35AF-E"],
+  "aliases": [
+    "AF 35mm F2.8 FE",
+    "35mm F2.8 FE",
+    "AF 35mm F2.8 Sony FE",
+    "AF 35/2.8 FE"
+  ],
+  "modelCodes": [
+    "IO35AF-E"
+  ],
   "gtins": [],
   "announced": "2017-06-05",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 299},
+  "launchPrices": {
+    "EUR": 299
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-sonnar-t-fe-35mm-f2-8-za",
+    "sony-fe-40mm-f2-5-g",
+    "viltrox-af-40mm-f2-5-air"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

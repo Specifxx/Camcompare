@@ -3,17 +3,32 @@
   "brand": "zeiss",
   "name": "Zeiss Batis 2/40 CF",
   "shortName": "Batis 2/40 CF",
-  "aliases": ["Batis 2/40 CF", "Batis 40mm f/2 CF", "Batis 40mm F2 CF", "Batis 40mm f/2 Close Focus", "Batis 2/40", "Batis 40mm"],
+  "aliases": [
+    "Batis 2/40 CF",
+    "Batis 40mm f/2 CF",
+    "Batis 40mm F2 CF",
+    "Batis 40mm f/2 Close Focus",
+    "Batis 2/40",
+    "Batis 40mm"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-09-27",
   "launchPriceUsd": 1299,
-  "launchPrices": {"EUR": 1299},
+  "launchPrices": {
+    "EUR": 1299
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "ttartisan-af-40mm-f2",
+    "samyang-af-35mm-f1-8-fe",
+    "samyang-af-35mm-f1-8-p-fe"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 40,

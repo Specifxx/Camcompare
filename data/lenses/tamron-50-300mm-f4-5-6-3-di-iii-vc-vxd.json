@@ -3,16 +3,30 @@
   "brand": "tamron",
   "name": "Tamron 50-300mm F/4.5-6.3 Di III VC VXD",
   "shortName": "50-300mm F/4.5-6.3 Di III VC VXD",
-  "aliases": ["50-300mm F/4.5-6.3 Di III VC VXD", "50-300mm F4.5-6.3 Di III VC VXD", "50-300mm f/4.5-6.3 VC VXD", "50-300mm F4.5-6.3 VC VXD", "50-300 Di III VC VXD"],
-  "modelCodes": ["A069"],
+  "aliases": [
+    "50-300mm F/4.5-6.3 Di III VC VXD",
+    "50-300mm F4.5-6.3 Di III VC VXD",
+    "50-300mm f/4.5-6.3 VC VXD",
+    "50-300mm F4.5-6.3 VC VXD",
+    "50-300 Di III VC VXD"
+  ],
+  "modelCodes": [
+    "A069"
+  ],
   "gtins": [],
   "announced": "2024-06-06",
   "launchPriceUsd": 799,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "tamron-70-300mm-f4-5-6-3-di-iii-rxd",
+    "sony-fe-70-300mm-f4-5-5-6-g-oss",
+    "tamron-50-400mm-f4-5-6-3-di-iii-vc-vxd"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

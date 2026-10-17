@@ -3,16 +3,30 @@
   "brand": "hasselblad",
   "name": "Hasselblad XCD 3,5-4,5/35-75",
   "shortName": "XCD 3,5-4,5/35-75",
-  "aliases": ["XCD 3,5-4,5/35-75", "XCD 3.5-4.5/35-75", "XCD 3.5-4.5/35-75mm", "XCD 35-75mm f/3.5-4.5", "XCD 35-75mm F3.5-4.5", "XCD 35-75mm", "XCD 35-75"],
-  "modelCodes": ["CP.HB.00000418.01"],
+  "aliases": [
+    "XCD 3,5-4,5/35-75",
+    "XCD 3.5-4.5/35-75",
+    "XCD 3.5-4.5/35-75mm",
+    "XCD 35-75mm f/3.5-4.5",
+    "XCD 35-75mm F3.5-4.5",
+    "XCD 35-75mm",
+    "XCD 35-75"
+  ],
+  "modelCodes": [
+    "CP.HB.00000418.01"
+  ],
   "gtins": [],
   "announced": "2019-06-19",
   "launchPriceUsd": 5175,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["hasselblad-xcd"],
+  "rivals": [
+    "hasselblad-xcd-2-8-4-35-100e"
+  ],
+  "mounts": [
+    "hasselblad-xcd"
+  ],
   "coverage": "medium-format",
   "specs": {
     "focalMinMm": 35.9,

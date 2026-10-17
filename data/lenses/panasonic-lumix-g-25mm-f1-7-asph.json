@@ -3,16 +3,30 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G 25mm F1.7 ASPH.",
   "shortName": "Lumix G 25mm F1.7 ASPH.",
-  "aliases": ["Lumix G 25mm F1.7 ASPH.", "Lumix G 25mm F1.7", "Lumix G 25mm f/1.7", "G 25mm F1.7 ASPH", "G Series 25mm F1.7"],
-  "modelCodes": ["H-H025", "H-H025K"],
+  "aliases": [
+    "Lumix G 25mm F1.7 ASPH.",
+    "Lumix G 25mm F1.7",
+    "Lumix G 25mm f/1.7",
+    "G 25mm F1.7 ASPH",
+    "G Series 25mm F1.7"
+  ],
+  "modelCodes": [
+    "H-H025",
+    "H-H025K"
+  ],
   "gtins": [],
   "announced": "2015-09-02",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-25mm-f1-8-ii",
+    "panasonic-leica-dg-summilux-25mm-f1-4-ii-asph"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 25,

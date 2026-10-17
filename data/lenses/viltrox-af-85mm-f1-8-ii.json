@@ -3,7 +3,13 @@
   "brand": "viltrox",
   "name": "Viltrox AF 85mm F1.8 II",
   "shortName": "AF 85mm F1.8 II",
-  "aliases": ["AF 85mm F1.8 II", "AF 85mm F1.8 Mark II", "Viltrox 85mm F1.8 II", "Viltrox 85mm f/1.8 Mark II", "AF 85/1.8 II"],
+  "aliases": [
+    "AF 85mm F1.8 II",
+    "AF 85mm F1.8 Mark II",
+    "Viltrox 85mm F1.8 II",
+    "Viltrox 85mm f/1.8 Mark II",
+    "AF 85/1.8 II"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2020-05-13",
@@ -11,8 +17,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x", "nikon-z"],
+  "rivals": [
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-pro",
+    "meike-85mm-f1-8-se-mark-ii"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

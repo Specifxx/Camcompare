@@ -3,7 +3,13 @@
   "brand": "sirui",
   "name": "Sirui Sniper 23mm F1.2",
   "shortName": "Sniper 23mm F1.2",
-  "aliases": ["Sirui Sniper 23mm F1.2", "Sirui Sniper 23mm f/1.2", "Sniper 23mm F1.2", "Sirui Sniper 23mm", "Sirui 23mm F1.2"],
+  "aliases": [
+    "Sirui Sniper 23mm F1.2",
+    "Sirui Sniper 23mm f/1.2",
+    "Sniper 23mm F1.2",
+    "Sirui Sniper 23mm",
+    "Sirui 23mm F1.2"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-11-20",
@@ -11,8 +17,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "fujifilm-x", "nikon-z"],
+  "rivals": [
+    "fujifilm-xf-23mm-f1-4-r-lm-wr",
+    "sigma-23mm-f1-4-dc-dn-contemporary",
+    "tokina-atx-m-23mm-f1-4"
+  ],
+  "mounts": [
+    "sony-e",
+    "fujifilm-x",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 23,

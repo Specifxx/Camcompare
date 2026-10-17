@@ -3,16 +3,30 @@
   "brand": "tamron",
   "name": "Tamron 90mm F/2.8 Di III MACRO VXD",
   "shortName": "90mm F/2.8 Di III MACRO VXD",
-  "aliases": ["90mm F/2.8 Di III MACRO VXD", "90mm F2.8 Di III Macro VXD", "90mm F/2.8 Macro VXD", "90mm F2.8 Macro VXD"],
-  "modelCodes": ["F072"],
+  "aliases": [
+    "90mm F/2.8 Di III MACRO VXD",
+    "90mm F2.8 Di III Macro VXD",
+    "90mm F/2.8 Macro VXD",
+    "90mm F2.8 Macro VXD"
+  ],
+  "modelCodes": [
+    "F072"
+  ],
   "gtins": [],
   "announced": "2024-09-26",
   "launchPriceUsd": 699,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "sony-fe-90mm-f2-8-macro-g-oss",
+    "sony-fe-100mm-f2-8-macro-gm-oss",
+    "sony-fe-100mm-f2-8-stf-gm-oss"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 90,

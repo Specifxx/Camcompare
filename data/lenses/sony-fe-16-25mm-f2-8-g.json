@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony FE 16-25mm F2.8 G",
   "shortName": "FE 16-25mm F2.8 G",
-  "aliases": ["FE 16-25mm F2.8 G", "16-25mm F2.8 G", "16-25mm f/2.8 G", "16-25 F2.8 G"],
-  "modelCodes": ["SEL1625G"],
+  "aliases": [
+    "FE 16-25mm F2.8 G",
+    "16-25mm F2.8 G",
+    "16-25mm f/2.8 G",
+    "16-25 F2.8 G"
+  ],
+  "modelCodes": [
+    "SEL1625G"
+  ],
   "gtins": [],
   "announced": "2024-04-16",
   "launchPriceUsd": 1199.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-16-28mm-f2-8-dg-dn-contemporary",
+    "samyang-af-14-24mm-f2-8",
+    "sigma-14-24mm-f2-8-dg-dn-art"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

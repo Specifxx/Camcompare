@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony E 50mm F1.8 OSS",
   "shortName": "E 50mm F1.8 OSS",
-  "aliases": ["E 50mm F1.8 OSS", "E 50mm f/1.8 OSS", "50mm F1.8 OSS", "50mm f/1.8 OSS"],
-  "modelCodes": ["SEL50F18"],
+  "aliases": [
+    "E 50mm F1.8 OSS",
+    "E 50mm f/1.8 OSS",
+    "50mm F1.8 OSS",
+    "50mm f/1.8 OSS"
+  ],
+  "modelCodes": [
+    "SEL50F18"
+  ],
   "gtins": [],
   "announced": "2011-08-24",
   "launchPriceUsd": 300,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "ttartisan-af-56mm-f1-8",
+    "viltrox-af-56mm-f1-7-air"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 50,

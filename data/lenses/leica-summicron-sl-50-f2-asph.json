@@ -3,17 +3,33 @@
   "brand": "leica",
   "name": "Leica Summicron-SL 50 f/2 ASPH.",
   "shortName": "Summicron-SL 50 f/2 ASPH.",
-  "aliases": ["Summicron-SL 50 f/2 ASPH.", "Summicron-SL 50mm f/2 ASPH", "50mm f/2 Summicron-SL ASPH", "Summicron-SL 1:2/50 ASPH", "Summicron-SL 50mm f/2"],
-  "modelCodes": ["11193"],
+  "aliases": [
+    "Summicron-SL 50 f/2 ASPH.",
+    "Summicron-SL 50mm f/2 ASPH",
+    "50mm f/2 Summicron-SL ASPH",
+    "Summicron-SL 1:2/50 ASPH",
+    "Summicron-SL 50mm f/2"
+  ],
+  "modelCodes": [
+    "11193"
+  ],
   "gtins": [],
   "announced": "2023-02-08",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 1950},
+  "launchPrices": {
+    "EUR": 1950
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "leica-apo-summicron-sl-50-f2-asph",
+    "viltrox-af-50mm-f2-0-air",
+    "7artisans-af-50mm-f1-8"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

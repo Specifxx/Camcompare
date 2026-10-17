@@ -3,7 +3,13 @@
   "brand": "sigma",
   "name": "Sigma 60-600mm F4.5-6.3 DG DN OS | Sports",
   "shortName": "60-600mm F4.5-6.3 DG DN OS | Sports",
-  "aliases": ["60-600mm F4.5-6.3 DG DN OS Sports", "60-600mm F4.5-6.3 DG DN OS", "60-600mm f/4.5-6.3 DG DN OS S", "60-600 F4.5-6.3 DG DN OS", "60-600mm DG DN OS Sports"],
+  "aliases": [
+    "60-600mm F4.5-6.3 DG DN OS Sports",
+    "60-600mm F4.5-6.3 DG DN OS",
+    "60-600mm f/4.5-6.3 DG DN OS S",
+    "60-600 F4.5-6.3 DG DN OS",
+    "60-600mm DG DN OS Sports"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-01-12",
@@ -11,8 +17,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "tamron-50-400mm-f4-5-6-3-di-iii-vc-vxd"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 60,

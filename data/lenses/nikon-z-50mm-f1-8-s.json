@@ -3,16 +3,29 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 50mm f/1.8 S",
   "shortName": "NIKKOR Z 50mm f/1.8 S",
-  "aliases": ["NIKKOR Z 50mm f/1.8 S", "Z 50mm f/1.8 S", "50mm f/1.8 S", "Z 50 f/1.8 S"],
-  "modelCodes": ["20083"],
+  "aliases": [
+    "NIKKOR Z 50mm f/1.8 S",
+    "Z 50mm f/1.8 S",
+    "50mm f/1.8 S",
+    "Z 50 f/1.8 S"
+  ],
+  "modelCodes": [
+    "20083"
+  ],
   "gtins": [],
   "announced": "2018-08-23",
   "launchPriceUsd": 599.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "7artisans-af-50mm-f1-8",
+    "meike-50mm-f1-8",
+    "viltrox-af-50mm-f2-0-air"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

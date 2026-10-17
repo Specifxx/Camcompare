@@ -3,16 +3,26 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 28mm f/2.8",
   "shortName": "NIKKOR Z 28mm f/2.8",
-  "aliases": ["NIKKOR Z 28mm f/2.8", "Z 28mm f/2.8", "Z 28 f/2.8"],
-  "modelCodes": ["20101"],
+  "aliases": [
+    "NIKKOR Z 28mm f/2.8",
+    "Z 28mm f/2.8",
+    "Z 28 f/2.8"
+  ],
+  "modelCodes": [
+    "20101"
+  ],
   "gtins": [],
   "announced": "2021-11-17",
   "launchPriceUsd": 299.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "nikon-z-26mm-f2-8"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 28,

@@ -3,17 +3,28 @@
   "brand": "samyang",
   "name": "Samyang AF 18mm F2.8 FE",
   "shortName": "AF 18mm F2.8 FE",
-  "aliases": ["AF 18mm F2.8 FE", "18mm F2.8 FE"],
+  "aliases": [
+    "AF 18mm F2.8 FE",
+    "18mm F2.8 FE"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2019-08-29",
   "launchPriceUsd": 399,
-  "launchPrices": {"EUR": 399},
+  "launchPrices": {
+    "EUR": 399
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "zeiss-batis-2-8-18",
+    "samyang-af-16mm-f2-8-p-fe",
+    "viltrox-af-20mm-f2-8-air"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 18,

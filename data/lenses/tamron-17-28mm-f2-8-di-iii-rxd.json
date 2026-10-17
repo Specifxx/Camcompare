@@ -3,16 +3,28 @@
   "brand": "tamron",
   "name": "Tamron 17-28mm F/2.8 Di III RXD",
   "shortName": "17-28mm F/2.8 Di III RXD",
-  "aliases": ["17-28mm F/2.8 Di III RXD", "17-28mm F2.8 Di III RXD", "17-28mm F/2.8 RXD", "17-28mm F2.8 RXD"],
-  "modelCodes": ["A046"],
+  "aliases": [
+    "17-28mm F/2.8 Di III RXD",
+    "17-28mm F2.8 Di III RXD",
+    "17-28mm F/2.8 RXD",
+    "17-28mm F2.8 RXD"
+  ],
+  "modelCodes": [
+    "A046"
+  ],
   "gtins": [],
   "announced": "2019-06-28",
   "launchPriceUsd": 899,
   "status": "current",
   "predecessor": null,
   "successor": "tamron-16-30mm-f2-8-di-iii-vxd-g2",
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-16-28mm-f2-8-dg-dn-contemporary",
+    "sony-fe-16-25mm-f2-8-g"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 17,

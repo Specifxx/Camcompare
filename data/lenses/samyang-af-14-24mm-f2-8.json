@@ -3,7 +3,12 @@
   "brand": "samyang",
   "name": "Samyang AF 14-24mm F2.8",
   "shortName": "AF 14-24mm F2.8",
-  "aliases": ["AF 14-24mm F2.8", "AF 14-24mm F2.8 FE", "AF 14-24mm F2.8 L", "14-24mm F2.8 FE"],
+  "aliases": [
+    "AF 14-24mm F2.8",
+    "AF 14-24mm F2.8 FE",
+    "AF 14-24mm F2.8 L",
+    "14-24mm F2.8 FE"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-04-22",
@@ -11,8 +16,15 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "leica-super-vario-elmarit-sl-14-24-f2-8-asph",
+    "sigma-14-24mm-f2-8-dg-dn-art",
+    "sony-fe-12-24mm-f2-8-gm"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 14,

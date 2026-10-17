@@ -3,7 +3,10 @@
   "brand": "viltrox",
   "name": "Viltrox AF 25mm F1.7 Air",
   "shortName": "AF 25mm F1.7 Air",
-  "aliases": ["AF 25mm F1.7 Air", "25mm F1.7 Air"],
+  "aliases": [
+    "AF 25mm F1.7 Air",
+    "25mm F1.7 Air"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2025-02-28",
@@ -11,8 +14,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x", "sony-e", "nikon-z"],
+  "rivals": [
+    "nikon-z-dx-24mm-f1-7",
+    "sony-sonnar-t-e-24mm-f1-8-za",
+    "ttartisan-af-23mm-f1-8"
+  ],
+  "mounts": [
+    "fujifilm-x",
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 25,

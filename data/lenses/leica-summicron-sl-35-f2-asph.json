@@ -3,17 +3,33 @@
   "brand": "leica",
   "name": "Leica Summicron-SL 35 f/2 ASPH.",
   "shortName": "Summicron-SL 35 f/2 ASPH.",
-  "aliases": ["Summicron-SL 35 f/2 ASPH.", "Summicron-SL 35mm f/2 ASPH", "35mm f/2 Summicron-SL ASPH", "Summicron-SL 1:2/35 ASPH", "Summicron-SL 35mm f/2"],
-  "modelCodes": ["11192"],
+  "aliases": [
+    "Summicron-SL 35 f/2 ASPH.",
+    "Summicron-SL 35mm f/2 ASPH",
+    "35mm f/2 Summicron-SL ASPH",
+    "Summicron-SL 1:2/35 ASPH",
+    "Summicron-SL 35mm f/2"
+  ],
+  "modelCodes": [
+    "11192"
+  ],
   "gtins": [],
   "announced": "2023-02-08",
   "launchPriceUsd": null,
-  "launchPrices": {"EUR": 2250},
+  "launchPrices": {
+    "EUR": 2250
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "leica-apo-summicron-sl-35-f2-asph",
+    "panasonic-lumix-s-40mm-f2",
+    "ttartisan-af-40mm-f2"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

@@ -3,16 +3,30 @@
   "brand": "canon",
   "name": "Canon RF 85mm F1.4L VCM",
   "shortName": "RF 85mm F1.4L VCM",
-  "aliases": ["RF 85mm F1.4L VCM", "RF85mm F1.4 L VCM", "RF 85mm f/1.4L VCM", "85mm F1.4L VCM", "RF 85mm VCM", "RF 85 F1.4L VCM"],
-  "modelCodes": ["7240C002"],
+  "aliases": [
+    "RF 85mm F1.4L VCM",
+    "RF85mm F1.4 L VCM",
+    "RF 85mm f/1.4L VCM",
+    "85mm F1.4L VCM",
+    "RF 85mm VCM",
+    "RF 85 F1.4L VCM"
+  ],
+  "modelCodes": [
+    "7240C002"
+  ],
   "gtins": [],
   "announced": "2025-09-09",
   "launchPriceUsd": 1649,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-85mm-f1-2l-usm",
+    "canon-rf-85mm-f1-2l-usm-ds"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

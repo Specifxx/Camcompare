@@ -3,16 +3,27 @@
   "brand": "sony",
   "name": "Sony E 10-18mm F4 OSS",
   "shortName": "E 10-18mm F4 OSS",
-  "aliases": ["E 10-18mm F4 OSS", "E 10-18mm f/4 OSS", "10-18mm F4 OSS", "10-18mm f/4 OSS"],
-  "modelCodes": ["SEL1018"],
+  "aliases": [
+    "E 10-18mm F4 OSS",
+    "E 10-18mm f/4 OSS",
+    "10-18mm F4 OSS",
+    "10-18mm f/4 OSS"
+  ],
+  "modelCodes": [
+    "SEL1018"
+  ],
   "gtins": [],
   "announced": "2012-09-12",
   "launchPriceUsd": 850,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-e-pz-10-20mm-f4-g"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 10,

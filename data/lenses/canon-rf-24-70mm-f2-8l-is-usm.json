@@ -3,16 +3,32 @@
   "brand": "canon",
   "name": "Canon RF 24-70mm F2.8L IS USM",
   "shortName": "RF 24-70mm F2.8L IS USM",
-  "aliases": ["RF 24-70mm F2.8L IS USM", "RF24-70mm F2.8 L IS USM", "RF 24-70mm f/2.8L IS USM", "RF 24-70mm F2.8 L IS USM", "24-70mm F2.8L IS USM", "24-70mm f/2.8L IS USM", "RF 24-70mm F2.8L IS", "RF 24-70mm f/2.8L IS", "RF 24-70 F2.8L IS"],
-  "modelCodes": ["3680C002"],
+  "aliases": [
+    "RF 24-70mm F2.8L IS USM",
+    "RF24-70mm F2.8 L IS USM",
+    "RF 24-70mm f/2.8L IS USM",
+    "RF 24-70mm F2.8 L IS USM",
+    "24-70mm F2.8L IS USM",
+    "24-70mm f/2.8L IS USM",
+    "RF 24-70mm F2.8L IS",
+    "RF 24-70mm f/2.8L IS",
+    "RF 24-70 F2.8L IS"
+  ],
+  "modelCodes": [
+    "3680C002"
+  ],
   "gtins": [],
   "announced": "2019-08-28",
   "launchPriceUsd": 2299,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-rf"],
+  "rivals": [
+    "canon-rf-28-70mm-f2-8-is-stm"
+  ],
+  "mounts": [
+    "canon-rf"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

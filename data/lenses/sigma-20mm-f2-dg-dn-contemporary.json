@@ -3,7 +3,12 @@
   "brand": "sigma",
   "name": "Sigma 20mm F2 DG DN | Contemporary",
   "shortName": "20mm F2 DG DN | Contemporary",
-  "aliases": ["20mm F2 DG DN Contemporary", "20mm F2 DG DN", "20mm f/2 DG DN C", "20 F2 DG DN"],
+  "aliases": [
+    "20mm F2 DG DN Contemporary",
+    "20mm F2 DG DN",
+    "20mm f/2 DG DN C",
+    "20 F2 DG DN"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2022-02-09",
@@ -11,8 +16,15 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "l-mount"],
+  "rivals": [
+    "sony-fe-20mm-f1-8-g",
+    "panasonic-lumix-s-18mm-f1-8",
+    "panasonic-lumix-s-20mm-f2-5"
+  ],
+  "mounts": [
+    "sony-e",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 20,

@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix S PRO 50mm F1.4",
   "shortName": "Lumix S PRO 50mm F1.4",
-  "aliases": ["Lumix S PRO 50mm F1.4", "S PRO 50mm F1.4", "S Pro 50mm f/1.4", "Lumix S 50mm F1.4"],
-  "modelCodes": ["S-X50"],
+  "aliases": [
+    "Lumix S PRO 50mm F1.4",
+    "S PRO 50mm F1.4",
+    "S Pro 50mm f/1.4",
+    "Lumix S 50mm F1.4"
+  ],
+  "modelCodes": [
+    "S-X50"
+  ],
   "gtins": [],
   "announced": "2019-02-01",
   "launchPriceUsd": 2299,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["l-mount"],
+  "rivals": [
+    "sigma-50mm-f1-4-dg-dn-art",
+    "sigma-50mm-f1-2-dg-dn-art",
+    "leica-summilux-sl-50-f1-4-asph"
+  ],
+  "mounts": [
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 50,

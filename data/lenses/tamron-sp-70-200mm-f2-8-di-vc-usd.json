@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron SP 70-200mm F/2.8 Di VC USD",
   "shortName": "SP 70-200mm F/2.8 Di VC USD",
-  "aliases": ["SP 70-200mm F/2.8 Di VC USD", "SP 70-200mm F2.8 Di VC USD", "70-200mm F/2.8 Di VC USD", "70-200mm F2.8 Di VC USD", "SP 70-200mm F/2.8 Di USD"],
-  "modelCodes": ["A009"],
+  "aliases": [
+    "SP 70-200mm F/2.8 Di VC USD",
+    "SP 70-200mm F2.8 Di VC USD",
+    "70-200mm F/2.8 Di VC USD",
+    "70-200mm F2.8 Di VC USD",
+    "SP 70-200mm F/2.8 Di USD"
+  ],
+  "modelCodes": [
+    "A009"
+  ],
   "gtins": [],
   "announced": "2012-09-13",
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
   "successor": "tamron-sp-70-200mm-f2-8-di-vc-usd-g2",
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "nikon-af-s-70-200mm-f2-8e-fl-ed-vr",
+    "canon-ef-70-200mm-f2-8l-is-iii-usm",
+    "sigma-70-200mm-f2-8-dg-os-hsm-sports"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

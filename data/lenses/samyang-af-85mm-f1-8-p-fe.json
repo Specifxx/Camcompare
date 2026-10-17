@@ -3,16 +3,28 @@
   "brand": "samyang",
   "name": "Samyang AF 85mm F1.8 P FE",
   "shortName": "AF 85mm F1.8 P FE",
-  "aliases": ["AF 85mm F1.8 P FE", "85mm F1.8 P FE", "AF 85mm F1.8 P Sony FE"],
-  "modelCodes": ["IO8518-E"],
+  "aliases": [
+    "AF 85mm F1.8 P FE",
+    "85mm F1.8 P FE",
+    "AF 85mm F1.8 P Sony FE"
+  ],
+  "modelCodes": [
+    "IO8518-E"
+  ],
   "gtins": [],
   "announced": "2025-07-15",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-pro",
+    "meike-85mm-f1-8-se-mark-ii"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

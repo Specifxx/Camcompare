@@ -3,17 +3,34 @@
   "brand": "panasonic",
   "name": "Panasonic Leica DG Nocticron 42.5mm F1.2 ASPH. Power O.I.S.",
   "shortName": "Leica DG Nocticron 42.5mm F1.2 ASPH. Power O.I.S.",
-  "aliases": ["Leica DG Nocticron 42.5mm F1.2 ASPH. Power O.I.S.", "Leica DG Nocticron 42.5mm F1.2", "DG Nocticron 42.5mm F1.2", "Nocticron 42.5mm F1.2", "Nocticron 42.5mm", "Leica DG 42.5mm F1.2", "Leica 42.5mm F1.2"],
-  "modelCodes": ["H-NS043"],
+  "aliases": [
+    "Leica DG Nocticron 42.5mm F1.2 ASPH. Power O.I.S.",
+    "Leica DG Nocticron 42.5mm F1.2",
+    "DG Nocticron 42.5mm F1.2",
+    "Nocticron 42.5mm F1.2",
+    "Nocticron 42.5mm",
+    "Leica DG 42.5mm F1.2",
+    "Leica 42.5mm F1.2"
+  ],
+  "modelCodes": [
+    "H-NS043"
+  ],
   "gtins": [],
   "announced": "2014-01-06",
   "launchPriceUsd": 1599,
-  "launchPrices": {"GBP": 1299, "EUR": 1499},
+  "launchPrices": {
+    "GBP": 1299,
+    "EUR": 1499
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-45mm-f1-2-pro"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 42.5,

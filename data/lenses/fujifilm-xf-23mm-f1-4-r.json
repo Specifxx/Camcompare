@@ -3,17 +3,28 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 23mm F1.4 R",
   "shortName": "XF 23mm F1.4 R",
-  "aliases": ["XF 23mm F1.4 R", "XF 23 F1.4 R"],
+  "aliases": [
+    "XF 23mm F1.4 R",
+    "XF 23 F1.4 R"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2013-09-05",
   "launchPriceUsd": 899.95,
-  "launchPrices": {"GBP": 849.99},
+  "launchPrices": {
+    "GBP": 849.99
+  },
   "status": "discontinued",
   "predecessor": null,
   "successor": "fujifilm-xf-23mm-f1-4-r-lm-wr",
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "sigma-23mm-f1-4-dc-dn-contemporary",
+    "tokina-atx-m-23mm-f1-4",
+    "viltrox-af-23mm-f1-4"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 23,

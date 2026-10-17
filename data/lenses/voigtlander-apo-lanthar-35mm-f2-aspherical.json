@@ -3,7 +3,14 @@
   "brand": "voigtlander",
   "name": "Voigtländer APO-Lanthar 35mm F2 Aspherical",
   "shortName": "APO-Lanthar 35mm F2 Aspherical",
-  "aliases": ["APO-Lanthar 35mm F2 Aspherical", "APO-Lanthar 35mm f/2 Aspherical", "APO-Lanthar 35mm F2 Asph", "APO-Lanthar 35mm f/2 Asph", "APO-Lanthar 35mm F2", "APO-Lanthar 35mm f/2"],
+  "aliases": [
+    "APO-Lanthar 35mm F2 Aspherical",
+    "APO-Lanthar 35mm f/2 Aspherical",
+    "APO-Lanthar 35mm F2 Asph",
+    "APO-Lanthar 35mm f/2 Asph",
+    "APO-Lanthar 35mm F2",
+    "APO-Lanthar 35mm f/2"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2021-02-15",
@@ -11,8 +18,13 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "zeiss-loxia-2-35"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

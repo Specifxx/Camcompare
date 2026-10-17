@@ -3,16 +3,29 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 85mm f/1.8 S",
   "shortName": "NIKKOR Z 85mm f/1.8 S",
-  "aliases": ["NIKKOR Z 85mm f/1.8 S", "Z 85mm f/1.8 S", "85mm f/1.8 S", "Z 85 f/1.8 S"],
-  "modelCodes": ["20090"],
+  "aliases": [
+    "NIKKOR Z 85mm f/1.8 S",
+    "Z 85mm f/1.8 S",
+    "85mm f/1.8 S",
+    "Z 85 f/1.8 S"
+  ],
+  "modelCodes": [
+    "20090"
+  ],
   "gtins": [],
   "announced": "2019-07-31",
   "launchPriceUsd": 799.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "7artisans-af-85mm-f1-8",
+    "meike-85mm-f1-8-pro",
+    "meike-85mm-f1-8-se-mark-ii"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 85,

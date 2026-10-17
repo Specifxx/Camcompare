@@ -3,16 +3,29 @@
   "brand": "sony",
   "name": "Sony Sonnar T* E 24mm F1.8 ZA",
   "shortName": "Sonnar T* E 24mm F1.8 ZA",
-  "aliases": ["Sonnar T* E 24mm F1.8 ZA", "Sonnar E 24mm F1.8 ZA", "E 24mm F1.8 ZA", "24mm F1.8 ZA", "Zeiss 24mm F1.8 ZA"],
-  "modelCodes": ["SEL24F18Z"],
+  "aliases": [
+    "Sonnar T* E 24mm F1.8 ZA",
+    "Sonnar E 24mm F1.8 ZA",
+    "E 24mm F1.8 ZA",
+    "24mm F1.8 ZA",
+    "Zeiss 24mm F1.8 ZA"
+  ],
+  "modelCodes": [
+    "SEL24F18Z"
+  ],
   "gtins": [],
   "announced": "2011-08-24",
   "launchPriceUsd": 1000,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "ttartisan-af-23mm-f1-8",
+    "viltrox-af-25mm-f1-7-air"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 24,

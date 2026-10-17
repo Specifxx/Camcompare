@@ -3,16 +3,31 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital ED 8mm F1.8 Fisheye PRO",
   "shortName": "M.Zuiko Digital ED 8mm F1.8 Fisheye PRO",
-  "aliases": ["M.Zuiko Digital ED 8mm F1.8 Fisheye PRO", "M.Zuiko Digital ED 8mm f/1.8 Fisheye PRO", "M.Zuiko 8mm F1.8 Fisheye PRO", "M.Zuiko 8mm f/1.8 Fisheye PRO", "ED 8mm F1.8 Fisheye PRO", "8mm F1.8 Fisheye PRO", "8mm f/1.8 Fisheye PRO", "M.Zuiko 8mm F1.8 Fisheye"],
-  "modelCodes": ["V335340BW000"],
+  "aliases": [
+    "M.Zuiko Digital ED 8mm F1.8 Fisheye PRO",
+    "M.Zuiko Digital ED 8mm f/1.8 Fisheye PRO",
+    "M.Zuiko 8mm F1.8 Fisheye PRO",
+    "M.Zuiko 8mm f/1.8 Fisheye PRO",
+    "ED 8mm F1.8 Fisheye PRO",
+    "8mm F1.8 Fisheye PRO",
+    "8mm f/1.8 Fisheye PRO",
+    "M.Zuiko 8mm F1.8 Fisheye"
+  ],
+  "modelCodes": [
+    "V335340BW000"
+  ],
   "gtins": [],
   "announced": "2015-05-12",
   "launchPriceUsd": 999.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-leica-dg-summilux-9mm-f1-7-asph"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 8,

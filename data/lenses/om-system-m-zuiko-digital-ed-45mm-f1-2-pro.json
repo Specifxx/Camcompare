@@ -3,16 +3,31 @@
   "brand": "om-system",
   "name": "OM System M.Zuiko Digital ED 45mm F1.2 PRO",
   "shortName": "M.Zuiko Digital ED 45mm F1.2 PRO",
-  "aliases": ["M.Zuiko Digital ED 45mm F1.2 PRO", "M.Zuiko Digital ED 45mm f/1.2 PRO", "M.Zuiko 45mm F1.2 PRO", "M.Zuiko 45mm f/1.2 PRO", "ED 45mm F1.2 PRO", "45mm F1.2 PRO", "45mm f/1.2 PRO", "M.Zuiko 45mm F1.2"],
-  "modelCodes": ["V335290BW000"],
+  "aliases": [
+    "M.Zuiko Digital ED 45mm F1.2 PRO",
+    "M.Zuiko Digital ED 45mm f/1.2 PRO",
+    "M.Zuiko 45mm F1.2 PRO",
+    "M.Zuiko 45mm f/1.2 PRO",
+    "ED 45mm F1.2 PRO",
+    "45mm F1.2 PRO",
+    "45mm f/1.2 PRO",
+    "M.Zuiko 45mm F1.2"
+  ],
+  "modelCodes": [
+    "V335290BW000"
+  ],
   "gtins": [],
   "announced": "2017-10-25",
   "launchPriceUsd": 1199.99,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "panasonic-leica-dg-nocticron-42-5mm-f1-2-asph-power-o-i-s"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 45,

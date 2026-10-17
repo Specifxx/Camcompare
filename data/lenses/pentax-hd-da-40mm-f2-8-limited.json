@@ -3,17 +3,30 @@
   "brand": "ricoh",
   "name": "Pentax HD DA 40mm F2.8 Limited",
   "shortName": "HD DA 40mm F2.8 Limited",
-  "aliases": ["HD PENTAX-DA 40mmF2.8 Limited", "HD PENTAX-DA 40mm F2.8 Limited", "HD DA 40mm F2.8 Limited", "HD DA 40mm f/2.8 Limited", "HD DA 40mm Limited", "HD DA 40 Limited"],
+  "aliases": [
+    "HD PENTAX-DA 40mmF2.8 Limited",
+    "HD PENTAX-DA 40mm F2.8 Limited",
+    "HD DA 40mm F2.8 Limited",
+    "HD DA 40mm f/2.8 Limited",
+    "HD DA 40mm Limited",
+    "HD DA 40 Limited"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2013-08-27",
   "launchPriceUsd": 549.95,
-  "launchPrices": {"GBP": 439.99},
+  "launchPrices": {
+    "GBP": 439.99
+  },
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["pentax-k"],
+  "rivals": [
+    "pentax-hd-da-35mm-f2-8-macro-limited"
+  ],
+  "mounts": [
+    "pentax-k"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 40,

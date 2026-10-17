@@ -3,16 +3,33 @@
   "brand": "panasonic",
   "name": "Panasonic Leica DG Vario-Elmarit 12-35mm F2.8 ASPH. Power O.I.S.",
   "shortName": "Leica DG Vario-Elmarit 12-35mm F2.8 ASPH. Power O.I.S.",
-  "aliases": ["Leica DG Vario-Elmarit 12-35mm F2.8 ASPH. Power O.I.S.", "Leica DG Vario-Elmarit 12-35mm F2.8", "Leica DG Vario-Elmarit 12-35mm f/2.8", "Vario-Elmarit 12-35mm F2.8", "Leica DG 12-35mm F2.8", "Leica DG 12-35mm f/2.8", "Leica 12-35mm F2.8", "Leica 12-35mm f/2.8"],
-  "modelCodes": ["H-ES12035"],
+  "aliases": [
+    "Leica DG Vario-Elmarit 12-35mm F2.8 ASPH. Power O.I.S.",
+    "Leica DG Vario-Elmarit 12-35mm F2.8",
+    "Leica DG Vario-Elmarit 12-35mm f/2.8",
+    "Vario-Elmarit 12-35mm F2.8",
+    "Leica DG 12-35mm F2.8",
+    "Leica DG 12-35mm f/2.8",
+    "Leica 12-35mm F2.8",
+    "Leica 12-35mm f/2.8"
+  ],
+  "modelCodes": [
+    "H-ES12035"
+  ],
   "gtins": [],
   "announced": "2022-12-14",
   "launchPriceUsd": 899,
   "status": "current",
   "predecessor": "panasonic-lumix-g-x-vario-12-35mm-f2-8-ii-asph-power-o-i-s",
   "successor": null,
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-12-40mm-f2-8-pro-ii",
+    "panasonic-lumix-g-x-vario-12-35mm-f2-8-asph-power-o-i-s",
+    "om-system-m-zuiko-digital-ed-12-40mm-f2-8-pro"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 12,

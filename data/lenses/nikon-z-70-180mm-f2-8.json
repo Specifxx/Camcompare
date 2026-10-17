@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 70-180mm f/2.8",
   "shortName": "NIKKOR Z 70-180mm f/2.8",
-  "aliases": ["NIKKOR Z 70-180mm f/2.8", "Z 70-180mm f/2.8", "Z 70-180 f/2.8"],
-  "modelCodes": ["20120"],
+  "aliases": [
+    "NIKKOR Z 70-180mm f/2.8",
+    "Z 70-180mm f/2.8",
+    "Z 70-180 f/2.8"
+  ],
+  "modelCodes": [
+    "20120"
+  ],
   "gtins": [],
   "announced": "2023-06-21",
   "launchPriceUsd": 1249.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "tamron-70-180mm-f2-8-di-iii-vc-vxd-g2",
+    "nikon-z-70-200mm-f2-8-vr-s",
+    "nikon-z-70-200mm-f2-8-vr-s-ii"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

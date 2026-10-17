@@ -3,7 +3,11 @@
   "brand": "fujifilm",
   "name": "Fujifilm XF 35mm F1.4 R",
   "shortName": "XF 35mm F1.4 R",
-  "aliases": ["XF 35mm F1.4 R", "35mm F1.4 R", "XF 35 F1.4 R"],
+  "aliases": [
+    "XF 35mm F1.4 R",
+    "35mm F1.4 R",
+    "XF 35 F1.4 R"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2012-01-09",
@@ -11,8 +15,14 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["fujifilm-x"],
+  "rivals": [
+    "fujifilm-xf-33mm-f1-4-r-lm-wr",
+    "meike-33mm-f1-4",
+    "tokina-atx-m-33mm-f1-4"
+  ],
+  "mounts": [
+    "fujifilm-x"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 35,
@@ -25,7 +35,7 @@
     "stabilized": false,
     "weatherSealed": false,
     "weightG": 187,
-    "diameterMm": 65.0,
+    "diameterMm": 65,
     "lengthMm": 50.4,
     "filterMm": 52,
     "minFocusM": 0.28,

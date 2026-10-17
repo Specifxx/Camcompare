@@ -3,16 +3,32 @@
   "brand": "tamron",
   "name": "Tamron 16-30mm F/2.8 Di III VXD G2",
   "shortName": "16-30mm F/2.8 Di III VXD G2",
-  "aliases": ["16-30mm F/2.8 Di III VXD G2", "16-30mm F2.8 Di III VXD G2", "16-30mm F/2.8 G2", "16-30mm F2.8 G2", "16-30mm G2", "16-30 G2"],
-  "modelCodes": ["A064"],
+  "aliases": [
+    "16-30mm F/2.8 Di III VXD G2",
+    "16-30mm F2.8 Di III VXD G2",
+    "16-30mm F/2.8 G2",
+    "16-30mm F2.8 G2",
+    "16-30mm G2",
+    "16-30 G2"
+  ],
+  "modelCodes": [
+    "A064"
+  ],
   "gtins": [],
   "announced": "2025-07-01",
   "launchPriceUsd": 929,
   "status": "current",
   "predecessor": "tamron-17-28mm-f2-8-di-iii-rxd",
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "sigma-16-28mm-f2-8-dg-dn-contemporary",
+    "nikon-z-17-28mm-f2-8",
+    "sony-fe-16-35mm-f2-8-gm"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

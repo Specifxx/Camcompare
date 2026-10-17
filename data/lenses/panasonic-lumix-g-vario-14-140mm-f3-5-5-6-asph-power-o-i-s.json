@@ -3,16 +3,29 @@
   "brand": "panasonic",
   "name": "Panasonic Lumix G Vario 14-140mm F3.5-5.6 ASPH. Power O.I.S.",
   "shortName": "Lumix G Vario 14-140mm F3.5-5.6 ASPH. Power O.I.S.",
-  "aliases": ["Lumix G Vario 14-140mm F3.5-5.6 ASPH. Power O.I.S.", "Lumix G Vario 14-140mm F3.5-5.6", "Lumix G Vario 14-140mm f/3.5-5.6", "G Vario 14-140mm F3.5-5.6", "Lumix G 14-140mm F3.5-5.6", "Lumix G 14-140mm f/3.5-5.6"],
-  "modelCodes": ["H-FS14140"],
+  "aliases": [
+    "Lumix G Vario 14-140mm F3.5-5.6 ASPH. Power O.I.S.",
+    "Lumix G Vario 14-140mm F3.5-5.6",
+    "Lumix G Vario 14-140mm f/3.5-5.6",
+    "G Vario 14-140mm F3.5-5.6",
+    "Lumix G 14-140mm F3.5-5.6",
+    "Lumix G 14-140mm f/3.5-5.6"
+  ],
+  "modelCodes": [
+    "H-FS14140"
+  ],
   "gtins": [],
   "announced": "2013-04-24",
   "launchPriceUsd": null,
   "status": "discontinued",
   "predecessor": null,
   "successor": "panasonic-lumix-g-vario-14-140mm-f3-5-5-6-ii-asph-power-o-i-s",
-  "rivals": [],
-  "mounts": ["micro-four-thirds"],
+  "rivals": [
+    "om-system-m-zuiko-digital-ed-14-150mm-f4-0-5-6-ii"
+  ],
+  "mounts": [
+    "micro-four-thirds"
+  ],
   "coverage": "micro-four-thirds",
   "specs": {
     "focalMinMm": 14,

@@ -3,16 +3,28 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z MC 105mm f/2.8 VR S",
   "shortName": "NIKKOR Z MC 105mm f/2.8 VR S",
-  "aliases": ["NIKKOR Z MC 105mm f/2.8 VR S", "Z MC 105mm f/2.8 VR S", "MC 105mm f/2.8 VR S", "Z MC 105mm f/2.8", "Z MC 105mm"],
-  "modelCodes": ["20100"],
+  "aliases": [
+    "NIKKOR Z MC 105mm f/2.8 VR S",
+    "Z MC 105mm f/2.8 VR S",
+    "MC 105mm f/2.8 VR S",
+    "Z MC 105mm f/2.8",
+    "Z MC 105mm"
+  ],
+  "modelCodes": [
+    "20100"
+  ],
   "gtins": [],
   "announced": "2021-06-02",
   "launchPriceUsd": 999.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "tamron-90mm-f2-8-di-iii-macro-vxd"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 105,

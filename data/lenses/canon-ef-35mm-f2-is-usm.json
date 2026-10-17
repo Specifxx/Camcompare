@@ -3,16 +3,31 @@
   "brand": "canon",
   "name": "Canon EF 35mm f/2 IS USM",
   "shortName": "EF 35mm f/2 IS USM",
-  "aliases": ["EF 35mm f/2 IS USM", "EF 35mm F2 IS USM", "EF35mm f/2 IS USM", "35mm f/2 IS USM", "35mm F2 IS USM", "35mm f/2.0 IS USM", "EF 35mm f/2 IS", "EF 35mm F2 IS"],
-  "modelCodes": ["5178B002"],
+  "aliases": [
+    "EF 35mm f/2 IS USM",
+    "EF 35mm F2 IS USM",
+    "EF35mm f/2 IS USM",
+    "35mm f/2 IS USM",
+    "35mm F2 IS USM",
+    "35mm f/2.0 IS USM",
+    "EF 35mm f/2 IS",
+    "EF 35mm F2 IS"
+  ],
+  "modelCodes": [
+    "5178B002"
+  ],
   "gtins": [],
   "announced": "2012-11-06",
   "launchPriceUsd": 849.99,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef"],
+  "rivals": [
+    "tamron-sp-35mm-f1-8-di-vc-usd"
+  ],
+  "mounts": [
+    "canon-ef"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony E PZ 18-200mm F3.5-6.3 OSS",
   "shortName": "E PZ 18-200mm F3.5-6.3 OSS",
-  "aliases": ["E PZ 18-200mm F3.5-6.3 OSS", "PZ 18-200mm F3.5-6.3 OSS", "18-200mm F3.5-6.3 PZ OSS", "E PZ 18-200mm OSS"],
-  "modelCodes": ["SELP18200"],
+  "aliases": [
+    "E PZ 18-200mm F3.5-6.3 OSS",
+    "PZ 18-200mm F3.5-6.3 OSS",
+    "18-200mm F3.5-6.3 PZ OSS",
+    "E PZ 18-200mm OSS"
+  ],
+  "modelCodes": [
+    "SELP18200"
+  ],
   "gtins": [],
   "announced": "2012-09-12",
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sony-e-18-200mm-f3-5-6-3-oss-le",
+    "sony-e-18-135mm-f3-5-5-6-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "aps-c",
   "specs": {
     "focalMinMm": 18,

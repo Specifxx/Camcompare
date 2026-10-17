@@ -3,16 +3,30 @@
   "brand": "tamron",
   "name": "Tamron 25-200mm F/2.8-5.6 Di III VXD G2",
   "shortName": "25-200mm F/2.8-5.6 Di III VXD G2",
-  "aliases": ["25-200mm F/2.8-5.6 Di III VXD G2", "25-200mm F2.8-5.6 Di III VXD G2", "25-200mm F/2.8-5.6 G2", "25-200mm F2.8-5.6 G2", "25-200mm G2", "25-200 G2"],
-  "modelCodes": ["A075"],
+  "aliases": [
+    "25-200mm F/2.8-5.6 Di III VXD G2",
+    "25-200mm F2.8-5.6 Di III VXD G2",
+    "25-200mm F/2.8-5.6 G2",
+    "25-200mm F2.8-5.6 G2",
+    "25-200mm G2",
+    "25-200 G2"
+  ],
+  "modelCodes": [
+    "A075"
+  ],
   "gtins": [],
   "announced": "2025-10-21",
   "launchPriceUsd": 899,
   "status": "current",
   "predecessor": "tamron-28-200mm-f2-8-5-6-di-iii-rxd",
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "sigma-20-200mm-f3-5-6-3-dg-contemporary",
+    "sony-fe-24-240mm-f3-5-6-3-oss"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 25,

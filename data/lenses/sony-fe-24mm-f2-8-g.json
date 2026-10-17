@@ -3,16 +3,28 @@
   "brand": "sony",
   "name": "Sony FE 24mm F2.8 G",
   "shortName": "FE 24mm F2.8 G",
-  "aliases": ["FE 24mm F2.8 G", "24mm F2.8 G", "24mm f/2.8 G", "FE 24mm f/2.8 G"],
-  "modelCodes": ["SEL24F28G"],
+  "aliases": [
+    "FE 24mm F2.8 G",
+    "24mm F2.8 G",
+    "24mm f/2.8 G",
+    "FE 24mm f/2.8 G"
+  ],
+  "modelCodes": [
+    "SEL24F28G"
+  ],
   "gtins": [],
   "announced": "2021-03-23",
   "launchPriceUsd": 599,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-24mm-f2-8-fe",
+    "sigma-24mm-f3-5-dg-dn-contemporary"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 24,

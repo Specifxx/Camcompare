@@ -3,16 +3,33 @@
   "brand": "tamron",
   "name": "Tamron SP 45mm F/1.8 Di VC USD",
   "shortName": "SP 45mm F/1.8 Di VC USD",
-  "aliases": ["SP 45mm F/1.8 Di VC USD", "SP 45mm F1.8 Di VC USD", "SP 45mm F/1.8 Di USD", "SP 45mm F1.8 Di USD", "45mm F/1.8 Di VC USD", "45mm F1.8 Di VC USD", "SP 45mm f/1.8", "SP 45mm F1.8"],
-  "modelCodes": ["F013"],
+  "aliases": [
+    "SP 45mm F/1.8 Di VC USD",
+    "SP 45mm F1.8 Di VC USD",
+    "SP 45mm F/1.8 Di USD",
+    "SP 45mm F1.8 Di USD",
+    "45mm F/1.8 Di VC USD",
+    "45mm F1.8 Di VC USD",
+    "SP 45mm f/1.8",
+    "SP 45mm F1.8"
+  ],
+  "modelCodes": [
+    "F013"
+  ],
   "gtins": [],
   "announced": "2015-09-02",
   "launchPriceUsd": 599,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f", "sony-a"],
+  "rivals": [
+    "canon-ef-50mm-f1-8-stm"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f",
+    "sony-a"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 45,

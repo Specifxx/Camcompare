@@ -3,16 +3,30 @@
   "brand": "sony",
   "name": "Sony FE 16-35mm F2.8 GM II",
   "shortName": "FE 16-35mm F2.8 GM II",
-  "aliases": ["FE 16-35mm F2.8 GM II", "16-35mm F2.8 GM II", "16-35mm f/2.8 G Master II", "16-35 GM II", "16-35 GM2"],
-  "modelCodes": ["SEL1635GM2"],
+  "aliases": [
+    "FE 16-35mm F2.8 GM II",
+    "16-35mm F2.8 GM II",
+    "16-35mm f/2.8 G Master II",
+    "16-35 GM II",
+    "16-35 GM2"
+  ],
+  "modelCodes": [
+    "SEL1635GM2"
+  ],
   "gtins": [],
   "announced": "2023-08-29",
   "launchPriceUsd": 2299.99,
   "status": "current",
   "predecessor": "sony-fe-16-35mm-f2-8-gm",
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "tamron-16-30mm-f2-8-di-iii-vxd-g2",
+    "sigma-16-28mm-f2-8-dg-dn-contemporary",
+    "tamron-20-40mm-f2-8-di-iii-vxd"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 16,

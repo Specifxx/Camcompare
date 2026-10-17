@@ -3,16 +3,27 @@
   "brand": "nikon",
   "name": "Nikon NIKKOR Z 26mm f/2.8",
   "shortName": "NIKKOR Z 26mm f/2.8",
-  "aliases": ["NIKKOR Z 26mm f/2.8", "Z 26mm f/2.8", "Z 26mm f2.8", "Z 26 f/2.8"],
-  "modelCodes": ["20116"],
+  "aliases": [
+    "NIKKOR Z 26mm f/2.8",
+    "Z 26mm f/2.8",
+    "Z 26mm f2.8",
+    "Z 26 f/2.8"
+  ],
+  "modelCodes": [
+    "20116"
+  ],
   "gtins": [],
   "announced": "2023-02-06",
   "launchPriceUsd": 499.95,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["nikon-z"],
+  "rivals": [
+    "nikon-z-28mm-f2-8"
+  ],
+  "mounts": [
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 26,

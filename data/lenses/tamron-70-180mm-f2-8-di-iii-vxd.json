@@ -3,16 +3,28 @@
   "brand": "tamron",
   "name": "Tamron 70-180mm F/2.8 Di III VXD",
   "shortName": "70-180mm F/2.8 Di III VXD",
-  "aliases": ["70-180mm F/2.8 Di III VXD", "70-180mm F2.8 Di III VXD", "70-180 F2.8 Di III VXD"],
-  "modelCodes": ["A056"],
+  "aliases": [
+    "70-180mm F/2.8 Di III VXD",
+    "70-180mm F2.8 Di III VXD",
+    "70-180 F2.8 Di III VXD"
+  ],
+  "modelCodes": [
+    "A056"
+  ],
   "gtins": [],
   "announced": "2020-04-07",
   "launchPriceUsd": 1199,
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "tamron-70-180mm-f2-8-di-iii-vc-vxd-g2",
+    "samyang-af-60-180mm-f2-8",
+    "sigma-70-200mm-f2-8-dg-dn-os-sports"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

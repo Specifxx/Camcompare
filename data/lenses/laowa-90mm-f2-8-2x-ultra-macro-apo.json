@@ -3,7 +3,13 @@
   "brand": "laowa",
   "name": "Laowa 90mm f/2.8 2X Ultra Macro APO",
   "shortName": "90mm f/2.8 2X Ultra Macro APO",
-  "aliases": ["90mm f/2.8 2X Ultra Macro APO", "90mm f/2.8 2:1 Ultra Macro APO", "90mm f/2.8 Ultra Macro APO", "90mm f/2.8 2X Macro APO", "90mm F2.8 CA-Dreamer Macro 2X"],
+  "aliases": [
+    "90mm f/2.8 2X Ultra Macro APO",
+    "90mm f/2.8 2:1 Ultra Macro APO",
+    "90mm f/2.8 Ultra Macro APO",
+    "90mm f/2.8 2X Macro APO",
+    "90mm F2.8 CA-Dreamer Macro 2X"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2022-06-13",
@@ -11,8 +17,17 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "canon-rf", "l-mount", "micro-four-thirds"],
+  "rivals": [
+    "laowa-100mm-f2-8-2x-ultra-macro-apo",
+    "zeiss-loxia-2-4-85"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "canon-rf",
+    "l-mount",
+    "micro-four-thirds"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 90,

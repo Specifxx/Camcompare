@@ -3,16 +3,37 @@
   "brand": "tamron",
   "name": "Tamron 70-180mm F/2.8 Di III VC VXD G2",
   "shortName": "70-180mm F/2.8 Di III VC VXD G2",
-  "aliases": ["70-180mm F/2.8 Di III VC VXD G2", "70-180mm F2.8 Di III VC VXD G2", "70-180mm F/2.8 Di III VXD G2", "70-180mm F2.8 Di III VXD G2", "70-180mm F/2.8 Di III VC VXD", "70-180mm F/2.8 VC G2", "70-180mm F2.8 VC G2", "70-180mm F/2.8 G2", "70-180mm F2.8 G2", "70-180mm G2", "70-180 G2"],
-  "modelCodes": ["A065"],
+  "aliases": [
+    "70-180mm F/2.8 Di III VC VXD G2",
+    "70-180mm F2.8 Di III VC VXD G2",
+    "70-180mm F/2.8 Di III VXD G2",
+    "70-180mm F2.8 Di III VXD G2",
+    "70-180mm F/2.8 Di III VC VXD",
+    "70-180mm F/2.8 VC G2",
+    "70-180mm F2.8 VC G2",
+    "70-180mm F/2.8 G2",
+    "70-180mm F2.8 G2",
+    "70-180mm G2",
+    "70-180 G2"
+  ],
+  "modelCodes": [
+    "A065"
+  ],
   "gtins": [],
   "announced": "2023-09-14",
   "launchPriceUsd": 1299,
   "status": "current",
   "predecessor": "tamron-70-180mm-f2-8-di-iii-vxd",
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z"],
+  "rivals": [
+    "nikon-z-70-180mm-f2-8",
+    "samyang-af-60-180mm-f2-8",
+    "nikon-z-70-200mm-f2-8-vr-s"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,

@@ -3,16 +3,31 @@
   "brand": "sony",
   "name": "Sony Sonnar T* FE 35mm F2.8 ZA",
   "shortName": "Sonnar T* FE 35mm F2.8 ZA",
-  "aliases": ["Sonnar T* FE 35mm F2.8 ZA", "FE 35mm F2.8 ZA", "FE 35mm f/2.8 ZA", "35mm F2.8 ZA", "35mm f/2.8 ZA", "Zeiss Sonnar T* FE 35mm f/2.8 ZA"],
-  "modelCodes": ["SEL35F28Z"],
+  "aliases": [
+    "Sonnar T* FE 35mm F2.8 ZA",
+    "FE 35mm F2.8 ZA",
+    "FE 35mm f/2.8 ZA",
+    "35mm F2.8 ZA",
+    "35mm f/2.8 ZA",
+    "Zeiss Sonnar T* FE 35mm f/2.8 ZA"
+  ],
+  "modelCodes": [
+    "SEL35F28Z"
+  ],
   "gtins": [],
   "announced": "2013-10-16",
   "launchPriceUsd": 800,
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e"],
+  "rivals": [
+    "samyang-af-35mm-f2-8-fe",
+    "sony-fe-40mm-f2-5-g",
+    "viltrox-af-40mm-f2-5-air"
+  ],
+  "mounts": [
+    "sony-e"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 35,

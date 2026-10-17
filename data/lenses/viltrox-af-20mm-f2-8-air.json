@@ -3,7 +3,15 @@
   "brand": "viltrox",
   "name": "Viltrox AF 20mm F2.8 Air",
   "shortName": "AF 20mm F2.8 Air",
-  "aliases": ["AF 20mm F2.8 Air", "20mm F2.8 Air", "20mm f/2.8 Air", "Viltrox AF 20mm F2.8", "Viltrox 20mm F2.8", "Viltrox 20mm f/2.8", "AF 20/2.8"],
+  "aliases": [
+    "AF 20mm F2.8 Air",
+    "20mm F2.8 Air",
+    "20mm f/2.8 Air",
+    "Viltrox AF 20mm F2.8",
+    "Viltrox 20mm F2.8",
+    "Viltrox 20mm f/2.8",
+    "AF 20/2.8"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2023-10-29",
@@ -11,8 +19,16 @@
   "status": "current",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["sony-e", "nikon-z", "l-mount"],
+  "rivals": [
+    "samyang-af-18mm-f2-8-fe",
+    "zeiss-batis-2-8-18",
+    "panasonic-lumix-s-20mm-f2-5"
+  ],
+  "mounts": [
+    "sony-e",
+    "nikon-z",
+    "l-mount"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 20,

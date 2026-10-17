@@ -3,7 +3,14 @@
   "brand": "sigma",
   "name": "Sigma 70-200mm F2.8 DG OS HSM | Sports",
   "shortName": "70-200mm F2.8 DG OS HSM | Sports",
-  "aliases": ["70-200mm F2.8 DG OS HSM Sports", "70-200mm F2.8 DG OS HSM S", "70-200mm f/2.8 DG OS HSM Sport", "70-200mm 2.8 DG OS HSM Sports", "70-200 F2.8 DG OS HSM Sports", "70-200mm F2.8 Sports DG OS HSM"],
+  "aliases": [
+    "70-200mm F2.8 DG OS HSM Sports",
+    "70-200mm F2.8 DG OS HSM S",
+    "70-200mm f/2.8 DG OS HSM Sport",
+    "70-200mm 2.8 DG OS HSM Sports",
+    "70-200 F2.8 DG OS HSM Sports",
+    "70-200mm F2.8 Sports DG OS HSM"
+  ],
   "modelCodes": [],
   "gtins": [],
   "announced": "2018-09-25",
@@ -11,8 +18,15 @@
   "status": "discontinued",
   "predecessor": null,
   "successor": null,
-  "rivals": [],
-  "mounts": ["canon-ef", "nikon-f"],
+  "rivals": [
+    "nikon-af-s-70-200mm-f2-8e-fl-ed-vr",
+    "canon-ef-70-200mm-f2-8l-is-iii-usm",
+    "tamron-sp-70-200mm-f2-8-di-vc-usd"
+  ],
+  "mounts": [
+    "canon-ef",
+    "nikon-f"
+  ],
   "coverage": "full-frame",
   "specs": {
     "focalMinMm": 70,
