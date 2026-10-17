@@ -218,3 +218,10 @@ test("with no launch price anywhere, only a GTIN or part-number match is trusted
   assert.equal(plausiblePrice(none, "used", 1200, "USD", "gtin"), true);
   assert.equal(plausiblePrice(none, "new", 20, "USD", "mpn"), false);
 });
+
+test("bundles with a named lens are kits, not body prices", () => {
+  const kit = matchListing({ title: "Sony a7 IV Bundle with Sony FE 28-70mm" }, index);
+  assert.ok(kit.product && kit.kit);
+  const named = matchListing({ title: "Sony a7 IV with Zeiss Batis Sonnar 85mm" }, index);
+  assert.ok(named.product && named.kit);
+});

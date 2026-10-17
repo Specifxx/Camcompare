@@ -93,11 +93,18 @@ priced in another currency is refused.
 | Adorama ★ | US | Product feed `FEED_URL_ADORAMA` | Impact | `AFFILIATE_DEEPLINK_ADORAMA` |
 | Best Buy | US | Products API (`BESTBUY_API_KEY`) | Impact | `AFFILIATE_DEEPLINK_BESTBUY` |
 | Walmart | US | Product feed `FEED_URL_WALMART` | Impact | `AFFILIATE_DEEPLINK_WALMART` |
-| Abt | US | Product feed `FEED_URL_ABT` | CJ | `AFFILIATE_DEEPLINK_ABT` |
+| Abt | US | Product feed `FEED_URL_ABT`; until then its pages' structured data | CJ | `AFFILIATE_DEEPLINK_ABT` |
 | Moment | US | Shopify products.json (no setup) | Impact | `AFFILIATE_DEEPLINK_MOMENT` |
 | Focus Camera | US | Shopify products.json (no setup) | none known | — |
 | Beach Camera | US | Shopify products.json (no setup) | none known | — |
 | Camera West | US | Shopify products.json (no setup) | Retailer's own programme | `AFFILIATE_DEEPLINK_CAMERA_WEST` |
+| Pictureline | US | Shopify products.json (no setup) | none known | — |
+| Camera Wholesalers | US | Shopify products.json (no setup) | none known | — |
+| Helix Camera | US | Shopify products.json (no setup) | none known | — |
+| Shop Panasonic | US | Shopify products.json (no setup) | none known | — |
+| Leica Store Miami | US | Shopify products.json (no setup) | none known | — |
+| Precision Camera | US | Structured data on its product pages (no setup) | none known | — |
+| Dodd Camera | US | Structured data on its product pages (no setup) | none known | — |
 | MPB ★ | US | Product feed `FEED_URL_MPB` | Partnerize | `AFFILIATE_DEEPLINK_MPB` |
 | KEH | US | Product feed `FEED_URL_KEH` | Awin | `AFFILIATE_DEEPLINK_KEH` |
 | eBay.com | US | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | `EBAY_AFFILIATE_CAMPAIGN` |
@@ -157,6 +164,7 @@ priced in another currency is refused.
 | Canon Store | SG | Shopify products.json (no setup) | none known | — |
 | Sony Store | SG | Shopify products.json (no setup) | none known | — |
 | Leica Store | SG | Shopify products.json (no setup) | none known | — |
+| TK Foto | SG | Shopify products.json (no setup) | none known | — |
 | Cash Converters | SG | Shopify products.json (no setup) | none known | — |
 <!-- RETAILERS-END -->
 
@@ -170,3 +178,27 @@ priced in another currency is refused.
 - **Competitors already ranking for camera prices:** PriceSpy and PriceRunner
   (UK), idealo and Geizhals (EU), PriceHipster and StaticICE (AU), and Google
   Shopping everywhere.
+
+## Checked for live prices, 2026-10-17
+
+A plain request with CamCompare's User-Agent, from a cloud machine. GitHub's
+runners may be treated differently.
+
+- **Block plain requests (bot wall; skipped, not worked around):** B&H
+  (robots.txt answers, sitemaps 403), MPB and KEH (Cloudflare challenge), Best
+  Buy (503), Wex and Park Cameras (403), CameraWorld, Clifton Cameras, LCE,
+  Bristol Cameras, Foto Koch, Digixo, Cameranu, Ryda, Cameras Direct AU
+  (Cloudflare challenge), Foto Erhardt, Cyberport, Sony AU (403), Roberts
+  Camera and Used Photo Pro (Cloudflare challenge on products.json).
+- **robots.txt disallows the Shopify catalogue:** Hunt's Photo, Leica Camera
+  USA, Sigma America, Ted's Cameras, CameraPro, Ricoh Imaging Europe, Coolblue.
+- **Answer, but no usable product data yet:** Adorama and Unique Photo (no
+  JSON-LD offer on product pages), Samy's (microdata price without a stated
+  currency), Moment (sells only its own accessories now), JB Hi-Fi (Shopify,
+  but camera collections come back empty and the full catalogue is mostly
+  TVs and music).
+- **Working via structured data:** Abt (until its CJ feed), Precision Camera,
+  Dodd Camera.
+- **Next candidates:** MS Color and other WooCommerce shops (public Store
+  API, SGD), Kamera Express, Calumet DE, Conns Cameras (EUR), Jessops, Mifsuds,
+  Wilkinson (GBP) answer plain requests and need a per-site check.

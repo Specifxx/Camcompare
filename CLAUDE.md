@@ -39,8 +39,8 @@ reason.
 
 Builds:
 
-- `refresh-prices.yml` commits prices to `main` once a day. That commit is the
-  day's production build.
+- `refresh-prices.yml` commits prices to `main` every six hours. Each commit
+  is a production build.
 - `claude/*` and `ccr-*` branches don't deploy (`vercel.json`).
 
 ## Markets
@@ -80,9 +80,16 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
   - eBay Browse;
   - affiliate-network product feeds;
   - Shopify `products.json`, only for camera shops that run Shopify and whose
-    robots.txt allows it.
+    robots.txt allows it;
+  - schema.org structured data (JSON-LD / OpenGraph product price) on a
+    shop's own product pages (`src/lib/sources/structured.ts`), found through
+    its sitemaps, only where robots.txt allows, one request at a time with a
+    delay and a per-run budget. A feed or API replaces it when one exists.
 
-  **Don't scrape anything else.** See `docs/retailers.md`.
+  **Never Amazon or eBay pages** (their APIs only: Amazon's terms forbid any
+  other price), **never past bot protection** (a 403, 429, Cloudflare
+  challenge or captcha stops that shop, it is not worked around). See
+  `docs/retailers.md`.
 - **Matching.** Every listing goes through `matchListing` and `plausiblePrice`.
   Rules there may only refuse a listing, never loosen a match. Add a test in
   `tests/matching.test.ts` for any title you fix.

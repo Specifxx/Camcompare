@@ -201,3 +201,19 @@ test("feed rows need an http(s) link and their currency column must match", () =
   assert.equal(run({ ...base, link: "https://www.bhphotovideo.com/a", currency: "CAD" }).length, 0);
   assert.equal(run({ ...base, link: "https://www.bhphotovideo.com/a", currency: "usd" }).length, 1);
 });
+
+test("structured data: JSON-LD offers and OpenGraph prices are read, slugs become words, bot walls are seen", async () => {
+  const { pageListings, slugText, blockedReason } = await import("../src/lib/sources/structured");
+  const ld = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"24-70mm f/2.8 E ED AFS VR","brand":{"@type":"Brand","name":"Nikon"},"sku":"N1","offers":{"@type":"Offer","price":"1,446.95","priceCurrency":"USD","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition"}}</script>`;
+  assert.deepEqual(pageListings(ld), [{ title: "Nikon 24-70mm f/2.8 E ED AFS VR", gtin: undefined, mpn: undefined, sku: "N1", price: 144695, currency: "USD", inStock: true, condition: "new" }]);
+  const og = `<meta property="og:title" content="Sony a7 IV Body"><meta property="product:price:amount" content="2198.00"><meta property="product:price:currency" content="GBP">`;
+  assert.equal(pageListings(og)[0].currency, "GBP");
+  assert.equal(pageListings(`<script type="application/ld+json">{"@type":"Product","name":"X","offers":{"price":"10"}}</script>`).length, 0); // no currency: refused
+  assert.equal(slugText("https://x.com/canon-eos-r6-mark-ii-body.html"), "canon eos r6 mark ii body");
+  assert.equal(blockedReason(200, new Headers(), "<title>Just a moment...</title>"), "bot challenge page");
+  assert.equal(blockedReason(200, new Headers(), "<title>Sony a7 IV</title>"), null);
+});
+
+test("an Open Box listing tagged used stays open-box", () => {
+  assert.equal(shopifyCondition({ title: "Panasonic Lumix DMC-FZ300 - Open Box", tags: ["used"] }, "Default Title"), "open-box");
+});

@@ -56,8 +56,9 @@ function robotsRule(rule: string): RegExp {
 export function shopifyCondition(p: Pick<Product, "title" | "product_type" | "tags">, variantTitle: string): Condition {
   const text = `${p.title} ${variantTitle} ${p.product_type ?? ""} ${Array.isArray(p.tags) ? p.tags.join(" ") : p.tags ?? ""}`.toLowerCase();
   if (/\brefurb/.test(text)) return "refurbished";
-  if (/\b(used|pre-?owned|second-?hand|preloved|trade-?in)\b/.test(text)) return "used";
+  // Before "used": an "Open Box" listing is often also tagged used.
   if (/\b(ex-?demo|demo unit|open box|open-box|display unit)\b/.test(text)) return "open-box";
+  if (/\b(used|pre-?owned|second-?hand|preloved|trade-?in)\b/.test(text)) return "used";
   return "new";
 }
 

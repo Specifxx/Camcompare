@@ -32,8 +32,10 @@ function prices(r: Retailer): string {
       return "Products API (`BESTBUY_API_KEY`)";
     case "shopify":
       return "Shopify products.json (no setup)";
+    case "structured":
+      return "Structured data on its product pages (no setup)";
     case "feed":
-      return `Product feed \`FEED_URL_${envKey(r)}\``;
+      return `Product feed \`FEED_URL_${envKey(r)}\`${r.structured ? "; until then its pages' structured data" : ""}`;
     default:
       return "Link only";
   }

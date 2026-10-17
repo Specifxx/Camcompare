@@ -334,3 +334,33 @@ link can use it.
 - **The floating button sits bottom left** (buy buttons are at the right of
   each offer row), lifts above any fixed bottom bar, and hides while an ad
   slot passes under it.
+
+## 2026-10-17: Live prices from Shopify stores and shops' structured data (owner's request)
+
+The owner: "the site has to have all the prices on the site scraped and live.
+You can't just point to a site and say check the price." Feeds and APIs need
+approvals and keys that haven't arrived, so every product page showed "Check
+price" rows.
+
+- **More Shopify shops.** Each checked for products.json, /meta.json in the
+  market's currency and a robots.txt that allows it: Pictureline, Camera
+  Wholesalers, Helix Camera, Shop Panasonic (US), Leica Store Miami, TK Foto
+  (SG). Hunt's, Leica USA, Sigma America, Ted's (now), CameraPro and Ricoh
+  Europe disallow products.json in robots.txt, so they are not read.
+- **A structured-data source** (`src/lib/sources/structured.ts`): robots.txt
+  Sitemap lines → product URLs whose slug the matcher reads as a catalog
+  product → that page's schema.org Product/Offer JSON-LD (or OpenGraph
+  product:price). Same matcher, price floor and currency rule as every other
+  source. One request at a time, 1.5 s apart (or the site's Crawl-delay), a
+  per-run page budget that rotates through the candidates; a 403, 429 or bot
+  challenge stops the shop. A feed retailer with a structured config reads
+  its pages only until its `FEED_URL_*` exists, never both.
+- **Exceptions that stay:** Amazon is never read outside its API (the
+  Associates agreement forbids showing other prices, and the account is
+  shared with RiftCompare). eBay waits for Browse API keys. Shops behind bot
+  walls (B&H's sitemaps, MPB, KEH, Best Buy, Wex, Park Cameras, CameraWorld,
+  Clifton, LCE, Foto Koch, Foto Erhardt, Cyberport, Coolblue, Cameranu, Ryda)
+  are skipped, not worked around: docs/retailers.md lists them.
+- **Prices refresh every six hours** (refresh-prices.yml), so four data
+  builds a day. CamCompare has no database or ISR, so a build costs build
+  minutes only, not RiftCompare's Neon egress.

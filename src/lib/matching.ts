@@ -109,7 +109,7 @@ const INCLUDED = /\bwith\b|\bw\/|\bincl|\band\b|[+&]/;
 const FILM = /\b(film|35mm slr|slr film|half[- ]frame)\b/;
 // A zoom or prime named next to an interchangeable-lens body means a kit,
 // its lens prefix glued on or not ("with XC15-45mm", "RF-S18-45mm").
-const KIT = /\bkit\b|\bw\/\s*\d|\bwith\s+(an?\s+)?(\w+\s+)?[a-z-]*\d{2,3}(-\d{2,3})?\s*mm|\b[a-z]{0,4}-?\d{2,3}-\d{2,3}\s*mm\b|\blens(es)? (kit|bundle)\b/;
+const KIT = /\bkit\b|\bbundle\b|\bw\/\s*\d|\bwith\s+(an?\s+)?([\w-]+\s+){0,3}[a-z-]*\d{2,3}(-\d{2,3})?\s*mm|\b[a-z]{0,4}-?\d{2,3}-\d{2,3}\s*mm\b|\blens(es)? (kit|bundle)\b/;
 const BODY_ONLY = /\bbody( only)?\b/;
 // "Body" cancels KIT ("body only, fits 24-70mm"), but not a lens added with "+".
 const KIT_PLUS = /\+\s*(\w+\s+)?[a-z-]*\d{2,3}(-\d{2,3})?\s*mm/;
