@@ -2,7 +2,7 @@
    CamCompare design system: plain and clean
    -----------------------------------------------------------------------------
    A neutral price-comparison look: off-white page, white panels, thin 1px
-   borders, one accent (rust, the logo's colour), green (--c-buy) only for
+   borders, one brand blue (--c-accent, the logo's colour), brand green (--c-buy) for
    money: buy buttons and lowest prices. No ornaments, textures or tilts;
    hover states change colour and border only.
    Colours are RGB triplets (--c-*) used through Tailwind (bg-surface, text-muted,
@@ -33,12 +33,12 @@
   --c-fg: 17 24 39;
   --c-muted: 75 85 99;
   --c-subtle: 107 114 128;
-  --c-accent: 178 62 22;
-  --c-accent-2: 178 62 22;
-  --c-azure: 178 62 22;
+  --c-accent: 29 71 209;
+  --c-accent-2: 37 99 235;
+  --c-azure: 37 99 235;
   --c-accent-fg: 255 255 255;
-  --c-accent-soft: 252 238 230;
-  --c-spark: 245 170 35;
+  --c-accent-soft: 232 239 255;
+  --c-spark: 22 163 74;
   --c-buy: 17 110 50;
   --c-buy-2: 17 110 50;
   --c-buy-fg: 255 255 255;
@@ -46,7 +46,7 @@
   --c-win: 17 110 50;
   --c-warn: 150 88 0;
   --c-paper: 255 255 255;
-  --iris-0: #8f2f10; --iris-1: #b23e16; --iris-2: #cf5a24; --iris-3: #e07a3a; --iris-4: #c94d1c; --iris-spark: #f5aa23;
+  --iris-0: #1d47d1; --iris-1: #2557e6; --iris-2: #3169f5; --iris-3: #4a82ff; --iris-4: #3a74ff; --iris-spark: #16a34a;
   --shadow-card: none;
   --shadow-lift: 0 4px 14px -6px rgb(17 24 39 / 0.14);
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -63,12 +63,12 @@
     --c-fg: 236 236 239;
     --c-muted: 184 184 192;
     --c-subtle: 152 152 162;
-    --c-accent: 255 145 90;
-    --c-accent-2: 255 145 90;
-    --c-azure: 255 145 90;
-    --c-accent-fg: 30 14 6;
-    --c-accent-soft: 58 34 22;
-    --c-spark: 255 190 70;
+    --c-accent: 126 164 255;
+    --c-accent-2: 106 150 255;
+    --c-azure: 106 150 255;
+    --c-accent-fg: 8 16 42;
+    --c-accent-soft: 22 34 70;
+    --c-spark: 74 222 128;
     --c-buy: 52 199 110;
     --c-buy-2: 52 199 110;
     --c-buy-fg: 6 20 12;
@@ -76,7 +76,7 @@
     --c-win: 74 212 128;
     --c-warn: 234 179 8;
     --c-paper: 26 26 30;
-    --iris-0: #c2471a; --iris-1: #e0632c; --iris-2: #f07a3e; --iris-3: #ff9a5c; --iris-4: #e86a30; --iris-spark: #ffbe46;
+    --iris-0: #3a6af2; --iris-1: #4a7bff; --iris-2: #5d8bff; --iris-3: #7ea4ff; --iris-4: #6a96ff; --iris-spark: #22c55e;
     --shadow-lift: 0 4px 14px -6px rgb(0 0 0 / 0.6);
     color-scheme: dark;
   }

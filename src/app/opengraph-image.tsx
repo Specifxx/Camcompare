@@ -20,7 +20,7 @@ const IRIS = [
   ["M14.4 21.6L5.52 26.73A15 15 0 0 1 1.14 13.95Z", "#3169f5"],
   ["M10.35 17.41L1.47 12.29A15 15 0 0 1 10.35 2.1Z", "#4a82ff"],
   ["M11.95 11.81L11.95 1.56A15 15 0 0 1 25.21 4.16Z", "#3a74ff"],
-  ["M17.6 10.4L26.48 5.27A15 15 0 0 1 30.86 18.05Z", "#ff9f1c"],
+  ["M17.6 10.4L26.48 5.27A15 15 0 0 1 30.86 18.05Z", "#16a34a"],
 ];
 
 /** Bold display type (Inter from Google Fonts); the default font if offline. */
@@ -71,7 +71,7 @@ export default async function Image() {
     (
       <div style={{ width: "100%", height: "100%", display: "flex", background: "linear-gradient(135deg, #071027 0%, #0d1f4d 55%, #112a6b 100%)", color: "#fff", position: "relative", fontFamily: "Inter, sans-serif" }}>
         <div style={{ position: "absolute", top: -160, right: -120, width: 620, height: 620, borderRadius: 9999, background: "radial-gradient(circle, rgba(74,130,255,0.55), rgba(74,130,255,0) 70%)", display: "flex" }} />
-        <div style={{ position: "absolute", bottom: -220, left: 220, width: 560, height: 560, borderRadius: 9999, background: "radial-gradient(circle, rgba(255,159,28,0.35), rgba(255,159,28,0) 70%)", display: "flex" }} />
+        <div style={{ position: "absolute", bottom: -220, left: 220, width: 560, height: 560, borderRadius: 9999, background: "radial-gradient(circle, rgba(34,197,94,0.30), rgba(34,197,94,0) 70%)", display: "flex" }} />
 
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "56px 0 56px 64px", width: 640 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
@@ -86,7 +86,7 @@ export default async function Image() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", fontSize: 60, fontWeight: 800, lineHeight: 1.04, letterSpacing: -2.5 }}>Every camera price,</div>
-            <div style={{ display: "flex", fontSize: 60, fontWeight: 800, lineHeight: 1.04, letterSpacing: -2.5, color: "#ffb03a" }}>side by side.</div>
+            <div style={{ display: "flex", fontSize: 60, fontWeight: 800, lineHeight: 1.04, letterSpacing: -2.5, color: "#4ade80" }}>side by side.</div>
             <div style={{ marginTop: 22, fontSize: 26, color: "#c7d4ff", lineHeight: 1.35, display: "flex" }}>{`New and used prices from ${stores} stores, full specs and price history. Free.`}</div>
           </div>
           <div style={{ display: "flex", gap: 14 }}>

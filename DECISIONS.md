@@ -705,3 +705,14 @@ bokeh, grain, gradients, viewfinder corners, film frames, tape, tilted
 photos, stickers, marquee or scroll animations. The only motion left is the
 logo's one-off aperture opening, which friends liked. A new decoration needs
 a reason a buyer would care about.
+
+## 2026-10-17: Blue and green brand colours
+
+The owner liked the blue and green (the link-preview image, the favicon and
+the green savings), so the brand is built around them instead of rust. Blue
+(`--c-accent`, #1d47d1 light / #7ea4ff dark) is the brand: the logo iris,
+"Compare" in the wordmark, links, active tabs, focus rings and primary
+buttons. Green (`--c-buy` / `--c-win`) stays the colour of money: savings,
+lowest prices and paid buy buttons, plus the one green blade of the iris.
+The favicon and the link-preview image swap their orange for the same
+green. Everything else stays neutral grey, as in "Plain and clean".

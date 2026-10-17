@@ -44,7 +44,7 @@ export default function Logo({ size = 28, compact = false, intro = false, classN
     <span className={`cc-logo inline-flex items-center gap-2 ${className}`}>
       <LogoMark size={size} intro={intro} />
       <span className={`font-display text-[1.2rem] font-semibold leading-none tracking-[-0.02em] text-fg ${compact ? "hidden sm:inline" : ""}`}>
-        Cam<span className="font-normal italic text-muted">Compare</span>
+        Cam<span className="font-normal text-accent">Compare</span>
         <span className="sr-only"> ({SITE_NAME})</span>
       </span>
     </span>
