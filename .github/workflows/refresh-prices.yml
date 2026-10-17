@@ -1,0 +1,47 @@
+# Once a day: import prices, commit data/offers + data/price-history to main.
+# That commit is the day's production build (Vercel builds main), so the
+# site's prices are at most a day old and there is ONE build a day from data.
+# Fails — and GitHub emails the owner — when a configured source breaks.
+name: refresh-prices
+on:
+  schedule:
+    - cron: "17 10 * * *" # 10:17 UTC: early morning in the US
+  workflow_dispatch:
+concurrency: refresh-prices
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Import prices
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          EBAY_AFFILIATE_CAMPAIGN: ${{ secrets.EBAY_AFFILIATE_CAMPAIGN }}
+          AMAZON_CREATORS_CLIENT_ID: ${{ secrets.AMAZON_CREATORS_CLIENT_ID }}
+          AMAZON_CREATORS_CLIENT_SECRET: ${{ secrets.AMAZON_CREATORS_CLIENT_SECRET }}
+          AMAZON_ASSOCIATE_TAG: ${{ secrets.AMAZON_ASSOCIATE_TAG }}
+          FEED_URL_BH: ${{ secrets.FEED_URL_BH }}
+          FEED_URL_ADORAMA: ${{ secrets.FEED_URL_ADORAMA }}
+          FEED_URL_BESTBUY: ${{ secrets.FEED_URL_BESTBUY }}
+          FEED_URL_MPB: ${{ secrets.FEED_URL_MPB }}
+          FEED_URL_KEH: ${{ secrets.FEED_URL_KEH }}
+        run: npm run import:prices
+      - name: Commit data
+        run: |
+          git config user.name "camcompare-bot"
+          git config user.email "camcompare-bot@users.noreply.github.com"
+          git add data/offers data/price-history
+          if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: daily prices $(date -u +%F)" && git push; fi
+      - name: Check sources
+        run: npx tsx scripts/check-sources.ts

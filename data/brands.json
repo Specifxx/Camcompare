@@ -1,0 +1,12 @@
+[
+  { "slug": "canon", "name": "Canon", "country": "Japan", "site": "https://www.usa.canon.com/" },
+  { "slug": "fujifilm", "name": "Fujifilm", "country": "Japan", "site": "https://www.fujifilm-x.com/" },
+  { "slug": "hasselblad", "name": "Hasselblad", "country": "Sweden", "site": "https://www.hasselblad.com/" },
+  { "slug": "leica", "name": "Leica", "country": "Germany", "site": "https://leica-camera.com/" },
+  { "slug": "nikon", "name": "Nikon", "country": "Japan", "site": "https://www.nikonusa.com/" },
+  { "slug": "om-system", "name": "OM System", "country": "Japan", "site": "https://explore.omsystem.com/", "sublines": ["Olympus"] },
+  { "slug": "panasonic", "name": "Panasonic", "country": "Japan", "site": "https://shop.panasonic.com/collections/cameras", "sublines": ["Lumix"] },
+  { "slug": "ricoh", "name": "Ricoh", "country": "Japan", "site": "https://us.ricoh-imaging.com/", "sublines": ["Pentax"] },
+  { "slug": "sigma", "name": "Sigma", "country": "Japan", "site": "https://www.sigma-global.com/" },
+  { "slug": "sony", "name": "Sony", "country": "Japan", "site": "https://electronics.sony.com/imaging" }
+]

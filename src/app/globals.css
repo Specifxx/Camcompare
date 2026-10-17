@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: 248 249 251;
+  --c-surface: 255 255 255;
+  --c-raised: 241 243 246;
+  --c-line: 226 229 235;
+  --c-fg: 17 20 26;
+  --c-muted: 74 82 96;
+  --c-subtle: 102 110 125;
+  --c-accent: 29 92 214;
+  --c-accent-fg: 255 255 255;
+  --c-accent-soft: 232 239 252;
+  --c-buy: 21 128 61;
+  --c-buy-fg: 255 255 255;
+  --c-buy-soft: 228 245 234;
+  --c-win: 21 128 61;
+  --c-warn: 161 98 7;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: 12 14 18;
+    --c-surface: 20 23 29;
+    --c-raised: 28 32 40;
+    --c-line: 44 49 60;
+    --c-fg: 236 238 242;
+    --c-muted: 170 177 190;
+    --c-subtle: 140 148 162;
+    --c-accent: 110 160 255;
+    --c-accent-fg: 10 14 22;
+    --c-accent-soft: 26 36 58;
+    --c-buy: 52 199 110;
+    --c-buy-fg: 6 20 12;
+    --c-buy-soft: 18 44 30;
+    --c-win: 74 212 128;
+    --c-warn: 234 179 8;
+    color-scheme: dark;
+  }
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { @apply bg-bg text-fg antialiased; }
+a { @apply text-accent; }
+a:hover { text-decoration: underline; }
+
+@layer components {
+  .card { @apply rounded-xl border border-line bg-surface; }
+  .btn { @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold no-underline transition-colors; }
+  .btn:hover { text-decoration: none; }
+  .btn-primary { @apply btn bg-accent text-accent-fg hover:opacity-90; }
+  .btn-buy { @apply btn bg-buy text-buy-fg hover:opacity-90; }
+  .btn-ghost { @apply btn border border-line bg-surface text-fg hover:bg-raised; }
+  .chip { @apply inline-flex items-center rounded-full border border-line bg-raised px-2.5 py-0.5 text-xs font-medium text-muted; }
+  .price { @apply font-mono tabular-nums; }
+  .h-section { @apply text-lg font-bold tracking-tight; }
+}
+
+/* "Differences only" on the compare table (CompareToggle.tsx). */
+[data-diff-only="true"] tr[data-same="true"] { display: none; }

@@ -1,0 +1,15 @@
+[
+  { "slug": "sony-e", "name": "Sony E-mount", "brand": "sony", "flangeMm": 18, "formats": ["full-frame", "aps-c"], "introduced": 2010, "status": "current" },
+  { "slug": "canon-rf", "name": "Canon RF", "brand": "canon", "flangeMm": 20, "formats": ["full-frame", "aps-c"], "introduced": 2018, "status": "current" },
+  { "slug": "canon-ef", "name": "Canon EF / EF-S", "brand": "canon", "flangeMm": 44, "formats": ["full-frame", "aps-c"], "introduced": 1987, "status": "legacy" },
+  { "slug": "canon-ef-m", "name": "Canon EF-M", "brand": "canon", "flangeMm": 18, "formats": ["aps-c"], "introduced": 2012, "status": "legacy" },
+  { "slug": "nikon-z", "name": "Nikon Z", "brand": "nikon", "flangeMm": 16, "formats": ["full-frame", "aps-c"], "introduced": 2018, "status": "current" },
+  { "slug": "nikon-f", "name": "Nikon F", "brand": "nikon", "flangeMm": 46.5, "formats": ["full-frame", "aps-c"], "introduced": 1959, "status": "legacy" },
+  { "slug": "fujifilm-x", "name": "Fujifilm X", "brand": "fujifilm", "flangeMm": 17.7, "formats": ["aps-c"], "introduced": 2012, "status": "current" },
+  { "slug": "fujifilm-g", "name": "Fujifilm G", "brand": "fujifilm", "flangeMm": 26.7, "formats": ["medium-format"], "introduced": 2016, "status": "current" },
+  { "slug": "l-mount", "name": "L-Mount", "brand": null, "flangeMm": 20, "formats": ["full-frame", "aps-c"], "introduced": 2014, "status": "current" },
+  { "slug": "micro-four-thirds", "name": "Micro Four Thirds", "brand": null, "flangeMm": 19.25, "formats": ["micro-four-thirds"], "introduced": 2008, "status": "current" },
+  { "slug": "pentax-k", "name": "Pentax K", "brand": "ricoh", "flangeMm": 45.46, "formats": ["full-frame", "aps-c"], "introduced": 1975, "status": "current" },
+  { "slug": "leica-m", "name": "Leica M", "brand": "leica", "flangeMm": 27.8, "formats": ["full-frame"], "introduced": 1954, "status": "current" },
+  { "slug": "hasselblad-xcd", "name": "Hasselblad XCD", "brand": "hasselblad", "flangeMm": 18.14, "formats": ["medium-format"], "introduced": 2016, "status": "current" }
+]
