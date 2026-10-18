@@ -117,7 +117,7 @@ export function VoteArrows({
       disabled={disabled}
       aria-pressed={s.mine === dir}
       aria-label={dir === 1 ? "Upvote" : "Downvote"}
-      className={`px-1 text-[11px] leading-none ${s.mine === dir ? "text-accent" : "text-subtle hover:text-fg"} disabled:opacity-40`}
+      className={`cc-vote px-1 text-[11px] leading-none ${s.mine === dir ? "text-accent" : "text-subtle hover:text-fg"} disabled:opacity-40`}
     >
       {dir === 1 ? "▲" : "▼"}
     </button>

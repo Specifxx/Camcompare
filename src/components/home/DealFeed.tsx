@@ -138,8 +138,8 @@ function FeedItem({ r, m, currency, now, i }: { r: FeedRow; m: MarketCode; curre
   const fresh = now !== null && !gone && now - Date.parse(r.firstSeen) < 6 * 3_600_000;
   const dim = gone ? "opacity-50" : "";
   return (
-    <li className="grid grid-cols-[4rem_minmax(0,1fr)] items-start gap-x-3 gap-y-2 border-b border-line py-3 sm:grid-cols-[4.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-x-4">
-      <Link href={r.href} prefetch={false} {...quickViewAttrs(r.slug, m, r.name)} className={`block ${gone ? "opacity-50 grayscale" : ""}`} tabIndex={-1} aria-hidden>
+    <li className="hf-row -mx-2 grid grid-cols-[4rem_minmax(0,1fr)] items-start gap-x-3 gap-y-2 rounded-md border-b border-line px-2 py-3 sm:grid-cols-[4.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-x-4" style={{ "--i": i } as React.CSSProperties}>
+      <Link href={r.href} prefetch={false} {...quickViewAttrs(r.slug, m, r.name)} className={`hf-thumb block ${gone ? "opacity-50 grayscale" : ""}`} tabIndex={-1} aria-hidden>
         <ProductThumb slug={r.slug} alt="" priority={i < 3} />
       </Link>
       <div className={`min-w-0 ${dim}`}>
@@ -176,7 +176,7 @@ function FeedItem({ r, m, currency, now, i }: { r: FeedRow; m: MarketCode; curre
         </p>
       </div>
       <div className="col-span-2 flex items-center justify-between gap-3 sm:col-span-1 sm:min-w-[9rem] sm:flex-col sm:items-end sm:gap-1.5">
-        <span className={`text-left sm:text-right ${dim}`}>
+        <span className={`hf-save text-left sm:text-right ${dim}`}>
           <span className={`block text-lg font-bold leading-tight ${gone ? "text-muted" : "text-win"}`}>Save {r.pct}%</span>
           <span className="block text-xs text-muted">{price(r.save, currency)} off RRP</span>
         </span>

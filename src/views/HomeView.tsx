@@ -170,6 +170,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
             </p>
             {generatedAt && (
               <p className="mt-2 text-xs text-subtle">
+                <span className="cc-live" aria-hidden />
                 Prices last checked <Freshness at={generatedAt} fallback={stamp(generatedAt)} />
               </p>
             )}

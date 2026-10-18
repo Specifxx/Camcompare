@@ -1,4 +1,4 @@
-// CamCompare mark: a six-blade iris. Rust (film-stock warm) is the brand; the one amber blade is
+// CamCompare mark: a six-blade iris. Blue is the brand; the one green blade is
 // the "spark" (the best price). Geometry: each blade is a 60° cone whose apex
 // sits on a hexagon round the centre, clipped to the circle; the six cones are
 // the same shape turned 60° apart, and the parallel gaps between them come
@@ -7,7 +7,9 @@
 // Motion is transforms only (globals.css, "Iris"), so it runs the same in
 // Safari/iOS, Firefox, Chrome and Android: on load every blade's apex slides
 // out from the centre (one translate, the same in each blade's own turned
-// frame), so the iris opens once, quickly; under reduced motion it is still.
+// frame), so the iris opens once, quickly; then the shutter blinks every 12 s
+// and on hover (friends: "just the logo shutter blinks"). Under reduced motion
+// it is still.
 // (It used to animate the CSS `d` property, which Safari does not support.)
 import { useId } from "react";
 import { SITE_NAME } from "@/lib/site";

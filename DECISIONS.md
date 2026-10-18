@@ -716,3 +716,18 @@ buttons. Green (`--c-buy` / `--c-win`) stays the colour of money: savings,
 lowest prices and paid buy buttons, plus the one green blade of the iris.
 The favicon and the link-preview image swap their orange for the same
 green. Everything else stays neutral grey, as in "Plain and clean".
+
+## 2026-10-18: A little motion, same plain look
+
+Friends: "looks way better… maybe make it a bit animated, same format but some
+things moving… something needs to move… maybe just mouse hover animations or
+just the logo shutter blinks." This relaxes "the only motion left is the
+logo's one-off aperture opening" in "Plain and clean", without bringing back
+any decoration. The logo's shutter blinks every 12 s and on hover. Cards lift,
+and their photo leans in, on hover. Deal rows deal in one after another, tint
+on hover and nudge their saving. Buttons press in, nav underlines slide in,
+vote arrows pop, and a green live dot breathes beside "Prices last checked".
+Sections below the fold fade up as they scroll in (`Reveal.tsx`). It hides
+nothing before its script runs, so crawlers and no-JS visitors see
+everything. Transforms and opacity only, under 0.6 s, and all of it is off
+under prefers-reduced-motion.

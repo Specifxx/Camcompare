@@ -147,13 +147,49 @@ h1, h2 { letter-spacing: -0.015em; }
 /* ---- Header: a plain surface with a 1px rule under it. */
 .cc-header { border-bottom: 1px solid rgb(var(--c-line)); }
 .cc-nav-link { position: relative; }
-.cc-nav-link[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: rgb(var(--c-accent)); }
 
-/* ---- Iris (Logo.tsx): opens once on load, quickly. Transforms only (no CSS `d`, which
-   Safari/iOS can't animate): each blade slides its apex out from the centre in its own
-   turned frame, so one translate serves all six. Nothing else moves. */
-.cc-iris-intro .cc-blade { animation: cc-iris-open 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s backwards; }
+/* ---- Iris (Logo.tsx). Transforms only (no CSS `d`, which Safari/iOS can't animate):
+   each blade slides its apex in towards the centre in its own turned frame, so one
+   translate serves all six. It opens on load, then the shutter blinks every 12 s and
+   whenever the logo is hovered. */
+.cc-iris-intro .cc-blade { animation: cc-iris-open 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s backwards, cc-iris-idle 12s ease-in-out 5s infinite; }
+.cc-logo:hover .cc-blade, a:focus-visible .cc-blade { animation: cc-iris-blink 0.5s ease-in-out; }
 @keyframes cc-iris-open { from { transform: translate(-5.2px, 1.3px); } to { transform: translate(0, 0); } }
+@keyframes cc-iris-blink { 0%, 100% { transform: none; } 45% { transform: translate(-5.2px, 1.3px); } }
+@keyframes cc-iris-idle { 0%, 4.5%, 100% { transform: none; } 2% { transform: translate(-5.2px, 1.3px); } }
+
+/* ---- Motion (friends, 2026-10-18: "same format but some things moving… something
+   needs to move"). Small, quick and tied to the pointer or the page coming in; the
+   layout never moves. All of it switches off under reduced motion (below). */
+/* Cards lift and their photo leans in. */
+:where(a.card) { transition: border-color 0.15s ease, box-shadow 0.2s ease, transform 0.2s var(--ease-out); }
+:where(a.card):hover { transform: translateY(-3px); }
+.pc img, .hf-thumb img { transition: transform 0.35s var(--ease-out); }
+.pc:hover img, .hf-row:hover .hf-thumb img { transform: scale(1.05); }
+/* Buttons press in. */
+.btn, .hd-seg-btn, .hd-pill { transition-property: background-color, border-color, color, filter, transform; transition-duration: 0.15s; }
+.btn:active, .hd-seg-btn:active, .hd-pill:active:not(:disabled) { transform: scale(0.96); }
+/* Nav links: the underline slides in. */
+.cc-nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: rgb(var(--c-accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.2s var(--ease-out); }
+.cc-nav-link:hover::after, .cc-nav-link[aria-current="page"]::after { transform: scaleX(1); }
+/* Deal feed rows: tint on hover, the saving nudges, rows deal in one after another. */
+.hf-row { transition: background-color 0.15s ease; animation: cc-rise 0.45s var(--ease-out) backwards; animation-delay: calc(min(var(--i, 0), 12) * 45ms); }
+.hf-row:hover { background: rgb(var(--c-raised) / 0.7); }
+.hf-save { transition: transform 0.2s var(--ease-out); transform-origin: right center; }
+.hf-row:hover .hf-save { transform: scale(1.06); }
+/* "Prices last checked": a live dot that breathes. */
+.cc-live { position: relative; display: inline-block; width: 7px; height: 7px; border-radius: 999px; background: rgb(var(--c-win)); vertical-align: middle; margin-right: 6px; }
+.cc-live::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: inherit; animation: cc-ping 2s ease-out infinite; }
+/* Vote arrows pop when pressed. */
+.cc-vote { transition: transform 0.15s ease, color 0.15s ease; }
+.cc-vote:hover:not(:disabled) { transform: translateY(-1px) scale(1.15); }
+.cc-vote:active:not(:disabled) { transform: scale(1.4); }
+/* Sections fade up as they scroll in (Reveal.tsx adds .rv / .rv-in; without JS
+   nothing is hidden). */
+.rv { opacity: 0; transform: translateY(14px); }
+.rv-in { opacity: 1; transform: none; transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out); }
+@keyframes cc-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes cc-ping { 0% { transform: scale(1); opacity: 0.6; } 80%, 100% { transform: scale(2.6); opacity: 0; } }
 
 /* No motion at all under reduced motion. Must stay after every animated rule. */
 @media (prefers-reduced-motion: reduce) {
@@ -164,7 +200,10 @@ h1, h2 { letter-spacing: -0.015em; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .cc-iris-intro .cc-blade { animation: none !important; }
+  .cc-iris-intro .cc-blade, .cc-logo:hover .cc-blade { animation: none !important; }
+  .rv { opacity: 1; transform: none; }
+  :where(a.card):hover, .pc:hover img, .hf-row:hover .hf-thumb img, .hf-row:hover .hf-save { transform: none; }
+  .cc-live::after { display: none; }
 }
 
 /* Home deal feed controls (components/home/DealFeed.tsx): a segmented

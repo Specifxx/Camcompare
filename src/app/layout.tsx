@@ -5,6 +5,7 @@ import FeedbackButton from "@/components/FeedbackButton";
 import Footer from "@/components/Footer";
 import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
+import Reveal from "@/components/Reveal";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
 import { Inter, JetBrains_Mono } from "next/font/google";
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <FeedbackButton />
+        <Reveal />
         <Analytics />
         {ADSENSE && <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE}`} crossOrigin="anonymous" strategy="lazyOnload" />}
       </body>
