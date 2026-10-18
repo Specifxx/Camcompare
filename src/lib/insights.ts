@@ -4,7 +4,7 @@ import type { Camera } from "./catalog/schema";
 import { publishedCameras } from "./catalog";
 import { convert, type Fx } from "./fx";
 import { MARKET_CODES, MARKETS, type Currency, type MarketCode } from "./markets";
-import { lowest, type HistoryPoint, type Offer } from "./offers";
+import { isAmazonOffer, lowest, type HistoryPoint, type Offer } from "./offers";
 import { sensorLabel, typeLabel } from "./specs/definitions";
 
 type Metric = { key: string; label: string; phrase: string; better: "higher" | "lower"; get: (c: Camera) => number | null; unit: (v: number) => string };
@@ -177,4 +177,30 @@ export function worldVerdict(rows: WorldRow[], here: MarketCode): WorldVerdict |
     return { field, cheapest: best.market, here, pct, text: `Cheapest${label} in ${place(best.market)}: about ${pct}% under the ${ADJ[here]} price before shipping and import tax.` };
   }
   return null;
+}
+
+export type StoreGap = { slug: string; best: Offer; next: Offer; pct: number };
+
+/**
+ * One store clearly under every other in stock today: the cheapest new,
+ * body-only, in-stock offer against the cheapest at a DIFFERENT store, as a
+ * percentage of that next price. Needs no RRP or history, so every market
+ * with two stores carrying a product has some (the deal lists' fallback, and
+ * what lets every market vote on deals). Amazon is left out, as in all deals.
+ */
+export function storeGaps(items: { slug: string; offers: Offer[] }[], minPct = 5, max = 12): StoreGap[] {
+  const out: StoreGap[] = [];
+  for (const { slug, offers } of items) {
+    const byStore = new Map<string, Offer>();
+    for (const o of offers) {
+      if (!o.inStock || o.kit || o.condition !== "new" || isAmazonOffer(o)) continue;
+      const had = byStore.get(o.retailer);
+      if (!had || o.price < had.price) byStore.set(o.retailer, o);
+    }
+    const [best, next] = [...byStore.values()].sort((a, b) => a.price - b.price);
+    if (!best || !next) continue;
+    const pct = Math.round(((next.price - best.price) / next.price) * 100);
+    if (pct >= minPct) out.push({ slug, best, next, pct });
+  }
+  return out.sort((a, b) => b.pct - a.pct || a.slug.localeCompare(b.slug)).slice(0, max);
 }

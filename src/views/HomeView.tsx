@@ -3,26 +3,12 @@ import Link from "next/link";
 import ProductThumb from "@/components/ProductThumb";
 import QuickViewHost from "@/components/QuickView";
 import SearchBox from "@/components/SearchBox";
+import DealVotes from "@/components/community/DealVotes";
 import DealFeed, { type FeedRow } from "@/components/home/DealFeed";
 import Freshness from "@/components/home/Freshness";
 import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
-import {
-  brandName,
-  brands,
-  displayName,
-  displayShortName,
-  historyFor,
-  indexedPairs,
-  mounts,
-  offersFor,
-  offersGeneratedAt,
-  pairSlug,
-  product,
-  publishedCameras,
-  publishedLenses,
-  type AnyProduct,
-} from "@/lib/catalog";
+import { brandName, brands, displayName, displayShortName, historyFor, indexedPairs, mounts, offersFor, offersGeneratedAt, pairSlug, product, publishedCameras, publishedLenses, type AnyProduct } from "@/lib/catalog";
 import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
 import { dealInputs } from "@/lib/deal-inputs";
 import { readDealLog, type DealEntry } from "@/lib/deal-log";
@@ -79,23 +65,27 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   const log = readDealLog(m);
   const inputs = new Map(dealInputs(m).map((it) => [it.slug, it]));
   const since = log?.updatedAt ? Date.parse(log.updatedAt) - GONE_SHOW_H * 3_600_000 : 0;
-  const liveDeals = (log?.deals ?? []).filter((d) => d.status === "live" && product(d.slug)).sort((a, b) => b.pct - a.pct || b.save - a.save).slice(0, FEED_MAX);
+  const liveDeals = (log?.deals ?? [])
+    .filter((d) => d.status === "live" && product(d.slug))
+    .sort((a, b) => b.pct - a.pct || b.save - a.save)
+    .slice(0, FEED_MAX);
   const goneDeals = (log?.deals ?? []).filter((d) => d.status === "gone" && d.goneAt && Date.parse(d.goneAt) >= since && product(d.slug));
   const toFeedRow = (d: DealEntry): FeedRow | null => {
     const p = product(d.slug)!;
     const gone = d.status === "gone" ? { at: d.goneAt!, why: d.goneWhy ?? "sold" } : null;
     let buy: FeedRow["buy"] = null;
     if (!gone) {
-      const o = (inputs.get(d.slug)?.offers ?? [])
-        .filter((x) => x.retailer === d.retailer && x.condition === d.condition && x.inStock && !x.kit && !isAmazonOffer(x))
-        .sort((a, b) => a.price - b.price)[0];
+      const o = (inputs.get(d.slug)?.offers ?? []).filter((x) => x.retailer === d.retailer && x.condition === d.condition && x.inStock && !x.kit && !isAmazonOffer(x)).sort((a, b) => a.price - b.price)[0];
       // The log and the offers come from the same import; a deal whose offer is not in this build is not shown live.
       if (!o) return null;
       const href = affiliateUrl(o.retailer, o.url, subId("home", "feed"));
       buy = { href, paid: isPaid(o.retailer, href), retailer: o.retailer };
     }
     const field = d.condition === "new" ? "new" : "used";
-    const pts = historyFor(d.slug, m).filter((h) => h[field] !== undefined).slice(-SPARK_DAYS).map((h) => h[field]!);
+    const pts = historyFor(d.slug, m)
+      .filter((h) => h[field] !== undefined)
+      .slice(-SPARK_DAYS)
+      .map((h) => h[field]!);
     const pack = packKind(p);
     return {
       key: d.key,
@@ -190,45 +180,58 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
 
           {fallback &&
             (() => {
-              // One list alone takes the full width; an empty one only says so when both are.
-              const dropsN = fallback.newDrops.length,
-                savesN = fallback.savings.length;
-              const solo = !dropsN || !savesN;
+              // Whichever lists this market has; one alone takes the full width.
+              const lists = [
+                {
+                  title: "Got cheaper this week",
+                  rows: fallback.newDrops.map((d) => ({
+                    slug: d.slug,
+                    vote: `${m}:${d.slug}:drop`,
+                    right: (
+                      <>
+                        <span className="price font-bold text-buy">{price(d.to, cur)}</span> <span className="block text-xs text-win">−{d.pct}% in a week</span>
+                      </>
+                    ),
+                  })),
+                },
+                {
+                  title: "Used for a lot less than new",
+                  rows: fallback.savings.map((x) => ({
+                    slug: x.slug,
+                    vote: `${m}:${x.slug}:used-vs-new`,
+                    right: (
+                      <>
+                        <span className="price font-bold text-buy">{price(x.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span>
+                        <span className="block text-xs text-win">
+                          {x.pct}% under new {price(x.n!.price, cur)}
+                        </span>
+                      </>
+                    ),
+                  })),
+                },
+                {
+                  // Needs no RRP or price history, so every market with two
+                  // stores has some, and something to vote on.
+                  title: "One store clearly cheapest",
+                  rows: fallback.gaps.map((g) => ({
+                    slug: g.slug,
+                    vote: `${m}:${g.slug}:store-gap`,
+                    right: (
+                      <>
+                        <span className="price font-bold text-buy">{price(g.best.price, cur)}</span> <span className="text-xs text-subtle">at {retailer(g.best.retailer)?.name ?? g.best.retailer}</span>
+                        <span className="block text-xs text-win">{g.pct}% under the next store</span>
+                      </>
+                    ),
+                  })),
+                },
+              ].filter((l) => l.rows.length);
+              const solo = lists.length === 1;
               return (
                 <div className="order-2 grid gap-8 md:grid-cols-2">
-                  <FallbackList
-                    m={m}
-                    hidden={!dropsN && savesN > 0}
-                    wide={solo}
-                    title="Got cheaper this week"
-                    empty={`No new-price drops in ${PLACE[m]} this week. We need a week of prices to spot one.`}
-                    rows={fallback.newDrops.slice(0, solo ? 12 : 8).map((d) => ({
-                      slug: d.slug,
-                      right: (
-                        <>
-                          <span className="price font-bold text-buy">{price(d.to, cur)}</span> <span className="block text-xs text-win">−{d.pct}% in a week</span>
-                        </>
-                      ),
-                    }))}
-                  />
-                  <FallbackList
-                    m={m}
-                    hidden={!savesN && dropsN > 0}
-                    wide={solo}
-                    title="Used for a lot less than new"
-                    empty={`Not enough used and new prices side by side in ${PLACE[m]} yet.`}
-                    rows={fallback.savings.slice(0, solo ? 12 : 8).map((s) => ({
-                      slug: s.slug,
-                      right: (
-                        <>
-                          <span className="price font-bold text-buy">{price(s.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span>
-                          <span className="block text-xs text-win">
-                            {s.pct}% under new {price(s.n!.price, cur)}
-                          </span>
-                        </>
-                      ),
-                    }))}
-                  />
+                  {lists.map((l) => (
+                    <FallbackList key={l.title} m={m} wide={solo} title={l.title} rows={l.rows.slice(0, solo ? 12 : 8)} />
+                  ))}
+                  {!lists.length && <p className="text-sm text-muted md:col-span-2">No deals in {PLACE[m]} yet: we need two stores pricing the same product, a week of prices, or used and new side by side.</p>}
                   <p className="text-sm md:col-span-2">
                     <Link href={marketPath(m, "/deals")} prefetch={false} className="font-semibold">
                       Everything on the deals page <span aria-hidden>→</span>
@@ -317,34 +320,31 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   );
 }
 
-function FallbackList({ m, title, rows, empty, wide, hidden }: { m: MarketCode; title: string; rows: { slug: string; right: React.ReactNode }[]; empty: string; wide: boolean; hidden: boolean }) {
-  if (hidden) return null;
+function FallbackList({ m, title, rows, wide }: { m: MarketCode; title: string; rows: { slug: string; vote: string; right: React.ReactNode }[]; wide: boolean }) {
   return (
     <div className={wide ? "md:col-span-2" : ""}>
       <h3 className="font-display text-lg font-semibold">{title}</h3>
-      {rows.length === 0 ? (
-        <p className="mt-2 text-sm text-muted">{empty}</p>
-      ) : (
-        <ul className={`mt-3 grid gap-2 ${wide ? "md:grid-cols-2" : ""}`}>
-          {rows.map((r) => {
-            const p = product(r.slug)!;
-            return (
-              <li key={r.slug}>
-                <Link
-                  href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${r.slug}`)}
-                  prefetch={false}
-                  {...quickViewAttrs(r.slug, m, displayName(p.item, m))}
-                  className="card flex items-center gap-3 p-2.5 text-fg no-underline hover:border-accent hover:no-underline"
-                >
-                  <ProductThumb slug={r.slug} alt="" className="w-16 shrink-0" />
-                  <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
-                  <span className="shrink-0 text-right text-sm">{r.right}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      <ul className={`mt-3 grid gap-2 ${wide ? "md:grid-cols-2" : ""}`}>
+        {rows.map((r) => {
+          const p = product(r.slug)!;
+          return (
+            <li key={r.slug} className="flex items-center gap-2">
+              {/* Votes here too, so every market can vote, not only those with the RRP feed. */}
+              <DealVotes dealKey={r.vote} layout="column" className="shrink-0" />
+              <Link
+                href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${r.slug}`)}
+                prefetch={false}
+                {...quickViewAttrs(r.slug, m, displayName(p.item, m))}
+                className="card flex min-w-0 flex-1 items-center gap-3 p-2.5 text-fg no-underline hover:border-accent hover:no-underline"
+              >
+                <ProductThumb slug={r.slug} alt="" className="w-16 shrink-0" />
+                <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
+                <span className="shrink-0 text-right text-sm">{r.right}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

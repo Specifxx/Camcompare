@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { recommend } from "../src/lib/finder";
 import { convert, readFx, type Fx } from "../src/lib/fx";
-import { dealSignal, priceDrops, topBargains, usedSaving, vsLaunch, worldRows, worldVerdict, type BargainInput } from "../src/lib/insights";
+import { dealSignal, priceDrops, storeGaps, topBargains, usedSaving, vsLaunch, worldRows, worldVerdict, type BargainInput } from "../src/lib/insights";
 import { overBy, rowWarning } from "../src/lib/rrp";
 import { productLd } from "../src/lib/jsonld";
 import { isGlobalPath, marketForCountry, marketFromPath, rememberMarket, switchMarketPath, visitorMarket } from "../src/lib/market-client";
@@ -209,4 +209,22 @@ test("fx falls back to the reference rates without a file", () => {
   assert.equal(fx.date, null);
   assert.equal(fx.rates.USD, 1);
   assert.ok(fx.rates.GBP > 0.5 && fx.rates.GBP < 1);
+});
+
+test("storeGaps: one store clearly under the next store, new and in stock only", () => {
+  const offer = (o: Partial<Offer>): Offer => ({
+    product: "x", kind: "camera", retailer: "a", condition: "new", price: 100000, currency: "SGD", url: "https://a.example/x",
+    title: "X", seller: null, inStock: true, kit: false, mount: null, seenAt: "2026-10-18T00:00:00Z", sourceId: null, ...o,
+  });
+  const gaps = storeGaps([
+    // 10% under the next store: in.
+    { slug: "gap", offers: [offer({ price: 90000 }), offer({ retailer: "b", price: 100000 }), offer({ retailer: "c", price: 120000 })] },
+    // Two listings at the same store don't make a gap.
+    { slug: "same-store", offers: [offer({ price: 80000 }), offer({ price: 100000 })] },
+    // A cheaper kit, used or out-of-stock offer doesn't count.
+    { slug: "ignored", offers: [offer({ price: 50000, kit: true }), offer({ price: 50000, condition: "used" }), offer({ price: 50000, inStock: false }), offer({ retailer: "b", price: 98000 }), offer({ retailer: "c", price: 100000 })] },
+    // Only one store: nothing to compare.
+    { slug: "alone", offers: [offer({})] },
+  ]);
+  assert.deepEqual(gaps.map((g) => [g.slug, g.pct, g.best.retailer, g.next.retailer]), [["gap", 10, "a", "b"]]);
 });

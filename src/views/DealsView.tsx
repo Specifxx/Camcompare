@@ -1,3 +1,4 @@
+import DealVotes from "@/components/community/DealVotes";
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
@@ -7,7 +8,7 @@ import QuickViewHost from "@/components/QuickView";
 import { quickViewAttrs } from "@/lib/quickview";
 import { displayName, historyAll, historyFor, launchPrice, offersGeneratedAt, offersFor, product, publishedCameras, publishedLenses } from "@/lib/catalog";
 import { price } from "@/lib/format";
-import { priceDrops, topBargains, usedSaving, type Bargain } from "@/lib/insights";
+import { priceDrops, storeGaps, topBargains, usedSaving, type Bargain } from "@/lib/insights";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { lowest } from "@/lib/offers";
 import { retailer } from "@/lib/retailers";
@@ -27,7 +28,7 @@ export function bargains(m: MarketCode, max = 12) {
   return { newBargains: topBargains(items, "new", 5, max), usedBargains: topBargains(items, "used", 5, max) };
 }
 
-/** A market's deals. `empty` until it has a week of history or a used saving. */
+/** A market's deals. `empty` until it has a week of history, a used saving or one store clearly under the rest. */
 export function deals(m: MarketCode) {
   const history = historyAll(m);
   const newDrops = priceDrops(history, "new").slice(0, 24);
@@ -43,7 +44,8 @@ export function deals(m: MarketCode) {
     .sort((a, b) => b.pct! - a.pct!)
     .slice(0, 12);
   const { newBargains, usedBargains } = bargains(m);
-  return { newDrops, usedDrops, savings, newBargains, usedBargains, empty: !newDrops.length && !usedDrops.length && !savings.length && !newBargains.length && !usedBargains.length };
+  const gaps = storeGaps([...publishedCameras(), ...publishedLenses()].map((p) => ({ slug: p.slug, offers: offersFor(p.slug, m) })));
+  return { newDrops, usedDrops, savings, gaps, newBargains, usedBargains, empty: !newDrops.length && !usedDrops.length && !savings.length && !gaps.length && !newBargains.length && !usedBargains.length };
 }
 
 // An empty deals page is one line of "nothing yet": noindex, out of the
@@ -85,11 +87,14 @@ export function BargainCard({ b, m }: { b: Bargain; m: MarketCode }) {
   );
 }
 
-function Row({ slug, m, right }: { slug: string; m: MarketCode; right: React.ReactNode }) {
+// Every deal row and card has votes, in every market (DealVotes keys are
+// "<market>:<slug>:<list>", shared with the home page's lists of the same kind).
+function Row({ slug, m, vote, right }: { slug: string; m: MarketCode; vote: string; right: React.ReactNode }) {
   const p = product(slug)!;
   return (
-    <li>
-      <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`)} prefetch={false} {...quickViewAttrs(slug, m, displayName(p.item, m))} className="card flex items-center gap-3 p-3 text-fg no-underline hover:no-underline">
+    <li className="flex items-center gap-2">
+      <DealVotes dealKey={`${m}:${slug}:${vote}`} layout="column" className="shrink-0" />
+      <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`)} prefetch={false} {...quickViewAttrs(slug, m, displayName(p.item, m))} className="card flex min-w-0 flex-1 items-center gap-3 p-3 text-fg no-underline hover:no-underline">
         <ProductThumb slug={slug} alt="" className="w-20 shrink-0" />
         <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
         <span className="shrink-0 text-right text-sm">{right}</span>
@@ -100,7 +105,7 @@ function Row({ slug, m, right }: { slug: string; m: MarketCode; right: React.Rea
 
 export default function DealsView({ market: m }: { market: MarketCode }) {
   const cur = MARKETS[m].currency;
-  const { newDrops, usedDrops, savings, newBargains, usedBargains, empty } = deals(m);
+  const { newDrops, usedDrops, savings, gaps, newBargains, usedBargains, empty } = deals(m);
   const updated = offersGeneratedAt(m);
   return (
     <div className="flex flex-col gap-10">
@@ -127,8 +132,9 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
               <h3 className="mb-2 text-sm font-bold text-muted">New, furthest under RRP</h3>
               <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                 {newBargains.map((b) => (
-                  <li key={b.slug}>
+                  <li key={b.slug} className="flex flex-col gap-1">
                     <BargainCard b={b} m={m} />
+                    <DealVotes dealKey={`${m}:${b.slug}:bargain-new`} className="self-start pl-1" />
                   </li>
                 ))}
               </ul>
@@ -139,8 +145,9 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
               <h3 className="mb-2 mt-5 text-sm font-bold text-muted">Used, furthest under the typical used price</h3>
               <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
                 {usedBargains.map((b) => (
-                  <li key={b.slug}>
+                  <li key={b.slug} className="flex flex-col gap-1">
                     <BargainCard b={b} m={m} />
+                    <DealVotes dealKey={`${m}:${b.slug}:bargain-used`} className="self-start pl-1" />
                   </li>
                 ))}
               </ul>
@@ -153,7 +160,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
           <h2 className="h-section mb-3">New: biggest drops this week</h2>
           <ul className="grid gap-3 md:grid-cols-2">
             {newDrops.map((d) => (
-              <Row key={d.slug} slug={d.slug} m={m} right={<><span className="price font-bold text-buy">{price(d.to, cur)}</span><br /><span className="text-xs text-win">−{d.pct}% from {price(d.from, cur)}</span></>} />
+              <Row key={d.slug} slug={d.slug} m={m} vote="drop" right={<><span className="price font-bold text-buy">{price(d.to, cur)}</span><br /><span className="text-xs text-win">−{d.pct}% from {price(d.from, cur)}</span></>} />
             ))}
           </ul>
         </section>
@@ -163,7 +170,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
           <h2 className="h-section mb-3">Used: biggest drops this week</h2>
           <ul className="grid gap-3 md:grid-cols-2">
             {usedDrops.map((d) => (
-              <Row key={d.slug} slug={d.slug} m={m} right={<><span className="price font-bold">{price(d.to, cur)}</span><br /><span className="text-xs text-win">−{d.pct}% from {price(d.from, cur)}</span></>} />
+              <Row key={d.slug} slug={d.slug} m={m} vote="used-drop" right={<><span className="price font-bold">{price(d.to, cur)}</span><br /><span className="text-xs text-win">−{d.pct}% from {price(d.from, cur)}</span></>} />
             ))}
           </ul>
         </section>
@@ -173,7 +180,17 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
           <h2 className="h-section mb-3">Where buying used saves the most</h2>
           <ul className="grid gap-3 md:grid-cols-2">
             {savings.map((x) => (
-              <Row key={x.slug} slug={x.slug} m={m} right={<><span className="price font-bold">{price(x.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span><br /><span className="text-xs text-win">{x.pct}% under {price(x.n!.price, cur)} new</span></>} />
+              <Row key={x.slug} slug={x.slug} m={m} vote="used-vs-new" right={<><span className="price font-bold">{price(x.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span><br /><span className="text-xs text-win">{x.pct}% under {price(x.n!.price, cur)} new</span></>} />
+            ))}
+          </ul>
+        </section>
+      )}
+      {gaps.length > 0 && (
+        <section>
+          <h2 className="h-section mb-3">One store clearly cheapest</h2>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {gaps.map((g) => (
+              <Row key={g.slug} slug={g.slug} m={m} vote="store-gap" right={<><span className="price font-bold text-buy">{price(g.best.price, cur)}</span> <span className="text-xs text-subtle">at {retailer(g.best.retailer)?.name ?? g.best.retailer}</span><br /><span className="text-xs text-win">{g.pct}% under the next store ({price(g.next.price, cur)})</span></>} />
             ))}
           </ul>
         </section>

@@ -731,3 +731,23 @@ Sections below the fold fade up as they scroll in (`Reveal.tsx`). It hides
 nothing before its script runs, so crawlers and no-JS visitors see
 everything. Transforms and opacity only, under 0.6 s, and all of it is off
 under prefers-reduced-motion.
+
+## 2026-10-18: Deal votes in every market
+
+The owner: "the upvotes and downvotes should be on all regions". Only the
+US and UK have the RRP deal feed, and the votes lived only there. Now every
+deal row and card in every market carries `DealVotes`: the home page's
+fallback lists and every list on /deals. Keys are `<market>:<slug>:<list>`
+(drop, used-drop, used-vs-new, store-gap, bargain-new, bargain-used), so a
+product's votes on the home page and /deals are the same votes.
+
+A market without launch prices or a week of history (Singapore today) had no
+deals at all, so nothing to vote on. A third list needs neither: "One store
+clearly cheapest" (`storeGaps`), today's cheapest new, body-only, in-stock
+price at least 5% under the cheapest at any other store. Europe still shows
+nothing, because no European store prices anything yet.
+
+Found on the way: Cash Converters Singapore (Shopify, second-hand only)
+doesn't tag stock as used, so every listing came through as new.
+`storeCondition` makes an untagged listing at a store that sells no new gear
+the store's own condition.
