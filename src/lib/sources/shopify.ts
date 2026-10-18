@@ -78,6 +78,15 @@ export function shopifyCondition(p: Pick<Product, "title" | "product_type" | "ta
   return "new";
 }
 
+/**
+ * A listing's condition at this store. Second-hand shops (Cash Converters
+ * SG) don't tag their stock as used, so at a store that sells no new gear an
+ * untagged listing is the store's own condition, not "new".
+ */
+export function storeCondition(cond: Condition, conditions: readonly Condition[]): Condition {
+  return cond === "new" && !conditions.includes("new") ? conditions[0] ?? cond : cond;
+}
+
 export const shopifySource = (retailerKey: string): PriceSource => ({
   retailer: retailerKey,
   async run({ market, retailer: r, index, now, log }) {
@@ -117,11 +126,11 @@ export const shopifySource = (retailerKey: string): PriceSource => ({
             const m = matchListing({ title: named, mpn: v.sku }, index);
             if (!m.product) {
               // Not a camera or lens: maybe an accessory (src/lib/accessories.ts).
-              const a = accessoryOffer({ title, productType: p.product_type, vendor: p.vendor, price: toMinor(v.price), currency, url: `${base}/products/${p.handle}?variant=${v.id}`, inStock: v.available, condition: shopifyCondition(p, v.title), sourceId: String(v.id) }, index, r.key, now);
+              const a = accessoryOffer({ title, productType: p.product_type, vendor: p.vendor, price: toMinor(v.price), currency, url: `${base}/products/${p.handle}?variant=${v.id}`, inStock: v.available, condition: storeCondition(shopifyCondition(p, v.title), r.conditions), sourceId: String(v.id) }, index, r.key, now);
               if (a) accessories.push(a);
               continue;
             }
-            const cond = shopifyCondition(p, v.title);
+            const cond = storeCondition(shopifyCondition(p, v.title), r.conditions);
             const price = toMinor(v.price);
             if (!price || !plausiblePrice(m.product, cond, price / 100, currency, m.via)) continue;
             offers.push({

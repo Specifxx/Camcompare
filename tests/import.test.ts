@@ -6,7 +6,7 @@ import { buildIndex } from "../src/lib/matching";
 import type { Offer, OffersFile } from "../src/lib/offers";
 import { dailyWindow, priceFloor } from "../src/lib/sources/ebay";
 import { cheapestPerProduct, feedCondition, feedRows, headerMap, priceCurrency, rowsToOffers, splitDelimited, type FeedRow } from "../src/lib/sources/feed";
-import { robotsAllows, shopifyCondition } from "../src/lib/sources/shopify";
+import { robotsAllows, shopifyCondition, storeCondition } from "../src/lib/sources/shopify";
 import { toMinor } from "../src/lib/sources/types";
 import { CAMERAS, LENSES } from "./fixtures";
 
@@ -161,6 +161,10 @@ test("Shopify: robots.txt is respected and conditions read from titles and tags"
   assert.equal(robotsAllows("User-agent: Googlebot\nUser-agent: *\nDisallow: /products", "/products.json"), false);
   assert.equal(shopifyCondition({ title: "Sony a7 III (Used)", tags: [] }, ""), "used");
   assert.equal(shopifyCondition({ title: "Sony a7 III", tags: ["Pre-Owned"] }, ""), "used");
+  // A second-hand-only store's untagged stock is used, not new (Cash Converters SG).
+  assert.equal(storeCondition("new", ["used"]), "used");
+  assert.equal(storeCondition("refurbished", ["used"]), "refurbished");
+  assert.equal(storeCondition("new", ["new", "used"]), "new");
   assert.equal(shopifyCondition({ title: "Sony a7 IV Ex-Demo", tags: "" }, ""), "open-box");
   assert.equal(shopifyCondition({ title: "Sony a7 IV", product_type: "Cameras" }, "Body"), "new");
 });
