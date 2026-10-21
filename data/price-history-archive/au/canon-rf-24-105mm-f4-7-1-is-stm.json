@@ -1,4 +1,8 @@
 {"slug":"canon-rf-24-105mm-f4-7-1-is-stm","market":"au","currency":"AUD","points":[
+{"day":"2024-06-13","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861488.82/warc/CC-MAIN-20240613190234-20240613220234-00087.warc.gz#offset=932870848&length=81360"},
+{"day":"2024-11-04","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027861.16/warc/CC-MAIN-20241104194528-20241104224528-00087.warc.gz#offset=939747019&length=79778"},
+{"day":"2025-02-09","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951591.15/warc/CC-MAIN-20250209034623-20250209064623-00087.warc.gz#offset=946504546&length=78959"},
+{"day":"2025-05-21","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413138.27/warc/CC-MAIN-20250521163545-20250521193545-00087.warc.gz#offset=873100457&length=78966"},
 {"day":"2025-09-09","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533029.41/warc/CC-MAIN-20250909025155-20250909055155-00087.warc.gz#offset=862348642&length=79952"},
 {"day":"2025-11-18","new":59496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439651456.92/warc/CC-MAIN-20251118091112-20251118121112-00087.warc.gz#offset=863567600&length=79688"}
 ]}

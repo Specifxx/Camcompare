@@ -1,4 +1,7 @@
 {"slug":"sigma-28-70mm-f2-8-dg-dn-contemporary","market":"us","currency":"USD","points":[
+{"day":"2024-07-24","new":79900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518130.6/warc/CC-MAIN-20240723224601-20240724014601-00403.warc.gz#offset=577918828&length=105722"},
 {"day":"2025-02-08","new":84999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951543.48/warc/CC-MAIN-20250208114257-20250208144257-00128.warc.gz#offset=708509860&length=150363"},
-{"day":"2025-02-17","new":79999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00633.warc.gz#offset=714587644&length=150727"}
+{"day":"2025-02-17","new":79999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00633.warc.gz#offset=714587644&length=150727"},
+{"day":"2025-05-16","new":89900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412495.55/warc/CC-MAIN-20250516033443-20250516063443-00371.warc.gz#offset=584457188&length=93218"},
+{"day":"2025-08-03","new":98900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279735.55/warc/CC-MAIN-20250803200137-20250803230137-00283.warc.gz#offset=602322140&length=103916"}
 ]}

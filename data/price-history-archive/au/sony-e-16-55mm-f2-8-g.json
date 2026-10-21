@@ -1,0 +1,6 @@
+{"slug":"sony-e-16-55mm-f2-8-g","market":"au","currency":"AUD","points":[
+{"day":"2024-11-04","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027819.53/warc/CC-MAIN-20241104065437-20241104095437-00269.warc.gz#offset=940084472&length=80462"},
+{"day":"2025-04-23","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135865.54/warc/CC-MAIN-20250423200043-20250423230043-00769.warc.gz#offset=972694226&length=81144"},
+{"day":"2025-09-13","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533670.32/warc/CC-MAIN-20250913222048-20250914012048-00769.warc.gz#offset=838565494&length=80086"},
+{"day":"2025-12-07","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00769.warc.gz#offset=830366073&length=79604"}
+]}

@@ -1,4 +1,5 @@
 {"slug":"canon-rf-16mm-f2-8-stm","market":"au","currency":"AUD","points":[
+{"day":"2024-11-10","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028179.55/warc/CC-MAIN-20241110072033-20241110102033-00589.warc.gz#offset=945745709&length=79407"},
 {"day":"2025-07-12","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00889.warc.gz#offset=937009414&length=78307"},
 {"day":"2025-11-12","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439343096.76/warc/CC-MAIN-20251112010046-20251112040046-00889.warc.gz#offset=847564431&length=78941"}
 ]}

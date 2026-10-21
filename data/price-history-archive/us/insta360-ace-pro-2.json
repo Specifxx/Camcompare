@@ -1,0 +1,5 @@
+{"slug":"insta360-ace-pro-2","market":"us","currency":"USD","points":[
+{"day":"2025-03-15","new":35999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432905.58/warc/CC-MAIN-20250315161219-20250315191219-00403.warc.gz#offset=699579134&length=101569"},
+{"day":"2025-04-20","new":39999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135740.31/warc/CC-MAIN-20250420084231-20250420114231-00326.warc.gz#offset=619550809&length=106224"},
+{"day":"2025-04-25","new":40999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135924.85/warc/CC-MAIN-20250425105842-20250425135842-00189.warc.gz#offset=661295283&length=106838"}
+]}

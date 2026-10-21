@@ -1,4 +1,7 @@
 {"slug":"nikon-z-85mm-f1-8-s","market":"au","currency":"AUD","points":[
+{"day":"2024-07-24","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518427.68/warc/CC-MAIN-20240724171328-20240724201328-00167.warc.gz#offset=865031917&length=83437"},
+{"day":"2024-11-12","new":104996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028249.89/warc/CC-MAIN-20241112081532-20241112111532-00167.warc.gz#offset=910570094&length=80634"},
+{"day":"2025-02-10","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951628.13/warc/CC-MAIN-20250209230119-20250210020119-00167.warc.gz#offset=961689575&length=79644"},
 {"day":"2025-07-16","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934359.8/warc/CC-MAIN-20250716132632-20250716162632-00567.warc.gz#offset=906138944&length=79134"},
 {"day":"2025-12-17","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871657426.86/warc/CC-MAIN-20251216230723-20251217020723-00567.warc.gz#offset=782771226&length=79775"}
 ]}

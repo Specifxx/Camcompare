@@ -1,4 +1,6 @@
 {"slug":"sony-fe-20-70mm-f4-g","market":"au","currency":"AUD","points":[
+{"day":"2024-11-07","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00048.warc.gz#offset=943987333&length=80675"},
+{"day":"2025-02-09","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00048.warc.gz#offset=954092646&length=80089"},
 {"day":"2025-09-08","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00348.warc.gz#offset=902878476&length=80496"},
 {"day":"2025-12-07","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00348.warc.gz#offset=839651096&length=80031"}
 ]}

@@ -1,0 +1,7 @@
+{"slug":"nikon-z-28-400mm-f4-8-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-04-24","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819847.83/warc/CC-MAIN-20240424174709-20240424204709-00515.warc.gz#offset=918977710&length=81764"},
+{"day":"2024-10-05","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253348.29/warc/CC-MAIN-20241005051646-20241005081646-00515.warc.gz#offset=923594541&length=81072"},
+{"day":"2025-02-09","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00515.warc.gz#offset=977128002&length=79592"},
+{"day":"2025-07-12","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00115.warc.gz#offset=909002033&length=79106"},
+{"day":"2025-11-16","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439344225.58/warc/CC-MAIN-20251115231259-20251116021259-00115.warc.gz#offset=868857506&length=79773"}
+]}

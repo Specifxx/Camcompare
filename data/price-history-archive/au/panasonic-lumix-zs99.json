@@ -1,4 +1,5 @@
 {"slug":"panasonic-lumix-zs99","market":"au","currency":"AUD","points":[
+{"day":"2025-01-26","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703701202.99/warc/CC-MAIN-20250126103503-20250126133503-00816.warc.gz#offset=1090053932&length=83968"},
 {"day":"2025-08-11","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280904.58/warc/CC-MAIN-20250811223628-20250812013628-00830.warc.gz#offset=904038496&length=81243"},
 {"day":"2025-09-08","new":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00710.warc.gz#offset=893562529&length=82525"},
 {"day":"2025-09-16","new":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00116.warc.gz#offset=880895425&length=84045"},

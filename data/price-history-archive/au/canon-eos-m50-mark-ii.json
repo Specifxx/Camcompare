@@ -1,0 +1,5 @@
+{"slug":"canon-eos-m50-mark-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-08-08","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640723918.41/warc/CC-MAIN-20240808062406-20240808092406-00535.warc.gz#offset=790279992&length=83331"},
+{"day":"2024-12-01","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066036672.6/warc/CC-MAIN-20241201192453-20241201222453-00535.warc.gz#offset=939129794&length=79582"},
+{"day":"2025-03-15","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00835.warc.gz#offset=1036625806&length=78511"}
+]}

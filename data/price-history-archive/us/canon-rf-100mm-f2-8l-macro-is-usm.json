@@ -1,4 +1,5 @@
 {"slug":"canon-rf-100mm-f2-8l-macro-is-usm","market":"us","currency":"USD","points":[
+{"day":"2025-03-24","new":119900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433505.60/warc/CC-MAIN-20250324214107-20250325004107-00580.warc.gz#offset=699139591&length=90632"},
 {"day":"2025-05-19","new":119900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00465.warc.gz#offset=679158344&length=151019"},
 {"day":"2025-09-10","new":119900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533116.59/warc/CC-MAIN-20250910193300-20250910223300-00768.warc.gz#offset=208535997&length=107509"}
 ]}

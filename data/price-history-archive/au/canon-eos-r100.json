@@ -1,4 +1,6 @@
 {"slug":"canon-eos-r100","market":"au","currency":"AUD","points":[
+{"day":"2024-11-05","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027884.62/warc/CC-MAIN-20241105145721-20241105175721-00472.warc.gz#offset=966489899&length=85207"},
+{"day":"2025-03-26","new":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004755464.68/warc/CC-MAIN-20250326230641-20250327020641-00272.warc.gz#offset=999595737&length=84442"},
 {"day":"2025-09-08","new":84995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00272.warc.gz#offset=914137854&length=84487"},
 {"day":"2025-12-17","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658243.99/warc/CC-MAIN-20251217081859-20251217111859-00272.warc.gz#offset=835144592&length=84341"}
 ]}

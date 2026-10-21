@@ -1,3 +1,5 @@
 {"slug":"tamron-50-300mm-f4-5-6-3-di-iii-vc-vxd","market":"au","currency":"AUD","points":[
+{"day":"2024-10-06","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00471.warc.gz#offset=907242089&length=82973"},
+{"day":"2025-02-10","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951628.13/warc/CC-MAIN-20250209230119-20250210020119-00471.warc.gz#offset=955824315&length=81187"},
 {"day":"2025-09-13","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00571.warc.gz#offset=905221295&length=81560"}
 ]}

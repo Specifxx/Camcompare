@@ -1,4 +1,8 @@
 {"slug":"canon-rf-24-240mm-f4-6-3-is-usm","market":"au","currency":"AUD","points":[
+{"day":"2024-10-06","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00798.warc.gz#offset=874790077&length=80305"},
+{"day":"2024-11-02","used":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027709.8/warc/CC-MAIN-20241102071948-20241102101948-00791.warc.gz#offset=994731819&length=79883"},
+{"day":"2024-11-13","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028369.36/warc/CC-MAIN-20241113135544-20241113165544-00271.warc.gz#offset=928589718&length=79679"},
+{"day":"2025-01-13","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362169.0/warc/CC-MAIN-20250113121635-20250113151635-00798.warc.gz#offset=1078710131&length=80151"},
 {"day":"2025-07-16","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934359.8/warc/CC-MAIN-20250716132632-20250716162632-00198.warc.gz#offset=896922773&length=78513"},
 {"day":"2025-11-18","new":127496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439649042.63/warc/CC-MAIN-20251118000149-20251118030149-00198.warc.gz#offset=852611387&length=79389"}
 ]}

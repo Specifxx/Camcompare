@@ -1,4 +1,6 @@
 {"slug":"canon-rf-s-10-18mm-f4-5-6-3-is-stm","market":"au","currency":"AUD","points":[
+{"day":"2024-10-14","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00177.warc.gz#offset=869139584&length=79767"},
+{"day":"2025-03-17","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433006.72/warc/CC-MAIN-20250317034918-20250317064918-00577.warc.gz#offset=1054438609&length=78673"},
 {"day":"2025-09-14","new":57495,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533840.29/warc/CC-MAIN-20250914170032-20250914200032-00577.warc.gz#offset=877029495&length=79159"},
 {"day":"2025-12-05","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00577.warc.gz#offset=836744771&length=78391"}
 ]}

@@ -1,0 +1,7 @@
+{"slug":"nikon-z-14-30mm-f4-s","market":"au","currency":"AUD","points":[
+{"day":"2024-07-24","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518304.14/warc/CC-MAIN-20240724140819-20240724170819-00606.warc.gz#offset=877731932&length=81982"},
+{"day":"2024-11-05","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00606.warc.gz#offset=948696940&length=79092"},
+{"day":"2025-05-17","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412567.17/warc/CC-MAIN-20250517141701-20250517171701-00206.warc.gz#offset=915222236&length=77796"},
+{"day":"2025-09-07","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00206.warc.gz#offset=909610536&length=78730"},
+{"day":"2025-12-09","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307406.75/warc/CC-MAIN-20251209190721-20251209220721-00206.warc.gz#offset=758530848&length=78245"}
+]}

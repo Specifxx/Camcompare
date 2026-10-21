@@ -1,0 +1,6 @@
+{"slug":"canon-rf-24-105mm-f2-8l-is-usm-z","market":"au","currency":"AUD","points":[
+{"day":"2024-10-06","new":539995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00898.warc.gz#offset=892614843&length=79399"},
+{"day":"2025-01-18","new":539995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362398.54/warc/CC-MAIN-20250118123610-20250118153610-00898.warc.gz#offset=1065660178&length=77935"},
+{"day":"2025-07-09","new":539995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00698.warc.gz#offset=926235526&length=77325"},
+{"day":"2025-09-10","new":539995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533073.7/warc/CC-MAIN-20250910004335-20250910034335-00698.warc.gz#offset=885671970&length=78239"}
+]}

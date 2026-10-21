@@ -1,5 +1,10 @@
 {"slug":"nikon-d850","market":"us","currency":"USD","points":[
+{"day":"2024-09-11","new":309900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651387.63/warc/CC-MAIN-20240911120037-20240911150037-00110.warc.gz#offset=605913208&length=121124"},
+{"day":"2024-10-11","new":219695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253858.36/warc/CC-MAIN-20241011230131-20241012020131-00446.warc.gz#offset=597683288&length=122792"},
 {"day":"2024-11-12","new":219695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00624.warc.gz#offset=701911430&length=138665"},
 {"day":"2025-01-21","new":199695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363113.38/warc/CC-MAIN-20250121070313-20250121100313-00699.warc.gz#offset=819527369&length=156479"},
+{"day":"2025-05-15","new":189900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412458.2/warc/CC-MAIN-20250515020826-20250515050826-00210.warc.gz#offset=569928655&length=95167"},
+{"day":"2025-06-20","new":179695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481578.48/warc/CC-MAIN-20250620091815-20250620121815-00346.warc.gz#offset=542179364&length=620926"},
+{"day":"2025-06-22","new":179695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481755.65/warc/CC-MAIN-20250622134331-20250622164331-00877.warc.gz#offset=510373956&length=104724"},
 {"day":"2025-08-10","new":189695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280136.33/warc/CC-MAIN-20250810055030-20250810085030-00229.warc.gz#offset=724479961&length=150503"}
 ]}

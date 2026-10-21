@@ -1,4 +1,6 @@
 {"slug":"om-system-om-3","market":"au","currency":"AUD","points":[
+{"day":"2025-03-24","new":309995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433406.62/warc/CC-MAIN-20250324182340-20250324212340-00341.warc.gz#offset=948616829&length=82320"},
+{"day":"2025-04-22","new":309995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135796.50/warc/CC-MAIN-20250422020618-20250422050618-00530.warc.gz#offset=1049896719&length=85287"},
 {"day":"2025-09-07","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00530.warc.gz#offset=895190978&length=84342"},
 {"day":"2025-09-10","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00341.warc.gz#offset=888457397&length=82158"},
 {"day":"2026-01-15","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00341.warc.gz#offset=893654286&length=82345"},

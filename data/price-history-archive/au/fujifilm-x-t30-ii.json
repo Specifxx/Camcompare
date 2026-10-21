@@ -1,0 +1,10 @@
+{"slug":"fujifilm-x-t30-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-05-22","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058575.96/warc/CC-MAIN-20240522224707-20240523014707-00661.warc.gz#offset=896899041&length=85619"},
+{"day":"2024-06-13","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861488.82/warc/CC-MAIN-20240613190234-20240613220234-00661.warc.gz#offset=955376913&length=86340"},
+{"day":"2024-10-11","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253762.73/warc/CC-MAIN-20241011103532-20241011133532-00840.warc.gz#offset=882861455&length=83138"},
+{"day":"2024-11-12","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00661.warc.gz#offset=928883881&length=84601"},
+{"day":"2024-11-13","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028347.28/warc/CC-MAIN-20241113103539-20241113133539-00158.warc.gz#offset=932864553&length=82609"},
+{"day":"2025-02-08","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951538.7/warc/CC-MAIN-20250208052017-20250208082017-00661.warc.gz#offset=950708780&length=84008"},
+{"day":"2025-03-24","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433406.62/warc/CC-MAIN-20250324182340-20250324212340-00061.warc.gz#offset=925001962&length=84448"},
+{"day":"2025-04-29","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889460634.98/warc/CC-MAIN-20250429132325-20250429162325-00258.warc.gz#offset=1011415561&length=83421"}
+]}

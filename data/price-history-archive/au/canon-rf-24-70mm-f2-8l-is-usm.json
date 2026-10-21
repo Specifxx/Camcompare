@@ -1,4 +1,6 @@
 {"slug":"canon-rf-24-70mm-f2-8l-is-usm","market":"au","currency":"AUD","points":[
+{"day":"2024-10-06","new":369995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00406.warc.gz#offset=908160259&length=81936"},
+{"day":"2025-01-22","new":314496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363378.60/warc/CC-MAIN-20250122095114-20250122125114-00406.warc.gz#offset=1044004995&length=80454"},
 {"day":"2025-07-12","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00806.warc.gz#offset=894953294&length=80055"},
 {"day":"2025-09-09","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00806.warc.gz#offset=864307647&length=81014"},
 {"day":"2025-12-07","new":369995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307221.56/warc/CC-MAIN-20251207023705-20251207053705-00806.warc.gz#offset=833916154&length=80457"}

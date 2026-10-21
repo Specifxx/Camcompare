@@ -1,4 +1,5 @@
 {"slug":"canon-eos-r1","market":"us","currency":"USD","points":[
 {"day":"2024-12-06","new":629900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066384744.74/warc/CC-MAIN-20241206063209-20241206093209-00785.warc.gz#offset=703806806&length=142406"},
+{"day":"2025-04-25","new":629900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135928.66/warc/CC-MAIN-20250425173303-20250425203303-00032.warc.gz#offset=655583300&length=101510"},
 {"day":"2025-07-18","new":679900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934598.56/warc/CC-MAIN-20250718000345-20250718030345-00785.warc.gz#offset=695319336&length=184371"}
 ]}

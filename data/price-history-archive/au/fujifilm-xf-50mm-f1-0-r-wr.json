@@ -1,0 +1,7 @@
+{"slug":"fujifilm-xf-50mm-f1-0-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-06-22","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862404.32/warc/CC-MAIN-20240622144011-20240622174011-00750.warc.gz#offset=886422892&length=81666"},
+{"day":"2024-10-07","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253456.43/warc/CC-MAIN-20241007035526-20241007065526-00750.warc.gz#offset=901515252&length=79967"},
+{"day":"2025-01-21","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363299.42/warc/CC-MAIN-20250121203047-20250121233047-00750.warc.gz#offset=1071285188&length=78518"},
+{"day":"2025-07-09","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00350.warc.gz#offset=907100449&length=77905"},
+{"day":"2025-11-19","new":203996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657679.99/warc/CC-MAIN-20251119093413-20251119123413-00350.warc.gz#offset=813589631&length=78681"}
+]}

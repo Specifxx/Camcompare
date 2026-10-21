@@ -1,0 +1,8 @@
+{"slug":"canon-rf-24mm-f1-8-macro-is-stm","market":"au","currency":"AUD","points":[
+{"day":"2024-05-22","new":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058575.96/warc/CC-MAIN-20240522224707-20240523014707-00085.warc.gz#offset=888435345&length=80798"},
+{"day":"2024-11-05","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027884.62/warc/CC-MAIN-20241105145721-20241105175721-00085.warc.gz#offset=957673721&length=80068"},
+{"day":"2025-01-22","new":84996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363378.60/warc/CC-MAIN-20250122095114-20250122125114-00085.warc.gz#offset=1037010796&length=79387"},
+{"day":"2025-04-28","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889455370.95/warc/CC-MAIN-20250428105807-20250428135807-00185.warc.gz#offset=948582340&length=80977"},
+{"day":"2025-08-15","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00185.warc.gz#offset=852780596&length=78950"},
+{"day":"2025-11-18","new":84996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439652332.75/warc/CC-MAIN-20251118121440-20251118151440-00185.warc.gz#offset=725996200&length=79387"}
+]}

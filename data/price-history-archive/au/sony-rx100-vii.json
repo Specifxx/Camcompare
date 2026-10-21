@@ -1,4 +1,8 @@
 {"slug":"sony-rx100-vii","market":"au","currency":"AUD","points":[
+{"day":"2024-07-20","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763515079.90/warc/CC-MAIN-20240720083242-20240720113242-00833.warc.gz#offset=868343151&length=86454"},
+{"day":"2024-11-02","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027709.8/warc/CC-MAIN-20241102071948-20241102101948-00833.warc.gz#offset=983338074&length=83553"},
+{"day":"2025-01-23","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703689937.92/warc/CC-MAIN-20250123191357-20250123221357-00833.warc.gz#offset=1011287664&length=82348"},
+{"day":"2025-05-12","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412298.37/warc/CC-MAIN-20250512135455-20250512165455-00433.warc.gz#offset=988583633&length=81490"},
 {"day":"2025-09-10","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533073.7/warc/CC-MAIN-20250910004335-20250910034335-00433.warc.gz#offset=916933665&length=82800"},
 {"day":"2026-01-21","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469644.9/warc/CC-MAIN-20260121053530-20260121083530-00433.warc.gz#offset=836591317&length=82548"}
 ]}

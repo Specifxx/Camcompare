@@ -1,0 +1,5 @@
+{"slug":"viltrox-af-13mm-f1-4","market":"au","currency":"AUD","points":[
+{"day":"2024-11-10","used":59900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028164.3/warc/CC-MAIN-20241110005602-20241110035602-00368.warc.gz#offset=946278019&length=78815"},
+{"day":"2025-02-09","used":50915,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00368.warc.gz#offset=930675216&length=78156"},
+{"day":"2025-09-17","used":59900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00568.warc.gz#offset=851614796&length=78413"}
+]}

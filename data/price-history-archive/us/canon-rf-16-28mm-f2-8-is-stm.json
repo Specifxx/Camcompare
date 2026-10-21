@@ -1,3 +1,5 @@
 {"slug":"canon-rf-16-28mm-f2-8-is-stm","market":"us","currency":"USD","points":[
-{"day":"2025-02-17","new":114900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00329.warc.gz#offset=705815094&length=142618"}
+{"day":"2025-02-17","new":114900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00329.warc.gz#offset=705815094&length=142618"},
+{"day":"2025-03-15","new":114900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432905.58/warc/CC-MAIN-20250315161219-20250315191219-00872.warc.gz#offset=695787239&length=90106"},
+{"day":"2025-04-30","new":114900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889461649.79/warc/CC-MAIN-20250429231713-20250430021713-00786.warc.gz#offset=671955981&length=94159"}
 ]}

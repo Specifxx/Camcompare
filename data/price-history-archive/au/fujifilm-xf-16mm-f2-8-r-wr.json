@@ -1,0 +1,7 @@
+{"slug":"fujifilm-xf-16mm-f2-8-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-08-06","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640461318.24/warc/CC-MAIN-20240806001923-20240806031923-00888.warc.gz#offset=777498716&length=81424"},
+{"day":"2024-11-11","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028239.20/warc/CC-MAIN-20241111190758-20241111220758-00888.warc.gz#offset=914650755&length=78813"},
+{"day":"2025-04-23","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135865.54/warc/CC-MAIN-20250423200043-20250423230043-00588.warc.gz#offset=998491398&length=79780"},
+{"day":"2025-09-12","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533302.34/warc/CC-MAIN-20250912211844-20250913001844-00588.warc.gz#offset=942499063&length=78685"},
+{"day":"2025-12-14","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871308241.81/warc/CC-MAIN-20251214184959-20251214214959-00588.warc.gz#offset=785173447&length=78262"}
+]}

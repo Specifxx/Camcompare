@@ -1,0 +1,8 @@
+{"slug":"nikon-z6","market":"au","currency":"AUD","points":[
+{"day":"2024-06-25","used":149900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00267.warc.gz#offset=906752538&length=84394"},
+{"day":"2024-11-12","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028249.89/warc/CC-MAIN-20241112081532-20241112111532-00267.warc.gz#offset=921530507&length=82003"},
+{"day":"2025-04-30","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889465147.97/warc/CC-MAIN-20250430184734-20250430214734-00667.warc.gz#offset=1055226737&length=82632"},
+{"day":"2025-09-07","used":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00667.warc.gz#offset=894290735&length=81339"},
+{"day":"2025-12-05","used":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00667.warc.gz#offset=828000614&length=80974"},
+{"day":"2026-08-10","used":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385311.32/warc/CC-MAIN-20260810035143-20260810065143-00719.warc.gz#offset=821825830&length=228525"}
+]}

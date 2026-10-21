@@ -1,5 +1,6 @@
 {"slug":"panasonic-lumix-s-100mm-f2-8-macro","market":"us","currency":"USD","points":[
 {"day":"2024-08-03","new":99999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640380725.7/warc/CC-MAIN-20240803214957-20240804004957-00146.warc.gz#offset=627409662&length=137761"},
 {"day":"2024-11-05","new":89799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027881.88/warc/CC-MAIN-20241105114407-20241105144407-00651.warc.gz#offset=733182544&length=133055"},
+{"day":"2024-12-02","new":99799,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066127466.39/warc/CC-MAIN-20241202094452-20241202124452-00417.warc.gz#offset=632194301&length=106897"},
 {"day":"2025-03-24","new":79799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433351.85/warc/CC-MAIN-20250324114919-20250324144919-00451.warc.gz#offset=748394419&length=146146"}
 ]}

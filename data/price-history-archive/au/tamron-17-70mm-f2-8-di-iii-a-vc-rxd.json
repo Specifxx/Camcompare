@@ -1,4 +1,8 @@
 {"slug":"tamron-17-70mm-f2-8-di-iii-a-vc-rxd","market":"au","currency":"AUD","points":[
+{"day":"2024-08-10","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640805409.58/warc/CC-MAIN-20240810093040-20240810123040-00677.warc.gz#offset=792492564&length=82213"},
+{"day":"2025-01-26","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703699970.91/warc/CC-MAIN-20250126003648-20250126033648-00677.warc.gz#offset=1058714349&length=79204"},
+{"day":"2025-07-12","used":89900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00462.warc.gz#offset=909311652&length=78084"},
+{"day":"2025-09-07","used":89900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532848.20/warc/CC-MAIN-20250907071249-20250907101249-00462.warc.gz#offset=917052869&length=78997"},
 {"day":"2025-09-13","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00577.warc.gz#offset=892801657&length=79507"},
 {"day":"2025-12-07","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00577.warc.gz#offset=844618654&length=78987"}
 ]}

@@ -1,3 +1,7 @@
 {"slug":"fujifilm-gf-80mm-f1-7-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-11-04","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027812.67/warc/CC-MAIN-20241104034319-20241104064319-00359.warc.gz#offset=955445773&length=79184"},
+{"day":"2025-04-29","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889459188.91/warc/CC-MAIN-20250429001142-20250429031142-00459.warc.gz#offset=995524137&length=80091"},
+{"day":"2025-09-16","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00459.warc.gz#offset=897936643&length=78999"},
+{"day":"2025-11-10","used":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342882.0/warc/CC-MAIN-20251110154150-20251110184150-00062.warc.gz#offset=861454919&length=79078"},
 {"day":"2026-01-22","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469991.35/warc/CC-MAIN-20260122030830-20260122060830-00459.warc.gz#offset=873595462&length=78797"}
 ]}

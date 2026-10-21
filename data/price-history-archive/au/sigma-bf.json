@@ -1,4 +1,5 @@
 {"slug":"sigma-bf","market":"au","currency":"AUD","points":[
+{"day":"2025-04-22","new":389995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135796.50/warc/CC-MAIN-20250422020618-20250422050618-00878.warc.gz#offset=1017345302&length=80538"},
 {"day":"2025-09-07","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00878.warc.gz#offset=917585017&length=79524"},
 {"day":"2025-09-12","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00782.warc.gz#offset=901496991&length=79454"},
 {"day":"2026-01-15","new":369995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00782.warc.gz#offset=857457468&length=79114"}

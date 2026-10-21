@@ -1,3 +1,6 @@
 {"slug":"nikon-z-28-135mm-f4-pz","market":"au","currency":"AUD","points":[
+{"day":"2025-04-22","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135796.50/warc/CC-MAIN-20250422020618-20250422050618-00312.warc.gz#offset=1036110480&length=80164"},
+{"day":"2025-07-17","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934401.16/warc/CC-MAIN-20250717020215-20250717050215-00312.warc.gz#offset=872921450&length=77958"},
+{"day":"2025-10-14","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00312.warc.gz#offset=952997741&length=78995"},
 {"day":"2026-01-13","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468912.16/warc/CC-MAIN-20260113044442-20260113074442-00312.warc.gz#offset=872908595&length=78833"}
 ]}

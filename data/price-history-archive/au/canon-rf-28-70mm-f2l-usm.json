@@ -1,3 +1,7 @@
 {"slug":"canon-rf-28-70mm-f2l-usm","market":"au","currency":"AUD","points":[
+{"day":"2024-10-06","new":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00314.warc.gz#offset=908678714&length=79644"},
+{"day":"2025-01-13","new":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362169.0/warc/CC-MAIN-20250113121635-20250113151635-00314.warc.gz#offset=1103881938&length=79477"},
+{"day":"2025-05-20","new":469995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412798.22/warc/CC-MAIN-20250520084021-20250520114021-00814.warc.gz#offset=890320502&length=77771"},
+{"day":"2025-10-18","new":469995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648665892.58/warc/CC-MAIN-20251018062016-20251018092016-00814.warc.gz#offset=971108011&length=79119"},
 {"day":"2026-01-18","new":469995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469410.3/warc/CC-MAIN-20260118124654-20260118154654-00814.warc.gz#offset=844124866&length=78696"}
 ]}

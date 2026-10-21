@@ -1,4 +1,8 @@
 {"slug":"canon-rf-85mm-f2-macro-is-stm","market":"au","currency":"AUD","points":[
+{"day":"2024-05-25","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058830.51/warc/CC-MAIN-20240525161720-20240525191720-00211.warc.gz#offset=858066394&length=81708"},
+{"day":"2024-10-05","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253348.29/warc/CC-MAIN-20241005051646-20241005081646-00211.warc.gz#offset=913121147&length=81303"},
+{"day":"2025-01-14","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362192.26/warc/CC-MAIN-20250114050027-20250114080027-00211.warc.gz#offset=1087485342&length=81116"},
+{"day":"2025-05-17","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412567.17/warc/CC-MAIN-20250517141701-20250517171701-00111.warc.gz#offset=926856243&length=79268"},
 {"day":"2025-09-07","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532848.20/warc/CC-MAIN-20250907071249-20250907101249-00111.warc.gz#offset=945639635&length=80209"},
 {"day":"2025-12-07","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307221.56/warc/CC-MAIN-20251207023705-20251207053705-00111.warc.gz#offset=848039875&length=79887"}
 ]}

@@ -1,4 +1,7 @@
 {"slug":"sony-fe-24-70mm-f2-8-gm-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-06-23","new":272700,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862430.93/warc/CC-MAIN-20240623033236-20240623063236-00569.warc.gz#offset=879474394&length=83310"},
+{"day":"2024-11-06","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027910.12/warc/CC-MAIN-20241106065928-20241106095928-00569.warc.gz#offset=945287161&length=80602"},
+{"day":"2025-03-15","new":249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00069.warc.gz#offset=1037329876&length=80049"},
 {"day":"2025-09-12","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533302.34/warc/CC-MAIN-20250912211844-20250913001844-00069.warc.gz#offset=923361190&length=80441"},
 {"day":"2026-01-13","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00069.warc.gz#offset=872256915&length=80324"}
 ]}

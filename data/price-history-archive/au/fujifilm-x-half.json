@@ -1,4 +1,5 @@
 {"slug":"fujifilm-x-half","market":"au","currency":"AUD","points":[
+{"day":"2025-06-22","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481737.46/warc/CC-MAIN-20250622103916-20250622133916-00684.warc.gz#offset=820652140&length=78060"},
 {"day":"2025-07-12","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00394.warc.gz#offset=896969483&length=83990"},
 {"day":"2025-09-09","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00684.warc.gz#offset=927944829&length=80867"},
 {"day":"2025-10-14","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00152.warc.gz#offset=969268838&length=83182"},

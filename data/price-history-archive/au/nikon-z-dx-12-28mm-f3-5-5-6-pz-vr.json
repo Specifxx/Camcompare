@@ -1,0 +1,7 @@
+{"slug":"nikon-z-dx-12-28mm-f3-5-5-6-pz-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-11-01","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00304.warc.gz#offset=931696262&length=80012"},
+{"day":"2024-11-13","used":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028369.36/warc/CC-MAIN-20241113135544-20241113165544-00847.warc.gz#offset=947372844&length=79422"},
+{"day":"2025-02-08","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951538.7/warc/CC-MAIN-20250208052017-20250208082017-00304.warc.gz#offset=949396032&length=79270","used":33996},
+{"day":"2025-09-10","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00904.warc.gz#offset=914698988&length=79700"},
+{"day":"2025-12-07","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307221.56/warc/CC-MAIN-20251207023705-20251207053705-00904.warc.gz#offset=789947055&length=79260"}
+]}

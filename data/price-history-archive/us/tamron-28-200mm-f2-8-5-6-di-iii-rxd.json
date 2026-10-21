@@ -1,0 +1,8 @@
+{"slug":"tamron-28-200mm-f2-8-5-6-di-iii-rxd","market":"us","currency":"USD","points":[
+{"day":"2024-09-16","new":79900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651668.29/warc/CC-MAIN-20240916012328-20240916042328-00011.warc.gz#offset=606191577&length=123041"},
+{"day":"2024-09-20","new":83900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725701419169.94/warc/CC-MAIN-20240920154713-20240920184713-00684.warc.gz#offset=599790103&length=127336"},
+{"day":"2024-11-04","new":69900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027861.16/warc/CC-MAIN-20241104194528-20241104224528-00003.warc.gz#offset=617420480&length=119241"},
+{"day":"2024-11-10","new":69900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028164.3/warc/CC-MAIN-20241110005602-20241110035602-00775.warc.gz#offset=615601560&length=123234"},
+{"day":"2025-08-09","new":79900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280068.24/warc/CC-MAIN-20250809014329-20250809044329-00484.warc.gz#offset=609635603&length=107408"},
+{"day":"2025-10-08","new":79900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358337.10/warc/CC-MAIN-20251008182116-20251008212116-00503.warc.gz#offset=643555171&length=103400"}
+]}

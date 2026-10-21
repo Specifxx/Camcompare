@@ -1,4 +1,6 @@
 {"slug":"sony-fe-50mm-f1-4-gm","market":"au","currency":"AUD","points":[
+{"day":"2024-10-14","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00781.warc.gz#offset=859226063&length=80927"},
+{"day":"2025-01-18","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362398.54/warc/CC-MAIN-20250118123610-20250118153610-00781.warc.gz#offset=1036101052&length=79483"},
 {"day":"2025-07-16","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934359.8/warc/CC-MAIN-20250716132632-20250716162632-00181.warc.gz#offset=901228406&length=78992"},
 {"day":"2025-10-14","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00181.warc.gz#offset=957313361&length=80118"}
 ]}

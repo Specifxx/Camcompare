@@ -1,0 +1,6 @@
+{"slug":"nikon-z-600mm-f6-3-vr-s","market":"au","currency":"AUD","points":[
+{"day":"2024-11-02","new":789995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027709.8/warc/CC-MAIN-20241102071948-20241102101948-00797.warc.gz#offset=967525149&length=81302"},
+{"day":"2025-01-16","new":789995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00797.warc.gz#offset=1090560389&length=81402"},
+{"day":"2025-09-10","new":749995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00697.warc.gz#offset=916674035&length=80752"},
+{"day":"2025-12-07","new":749995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00697.warc.gz#offset=795722818&length=80290"}
+]}

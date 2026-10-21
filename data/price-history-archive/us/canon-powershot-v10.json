@@ -1,3 +1,4 @@
 {"slug":"canon-powershot-v10","market":"us","currency":"USD","points":[
+{"day":"2025-03-20","new":39900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433122.11/warc/CC-MAIN-20250320070413-20250320100413-00673.warc.gz#offset=668691308&length=104053"},
 {"day":"2025-05-19","new":39900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00706.warc.gz#offset=659221023&length=152160"}
 ]}

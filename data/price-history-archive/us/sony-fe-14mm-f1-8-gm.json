@@ -1,3 +1,6 @@
 {"slug":"sony-fe-14mm-f1-8-gm","market":"us","currency":"USD","points":[
-{"day":"2024-10-14","new":149800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255435.42/warc/CC-MAIN-20241014132752-20241014162752-00613.warc.gz#offset=680808806&length=143751"}
+{"day":"2024-08-05","new":148598,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640454712.22/warc/CC-MAIN-20240805180114-20240805210114-00839.warc.gz#offset=549482053&length=100280"},
+{"day":"2024-10-14","new":149800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255435.42/warc/CC-MAIN-20241014132752-20241014162752-00613.warc.gz#offset=680808806&length=143751"},
+{"day":"2025-02-13","new":159800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951823.55/warc/CC-MAIN-20250213144115-20250213174115-00339.warc.gz#offset=618165538&length=98653"},
+{"day":"2025-10-08","new":174800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358337.10/warc/CC-MAIN-20251008182116-20251008212116-00503.warc.gz#offset=643455470&length=98607"}
 ]}

@@ -1,4 +1,8 @@
 {"slug":"nikon-z-70-200mm-f2-8-vr-s","market":"au","currency":"AUD","points":[
+{"day":"2024-07-24","new":409995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518427.68/warc/CC-MAIN-20240724171328-20240724201328-00261.warc.gz#offset=848311164&length=82456"},
+{"day":"2024-11-02","used":289900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027709.8/warc/CC-MAIN-20241102071948-20241102101948-00664.warc.gz#offset=965476770&length=79730"},
+{"day":"2024-11-05","new":409995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00261.warc.gz#offset=949911918&length=79679"},
+{"day":"2025-02-10","new":409995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951628.13/warc/CC-MAIN-20250209230119-20250210020119-00261.warc.gz#offset=951402845&length=78928"},
 {"day":"2025-07-16","new":409995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934359.8/warc/CC-MAIN-20250716132632-20250716162632-00361.warc.gz#offset=940093968&length=78468"},
 {"day":"2025-12-07","new":409995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00361.warc.gz#offset=780147775&length=78701"}
 ]}

@@ -1,0 +1,5 @@
+{"slug":"canon-rf-s-55-210mm-f5-7-1-is-stm","market":"au","currency":"AUD","points":[
+{"day":"2024-11-10","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028179.55/warc/CC-MAIN-20241110072033-20241110102033-00693.warc.gz#offset=925104716&length=79779"},
+{"day":"2025-03-17","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433006.72/warc/CC-MAIN-20250317034918-20250317064918-00393.warc.gz#offset=975091279&length=79356"},
+{"day":"2025-09-10","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00393.warc.gz#offset=934161365&length=79506"}
+]}

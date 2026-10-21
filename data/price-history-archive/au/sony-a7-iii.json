@@ -1,4 +1,10 @@
 {"slug":"sony-a7-iii","market":"au","currency":"AUD","points":[
+{"day":"2024-10-05","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253348.29/warc/CC-MAIN-20241005051646-20241005081646-00272.warc.gz#offset=893302641&length=83333"},
+{"day":"2024-11-13","used":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028369.36/warc/CC-MAIN-20241113135544-20241113165544-00429.warc.gz#offset=918321771&length=81601"},
+{"day":"2025-01-18","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362398.54/warc/CC-MAIN-20250118123610-20250118153610-00272.warc.gz#offset=1080800810&length=81695"},
+{"day":"2025-04-23","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135865.54/warc/CC-MAIN-20250423200043-20250423230043-00372.warc.gz#offset=1013239102&length=83461"},
+{"day":"2025-06-16","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481416.36/warc/CC-MAIN-20250616145137-20250616175137-00129.warc.gz#offset=841701399&length=80460"},
 {"day":"2025-09-14","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533671.75/warc/CC-MAIN-20250914012700-20250914042700-00372.warc.gz#offset=884690833&length=82508"},
+{"day":"2025-10-14","used":134996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00129.warc.gz#offset=1012560463&length=79630"},
 {"day":"2026-01-23","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00372.warc.gz#offset=859388885&length=82689"}
 ]}

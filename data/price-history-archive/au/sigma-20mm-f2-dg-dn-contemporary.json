@@ -1,3 +1,4 @@
 {"slug":"sigma-20mm-f2-dg-dn-contemporary","market":"au","currency":"AUD","points":[
+{"day":"2025-11-10","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342882.0/warc/CC-MAIN-20251110154150-20251110184150-00373.warc.gz#offset=824327639&length=75336"},
 {"day":"2026-01-23","new":46746,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00373.warc.gz#offset=879601235&length=75781"}
 ]}

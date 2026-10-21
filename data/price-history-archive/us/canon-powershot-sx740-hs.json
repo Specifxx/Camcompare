@@ -1,4 +1,6 @@
 {"slug":"canon-powershot-sx740-hs","market":"us","currency":"USD","points":[
+{"day":"2024-04-15","new":59900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817002.2/warc/CC-MAIN-20240415142720-20240415172720-00277.warc.gz#offset=617558444&length=75310"},
+{"day":"2024-10-10","new":74900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253682.6/warc/CC-MAIN-20241010124812-20241010154812-00842.warc.gz#offset=590779355&length=134683"},
 {"day":"2024-11-09","new":54999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028115.85/warc/CC-MAIN-20241109022607-20241109052607-00796.warc.gz#offset=703008999&length=153087"},
 {"day":"2025-01-23","new":64999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703692178.96/warc/CC-MAIN-20250123223358-20250124013358-00448.warc.gz#offset=787446551&length=155276"}
 ]}

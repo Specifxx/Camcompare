@@ -1,3 +1,6 @@
 {"slug":"laowa-12mm-f2-8-zero-d","market":"au","currency":"AUD","points":[
+{"day":"2024-05-22","new":144995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058534.8/warc/CC-MAIN-20240522070747-20240522100747-00858.warc.gz#offset=905759821&length=75390"},
+{"day":"2024-11-02","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027710.33/warc/CC-MAIN-20241102102832-20241102132832-00858.warc.gz#offset=950663200&length=74601"},
+{"day":"2025-03-16","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00258.warc.gz#offset=1055376898&length=74056"},
 {"day":"2025-09-12","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533302.34/warc/CC-MAIN-20250912211844-20250913001844-00258.warc.gz#offset=885398608&length=74323"}
 ]}

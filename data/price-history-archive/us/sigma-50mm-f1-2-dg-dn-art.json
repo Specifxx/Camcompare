@@ -1,5 +1,6 @@
 {"slug":"sigma-50mm-f1-2-dg-dn-art","market":"us","currency":"USD","points":[
 {"day":"2024-05-25","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058822.89/warc/CC-MAIN-20240525100447-20240525130447-00295.warc.gz#offset=652177264&length=133144"},
+{"day":"2024-07-21","new":139900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517796.21/warc/CC-MAIN-20240721213034-20240722003034-00719.warc.gz#offset=575001507&length=84004"},
 {"day":"2025-02-08","new":138900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951543.48/warc/CC-MAIN-20250208114257-20250208144257-00295.warc.gz#offset=735185124&length=135515"},
 {"day":"2025-05-20","new":138900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412887.6/warc/CC-MAIN-20250520181907-20250520211907-00455.warc.gz#offset=655948257&length=209659"}
 ]}

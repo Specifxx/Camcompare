@@ -1,4 +1,6 @@
 {"slug":"sony-fe-24mm-f1-4-gm","market":"au","currency":"AUD","points":[
+{"day":"2024-10-14","new":189995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00207.warc.gz#offset=885278667&length=81354"},
+{"day":"2025-02-08","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951538.7/warc/CC-MAIN-20250208052017-20250208082017-00207.warc.gz#offset=957407502&length=79982"},
 {"day":"2025-09-10","new":189995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00407.warc.gz#offset=951581290&length=80515"},
 {"day":"2025-12-09","new":189995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307406.75/warc/CC-MAIN-20251209190721-20251209220721-00407.warc.gz#offset=785621222&length=80069"}
 ]}
