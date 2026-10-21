@@ -1,3 +1,6 @@
 {"slug":"dji-pocket-2","market":"au","currency":"AUD","points":[
-{"day":"2025-02-19","new":67700,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832267024.99/warc/CC-MAIN-20250219201440-20250219231440-00170.warc.gz#offset=716971345&length=109257"}
+{"day":"2024-08-09","new":47900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00665.warc.gz#offset=546094933&length=116596"},
+{"day":"2024-12-13","new":47900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066115058.17/warc/CC-MAIN-20241212221117-20241213011117-00665.warc.gz#offset=628262140&length=112566"},
+{"day":"2025-02-19","new":67700,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832267024.99/warc/CC-MAIN-20250219201440-20250219231440-00170.warc.gz#offset=716971345&length=109257"},
+{"day":"2025-04-25","new":47900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135928.66/warc/CC-MAIN-20250425173303-20250425203303-00565.warc.gz#offset=685042444&length=166120"}
 ]}

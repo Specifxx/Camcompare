@@ -1,3 +1,5 @@
 {"slug":"fujifilm-xf-56mm-f1-2-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2025-03-19","new":149900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433085.26/warc/CC-MAIN-20250319044953-20250319074953-00491.warc.gz#offset=683381770&length=169971"},
+{"day":"2025-10-13","new":149900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00491.warc.gz#offset=662249884&length=178264"},
 {"day":"2026-09-15","new":134900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-39/segments/1788492995497.76/warc/CC-MAIN-20260915142231-20260915172231-00947.warc.gz#offset=599838801&length=181541"}
 ]}

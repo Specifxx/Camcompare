@@ -1,6 +1,8 @@
 {"slug":"nikon-af-s-500mm-f5-6e-pf-ed-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-08-08","new":588800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00831.warc.gz#offset=528021493&length=115018"},
 {"day":"2024-09-12","used":329995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651420.25/warc/CC-MAIN-20240912011254-20240912041254-00824.warc.gz#offset=951610848&length=80214"},
 {"day":"2024-11-12","new":442496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028279.73/warc/CC-MAIN-20241112180608-20241112210608-00333.warc.gz#offset=910135166&length=78887"},
+{"day":"2025-05-23","new":588800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990721829.95/warc/CC-MAIN-20250523132358-20250523162358-00231.warc.gz#offset=610935229&length=165027"},
 {"day":"2025-07-09","new":589995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00133.warc.gz#offset=956362310&length=77500"},
 {"day":"2025-11-19","new":359996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657679.99/warc/CC-MAIN-20251119093413-20251119123413-00133.warc.gz#offset=837355467&length=78282"}
 ]}

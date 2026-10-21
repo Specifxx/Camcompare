@@ -1,4 +1,9 @@
 {"slug":"sigma-35mm-f1-2-dg-dn-art","market":"au","currency":"AUD","points":[
+{"day":"2024-08-03","new":196900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00463.warc.gz#offset=552235181&length=107790"},
+{"day":"2024-09-19","new":196900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700652028.28/warc/CC-MAIN-20240919093719-20240919123719-00313.warc.gz#offset=606791844&length=106462"},
+{"day":"2024-12-08","new":196900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066441563.87/warc/CC-MAIN-20241208045820-20241208075820-00463.warc.gz#offset=629106011&length=106104"},
+{"day":"2025-02-19","new":196900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00313.warc.gz#offset=651176395&length=106282"},
 {"day":"2025-04-27","new":219900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136160.5/warc/CC-MAIN-20250427021853-20250427051853-00072.warc.gz#offset=722690284&length=140654"},
+{"day":"2025-06-18","new":189900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481468.19/warc/CC-MAIN-20250618011621-20250618041621-00243.warc.gz#offset=585389732&length=168124"},
 {"day":"2025-09-07","new":209900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00072.warc.gz#offset=635929682&length=140380"}
 ]}

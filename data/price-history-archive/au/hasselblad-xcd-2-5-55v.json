@@ -1,0 +1,4 @@
+{"slug":"hasselblad-xcd-2-5-55v","market":"au","currency":"AUD","points":[
+{"day":"2025-06-22","new":623000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481827.13/warc/CC-MAIN-20250622165119-20250622195119-00962.warc.gz#offset=537022092&length=164176"},
+{"day":"2025-08-09","new":644500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280103.72/warc/CC-MAIN-20250809110541-20250809140541-00633.warc.gz#offset=609192218&length=165186"}
+]}

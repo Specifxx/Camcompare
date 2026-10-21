@@ -1,4 +1,6 @@
 {"slug":"fujifilm-xf-80mm-f2-8-r-lm-ois-wr-macro","market":"au","currency":"AUD","points":[
 {"day":"2024-08-05","new":151900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640451031.21/warc/CC-MAIN-20240805144950-20240805174950-00126.warc.gz#offset=632441315&length=101144"},
-{"day":"2025-05-12","new":151900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412284.48/warc/CC-MAIN-20250512104513-20250512134513-00526.warc.gz#offset=703650171&length=107655"}
+{"day":"2024-10-08","new":159900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253530.50/warc/CC-MAIN-20241008110119-20241008140119-00309.warc.gz#offset=622487370&length=110857"},
+{"day":"2025-05-12","new":151900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412284.48/warc/CC-MAIN-20250512104513-20250512134513-00526.warc.gz#offset=703650171&length=107655"},
+{"day":"2025-05-16","new":167900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412498.33/warc/CC-MAIN-20250516064304-20250516094304-00009.warc.gz#offset=620610234&length=164342"}
 ]}

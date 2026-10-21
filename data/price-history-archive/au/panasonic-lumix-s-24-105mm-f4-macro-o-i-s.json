@@ -1,5 +1,8 @@
 {"slug":"panasonic-lumix-s-24-105mm-f4-macro-o-i-s","market":"au","currency":"AUD","points":[
+{"day":"2024-08-14","new":169900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641118845.90/warc/CC-MAIN-20240814155004-20240814185004-00173.warc.gz#offset=534023504&length=112954"},
+{"day":"2024-12-08","new":169900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066441563.87/warc/CC-MAIN-20241208045820-20241208075820-00173.warc.gz#offset=612186964&length=109190"},
 {"day":"2025-05-13","new":172900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412367.81/warc/CC-MAIN-20250513054415-20250513084415-00949.warc.gz#offset=654011914&length=152256"},
+{"day":"2025-06-13","new":169900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481248.3/warc/CC-MAIN-20250613090809-20250613120809-00673.warc.gz#offset=578278314&length=162115"},
 {"day":"2025-09-10","new":172900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533073.7/warc/CC-MAIN-20250910004335-20250910034335-00949.warc.gz#offset=623821943&length=164904"},
 {"day":"2026-07-13","new":172900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663951639.34/warc/CC-MAIN-20260713084117-20260713114117-00949.warc.gz#offset=639401877&length=172183"}
 ]}

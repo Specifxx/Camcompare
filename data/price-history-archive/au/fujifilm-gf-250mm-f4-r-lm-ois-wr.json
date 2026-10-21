@@ -1,5 +1,6 @@
 {"slug":"fujifilm-gf-250mm-f4-r-lm-ois-wr","market":"au","currency":"AUD","points":[
 {"day":"2024-06-24","new":433825,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198864986.57/warc/CC-MAIN-20240624021134-20240624051134-00896.warc.gz#offset=709976534&length=101569"},
 {"day":"2025-08-13","new":438812,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151281020.56/warc/CC-MAIN-20250813024931-20250813054931-00396.warc.gz#offset=668404652&length=114526"},
+{"day":"2025-09-10","new":469500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00250.warc.gz#offset=596140141&length=170051"},
 {"day":"2026-01-14","new":438800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469122.50/warc/CC-MAIN-20260114153623-20260114183623-00869.warc.gz#offset=600598606&length=161000"}
 ]}

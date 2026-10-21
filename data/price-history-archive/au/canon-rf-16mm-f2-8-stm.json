@@ -1,7 +1,10 @@
 {"slug":"canon-rf-16mm-f2-8-stm","market":"au","currency":"AUD","points":[
+{"day":"2024-10-08","new":49900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253530.50/warc/CC-MAIN-20241008110119-20241008140119-00717.warc.gz#offset=619121826&length=111989"},
 {"day":"2024-11-10","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028179.55/warc/CC-MAIN-20241110072033-20241110102033-00589.warc.gz#offset=945745709&length=79407"},
 {"day":"2024-12-02","new":42415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066127466.39/warc/CC-MAIN-20241202094452-20241202124452-00122.warc.gz#offset=682852434&length=125153"},
+{"day":"2025-04-18","new":49900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135670.13/warc/CC-MAIN-20250418120951-20250418150951-00717.warc.gz#offset=691666425&length=169404"},
 {"day":"2025-07-12","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00889.warc.gz#offset=937009414&length=78307"},
+{"day":"2025-08-15","new":49900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578279.64/warc/CC-MAIN-20250815081150-20250815111150-00752.warc.gz#offset=587991463&length=168304"},
 {"day":"2025-08-15","new":49900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578356.89/warc/CC-MAIN-20250815142537-20250815172537-00722.warc.gz#offset=616748261&length=125365"},
 {"day":"2025-11-12","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439343096.76/warc/CC-MAIN-20251112010046-20251112040046-00889.warc.gz#offset=847564431&length=78941"}
 ]}

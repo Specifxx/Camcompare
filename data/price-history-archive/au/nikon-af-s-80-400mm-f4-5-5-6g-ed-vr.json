@@ -1,5 +1,7 @@
 {"slug":"nikon-af-s-80-400mm-f4-5-5-6g-ed-vr","market":"au","currency":"AUD","points":[
 {"day":"2024-06-25","new":304800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00241.warc.gz#offset=642220893&length=69654"},
+{"day":"2024-09-19","new":348800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700652028.28/warc/CC-MAIN-20240919093719-20240919123719-00677.warc.gz#offset=625508735&length=111844"},
 {"day":"2024-12-05","new":359900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066348250.63/warc/CC-MAIN-20241205085107-20241205115107-00241.warc.gz#offset=662727027&length=108662"},
+{"day":"2025-02-17","new":348800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832259438.98/warc/CC-MAIN-20250217191831-20250217221831-00677.warc.gz#offset=636190180&length=112756"},
 {"day":"2025-10-15","new":312840,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/warc/CC-MAIN-20251015133709-20251015163709-00659.warc.gz#offset=728562765&length=114882"}
 ]}

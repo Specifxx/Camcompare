@@ -1,7 +1,10 @@
 {"slug":"fujifilm-gf-20-35mm-f4-r-wr","market":"au","currency":"AUD","points":[
 {"day":"2024-11-10","new":399900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.61/warc/CC-MAIN-20241110170046-20241110200046-00645.warc.gz#offset=951082382&length=79838"},
 {"day":"2025-03-28","new":399900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004758676.99/warc/CC-MAIN-20250328075943-20250328105943-00745.warc.gz#offset=957751733&length=79673"},
+{"day":"2025-05-14","new":388800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412415.74/warc/CC-MAIN-20250514070302-20250514100302-00444.warc.gz#offset=596763353&length=170181"},
+{"day":"2025-06-20","new":388800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481557.30/warc/CC-MAIN-20250620000002-20250620030002-00270.warc.gz#offset=601230232&length=164056"},
 {"day":"2025-09-10","new":399900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00745.warc.gz#offset=886238044&length=79472"},
+{"day":"2025-09-12","new":378500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00098.warc.gz#offset=585528415&length=170507"},
 {"day":"2025-12-07","new":399900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307221.56/warc/CC-MAIN-20251207023705-20251207053705-00745.warc.gz#offset=820998742&length=79397"},
 {"day":"2026-01-21","new":378424,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469698.67/warc/CC-MAIN-20260121114447-20260121144447-00031.warc.gz#offset=594115284&length=160344"}
 ]}

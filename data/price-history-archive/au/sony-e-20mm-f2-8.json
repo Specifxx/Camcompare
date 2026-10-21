@@ -1,6 +1,9 @@
 {"slug":"sony-e-20mm-f2-8","market":"au","currency":"AUD","points":[
+{"day":"2024-08-03","new":41900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00177.warc.gz#offset=554173001&length=111301"},
 {"day":"2024-09-16","new":41900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651668.29/warc/CC-MAIN-20240916012328-20240916042328-00169.warc.gz#offset=679354277&length=82534"},
+{"day":"2024-12-06","new":41900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066416984.85/warc/CC-MAIN-20241206185637-20241206215637-00177.warc.gz#offset=609939029&length=107577"},
 {"day":"2025-05-18","new":33520,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412609.76/warc/CC-MAIN-20250518152414-20250518182414-00869.warc.gz#offset=643960882&length=118813"},
+{"day":"2025-07-17","new":41900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934542.0/warc/CC-MAIN-20250717174350-20250717204350-00977.warc.gz#offset=587824343&length=162057"},
 {"day":"2025-08-13","new":41900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573251.57/warc/CC-MAIN-20250813213929-20250814003929-00869.warc.gz#offset=632319157&length=117914"},
 {"day":"2026-03-14","new":39800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687278881.67/warc/CC-MAIN-20260314013424-20260314043424-00869.warc.gz#offset=497541904&length=159492"}
 ]}

@@ -1,3 +1,6 @@
 {"slug":"fujifilm-xf-16-50mm-f2-8-4-8-r-lm-wr","market":"au","currency":"AUD","points":[
-{"day":"2024-12-12","new":129900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066107376.23/warc/CC-MAIN-20241212062325-20241212092325-00165.warc.gz#offset=663278812&length=119557"}
+{"day":"2024-06-19","new":129900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861796.49/warc/CC-MAIN-20240618234039-20240619024039-00553.warc.gz#offset=603085990&length=115832"},
+{"day":"2024-12-06","new":119900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066416984.85/warc/CC-MAIN-20241206185637-20241206215637-00553.warc.gz#offset=610665768&length=112987"},
+{"day":"2024-12-12","new":129900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066107376.23/warc/CC-MAIN-20241212062325-20241212092325-00165.warc.gz#offset=663278812&length=119557"},
+{"day":"2025-09-17","new":119900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00045.warc.gz#offset=584216742&length=171482"}
 ]}

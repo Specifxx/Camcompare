@@ -1,3 +1,5 @@
 {"slug":"leica-q2-monochrom","market":"au","currency":"AUD","points":[
+{"day":"2024-08-08","new":988500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00774.warc.gz#offset=545893466&length=115116"},
+{"day":"2025-02-19","new":998900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00774.warc.gz#offset=640083967&length=113264"},
 {"day":"2025-11-09","new":1029000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342682.51/warc/CC-MAIN-20251109025556-20251109055556-00138.warc.gz#offset=605262275&length=157993"}
 ]}

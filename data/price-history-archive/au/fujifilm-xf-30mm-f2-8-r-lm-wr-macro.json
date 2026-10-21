@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-30mm-f2-8-r-lm-wr-macro","market":"au","currency":"AUD","points":[
+{"day":"2025-03-19","new":99500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433085.26/warc/CC-MAIN-20250319044953-20250319074953-00311.warc.gz#offset=624587620&length=169322"},
+{"day":"2025-04-25","new":99500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135925.48/warc/CC-MAIN-20250425141546-20250425171546-00467.warc.gz#offset=692523347&length=170057"},
+{"day":"2025-10-13","new":99500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00311.warc.gz#offset=641173604&length=177646"}
+]}

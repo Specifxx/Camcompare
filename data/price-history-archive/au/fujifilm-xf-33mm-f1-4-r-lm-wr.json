@@ -1,4 +1,6 @@
 {"slug":"fujifilm-xf-33mm-f1-4-r-lm-wr","market":"au","currency":"AUD","points":[
 {"day":"2024-09-07","new":104500,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700650826.4/warc/CC-MAIN-20240907095856-20240907125856-00699.warc.gz#offset=742846866&length=111022"},
-{"day":"2025-08-10","new":104754,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00799.warc.gz#offset=695127699&length=116421"}
+{"day":"2025-03-19","new":119500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433085.26/warc/CC-MAIN-20250319044953-20250319074953-00432.warc.gz#offset=654885419&length=173064"},
+{"day":"2025-08-10","new":104754,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00799.warc.gz#offset=695127699&length=116421"},
+{"day":"2025-10-13","new":119500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00432.warc.gz#offset=664705606&length=180895"}
 ]}

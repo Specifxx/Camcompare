@@ -1,5 +1,6 @@
 {"slug":"sony-fx3","market":"au","currency":"AUD","points":[
 {"day":"2024-06-25","new":599995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00110.warc.gz#offset=899887197&length=85964"},
 {"day":"2024-11-13","new":569995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028402.57/warc/CC-MAIN-20241113203454-20241113233454-00110.warc.gz#offset=912690037&length=83492"},
+{"day":"2024-12-05","new":669900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066362401.69/warc/CC-MAIN-20241205180803-20241205210803-00088.warc.gz#offset=628403193&length=109390"},
 {"day":"2025-03-18","new":649995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433039.83/warc/CC-MAIN-20250317231956-20250318021956-00610.warc.gz#offset=990849475&length=83092"}
 ]}

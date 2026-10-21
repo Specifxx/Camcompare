@@ -1,4 +1,7 @@
 {"slug":"canon-rf-100mm-f2-8l-macro-is-usm","market":"au","currency":"AUD","points":[
 {"day":"2024-12-02","new":186915,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066127282.52/warc/CC-MAIN-20241202064003-20241202094003-00247.warc.gz#offset=689837977&length=156603"},
-{"day":"2025-07-20","new":219900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237204.95/warc/CC-MAIN-20250720113954-20250720143954-00247.warc.gz#offset=673304573&length=141353"}
+{"day":"2025-06-22","new":189900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481827.13/warc/CC-MAIN-20250622165119-20250622195119-00958.warc.gz#offset=537779356&length=164947"},
+{"day":"2025-07-20","new":219900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237204.95/warc/CC-MAIN-20250720113954-20250720143954-00247.warc.gz#offset=673304573&length=141353"},
+{"day":"2025-08-09","new":189900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280103.72/warc/CC-MAIN-20250809110541-20250809140541-00409.warc.gz#offset=624661736&length=168338"},
+{"day":"2025-09-17","new":189900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00389.warc.gz#offset=588508968&length=171313"}
 ]}

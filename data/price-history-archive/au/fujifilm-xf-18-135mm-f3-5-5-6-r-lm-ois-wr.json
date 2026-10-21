@@ -1,3 +1,6 @@
 {"slug":"fujifilm-xf-18-135mm-f3-5-5-6-r-lm-ois-wr","market":"au","currency":"AUD","points":[
-{"day":"2024-12-07","new":111120,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066429485.80/warc/CC-MAIN-20241207132902-20241207162902-00842.warc.gz#offset=706564587&length=102297"}
+{"day":"2024-09-14","new":124900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651580.74/warc/CC-MAIN-20240914193334-20240914223334-00544.warc.gz#offset=641019971&length=114438"},
+{"day":"2024-12-07","new":111120,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066429485.80/warc/CC-MAIN-20241207132902-20241207162902-00842.warc.gz#offset=706564587&length=102297"},
+{"day":"2025-02-19","new":119900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00544.warc.gz#offset=629410819&length=112223"},
+{"day":"2025-09-17","new":119900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00844.warc.gz#offset=567147573&length=167025"}
 ]}

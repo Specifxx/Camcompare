@@ -1,0 +1,4 @@
+{"slug":"zeiss-loxia-2-4-85","market":"au","currency":"AUD","points":[
+{"day":"2024-08-03","new":195700,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00449.warc.gz#offset=551511752&length=114085"},
+{"day":"2025-02-19","new":195700,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00449.warc.gz#offset=629063561&length=112871"}
+]}

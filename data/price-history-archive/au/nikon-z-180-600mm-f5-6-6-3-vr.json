@@ -1,5 +1,6 @@
 {"slug":"nikon-z-180-600mm-f5-6-6-3-vr","market":"au","currency":"AUD","points":[
 {"day":"2024-05-27","new":277200,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059040.32/warc/CC-MAIN-20240527113621-20240527143621-00480.warc.gz#offset=637695326&length=71875"},
 {"day":"2024-12-05","new":299900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066348250.63/warc/CC-MAIN-20241205085107-20241205115107-00480.warc.gz#offset=670263457&length=174049"},
+{"day":"2025-06-19","new":297800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481547.6/warc/CC-MAIN-20250619174943-20250619204943-00853.warc.gz#offset=604344336&length=165778"},
 {"day":"2025-08-11","new":299900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280245.49/warc/CC-MAIN-20250811034648-20250811064648-00880.warc.gz#offset=648835472&length=170842"}
 ]}

@@ -1,5 +1,6 @@
 {"slug":"canon-rf-20mm-f1-4l-vcm","market":"au","currency":"AUD","points":[
 {"day":"2025-05-20","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412798.22/warc/CC-MAIN-20250520084021-20250520114021-00255.warc.gz#offset=902149399&length=77872"},
+{"day":"2025-08-15","new":284900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578279.64/warc/CC-MAIN-20250815081150-20250815111150-00897.warc.gz#offset=561381671&length=167730"},
 {"day":"2025-09-08","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00255.warc.gz#offset=916833767&length=79066"},
 {"day":"2026-01-13","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468912.16/warc/CC-MAIN-20260113044442-20260113074442-00255.warc.gz#offset=894338211&length=78865"}
 ]}

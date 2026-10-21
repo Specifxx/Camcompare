@@ -1,4 +1,5 @@
 {"slug":"fujifilm-gfx100-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-05-30","new":1099900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059412.27/warc/CC-MAIN-20240529230852-20240530020852-00542.warc.gz#offset=579416944&length=110956"},
 {"day":"2024-06-18","new":1136400,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861794.76/warc/CC-MAIN-20240618203026-20240618233026-00684.warc.gz#offset=878532510&length=85988"},
 {"day":"2024-10-04","new":1239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253268.46/warc/CC-MAIN-20241004011336-20241004041336-00222.warc.gz#offset=672554123&length=92187"},
 {"day":"2024-11-10","new":1249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028166.65/warc/CC-MAIN-20241110040813-20241110070813-00684.warc.gz#offset=931902179&length=83163"},

@@ -1,4 +1,5 @@
 {"slug":"panasonic-lumix-s-100mm-f2-8-macro","market":"au","currency":"AUD","points":[
+{"day":"2024-10-11","new":187900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253751.70/warc/CC-MAIN-20241011042304-20241011072304-00507.warc.gz#offset=597013298&length=113835"},
 {"day":"2024-11-01","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00642.warc.gz#offset=968962170&length=79781"},
 {"day":"2025-01-16","new":199900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00577.warc.gz#offset=766375312&length=124239"},
 {"day":"2025-04-19","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135697.3/warc/CC-MAIN-20250419040408-20250419070408-00442.warc.gz#offset=1047525418&length=79862"},

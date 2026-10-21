@@ -1,5 +1,9 @@
 {"slug":"fujifilm-xf-35mm-f2-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-08-03","new":51900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00051.warc.gz#offset=552283739&length=115772"},
 {"day":"2024-08-06","new":47900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640497907.29/warc/CC-MAIN-20240806161854-20240806191854-00194.warc.gz#offset=618756026&length=99748"},
+{"day":"2024-11-03","new":51900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027796.35/warc/CC-MAIN-20241103212031-20241104002031-00173.warc.gz#offset=661288585&length=112877"},
+{"day":"2024-11-09","new":51900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028116.75/warc/CC-MAIN-20241109085148-20241109115148-00051.warc.gz#offset=625950204&length=113020"},
 {"day":"2025-04-19","new":47848,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135728.67/warc/CC-MAIN-20250419230935-20250420020935-00394.warc.gz#offset=774673865&length=105846"},
-{"day":"2025-09-07","new":46118,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00776.warc.gz#offset=665962519&length=110311"}
+{"day":"2025-09-07","new":46118,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00776.warc.gz#offset=665962519&length=110311"},
+{"day":"2025-09-12","new":48900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00394.warc.gz#offset=591148587&length=169972"}
 ]}

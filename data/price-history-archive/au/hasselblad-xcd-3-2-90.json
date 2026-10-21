@@ -1,0 +1,5 @@
+{"slug":"hasselblad-xcd-3-2-90","market":"au","currency":"AUD","points":[
+{"day":"2024-09-19","new":628300,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700652028.28/warc/CC-MAIN-20240919093719-20240919123719-00135.warc.gz#offset=635149693&length=110384"},
+{"day":"2025-02-19","new":628300,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00135.warc.gz#offset=634134585&length=111618"},
+{"day":"2025-08-10","new":628300,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280144.81/warc/CC-MAIN-20250810120801-20250810150801-00551.warc.gz#offset=607185348&length=165541"}
+]}

@@ -1,5 +1,7 @@
 {"slug":"fujifilm-gf-110mm-f2-r-lm-wr","market":"au","currency":"AUD","points":[
 {"day":"2024-06-14","new":373915,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861517.98/warc/CC-MAIN-20240613221354-20240614011354-00184.warc.gz#offset=731091066&length=99648"},
+{"day":"2024-09-14","new":412500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651580.74/warc/CC-MAIN-20240914193334-20240914223334-00612.warc.gz#offset=647909740&length=114333"},
+{"day":"2025-02-19","new":379900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00612.warc.gz#offset=623270218&length=112154"},
 {"day":"2025-06-14","new":377366,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481306.93/warc/CC-MAIN-20250614034651-20250614064651-00584.warc.gz#offset=673052490&length=107075"},
 {"day":"2025-12-05","new":373915,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00768.warc.gz#offset=621426856&length=170379"}
 ]}

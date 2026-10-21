@@ -1,6 +1,8 @@
 {"slug":"blackmagic-pocket-cinema-camera-4k","market":"au","currency":"AUD","points":[
 {"day":"2024-11-04","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027812.67/warc/CC-MAIN-20241104034319-20241104064319-00638.warc.gz#offset=967616908&length=79968"},
 {"day":"2025-03-16","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00338.warc.gz#offset=1005638199&length=79081"},
+{"day":"2025-08-09","new":164500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280090.92/warc/CC-MAIN-20250809075926-20250809105926-00239.warc.gz#offset=617153677&length=162608"},
 {"day":"2025-08-11","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280216.62/warc/CC-MAIN-20250811003938-20250811033938-00338.warc.gz#offset=895434877&length=78577"},
+{"day":"2025-09-17","new":164500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826733.97/warc/CC-MAIN-20250917194202-20250917224202-00239.warc.gz#offset=605372473&length=165396"},
 {"day":"2025-12-09","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307406.75/warc/CC-MAIN-20251209190721-20251209220721-00338.warc.gz#offset=772352250&length=78869"}
 ]}

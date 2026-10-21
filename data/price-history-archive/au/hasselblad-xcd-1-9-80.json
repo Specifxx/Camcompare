@@ -1,4 +1,8 @@
 {"slug":"hasselblad-xcd-1-9-80","market":"au","currency":"AUD","points":[
+{"day":"2024-08-03","new":799900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00657.warc.gz#offset=541322808&length=113791"},
+{"day":"2024-12-06","new":715000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066416984.85/warc/CC-MAIN-20241206185637-20241206215637-00657.warc.gz#offset=646736255&length=109809"},
 {"day":"2025-08-05","new":728900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279850.60/warc/CC-MAIN-20250805063744-20250805093744-00757.warc.gz#offset=653375160&length=121359"},
-{"day":"2025-09-08","new":715000,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00284.warc.gz#offset=669081818&length=109630"}
+{"day":"2025-08-09","new":729500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280103.72/warc/CC-MAIN-20250809110541-20250809140541-00777.warc.gz#offset=597467947&length=165575"},
+{"day":"2025-09-08","new":715000,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00284.warc.gz#offset=669081818&length=109630"},
+{"day":"2025-10-13","new":729500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00657.warc.gz#offset=660896390&length=167187"}
 ]}

@@ -1,5 +1,7 @@
 {"slug":"panasonic-lumix-g85","market":"au","currency":"AUD","points":[
 {"day":"2024-07-21","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517544.48/warc/CC-MAIN-20240720235600-20240721025600-00126.warc.gz#offset=862453770&length=88084"},
+{"day":"2024-08-08","new":107900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00631.warc.gz#offset=552775467&length=114679"},
 {"day":"2024-10-11","used":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253762.73/warc/CC-MAIN-20241011103532-20241011133532-00312.warc.gz#offset=858549663&length=83394"},
-{"day":"2025-02-09","used":42496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00312.warc.gz#offset=938580093&length=82002"}
+{"day":"2025-02-09","used":42496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00312.warc.gz#offset=938580093&length=82002"},
+{"day":"2025-02-17","new":107900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832259438.98/warc/CC-MAIN-20250217191831-20250217221831-00631.warc.gz#offset=616830407&length=113518"}
 ]}

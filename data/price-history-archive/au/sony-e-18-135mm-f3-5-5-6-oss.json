@@ -1,3 +1,5 @@
 {"slug":"sony-e-18-135mm-f3-5-5-6-oss","market":"au","currency":"AUD","points":[
+{"day":"2024-09-19","new":85500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700652028.28/warc/CC-MAIN-20240919093719-20240919123719-00117.warc.gz#offset=652867493&length=110354"},
+{"day":"2025-01-22","new":85500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363391.51/warc/CC-MAIN-20250122131127-20250122161127-00117.warc.gz#offset=703257157&length=109291"},
 {"day":"2025-08-14","new":82900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573405.85/warc/CC-MAIN-20250814004736-20250814034736-00782.warc.gz#offset=624691334&length=125251"}
 ]}

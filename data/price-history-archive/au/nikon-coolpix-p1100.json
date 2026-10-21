@@ -1,4 +1,5 @@
 {"slug":"nikon-coolpix-p1100","market":"au","currency":"AUD","points":[
+{"day":"2025-03-22","new":169900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433212.59/warc/CC-MAIN-20250322111124-20250322141124-00081.warc.gz#offset=673610472&length=168157"},
 {"day":"2025-03-24","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433406.62/warc/CC-MAIN-20250324182340-20250324212340-00116.warc.gz#offset=980958701&length=82234"},
 {"day":"2025-09-14","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533671.75/warc/CC-MAIN-20250914012700-20250914042700-00116.warc.gz#offset=865985553&length=82686"},
 {"day":"2025-12-16","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871657426.86/warc/CC-MAIN-20251216230723-20251217020723-00116.warc.gz#offset=804768647&length=81853"},

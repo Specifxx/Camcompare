@@ -1,3 +1,5 @@
 {"slug":"hasselblad-xcd-3-2-4-5-20-35e","market":"au","currency":"AUD","points":[
-{"day":"2025-08-12","new":1038900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280914.63/warc/CC-MAIN-20250812045045-20250812075045-00996.warc.gz#offset=630235553&length=119902"}
+{"day":"2025-08-12","new":1038900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280914.63/warc/CC-MAIN-20250812045045-20250812075045-00996.warc.gz#offset=630235553&length=119902"},
+{"day":"2025-08-15","new":1039500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578279.64/warc/CC-MAIN-20250815081150-20250815111150-00717.warc.gz#offset=595212113&length=166607"},
+{"day":"2025-09-17","new":1100000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826733.97/warc/CC-MAIN-20250917194202-20250917224202-00716.warc.gz#offset=568589230&length=171180"}
 ]}

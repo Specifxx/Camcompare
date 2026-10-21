@@ -1,3 +1,6 @@
 {"slug":"leica-m11-d","market":"au","currency":"AUD","points":[
-{"day":"2025-06-16","new":1519050,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481425.34/warc/CC-MAIN-20250616210520-20250617000520-00569.warc.gz#offset=591098604&length=126009"}
+{"day":"2024-10-08","new":1599000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253530.50/warc/CC-MAIN-20241008110119-20241008140119-00302.warc.gz#offset=605371243&length=114062"},
+{"day":"2025-01-23","new":1599000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363498.48/warc/CC-MAIN-20250123091035-20250123121035-00302.warc.gz#offset=687718995&length=112598"},
+{"day":"2025-06-16","new":1519050,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481425.34/warc/CC-MAIN-20250616210520-20250617000520-00569.warc.gz#offset=591098604&length=126009"},
+{"day":"2025-07-17","new":1599000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934542.0/warc/CC-MAIN-20250717174350-20250717204350-00002.warc.gz#offset=638373806&length=171773"}
 ]}

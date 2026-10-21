@@ -1,3 +1,5 @@
 {"slug":"hasselblad-xcd-4-28p","market":"au","currency":"AUD","points":[
-{"day":"2025-08-05","new":307900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279850.60/warc/CC-MAIN-20250805063744-20250805093744-00906.warc.gz#offset=662470888&length=117269"}
+{"day":"2025-06-22","new":302000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481827.13/warc/CC-MAIN-20250622165119-20250622195119-00976.warc.gz#offset=541149235&length=165127"},
+{"day":"2025-08-05","new":307900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279850.60/warc/CC-MAIN-20250805063744-20250805093744-00906.warc.gz#offset=662470888&length=117269"},
+{"day":"2025-08-10","new":308000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280144.81/warc/CC-MAIN-20250810120801-20250810150801-00336.warc.gz#offset=581405003&length=166692"}
 ]}

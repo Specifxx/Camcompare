@@ -1,3 +1,4 @@
 {"slug":"panasonic-lumix-s-100-500mm-f5-7-1-o-i-s","market":"au","currency":"AUD","points":[
-{"day":"2025-10-17","new":359995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00668.warc.gz#offset=984307925&length=79177"}
+{"day":"2025-10-17","new":359995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00668.warc.gz#offset=984307925&length=79177"},
+{"day":"2026-09-11","new":369900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-39/segments/1788492700031.22/warc/CC-MAIN-20260911185431-20260911215431-00002.warc.gz#offset=601236977&length=140677"}
 ]}

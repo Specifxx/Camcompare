@@ -1,5 +1,8 @@
 {"slug":"fujifilm-gf-45-100mm-f4-r-lm-ois-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-08-03","new":335500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00853.warc.gz#offset=566843270&length=114959"},
+{"day":"2024-11-07","new":335500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00853.warc.gz#offset=638431965&length=111825"},
 {"day":"2025-04-20","new":297415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135750.25/warc/CC-MAIN-20250420115406-20250420145406-00273.warc.gz#offset=783083972&length=157046"},
+{"day":"2025-06-13","new":335500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481248.3/warc/CC-MAIN-20250613090809-20250613120809-00453.warc.gz#offset=574260022&length=163169"},
 {"day":"2025-08-15","new":349900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00273.warc.gz#offset=626209385&length=143711"},
 {"day":"2026-03-14","new":297415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687278881.67/warc/CC-MAIN-20260314013424-20260314043424-00273.warc.gz#offset=509641052&length=177912"}
 ]}

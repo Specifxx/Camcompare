@@ -1,4 +1,7 @@
 {"slug":"nikon-z-24-120mm-f4-s","market":"au","currency":"AUD","points":[
 {"day":"2025-02-17","new":166441,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832253764.91/warc/CC-MAIN-20250217093034-20250217123034-00315.warc.gz#offset=704249617&length=111525"},
+{"day":"2025-06-16","new":183500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481414.40/warc/CC-MAIN-20250616114313-20250616144313-00711.warc.gz#offset=556148773&length=166503"},
+{"day":"2025-06-19","new":183500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481547.6/warc/CC-MAIN-20250619174943-20250619204943-00368.warc.gz#offset=548647458&length=162351"},
+{"day":"2025-07-10","new":183500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933757.20/warc/CC-MAIN-20250710094101-20250710124101-00368.warc.gz#offset=623151409&length=162556"},
 {"day":"2025-08-14","new":206900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573816.93/warc/CC-MAIN-20250814035453-20250814065453-00255.warc.gz#offset=610339439&length=167260"}
 ]}

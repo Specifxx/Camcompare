@@ -1,3 +1,6 @@
 {"slug":"leica-vario-elmarit-sl-24-90-f2-8-4-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-08-14","new":930000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641118845.90/warc/CC-MAIN-20240814155004-20240814185004-00087.warc.gz#offset=530100475&length=113004"},
+{"day":"2024-12-08","new":938900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066441563.87/warc/CC-MAIN-20241208045820-20241208075820-00087.warc.gz#offset=625297158&length=109259"},
+{"day":"2025-06-22","new":938900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481827.13/warc/CC-MAIN-20250622165119-20250622195119-00994.warc.gz#offset=550318731&length=166751"},
 {"day":"2026-01-19","new":965000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469505.90/warc/CC-MAIN-20260119193727-20260119223727-00584.warc.gz#offset=598651417&length=158855"}
 ]}

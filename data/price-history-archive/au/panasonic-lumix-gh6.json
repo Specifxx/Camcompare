@@ -1,3 +1,5 @@
 {"slug":"panasonic-lumix-gh6","market":"au","currency":"AUD","points":[
+{"day":"2024-08-13","new":329800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641082193.83/warc/CC-MAIN-20240813172835-20240813202835-00030.warc.gz#offset=540440025&length=113989"},
+{"day":"2024-11-07","new":329800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00030.warc.gz#offset=643604183&length=112127"},
 {"day":"2025-09-10","new":349900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00862.warc.gz#offset=648029685&length=167199"}
 ]}

@@ -1,0 +1,5 @@
+{"slug":"hasselblad-xcd-4-21","market":"au","currency":"AUD","points":[
+{"day":"2024-08-14","new":751900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641118845.90/warc/CC-MAIN-20240814155004-20240814185004-00367.warc.gz#offset=554470589&length=114043"},
+{"day":"2025-02-17","new":751900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832259438.98/warc/CC-MAIN-20250217191831-20250217221831-00367.warc.gz#offset=632654240&length=113011"},
+{"day":"2025-08-15","new":751900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578279.64/warc/CC-MAIN-20250815081150-20250815111150-00024.warc.gz#offset=583077706&length=165921"}
+]}

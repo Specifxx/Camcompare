@@ -1,4 +1,7 @@
 {"slug":"sony-fe-70-300mm-f4-5-5-6-g-oss","market":"au","currency":"AUD","points":[
+{"day":"2024-08-13","new":188800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641082193.83/warc/CC-MAIN-20240813172835-20240813202835-00504.warc.gz#offset=548039366&length=114669"},
+{"day":"2024-11-07","new":188800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00504.warc.gz#offset=650667940&length=112996"},
 {"day":"2025-04-28","new":182900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889456347.84/warc/CC-MAIN-20250428141617-20250428171617-00811.warc.gz#offset=742863253&length=133613"},
+{"day":"2025-07-10","new":188800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933757.20/warc/CC-MAIN-20250710094101-20250710124101-00204.warc.gz#offset=596144636&length=162770"},
 {"day":"2025-09-13","new":182900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533333.10/warc/CC-MAIN-20250913064246-20250913094246-00811.warc.gz#offset=601535899&length=127264"}
 ]}

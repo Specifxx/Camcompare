@@ -1,0 +1,5 @@
+{"slug":"zeiss-otus-ml-1-4-50","market":"au","currency":"AUD","points":[
+{"day":"2025-08-07","new":519900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279971.34/warc/CC-MAIN-20250807182135-20250807212135-00187.warc.gz#offset=593753743&length=167597"},
+{"day":"2025-09-13","new":519900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00081.warc.gz#offset=561357828&length=166053"},
+{"day":"2025-09-17","new":519900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826733.97/warc/CC-MAIN-20250917194202-20250917224202-00080.warc.gz#offset=572483639&length=172655"}
+]}

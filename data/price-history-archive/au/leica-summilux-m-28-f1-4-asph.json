@@ -1,4 +1,7 @@
 {"slug":"leica-summilux-m-28-f1-4-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-08-03","new":1243500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00051.warc.gz#offset=552400518&length=112262"},
 {"day":"2024-10-04","new":1269000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253268.46/warc/CC-MAIN-20241004011336-20241004041336-00701.warc.gz#offset=665371121&length=81980"},
+{"day":"2024-11-07","new":1243500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00051.warc.gz#offset=656879371&length=109470"},
+{"day":"2025-05-23","new":1243500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990721829.95/warc/CC-MAIN-20250523132358-20250523162358-00051.warc.gz#offset=603496943&length=163036"},
 {"day":"2025-12-06","new":1215050,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307164.43/warc/CC-MAIN-20251206050720-20251206080720-00201.warc.gz#offset=581309598&length=169611"}
 ]}

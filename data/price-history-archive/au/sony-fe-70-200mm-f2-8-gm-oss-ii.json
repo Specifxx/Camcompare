@@ -1,3 +1,5 @@
 {"slug":"sony-fe-70-200mm-f2-8-gm-oss-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-10-08","new":348800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253530.50/warc/CC-MAIN-20241008110119-20241008140119-00242.warc.gz#offset=593122459&length=113002"},
+{"day":"2025-04-25","new":358800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135928.66/warc/CC-MAIN-20250425173303-20250425203303-00442.warc.gz#offset=652712014&length=172446"},
 {"day":"2026-06-15","new":281900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687573381.9/warc/CC-MAIN-20260615163408-20260615193408-00841.warc.gz#offset=562891616&length=171120"}
 ]}

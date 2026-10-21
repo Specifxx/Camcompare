@@ -1,3 +1,7 @@
 {"slug":"leica-super-vario-elmar-sl-16-35-f3-5-4-5-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-08-04","new":979000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640388159.9/warc/CC-MAIN-20240804010149-20240804040149-00890.warc.gz#offset=574936950&length=111574"},
+{"day":"2025-01-25","new":997900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703699614.95/warc/CC-MAIN-20250125175744-20250125205744-00890.warc.gz#offset=705582368&length=108332"},
+{"day":"2025-06-16","new":997900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481414.40/warc/CC-MAIN-20250616114313-20250616144313-00973.warc.gz#offset=575880682&length=167589"},
+{"day":"2025-06-20","new":997900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481579.1/warc/CC-MAIN-20250620122332-20250620152332-00490.warc.gz#offset=535913743&length=163025"},
 {"day":"2026-03-14","new":968050,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687278881.67/warc/CC-MAIN-20260314013424-20260314043424-00517.warc.gz#offset=536878831&length=170314"}
 ]}

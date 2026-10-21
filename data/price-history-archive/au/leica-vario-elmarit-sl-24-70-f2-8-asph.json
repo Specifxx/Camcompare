@@ -1,4 +1,7 @@
 {"slug":"leica-vario-elmarit-sl-24-70-f2-8-asph","market":"au","currency":"AUD","points":[
 {"day":"2025-04-20","new":474050,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135758.4/warc/CC-MAIN-20250420212612-20250421002612-00014.warc.gz#offset=713498571&length=132220"},
+{"day":"2025-06-18","new":488900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481468.19/warc/CC-MAIN-20250618011621-20250618041621-00395.warc.gz#offset=555775305&length=164060"},
+{"day":"2025-07-17","new":488900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934437.30/warc/CC-MAIN-20250717081801-20250717111801-00192.warc.gz#offset=578971989&length=164337"},
+{"day":"2025-07-18","new":488900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906230120.79/warc/CC-MAIN-20250718093011-20250718123011-00274.warc.gz#offset=597722532&length=160547"},
 {"day":"2025-09-17","new":449100,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826457.81/warc/CC-MAIN-20250917132841-20250917162841-00014.warc.gz#offset=638788159&length=114988"}
 ]}

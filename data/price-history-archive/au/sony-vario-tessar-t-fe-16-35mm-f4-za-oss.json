@@ -1,4 +1,7 @@
 {"slug":"sony-vario-tessar-t-fe-16-35mm-f4-za-oss","market":"au","currency":"AUD","points":[
 {"day":"2024-05-28","new":136300,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059085.33/warc/CC-MAIN-20240528092424-20240528122424-00804.warc.gz#offset=621795502&length=69441"},
-{"day":"2025-01-16","new":159900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00804.warc.gz#offset=770897937&length=141938"}
+{"day":"2024-08-13","new":154900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641082193.83/warc/CC-MAIN-20240813172835-20240813202835-00770.warc.gz#offset=553270210&length=114698"},
+{"day":"2024-12-08","new":154900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066441563.87/warc/CC-MAIN-20241208045820-20241208075820-00770.warc.gz#offset=624371161&length=111684"},
+{"day":"2025-01-16","new":159900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00804.warc.gz#offset=770897937&length=141938"},
+{"day":"2025-05-16","new":154900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412498.33/warc/CC-MAIN-20250516064304-20250516094304-00570.warc.gz#offset=622561494&length=164509"}
 ]}

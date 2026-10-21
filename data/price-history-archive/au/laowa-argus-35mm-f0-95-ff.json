@@ -1,3 +1,4 @@
 {"slug":"laowa-argus-35mm-f0-95-ff","market":"au","currency":"AUD","points":[
-{"day":"2025-08-03","new":128900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279559.10/warc/CC-MAIN-20250803042232-20250803072232-00290.warc.gz#offset=666851260&length=120300"}
+{"day":"2025-08-03","new":128900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279559.10/warc/CC-MAIN-20250803042232-20250803072232-00290.warc.gz#offset=666851260&length=120300"},
+{"day":"2025-09-13","new":151900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00565.warc.gz#offset=563078747&length=169147"}
 ]}

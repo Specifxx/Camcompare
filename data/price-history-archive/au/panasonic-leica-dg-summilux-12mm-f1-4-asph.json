@@ -1,3 +1,6 @@
 {"slug":"panasonic-leica-dg-summilux-12mm-f1-4-asph","market":"au","currency":"AUD","points":[
-{"day":"2025-05-19","new":175170,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412741.46/warc/CC-MAIN-20250519164124-20250519194124-00398.warc.gz#offset=702421797&length=107798"}
+{"day":"2024-08-13","new":179900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641082193.83/warc/CC-MAIN-20240813172835-20240813202835-00055.warc.gz#offset=529665023&length=112964"},
+{"day":"2024-11-07","new":179900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00055.warc.gz#offset=651718071&length=110469"},
+{"day":"2025-05-19","new":175170,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412741.46/warc/CC-MAIN-20250519164124-20250519194124-00398.warc.gz#offset=702421797&length=107798"},
+{"day":"2025-06-13","new":184900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481248.3/warc/CC-MAIN-20250613090809-20250613120809-00555.warc.gz#offset=598595080&length=163217"}
 ]}

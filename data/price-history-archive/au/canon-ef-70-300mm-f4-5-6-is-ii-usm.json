@@ -1,3 +1,6 @@
 {"slug":"canon-ef-70-300mm-f4-5-6-is-ii-usm","market":"au","currency":"AUD","points":[
-{"day":"2025-07-18","new":94900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906230393.83/warc/CC-MAIN-20250718123834-20250718153834-00590.warc.gz#offset=633605945&length=114495"}
+{"day":"2024-08-13","new":94400,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641082193.83/warc/CC-MAIN-20240813172835-20240813202835-00888.warc.gz#offset=535128320&length=112128"},
+{"day":"2024-12-08","new":94400,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066441563.87/warc/CC-MAIN-20241208045820-20241208075820-00888.warc.gz#offset=634989237&length=108461"},
+{"day":"2025-07-18","new":94900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906230393.83/warc/CC-MAIN-20250718123834-20250718153834-00590.warc.gz#offset=633605945&length=114495"},
+{"day":"2025-09-17","new":94400,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00578.warc.gz#offset=573203804&length=172429"}
 ]}

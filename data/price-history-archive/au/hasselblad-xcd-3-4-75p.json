@@ -1,3 +1,4 @@
 {"slug":"hasselblad-xcd-3-4-75p","market":"au","currency":"AUD","points":[
+{"day":"2025-08-10","new":392000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280144.81/warc/CC-MAIN-20250810120801-20250810150801-00460.warc.gz#offset=599491501&length=166554"},
 {"day":"2025-08-12","new":391900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280938.77/warc/CC-MAIN-20250812075852-20250812105852-00673.warc.gz#offset=634124779&length=113623"}
 ]}

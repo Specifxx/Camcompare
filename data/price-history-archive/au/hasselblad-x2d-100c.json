@@ -1,0 +1,7 @@
+{"slug":"hasselblad-x2d-100c","market":"au","currency":"AUD","points":[
+{"day":"2024-04-17","new":1246000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817171.53/warc/CC-MAIN-20240417173445-20240417203445-00249.warc.gz#offset=610846980&length=113177"},
+{"day":"2024-08-08","new":1200000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00249.warc.gz#offset=549571587&length=114266"},
+{"day":"2024-10-08","new":1246000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253530.50/warc/CC-MAIN-20241008110119-20241008140119-00249.warc.gz#offset=598331261&length=111763"},
+{"day":"2025-03-22","new":1290000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433212.59/warc/CC-MAIN-20250322111124-20250322141124-00249.warc.gz#offset=600533157&length=166454"},
+{"day":"2025-06-20","new":1290000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481579.1/warc/CC-MAIN-20250620122332-20250620152332-00249.warc.gz#offset=571994884&length=165873"}
+]}

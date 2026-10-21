@@ -1,4 +1,5 @@
 {"slug":"nikon-af-p-dx-18-55mm-f3-5-5-6g-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-10-08","new":24400,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253530.50/warc/CC-MAIN-20241008110119-20241008140119-00325.warc.gz#offset=594018022&length=110173"},
 {"day":"2024-11-10","used":7995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028179.55/warc/CC-MAIN-20241110072033-20241110102033-00505.warc.gz#offset=931112419&length=80764"},
 {"day":"2025-04-29","used":7995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889460634.98/warc/CC-MAIN-20250429132325-20250429162325-00605.warc.gz#offset=980050439&length=81416"},
 {"day":"2025-09-12","used":7995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533302.34/warc/CC-MAIN-20250912211844-20250913001844-00605.warc.gz#offset=852652892&length=80272"}

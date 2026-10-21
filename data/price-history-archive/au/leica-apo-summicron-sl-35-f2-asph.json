@@ -1,5 +1,9 @@
 {"slug":"leica-apo-summicron-sl-35-f2-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-06-19","new":812000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861796.49/warc/CC-MAIN-20240618234039-20240619024039-00521.warc.gz#offset=603066864&length=108183"},
+{"day":"2024-09-17","new":822000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651739.72/warc/CC-MAIN-20240917040428-20240917070428-00521.warc.gz#offset=632799698&length=106943"},
+{"day":"2025-02-19","new":831900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00521.warc.gz#offset=623965398&length=108187"},
 {"day":"2025-04-22","new":806550,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135803.30/warc/CC-MAIN-20250422051655-20250422081655-00141.warc.gz#offset=752024035&length=133169"},
 {"day":"2025-08-14","new":849000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573405.85/warc/CC-MAIN-20250814004736-20250814034736-00141.warc.gz#offset=630660022&length=116850"},
+{"day":"2025-10-13","new":859000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00321.warc.gz#offset=690237380&length=171325"},
 {"day":"2026-08-17","new":845405,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091387120.69/warc/CC-MAIN-20260817065350-20260817095350-00032.warc.gz#offset=602688362&length=149202"}
 ]}

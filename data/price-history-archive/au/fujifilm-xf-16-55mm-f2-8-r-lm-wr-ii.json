@@ -1,5 +1,8 @@
 {"slug":"fujifilm-xf-16-55mm-f2-8-r-lm-wr-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-11-03","new":214900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027796.35/warc/CC-MAIN-20241103212031-20241104002031-00059.warc.gz#offset=646938004&length=112848"},
 {"day":"2025-06-20","new":199900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481566.23/warc/CC-MAIN-20250620030731-20250620060731-00716.warc.gz#offset=609977557&length=142017"},
+{"day":"2025-07-10","new":209900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933757.20/warc/CC-MAIN-20250710094101-20250710124101-00159.warc.gz#offset=613201948&length=165041"},
 {"day":"2025-09-07","new":199900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532799.14/warc/CC-MAIN-20250906214945-20250907004945-00716.warc.gz#offset=639031670&length=135707"},
+{"day":"2025-09-17","new":204900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00806.warc.gz#offset=595839992&length=174599"},
 {"day":"2026-06-09","new":173300,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687572430.69/warc/CC-MAIN-20260609014839-20260609044839-00331.warc.gz#offset=561352076&length=167513"}
 ]}

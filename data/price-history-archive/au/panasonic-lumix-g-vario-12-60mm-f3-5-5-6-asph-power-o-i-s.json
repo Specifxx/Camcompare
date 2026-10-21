@@ -1,3 +1,6 @@
 {"slug":"panasonic-lumix-g-vario-12-60mm-f3-5-5-6-asph-power-o-i-s","market":"au","currency":"AUD","points":[
-{"day":"2025-05-12","new":53260,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412284.48/warc/CC-MAIN-20250512104513-20250512134513-00651.warc.gz#offset=702067409&length=104765"}
+{"day":"2024-08-03","new":57900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00166.warc.gz#offset=547714513&length=112227"},
+{"day":"2024-12-06","new":57900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066416984.85/warc/CC-MAIN-20241206185637-20241206215637-00166.warc.gz#offset=629055058&length=108488"},
+{"day":"2025-05-12","new":53260,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412284.48/warc/CC-MAIN-20250512104513-20250512134513-00651.warc.gz#offset=702067409&length=104765"},
+{"day":"2025-10-13","new":57900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00566.warc.gz#offset=683373435&length=169767"}
 ]}
