@@ -7,6 +7,7 @@ import { accessoriesForCamera } from "@/lib/accessory-rows";
 import { camera, displayShortName } from "@/lib/catalog";
 import { price } from "@/lib/format";
 import { marketPath, type MarketCode } from "@/lib/markets";
+import AccessoryThumb from "./AccessoryThumb";
 import OutboundLink from "./OutboundLink";
 
 export default function CameraAccessories({ slug, market: m }: { slug: string; market: MarketCode }) {
@@ -22,7 +23,8 @@ export default function CameraAccessories({ slug, market: m }: { slug: string; m
       </div>
       <ul className="card divide-y divide-line">
         {items.map(({ category, label, one, row, count, forModel }) => (
-          <li key={category} className="flex items-center gap-3 px-4 py-3">
+          <li key={category} className="flex items-center gap-3 px-3 py-3 sm:px-4">
+            <AccessoryThumb src={row.image} alt={row.title} group={row.group} store={row.retailerName} />
             <div className="min-w-0 flex-1">
               <p className="text-xs text-muted">{label}</p>
               <p className="truncate font-semibold leading-tight">{row.title}</p>

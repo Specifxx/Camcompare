@@ -33,8 +33,13 @@ export async function politeGet(url: string, headers: Record<string, string>, wa
   }
 }
 
-type Variant = { id: number; title: string; price: string; available: boolean; sku?: string | null; compare_at_price?: string | null; inventory_quantity?: number | null };
-export type ShopifyProduct = { id: number; title: string; handle: string; vendor?: string; product_type?: string; tags?: string[] | string; body_html?: string | null; variants: Variant[] };
+type Variant = { id: number; title: string; price: string; available: boolean; sku?: string | null; compare_at_price?: string | null; inventory_quantity?: number | null; featured_image?: { src?: string } | null };
+export type ShopifyProduct = { id: number; title: string; handle: string; vendor?: string; product_type?: string; tags?: string[] | string; body_html?: string | null; images?: { src: string; variant_ids?: number[] }[]; variants: Variant[] };
+
+/** The variant's own photo, else the product image tied to it, else the product's first. */
+export function variantImage(p: Pick<ShopifyProduct, "images">, v: Pick<Variant, "id" | "featured_image">): string | null {
+  return v.featured_image?.src ?? p.images?.find((i) => i.variant_ids?.includes(v.id))?.src ?? p.images?.[0]?.src ?? null;
+}
 
 /**
  * Is `path` allowed for us by this robots.txt? RFC 9309 matching: `*` is any
@@ -111,7 +116,7 @@ export function productOffers(p: ShopifyProduct, ctx: { base: string; retailer: 
     const url = `${base}/products/${p.handle}?variant=${v.id}`;
     if (!m.product) {
       // Not a camera or lens: maybe an accessory (src/lib/accessories.ts).
-      const a = accessoryOffer({ title, productType: p.product_type, vendor: p.vendor, price, currency, url, inStock, condition: cond, sourceId: String(v.id) }, index, r.key, now);
+      const a = accessoryOffer({ title, productType: p.product_type, vendor: p.vendor, price, currency, url, inStock, condition: cond, sourceId: String(v.id), image: variantImage(p, v) }, index, r.key, now);
       if (a) accessories.push(a);
       continue;
     }
@@ -144,7 +149,7 @@ export function productOffers(p: ShopifyProduct, ctx: { base: string; retailer: 
 }
 
 /** A /products/<handle>.js body (cents, `type`, `description`) as products.json's shape. */
-export function fromProductJs(j: { id: number; title: string; handle: string; vendor?: string; type?: string; tags?: string[]; description?: string; variants: { id: number; title: string; price: number; available: boolean; sku?: string | null; compare_at_price?: number | null }[] }): ShopifyProduct {
+export function fromProductJs(j: { id: number; title: string; handle: string; vendor?: string; type?: string; tags?: string[]; description?: string; images?: string[]; variants: { id: number; title: string; price: number; available: boolean; sku?: string | null; compare_at_price?: number | null; featured_image?: { src?: string } | string | null }[] }): ShopifyProduct {
   const money = (n: number | null | undefined) => (typeof n === "number" ? (n / 100).toFixed(2) : null);
   return {
     id: j.id,
@@ -154,7 +159,16 @@ export function fromProductJs(j: { id: number; title: string; handle: string; ve
     product_type: j.type,
     tags: j.tags,
     body_html: j.description ?? null,
-    variants: j.variants.map((v) => ({ id: v.id, title: v.title, price: money(v.price) ?? "0", available: v.available, sku: v.sku, compare_at_price: money(v.compare_at_price) })),
+    images: (j.images ?? []).filter((x) => typeof x === "string").map((src) => ({ src })),
+    variants: j.variants.map((v) => ({
+      id: v.id,
+      title: v.title,
+      price: money(v.price) ?? "0",
+      available: v.available,
+      sku: v.sku,
+      compare_at_price: money(v.compare_at_price),
+      featured_image: typeof v.featured_image === "string" ? { src: v.featured_image } : (v.featured_image ?? null),
+    })),
   };
 }
 

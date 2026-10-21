@@ -1123,3 +1123,37 @@ ever drops below $900". We had five days of our own history.
   as planned columns that render the day they exist. DJI, GoPro and
   Insta360 lines are included: DJI gear is hard to buy in the US. A line
   with nothing priced is noindex.
+
+## 2026-10-22: Accessory photos are the store's own listing photo, hotlinked
+
+The owner: "the accessories need photos as well". Every accessory row (the
+`/accessories/<category>` pages and a camera page's "Accessories for the …")
+now shows a small square photo.
+
+- **Whose photo.** The image the listing itself carries: Shopify's variant
+  image, else the product's first (`variantImage`), or the JSON-LD `image` on
+  the store's product page. Feeds would give `image_link`, but feed sources
+  make no accessory rows today. Nothing is guessed or searched for.
+- **Why this differs from catalog products.** A camera or lens page's
+  thumbnail is ours: it stands for the product on every page, so it must be
+  licensed and credited (docs/images.md). An accessory photo is the store's
+  picture of its own offer. It shows only beside that store's row, links to
+  that store's page, and is credited "Image: <store>" (the title on hover),
+  the way shopping comparison sites show a merchant's photo. Nothing is
+  copied: it is hotlinked from the store's CDN, never stored in the repo,
+  never through Vercel's image optimiser (`<img>`, not `next/image`), with
+  `referrerPolicy="no-referrer"`.
+- **Small.** It shows at 56 px and asks the CDN for a 160 px image
+  (`?width=160` on cdn.shopify.com and a shop's /cdn/shop/ path), about 4 KB
+  instead of 40 KB. It is lazy-loaded, decoded asynchronously and fixed in
+  size, so rows don't shift. A missing or broken image shows a neutral icon
+  for the category's section.
+- **Compact in the data.** `image` is stored without the scheme or the
+  query string, and Shopify's `cdn.shopify.com/s/files/` becomes `~`
+  (`compactImage`, `accessoryImageUrl` rebuilds it).
+- **Off with one flag.** `ACCESSORY_IMAGES` in `src/lib/accessory-format.ts`:
+  false shows the icon everywhere. The import keeps storing the field, so
+  turning photos back on needs no new run.
+- Rows written before this have no image until the next price import, every
+  three hours. A backfill would mean re-reading every Shopify store's
+  products.json and every structured-data page, which is a price import.

@@ -3,6 +3,28 @@
 import type { AccessorySpecs } from "./accessories";
 import type { Currency } from "./markets";
 
+/**
+ * Accessory rows show the store's own listing photo, hotlinked from its CDN
+ * (DECISIONS.md 2026-10-22, "Accessory photos"). false hides every one; the
+ * category icon shows instead. Catalog products never use this: they need
+ * licensed thumbnails (docs/images.md).
+ */
+export const ACCESSORY_IMAGES = true;
+/** Pixel width asked of the store's CDN: the thumbnail shows at 56 CSS px, so 160 covers 2-3x screens. */
+export const ACCESSORY_IMAGE_PX = 160;
+
+/**
+ * A stored image (accessories.ts compactImage) as the URL to load: Shopify's
+ * CDN at a small width (`?width=`, which cdn.shopify.com and a shop's own
+ * /cdn/shop/ path resize to), anything else as the store gave it.
+ */
+export function accessoryImageUrl(stored: string | null | undefined, px = ACCESSORY_IMAGE_PX): string | null {
+  if (!ACCESSORY_IMAGES || !stored) return null;
+  if (stored.startsWith("~")) return `https://cdn.shopify.com/s/files/${stored.slice(1)}?width=${px}`;
+  const url = `https://${stored}`;
+  return /\/cdn\/shop\//.test(stored) && !stored.includes("?") ? `${url}?width=${px}` : url;
+}
+
 const SYMBOL: Record<Currency, string> = { USD: "$", GBP: "£", EUR: "€", AUD: "A$", SGD: "S$" };
 
 /** Price per GB from minor units per GB: "$0.14/GB", "$0.021/GB" (three places under ten cents). */

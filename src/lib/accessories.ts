@@ -754,9 +754,37 @@ export const accessoryOfferSchema = z
     inStock: z.boolean(),
     seenAt: z.string(),
     sourceId: z.string().nullable(),
+    // The listing's own photo, compact (compactImage): "~<path>" for Shopify's
+    // cdn.shopify.com/s/files/, else host and path without the scheme. Shown
+    // only beside this store's offer, hotlinked (DECISIONS 2026-10-22).
+    image: z.string().max(400).optional(),
   })
   .strict();
 export type AccessoryOffer = z.infer<typeof accessoryOfferSchema>;
+
+/**
+ * A listing's image URL as stored: Shopify's CDN path after
+ * "cdn.shopify.com/s/files/" with "~" in front ("~1/0603/4083/0375/files/x.jpg"),
+ * any other https image as host and path. The query string goes when the path
+ * is plainly an image file (it is only a cache-buster or a size); otherwise
+ * it stays, since it may be what names the image. Not an http(s) URL, or
+ * over 400 characters: none.
+ */
+export function compactImage(u: string | null | undefined): string | undefined {
+  let raw = u?.trim();
+  if (!raw) return undefined;
+  if (raw.startsWith("//")) raw = `https:${raw}`;
+  let url: URL;
+  try {
+    url = new URL(raw);
+  } catch {
+    return undefined;
+  }
+  if (url.protocol !== "https:" && url.protocol !== "http:") return undefined;
+  if (url.hostname === "cdn.shopify.com" && url.pathname.startsWith("/s/files/")) return `~${url.pathname.slice("/s/files/".length)}`;
+  const out = /\.(jpe?g|png|webp|gif|avif)$/i.test(url.pathname) ? `${url.host}${url.pathname}` : `${url.host}${url.pathname}${url.search}`;
+  return out.length <= 400 ? out : undefined;
+}
 
 /**
  * A source's listing as an accessory offer, or null. Refuse-only price
@@ -765,7 +793,7 @@ export type AccessoryOffer = z.infer<typeof accessoryOfferSchema>;
  * camera sold with an accessory, not the accessory).
  */
 export function accessoryOffer(
-  l: { title: string; productType?: string | null; vendor?: string | null; price: number; currency: Currency; url: string; inStock: boolean; condition: Condition; sourceId: string | null },
+  l: { title: string; productType?: string | null; vendor?: string | null; price: number; currency: Currency; url: string; inStock: boolean; condition: Condition; sourceId: string | null; image?: string | null },
   index: CatalogIndex,
   retailerKey: string,
   now: string,
@@ -781,7 +809,8 @@ export function accessoryOffer(
     const launch = p ? launchIn(p, l.currency) : null;
     if (launch && major >= launch / 3) return null;
   }
-  return { title: l.title.replace(/\s+/g, " ").trim(), category: c.category, brand: c.brand, cameras: c.cameras, cameraBrands: c.cameraBrands, specs: c.specs, retailer: retailerKey, condition: l.condition, price: l.price, currency: l.currency, url: l.url, inStock: l.inStock, seenAt: now, sourceId: l.sourceId };
+  const image = compactImage(l.image);
+  return { title: l.title.replace(/\s+/g, " ").trim(), category: c.category, brand: c.brand, cameras: c.cameras, cameraBrands: c.cameraBrands, specs: c.specs, retailer: retailerKey, condition: l.condition, price: l.price, currency: l.currency, url: l.url, inStock: l.inStock, seenAt: now, sourceId: l.sourceId, ...(image ? { image } : {}) };
 }
 
 /** Price per GB in minor units ×100 (so cents with two decimals), or null. */

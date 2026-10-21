@@ -88,7 +88,27 @@ export type PageListing = {
   wasPrice?: number | null;
   availability?: Availability | null;
   description?: string;
+  /** The Product's JSON-LD `image` (first entry). */
+  image?: string;
 };
+
+/** A page's (possibly relative) URL made absolute, or null. */
+function absolute(v: string | undefined, base: string): string | null {
+  if (!v) return null;
+  try {
+    return new URL(v, base).toString();
+  } catch {
+    return null;
+  }
+}
+
+/** JSON-LD `image`: a URL, an ImageObject, or a list of either; the first. */
+function firstImage(v: unknown): string | undefined {
+  const x = Array.isArray(v) ? v[0] : v;
+  if (typeof x === "string") return x.trim() || undefined;
+  if (x && typeof x === "object") return str((x as Record<string, unknown>).url ?? (x as Record<string, unknown>).contentUrl);
+  return undefined;
+}
 
 const str = (v: unknown): string | undefined => (typeof v === "string" && v.trim() ? v.trim() : typeof v === "number" ? String(v) : undefined);
 const decode = (s: string) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#0?39;|&apos;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)));
@@ -143,6 +163,7 @@ export function pageListings(html: string): PageListing[] {
     // Only a real GTIN length: Camera House puts its 5-digit SKU in `gtin8`.
     const gtin = [n.gtin13, n.gtin12, n.gtin14, n.gtin, n.gtin8].map(str).find((g) => g && /^\d{8}$|^\d{12,14}$/.test(g.replace(/\D/g, "")));
     const description = str(n.description);
+    const image = firstImage(n.image);
     const offers = ([] as unknown[]).concat(n.offers ?? []).flatMap((o) => {
       const r = o as Record<string, unknown>;
       return r?.["@type"] === "AggregateOffer" && r.offers ? ([] as unknown[]).concat(r.offers) : [r];
@@ -164,7 +185,7 @@ export function pageListings(html: string): PageListing[] {
       const was = typeof wasRaw === "number" ? Math.round(wasRaw * 100) : str(wasRaw) ? toMinor(str(wasRaw)!) : 0;
       const sameCurrency = !struck?.priceCurrency || str(struck.priceCurrency)?.toUpperCase() === currency;
       const availability = schemaAvailability(str(o.availability));
-      out.push({ title, gtin, mpn: str(n.mpn), sku: str(o.sku ?? n.sku), price, currency, inStock: availability ? availableNow(availability, false) : inStockOf(o.availability), condition: cond, ...extras(sameCurrency ? wasPriceOf(price, was) : null, availability, description) });
+      out.push({ title, gtin, mpn: str(n.mpn), sku: str(o.sku ?? n.sku), price, currency, inStock: availability ? availableNow(availability, false) : inStockOf(o.availability), condition: cond, ...extras(sameCurrency ? wasPriceOf(price, was) : null, availability, description), ...(image ? { image } : {}) });
     }
   }
   if (out.length) return out;
@@ -264,7 +285,7 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
         if (l.currency !== currency) continue;
         const m = matchListing({ title: l.title, gtin: l.gtin, mpn: l.mpn }, index);
         if (!m.product) {
-          const a = accessoryOffer({ title: l.title, price: l.price, currency, url: u, inStock: l.inStock, condition: l.condition ?? shopifyCondition({ title: `${l.title} ${slugText(u)}` }, ""), sourceId: l.sku ?? null }, index, r.key, now);
+          const a = accessoryOffer({ title: l.title, price: l.price, currency, url: u, inStock: l.inStock, condition: l.condition ?? shopifyCondition({ title: `${l.title} ${slugText(u)}` }, ""), sourceId: l.sku ?? null, image: absolute(l.image, u) }, index, r.key, now);
           if (a && !accessories.some((x) => x.url === u && x.title === a.title)) accessories.push(a);
           continue;
         }

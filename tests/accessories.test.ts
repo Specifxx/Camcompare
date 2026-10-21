@@ -272,3 +272,49 @@ test("owner's brands, 2026-10-22", () => {
   assert.equal(brand("DJI Mini 4 Pro Fly More Combo (DJI RC 2)"), "dji");
   assert.equal(brand("Red Variable ND Filter 77mm"), null);
 });
+
+// ---- accessory photos (owner, 2026-10-22)
+import { compactImage } from "../src/lib/accessories";
+import { accessoryImageUrl } from "../src/lib/accessory-format";
+import { fromProductJs, variantImage } from "../src/lib/sources/shopify";
+import { pageListings } from "../src/lib/sources/structured";
+
+test("photos: stored compactly, rebuilt small from the store's own CDN", () => {
+  const shop = "https://cdn.shopify.com/s/files/1/0603/4083/0375/files/B4004.1185_1.jpg?v=1792476932";
+  assert.equal(compactImage(shop), "~1/0603/4083/0375/files/B4004.1185_1.jpg");
+  assert.equal(compactImage("//cdn.shopify.com/s/files/1/0588/9464/7339/files/c70.jpg?v=1"), "~1/0588/9464/7339/files/c70.jpg");
+  assert.equal(accessoryImageUrl("~1/0603/4083/0375/files/B4004.1185_1.jpg"), "https://cdn.shopify.com/s/files/1/0603/4083/0375/files/B4004.1185_1.jpg?width=160");
+  // A shop's own /cdn/shop/ path resizes too.
+  assert.equal(accessoryImageUrl(compactImage("https://www.teds.com.au/cdn/shop/files/x.png?v=2")), "https://www.teds.com.au/cdn/shop/files/x.png?width=160");
+  // Other stores: host and path; a query that may name the image stays.
+  assert.equal(compactImage("https://www.camerahouse.com.au/media/catalog/product/7/4/74454.png?optimize=medium&width="), "www.camerahouse.com.au/media/catalog/product/7/4/74454.png");
+  assert.equal(compactImage("https://img.example.com/get?id=123"), "img.example.com/get?id=123");
+  assert.equal(accessoryImageUrl("www.camerahouse.com.au/media/catalog/product/7/4/74454.png"), "https://www.camerahouse.com.au/media/catalog/product/7/4/74454.png");
+  for (const bad of ["", "javascript:alert(1)", "data:image/png;base64,AAAA", "not a url", null, undefined]) assert.equal(compactImage(bad), undefined, String(bad));
+  assert.equal(accessoryImageUrl(undefined), null);
+});
+
+test("photos: Shopify uses the variant's own image, then the product's", () => {
+  const p = { images: [{ src: "https://cdn.shopify.com/s/files/1/a.jpg" }, { src: "https://cdn.shopify.com/s/files/1/b.jpg", variant_ids: [2] }] };
+  assert.equal(variantImage(p, { id: 1 }), "https://cdn.shopify.com/s/files/1/a.jpg");
+  assert.equal(variantImage(p, { id: 2 }), "https://cdn.shopify.com/s/files/1/b.jpg");
+  assert.equal(variantImage(p, { id: 1, featured_image: { src: "https://cdn.shopify.com/s/files/1/c.jpg" } }), "https://cdn.shopify.com/s/files/1/c.jpg");
+  assert.equal(variantImage({}, { id: 1 }), null);
+  const js = fromProductJs({ id: 1, title: "SmallRig Cage", handle: "cage", images: ["//cdn.shopify.com/s/files/1/x.jpg"], variants: [{ id: 9, title: "Default Title", price: 9900, available: true }] });
+  assert.equal(variantImage(js, js.variants[0]), "//cdn.shopify.com/s/files/1/x.jpg");
+});
+
+test("photos: JSON-LD image, as a URL, a list or an ImageObject", () => {
+  const ld = (image: unknown) => `<script type="application/ld+json">${JSON.stringify({ "@type": "Product", name: "SmallRig Cage", image, offers: { price: "99", priceCurrency: "AUD" } })}</script>`;
+  assert.equal(pageListings(ld("https://x.com/a.jpg"))[0].image, "https://x.com/a.jpg");
+  assert.equal(pageListings(ld(["https://x.com/a.jpg", "https://x.com/b.jpg"]))[0].image, "https://x.com/a.jpg");
+  assert.equal(pageListings(ld({ "@type": "ImageObject", url: "https://x.com/c.jpg" }))[0].image, "https://x.com/c.jpg");
+  assert.equal(pageListings(ld(undefined))[0].image, undefined);
+});
+
+test("photos: an accessory offer keeps the listing's image, compact", () => {
+  const a = accessoryOffer({ title: "SmallRig Cage for Sony a7 IV 3667", price: 9900, currency: "AUD", url: "https://www.georges.com.au/products/cage", inStock: true, condition: "new", sourceId: "1", image: "https://cdn.shopify.com/s/files/1/0603/files/cage.jpg?v=3" }, index, "georges", NOW);
+  assert.equal(a?.image, "~1/0603/files/cage.jpg");
+  const none = accessoryOffer({ title: "SmallRig Cage for Sony a7 IV 3667", price: 9900, currency: "AUD", url: "https://www.georges.com.au/products/cage", inStock: true, condition: "new", sourceId: "1" }, index, "georges", NOW);
+  assert.equal(none && "image" in none, false);
+});

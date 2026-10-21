@@ -8,6 +8,7 @@ import { useEffect, useMemo, useState } from "react";
 import { capacityText, perGbText } from "@/lib/accessory-format";
 import type { AccessoryRow } from "@/lib/accessory-rows";
 import { price } from "@/lib/format";
+import AccessoryThumb from "./AccessoryThumb";
 import OutboundLink from "./OutboundLink";
 
 type Filters = { brand: string; cb: string; camera: string; format: string; cap: string; speed: string; sort: string };
@@ -220,7 +221,8 @@ export default function AccessoryBrowser({
         ) : (
           <ul className="card divide-y divide-line">
             {list.slice(0, shown).map((r) => (
-              <li key={r.id} className="flex items-center gap-3 px-4 py-3">
+              <li key={r.id} className="flex items-center gap-3 px-3 py-3 sm:px-4">
+                <AccessoryThumb src={r.image} alt={r.title} group={r.group} store={r.retailerName} />
                 <div className="min-w-0 flex-1">
                   <p className="font-semibold leading-tight">{r.title}</p>
                   <p className="mt-0.5 text-xs text-muted">

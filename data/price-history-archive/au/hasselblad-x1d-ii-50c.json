@@ -1,0 +1,4 @@
+{"slug":"hasselblad-x1d-ii-50c","market":"au","currency":"AUD","points":[
+{"day":"2024-09-19","new":989900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700652028.28/warc/CC-MAIN-20240919093719-20240919123719-00109.warc.gz#offset=636673072&length=113124"},
+{"day":"2025-04-25","new":989900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135928.66/warc/CC-MAIN-20250425173303-20250425203303-00209.warc.gz#offset=699614403&length=162141"}
+]}

@@ -1,3 +1,5 @@
 {"slug":"panasonic-lumix-g-x-vario-12-35mm-f2-8-ii-asph-power-o-i-s","market":"au","currency":"AUD","points":[
-{"day":"2024-05-28","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059148.63/warc/CC-MAIN-20240528185253-20240528215253-00881.warc.gz#offset=892255860&length=81262"}
+{"day":"2024-05-28","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059148.63/warc/CC-MAIN-20240528185253-20240528215253-00881.warc.gz#offset=892255860&length=81262"},
+{"day":"2024-09-14","new":104900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651580.74/warc/CC-MAIN-20240914193334-20240914223334-00727.warc.gz#offset=649383671&length=111735"},
+{"day":"2025-04-18","new":104900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135670.13/warc/CC-MAIN-20250418120951-20250418150951-00627.warc.gz#offset=678919650&length=163214"}
 ]}

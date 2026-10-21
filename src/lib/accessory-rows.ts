@@ -1,7 +1,7 @@
 // Accessory listings as the rows pages render: sorted by price, links
 // wrapped (affiliateUrl + subId), `paid` decided, names resolved. Server only.
 import { accessoryBrandName, accessoryCategory, CATEGORIES, formatLabel, perGB, type AccessoryOffer, type AccessorySpecs } from "./accessories";
-import { specLine } from "./accessory-format";
+import { accessoryImageUrl, specLine } from "./accessory-format";
 import { accessoriesIn, marketAccessories } from "./accessory-data";
 import { affiliateUrl, isPaid, subId } from "./affiliate";
 import { brandName, camera, displayShortName } from "./catalog";
@@ -29,6 +29,10 @@ export type AccessoryRow = {
   href: string;
   paid: boolean;
   inStock: boolean;
+  /** The store's own listing photo, sized small, or null (ACCESSORY_IMAGES off, or none). */
+  image: string | null;
+  /** Category section, for the fallback icon. */
+  group: string;
 };
 
 export const rowSort = (a: { inStock: boolean; price: number }, b: { inStock: boolean; price: number }) => Number(b.inStock) - Number(a.inStock) || a.price - b.price;
@@ -59,6 +63,8 @@ export function accessoryRows(list: AccessoryOffer[], m: MarketCode, page: strin
       href,
       paid: isPaid(a.retailer, href),
       inStock: a.inStock,
+      image: accessoryImageUrl(a.image),
+      group: accessoryCategory(a.category)?.group ?? "other",
     };
   });
 }

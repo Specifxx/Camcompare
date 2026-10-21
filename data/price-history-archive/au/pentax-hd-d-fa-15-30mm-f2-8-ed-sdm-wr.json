@@ -1,7 +1,9 @@
 {"slug":"pentax-hd-d-fa-15-30mm-f2-8-ed-sdm-wr","market":"au","currency":"AUD","points":[
 {"day":"2024-04-17","new":224995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817144.49/warc/CC-MAIN-20240417044411-20240417074411-00747.warc.gz#offset=925038559&length=80840"},
+{"day":"2024-09-14","new":203400,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651580.74/warc/CC-MAIN-20240914193334-20240914223334-00050.warc.gz#offset=642365204&length=114477"},
 {"day":"2024-10-06","new":224995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00747.warc.gz#offset=886969279&length=80584"},
 {"day":"2025-01-21","new":224995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363299.42/warc/CC-MAIN-20250121203047-20250121233047-00747.warc.gz#offset=1063350865&length=79186"},
+{"day":"2025-04-25","new":224900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135928.66/warc/CC-MAIN-20250425173303-20250425203303-00350.warc.gz#offset=681648845&length=163009"},
 {"day":"2025-09-10","new":224995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533073.7/warc/CC-MAIN-20250910004335-20250910034335-00947.warc.gz#offset=891238561&length=79613"},
 {"day":"2026-01-16","new":224995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00947.warc.gz#offset=886417504&length=79559"}
 ]}
