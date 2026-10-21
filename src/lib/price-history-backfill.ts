@@ -78,6 +78,7 @@ export function decodeEntities(s: string): string {
 /**
  * A product page's price when its JSON-LD has none, as older store themes
  * marked it up, in order:
+ *  - a JSON-LD Offer the strict parser couldn't read, by pattern;
  *  - schema.org microdata: itemprop="price" content="995.0" with
  *    itemprop="priceCurrency" (Camera Electronic's Shopify theme, 2024);
  *  - Shopify's og:price:amount / og:price:currency;
@@ -93,14 +94,18 @@ export function fallbackListing(html: string): ReturnType<typeof pageListings> {
   const main = html.indexOf("product-info-main");
   const magento = (main >= 0 ? html.slice(main) : html).match(/data-price-amount="([\d.]+)"\s+data-price-type="finalPrice"/)?.[1];
   const title = meta("og:title") ?? prop("name") ?? html.match(/<h1[^>]*class="page-title"[^>]*>\s*<span[^>]*>([^<]+)</)?.[1];
+  // JSON-LD the strict parser couldn't read (Digidirect's 2024 pages): its Offer's price, by pattern.
+  const ld = [...html.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)].map((m) => m[1]).find((t) => /"@type"\s*:\s*"Product"/.test(t));
+  const ldOffer = ld?.match(/"price"\s*:\s*"?([\d.,]+)"?\s*,\s*"priceCurrency"\s*:\s*"([A-Z]{3})"/);
   const candidates: [string | undefined, string | undefined][] = [
+    [ldOffer?.[1], ldOffer?.[2]],
     [prop("price"), prop("priceCurrency")],
     [meta("og:price:amount"), meta("og:price:currency")],
     [magento, meta("product:price:currency")],
   ];
   const hit = candidates.find(([a, c]) => a && Number(a.replace(/,/g, "")) > 0 && c);
   if (!hit || !title) return [];
-  const avail = html.match(/itemprop=["']availability["'][^>]*(?:href|content)=["']([^"']+)/i)?.[1] ?? "";
+  const avail = (hit === candidates[0] ? ld?.match(/"availability"\s*:\s*"([^"]+)"/)?.[1] : undefined) ?? html.match(/itemprop=["']availability["'][^>]*(?:href|content)=["']([^"']+)/i)?.[1] ?? "";
   const inStock = /outofstock|soldout|discontinued/i.test(avail) || /class="stock unavailable"/i.test(html) ? false : true;
   return [{ title: title.trim(), price: Math.round(Number(hit[0]!.replace(/,/g, "")) * 100), currency: hit[1]!.toUpperCase(), inStock, condition: null }];
 }

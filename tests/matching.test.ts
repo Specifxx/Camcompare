@@ -285,3 +285,15 @@ test("a model number with a letter after the name is a model we don't list (Osmo
   assert.equal(slug("Canon EOS R5 8K Mirrorless Body"), "canon-eos-r5");
   assert.equal(slug("Sony a7 IV 4K Body"), "sony-a7-iv");
 });
+
+test("a short model code is no proof of brand (QED SS20 is not Panasonic's S-S20)", () => {
+  const pana = lensFix("panasonic-lumix-s-20mm-f2-5", "panasonic", ["S 20mm F2.5", "LUMIX S 20mm F2.5"], { modelCodes: ["S-S20"], mounts: ["l-mount"], launchPriceUsd: 449 }, { focalMinMm: 20, focalMaxMm: 20, apertureMax: 2.5, internalZoom: null });
+  const nikon = lensFix("nikon-z-24mm-f1-8-s", "nikon", ["Z 24mm f/1.8 S"], { modelCodes: ["20080"], mounts: ["nikon-z"], launchPriceUsd: 999 }, { focalMinMm: 24, focalMaxMm: 24, apertureMax: 1.8, internalZoom: null });
+  const pi = buildIndex(CAMERAS, [...LENSES, pana, nikon]);
+  const s = (t: string, mpn?: string) => matchListing({ title: t, mpn }, pi).product?.slug ?? null;
+  assert.equal(s("QED SS20 2-Way Speaker Switch Parrallel Addicted To Audio"), null);
+  assert.equal(s("beyerdynamic DT-290 Headset 20080"), null);
+  // With the brand named, or a long code, it still matches.
+  assert.equal(s("Panasonic LUMIX S 20mm F2.5 S-S20"), "panasonic-lumix-s-20mm-f2-5");
+  assert.equal(slug("FE 24-70mm GM II SEL2470GM2"), "sony-fe-24-70mm-f2-8-gm-ii");
+});

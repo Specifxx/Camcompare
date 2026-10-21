@@ -288,7 +288,9 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
   // "… for Sony a6400": a camera named after "for/fits" is a compatibility note.
   hits = hits.filter((h) => !(h.p.kind === "camera" && words.slice(Math.max(0, h.from - 2), h.from).some((w) => w === "for" || w === "fits")));
   if (!hits.length) return { product: null, reason: "no alias" };
-  hits = hits.filter((h) => brandNamed(h.p, words, title) || h.p.modelCodes.some((m) => title.includes(compact(m))));
+  // A model code stands in for the brand only when it is distinctive: a short
+  // one ("S-S20" → "ss20", Panasonic's 20mm) is also a QED speaker switch.
+  hits = hits.filter((h) => brandNamed(h.p, words, title) || h.p.modelCodes.some((m) => compact(m).length >= 6 && title.includes(compact(m))));
   if (!hits.length) return { product: null, reason: "brand not named" };
   const cams = hits.filter((h) => h.p.kind === "camera");
   const lenses = hits.filter((h) => h.p.kind === "lens");

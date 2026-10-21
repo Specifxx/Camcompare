@@ -970,6 +970,12 @@ about the stores and the accessories.
   digit already was, and is refused. A resolution is not ("R5 8K", "a7 IV
   4K"). It refused 16 stored listings, all Pocket 4P combos that sat on the
   original Osmo Pocket's page.
+- **A short model code is no proof of brand.** A model code in the title used
+  to stand in for the brand, so JB Hi-Fi's "QED SS20 2-Way Speaker Switch"
+  matched Panasonic's S 20mm (code S-S20, "ss20"). The code now counts only at
+  6 or more characters. Over all stored offers it refused three listings, all
+  wrong: a signed print, a headset and a case, each matched to a Nikon lens
+  through a short numeric code.
 - **Japan and Hong Kong**: researched, not added (docs/retailers.md).
 
 ## 2026-10-21: Just announced, and alerts for stock, preorders and makers

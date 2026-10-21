@@ -167,3 +167,10 @@ test("microdata and og:price pages are read when JSON-LD has no price", () => {
   assert.equal(listingsFromHtml(og, "https://x.example/products/r6ii", shop)[0].price, 319900);
   assert.equal(listingsFromHtml(`<meta property="og:title" content="X"><span itemprop="price" content="10">`, "https://x.example/a", shop).length, 0); // no currency: nothing
 });
+
+test("a JSON-LD block the strict parser rejects still gives its Offer price", () => {
+  const html = `<script type="application/ld+json">{"@type":"Product","name":"Canon EOS R6 Mark II Body","offers":{"@type":"Offer","price":"3499","priceCurrency":"AUD","availability":"http://schema.org/InStock"}}} }</script><meta property="og:title" content="Canon&#x20;EOS&#x20;R6&#x20;Mark&#x20;II&#x20;Body" />`;
+  const l = listingsFromHtml(html, "https://x.example/canon-eos-r6-mark-ii-body", shop);
+  assert.equal(l[0].price, 349900);
+  assert.equal(l[0].title, "Canon EOS R6 Mark II Body");
+});
