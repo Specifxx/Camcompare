@@ -1,0 +1,4 @@
+{"slug":"fujifilm-gfx50s-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-06-13","new":545500,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861488.82/warc/CC-MAIN-20240613190234-20240613220234-00259.warc.gz#offset=911808166&length=83111"},
+{"day":"2024-10-04","new":549995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253306.52/warc/CC-MAIN-20241004103433-20241004133433-00259.warc.gz#offset=903583603&length=82127"}
+]}

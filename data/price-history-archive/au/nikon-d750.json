@@ -1,0 +1,5 @@
+{"slug":"nikon-d750","market":"au","currency":"AUD","points":[
+{"day":"2024-07-21","used":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517544.48/warc/CC-MAIN-20240720235600-20240721025600-00545.warc.gz#offset=862315056&length=84962"},
+{"day":"2024-12-09","used":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066047540.11/warc/CC-MAIN-20241209183414-20241209213414-00545.warc.gz#offset=924250458&length=82309"},
+{"day":"2025-06-22","used":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481737.46/warc/CC-MAIN-20250622103916-20250622133916-00745.warc.gz#offset=790403518&length=81063"}
+]}

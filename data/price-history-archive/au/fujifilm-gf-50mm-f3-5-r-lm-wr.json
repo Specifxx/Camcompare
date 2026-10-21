@@ -1,3 +1,7 @@
 {"slug":"fujifilm-gf-50mm-f3-5-r-lm-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-05-27","new":140246,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059028.82/warc/CC-MAIN-20240527021852-20240527051852-00864.warc.gz#offset=901021432&length=80918"},
+{"day":"2024-11-09","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028116.30/warc/CC-MAIN-20241109053958-20241109083958-00864.warc.gz#offset=922728876&length=79554"},
+{"day":"2025-06-12","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481188.61/warc/CC-MAIN-20250612173611-20250612203611-00564.warc.gz#offset=830018687&length=78466"},
+{"day":"2025-09-09","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00564.warc.gz#offset=893909301&length=79355"},
 {"day":"2026-01-16","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00564.warc.gz#offset=879572549&length=79355"}
 ]}

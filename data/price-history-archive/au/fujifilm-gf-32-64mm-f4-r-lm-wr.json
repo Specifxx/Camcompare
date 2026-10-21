@@ -1,0 +1,8 @@
+{"slug":"fujifilm-gf-32-64mm-f4-r-lm-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-04-15","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817033.56/warc/CC-MAIN-20240415205332-20240415235332-00832.warc.gz#offset=939933004&length=80763"},
+{"day":"2024-11-04","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027861.16/warc/CC-MAIN-20241104194528-20241104224528-00832.warc.gz#offset=939224281&length=79794"},
+{"day":"2024-11-13","used":249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028369.36/warc/CC-MAIN-20241113135544-20241113165544-00523.warc.gz#offset=938014366&length=79339"},
+{"day":"2025-05-14","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412443.21/warc/CC-MAIN-20250514163508-20250514193508-00432.warc.gz#offset=924638246&length=78244"},
+{"day":"2025-09-09","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00432.warc.gz#offset=896948030&length=79375"},
+{"day":"2025-12-17","new":314996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658363.90/warc/CC-MAIN-20251217112246-20251217142246-00432.warc.gz#offset=766310743&length=79670"}
+]}

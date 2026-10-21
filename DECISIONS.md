@@ -965,6 +965,11 @@ about the stores and the accessories.
   BirdDog, Lilliput, Desview, Autel, Potensic, Holy Stone, Hubsan, ARRI,
   Cooke, DZOFilm, Fujinon, and RED, matched only with one of its product
   names, never the colour.
+- **"Osmo Pocket 4P" is not the Osmo Pocket.** A model number with a letter
+  after a camera's name (`4P`) is now a model we don't list, like a bare
+  digit already was, and is refused. A resolution is not ("R5 8K", "a7 IV
+  4K"). It refused 16 stored listings, all Pocket 4P combos that sat on the
+  original Osmo Pocket's page.
 - **Japan and Hong Kong**: researched, not added (docs/retailers.md).
 
 ## 2026-10-21: Just announced, and alerts for stock, preorders and makers

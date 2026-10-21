@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gf-55mm-f1-7-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-11-13","new":389995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028369.36/warc/CC-MAIN-20241113135544-20241113165544-00099.warc.gz#offset=941707986&length=78594"},
+{"day":"2025-08-09","new":389995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280076.69/warc/CC-MAIN-20250809045158-20250809075158-00299.warc.gz#offset=894475236&length=77743"},
+{"day":"2025-12-05","new":389995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00299.warc.gz#offset=854820618&length=78288"}
+]}

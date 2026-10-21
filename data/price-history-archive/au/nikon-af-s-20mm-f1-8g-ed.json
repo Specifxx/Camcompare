@@ -1,0 +1,9 @@
+{"slug":"nikon-af-s-20mm-f1-8g-ed","market":"au","currency":"AUD","points":[
+{"day":"2024-04-22","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296818105.48/warc/CC-MAIN-20240422082202-20240422112202-00846.warc.gz#offset=903526105&length=81937"},
+{"day":"2024-08-10","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640805409.58/warc/CC-MAIN-20240810093040-20240810123040-00846.warc.gz#offset=778978698&length=83298"},
+{"day":"2024-11-07","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00395.warc.gz#offset=944883808&length=79734"},
+{"day":"2024-11-12","new":89996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.58/warc/CC-MAIN-20241112045844-20241112075844-00846.warc.gz#offset=909014351&length=80867"},
+{"day":"2025-01-18","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362398.54/warc/CC-MAIN-20250118123610-20250118153610-00395.warc.gz#offset=1046536284&length=78977"},
+{"day":"2025-02-16","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831952756.9/warc/CC-MAIN-20250216171447-20250216201447-00846.warc.gz#offset=925891036&length=80136"},
+{"day":"2025-08-07","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279938.13/warc/CC-MAIN-20250807054540-20250807084540-00846.warc.gz#offset=897576701&length=79833"}
+]}

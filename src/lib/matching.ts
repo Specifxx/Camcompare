@@ -229,7 +229,9 @@ type Hit = { p: Matchable; from: number; to: number };
 // A word right after a model name that makes it a different model: a
 // generation ("ii", "Mark 3" → "iii") or, for bodies, a variant letter.
 const GENERATION = /^(?:ii|iii|iv|v|vi|vii|viii|ix)$/;
-const BODY_VARIANT = /^(?:\d|s|r|c|pro|plus|max|mini|lite|ultra|se)$/;
+// A digit with a letter or two is a newer model too ("Osmo Pocket 4P" after
+// "Osmo Pocket"), but not a video resolution ("R5 8K", "a7 IV 4K").
+const BODY_VARIANT = /^(?:\d|\d(?!k$)[a-z]{1,2}|s|r|c|pro|plus|max|mini|lite|ultra|se)$/;
 
 function aliasHits(words: string[], index: CatalogIndex): Hit[] {
   const found = new Map<string, Hit>();

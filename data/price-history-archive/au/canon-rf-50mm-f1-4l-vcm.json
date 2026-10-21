@@ -1,0 +1,6 @@
+{"slug":"canon-rf-50mm-f1-4l-vcm","market":"au","currency":"AUD","points":[
+{"day":"2024-11-02","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027709.8/warc/CC-MAIN-20241102071948-20241102101948-00757.warc.gz#offset=966271143&length=79032"},
+{"day":"2025-01-16","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00757.warc.gz#offset=1083866424&length=79236"},
+{"day":"2025-07-17","new":229995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934401.16/warc/CC-MAIN-20250717020215-20250717050215-00757.warc.gz#offset=915424194&length=77872"},
+{"day":"2025-11-19","new":195496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657679.99/warc/CC-MAIN-20251119093413-20251119123413-00757.warc.gz#offset=838381403&length=78516"}
+]}

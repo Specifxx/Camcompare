@@ -1,0 +1,6 @@
+{"slug":"canon-rf-5-2mm-f2-8l-dual-fisheye","market":"au","currency":"AUD","points":[
+{"day":"2024-11-03","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027796.35/warc/CC-MAIN-20241103212031-20241104002031-00532.warc.gz#offset=945724985&length=78631"},
+{"day":"2025-02-12","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951759.83/warc/CC-MAIN-20250212191228-20250212221228-00532.warc.gz#offset=952243918&length=77836"},
+{"day":"2025-07-09","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00432.warc.gz#offset=917814335&length=77233"},
+{"day":"2025-11-19","new":288996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657349.95/warc/CC-MAIN-20251119032929-20251119062929-00432.warc.gz#offset=853367990&length=77951"}
+]}

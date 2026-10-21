@@ -1,0 +1,4 @@
+{"slug":"nikon-d7100","market":"au","currency":"AUD","points":[
+{"day":"2024-05-22","used":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058575.96/warc/CC-MAIN-20240522224707-20240523014707-00721.warc.gz#offset=878901695&length=82400"},
+{"day":"2024-11-02","used":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027710.33/warc/CC-MAIN-20241102102832-20241102132832-00721.warc.gz#offset=939114983&length=81589"}
+]}

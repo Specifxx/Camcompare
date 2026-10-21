@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-s-28-200mm-f4-7-1-macro-o-i-s","market":"au","currency":"AUD","points":[
+{"day":"2024-11-12","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028279.73/warc/CC-MAIN-20241112180608-20241112210608-00286.warc.gz#offset=914315339&length=79389"},
+{"day":"2025-07-16","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00386.warc.gz#offset=896543315&length=78166"},
+{"day":"2025-10-18","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648665892.58/warc/CC-MAIN-20251018062016-20251018092016-00386.warc.gz#offset=955372213&length=79239"}
+]}

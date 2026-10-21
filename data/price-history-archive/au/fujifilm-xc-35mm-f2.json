@@ -1,3 +1,7 @@
 {"slug":"fujifilm-xc-35mm-f2","market":"au","currency":"AUD","points":[
+{"day":"2024-06-23","new":27300,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862430.93/warc/CC-MAIN-20240623033236-20240623063236-00373.warc.gz#offset=899357971&length=81592"},
+{"day":"2024-11-04","new":29995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027861.16/warc/CC-MAIN-20241104194528-20241104224528-00373.warc.gz#offset=959011691&length=79152"},
+{"day":"2025-01-22","new":27196,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363378.60/warc/CC-MAIN-20250122095114-20250122125114-00373.warc.gz#offset=1044841953&length=78364"},
+{"day":"2025-09-13","new":31995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00273.warc.gz#offset=894738427&length=78691"},
 {"day":"2026-01-15","new":31995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00273.warc.gz#offset=862707014&length=78636"}
 ]}

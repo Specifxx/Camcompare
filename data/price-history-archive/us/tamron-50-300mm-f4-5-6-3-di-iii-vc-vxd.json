@@ -1,4 +1,7 @@
 {"slug":"tamron-50-300mm-f4-5-6-3-di-iii-vc-vxd","market":"us","currency":"USD","points":[
 {"day":"2024-08-08","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00128.warc.gz#offset=604961567&length=139549"},
+{"day":"2024-12-13","new":59900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066119651.31/warc/CC-MAIN-20241213202611-20241213232611-00649.warc.gz#offset=604642095&length=82039"},
+{"day":"2025-01-23","new":79900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363512.78/warc/CC-MAIN-20250123123137-20250123153137-00287.warc.gz#offset=670233542&length=93922"},
+{"day":"2025-03-20","new":79900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433147.63/warc/CC-MAIN-20250320201059-20250320231059-00749.warc.gz#offset=664798146&length=86431"},
 {"day":"2025-08-05","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279878.40/warc/CC-MAIN-20250805160447-20250805190447-00228.warc.gz#offset=675794928&length=180842"}
 ]}

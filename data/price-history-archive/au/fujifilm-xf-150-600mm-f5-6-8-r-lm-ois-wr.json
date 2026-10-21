@@ -1,3 +1,8 @@
 {"slug":"fujifilm-xf-150-600mm-f5-6-8-r-lm-ois-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-06-25","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00399.warc.gz#offset=899515473&length=83457"},
+{"day":"2024-10-13","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255020.72/warc/CC-MAIN-20241012235949-20241013025949-00399.warc.gz#offset=842582727&length=81359"},
+{"day":"2024-11-13","used":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028369.36/warc/CC-MAIN-20241113135544-20241113165544-00536.warc.gz#offset=940354214&length=79921"},
+{"day":"2025-02-09","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951628.13/warc/CC-MAIN-20250209230119-20250210020119-00399.warc.gz#offset=952920349&length=79846"},
+{"day":"2025-09-12","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533302.34/warc/CC-MAIN-20250912211844-20250913001844-00799.warc.gz#offset=907881458&length=80296"},
 {"day":"2026-01-19","new":329995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469448.29/warc/CC-MAIN-20260119102210-20260119132210-00799.warc.gz#offset=884332926&length=80238"}
 ]}

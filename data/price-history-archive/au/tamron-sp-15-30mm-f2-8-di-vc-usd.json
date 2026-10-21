@@ -1,0 +1,8 @@
+{"slug":"tamron-sp-15-30mm-f2-8-di-vc-usd","market":"au","currency":"AUD","points":[
+{"day":"2024-10-04","used":99900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253306.52/warc/CC-MAIN-20241004103433-20241004133433-00127.warc.gz#offset=896749808&length=79791"},
+{"day":"2024-11-01","used":99900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00051.warc.gz#offset=961091170&length=79233"},
+{"day":"2024-12-09","used":99900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066046748.1/warc/CC-MAIN-20241209152324-20241209182324-00127.warc.gz#offset=902081267&length=79296"},
+{"day":"2025-02-08","used":84915,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951538.7/warc/CC-MAIN-20250208052017-20250208082017-00051.warc.gz#offset=936122832&length=78495"},
+{"day":"2025-07-16","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00727.warc.gz#offset=854436012&length=77744"},
+{"day":"2025-10-16","used":44996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00727.warc.gz#offset=975251915&length=78890"}
+]}

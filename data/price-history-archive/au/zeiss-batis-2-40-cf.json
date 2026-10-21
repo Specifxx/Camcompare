@@ -1,0 +1,6 @@
+{"slug":"zeiss-batis-2-40-cf","market":"au","currency":"AUD","points":[
+{"day":"2024-10-04","used":119900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253306.52/warc/CC-MAIN-20241004103433-20241004133433-00784.warc.gz#offset=887007018&length=79950"},
+{"day":"2025-03-24","used":119900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433406.62/warc/CC-MAIN-20250324182340-20250324212340-00084.warc.gz#offset=1013921727&length=78871"},
+{"day":"2025-09-08","used":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00084.warc.gz#offset=885696214&length=78796"},
+{"day":"2026-01-22","used":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469991.35/warc/CC-MAIN-20260122030830-20260122060830-00084.warc.gz#offset=869210104&length=78913"}
+]}

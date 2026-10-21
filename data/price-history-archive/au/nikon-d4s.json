@@ -1,0 +1,5 @@
+{"slug":"nikon-d4s","market":"au","currency":"AUD","points":[
+{"day":"2024-11-01","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00171.warc.gz#offset=957198626&length=79590"},
+{"day":"2025-07-16","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934359.8/warc/CC-MAIN-20250716132632-20250716162632-00171.warc.gz#offset=941189072&length=78008"},
+{"day":"2025-10-15","used":134996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00171.warc.gz#offset=986242017&length=80976"}
+]}

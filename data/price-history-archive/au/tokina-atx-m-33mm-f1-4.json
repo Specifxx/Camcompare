@@ -1,4 +1,7 @@
 {"slug":"tokina-atx-m-33mm-f1-4","market":"au","currency":"AUD","points":[
+{"day":"2024-09-08","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700650976.41/warc/CC-MAIN-20240908083737-20240908113737-00192.warc.gz#offset=957637758&length=79387"},
+{"day":"2024-12-01","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066036672.6/warc/CC-MAIN-20241201192453-20241201222453-00192.warc.gz#offset=944733611&length=79049"},
+{"day":"2025-05-21","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413031.43/warc/CC-MAIN-20250521070150-20250521100150-00892.warc.gz#offset=855228873&length=77264"},
 {"day":"2025-09-15","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533971.68/warc/CC-MAIN-20250915052735-20250915082735-00892.warc.gz#offset=862795261&length=78359"},
 {"day":"2025-12-17","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658243.99/warc/CC-MAIN-20251217081859-20251217111859-00892.warc.gz#offset=762662521&length=77951"}
 ]}

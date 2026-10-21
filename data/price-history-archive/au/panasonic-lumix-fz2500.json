@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-fz2500","market":"au","currency":"AUD","points":[
+{"day":"2024-04-15","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817033.56/warc/CC-MAIN-20240415205332-20240415235332-00461.warc.gz#offset=960029195&length=83506"},
+{"day":"2024-08-10","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640805409.58/warc/CC-MAIN-20240810093040-20240810123040-00461.warc.gz#offset=777583933&length=85171"},
+{"day":"2024-11-05","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00461.warc.gz#offset=947318791&length=82834"}
+]}

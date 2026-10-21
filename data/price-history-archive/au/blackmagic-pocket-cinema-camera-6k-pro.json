@@ -1,4 +1,8 @@
 {"slug":"blackmagic-pocket-cinema-camera-6k-pro","market":"au","currency":"AUD","points":[
+{"day":"2024-04-13","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816586.79/warc/CC-MAIN-20240413051941-20240413081941-00676.warc.gz#offset=977167343&length=80510"},
+{"day":"2024-11-02","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027710.33/warc/CC-MAIN-20241102102832-20241102132832-00676.warc.gz#offset=968046902&length=79684"},
+{"day":"2025-03-16","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432969.61/warc/CC-MAIN-20250316113811-20250316143811-00176.warc.gz#offset=1003445664&length=79053"},
 {"day":"2025-07-12","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00176.warc.gz#offset=928987242&length=78384"},
+{"day":"2025-09-07","used":269900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532848.20/warc/CC-MAIN-20250907071249-20250907101249-00947.warc.gz#offset=945089851&length=79854"},
 {"day":"2025-10-10","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358564.63/warc/CC-MAIN-20251010173231-20251010203231-00176.warc.gz#offset=1021489975&length=79369"}
 ]}

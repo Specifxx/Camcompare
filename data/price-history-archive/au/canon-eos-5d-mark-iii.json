@@ -1,0 +1,6 @@
+{"slug":"canon-eos-5d-mark-iii","market":"au","currency":"AUD","points":[
+{"day":"2024-06-25","used":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00500.warc.gz#offset=893831576&length=84228"},
+{"day":"2024-11-11","used":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028239.20/warc/CC-MAIN-20241111190758-20241111220758-00500.warc.gz#offset=930487177&length=81692"},
+{"day":"2025-08-03","used":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279594.9/warc/CC-MAIN-20250803072640-20250803102640-00700.warc.gz#offset=896306061&length=80494"},
+{"day":"2025-12-17","used":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658363.90/warc/CC-MAIN-20251217112246-20251217142246-00700.warc.gz#offset=820603154&length=81126"}
+]}

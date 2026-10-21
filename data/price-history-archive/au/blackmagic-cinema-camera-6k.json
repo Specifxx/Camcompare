@@ -1,0 +1,6 @@
+{"slug":"blackmagic-cinema-camera-6k","market":"au","currency":"AUD","points":[
+{"day":"2024-11-01","new":379995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00495.warc.gz#offset=947616722&length=79830"},
+{"day":"2025-01-13","new":379995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362161.33/warc/CC-MAIN-20250113085647-20250113115647-00495.warc.gz#offset=1086060738&length=80266"},
+{"day":"2025-09-13","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00595.warc.gz#offset=891557378&length=79496"},
+{"day":"2025-12-07","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00595.warc.gz#offset=793882778&length=78991"}
+]}

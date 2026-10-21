@@ -1,4 +1,8 @@
 {"slug":"nikon-af-s-200-500mm-f5-6e-ed-vr","market":"us","currency":"USD","points":[
+{"day":"2024-05-29","new":119999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059246.67/warc/CC-MAIN-20240529134803-20240529164803-00138.warc.gz#offset=573559489&length=91159"},
 {"day":"2024-06-19","new":105695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861832.94/warc/CC-MAIN-20240619185738-20240619215738-00600.warc.gz#offset=671179035&length=141584"},
+{"day":"2024-08-07","new":149695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640694449.36/warc/CC-MAIN-20240807111957-20240807141957-00630.warc.gz#offset=516737177&length=95074"},
+{"day":"2024-09-11","new":154900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651387.63/warc/CC-MAIN-20240911120037-20240911150037-00506.warc.gz#offset=604516679&length=101547"},
+{"day":"2024-09-12","new":161900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651440.11/warc/CC-MAIN-20240912074814-20240912104814-00217.warc.gz#offset=628145803&length=100583"},
 {"day":"2025-01-24","new":139695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703692178.96/warc/CC-MAIN-20250123223358-20250124013358-00083.warc.gz#offset=790201486&length=162843"}
 ]}

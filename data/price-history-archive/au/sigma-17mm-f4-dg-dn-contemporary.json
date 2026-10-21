@@ -1,4 +1,5 @@
 {"slug":"sigma-17mm-f4-dg-dn-contemporary","market":"au","currency":"AUD","points":[
+{"day":"2024-07-24","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518304.14/warc/CC-MAIN-20240724140819-20240724170819-00131.warc.gz#offset=857541180&length=83183"},
 {"day":"2024-09-09","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651092.31/warc/CC-MAIN-20240909071529-20240909101529-00858.warc.gz#offset=964086894&length=79640"},
 {"day":"2024-10-07","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253456.43/warc/CC-MAIN-20241007035526-20241007065526-00199.warc.gz#offset=912348730&length=79714"},
 {"day":"2024-11-12","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.58/warc/CC-MAIN-20241112045844-20241112075844-00131.warc.gz#offset=904931790&length=80178"},

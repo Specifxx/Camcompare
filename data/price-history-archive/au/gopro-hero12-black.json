@@ -1,0 +1,5 @@
+{"slug":"gopro-hero12-black","market":"au","currency":"AUD","points":[
+{"day":"2024-07-21","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517544.48/warc/CC-MAIN-20240720235600-20240721025600-00887.warc.gz#offset=875378848&length=86810"},
+{"day":"2024-11-04","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027819.53/warc/CC-MAIN-20241104065437-20241104095437-00887.warc.gz#offset=942877949&length=83749"},
+{"day":"2024-11-10","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028179.55/warc/CC-MAIN-20241110072033-20241110102033-00622.warc.gz#offset=924022935&length=85116"}
+]}

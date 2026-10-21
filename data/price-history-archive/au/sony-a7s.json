@@ -1,0 +1,5 @@
+{"slug":"sony-a7s","market":"au","currency":"AUD","points":[
+{"day":"2024-04-13","used":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816586.79/warc/CC-MAIN-20240413051941-20240413081941-00026.warc.gz#offset=945387551&length=82038"},
+{"day":"2024-07-16","used":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514759.37/warc/CC-MAIN-20240716142214-20240716172214-00026.warc.gz#offset=884168611&length=84103"},
+{"day":"2024-11-04","used":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027819.53/warc/CC-MAIN-20241104065437-20241104095437-00026.warc.gz#offset=961400333&length=81221"}
+]}

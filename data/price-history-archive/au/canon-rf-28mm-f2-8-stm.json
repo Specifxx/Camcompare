@@ -1,3 +1,6 @@
 {"slug":"canon-rf-28mm-f2-8-stm","market":"au","currency":"AUD","points":[
+{"day":"2024-10-14","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00693.warc.gz#offset=857853598&length=81193"},
+{"day":"2025-01-13","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362161.33/warc/CC-MAIN-20250113085647-20250113115647-00693.warc.gz#offset=1074010190&length=80820"},
+{"day":"2025-09-12","new":46746,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00193.warc.gz#offset=879877317&length=80253"},
 {"day":"2026-02-09","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505946.14/warc/CC-MAIN-20260209041804-20260209071804-00193.warc.gz#offset=808349448&length=79825"}
 ]}

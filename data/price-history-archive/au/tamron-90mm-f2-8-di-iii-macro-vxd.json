@@ -1,6 +1,8 @@
 {"slug":"tamron-90mm-f2-8-di-iii-macro-vxd","market":"au","currency":"AUD","points":[
+{"day":"2025-01-26","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703701202.99/warc/CC-MAIN-20250126103503-20250126133503-00282.warc.gz#offset=1060526538&length=80712"},
 {"day":"2025-07-09","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00169.warc.gz#offset=916360247&length=78257"},
 {"day":"2025-09-08","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00682.warc.gz#offset=897083037&length=80840"},
 {"day":"2025-09-12","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533302.34/warc/CC-MAIN-20250912211844-20250913001844-00818.warc.gz#offset=890763794&length=79173"},
+{"day":"2025-10-07","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358264.45/warc/CC-MAIN-20251007013002-20251007043002-00169.warc.gz#offset=1018575383&length=79331"},
 {"day":"2026-02-14","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506469.31/warc/CC-MAIN-20260214123803-20260214153803-00169.warc.gz#offset=820691700&length=78999"}
 ]}

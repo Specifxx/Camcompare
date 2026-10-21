@@ -1,3 +1,8 @@
 {"slug":"panasonic-lumix-s-14-28mm-f4-5-6-macro","market":"au","currency":"AUD","points":[
+{"day":"2024-08-08","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640723918.41/warc/CC-MAIN-20240808062406-20240808092406-00335.warc.gz#offset=790365072&length=83085"},
+{"day":"2024-11-12","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00335.warc.gz#offset=935744154&length=80450"},
+{"day":"2024-11-13","used":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028369.36/warc/CC-MAIN-20241113135544-20241113165544-00806.warc.gz#offset=927379143&length=79680"},
+{"day":"2025-03-20","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433132.75/warc/CC-MAIN-20250320101927-20250320131927-00235.warc.gz#offset=1010992628&length=80074"},
+{"day":"2025-09-12","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00235.warc.gz#offset=876992880&length=80226"},
 {"day":"2026-01-18","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469410.3/warc/CC-MAIN-20260118124654-20260118154654-00235.warc.gz#offset=824735746&length=80093"}
 ]}

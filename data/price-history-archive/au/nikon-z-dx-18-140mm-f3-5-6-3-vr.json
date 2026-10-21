@@ -1,3 +1,10 @@
 {"slug":"nikon-z-dx-18-140mm-f3-5-6-3-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-07-20","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763515079.90/warc/CC-MAIN-20240720083242-20240720113242-00655.warc.gz#offset=871859467&length=83273"},
+{"day":"2024-11-12","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00655.warc.gz#offset=933812239&length=80272"},
+{"day":"2025-01-26","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703701202.99/warc/CC-MAIN-20250126103503-20250126133503-00061.warc.gz#offset=1056925643&length=80012"},
+{"day":"2025-02-12","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951759.83/warc/CC-MAIN-20250212191228-20250212221228-00655.warc.gz#offset=918108752&length=79753"},
+{"day":"2025-05-14","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412443.21/warc/CC-MAIN-20250514163508-20250514193508-00961.warc.gz#offset=974218452&length=79391"},
+{"day":"2025-09-07","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532882.49/warc/CC-MAIN-20250907133053-20250907163053-00655.warc.gz#offset=871973565&length=80109"},
+{"day":"2025-10-17","new":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648665010.99/warc/CC-MAIN-20251017032409-20251017062409-00961.warc.gz#offset=992888873&length=80252"},
 {"day":"2026-01-19","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469505.90/warc/CC-MAIN-20260119193727-20260119223727-00655.warc.gz#offset=829319729&length=79750"}
 ]}

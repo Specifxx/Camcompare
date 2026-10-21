@@ -271,3 +271,17 @@ test("kit lens helpers change no match: the same listings match as before", () =
     assert.equal(matchListing({ title: t }, index).product?.slug, matchListing({ title: t }, kIndex).product?.slug, t);
   }
 });
+
+test("a model number with a letter after the name is a model we don't list (Osmo Pocket 4P)", () => {
+  const dji = [cam("dji-osmo-pocket", "dji", ["Osmo Pocket"], { mount: null, type: "compact", launchPriceUsd: 349 }), cam("dji-osmo-pocket-3", "dji", ["Osmo Pocket 3", "Pocket 3"], { mount: null, type: "compact", launchPriceUsd: 519 })];
+  const di = buildIndex([...CAMERAS, ...dji], LENSES);
+  const s = (t: string) => matchListing({ title: t }, di).product?.slug ?? null;
+  assert.equal(s("DJI Osmo Pocket 4P"), null);
+  assert.equal(s("DJI Osmo Pocket 4P Creator Combo"), null);
+  assert.equal(s("DJI Osmo Pocket 4"), null);
+  assert.equal(s("DJI Osmo Pocket 3 Creator Combo"), "dji-osmo-pocket-3");
+  assert.equal(s("DJI Osmo Pocket"), "dji-osmo-pocket");
+  // A resolution after the name is not a model.
+  assert.equal(slug("Canon EOS R5 8K Mirrorless Body"), "canon-eos-r5");
+  assert.equal(slug("Sony a7 IV 4K Body"), "sony-a7-iv");
+});

@@ -1,3 +1,5 @@
 {"slug":"fujifilm-gf-45mm-f2-8-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-11-12","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028279.73/warc/CC-MAIN-20241112180608-20241112210608-00232.warc.gz#offset=919395432&length=79945"},
+{"day":"2025-09-17","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826733.97/warc/CC-MAIN-20250917194202-20250917224202-00532.warc.gz#offset=897202216&length=79833"},
 {"day":"2026-01-13","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00532.warc.gz#offset=884257179&length=79665"}
 ]}

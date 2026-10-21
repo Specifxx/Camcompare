@@ -1,0 +1,4 @@
+{"slug":"canon-eos-7d-mark-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-05-22","used":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058575.96/warc/CC-MAIN-20240522224707-20240523014707-00594.warc.gz#offset=880573957&length=82796"},
+{"day":"2024-11-02","used":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027710.33/warc/CC-MAIN-20241102102832-20241102132832-00594.warc.gz#offset=955120118&length=81985"}
+]}

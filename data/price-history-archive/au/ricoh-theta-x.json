@@ -1,3 +1,8 @@
 {"slug":"ricoh-theta-x","market":"au","currency":"AUD","points":[
+{"day":"2024-07-20","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763515079.90/warc/CC-MAIN-20240720083242-20240720113242-00567.warc.gz#offset=863433046&length=83150"},
+{"day":"2024-11-05","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00567.warc.gz#offset=919941123&length=80422"},
+{"day":"2025-03-15","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00467.warc.gz#offset=1015901594&length=79398"},
+{"day":"2025-07-10","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933757.20/warc/CC-MAIN-20250710094101-20250710124101-00467.warc.gz#offset=879765396&length=78499"},
+{"day":"2025-10-15","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00467.warc.gz#offset=931178175&length=79734"},
 {"day":"2026-01-19","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469448.29/warc/CC-MAIN-20260119102210-20260119132210-00467.warc.gz#offset=894158529&length=79386"}
 ]}

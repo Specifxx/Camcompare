@@ -1,0 +1,8 @@
+{"slug":"olympus-om-d-e-m5-mark-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-05-28","used":49900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059148.63/warc/CC-MAIN-20240528185253-20240528215253-00205.warc.gz#offset=879761338&length=81894"},
+{"day":"2024-11-09","used":49900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028116.30/warc/CC-MAIN-20241109053958-20241109083958-00205.warc.gz#offset=938178237&length=80649"},
+{"day":"2025-02-18","used":49900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832261702.77/warc/CC-MAIN-20250218113527-20250218143527-00205.warc.gz#offset=913327400&length=81640"},
+{"day":"2025-06-22","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481737.46/warc/CC-MAIN-20250622103916-20250622133916-00605.warc.gz#offset=901138965&length=79236"},
+{"day":"2025-10-14","used":53996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00605.warc.gz#offset=999468752&length=80093"},
+{"day":"2026-02-09","used":53996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505946.14/warc/CC-MAIN-20260209041804-20260209071804-00605.warc.gz#offset=852127854&length=81737"}
+]}

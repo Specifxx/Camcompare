@@ -94,7 +94,7 @@ class Blocked extends Error {}
 type Gate = { name: string; minGapMs: number; last: number; failures: number; requests: number; blocked: string | null };
 const gates: Record<string, Gate> = {
   wayback: { name: "web.archive.org", minGapMs: 1100, last: 0, failures: 0, requests: 0, blocked: null },
-  cc: { name: "data.commoncrawl.org", minGapMs: 400, last: 0, failures: 0, requests: 0, blocked: null },
+  cc: { name: "data.commoncrawl.org", minGapMs: 900, last: 0, failures: 0, requests: 0, blocked: null },
 };
 
 /** One request through a gate: spaced out, backing off on 429/5xx and resets, giving up after five in a row. */
@@ -212,7 +212,7 @@ async function cdx(q: Record<string, string>): Promise<CdxRow[]> {
   return parseCdx(json);
 }
 
-async function waybackStore(r: Retailer) {
+async function waybackStore(r: Retailer): Promise<boolean> {
   const host = new URL(r.shopify?.base ?? r.site).host;
   const rows: CdxRow[] = [];
   if (r.shopify) {
@@ -253,6 +253,7 @@ async function waybackStore(r: Retailer) {
     points += record(r, tsDay(row.ts), waybackUrl(row.ts, row.original), listings);
   }
   log(`wayback ${r.key}: ${fetched} snapshots read, ${points} product-days`);
+  return fetched < MAX_FETCH;
 }
 
 // ------------------------------------------------------------- Common Crawl
@@ -358,7 +359,7 @@ function warcBody(buf: Buffer): string {
   return body.toString("utf8");
 }
 
-async function commonCrawlStore(r: Retailer, crawls: string[]) {
+async function commonCrawlStore(r: Retailer, crawls: string[]): Promise<boolean> {
   const host = new URL(r.shopify?.base ?? r.site).host;
   const prefix = surtPrefix(host, "/");
   let fetched = 0;
@@ -412,6 +413,7 @@ async function commonCrawlStore(r: Retailer, crawls: string[]) {
     points += record(r, tsDay(x.ts), `${CC}/${x.filename}#offset=${x.offset}&length=${x.length}`, listings);
   }
   log(`commoncrawl ${r.key}: ${candidates} product captures over ${crawls.length} crawls, ${fetched} read, ${points} product-days`);
+  return fetched < MAX_FETCH; // over budget: the next run reads the rest
 }
 
 // --------------------------------------------------------------------- run
@@ -455,24 +457,34 @@ async function main() {
       log(`commoncrawl: ${(e as Error).message}`);
     }
   }
+  // A store a provider finished in an earlier run is skipped for that
+  // provider (--redo reads it again); results are written after every store
+  // and every 100 snapshots, so an interrupted run loses little.
+  const doneFile = (prov: string, key: string) => path.join(CACHE, "done", `${prov}-${key}.json`);
+  const isDone = (prov: string, key: string) => !flag("redo") && fs.existsSync(doneFile(prov, key));
+  const markDone = (prov: string, key: string) => {
+    if (DRY) return;
+    fs.mkdirSync(path.join(CACHE, "done"), { recursive: true });
+    fs.writeFileSync(doneFile(prov, key), JSON.stringify({ at: new Date().toISOString() }));
+  };
   for (const r of stores) {
-    if (providers.has("wayback") && !gates.wayback.blocked) {
+    if (providers.has("wayback") && !gates.wayback.blocked && !isDone("wayback", r.key)) {
       try {
-        await waybackStore(r);
+        if ((await waybackStore(r)) && !gates.wayback.blocked) markDone("wayback", r.key);
       } catch (e) {
         log(`wayback ${r.key}: ${(e as Error).message}`);
       }
+      flush();
     }
-    if (providers.has("commoncrawl") && crawls.length && !gates.cc.blocked) {
+    if (providers.has("commoncrawl") && crawls.length && !gates.cc.blocked && !isDone("commoncrawl", r.key)) {
       try {
-        await commonCrawlStore(r, crawls);
+        if ((await commonCrawlStore(r, crawls)) && !gates.cc.blocked) markDone("commoncrawl", r.key);
       } catch (e) {
         log(`commoncrawl ${r.key}: ${(e as Error).message}`);
       }
+      flush();
     }
-    flush();
   }
-
   log(`${DRY ? "would write" : "wrote"} ${written} file updates; requests: wayback ${gates.wayback.requests}, commoncrawl ${gates.cc.requests}`);
   if (gates.wayback.blocked) log(`wayback: ${gates.wayback.blocked}`);
   if (gates.cc.blocked) log(`commoncrawl: ${gates.cc.blocked}`);

@@ -1,4 +1,7 @@
 {"slug":"zeiss-batis-1-8-85","market":"au","currency":"AUD","points":[
+{"day":"2024-08-08","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640719674.40/warc/CC-MAIN-20240808031539-20240808061539-00834.warc.gz#offset=772881612&length=81997"},
+{"day":"2024-11-06","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027928.77/warc/CC-MAIN-20241106100950-20241106130950-00834.warc.gz#offset=945701028&length=79389"},
+{"day":"2025-03-17","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433006.72/warc/CC-MAIN-20250317034918-20250317064918-00534.warc.gz#offset=993173064&length=78903"},
 {"day":"2025-09-14","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533671.75/warc/CC-MAIN-20250914012700-20250914042700-00534.warc.gz#offset=883928562&length=79137"},
 {"day":"2026-01-16","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00534.warc.gz#offset=899190536&length=79046"}
 ]}

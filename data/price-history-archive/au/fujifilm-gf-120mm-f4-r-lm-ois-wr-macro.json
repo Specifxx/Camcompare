@@ -1,0 +1,7 @@
+{"slug":"fujifilm-gf-120mm-f4-r-lm-ois-wr-macro","market":"au","currency":"AUD","points":[
+{"day":"2024-04-22","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296818105.48/warc/CC-MAIN-20240422082202-20240422112202-00356.warc.gz#offset=888130377&length=81377"},
+{"day":"2024-10-07","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253456.43/warc/CC-MAIN-20241007035526-20241007065526-00356.warc.gz#offset=917089742&length=80914"},
+{"day":"2025-01-22","new":356996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363378.60/warc/CC-MAIN-20250122095114-20250122125114-00356.warc.gz#offset=1041209343&length=79731"},
+{"day":"2025-09-12","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00656.warc.gz#offset=892224782&length=79995"},
+{"day":"2025-12-09","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307406.75/warc/CC-MAIN-20251209190721-20251209220721-00656.warc.gz#offset=819015243&length=79501"}
+]}

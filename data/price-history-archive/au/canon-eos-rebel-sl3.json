@@ -1,0 +1,11 @@
+{"slug":"canon-eos-rebel-sl3","market":"au","currency":"AUD","points":[
+{"day":"2024-05-27","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059028.82/warc/CC-MAIN-20240527021852-20240527051852-00767.warc.gz#offset=898595899&length=82826"},
+{"day":"2024-05-28","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059148.63/warc/CC-MAIN-20240528185253-20240528215253-00821.warc.gz#offset=878017847&length=87556"},
+{"day":"2024-06-22","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862404.32/warc/CC-MAIN-20240622144011-20240622174011-00043.warc.gz#offset=912787617&length=86211"},
+{"day":"2024-10-13","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255020.72/warc/CC-MAIN-20241012235949-20241013025949-00043.warc.gz#offset=884966127&length=84513"},
+{"day":"2024-11-09","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028116.30/warc/CC-MAIN-20241109053958-20241109083958-00767.warc.gz#offset=940446801&length=81742"},
+{"day":"2024-12-09","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066047540.11/warc/CC-MAIN-20241209183414-20241209213414-00821.warc.gz#offset=932297351&length=86364"},
+{"day":"2025-02-18","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832261702.77/warc/CC-MAIN-20250218113527-20250218143527-00767.warc.gz#offset=929494511&length=80973"},
+{"day":"2025-03-17","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433006.72/warc/CC-MAIN-20250317034918-20250317064918-00143.warc.gz#offset=1032974110&length=83321"},
+{"day":"2025-09-17","used":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00367.warc.gz#offset=841431346&length=81543"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"om-system-om-1","market":"au","currency":"AUD","points":[
+{"day":"2024-04-20","new":249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817491.77/warc/CC-MAIN-20240420060257-20240420090257-00282.warc.gz#offset=897226739&length=86143"},
+{"day":"2024-06-19","new":245500,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861828.24/warc/CC-MAIN-20240619154358-20240619184358-00829.warc.gz#offset=913382831&length=90208"}
+]}

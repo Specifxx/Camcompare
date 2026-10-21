@@ -1,5 +1,6 @@
 {"slug":"canon-rf-100-500mm-f4-5-7-1l-is-usm","market":"us","currency":"USD","points":[
 {"day":"2024-04-12","new":259900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816024.45/warc/CC-MAIN-20240412132154-20240412162154-00185.warc.gz#offset=674894164&length=239261"},
 {"day":"2024-11-09","new":259900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028164.10/warc/CC-MAIN-20241109214337-20241110004337-00185.warc.gz#offset=707172960&length=133325"},
-{"day":"2025-05-17","new":269900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412560.18/warc/CC-MAIN-20250517075946-20250517105946-00185.warc.gz#offset=694259846&length=150649"}
+{"day":"2025-05-17","new":269900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412560.18/warc/CC-MAIN-20250517075946-20250517105946-00185.warc.gz#offset=694259846&length=150649"},
+{"day":"2025-10-08","new":289900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358337.10/warc/CC-MAIN-20251008182116-20251008212116-00963.warc.gz#offset=653042881&length=98991"}
 ]}

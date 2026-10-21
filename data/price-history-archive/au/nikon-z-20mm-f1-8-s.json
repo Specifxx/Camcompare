@@ -1,3 +1,6 @@
 {"slug":"nikon-z-20mm-f1-8-s","market":"au","currency":"AUD","points":[
+{"day":"2024-11-02","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027709.8/warc/CC-MAIN-20241102071948-20241102101948-00380.warc.gz#offset=985637501&length=79014"},
+{"day":"2025-01-23","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703689937.92/warc/CC-MAIN-20250123191357-20250123221357-00380.warc.gz#offset=1045537681&length=78183"},
+{"day":"2025-09-08","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00880.warc.gz#offset=907679835&length=78562"},
 {"day":"2026-01-23","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00880.warc.gz#offset=831423174&length=78736"}
 ]}

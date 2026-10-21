@@ -1,0 +1,5 @@
+{"slug":"canon-rf-600mm-f4l-is-usm","market":"au","currency":"AUD","points":[
+{"day":"2024-11-10","new":1999995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.61/warc/CC-MAIN-20241110170046-20241110200046-00673.warc.gz#offset=943151037&length=79595"},
+{"day":"2025-07-16","new":1999995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00673.warc.gz#offset=941936456&length=78530"},
+{"day":"2025-11-16","new":1999995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439344225.58/warc/CC-MAIN-20251115231259-20251116021259-00673.warc.gz#offset=862510696&length=78998"}
+]}

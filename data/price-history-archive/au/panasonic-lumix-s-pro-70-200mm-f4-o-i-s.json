@@ -1,3 +1,7 @@
 {"slug":"panasonic-lumix-s-pro-70-200mm-f4-o-i-s","market":"au","currency":"AUD","points":[
+{"day":"2024-05-17","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057216.39/warc/CC-MAIN-20240517233122-20240518023122-00625.warc.gz#offset=926435704&length=80296"},
+{"day":"2024-11-04","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027861.16/warc/CC-MAIN-20241104194528-20241104224528-00625.warc.gz#offset=937249269&length=79636"},
+{"day":"2025-04-30","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889465147.97/warc/CC-MAIN-20250430184734-20250430214734-00025.warc.gz#offset=1003210209&length=80340"},
+{"day":"2025-09-08","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00025.warc.gz#offset=909355309&length=79029"},
 {"day":"2026-01-14","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469122.50/warc/CC-MAIN-20260114153623-20260114183623-00025.warc.gz#offset=839489643&length=79056"}
 ]}

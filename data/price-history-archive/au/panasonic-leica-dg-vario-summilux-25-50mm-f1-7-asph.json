@@ -1,4 +1,7 @@
 {"slug":"panasonic-leica-dg-vario-summilux-25-50mm-f1-7-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-04-15","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817033.56/warc/CC-MAIN-20240415205332-20240415235332-00848.warc.gz#offset=934130389&length=80594"},
+{"day":"2024-11-05","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027884.62/warc/CC-MAIN-20241105145721-20241105175721-00848.warc.gz#offset=940494660&length=79819"},
+{"day":"2025-02-15","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951942.61/warc/CC-MAIN-20250215022347-20250215052347-00848.warc.gz#offset=917964417&length=79040"},
 {"day":"2025-09-17","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00348.warc.gz#offset=867307831&length=79486"},
 {"day":"2026-02-09","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505946.14/warc/CC-MAIN-20260209041804-20260209071804-00348.warc.gz#offset=826931649&length=78928"}
 ]}

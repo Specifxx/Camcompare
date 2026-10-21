@@ -1,0 +1,6 @@
+{"slug":"tamron-sp-24-70mm-f2-8-di-vc-usd","market":"au","currency":"AUD","points":[
+{"day":"2024-05-22","used":69900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058575.96/warc/CC-MAIN-20240522224707-20240523014707-00249.warc.gz#offset=890662113&length=79918"},
+{"day":"2024-11-06","used":69900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027910.12/warc/CC-MAIN-20241106065928-20241106095928-00249.warc.gz#offset=945177785&length=78964"},
+{"day":"2025-02-15","used":59415,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951942.61/warc/CC-MAIN-20250215022347-20250215052347-00249.warc.gz#offset=919601844&length=78395"},
+{"day":"2025-09-13","used":69900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00949.warc.gz#offset=852986189&length=78726"}
+]}

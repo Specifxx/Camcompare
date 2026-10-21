@@ -1,0 +1,6 @@
+{"slug":"canon-eos-5ds","market":"au","currency":"AUD","points":[
+{"day":"2024-10-05","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253348.29/warc/CC-MAIN-20241005051646-20241005081646-00651.warc.gz#offset=909980042&length=81310"},
+{"day":"2025-01-13","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362169.0/warc/CC-MAIN-20250113121635-20250113151635-00651.warc.gz#offset=1089729110&length=80899"},
+{"day":"2025-06-14","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481319.12/warc/CC-MAIN-20250614095824-20250614125824-00551.warc.gz#offset=878188080&length=79191"},
+{"day":"2025-11-15","used":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439344225.58/warc/CC-MAIN-20251115231259-20251116021259-00551.warc.gz#offset=834761502&length=79842"}
+]}

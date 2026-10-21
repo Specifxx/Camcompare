@@ -1,3 +1,6 @@
 {"slug":"sony-fe-pz-28-135mm-f4-g-oss","market":"au","currency":"AUD","points":[
+{"day":"2024-11-10","used":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.61/warc/CC-MAIN-20241110170046-20241110200046-00775.warc.gz#offset=923896866&length=78356"},
+{"day":"2025-05-21","used":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413031.43/warc/CC-MAIN-20250521070150-20250521100150-00175.warc.gz#offset=913835087&length=76730"},
+{"day":"2025-09-17","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00284.warc.gz#offset=900626130&length=74033"},
 {"day":"2026-02-14","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506469.31/warc/CC-MAIN-20260214123803-20260214153803-00284.warc.gz#offset=780351863&length=73786"}
 ]}

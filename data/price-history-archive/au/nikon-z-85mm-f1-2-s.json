@@ -1,3 +1,6 @@
 {"slug":"nikon-z-85mm-f1-2-s","market":"au","currency":"AUD","points":[
+{"day":"2024-11-10","new":479995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.61/warc/CC-MAIN-20241110170046-20241110200046-00470.warc.gz#offset=928643216&length=79893"},
+{"day":"2025-04-29","new":479995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889459188.91/warc/CC-MAIN-20250429001142-20250429031142-00270.warc.gz#offset=944470540&length=80942"},
+{"day":"2025-09-10","new":479995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533073.7/warc/CC-MAIN-20250910004335-20250910034335-00270.warc.gz#offset=897514617&length=79560"},
 {"day":"2026-01-13","new":479995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00270.warc.gz#offset=847587554&length=79492"}
 ]}

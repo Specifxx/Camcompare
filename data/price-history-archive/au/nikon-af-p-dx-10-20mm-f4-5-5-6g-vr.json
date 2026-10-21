@@ -1,0 +1,5 @@
+{"slug":"nikon-af-p-dx-10-20mm-f4-5-5-6g-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-07-16","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514759.37/warc/CC-MAIN-20240716142214-20240716172214-00315.warc.gz#offset=892323095&length=84654"},
+{"day":"2024-11-06","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027928.77/warc/CC-MAIN-20241106100950-20241106130950-00315.warc.gz#offset=949223380&length=81579"},
+{"day":"2025-05-20","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412798.22/warc/CC-MAIN-20250520084021-20250520114021-00015.warc.gz#offset=915257340&length=80300"}
+]}

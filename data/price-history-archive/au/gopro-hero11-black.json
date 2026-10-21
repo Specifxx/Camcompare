@@ -1,0 +1,4 @@
+{"slug":"gopro-hero11-black","market":"au","currency":"AUD","points":[
+{"day":"2024-10-14","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00481.warc.gz#offset=862678431&length=85637"},
+{"day":"2024-11-04","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027812.67/warc/CC-MAIN-20241104034319-20241104064319-00706.warc.gz#offset=968681620&length=84352"}
+]}

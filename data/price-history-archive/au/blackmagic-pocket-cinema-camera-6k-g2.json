@@ -1,4 +1,6 @@
 {"slug":"blackmagic-pocket-cinema-camera-6k-g2","market":"au","currency":"AUD","points":[
+{"day":"2024-10-04","new":309995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253306.52/warc/CC-MAIN-20241004103433-20241004133433-00272.warc.gz#offset=902130196&length=81225"},
+{"day":"2025-01-21","new":309995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363299.42/warc/CC-MAIN-20250121203047-20250121233047-00272.warc.gz#offset=1081103518&length=79740"},
 {"day":"2025-09-17","new":319995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00472.warc.gz#offset=877416244&length=80407"},
 {"day":"2026-01-16","new":319995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00472.warc.gz#offset=874981992&length=80253"}
 ]}

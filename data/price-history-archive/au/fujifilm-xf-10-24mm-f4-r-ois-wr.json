@@ -1,4 +1,8 @@
 {"slug":"fujifilm-xf-10-24mm-f4-r-ois-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-06-23","new":136400,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862430.93/warc/CC-MAIN-20240623033236-20240623063236-00303.warc.gz#offset=897472140&length=81333"},
+{"day":"2024-11-06","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027928.77/warc/CC-MAIN-20241106100950-20241106130950-00303.warc.gz#offset=942515232&length=78689"},
+{"day":"2025-04-29","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889460634.98/warc/CC-MAIN-20250429132325-20250429162325-00503.warc.gz#offset=1026970834&length=79770"},
+{"day":"2025-09-16","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00503.warc.gz#offset=867849583&length=78559"},
 {"day":"2026-01-21","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469644.9/warc/CC-MAIN-20260121053530-20260121083530-00503.warc.gz#offset=836335967&length=78443"},
 {"day":"2026-08-10","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385311.32/warc/CC-MAIN-20260810035143-20260810065143-00588.warc.gz#offset=849787780&length=232473"}
 ]}

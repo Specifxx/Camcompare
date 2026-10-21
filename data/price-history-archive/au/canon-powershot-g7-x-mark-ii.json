@@ -1,0 +1,5 @@
+{"slug":"canon-powershot-g7-x-mark-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-04-24","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819847.83/warc/CC-MAIN-20240424174709-20240424204709-00880.warc.gz#offset=915776979&length=86622"},
+{"day":"2024-11-09","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028116.30/warc/CC-MAIN-20241109053958-20241109083958-00880.warc.gz#offset=933768042&length=85418"},
+{"day":"2025-04-24","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135882.44/warc/CC-MAIN-20250424085107-20250424115107-00480.warc.gz#offset=1014923547&length=86075"}
+]}

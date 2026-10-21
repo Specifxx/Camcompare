@@ -1,3 +1,9 @@
 {"slug":"nikon-af-s-28mm-f1-8g","market":"au","currency":"AUD","points":[
+{"day":"2024-04-13","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816586.79/warc/CC-MAIN-20240413051941-20240413081941-00126.warc.gz#offset=947551050&length=80078"},
+{"day":"2024-07-21","used":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517796.21/warc/CC-MAIN-20240721213034-20240722003034-00257.warc.gz#offset=867377933&length=81917"},
+{"day":"2024-08-06","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640461318.24/warc/CC-MAIN-20240806001923-20240806031923-00126.warc.gz#offset=801382125&length=81717"},
+{"day":"2024-11-05","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00126.warc.gz#offset=939258233&length=79258"},
+{"day":"2024-11-12","used":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.58/warc/CC-MAIN-20241112045844-20241112075844-00257.warc.gz#offset=927761913&length=78901"},
+{"day":"2025-02-09","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00126.warc.gz#offset=951672616&length=78490"},
 {"day":"2025-08-03","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279594.9/warc/CC-MAIN-20250803072640-20250803102640-00426.warc.gz#offset=917103320&length=78089"}
 ]}

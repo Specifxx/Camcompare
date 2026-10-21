@@ -1,0 +1,6 @@
+{"slug":"zeiss-loxia-2-8-21","market":"au","currency":"AUD","points":[
+{"day":"2024-11-02","used":149900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027709.8/warc/CC-MAIN-20241102071948-20241102101948-00736.warc.gz#offset=955433137&length=79277"},
+{"day":"2025-02-15","used":127415,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951942.61/warc/CC-MAIN-20250215022347-20250215052347-00736.warc.gz#offset=923317272&length=78642"},
+{"day":"2025-09-10","used":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00536.warc.gz#offset=882475099&length=78867"},
+{"day":"2026-01-19","used":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469505.90/warc/CC-MAIN-20260119193727-20260119223727-00536.warc.gz#offset=838485876&length=78842"}
+]}

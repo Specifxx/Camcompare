@@ -1,0 +1,10 @@
+{"slug":"zeiss-loxia-2-50","market":"au","currency":"AUD","points":[
+{"day":"2024-06-25","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00768.warc.gz#offset=895240315&length=82112"},
+{"day":"2024-11-04","used":74900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027812.67/warc/CC-MAIN-20241104034319-20241104064319-00411.warc.gz#offset=942280296&length=79618"},
+{"day":"2024-11-12","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00768.warc.gz#offset=899118697&length=79550"},
+{"day":"2025-01-23","used":74900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703689937.92/warc/CC-MAIN-20250123191357-20250123221357-00411.warc.gz#offset=1026575753&length=78866"},
+{"day":"2025-09-12","used":74995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533302.34/warc/CC-MAIN-20250912211844-20250913001844-00611.warc.gz#offset=858678119&length=77551"},
+{"day":"2025-09-13","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00368.warc.gz#offset=867543553&length=79249"},
+{"day":"2025-12-07","used":74995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00611.warc.gz#offset=814398271&length=77011"},
+{"day":"2026-01-23","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00368.warc.gz#offset=864656868&length=79337"}
+]}

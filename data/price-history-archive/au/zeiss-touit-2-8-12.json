@@ -1,3 +1,9 @@
 {"slug":"zeiss-touit-2-8-12","market":"au","currency":"AUD","points":[
+{"day":"2024-04-19","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817438.43/warc/CC-MAIN-20240419141145-20240419171145-00356.warc.gz#offset=919334640&length=79655"},
+{"day":"2024-07-16","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514759.37/warc/CC-MAIN-20240716142214-20240716172214-00356.warc.gz#offset=879430645&length=81907"},
+{"day":"2024-10-04","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253306.52/warc/CC-MAIN-20241004103433-20241004133433-00043.warc.gz#offset=901796903&length=79500"},
+{"day":"2025-01-23","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703689937.92/warc/CC-MAIN-20250123191357-20250123221357-00043.warc.gz#offset=1032811206&length=78567"},
+{"day":"2025-09-13","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00643.warc.gz#offset=853090677&length=78864"},
+{"day":"2025-12-14","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871308241.81/warc/CC-MAIN-20251214184959-20251214214959-00643.warc.gz#offset=800236072&length=78427"},
 {"day":"2026-08-10","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385311.32/warc/CC-MAIN-20260810035143-20260810065143-00640.warc.gz#offset=847091701&length=222502"}
 ]}

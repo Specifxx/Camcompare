@@ -1,0 +1,6 @@
+{"slug":"tamron-sp-35mm-f1-8-di-vc-usd","market":"au","currency":"AUD","points":[
+{"day":"2024-10-05","used":59900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253348.29/warc/CC-MAIN-20241005051646-20241005081646-00150.warc.gz#offset=894766798&length=81039"},
+{"day":"2025-02-18","used":59900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262490.93/warc/CC-MAIN-20250218145202-20250218175202-00150.warc.gz#offset=917746453&length=79587"},
+{"day":"2025-09-12","used":59900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00350.warc.gz#offset=852757332&length=79995"},
+{"day":"2025-12-17","used":59900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871657426.86/warc/CC-MAIN-20251216230723-20251217020723-00350.warc.gz#offset=830212256&length=79661"}
+]}

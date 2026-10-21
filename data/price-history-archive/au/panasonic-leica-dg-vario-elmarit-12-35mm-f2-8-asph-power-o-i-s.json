@@ -1,3 +1,6 @@
 {"slug":"panasonic-leica-dg-vario-elmarit-12-35mm-f2-8-asph-power-o-i-s","market":"au","currency":"AUD","points":[
+{"day":"2024-11-05","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027884.62/warc/CC-MAIN-20241105145721-20241105175721-00430.warc.gz#offset=947806296&length=81095"},
+{"day":"2025-03-15","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00430.warc.gz#offset=1007360610&length=80528"},
+{"day":"2025-09-10","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00430.warc.gz#offset=910019458&length=80716"},
 {"day":"2025-12-09","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307406.75/warc/CC-MAIN-20251209190721-20251209220721-00430.warc.gz#offset=780627674&length=80287"}
 ]}

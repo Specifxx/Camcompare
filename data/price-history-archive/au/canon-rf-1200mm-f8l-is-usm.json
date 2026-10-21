@@ -1,0 +1,7 @@
+{"slug":"canon-rf-1200mm-f8l-is-usm","market":"au","currency":"AUD","points":[
+{"day":"2024-06-19","new":3199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861828.24/warc/CC-MAIN-20240619154358-20240619184358-00144.warc.gz#offset=902772582&length=84379"},
+{"day":"2024-11-05","new":3199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00144.warc.gz#offset=949168166&length=82029"},
+{"day":"2025-01-18","new":3199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362398.54/warc/CC-MAIN-20250118123610-20250118153610-00144.warc.gz#offset=1073753268&length=81072"},
+{"day":"2025-09-10","new":3199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00544.warc.gz#offset=853169258&length=81524"},
+{"day":"2025-12-07","new":3199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307221.56/warc/CC-MAIN-20251207023705-20251207053705-00544.warc.gz#offset=797890590&length=81144"}
+]}

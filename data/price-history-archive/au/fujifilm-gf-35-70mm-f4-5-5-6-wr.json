@@ -1,0 +1,6 @@
+{"slug":"fujifilm-gf-35-70mm-f4-5-5-6-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-11-10","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.61/warc/CC-MAIN-20241110170046-20241110200046-00142.warc.gz#offset=935623012&length=79394"},
+{"day":"2025-01-23","new":135996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703689937.92/warc/CC-MAIN-20250123191357-20250123221357-00142.warc.gz#offset=1038381438&length=79054"},
+{"day":"2025-07-09","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00442.warc.gz#offset=921377010&length=78133"},
+{"day":"2025-10-10","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358564.63/warc/CC-MAIN-20251010173231-20251010203231-00442.warc.gz#offset=962429581&length=79258"}
+]}

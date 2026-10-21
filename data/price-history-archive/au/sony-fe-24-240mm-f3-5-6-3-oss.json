@@ -1,0 +1,8 @@
+{"slug":"sony-fe-24-240mm-f3-5-6-3-oss","market":"au","currency":"AUD","points":[
+{"day":"2024-04-19","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817438.43/warc/CC-MAIN-20240419141145-20240419171145-00199.warc.gz#offset=903035679&length=81814"},
+{"day":"2024-08-08","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640723918.41/warc/CC-MAIN-20240808062406-20240808092406-00199.warc.gz#offset=775294664&length=83429"},
+{"day":"2024-11-12","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.58/warc/CC-MAIN-20241112045844-20241112075844-00199.warc.gz#offset=900263053&length=80930"},
+{"day":"2025-02-12","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951759.83/warc/CC-MAIN-20250212191228-20250212221228-00199.warc.gz#offset=931004171&length=80233"},
+{"day":"2025-09-10","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00699.warc.gz#offset=895845477&length=80731"},
+{"day":"2026-01-20","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469561.38/warc/CC-MAIN-20260120171558-20260120201558-00699.warc.gz#offset=853763023&length=80712"}
+]}

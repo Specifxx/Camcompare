@@ -1,3 +1,11 @@
 {"slug":"panasonic-lumix-s-85mm-f1-8","market":"au","currency":"AUD","points":[
+{"day":"2024-05-18","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057216.39/warc/CC-MAIN-20240517233122-20240518023122-00757.warc.gz#offset=930931106&length=80830"},
+{"day":"2024-11-05","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027884.62/warc/CC-MAIN-20241105145721-20241105175721-00400.warc.gz#offset=967757935&length=77841"},
+{"day":"2025-01-26","new":93496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703699970.91/warc/CC-MAIN-20250126003648-20250126033648-00757.warc.gz#offset=1043359414&length=79563"},
+{"day":"2025-03-20","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433132.75/warc/CC-MAIN-20250320101927-20250320131927-00600.warc.gz#offset=977784905&length=77354"},
+{"day":"2025-04-19","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135697.3/warc/CC-MAIN-20250419040408-20250419070408-00357.warc.gz#offset=1048920003&length=80165"},
+{"day":"2025-09-09","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533029.41/warc/CC-MAIN-20250909025155-20250909055155-00357.warc.gz#offset=875417783&length=79701"},
+{"day":"2025-09-14","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533840.29/warc/CC-MAIN-20250914170032-20250914200032-00600.warc.gz#offset=895793236&length=77328"},
+{"day":"2026-01-18","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469410.3/warc/CC-MAIN-20260118124654-20260118154654-00600.warc.gz#offset=888984909&length=78996"},
 {"day":"2026-02-07","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505791.29/warc/CC-MAIN-20260207093355-20260207123355-00357.warc.gz#offset=753364467&length=79481"}
 ]}

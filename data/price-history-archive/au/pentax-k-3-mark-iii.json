@@ -1,3 +1,6 @@
 {"slug":"pentax-k-3-mark-iii","market":"au","currency":"AUD","points":[
+{"day":"2024-09-09","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651092.31/warc/CC-MAIN-20240909071529-20240909101529-00113.warc.gz#offset=966429916&length=82165"},
+{"day":"2025-02-18","new":229995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262490.93/warc/CC-MAIN-20250218145202-20250218175202-00113.warc.gz#offset=913701578&length=80614"},
+{"day":"2025-07-12","new":239995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00913.warc.gz#offset=897874063&length=80189"},
 {"day":"2025-10-17","new":249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00913.warc.gz#offset=979814846&length=81217"}
 ]}

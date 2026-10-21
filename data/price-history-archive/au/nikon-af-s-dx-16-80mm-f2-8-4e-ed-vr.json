@@ -1,0 +1,6 @@
+{"slug":"nikon-af-s-dx-16-80mm-f2-8-4e-ed-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-08-10","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640805409.58/warc/CC-MAIN-20240810093040-20240810123040-00254.warc.gz#offset=794122234&length=82543"},
+{"day":"2024-12-11","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066090825.12/warc/CC-MAIN-20241211143606-20241211173606-00254.warc.gz#offset=893434274&length=79246"},
+{"day":"2025-06-14","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481310.69/warc/CC-MAIN-20250614065311-20250614095311-00954.warc.gz#offset=898607005&length=78584"},
+{"day":"2025-11-10","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342882.0/warc/CC-MAIN-20251110154150-20251110184150-00954.warc.gz#offset=882714267&length=79202"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"nikon-d610","market":"au","currency":"AUD","points":[
+{"day":"2024-04-19","used":69900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817438.43/warc/CC-MAIN-20240419141145-20240419171145-00630.warc.gz#offset=902587323&length=81710"},
+{"day":"2024-11-06","used":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027928.77/warc/CC-MAIN-20241106100950-20241106130950-00630.warc.gz#offset=931919917&length=80760"}
+]}

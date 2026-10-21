@@ -1,0 +1,6 @@
+{"slug":"canon-rf-400mm-f2-8l-is-usm","market":"au","currency":"AUD","points":[
+{"day":"2024-05-23","new":1999995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058575.96/warc/CC-MAIN-20240522224707-20240523014707-00129.warc.gz#offset=875930370&length=80849"},
+{"day":"2024-11-06","new":1999995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027910.12/warc/CC-MAIN-20241106065928-20241106095928-00129.warc.gz#offset=957799991&length=79817"},
+{"day":"2025-02-09","new":1999995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951591.15/warc/CC-MAIN-20250209034623-20250209064623-00129.warc.gz#offset=947352848&length=79174"},
+{"day":"2025-09-13","new":1529996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533670.32/warc/CC-MAIN-20250913222048-20250914012048-00929.warc.gz#offset=901420233&length=79802"}
+]}

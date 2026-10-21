@@ -1,0 +1,11 @@
+{"slug":"zeiss-batis-2-8-135","market":"au","currency":"AUD","points":[
+{"day":"2024-05-27","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059039.52/warc/CC-MAIN-20240527083011-20240527113011-00319.warc.gz#offset=870228222&length=80778"},
+{"day":"2024-11-01","used":169900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00708.warc.gz#offset=953056048&length=79616"},
+{"day":"2024-11-06","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027910.12/warc/CC-MAIN-20241106065928-20241106095928-00319.warc.gz#offset=949516326&length=79661"},
+{"day":"2025-01-16","used":169900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00708.warc.gz#offset=1086840518&length=79899"},
+{"day":"2025-03-27","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004757760.94/warc/CC-MAIN-20250327153021-20250327183021-00819.warc.gz#offset=979300711&length=79542"},
+{"day":"2025-07-17","used":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934401.16/warc/CC-MAIN-20250717020215-20250717050215-00608.warc.gz#offset=863633930&length=78228"},
+{"day":"2025-09-07","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532882.49/warc/CC-MAIN-20250907133053-20250907163053-00819.warc.gz#offset=868423078&length=79409"},
+{"day":"2025-11-19","used":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657349.95/warc/CC-MAIN-20251119032929-20251119062929-00608.warc.gz#offset=866224609&length=78827"},
+{"day":"2026-01-23","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00819.warc.gz#offset=842550678&length=79479"}
+]}

@@ -1,4 +1,7 @@
 {"slug":"om-system-m-zuiko-digital-ed-9-18mm-f4-0-5-6-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-10-06","new":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00547.warc.gz#offset=895523455&length=80254"},
+{"day":"2025-02-18","new":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262490.93/warc/CC-MAIN-20250218145202-20250218175202-00547.warc.gz#offset=930489584&length=78811"},
+{"day":"2025-07-16","new":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934359.8/warc/CC-MAIN-20250716132632-20250716162632-00247.warc.gz#offset=912562563&length=78210"},
 {"day":"2025-10-14","new":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00247.warc.gz#offset=965699879&length=79258"},
 {"day":"2026-01-18","new":94995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469410.3/warc/CC-MAIN-20260118124654-20260118154654-00247.warc.gz#offset=851601140&length=79079"}
 ]}

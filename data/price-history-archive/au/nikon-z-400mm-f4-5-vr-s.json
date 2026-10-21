@@ -1,0 +1,7 @@
+{"slug":"nikon-z-400mm-f4-5-vr-s","market":"au","currency":"AUD","points":[
+{"day":"2024-05-22","new":519995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058534.8/warc/CC-MAIN-20240522070747-20240522100747-00501.warc.gz#offset=892987484&length=83094"},
+{"day":"2024-11-06","new":549995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027910.12/warc/CC-MAIN-20241106065928-20241106095928-00501.warc.gz#offset=963382075&length=82103"},
+{"day":"2025-04-24","new":549995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135882.44/warc/CC-MAIN-20250424085107-20250424115107-00401.warc.gz#offset=1023321742&length=82904"},
+{"day":"2025-08-15","new":549995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00401.warc.gz#offset=893943960&length=80961"},
+{"day":"2025-12-17","new":467496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658363.90/warc/CC-MAIN-20251217112246-20251217142246-00401.warc.gz#offset=795880404&length=81701"}
+]}

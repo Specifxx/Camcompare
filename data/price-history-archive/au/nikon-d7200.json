@@ -1,0 +1,7 @@
+{"slug":"nikon-d7200","market":"au","currency":"AUD","points":[
+{"day":"2024-06-19","used":69900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861828.24/warc/CC-MAIN-20240619154358-20240619184358-00466.warc.gz#offset=876711314&length=84387"},
+{"day":"2024-11-06","used":69900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027928.77/warc/CC-MAIN-20241106100950-20241106130950-00466.warc.gz#offset=948819473&length=81874"},
+{"day":"2025-03-27","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004755464.68/warc/CC-MAIN-20250326230641-20250327020641-00866.warc.gz#offset=983112921&length=81527"},
+{"day":"2025-09-07","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532882.49/warc/CC-MAIN-20250907133053-20250907163053-00866.warc.gz#offset=922435295&length=81453"},
+{"day":"2025-12-11","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307625.41/warc/CC-MAIN-20251211140644-20251211170644-00866.warc.gz#offset=826309385&length=81100"}
+]}
