@@ -1,0 +1,5 @@
+{"slug":"nikon-zfc","market":"us","currency":"USD","points":[
+{"day":"2024-04-16","new":95695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817081.52/warc/CC-MAIN-20240416093441-20240416123441-00073.warc.gz#offset=615865206&length=141054"},
+{"day":"2025-04-17","new":109695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00300.warc.gz#offset=655521059&length=110646"},
+{"day":"2025-06-20","new":85695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481578.48/warc/CC-MAIN-20250620091815-20250620121815-00300.warc.gz#offset=557269040&length=133585"}
+]}

@@ -1,3 +1,5 @@
 {"slug":"nikon-z6-iii","market":"us","currency":"USD","points":[
-{"day":"2025-03-20","new":219695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433107.70/warc/CC-MAIN-20250320003322-20250320033322-00821.warc.gz#offset=759814645&length=149058"}
+{"day":"2024-07-20","new":259695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517515.18/warc/CC-MAIN-20240720174732-20240720204732-00403.warc.gz#offset=597727224&length=185364"},
+{"day":"2025-03-20","new":219695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433107.70/warc/CC-MAIN-20250320003322-20250320033322-00821.warc.gz#offset=759814645&length=149058"},
+{"day":"2025-05-19","new":209695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412747.92/warc/CC-MAIN-20250519195356-20250519225356-00703.warc.gz#offset=577700887&length=115722"}
 ]}

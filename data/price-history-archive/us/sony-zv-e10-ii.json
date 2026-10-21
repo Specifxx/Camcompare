@@ -1,3 +1,8 @@
 {"slug":"sony-zv-e10-ii","market":"us","currency":"USD","points":[
-{"day":"2024-11-08","new":99800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028067.32/warc/CC-MAIN-20241108133114-20241108163114-00748.warc.gz#offset=721721454&length=139582"}
+{"day":"2024-07-21","new":99800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517701.96/warc/CC-MAIN-20240721121510-20240721151510-00861.warc.gz#offset=568780512&length=148936"},
+{"day":"2024-07-22","new":99800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517927.60/warc/CC-MAIN-20240722220957-20240723010957-00375.warc.gz#offset=581584678&length=146284"},
+{"day":"2024-11-08","new":99800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028067.32/warc/CC-MAIN-20241108133114-20241108163114-00748.warc.gz#offset=721721454&length=139582"},
+{"day":"2025-05-13","new":99800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412381.84/warc/CC-MAIN-20250513182359-20250513212359-00075.warc.gz#offset=585684445&length=107833"},
+{"day":"2025-06-21","new":99800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481638.55/warc/CC-MAIN-20250621034909-20250621064909-00061.warc.gz#offset=534552850&length=128675"},
+{"day":"2026-01-19","new":119800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469444.61/warc/CC-MAIN-20260119071657-20260119101657-00292.warc.gz#offset=541158283&length=129049"}
 ]}

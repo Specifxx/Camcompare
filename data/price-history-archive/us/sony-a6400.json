@@ -1,0 +1,5 @@
+{"slug":"sony-a6400","market":"us","currency":"USD","points":[
+{"day":"2025-05-14","new":89800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412443.21/warc/CC-MAIN-20250514163508-20250514193508-00420.warc.gz#offset=634224959&length=125075"},
+{"day":"2025-07-10","new":84800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933753.17/warc/CC-MAIN-20250710063231-20250710093231-00770.warc.gz#offset=586361517&length=105193"},
+{"day":"2025-08-11","new":99800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280336.32/warc/CC-MAIN-20250811131148-20250811161148-00766.warc.gz#offset=558827577&length=99481"}
+]}
