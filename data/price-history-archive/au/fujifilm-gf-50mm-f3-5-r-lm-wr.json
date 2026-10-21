@@ -1,7 +1,10 @@
 {"slug":"fujifilm-gf-50mm-f3-5-r-lm-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-04-14","new":143000,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816893.19/warc/CC-MAIN-20240414161724-20240414191724-00701.warc.gz#offset=722609550&length=93884"},
 {"day":"2024-05-27","new":140246,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059028.82/warc/CC-MAIN-20240527021852-20240527051852-00864.warc.gz#offset=901021432&length=80918"},
+{"day":"2024-11-05","new":143000,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027889.1/warc/CC-MAIN-20241105180955-20241105210955-00701.warc.gz#offset=756070326&length=103059"},
 {"day":"2024-11-09","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028116.30/warc/CC-MAIN-20241109053958-20241109083958-00864.warc.gz#offset=922728876&length=79554"},
 {"day":"2025-06-12","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481188.61/warc/CC-MAIN-20250612173611-20250612203611-00564.warc.gz#offset=830018687&length=78466"},
 {"day":"2025-09-09","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00564.warc.gz#offset=893909301&length=79355"},
+{"day":"2025-12-12","new":144400,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307640.68/warc/CC-MAIN-20251212022224-20251212052224-00616.warc.gz#offset=591714735&length=167126"},
 {"day":"2026-01-16","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00564.warc.gz#offset=879572549&length=79355"}
 ]}

@@ -1,4 +1,9 @@
 {"slug":"fujifilm-gfx50s-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-05-19","new":552415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057631.79/warc/CC-MAIN-20240519005014-20240519035014-00733.warc.gz#offset=660503614&length=76923"},
 {"day":"2024-06-13","new":545500,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861488.82/warc/CC-MAIN-20240613190234-20240613220234-00259.warc.gz#offset=911808166&length=83111"},
-{"day":"2024-10-04","new":549995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253306.52/warc/CC-MAIN-20241004103433-20241004133433-00259.warc.gz#offset=903583603&length=82127"}
+{"day":"2024-06-23","new":517323,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862488.55/warc/CC-MAIN-20240623162925-20240623192925-00201.warc.gz#offset=673708879&length=112930"},
+{"day":"2024-10-04","new":549995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253306.52/warc/CC-MAIN-20241004103433-20241004133433-00259.warc.gz#offset=903583603&length=82127"},
+{"day":"2025-01-14","new":517323,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362192.26/warc/CC-MAIN-20250114050027-20250114080027-00201.warc.gz#offset=852086941&length=113529"},
+{"day":"2026-05-12","new":439800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377534.41/warc/CC-MAIN-20260512205040-20260512235040-00533.warc.gz#offset=632257902&length=167107"},
+{"day":"2026-06-08","new":479840,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687572356.36/warc/CC-MAIN-20260608042447-20260608072447-00533.warc.gz#offset=629475465&length=163001"}
 ]}

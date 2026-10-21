@@ -1,3 +1,4 @@
 {"slug":"panasonic-lumix-g9","market":"au","currency":"AUD","points":[
-{"day":"2024-10-07","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253456.43/warc/CC-MAIN-20241007035526-20241007065526-00252.warc.gz#offset=894711068&length=83248"}
+{"day":"2024-10-07","used":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253456.43/warc/CC-MAIN-20241007035526-20241007065526-00252.warc.gz#offset=894711068&length=83248"},
+{"day":"2026-03-12","new":131665,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687278259.60/warc/CC-MAIN-20260312124909-20260312154909-00087.warc.gz#offset=508274823&length=204451"}
 ]}

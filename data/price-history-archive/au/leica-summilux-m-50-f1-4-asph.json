@@ -1,0 +1,6 @@
+{"slug":"leica-summilux-m-50-f1-4-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-07-22","new":629900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517833.34/warc/CC-MAIN-20240722064532-20240722094532-00712.warc.gz#offset=667597866&length=98265"},
+{"day":"2024-10-03","new":829000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253216.9/warc/CC-MAIN-20241003185904-20241003215904-00212.warc.gz#offset=667960879&length=82339"},
+{"day":"2025-11-16","new":865000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439344246.74/warc/CC-MAIN-20251116021437-20251116051437-00240.warc.gz#offset=580820715&length=152610"},
+{"day":"2026-05-10","new":835905,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377272.68/warc/CC-MAIN-20260510072358-20260510102358-00412.warc.gz#offset=578803622&length=150089"}
+]}

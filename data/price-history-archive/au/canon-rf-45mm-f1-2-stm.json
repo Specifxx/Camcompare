@@ -1,3 +1,4 @@
 {"slug":"canon-rf-45mm-f1-2-stm","market":"au","currency":"AUD","points":[
+{"day":"2025-12-04","new":68800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871306713.64/warc/CC-MAIN-20251204191828-20251204221828-00421.warc.gz#offset=582560784&length=168160"},
 {"day":"2025-12-16","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871656414.82/warc/CC-MAIN-20251216043909-20251216073909-00740.warc.gz#offset=822764918&length=78145"}
 ]}

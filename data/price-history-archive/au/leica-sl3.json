@@ -1,0 +1,8 @@
+{"slug":"leica-sl3","market":"au","currency":"AUD","points":[
+{"day":"2024-05-24","new":1169000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058721.41/warc/CC-MAIN-20240524152541-20240524182541-00238.warc.gz#offset=635651242&length=74091"},
+{"day":"2024-08-08","new":1179000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00885.warc.gz#offset=542019698&length=113472"},
+{"day":"2024-11-07","new":1179000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00885.warc.gz#offset=652813381&length=111189"},
+{"day":"2025-07-10","new":1189000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933757.20/warc/CC-MAIN-20250710094101-20250710124101-00185.warc.gz#offset=576703114&length=166008"},
+{"day":"2025-08-13","new":1199000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151281028.48/warc/CC-MAIN-20250813055759-20250813085759-00593.warc.gz#offset=643370366&length=141244"},
+{"day":"2026-06-09","new":1246034,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687572430.69/warc/CC-MAIN-20260609014839-20260609044839-00470.warc.gz#offset=612967265&length=167413"}
+]}

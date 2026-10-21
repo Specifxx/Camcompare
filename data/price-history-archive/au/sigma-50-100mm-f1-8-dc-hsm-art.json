@@ -1,0 +1,4 @@
+{"slug":"sigma-50-100mm-f1-8-dc-hsm-art","market":"au","currency":"AUD","points":[
+{"day":"2024-08-15","new":136200,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641291968.96/warc/CC-MAIN-20240815110654-20240815140654-00484.warc.gz#offset=606681956&length=112115"},
+{"day":"2026-02-11","new":138711,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506135.63/warc/CC-MAIN-20260211021735-20260211051735-00927.warc.gz#offset=556354024&length=166580"}
+]}

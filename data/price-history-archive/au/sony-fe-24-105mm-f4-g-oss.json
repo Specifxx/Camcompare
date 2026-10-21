@@ -1,7 +1,10 @@
 {"slug":"sony-fe-24-105mm-f4-g-oss","market":"au","currency":"AUD","points":[
+{"day":"2024-04-19","new":157000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817382.50/warc/CC-MAIN-20240419074959-20240419104959-00039.warc.gz#offset=679345318&length=63599"},
 {"day":"2024-05-22","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058534.8/warc/CC-MAIN-20240522070747-20240522100747-00661.warc.gz#offset=889110763&length=81374"},
 {"day":"2024-11-06","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027910.12/warc/CC-MAIN-20241106065928-20241106095928-00661.warc.gz#offset=982464927&length=80031"},
 {"day":"2025-02-09","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951591.15/warc/CC-MAIN-20250209034623-20250209064623-00661.warc.gz#offset=937724024&length=79466"},
+{"day":"2025-07-10","new":131175,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933771.26/warc/CC-MAIN-20250710190434-20250710220434-00599.warc.gz#offset=687626990&length=124528"},
 {"day":"2025-08-08","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279985.36/warc/CC-MAIN-20250808003938-20250808033938-00261.warc.gz#offset=912014029&length=79187"},
+{"day":"2025-08-10","new":139000,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00535.warc.gz#offset=669250551&length=117266"},
 {"day":"2025-11-18","new":134996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439649042.63/warc/CC-MAIN-20251118000149-20251118030149-00261.warc.gz#offset=835890448&length=79721"}
 ]}

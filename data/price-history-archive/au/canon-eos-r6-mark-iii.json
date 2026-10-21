@@ -1,3 +1,4 @@
 {"slug":"canon-eos-r6-mark-iii","market":"au","currency":"AUD","points":[
-{"day":"2025-12-13","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307743.66/warc/CC-MAIN-20251213090347-20251213120347-00331.warc.gz#offset=811577321&length=84200"}
+{"day":"2025-12-13","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307743.66/warc/CC-MAIN-20251213090347-20251213120347-00331.warc.gz#offset=811577321&length=84200"},
+{"day":"2026-06-09","new":349701,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687572430.69/warc/CC-MAIN-20260609014839-20260609044839-00406.warc.gz#offset=579052334&length=165848"}
 ]}

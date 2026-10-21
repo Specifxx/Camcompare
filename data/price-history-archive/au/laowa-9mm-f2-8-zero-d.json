@@ -1,0 +1,4 @@
+{"slug":"laowa-9mm-f2-8-zero-d","market":"au","currency":"AUD","points":[
+{"day":"2026-02-08","new":72900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505898.17/warc/CC-MAIN-20260208095500-20260208125500-00966.warc.gz#offset=540217487&length=151049"},
+{"day":"2026-07-19","new":75900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663952069.24/warc/CC-MAIN-20260719053429-20260719083429-00546.warc.gz#offset=629812330&length=147982"}
+]}

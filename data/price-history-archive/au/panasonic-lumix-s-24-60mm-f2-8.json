@@ -1,5 +1,6 @@
 {"slug":"panasonic-lumix-s-24-60mm-f2-8","market":"au","currency":"AUD","points":[
 {"day":"2025-07-12","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00563.warc.gz#offset=908805200&length=77703"},
 {"day":"2025-10-14","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00563.warc.gz#offset=1014671492&length=78690"},
-{"day":"2026-01-22","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469991.35/warc/CC-MAIN-20260122030830-20260122060830-00563.warc.gz#offset=826086780&length=78854"}
+{"day":"2026-01-22","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469991.35/warc/CC-MAIN-20260122030830-20260122060830-00563.warc.gz#offset=826086780&length=78854"},
+{"day":"2026-06-17","new":134925,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687861791.76/warc/CC-MAIN-20260617030125-20260617060125-00996.warc.gz#offset=605206994&length=166671"}
 ]}

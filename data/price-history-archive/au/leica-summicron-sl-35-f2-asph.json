@@ -1,0 +1,4 @@
+{"slug":"leica-summicron-sl-35-f2-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-04-24","new":379000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819971.86/warc/CC-MAIN-20240424205851-20240424235851-00590.warc.gz#offset=649062599&length=56483"},
+{"day":"2025-12-14","new":409000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307934.76/warc/CC-MAIN-20251214093639-20251214123639-00890.warc.gz#offset=555101083&length=155544"}
+]}

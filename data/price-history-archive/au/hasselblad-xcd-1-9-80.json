@@ -1,0 +1,4 @@
+{"slug":"hasselblad-xcd-1-9-80","market":"au","currency":"AUD","points":[
+{"day":"2025-08-05","new":728900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279850.60/warc/CC-MAIN-20250805063744-20250805093744-00757.warc.gz#offset=653375160&length=121359"},
+{"day":"2025-09-08","new":715000,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00284.warc.gz#offset=669081818&length=109630"}
+]}

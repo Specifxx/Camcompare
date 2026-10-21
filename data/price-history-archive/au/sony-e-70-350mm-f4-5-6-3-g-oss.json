@@ -1,3 +1,5 @@
 {"slug":"sony-e-70-350mm-f4-5-6-3-g-oss","market":"au","currency":"AUD","points":[
+{"day":"2025-11-14","new":123459,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439343932.66/warc/CC-MAIN-20251114104301-20251114134301-00103.warc.gz#offset=592761789&length=176911"},
+{"day":"2026-01-19","new":122630,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469505.90/warc/CC-MAIN-20260119193727-20260119223727-00970.warc.gz#offset=567182880&length=178143"},
 {"day":"2026-03-09","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687277752.1/warc/CC-MAIN-20260309111132-20260309141132-00865.warc.gz#offset=769344431&length=181131"}
 ]}

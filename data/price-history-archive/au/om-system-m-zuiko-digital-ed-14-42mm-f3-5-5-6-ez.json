@@ -1,5 +1,6 @@
 {"slug":"om-system-m-zuiko-digital-ed-14-42mm-f3-5-5-6-ez","market":"au","currency":"AUD","points":[
 {"day":"2024-05-25","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058830.51/warc/CC-MAIN-20240525161720-20240525191720-00497.warc.gz#offset=870721789&length=82546"},
+{"day":"2024-06-22","new":32300,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862404.32/warc/CC-MAIN-20240622144011-20240622174011-00815.warc.gz#offset=636730710&length=70043"},
 {"day":"2024-10-05","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253348.29/warc/CC-MAIN-20241005051646-20241005081646-00497.warc.gz#offset=934756701&length=82292"},
 {"day":"2024-10-14","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00143.warc.gz#offset=860522196&length=82080"},
 {"day":"2025-01-21","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363299.42/warc/CC-MAIN-20250121203047-20250121233047-00497.warc.gz#offset=1080642643&length=80756"},

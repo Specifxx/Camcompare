@@ -1,0 +1,6 @@
+{"slug":"fujifilm-xf-56mm-f1-2-r-apd","market":"au","currency":"AUD","points":[
+{"day":"2024-06-22","new":194500,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862404.32/warc/CC-MAIN-20240622144011-20240622174011-00540.warc.gz#offset=641559654&length=70969"},
+{"day":"2024-08-05","new":186420,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640434051.17/warc/CC-MAIN-20240805052118-20240805082118-00213.warc.gz#offset=607983812&length=101059"},
+{"day":"2025-03-25","new":189971,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004434082.42/warc/CC-MAIN-20250325204225-20250325234225-00513.warc.gz#offset=804721466&length=120894"},
+{"day":"2025-12-14","new":195297,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307934.76/warc/CC-MAIN-20251214093639-20251214123639-00640.warc.gz#offset=539461478&length=161422"}
+]}

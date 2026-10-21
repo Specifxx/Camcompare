@@ -1,0 +1,5 @@
+{"slug":"leica-m11-p","market":"au","currency":"AUD","points":[
+{"day":"2025-06-14","new":1619000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481322.4/warc/CC-MAIN-20250614130336-20250614160336-00891.warc.gz#offset=627202777&length=142978"},
+{"day":"2026-02-06","new":1569000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505396.36/warc/CC-MAIN-20260206181458-20260206211458-00781.warc.gz#offset=522683748&length=170028"},
+{"day":"2026-03-11","new":1639000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687277908.9/warc/CC-MAIN-20260311000306-20260311030306-00891.warc.gz#offset=506694468&length=184721"}
+]}

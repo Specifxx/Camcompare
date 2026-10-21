@@ -1,5 +1,6 @@
 {"slug":"canon-eos-6d-mark-ii","market":"au","currency":"AUD","points":[
 {"day":"2024-05-24","used":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058684.66/warc/CC-MAIN-20240524060414-20240524090414-00398.warc.gz#offset=902436293&length=82523"},
+{"day":"2024-05-25","new":191900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058789.0/warc/CC-MAIN-20240525065824-20240525095824-00209.warc.gz#offset=663332245&length=104335"},
 {"day":"2024-06-22","new":174246,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862404.32/warc/CC-MAIN-20240622144011-20240622174011-00141.warc.gz#offset=872680354&length=85616"},
 {"day":"2024-11-05","used":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027884.62/warc/CC-MAIN-20241105145721-20241105175721-00398.warc.gz#offset=962590492&length=81633"},
 {"day":"2025-02-09","used":93496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00398.warc.gz#offset=939557538&length=80637"},

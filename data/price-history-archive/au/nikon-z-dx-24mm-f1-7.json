@@ -1,4 +1,5 @@
 {"slug":"nikon-z-dx-24mm-f1-7","market":"au","currency":"AUD","points":[
+{"day":"2024-04-24","new":49800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819971.86/warc/CC-MAIN-20240424205851-20240424235851-00394.warc.gz#offset=642025977&length=61505"},
 {"day":"2024-10-05","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253348.29/warc/CC-MAIN-20241005051646-20241005081646-00864.warc.gz#offset=916685392&length=80044"},
 {"day":"2025-01-16","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00864.warc.gz#offset=1089573568&length=79990"},
 {"day":"2025-01-26","used":29995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703701202.99/warc/CC-MAIN-20250126103503-20250126133503-00221.warc.gz#offset=1063225371&length=77236"},

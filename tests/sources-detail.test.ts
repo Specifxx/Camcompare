@@ -6,7 +6,7 @@ import { buildIndex } from "../src/lib/matching";
 import { retailer } from "../src/lib/retailers";
 import { detailOf, feedAvailability, promoOf, schemaAvailability, shopifyAvailability, wasPriceOf } from "../src/lib/sources/detail";
 import { rowsToOffers } from "../src/lib/sources/feed";
-import { fromProductJs, productOffers } from "../src/lib/sources/shopify";
+import { fromProductJs, parseProductJs, productOffers } from "../src/lib/sources/shopify";
 import { pageListings } from "../src/lib/sources/structured";
 import { CAMERAS, LENSES } from "./fixtures";
 
@@ -139,4 +139,11 @@ test("feed: a sale price under the full price makes the full one the was-price",
   assert.equal(o.wasPrice, 249900);
   assert.equal(o.availability, "preorder");
   assert.equal(o.inStock, false);
+});
+
+test("Shopify product .js: served as text/javascript, parsed as JSON, anything else refused", () => {
+  const body = JSON.stringify({ id: 1, title: "Nikon Z5IIC Silver (BODY ONLY)", handle: "nikon-z5iic-silver-body-only", tags: ["AwaitingStock"], variants: [{ id: 2, title: "Default Title", price: 239900, available: true, compare_at_price: null }] });
+  assert.equal(parseProductJs(body)?.variants[0].price, "2399.00");
+  assert.equal(parseProductJs("<html>Not found</html>"), null);
+  assert.equal(parseProductJs('{"error":"x"}'), null);
 });

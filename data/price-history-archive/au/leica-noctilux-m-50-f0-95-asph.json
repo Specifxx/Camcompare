@@ -1,0 +1,8 @@
+{"slug":"leica-noctilux-m-50-f0-95-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-06-19","new":2003550,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861828.24/warc/CC-MAIN-20240619154358-20240619184358-00383.warc.gz#offset=640020817&length=69877"},
+{"day":"2024-06-25","new":1984550,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00641.warc.gz#offset=644633596&length=68807"},
+{"day":"2024-10-10","new":2199000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253693.30/warc/CC-MAIN-20241010155548-20241010185548-00383.warc.gz#offset=627768310&length=87262"},
+{"day":"2024-11-04","new":2169000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027821.39/warc/CC-MAIN-20241104100555-20241104130555-00641.warc.gz#offset=708125347&length=107764"},
+{"day":"2025-11-15","new":2189000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439344051.43/warc/CC-MAIN-20251115075653-20251115105653-00941.warc.gz#offset=586908293&length=155885"},
+{"day":"2026-05-10","new":2175405,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377272.68/warc/CC-MAIN-20260510072358-20260510102358-00941.warc.gz#offset=617146011&length=157200"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"sigma-15mm-f1-4-dg-dn-diagonal-fisheye-art","market":"au","currency":"AUD","points":[
+{"day":"2026-02-11","new":339900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506135.63/warc/CC-MAIN-20260211021735-20260211051735-00880.warc.gz#offset=561059870&length=163698"},
+{"day":"2026-05-10","new":322065,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377272.68/warc/CC-MAIN-20260510072358-20260510102358-00027.warc.gz#offset=589465399&length=156043"}
+]}

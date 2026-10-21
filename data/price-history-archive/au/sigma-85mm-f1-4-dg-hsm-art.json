@@ -1,4 +1,5 @@
 {"slug":"sigma-85mm-f1-4-dg-hsm-art","market":"au","currency":"AUD","points":[
 {"day":"2024-09-08","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700650958.30/warc/CC-MAIN-20240908020844-20240908050844-00644.warc.gz#offset=991232785&length=81006"},
+{"day":"2024-10-13","new":132749,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255197.92/warc/CC-MAIN-20241013122830-20241013152830-00377.warc.gz#offset=678390495&length=112680"},
 {"day":"2025-01-14","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362192.26/warc/CC-MAIN-20250114050027-20250114080027-00644.warc.gz#offset=1076067590&length=80665"}
 ]}

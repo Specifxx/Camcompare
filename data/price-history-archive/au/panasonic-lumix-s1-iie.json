@@ -1,4 +1,5 @@
 {"slug":"panasonic-lumix-s1-iie","market":"au","currency":"AUD","points":[
 {"day":"2025-07-12","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00628.warc.gz#offset=907453636&length=81090"},
-{"day":"2025-10-14","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00628.warc.gz#offset=1016223766&length=81915"}
+{"day":"2025-10-14","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00628.warc.gz#offset=1016223766&length=81915"},
+{"day":"2026-08-13","new":369900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385574.53/warc/CC-MAIN-20260813111745-20260813141745-00657.warc.gz#offset=623736767&length=150967"}
 ]}

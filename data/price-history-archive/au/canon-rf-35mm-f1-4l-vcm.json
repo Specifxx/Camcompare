@@ -1,7 +1,9 @@
 {"slug":"canon-rf-35mm-f1-4l-vcm","market":"au","currency":"AUD","points":[
+{"day":"2024-06-14","new":259800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861567.95/warc/CC-MAIN-20240614141929-20240614171929-00149.warc.gz#offset=664753121&length=69609"},
 {"day":"2024-10-06","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00339.warc.gz#offset=914040080&length=79636"},
 {"day":"2025-02-09","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951628.13/warc/CC-MAIN-20250209230119-20250210020119-00339.warc.gz#offset=954626408&length=78194"},
 {"day":"2025-06-14","new":236300,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481310.69/warc/CC-MAIN-20250614065311-20250614095311-00939.warc.gz#offset=849189952&length=77783"},
+{"day":"2025-08-05","new":218500,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279878.40/warc/CC-MAIN-20250805160447-20250805190447-00991.warc.gz#offset=676186916&length=117181"},
 {"day":"2025-09-07","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00939.warc.gz#offset=909537659&length=78854"},
 {"day":"2025-12-14","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871308241.81/warc/CC-MAIN-20251214184959-20251214214959-00939.warc.gz#offset=770243341&length=78297"}
 ]}

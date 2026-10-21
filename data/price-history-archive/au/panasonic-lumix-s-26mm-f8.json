@@ -1,4 +1,5 @@
 {"slug":"panasonic-lumix-s-26mm-f8","market":"au","currency":"AUD","points":[
+{"day":"2024-07-15","new":33900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514680.75/warc/CC-MAIN-20240715071424-20240715101424-00240.warc.gz#offset=680976128&length=107103"},
 {"day":"2024-11-12","new":34995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028279.73/warc/CC-MAIN-20241112180608-20241112210608-00448.warc.gz#offset=924214675&length=77709"},
 {"day":"2025-05-20","new":34995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412798.22/warc/CC-MAIN-20250520084021-20250520114021-00248.warc.gz#offset=894287222&length=76583"},
 {"day":"2025-09-17","used":34995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00019.warc.gz#offset=864296079&length=77794"},

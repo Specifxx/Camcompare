@@ -1,0 +1,5 @@
+{"slug":"laowa-100mm-f2-8-2x-ultra-macro-apo","market":"au","currency":"AUD","points":[
+{"day":"2025-02-17","new":88900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832253764.91/warc/CC-MAIN-20250217093034-20250217123034-00277.warc.gz#offset=712403123&length=103869"},
+{"day":"2025-07-10","new":87326,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933771.26/warc/CC-MAIN-20250710190434-20250710220434-00677.warc.gz#offset=669530840&length=117594"},
+{"day":"2025-12-05","new":78965,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00881.warc.gz#offset=590696331&length=158133"}
+]}

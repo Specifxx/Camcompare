@@ -1,7 +1,9 @@
 {"slug":"nikon-z-28-75mm-f2-8","market":"au","currency":"AUD","points":[
 {"day":"2024-07-21","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517544.48/warc/CC-MAIN-20240720235600-20240721025600-00373.warc.gz#offset=878052033&length=81095"},
+{"day":"2024-08-05","new":139400,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640451031.21/warc/CC-MAIN-20240805144950-20240805174950-00639.warc.gz#offset=630919386&length=99052"},
 {"day":"2024-11-12","new":119996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028249.89/warc/CC-MAIN-20241112081532-20241112111532-00373.warc.gz#offset=898311248&length=78116"},
 {"day":"2025-04-30","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889465147.97/warc/CC-MAIN-20250430184734-20250430214734-00673.warc.gz#offset=990277766&length=79102"},
 {"day":"2025-09-10","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533073.7/warc/CC-MAIN-20250910004335-20250910034335-00673.warc.gz#offset=901885968&length=77951"},
+{"day":"2025-10-16","new":147540,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00139.warc.gz#offset=774637494&length=110240"},
 {"day":"2026-01-13","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00673.warc.gz#offset=878687870&length=77849"}
 ]}

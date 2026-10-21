@@ -1,6 +1,8 @@
 {"slug":"nikon-z-70-180mm-f2-8","market":"au","currency":"AUD","points":[
+{"day":"2024-05-27","new":199700,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059040.32/warc/CC-MAIN-20240527113621-20240527143621-00708.warc.gz#offset=633543893&length=70366"},
 {"day":"2024-10-14","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00517.warc.gz#offset=861499248&length=79907"},
 {"day":"2025-03-27","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004755464.68/warc/CC-MAIN-20250326230641-20250327020641-00817.warc.gz#offset=975543300&length=79205"},
 {"day":"2025-07-14","new":209995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934009.3/warc/CC-MAIN-20250713223153-20250714013153-00817.warc.gz#offset=888886042&length=78150"},
-{"day":"2025-11-18","new":178496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439649042.63/warc/CC-MAIN-20251118000149-20251118030149-00817.warc.gz#offset=826585982&length=78709"}
+{"day":"2025-11-18","new":178496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439649042.63/warc/CC-MAIN-20251118000149-20251118030149-00817.warc.gz#offset=826585982&length=78709"},
+{"day":"2026-08-13","new":178800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385574.53/warc/CC-MAIN-20260813111745-20260813141745-00797.warc.gz#offset=606108439&length=158220"}
 ]}

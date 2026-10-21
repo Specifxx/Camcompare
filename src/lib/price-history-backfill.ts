@@ -75,13 +75,45 @@ export function decodeEntities(s: string): string {
     .replace(/&amp;/g, "&");
 }
 
+/**
+ * A product page's price when its JSON-LD has none, as older store themes
+ * marked it up, in order:
+ *  - schema.org microdata: itemprop="price" content="995.0" with
+ *    itemprop="priceCurrency" (Camera Electronic's Shopify theme, 2024);
+ *  - Shopify's og:price:amount / og:price:currency;
+ *  - Magento's final-price box, `data-price-amount="1299"
+ *    data-price-type="finalPrice"` in the main product block, when its
+ *    product:price:amount is empty (Digidirect, 2023–24).
+ * One listing, titled from og:title (or the microdata name); the currency
+ * must be on the page, never assumed.
+ */
+export function fallbackListing(html: string): ReturnType<typeof pageListings> {
+  const meta = (p: string) => html.match(new RegExp(`<meta[^>]+(?:property|name)=["']${p}["'][^>]*content=["']([^"']*)`, "i"))?.[1];
+  const prop = (p: string) => html.match(new RegExp(`itemprop=["']${p}["'][^>]*content=["']([^"']*)`, "i"))?.[1] ?? html.match(new RegExp(`content=["']([^"']*)["'][^>]*itemprop=["']${p}["']`, "i"))?.[1];
+  const main = html.indexOf("product-info-main");
+  const magento = (main >= 0 ? html.slice(main) : html).match(/data-price-amount="([\d.]+)"\s+data-price-type="finalPrice"/)?.[1];
+  const title = meta("og:title") ?? prop("name") ?? html.match(/<h1[^>]*class="page-title"[^>]*>\s*<span[^>]*>([^<]+)</)?.[1];
+  const candidates: [string | undefined, string | undefined][] = [
+    [prop("price"), prop("priceCurrency")],
+    [meta("og:price:amount"), meta("og:price:currency")],
+    [magento, meta("product:price:currency")],
+  ];
+  const hit = candidates.find(([a, c]) => a && Number(a.replace(/,/g, "")) > 0 && c);
+  if (!hit || !title) return [];
+  const avail = html.match(/itemprop=["']availability["'][^>]*(?:href|content)=["']([^"']+)/i)?.[1] ?? "";
+  const inStock = /outofstock|soldout|discontinued/i.test(avail) || /class="stock unavailable"/i.test(html) ? false : true;
+  return [{ title: title.trim(), price: Math.round(Number(hit[0]!.replace(/,/g, "")) * 100), currency: hit[1]!.toUpperCase(), inStock, condition: null }];
+}
+
 /** Listings in an archived product page's schema.org data (JSON-LD, else OpenGraph). */
 export function listingsFromHtml(html: string, pageUrl: string, r: Pick<Retailer, "conditions">): ArchivedListing[] {
   let slug = "";
   try {
     slug = decodeURIComponent(new URL(pageUrl).pathname).replace(/[-_/.]+/g, " ");
   } catch {}
-  return pageListings(html).map((l) => {
+  const found = pageListings(html);
+  const listings = found.length ? found : fallbackListing(html);
+  return listings.map((l) => {
     const title = decodeEntities(l.title);
     const fromTitle = shopifyCondition({ title: `${title} ${slug}` }, "");
     const cond = storeCondition(fromTitle !== "new" ? fromTitle : (l.condition ?? "new"), r.conditions);

@@ -1,4 +1,5 @@
 {"slug":"canon-eos-90d","market":"au","currency":"AUD","points":[
+{"day":"2024-04-19","new":172500,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817382.50/warc/CC-MAIN-20240419074959-20240419104959-00451.warc.gz#offset=661403150&length=66242"},
 {"day":"2024-04-22","new":189995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296818105.48/warc/CC-MAIN-20240422082202-20240422112202-00372.warc.gz#offset=928484627&length=85576"},
 {"day":"2024-05-27","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059039.52/warc/CC-MAIN-20240527083011-20240527113011-00372.warc.gz#offset=888243138&length=85426"},
 {"day":"2024-08-08","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640719674.40/warc/CC-MAIN-20240808031539-20240808061539-00506.warc.gz#offset=777549083&length=84726"},

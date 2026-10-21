@@ -1,0 +1,6 @@
+{"slug":"fujifilm-xf-18-120mm-f4-lm-pz-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-08-05","new":134900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640434051.17/warc/CC-MAIN-20240805052118-20240805082118-00568.warc.gz#offset=639084363&length=100186"},
+{"day":"2025-02-17","new":119147,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832259438.98/warc/CC-MAIN-20250217191831-20250217221831-00568.warc.gz#offset=706400764&length=104892"},
+{"day":"2025-07-10","new":120309,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933771.26/warc/CC-MAIN-20250710190434-20250710220434-00765.warc.gz#offset=710706088&length=119513"},
+{"day":"2025-09-07","new":120309,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00168.warc.gz#offset=684273191&length=112476"}
+]}

@@ -2,6 +2,7 @@
 {"day":"2024-05-27","new":29995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059028.82/warc/CC-MAIN-20240527021852-20240527051852-00487.warc.gz#offset=872192712&length=81811"},
 {"day":"2024-10-05","new":34995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253348.29/warc/CC-MAIN-20241005051646-20241005081646-00487.warc.gz#offset=905677399&length=81318"},
 {"day":"2025-02-18","new":34995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262490.93/warc/CC-MAIN-20250218145202-20250218175202-00487.warc.gz#offset=923250881&length=80055"},
+{"day":"2025-04-25","new":29400,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135925.48/warc/CC-MAIN-20250425141546-20250425171546-00692.warc.gz#offset=744892562&length=107495"},
 {"day":"2025-07-12","new":31995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00387.warc.gz#offset=892862075&length=79531"},
 {"day":"2025-10-16","new":34995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00387.warc.gz#offset=965821145&length=80633"}
 ]}

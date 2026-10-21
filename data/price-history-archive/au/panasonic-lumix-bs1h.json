@@ -1,0 +1,4 @@
+{"slug":"panasonic-lumix-bs1h","market":"au","currency":"AUD","points":[
+{"day":"2024-06-22","new":327165,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862404.32/warc/CC-MAIN-20240622144011-20240622174011-00642.warc.gz#offset=621877339&length=80280"},
+{"day":"2026-07-19","new":374800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663952069.24/warc/CC-MAIN-20260719053429-20260719083429-00427.warc.gz#offset=592689620&length=179530"}
+]}

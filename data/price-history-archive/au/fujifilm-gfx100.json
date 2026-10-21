@@ -1,7 +1,9 @@
 {"slug":"fujifilm-gfx100","market":"au","currency":"AUD","points":[
 {"day":"2024-04-13","used":699995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816832.57/warc/CC-MAIN-20240413180040-20240413210040-00552.warc.gz#offset=973498010&length=81859"},
+{"day":"2024-06-20","new":1431824,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861957.99/warc/CC-MAIN-20240620141245-20240620171245-00148.warc.gz#offset=683640210&length=108521"},
 {"day":"2024-11-12","used":699995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.58/warc/CC-MAIN-20241112045844-20241112075844-00552.warc.gz#offset=930872796&length=80920"},
 {"day":"2025-03-27","used":699995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004757760.94/warc/CC-MAIN-20250327153021-20250327183021-00252.warc.gz#offset=981545371&length=80615"},
 {"day":"2025-09-08","used":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00252.warc.gz#offset=896556561&length=79640"},
+{"day":"2025-10-15","new":845000,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/warc/CC-MAIN-20251015133709-20251015163709-00548.warc.gz#offset=739995019&length=133097"},
 {"day":"2025-11-19","used":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657349.95/warc/CC-MAIN-20251119032929-20251119062929-00252.warc.gz#offset=832481186&length=79401"}
 ]}

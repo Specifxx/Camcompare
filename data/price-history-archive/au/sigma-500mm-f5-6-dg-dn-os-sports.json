@@ -1,0 +1,4 @@
+{"slug":"sigma-500mm-f5-6-dg-dn-os-sports","market":"au","currency":"AUD","points":[
+{"day":"2026-02-11","new":468523,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506135.63/warc/CC-MAIN-20260211021735-20260211051735-00516.warc.gz#offset=514434519&length=160321"},
+{"day":"2026-05-21","new":393675,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377112.37/warc/CC-MAIN-20260521004617-20260521034617-00879.warc.gz#offset=599411174&length=172767"}
+]}

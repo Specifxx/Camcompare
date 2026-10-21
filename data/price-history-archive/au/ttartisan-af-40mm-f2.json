@@ -1,5 +1,6 @@
 {"slug":"ttartisan-af-40mm-f2","market":"au","currency":"AUD","points":[
 {"day":"2025-09-06","new":29995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532791.98/warc/CC-MAIN-20250906153317-20250906183317-00325.warc.gz#offset=882046885&length=78378"},
+{"day":"2025-09-17","new":29995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00310.warc.gz#offset=864644615&length=74723"},
 {"day":"2025-12-07","new":29995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00143.warc.gz#offset=791334802&length=79745"},
 {"day":"2026-01-15","new":29995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00325.warc.gz#offset=888833347&length=78271"}
 ]}

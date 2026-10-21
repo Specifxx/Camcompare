@@ -1,4 +1,5 @@
 {"slug":"fujifilm-xf-8mm-f3-5-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-04-24","new":118915,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819971.86/warc/CC-MAIN-20240424205851-20240424235851-00873.warc.gz#offset=653074882&length=58846"},
 {"day":"2024-09-10","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651196.36/warc/CC-MAIN-20240910025651-20240910055651-00437.warc.gz#offset=958002320&length=80349"},
 {"day":"2025-01-13","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362169.0/warc/CC-MAIN-20250113121635-20250113151635-00437.warc.gz#offset=1110877170&length=79978"},
 {"day":"2025-07-16","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00937.warc.gz#offset=909250459&length=78337"},

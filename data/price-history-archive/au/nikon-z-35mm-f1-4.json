@@ -1,6 +1,9 @@
 {"slug":"nikon-z-35mm-f1-4","market":"au","currency":"AUD","points":[
+{"day":"2024-07-16","new":104900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514726.17/warc/CC-MAIN-20240716015512-20240716045512-00680.warc.gz#offset=647538029&length=71845"},
 {"day":"2024-10-14","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00769.warc.gz#offset=883522190&length=79893"},
 {"day":"2025-02-09","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00769.warc.gz#offset=950379642&length=78444"},
+{"day":"2025-06-19","new":88665,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481553.92/warc/CC-MAIN-20250619205541-20250619235541-00055.warc.gz#offset=618554457&length=115670"},
 {"day":"2025-09-13","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00069.warc.gz#offset=888905889&length=78937"},
-{"day":"2025-12-05","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00069.warc.gz#offset=841162057&length=78401"}
+{"day":"2025-12-05","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00069.warc.gz#offset=841162057&length=78401"},
+{"day":"2026-09-09","new":87800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-39/segments/1788492699897.38/warc/CC-MAIN-20260909211506-20260910001506-00581.warc.gz#offset=590101777&length=158764"}
 ]}

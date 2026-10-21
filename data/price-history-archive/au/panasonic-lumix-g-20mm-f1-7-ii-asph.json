@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-g-20mm-f1-7-ii-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-06-25","new":40400,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00886.warc.gz#offset=643677217&length=68763"},
+{"day":"2025-12-06","new":42270,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307170.28/warc/CC-MAIN-20251206081050-20251206111050-00686.warc.gz#offset=561701121&length=165531"},
+{"day":"2026-05-21","new":41520,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377112.37/warc/CC-MAIN-20260521004617-20260521034617-00686.warc.gz#offset=614953354&length=157986"}
+]}

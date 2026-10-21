@@ -1,0 +1,5 @@
+{"slug":"sigma-85mm-f1-4-dg-dn-art","market":"au","currency":"AUD","points":[
+{"day":"2025-03-17","new":136256,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433022.23/warc/CC-MAIN-20250317070136-20250317100136-00277.warc.gz#offset=778378530&length=124878"},
+{"day":"2025-10-15","new":132540,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/warc/CC-MAIN-20251015164442-20251015194442-00574.warc.gz#offset=766491096&length=114552"},
+{"day":"2025-11-09","new":129500,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342682.51/warc/CC-MAIN-20251109025556-20251109055556-00542.warc.gz#offset=610088570&length=196627"}
+]}

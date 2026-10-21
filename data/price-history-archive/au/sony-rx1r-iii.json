@@ -1,4 +1,6 @@
 {"slug":"sony-rx1r-iii","market":"au","currency":"AUD","points":[
+{"day":"2025-08-12","new":799900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280914.63/warc/CC-MAIN-20250812045045-20250812075045-00352.warc.gz#offset=629121848&length=131143"},
 {"day":"2025-09-06","new":799995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532791.98/warc/CC-MAIN-20250906153317-20250906183317-00674.warc.gz#offset=902402571&length=82508"},
-{"day":"2026-01-23","new":799995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00674.warc.gz#offset=878637679&length=82651"}
+{"day":"2026-01-23","new":799995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00674.warc.gz#offset=878637679&length=82651"},
+{"day":"2026-02-12","new":749900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506199.15/warc/CC-MAIN-20260212054722-20260212084722-00816.warc.gz#offset=573528561&length=181719"}
 ]}

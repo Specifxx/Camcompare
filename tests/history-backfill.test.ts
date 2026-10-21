@@ -149,3 +149,21 @@ test("world table: conversion, cheapest market and saving vs US list", () => {
   assert.equal(best.pct, 20);
   assert.equal(rowBest({ ...row, cells: {} }, "USD", rates), null);
 });
+
+test("Magento pages with an empty product:price:amount fall back to the final-price box", () => {
+  const html = `<meta property="og:title" content="Canon EOS R6 Mark II Body"/><meta property="product:price:amount" content=""/><meta property="product:price:currency" content="AUD"/>
+  <div class="related"><span data-price-amount="99" data-price-type="finalPrice"></span></div>
+  <div class="product-info-main"><span data-price-amount="3499" data-price-type="finalPrice" class="price-wrapper"></span><div class="stock available">In stock</div></div>`;
+  const l = listingsFromHtml(html, "https://x.example/canon-eos-r6-mark-ii-body", shop);
+  assert.equal(l.length, 1);
+  assert.equal(l[0].price, 349900);
+  assert.equal(snapshotPrices(l, index, "AUD", shop).get("canon-eos-r6-mark-ii")?.new, 349900);
+});
+
+test("microdata and og:price pages are read when JSON-LD has no price", () => {
+  const micro = `<meta property="og:title" content="Canon EOS R6 Mark II Body"><span itemprop="price" content="3299.0"></span><meta itemprop="priceCurrency" content="AUD"><link itemprop="availability" href="http://schema.org/InStock">`;
+  assert.equal(listingsFromHtml(micro, "https://x.example/products/r6ii", shop)[0].price, 329900);
+  const og = `<meta property="og:title" content="Canon EOS R6 Mark II Body"><meta property="og:price:amount" content="3,199.00"><meta property="og:price:currency" content="AUD">`;
+  assert.equal(listingsFromHtml(og, "https://x.example/products/r6ii", shop)[0].price, 319900);
+  assert.equal(listingsFromHtml(`<meta property="og:title" content="X"><span itemprop="price" content="10">`, "https://x.example/a", shop).length, 0); // no currency: nothing
+});

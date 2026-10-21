@@ -1,4 +1,5 @@
 {"slug":"tokina-atx-m-23mm-f1-4","market":"au","currency":"AUD","points":[
+{"day":"2024-07-12","new":71500,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514404.71/warc/CC-MAIN-20240712125648-20240712155648-00097.warc.gz#offset=587115562&length=107510"},
 {"day":"2024-11-10","new":74995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028179.55/warc/CC-MAIN-20241110072033-20241110102033-00819.warc.gz#offset=943662673&length=78391"},
 {"day":"2025-07-12","new":74995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00719.warc.gz#offset=862645767&length=77142"},
 {"day":"2025-10-16","new":74995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00719.warc.gz#offset=923051762&length=78141"}

@@ -1,0 +1,6 @@
+{"slug":"dji-osmo-pocket-3","market":"au","currency":"AUD","points":[
+{"day":"2024-05-19","new":84800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057631.79/warc/CC-MAIN-20240519005014-20240519035014-00074.warc.gz#offset=673957562&length=72081"},
+{"day":"2025-11-15","new":109800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439344051.43/warc/CC-MAIN-20251115075653-20251115105653-00210.warc.gz#offset=587424199&length=156475"},
+{"day":"2026-02-07","new":67800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505855.54/warc/CC-MAIN-20260207184312-20260207214312-00874.warc.gz#offset=568936926&length=157906"},
+{"day":"2026-05-11","new":85673,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377391.46/warc/CC-MAIN-20260511201502-20260511231502-00210.warc.gz#offset=620769475&length=158025"}
+]}

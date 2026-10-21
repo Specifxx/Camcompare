@@ -1,5 +1,6 @@
 {"slug":"sony-fe-16-25mm-f2-8-g","market":"au","currency":"AUD","points":[
 {"day":"2024-11-10","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028164.3/warc/CC-MAIN-20241110005602-20241110035602-00390.warc.gz#offset=938255711&length=80321"},
+{"day":"2025-02-14","new":157000,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951838.90/warc/CC-MAIN-20250214002606-20250214032606-00067.warc.gz#offset=720029261&length=115219"},
 {"day":"2025-07-16","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00690.warc.gz#offset=893420069&length=79104"},
 {"day":"2025-10-14","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00690.warc.gz#offset=942713494&length=80167"}
 ]}

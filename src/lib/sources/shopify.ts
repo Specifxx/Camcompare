@@ -275,9 +275,12 @@ async function sitemapRun(ctx: SourceContext, base: string, robots: string, curr
       break;
     }
     if (slug) covered.add(slug); // read, even if gone (404): its old offers should go
-    if (!res.ok || !(res.headers.get("content-type") ?? "").includes("json")) continue;
+    // Shopify serves /products/<handle>.js as text/javascript; its body is JSON.
+    if (!res.ok || !/json|javascript/.test(res.headers.get("content-type") ?? "")) continue;
+    const product = parseProductJs(await res.text());
+    if (!product) continue;
     read++;
-    const got = productOffers(fromProductJs(await res.json()), { base, retailer: r, index, lenses, now, currency });
+    const got = productOffers(product, { base, retailer: r, index, lenses, now, currency });
     for (const o of got.offers) covered.add(o.product);
     offers.push(...got.offers);
     accessories.push(...got.accessories);
@@ -286,6 +289,16 @@ async function sitemapRun(ctx: SourceContext, base: string, robots: string, curr
   log(`${r.key}: ${note}, ${offers.length} offers, ${accessories.length} accessories`);
   if (!read && window.length) return { status: "error", note };
   return { status: "ok", offers, covered: [...covered], note, accessories };
+}
+
+/** A /products/<handle>.js body, or null when it is not one (an error page, a theme's script). */
+export function parseProductJs(body: string): ShopifyProduct | null {
+  try {
+    const j = JSON.parse(body);
+    return j && typeof j.handle === "string" && Array.isArray(j.variants) ? fromProductJs(j) : null;
+  } catch {
+    return null;
+  }
 }
 
 const locs = (xml: string) => [...xml.matchAll(/<loc>\s*(?:<!\[CDATA\[)?([^<\]]+?)(?:\]\]>)?\s*<\/loc>/g)].map((m) => m[1].trim().replace(/&amp;/g, "&"));

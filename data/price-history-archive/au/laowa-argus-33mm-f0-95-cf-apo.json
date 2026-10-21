@@ -1,0 +1,7 @@
+{"slug":"laowa-argus-33mm-f0-95-cf-apo","market":"au","currency":"AUD","points":[
+{"day":"2024-06-24","new":76230,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198864986.57/warc/CC-MAIN-20240624021134-20240624051134-00834.warc.gz#offset=673004279&length=99336"},
+{"day":"2025-03-18","new":76230,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433063.32/warc/CC-MAIN-20250318123015-20250318153015-00534.warc.gz#offset=812024457&length=104697"},
+{"day":"2025-10-09","new":83900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358434.74/warc/CC-MAIN-20251009100738-20251009130738-00731.warc.gz#offset=754220016&length=112006"},
+{"day":"2025-12-04","new":70465,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871306713.64/warc/CC-MAIN-20251204191828-20251204221828-00977.warc.gz#offset=589972349&length=162509"},
+{"day":"2025-12-06","new":70465,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307164.43/warc/CC-MAIN-20251206050720-20251206080720-00220.warc.gz#offset=569610785&length=161158"}
+]}

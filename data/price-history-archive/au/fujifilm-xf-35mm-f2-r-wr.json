@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-35mm-f2-r-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-08-06","new":47900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640497907.29/warc/CC-MAIN-20240806161854-20240806191854-00194.warc.gz#offset=618756026&length=99748"},
+{"day":"2025-04-19","new":47848,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135728.67/warc/CC-MAIN-20250419230935-20250420020935-00394.warc.gz#offset=774673865&length=105846"},
+{"day":"2025-09-07","new":46118,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00776.warc.gz#offset=665962519&length=110311"}
+]}

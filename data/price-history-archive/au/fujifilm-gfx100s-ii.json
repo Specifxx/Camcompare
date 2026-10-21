@@ -1,0 +1,4 @@
+{"slug":"fujifilm-gfx100s-ii","market":"au","currency":"AUD","points":[
+{"day":"2024-07-16","new":819900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514742.26/warc/CC-MAIN-20240716080920-20240716110920-00740.warc.gz#offset=668663852&length=120223"},
+{"day":"2025-02-19","new":849900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00740.warc.gz#offset=716425424&length=123059"}
+]}

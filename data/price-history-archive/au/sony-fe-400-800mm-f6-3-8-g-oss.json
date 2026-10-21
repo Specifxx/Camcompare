@@ -1,5 +1,6 @@
 {"slug":"sony-fe-400-800mm-f6-3-8-g-oss","market":"au","currency":"AUD","points":[
 {"day":"2025-04-22","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135796.50/warc/CC-MAIN-20250422020618-20250422050618-00284.warc.gz#offset=1059752152&length=79559"},
 {"day":"2025-09-09","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00284.warc.gz#offset=925970366&length=78225"},
-{"day":"2025-11-18","new":359996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439651456.92/warc/CC-MAIN-20251118091112-20251118121112-00284.warc.gz#offset=854012770&length=77942"}
+{"day":"2025-11-18","new":359996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439651456.92/warc/CC-MAIN-20251118091112-20251118121112-00284.warc.gz#offset=854012770&length=77942"},
+{"day":"2026-06-15","new":351920,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687573381.9/warc/CC-MAIN-20260615163408-20260615193408-00012.warc.gz#offset=594372771&length=168573"}
 ]}

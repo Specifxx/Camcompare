@@ -1,3 +1,6 @@
 {"slug":"tokina-atx-m-85mm-f1-8-fe","market":"au","currency":"AUD","points":[
+{"day":"2024-11-03","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027796.35/warc/CC-MAIN-20241103212031-20241104002031-00240.warc.gz#offset=955148421&length=78710"},
+{"day":"2025-02-08","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951538.7/warc/CC-MAIN-20250208052017-20250208082017-00240.warc.gz#offset=960311284&length=77967"},
+{"day":"2025-09-08","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00940.warc.gz#offset=915181900&length=78359"},
 {"day":"2026-02-07","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505791.29/warc/CC-MAIN-20260207093355-20260207123355-00940.warc.gz#offset=772907318&length=78154"}
 ]}

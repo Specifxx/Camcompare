@@ -1,6 +1,9 @@
 {"slug":"fujifilm-gf-30mm-f3-5-r-wr","market":"au","currency":"AUD","points":[
 {"day":"2024-11-01","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00108.warc.gz#offset=944056717&length=79202"},
+{"day":"2024-11-03","new":242904,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027776.9/warc/CC-MAIN-20241103114942-20241103144942-00045.warc.gz#offset=744531570&length=103499"},
 {"day":"2025-05-16","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412498.33/warc/CC-MAIN-20250516064304-20250516094304-00008.warc.gz#offset=967717618&length=77762"},
+{"day":"2025-09-09","new":245696,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00445.warc.gz#offset=673447640&length=112101"},
 {"day":"2025-09-16","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00008.warc.gz#offset=877382464&length=78881"},
+{"day":"2025-12-12","new":244790,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307640.68/warc/CC-MAIN-20251212022224-20251212052224-00734.warc.gz#offset=575868213&length=165720"},
 {"day":"2026-01-13","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00008.warc.gz#offset=876834750&length=78748"}
 ]}

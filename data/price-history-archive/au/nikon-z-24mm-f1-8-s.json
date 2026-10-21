@@ -1,0 +1,4 @@
+{"slug":"nikon-z-24mm-f1-8-s","market":"au","currency":"AUD","points":[
+{"day":"2024-04-19","new":148400,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817382.50/warc/CC-MAIN-20240419074959-20240419104959-00429.warc.gz#offset=655448669&length=64985"},
+{"day":"2024-12-08","new":143200,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066436561.81/warc/CC-MAIN-20241208015349-20241208045349-00461.warc.gz#offset=701844088&length=103056"}
+]}

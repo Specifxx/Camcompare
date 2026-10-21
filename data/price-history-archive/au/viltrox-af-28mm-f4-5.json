@@ -1,0 +1,5 @@
+{"slug":"viltrox-af-28mm-f4-5","market":"au","currency":"AUD","points":[
+{"day":"2025-06-16","new":13520,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481416.36/warc/CC-MAIN-20250616145137-20250616175137-00500.warc.gz#offset=593629002&length=114268"},
+{"day":"2026-03-08","new":16900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687277590.81/warc/CC-MAIN-20260308022436-20260308052436-00500.warc.gz#offset=513319086&length=159070"},
+{"day":"2026-07-19","new":16900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663952069.24/warc/CC-MAIN-20260719053429-20260719083429-00117.warc.gz#offset=602780823&length=158570"}
+]}
