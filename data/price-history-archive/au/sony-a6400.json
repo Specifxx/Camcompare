@@ -1,4 +1,10 @@
 {"slug":"sony-a6400","market":"au","currency":"AUD","points":[
+{"day":"2024-04-13","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816832.57/warc/CC-MAIN-20240413180040-20240413210040-00164.warc.gz#offset=971507327&length=84443"},
+{"day":"2024-05-24","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058684.66/warc/CC-MAIN-20240524060414-20240524090414-00451.warc.gz#offset=887613594&length=82821"},
+{"day":"2024-06-16","new":118200,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861659.47/warc/CC-MAIN-20240616105959-20240616135959-00164.warc.gz#offset=924974395&length=85277"},
+{"day":"2024-06-25","used":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00744.warc.gz#offset=887552226&length=83598"},
+{"day":"2024-11-05","used":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00744.warc.gz#offset=939057543&length=81826"},
+{"day":"2024-11-12","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.58/warc/CC-MAIN-20241112045844-20241112075844-00451.warc.gz#offset=906891485&length=82336"},
 {"day":"2025-07-16","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00951.warc.gz#offset=894590608&length=81599"},
 {"day":"2026-01-20","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469561.38/warc/CC-MAIN-20260120171558-20260120201558-00951.warc.gz#offset=849293704&length=81970"}
 ]}

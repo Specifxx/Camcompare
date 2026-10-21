@@ -1,4 +1,5 @@
 {"slug":"nikon-zf","market":"us","currency":"USD","points":[
+{"day":"2024-06-14","new":199695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861517.98/warc/CC-MAIN-20240613221354-20240614011354-00234.warc.gz#offset=703625675&length=139746"},
 {"day":"2025-02-08","new":179695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951543.48/warc/CC-MAIN-20250208114257-20250208144257-00234.warc.gz#offset=738815561&length=147000"},
 {"day":"2025-05-12","new":179695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412339.75/warc/CC-MAIN-20250512232428-20250513022428-00736.warc.gz#offset=613562488&length=112581"},
 {"day":"2025-06-20","new":179695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481578.48/warc/CC-MAIN-20250620091815-20250620121815-00018.warc.gz#offset=546060138&length=614923"}

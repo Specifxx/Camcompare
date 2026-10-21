@@ -1,4 +1,5 @@
 {"slug":"blackmagic-pocket-cinema-camera-4k","market":"us","currency":"USD","points":[
+{"day":"2024-06-20","new":129500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861957.99/warc/CC-MAIN-20240620141245-20240620171245-00685.warc.gz#offset=675914136&length=154436"},
 {"day":"2024-12-06","new":129500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066368854.91/warc/CC-MAIN-20241206032528-20241206062528-00685.warc.gz#offset=688810972&length=155041"},
 {"day":"2025-06-14","new":109500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481330.50/warc/CC-MAIN-20250614222335-20250615012335-00085.warc.gz#offset=604886887&length=164481"}
 ]}

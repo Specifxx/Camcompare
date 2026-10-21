@@ -1,4 +1,5 @@
 {"slug":"sony-fe-24-105mm-f4-g-oss","market":"us","currency":"USD","points":[
+{"day":"2024-06-23","new":129800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862474.84/warc/CC-MAIN-20240623131446-20240623161446-00181.warc.gz#offset=684097646&length=146126"},
 {"day":"2024-11-14","new":109800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00181.warc.gz#offset=703066711&length=143504"},
 {"day":"2025-06-24","new":139800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709779183.68/warc/CC-MAIN-20250624091149-20250624121149-00981.warc.gz#offset=645720427&length=154368"},
 {"day":"2025-09-05","new":119800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532641.17/warc/CC-MAIN-20250905112101-20250905142101-00174.warc.gz#offset=208908017&length=102216"},

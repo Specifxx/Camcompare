@@ -1,4 +1,5 @@
 {"slug":"sony-e-11mm-f1-8","market":"us","currency":"USD","points":[
+{"day":"2024-06-22","new":54800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862249.29/warc/CC-MAIN-20240622014659-20240622044659-00433.warc.gz#offset=670700417&length=141682"},
 {"day":"2024-09-18","new":49800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651895.12/warc/CC-MAIN-20240918100941-20240918130941-00465.warc.gz#offset=705175479&length=140477"},
 {"day":"2025-01-15","new":54800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362284.61/warc/CC-MAIN-20250115210945-20250116000945-00107.warc.gz#offset=819601139&length=141970"},
 {"day":"2025-07-10","new":64800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933771.26/warc/CC-MAIN-20250710190434-20250710220434-00765.warc.gz#offset=696788278&length=151353"},

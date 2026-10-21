@@ -7,5 +7,6 @@
 {"day":"2025-01-16","new":289900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362307.18/warc/CC-MAIN-20250116135418-20250116165418-00442.warc.gz#offset=809464859&length=143105"},
 {"day":"2025-02-18","new":339900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262922.73/warc/CC-MAIN-20250218212209-20250219002209-00848.warc.gz#offset=658740084&length=153928"},
 {"day":"2025-03-20","new":339900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433122.11/warc/CC-MAIN-20250320070413-20250320100413-00299.warc.gz#offset=763458398&length=154158"},
+{"day":"2025-06-19","new":289900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481506.64/warc/CC-MAIN-20250619021238-20250619051238-00382.warc.gz#offset=570204405&length=175322"},
 {"day":"2025-08-04","new":299900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279830.39/warc/CC-MAIN-20250804210957-20250805000957-00042.warc.gz#offset=674438499&length=147507"}
 ]}

@@ -1,4 +1,6 @@
 {"slug":"gopro-hero12-black","market":"us","currency":"USD","points":[
+{"day":"2024-06-14","new":39900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861545.42/warc/CC-MAIN-20240614075213-20240614105213-00446.warc.gz#offset=717379097&length=154584"},
+{"day":"2024-06-17","new":49900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861698.15/warc/CC-MAIN-20240617060013-20240617090013-00415.warc.gz#offset=703848055&length=153068"},
 {"day":"2025-01-16","new":39900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00446.warc.gz#offset=822495830&length=151450"},
 {"day":"2025-07-08","new":59900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933687.71/warc/CC-MAIN-20250708225839-20250709015839-00079.warc.gz#offset=668553727&length=150576"}
 ]}

@@ -1,4 +1,5 @@
 {"slug":"sigma-14-24mm-f2-8-dg-hsm-art","market":"us","currency":"USD","points":[
+{"day":"2024-06-22","new":124900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862249.29/warc/CC-MAIN-20240622014659-20240622044659-00387.warc.gz#offset=689087224&length=138004"},
 {"day":"2024-09-11","new":119999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651387.63/warc/CC-MAIN-20240911120037-20240911150037-00787.warc.gz#offset=739983395&length=142140"},
 {"day":"2025-02-08","new":128900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951543.48/warc/CC-MAIN-20250208114257-20250208144257-00041.warc.gz#offset=732508584&length=143018"},
 {"day":"2025-03-17","new":129999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433005.64/warc/CC-MAIN-20250317003559-20250317033559-00987.warc.gz#offset=780692757&length=150076"}

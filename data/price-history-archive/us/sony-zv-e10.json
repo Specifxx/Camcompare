@@ -1,5 +1,6 @@
 {"slug":"sony-zv-e10","market":"us","currency":"USD","points":[
 {"day":"2024-04-14","new":65800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816904.18/warc/CC-MAIN-20240414223349-20240415013349-00595.warc.gz#offset=620721192&length=206756"},
+{"day":"2024-06-12","new":59800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861173.16/warc/CC-MAIN-20240612140424-20240612170424-00866.warc.gz#offset=704961421&length=145776"},
 {"day":"2024-08-08","new":74900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640740684.46/warc/CC-MAIN-20240808190926-20240808220926-00789.warc.gz#offset=530042337&length=234585"},
 {"day":"2024-08-12","new":87900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641048885.76/warc/CC-MAIN-20240812190307-20240812220307-00789.warc.gz#offset=527655086&length=236199"},
 {"day":"2024-09-11","new":59800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651390.33/warc/CC-MAIN-20240911152031-20240911182031-00539.warc.gz#offset=631825083&length=232523"},
@@ -14,5 +15,6 @@
 {"day":"2025-08-08","new":77900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280031.27/warc/CC-MAIN-20250808162011-20250808192011-00723.warc.gz#offset=570397038&length=152442"},
 {"day":"2025-08-09","new":90800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280114.71/warc/CC-MAIN-20250809172211-20250809202211-00023.warc.gz#offset=559449612&length=152991"},
 {"day":"2025-08-11","new":93900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280336.32/warc/CC-MAIN-20250811131148-20250811161148-00689.warc.gz#offset=596301522&length=152888"},
-{"day":"2025-08-13","new":79900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151568464.68/warc/CC-MAIN-20250813121442-20250813151442-00389.warc.gz#offset=561933382&length=152747"}
+{"day":"2025-08-13","new":79900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151568464.68/warc/CC-MAIN-20250813121442-20250813151442-00389.warc.gz#offset=561933382&length=152747"},
+{"day":"2025-09-07","new":69900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00861.warc.gz#offset=596308971&length=150687"}
 ]}

@@ -1,3 +1,5 @@
 {"slug":"sony-a6100","market":"us","currency":"USD","points":[
-{"day":"2024-10-14","new":59800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255505.76/warc/CC-MAIN-20241014194408-20241014224408-00444.warc.gz#offset=649012396&length=154241"}
+{"day":"2024-07-16","new":61900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514759.37/warc/CC-MAIN-20240716142214-20240716172214-00556.warc.gz#offset=575659353&length=131137"},
+{"day":"2024-10-14","new":59800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255505.76/warc/CC-MAIN-20241014194408-20241014224408-00444.warc.gz#offset=649012396&length=154241"},
+{"day":"2025-07-10","new":79800,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933737.43/warc/CC-MAIN-20250710001239-20250710031239-00456.warc.gz#offset=597446575&length=110003"}
 ]}

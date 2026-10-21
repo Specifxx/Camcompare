@@ -94,7 +94,7 @@ class Blocked extends Error {}
 type Gate = { name: string; minGapMs: number; last: number; failures: number; requests: number; blocked: string | null };
 const gates: Record<string, Gate> = {
   wayback: { name: "web.archive.org", minGapMs: 1100, last: 0, failures: 0, requests: 0, blocked: null },
-  cc: { name: "data.commoncrawl.org", minGapMs: 250, last: 0, failures: 0, requests: 0, blocked: null },
+  cc: { name: "data.commoncrawl.org", minGapMs: 400, last: 0, failures: 0, requests: 0, blocked: null },
 };
 
 /** One request through a gate: spaced out, backing off on 429/5xx and resets, giving up after five in a row. */
@@ -107,7 +107,9 @@ async function politeFetch(g: Gate, url: string, headers: Record<string, string>
     g.requests++;
     try {
       const res = await fetch(url, { headers: { "User-Agent": UA, ...headers }, signal: AbortSignal.timeout(90_000) });
-      if (res.status === 429 || res.status === 503 || res.status >= 520) {
+      // Common Crawl's CDN answers too many requests with 503 "Slow Down" or a bare CloudFront 403.
+      const throttled = res.status === 429 || res.status === 503 || res.status >= 520 || (g === gates.cc && res.status === 403);
+      if (throttled) {
         g.failures++;
         const after = Number(res.headers.get("retry-after"));
         const back = Number.isFinite(after) && after > 0 ? Math.min(after, 300) * 1000 : 5000 * 2 ** attempt;
@@ -394,8 +396,8 @@ async function commonCrawlStore(r: Retailer, crawls: string[]) {
     if (!listings) {
       if (fetched >= MAX_FETCH) continue;
       const res = await politeFetch(gates.cc, `${CC}/${x.filename}`, { Range: `bytes=${x.offset}-${x.offset + x.length - 1}` });
-      fetched++;
       if (!res || !(res.status === 206 || res.ok)) continue;
+      fetched++;
       try {
         listings = readBody(r, x.url, warcBody(Buffer.from(await res.arrayBuffer())));
       } catch {

@@ -1,4 +1,5 @@
 {"slug":"canon-eos-r5-mark-ii","market":"us","currency":"USD","points":[
 {"day":"2024-12-04","new":429900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066156662.62/warc/CC-MAIN-20241204080324-20241204110324-00099.warc.gz#offset=718912070&length=142545"},
-{"day":"2025-05-23","new":409900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990722722.54/warc/CC-MAIN-20250523194917-20250523224917-00299.warc.gz#offset=670286119&length=155597"}
+{"day":"2025-05-23","new":409900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990722722.54/warc/CC-MAIN-20250523194917-20250523224917-00299.warc.gz#offset=670286119&length=155597"},
+{"day":"2026-01-19","new":389900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469444.61/warc/CC-MAIN-20260119071657-20260119101657-00800.warc.gz#offset=541057604&length=120282"}
 ]}

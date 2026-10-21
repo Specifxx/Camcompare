@@ -1,4 +1,5 @@
 {"slug":"nikon-af-s-28mm-f1-8g","market":"us","currency":"USD","points":[
+{"day":"2024-06-24","new":69695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198864986.57/warc/CC-MAIN-20240624021134-20240624051134-00874.warc.gz#offset=671652592&length=148875"},
 {"day":"2025-02-19","new":69695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262974.94/warc/CC-MAIN-20250219003812-20250219033812-00874.warc.gz#offset=681645790&length=157127"},
 {"day":"2025-07-11","new":69695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933802.11/warc/CC-MAIN-20250711135917-20250711165917-00174.warc.gz#offset=707740531&length=159547"}
 ]}

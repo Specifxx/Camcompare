@@ -1,4 +1,5 @@
 {"slug":"sony-e-pz-10-20mm-f4-g","market":"us","currency":"USD","points":[
+{"day":"2024-06-14","new":74800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861517.98/warc/CC-MAIN-20240613221354-20240614011354-00880.warc.gz#offset=702688882&length=141540"},
 {"day":"2024-09-18","new":74800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651895.12/warc/CC-MAIN-20240918100941-20240918130941-00880.warc.gz#offset=699720887&length=139670"},
 {"day":"2024-11-09","new":64800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028164.10/warc/CC-MAIN-20241109214337-20241110004337-00108.warc.gz#offset=708801279&length=136277"},
 {"day":"2025-05-20","new":94800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412887.6/warc/CC-MAIN-20250520181907-20250520211907-00308.warc.gz#offset=676930579&length=149765"},

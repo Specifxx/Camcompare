@@ -1,4 +1,5 @@
 {"slug":"nikon-z5-ii","market":"au","currency":"AUD","points":[
+{"day":"2025-04-22","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135796.50/warc/CC-MAIN-20250422020618-20250422050618-00448.warc.gz#offset=1044662413&length=85140"},
 {"day":"2025-09-07","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00448.warc.gz#offset=877879925&length=84040"},
 {"day":"2025-09-17","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826733.97/warc/CC-MAIN-20250917194202-20250917224202-00906.warc.gz#offset=872344722&length=83449"},
 {"day":"2026-01-14","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469122.50/warc/CC-MAIN-20260114153623-20260114183623-00906.warc.gz#offset=870429975&length=83401"},

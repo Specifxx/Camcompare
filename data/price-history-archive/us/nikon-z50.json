@@ -1,3 +1,5 @@
 {"slug":"nikon-z50","market":"us","currency":"USD","points":[
-{"day":"2024-04-13","new":85695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816853.44/warc/CC-MAIN-20240413211215-20240414001215-00268.warc.gz#offset=721910991&length=251642"}
+{"day":"2024-04-13","new":85695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816853.44/warc/CC-MAIN-20240413211215-20240414001215-00268.warc.gz#offset=721910991&length=251642"},
+{"day":"2024-06-21","new":75695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862189.36/warc/CC-MAIN-20240621223321-20240622013321-00777.warc.gz#offset=686054348&length=142261"},
+{"day":"2025-05-22","new":100999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990717783.87/warc/CC-MAIN-20250522181420-20250522211420-00542.warc.gz#offset=583575003&length=117744"}
 ]}

@@ -1,4 +1,5 @@
 {"slug":"tamron-17-28mm-f2-8-di-iii-rxd","market":"us","currency":"USD","points":[
 {"day":"2024-04-18","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817206.54/warc/CC-MAIN-20240418124808-20240418154808-00237.warc.gz#offset=704536760&length=114305"},
-{"day":"2024-05-18","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057422.43/warc/CC-MAIN-20240518121005-20240518151005-00475.warc.gz#offset=690270539&length=136536"}
+{"day":"2024-05-18","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057422.43/warc/CC-MAIN-20240518121005-20240518151005-00475.warc.gz#offset=690270539&length=136536"},
+{"day":"2024-06-12","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861261.53/warc/CC-MAIN-20240612203157-20240612233157-00209.warc.gz#offset=733889411&length=141759"}
 ]}

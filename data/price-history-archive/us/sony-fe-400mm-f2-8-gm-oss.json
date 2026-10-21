@@ -1,4 +1,5 @@
 {"slug":"sony-fe-400mm-f2-8-gm-oss","market":"us","currency":"USD","points":[
+{"day":"2024-06-12","new":1199800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861261.53/warc/CC-MAIN-20240612203157-20240612233157-00817.warc.gz#offset=734834357&length=148587"},
 {"day":"2024-08-08","new":1209900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00553.warc.gz#offset=620812180&length=140787"},
 {"day":"2024-11-14","new":1199800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00817.warc.gz#offset=719515110&length=156937"}
 ]}

@@ -1038,3 +1038,77 @@ store. It emails through the same `runAlerts` and writes nothing, so it
 commits and deploys nothing. At 30 minutes: free Actions minutes (public
 repo), one Neon SELECT a run, zero Vercel builds. Its workflow and the
 premium plan are in docs/premium-plan.md.
+
+## 2026-10-21: Price history backfill from archived store pages; the price chart; global price comparison page
+
+Friends: "The price history is flat for all the cams." "Is it not able to back
+search? Like camelcamelcamel." A camera bought at $1k dropped $300 a week
+later and had sold for $800 two months earlier; they want "tell me if it
+ever drops below $900". We had five days of our own history.
+
+- **Backfill from public archives of our own retailers' pages, never from the
+  stores.** `scripts/backfill-history.ts` reads two archives, both of which
+  crawl only where a store's robots.txt lets them: the Internet Archive's
+  Wayback Machine (CDX API for captures of Shopify `/products.json` and
+  `?page=N`, `/products/<handle>(.json|.js)` and product pages; raw bodies from
+  `/web/<ts>id_/`), at most one request a second, backing off on 429/503 and
+  giving up after five refusals in a row; and Common Crawl
+  (data.commoncrawl.org, a public dataset): each monthly crawl's sorted index
+  searched by HTTP range reads of its `cluster.idx`, then each product page's
+  WARC record range-read. Only stores in `RETAILERS` with a Shopify or
+  structured source; never Amazon, eBay or link-only shops; Keepa,
+  camelcamelcamel, PriceSpy and the like are never scraped. CDX answers and
+  parsed snapshots are cached (`BACKFILL_CACHE`), so reruns are cheap.
+- **Same matching as live.** Every archived listing goes through
+  `matchListing`, `shopifyCondition`/`storeCondition` and `plausiblePrice`
+  (`lib/price-history-backfill.ts`): kits, other currencies, out of stock (when
+  the page says so), conditions the store doesn't sell and implausible prices
+  are refused. A `/products/<handle>.json` capture doesn't say whether it was
+  in stock: counted (it was the advertised price). HTML entities, hex ones
+  included, are decoded first (Ted's JSON-LD names read
+  "Sony&#x20;A7&#x20;Mark&#x20;V"; the live `pageListings` has the same gap).
+- **Stored apart and always labelled.** `data/price-history-archive/<market>/<slug>.json`,
+  committed, one point per day and store: `{day, new?, used?, store,
+  source: "archive", snapshotUrl}`, the URL being where anyone can check it
+  (a Wayback URL, or a Common Crawl WARC file with offset and length). Our
+  own `data/price-history` is untouched, and `historyFor` (deals, PriceBox,
+  used value) still reads only what we recorded: archived points are sparse
+  (a capture every few weeks) and would make "dropped this week" signals
+  lie. Only the chart merges them (`mergeArchivedHistory` in `lib/offers.ts`;
+  a day we recorded wins over an archived one).
+- **The chart is a client component over a static file.**
+  `scripts/build-history-data.ts` (in `npm run build`, after
+  `build-public-data.ts`) writes `public/history/<market>/<slug>.json`
+  (git-ignored, CDN) with recorded and archived days and today's lowest new
+  and used with the store, never Amazon. `components/PriceHistory.tsx`
+  fetches it after the page renders: ranges 1M/3M/6M/1Y/All; lowest, typical
+  (median of daily lows) and highest for new and used; a crosshair tooltip
+  with the store and date; recorded series solid, archived dashed with
+  hollow dots and the legend "From archived store pages (Internet Archive,
+  Common Crawl)"; and "Is this a good price?" (`priceVerdict`, `lib/value.ts`):
+  today's price against the last six months, "Lower than 80% of the last 6
+  months", the typical and the lowest, with a link that opens the page's
+  "Track this price" form. No revalidate, no server fetch; the HTML carries
+  none of the history.
+- **Price traps** (`lib/price-traps.ts`, `components/PriceTraps.tsx`,
+  `components/PairPriceHistory.tsx`): for indexed rival pairs and
+  predecessor/successor links, flag when the newer model costs more new today
+  than the older one (often on promo), with both histories on one chart. The
+  friends' case: the Canon R6 V at A$3.5k against the R6 Mark III at A$3k on
+  promo, while reviewers called the R6 V the cheaper one.
+- **Global price comparison page** (`/world`, `/world/<brand>`,
+  `/world/<brand>/<line>`; `lib/world.ts`, `components/WorldTable.tsx`), like
+  the "Sony G Master global price comparison" posts buyers share: per product
+  line, the US list price (catalog launch USD) and today's lowest new price
+  in each market, converted into the currency the visitor picks (USD first;
+  the picker is client-side, rates from `data/fx.json`), each figure marked ≈
+  with the store's own price and name under it, the cheapest in green, and
+  the most it saves against the US list. **The second place a converted price
+  is allowed** after "Price around the world" (CLAUDE.md updated): it is the
+  page's whole point, and the conversion is labelled on every figure. The
+  caveats (exchange rate, tax and duty, shipping, regional warranty, link to
+  the grey-market guide) sit on every page. Japan and Hong Kong, the markets
+  buyers compare against most, aren't markets yet: `WORLD_COLUMNS` lists them
+  as planned columns that render the day they exist. DJI, GoPro and
+  Insta360 lines are included: DJI gear is hard to buy in the US. A line
+  with nothing priced is noindex.

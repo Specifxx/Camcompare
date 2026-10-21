@@ -1,4 +1,5 @@
 {"slug":"sony-fe-24-70mm-f2-8-gm-ii","market":"us","currency":"USD","points":[
+{"day":"2024-06-20","new":229800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861957.99/warc/CC-MAIN-20240620141245-20240620171245-00421.warc.gz#offset=669254598&length=131066"},
 {"day":"2024-10-09","new":229800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253654.26/warc/CC-MAIN-20241009211335-20241010001335-00640.warc.gz#offset=676055390&length=131883"},
 {"day":"2025-01-24","new":229800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703692178.96/warc/CC-MAIN-20250123223358-20250124013358-00421.warc.gz#offset=775775644&length=132892"},
 {"day":"2025-08-10","new":244800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00184.warc.gz#offset=670056050&length=149884"},

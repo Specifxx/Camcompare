@@ -5,6 +5,7 @@ import { guides } from "@/lib/guides";
 import { abs } from "@/lib/site";
 import { BOARDS } from "@/lib/community/rules";
 import { digicams, pricedIn, viralCameras } from "@/lib/curated";
+import { releasesIndexable } from "@/components/releases/ReleasesView";
 import { categorySummaries } from "@/lib/accessory-rows";
 import { liveBrands } from "@/views/BrandView";
 import { dealsIndexable } from "@/views/DealsView";
@@ -18,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const m of MARKET_CODES) {
     for (const p of ["/", "/cameras", "/lenses", "/finder", "/brands", "/mounts"]) out.push({ url: abs(marketPath(m, p)) });
     if (dealsIndexable(m)) out.push({ url: abs(marketPath(m, "/deals")) });
+    if (releasesIndexable(m)) out.push({ url: abs(marketPath(m, "/releases")) });
     if (pricedIn(digicams(), m)) out.push({ url: abs(marketPath(m, "/digicams")) });
     if (pricedIn(viralCameras().map((v) => v.camera), m)) out.push({ url: abs(marketPath(m, "/viral-cameras")) });
     const acc = categorySummaries(m); // accessory pages only where that market has listings

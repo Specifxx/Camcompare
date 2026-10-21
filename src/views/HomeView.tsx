@@ -5,6 +5,7 @@ import QuickViewHost from "@/components/QuickView";
 import SearchBox from "@/components/SearchBox";
 import DealVotes from "@/components/community/DealVotes";
 import DealFeed, { type FeedRow } from "@/components/home/DealFeed";
+import JustAnnounced from "@/components/releases/JustAnnounced";
 import Freshness from "@/components/home/Freshness";
 import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
@@ -243,6 +244,8 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         </div>
         <QuickViewHost />
       </section>
+
+      <JustAnnounced market={m} />
 
       {/* ---- the rest, compact */}
       {pairs.length > 0 && (

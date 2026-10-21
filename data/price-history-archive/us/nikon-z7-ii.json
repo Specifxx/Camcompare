@@ -1,4 +1,5 @@
 {"slug":"nikon-z7-ii","market":"us","currency":"USD","points":[
+{"day":"2024-06-12","new":229695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861173.16/warc/CC-MAIN-20240612140424-20240612170424-00353.warc.gz#offset=729366933&length=140512"},
 {"day":"2024-11-09","new":199695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028164.10/warc/CC-MAIN-20241109214337-20241110004337-00379.warc.gz#offset=716835018&length=124455"},
 {"day":"2025-03-20","new":199695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433136.71/warc/CC-MAIN-20250320165433-20250320195433-00453.warc.gz#offset=776338193&length=147511"}
 ]}

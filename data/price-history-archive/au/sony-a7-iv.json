@@ -1,4 +1,6 @@
 {"slug":"sony-a7-iv","market":"au","currency":"AUD","points":[
+{"day":"2024-10-06","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253413.55/warc/CC-MAIN-20241006122235-20241006152235-00315.warc.gz#offset=885830633&length=87732"},
+{"day":"2025-03-17","new":314996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433006.72/warc/CC-MAIN-20250317034918-20250317064918-00015.warc.gz#offset=1033190530&length=86600"},
 {"day":"2025-08-09","new":329995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280076.69/warc/CC-MAIN-20250809045158-20250809075158-00015.warc.gz#offset=934686107&length=86315"},
 {"day":"2025-12-09","new":329995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307406.75/warc/CC-MAIN-20251209190721-20251209220721-00015.warc.gz#offset=821195631&length=86427"}
 ]}

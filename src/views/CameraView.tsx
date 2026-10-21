@@ -22,6 +22,7 @@ import MoreOptions from "@/components/product/MoreOptions";
 import PageNav from "@/components/product/PageNav";
 import ProductDiscussions from "@/components/product/ProductDiscussions";
 import ProductReviews from "@/components/product/ProductReviews";
+import ProductStories from "@/components/community/ProductStories";
 import ProductVideos from "@/components/product/ProductVideos";
 import ReviewStars from "@/components/product/ReviewStars";
 import ThingsToKnow from "@/components/product/ThingsToKnow";
@@ -194,6 +195,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
       </section>
 
       <ProductReviews p={c} kind="camera" name={short} />
+      <ProductStories slug={c.slug} name={short} />
 
       <ThingsToKnow t={things} name={short} />
 

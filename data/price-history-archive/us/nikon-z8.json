@@ -1,4 +1,6 @@
 {"slug":"nikon-z8","market":"us","currency":"USD","points":[
+{"day":"2024-06-19","new":349695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861796.49/warc/CC-MAIN-20240618234039-20240619024039-00765.warc.gz#offset=686530081&length=147197"},
+{"day":"2024-12-04","new":359999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066304351.58/warc/CC-MAIN-20241204172202-20241204202202-00242.warc.gz#offset=615726402&length=180784"},
 {"day":"2025-01-19","new":339695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362532.35/warc/CC-MAIN-20250119214819-20250120004819-00765.warc.gz#offset=816878769&length=148524"},
 {"day":"2025-02-17","new":449695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00660.warc.gz#offset=698098789&length=156698"},
 {"day":"2025-04-28","new":359999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00270.warc.gz#offset=637391091&length=107822"},

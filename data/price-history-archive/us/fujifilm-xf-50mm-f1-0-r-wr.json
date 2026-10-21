@@ -1,4 +1,5 @@
 {"slug":"fujifilm-xf-50mm-f1-0-r-wr","market":"us","currency":"USD","points":[
+{"day":"2024-06-15","new":149900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861606.63/warc/CC-MAIN-20240615190624-20240615220624-00522.warc.gz#offset=712680766&length=131106"},
 {"day":"2025-01-26","new":149900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703361941.29/warc/CC-MAIN-20250126135402-20250126165402-00522.warc.gz#offset=778541227&length=133079"},
 {"day":"2025-04-20","new":149900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135740.31/warc/CC-MAIN-20250420084231-20250420114231-00583.warc.gz#offset=797427883&length=207074"},
 {"day":"2025-08-04","new":164900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279830.39/warc/CC-MAIN-20250804210957-20250805000957-00322.warc.gz#offset=671321811&length=204384"}

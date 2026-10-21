@@ -1,4 +1,7 @@
 {"slug":"nikon-d7500","market":"us","currency":"USD","points":[
+{"day":"2024-04-19","new":93900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817455.17/warc/CC-MAIN-20240419203449-20240419233449-00650.warc.gz#offset=602941361&length=146559"},
+{"day":"2024-04-23","new":94900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296818468.34/warc/CC-MAIN-20240423064231-20240423094231-00474.warc.gz#offset=591053390&length=149219"},
+{"day":"2024-08-05","new":89695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640427760.16/warc/CC-MAIN-20240805021234-20240805051234-00534.warc.gz#offset=519680274&length=149058"},
 {"day":"2025-02-18","new":69695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262922.73/warc/CC-MAIN-20250218212209-20250219002209-00748.warc.gz#offset=682216754&length=149568"},
 {"day":"2025-08-11","new":74695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280267.35/warc/CC-MAIN-20250811065521-20250811095521-00148.warc.gz#offset=673193098&length=151325"}
 ]}

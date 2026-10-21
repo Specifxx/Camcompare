@@ -1,4 +1,5 @@
 {"slug":"sony-fe-50mm-f1-2-gm","market":"us","currency":"USD","points":[
+{"day":"2024-06-19","new":199800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861832.94/warc/CC-MAIN-20240619185738-20240619215738-00568.warc.gz#offset=669790334&length=126982"},
 {"day":"2025-01-15","new":354800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362284.61/warc/CC-MAIN-20250115210945-20250116000945-00683.warc.gz#offset=825174856&length=149754"},
 {"day":"2025-07-11","new":344800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933802.11/warc/CC-MAIN-20250711135917-20250711165917-00083.warc.gz#offset=661640961&length=158632"},
 {"day":"2025-08-10","new":204800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00928.warc.gz#offset=688367160&length=153382"}

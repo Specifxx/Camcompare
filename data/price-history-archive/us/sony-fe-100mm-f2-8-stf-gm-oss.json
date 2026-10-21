@@ -1,4 +1,5 @@
 {"slug":"sony-fe-100mm-f2-8-stf-gm-oss","market":"us","currency":"USD","points":[
+{"day":"2024-06-23","new":149800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862474.84/warc/CC-MAIN-20240623131446-20240623161446-00149.warc.gz#offset=661199283&length=138933"},
 {"day":"2025-01-16","new":149800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00149.warc.gz#offset=831681407&length=133793"},
 {"day":"2025-09-13","new":159800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533316.46/warc/CC-MAIN-20250913033418-20250913063418-00476.warc.gz#offset=201072175&length=105894"}
 ]}

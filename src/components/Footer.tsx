@@ -36,6 +36,7 @@ export default function Footer() {
           <Link href="/community" prefetch={false}>Community</Link>
           <Link href="/stories" prefetch={false}>Member stories</Link>
           <Link href="/collection" prefetch={false}>My gear</Link>
+          <Link href={marketPath(here, "/releases")} prefetch={false}>Just announced</Link>
           <Link href={marketPath(here, "/viral-cameras")} prefetch={false}>Viral cameras</Link>
           <Link href={marketPath(here, "/digicams")} prefetch={false}>Digicams</Link>
           <Link href="/requests" prefetch={false}>Feedback &amp; requests</Link>

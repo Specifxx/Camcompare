@@ -1,4 +1,5 @@
 {"slug":"fujifilm-xf-23mm-f1-4-r-lm-wr","market":"us","currency":"USD","points":[
+{"day":"2024-06-13","new":89900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861517.98/warc/CC-MAIN-20240613221354-20240614011354-00021.warc.gz#offset=698860373&length=139080"},
 {"day":"2024-11-14","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00021.warc.gz#offset=693936492&length=134907"},
 {"day":"2024-12-07","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066429483.77/warc/CC-MAIN-20241207102309-20241207132309-00672.warc.gz#offset=710579281&length=143222"},
 {"day":"2025-07-18","new":89900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934611.62/warc/CC-MAIN-20250718031256-20250718061256-00421.warc.gz#offset=635460012&length=191855"}

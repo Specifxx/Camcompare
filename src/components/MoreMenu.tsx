@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { marketPath, type MarketCode } from "@/lib/markets";
 
 export const MORE = [
+  { path: "/releases", label: "Just announced", market: true },
   { path: "/viral-cameras", label: "Viral cameras", market: true },
   { path: "/digicams", label: "Digicams", market: true },
   { path: "/stories", label: "Member stories", market: false },

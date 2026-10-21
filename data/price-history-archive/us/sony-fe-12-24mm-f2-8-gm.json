@@ -1,5 +1,6 @@
 {"slug":"sony-fe-12-24mm-f2-8-gm","market":"us","currency":"USD","points":[
 {"day":"2024-05-25","new":289800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058829.24/warc/CC-MAIN-20240525131056-20240525161056-00434.warc.gz#offset=659628330&length=142419"},
+{"day":"2024-06-19","new":299800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861832.94/warc/CC-MAIN-20240619185738-20240619215738-00195.warc.gz#offset=668439250&length=132786"},
 {"day":"2024-07-24","new":299800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518304.14/warc/CC-MAIN-20240724140819-20240724170819-00259.warc.gz#offset=661079375&length=141874"},
 {"day":"2025-10-09","new":314800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358490.86/warc/CC-MAIN-20251009193428-20251009223428-00325.warc.gz#offset=249696402&length=115367"}
 ]}

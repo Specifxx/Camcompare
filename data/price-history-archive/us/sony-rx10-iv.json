@@ -1,4 +1,5 @@
 {"slug":"sony-rx10-iv","market":"us","currency":"USD","points":[
+{"day":"2024-06-24","new":169800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198864986.57/warc/CC-MAIN-20240624021134-20240624051134-00381.warc.gz#offset=676527031&length=133040"},
 {"day":"2024-09-13","new":169800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651507.67/warc/CC-MAIN-20240913034233-20240913064233-00313.warc.gz#offset=705291967&length=132549"},
 {"day":"2024-10-13","new":169800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255165.86/warc/CC-MAIN-20241013061417-20241013091417-00203.warc.gz#offset=669741026&length=134202"},
 {"day":"2025-03-19","new":169800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.67/warc/CC-MAIN-20250319175833-20250319205833-00113.warc.gz#offset=758577762&length=208793"}

@@ -1,3 +1,4 @@
 {"slug":"sony-rx1r-ii","market":"us","currency":"USD","points":[
+{"day":"2024-06-20","new":329800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861957.99/warc/CC-MAIN-20240620141245-20240620171245-00826.warc.gz#offset=660676297&length=137174"},
 {"day":"2025-02-17","new":329800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00094.warc.gz#offset=685890185&length=148113"}
 ]}

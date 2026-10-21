@@ -1,4 +1,5 @@
 {"slug":"sony-fe-70-200mm-f4-macro-g-oss-ii","market":"us","currency":"USD","points":[
+{"day":"2024-06-23","new":169800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862474.84/warc/CC-MAIN-20240623131446-20240623161446-00756.warc.gz#offset=677766247&length=142219"},
 {"day":"2024-11-08","new":179800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028019.71/warc/CC-MAIN-20241108003811-20241108033811-00001.warc.gz#offset=716182670&length=141005"},
 {"day":"2025-01-24","new":169800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703692178.96/warc/CC-MAIN-20250123223358-20250124013358-00756.warc.gz#offset=792706915&length=157279"},
 {"day":"2025-08-11","new":199999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280267.35/warc/CC-MAIN-20250811065521-20250811095521-00801.warc.gz#offset=678721940&length=158574"},

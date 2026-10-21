@@ -1,4 +1,5 @@
 {"slug":"sony-a7-iv","market":"us","currency":"USD","points":[
+{"day":"2024-06-12","new":413800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861261.53/warc/CC-MAIN-20240612203157-20240612233157-00694.warc.gz#offset=695070817&length=149126"},
 {"day":"2024-07-24","new":249800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518427.68/warc/CC-MAIN-20240724171328-20240724201328-00660.warc.gz#offset=644995605&length=127513"},
 {"day":"2025-01-13","new":249800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362175.46/warc/CC-MAIN-20250113221944-20250114011944-00261.warc.gz#offset=815343746&length=123974"},
 {"day":"2025-02-10","new":219800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951672.0/warc/CC-MAIN-20250210182410-20250210212410-00660.warc.gz#offset=728056705&length=153702"},

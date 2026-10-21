@@ -1,4 +1,5 @@
 {"slug":"sony-fe-28-60mm-f4-5-6","market":"us","currency":"USD","points":[
+{"day":"2024-06-21","new":49800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862189.36/warc/CC-MAIN-20240621223321-20240622013321-00677.warc.gz#offset=678945244&length=131728"},
 {"day":"2025-09-13","new":54800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533333.10/warc/CC-MAIN-20250913064246-20250913094246-00934.warc.gz#offset=195814721&length=117748"},
 {"day":"2025-10-09","new":49800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358353.67/warc/CC-MAIN-20251009004034-20251009034034-00135.warc.gz#offset=257366635&length=123812"}
 ]}

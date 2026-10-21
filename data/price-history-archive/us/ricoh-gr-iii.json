@@ -1,4 +1,5 @@
 {"slug":"ricoh-gr-iii","market":"us","currency":"USD","points":[
+{"day":"2024-06-21","new":132999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862157.88/warc/CC-MAIN-20240621191840-20240621221840-00456.warc.gz#offset=678969167&length=140148"},
 {"day":"2025-01-16","new":134999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362307.18/warc/CC-MAIN-20250116135418-20250116165418-00456.warc.gz#offset=796845262&length=142571"},
 {"day":"2025-05-19","new":106695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00943.warc.gz#offset=677098899&length=162130"},
 {"day":"2025-08-04","new":144999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279789.28/warc/CC-MAIN-20250804114251-20250804144251-00256.warc.gz#offset=697937009&length=150185"}
