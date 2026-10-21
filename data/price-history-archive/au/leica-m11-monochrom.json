@@ -1,4 +1,8 @@
 {"slug":"leica-m11-monochrom","market":"au","currency":"AUD","points":[
+{"day":"2024-04-19","new":1586500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817398.21/warc/CC-MAIN-20240419110125-20240419140125-00394.warc.gz#offset=605676291&length=113945"},
 {"day":"2024-10-10","new":1639000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253693.30/warc/CC-MAIN-20241010155548-20241010185548-00817.warc.gz#offset=640141461&length=89184"},
+{"day":"2024-11-07","new":1615900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00394.warc.gz#offset=635101497&length=112528"},
+{"day":"2024-12-06","new":1615900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066367647.84/warc/CC-MAIN-20241206001926-20241206031926-00012.warc.gz#offset=638319381&length=111419"},
+{"day":"2025-05-23","new":1639000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990721829.95/warc/CC-MAIN-20250523132358-20250523162358-00312.warc.gz#offset=596552250&length=173394"},
 {"day":"2025-10-08","new":1649000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00317.warc.gz#offset=716083550&length=142240"}
 ]}

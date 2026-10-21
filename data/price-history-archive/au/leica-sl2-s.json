@@ -1,3 +1,4 @@
 {"slug":"leica-sl2-s","market":"au","currency":"AUD","points":[
-{"day":"2025-04-20","new":474050,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135755.32/warc/CC-MAIN-20250420181556-20250420211556-00470.warc.gz#offset=709938439&length=143133"}
+{"day":"2025-04-20","new":474050,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135755.32/warc/CC-MAIN-20250420181556-20250420211556-00470.warc.gz#offset=709938439&length=143133"},
+{"day":"2025-05-14","new":832000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412415.74/warc/CC-MAIN-20250514070302-20250514100302-00650.warc.gz#offset=602992759&length=171225"}
 ]}
