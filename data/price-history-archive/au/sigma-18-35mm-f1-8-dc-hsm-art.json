@@ -1,0 +1,5 @@
+{"slug":"sigma-18-35mm-f1-8-dc-hsm-art","market":"au","currency":"AUD","points":[
+{"day":"2024-08-04","new":88800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640388159.9/warc/CC-MAIN-20240804010149-20240804040149-00651.warc.gz#offset=550646511&length=114703"},
+{"day":"2024-08-13","new":88800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641082193.83/warc/CC-MAIN-20240813172835-20240813202835-00820.warc.gz#offset=523847444&length=114528"},
+{"day":"2024-10-11","new":88800,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253751.70/warc/CC-MAIN-20241011042304-20241011072304-00651.warc.gz#offset=607254755&length=112285"}
+]}

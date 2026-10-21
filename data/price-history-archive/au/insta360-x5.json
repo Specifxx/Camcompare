@@ -1,4 +1,5 @@
 {"slug":"insta360-x5","market":"au","currency":"AUD","points":[
+{"day":"2025-08-09","new":92999,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280090.92/warc/CC-MAIN-20250809075926-20250809105926-00044.warc.gz#offset=585103799&length=163032"},
 {"day":"2025-09-06","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532791.98/warc/CC-MAIN-20250906153317-20250906183317-00116.warc.gz#offset=888943725&length=82833"},
 {"day":"2025-09-17","new":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00619.warc.gz#offset=877687728&length=82586"},
 {"day":"2025-10-07","new":82900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358259.69/warc/CC-MAIN-20251006222010-20251007012010-00873.warc.gz#offset=724252264&length=145466"},

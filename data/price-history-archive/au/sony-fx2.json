@@ -1,5 +1,8 @@
 {"slug":"sony-fx2","market":"au","currency":"AUD","points":[
 {"day":"2025-07-14","new":529900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934052.22/warc/CC-MAIN-20250714172351-20250714202351-00168.warc.gz#offset=656038981&length=131130"},
+{"day":"2025-08-07","new":529900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279971.34/warc/CC-MAIN-20250807182135-20250807212135-00246.warc.gz#offset=601488531&length=166294"},
+{"day":"2025-08-09","new":599900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280090.92/warc/CC-MAIN-20250809075926-20250809105926-00030.warc.gz#offset=603066524&length=166196"},
+{"day":"2025-09-17","new":469900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00326.warc.gz#offset=573516965&length=169333"},
 {"day":"2025-09-17","new":469995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00886.warc.gz#offset=886030235&length=82536"},
 {"day":"2026-01-18","new":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469410.3/warc/CC-MAIN-20260118124654-20260118154654-00886.warc.gz#offset=888984896&length=82229"}
 ]}

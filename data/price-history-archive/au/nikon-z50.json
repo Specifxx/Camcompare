@@ -1,0 +1,5 @@
+{"slug":"nikon-z50","market":"au","currency":"AUD","points":[
+{"day":"2024-08-03","new":157900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00806.warc.gz#offset=557711371&length=114994"},
+{"day":"2024-11-07","new":157900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00806.warc.gz#offset=644199006&length=112266"},
+{"day":"2025-10-13","new":157900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00006.warc.gz#offset=657804591&length=174622"}
+]}

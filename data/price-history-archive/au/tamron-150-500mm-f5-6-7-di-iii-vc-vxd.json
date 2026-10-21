@@ -1,3 +1,7 @@
 {"slug":"tamron-150-500mm-f5-6-7-di-iii-vc-vxd","market":"au","currency":"AUD","points":[
-{"day":"2025-08-14","new":219900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573816.93/warc/CC-MAIN-20250814035453-20250814065453-00682.warc.gz#offset=648893381&length=139368"}
+{"day":"2025-05-14","new":188500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412415.74/warc/CC-MAIN-20250514070302-20250514100302-00479.warc.gz#offset=605641980&length=173389"},
+{"day":"2025-06-16","new":188500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481414.40/warc/CC-MAIN-20250616114313-20250616144313-00545.warc.gz#offset=546102155&length=166135"},
+{"day":"2025-06-20","new":234500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481557.30/warc/CC-MAIN-20250620000002-20250620030002-00680.warc.gz#offset=555196242&length=159405"},
+{"day":"2025-08-14","new":219900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573816.93/warc/CC-MAIN-20250814035453-20250814065453-00682.warc.gz#offset=648893381&length=139368"},
+{"day":"2025-09-17","new":227500,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00200.warc.gz#offset=564564295&length=173942"}
 ]}
