@@ -161,6 +161,12 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
                 </Link>
               )}
             </div>
+            <section id="history" className="scroll-mt-20">
+              <h2 className="mb-2 text-sm font-bold text-muted">Price history</h2>
+              <div className="card p-3">
+                <PriceHistory points={historyFor(c.slug, m)} currency={MARKETS[m].currency} />
+              </div>
+            </section>
           </div>
         </header>
         <SpecHighlights items={cameraHighlights(c)} />
@@ -172,13 +178,6 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
       </section>
 
       <WorldPrices slug={c.slug} path={`/cameras/${c.slug}`} market={m} name={short} />
-
-      <section id="history" className="scroll-mt-20">
-        <h2 className="h-section mb-3">Price history</h2>
-        <div className="card p-4">
-          <PriceHistory points={historyFor(c.slug, m)} currency={MARKETS[m].currency} />
-        </div>
-      </section>
 
       <section>
         <h2 className="h-section mb-3">Used: what it should be worth</h2>

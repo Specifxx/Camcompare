@@ -96,7 +96,7 @@ PART 2: Vercel (the camcompare project)
 5. Environment variables are read when pages are BUILT, so set each of these for Production AND Preview as values become available, and after any change redeploy production (Deployments → latest production → ⋯ → Redeploy). Unset is safe: a link without a code just doesn't earn.
      DATABASE_URL and ADMIN_KEY (see Part 2A)
      RESEND_API_KEY (price alert emails; see Part 2B)
-     AUTH_SECRET and OWNER_EMAIL (community sign-in and owner notices; see Part 2C)
+     AUTH_SECRET (community sign-in; see Part 2C)
      AMAZON_TAG_US, AMAZON_TAG_UK, AMAZON_TAG_DE, AMAZON_TAG_AU, AMAZON_TAG_SG
      EBAY_AFFILIATE_CAMPAIGN
 ${deeplinkVars}
@@ -123,7 +123,7 @@ PART 2B: Price alert emails (Resend)
 PART 2C: Community sign-in (comments, reviews, votes, boards)
 Members sign in with an emailed link (sent through Resend, Part 2B). Sessions are signed with a secret; without it, sign-in stays off and everyone can still read.
 1. Generate a NEW random secret of at least 48 random letters and digits (no symbols), for example from a password generator. Never reuse ADMIN_KEY or any other value, and never write it into the repo, a file or this chat. Put it only into Vercel → Settings → Environment Variables → AUTH_SECRET (Production and Preview). Changing it later signs every member out.
-2. Vercel → Environment Variables → OWNER_EMAIL (Production and Preview): the owner's own email address, where reports and new posts are announced (at most 20 report emails, 10 new-post emails and 5 new-member emails a day). If you don't know which address I want, put it on my manual list instead.
+2. Owner notices (reports, new posts, new members; at most 20, 10 and 5 a day) go to camcompareapp@gmail.com, which is built into the code. If Vercel → Environment Variables has an OWNER_EMAIL, delete it: nothing reads it any more.
 3. Redeploy production. Then put on my manual list: "Open https://www.camcompare.app/community/signin, sign in with your email and pick a username, to check sign-in works."
 
 PART 3: Affiliate programmes
