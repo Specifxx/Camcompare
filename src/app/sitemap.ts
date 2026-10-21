@@ -4,6 +4,7 @@ import { MARKET_CODES, marketPath } from "@/lib/markets";
 import { guides } from "@/lib/guides";
 import { abs } from "@/lib/site";
 import { BOARDS } from "@/lib/community/rules";
+import { digicams, pricedIn, viralCameras } from "@/lib/curated";
 import { categorySummaries } from "@/lib/accessory-rows";
 import { liveBrands } from "@/views/BrandView";
 import { dealsIndexable } from "@/views/DealsView";
@@ -17,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const m of MARKET_CODES) {
     for (const p of ["/", "/cameras", "/lenses", "/finder", "/brands", "/mounts"]) out.push({ url: abs(marketPath(m, p)) });
     if (dealsIndexable(m)) out.push({ url: abs(marketPath(m, "/deals")) });
+    if (pricedIn(digicams(), m)) out.push({ url: abs(marketPath(m, "/digicams")) });
+    if (pricedIn(viralCameras().map((v) => v.camera), m)) out.push({ url: abs(marketPath(m, "/viral-cameras")) });
     const acc = categorySummaries(m); // accessory pages only where that market has listings
     if (acc.length) out.push({ url: abs(marketPath(m, "/accessories")) }, ...acc.map((s) => ({ url: abs(marketPath(m, `/accessories/${s.slug}`)) })));
     for (const b of liveBrands()) out.push({ url: abs(marketPath(m, `/brands/${b.slug}`)) });
@@ -28,5 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   out.push({ url: abs("/guides") }, ...guides().map((g) => ({ url: abs(`/guides/${g.slug}`), lastModified: g.updated || undefined })));
   out.push({ url: abs("/about") });
   out.push({ url: abs("/community") }, ...BOARDS.map((b) => ({ url: abs(`/community/${b.slug}`) })));
+  out.push({ url: abs("/stories") }, { url: abs("/requests") }, { url: abs("/collection") });
   return out;
 }

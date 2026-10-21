@@ -133,7 +133,7 @@ export function VoteArrows({
   );
 }
 
-export function ReportLink({ kind, id, onNeedSignIn }: { kind: "comment" | "review" | "thread"; id: string; onNeedSignIn?: () => void }) {
+export function ReportLink({ kind, id, onNeedSignIn }: { kind: "comment" | "review" | "thread" | "post" | "request"; id: string; onNeedSignIn?: () => void }) {
   const { user } = useMe();
   const [open, setOpen] = useState(false);
   const [reason, setReason] = useState<ReportReason>("spam");

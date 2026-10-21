@@ -13,8 +13,9 @@ export const CAMEXPERT_KARMA = 50;
 export const CAMEXPERT_MIN_ACCOUNT_DAYS = 14;
 const DAY_MS = 86_400_000;
 
-export type VoteKind = "comment" | "review" | "thread" | "deal";
-export const VOTE_KINDS = ["comment", "review", "thread", "deal"] as const satisfies readonly VoteKind[];
+export type VoteKind = "comment" | "review" | "thread" | "deal" | "post" | "request";
+/** "post": a member story (/stories); "request": a feature or gear request (/requests). */
+export const VOTE_KINDS = ["comment", "review", "thread", "deal", "post", "request"] as const satisfies readonly VoteKind[];
 /** What earns CamKarma: votes others cast on your comments and reviews. Never thread or deal votes. */
 export const KARMA_KINDS: readonly VoteKind[] = ["comment", "review"];
 
@@ -54,9 +55,9 @@ export const ID_RE = /^[1-9][0-9]{0,17}$/;
 /** Deal keys one GET /api/community/deals may ask for. */
 export const DEAL_KEYS_MAX = 100;
 
-export type Target = { kind: "product"; slug: string } | { kind: "deal"; key: string } | { kind: "thread"; id: string };
+export type Target = { kind: "product"; slug: string } | { kind: "deal"; key: string } | { kind: "thread"; id: string } | { kind: "post"; id: string } | { kind: "request"; id: string };
 
-/** "product:<slug>", "deal:<dealKey>" or "thread:<id>"; anything else is null. */
+/** "product:<slug>", "deal:<dealKey>", "thread:<id>", "post:<id>" (a story) or "request:<id>"; anything else is null. */
 export function parseTarget(raw: unknown): Target | null {
   if (typeof raw !== "string" || raw.length > 140) return null;
   const i = raw.indexOf(":");
@@ -66,10 +67,11 @@ export function parseTarget(raw: unknown): Target | null {
   if (kind === "product" && SLUG_RE.test(rest)) return { kind, slug: rest };
   if (kind === "deal" && DEAL_KEY_RE.test(rest)) return { kind, key: rest };
   if (kind === "thread" && ID_RE.test(rest)) return { kind, id: rest };
+  if ((kind === "post" || kind === "request") && ID_RE.test(rest)) return { kind, id: rest };
   return null;
 }
 
-export const targetKey = (t: Target) => (t.kind === "product" ? `product:${t.slug}` : t.kind === "deal" ? `deal:${t.key}` : `thread:${t.id}`);
+export const targetKey = (t: Target) => (t.kind === "product" ? `product:${t.slug}` : t.kind === "deal" ? `deal:${t.key}` : `${t.kind}:${t.id}`);
 
 /** A comma list of deal keys from a query string: valid ones only, de-duplicated, at most DEAL_KEYS_MAX. */
 export function parseDealKeys(raw: string | null | undefined): string[] {

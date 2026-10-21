@@ -8,10 +8,11 @@
 // past bot protection: a 403/429/challenge stops the run.
 import { gunzipSync } from "node:zlib";
 import { accessoryOffer, classifyAccessory, type AccessoryOffer } from "../accessories";
-import { matchListing, plausiblePrice } from "../matching";
+import { kitLensOf, matchListing, plausiblePrice } from "../matching";
 import { MARKETS } from "../markets";
-import type { Offer } from "../offers";
+import type { Availability, Offer } from "../offers";
 import type { Condition } from "../retailers";
+import { availableNow, detailOf, promoOf, schemaAvailability, wasPriceOf } from "./detail";
 import { cheapestPerProduct } from "./feed";
 import { robotsAllows, shopifyCondition } from "./shopify";
 import { sleep, toMinor, type PriceSource } from "./types";
@@ -40,6 +41,12 @@ export type StructuredConfig = {
   sitemapWindow?: number;
   /** Product pages per run (default 250). */
   budget?: number;
+  /**
+   * Where a page names the branch that holds the item (Cash Converters:
+   * one site for every store): the first capture group is the branch, put
+   * in the offer's `detail` so two identical listings can be told apart.
+   */
+  branch?: RegExp;
   delayMs?: number;
 };
 
@@ -68,7 +75,20 @@ export function slugText(url: string): string {
   return p.replace(/\.(html?|aspx|php)$/i, "").replace(/[-_+/.]+/g, " ").trim();
 }
 
-export type PageListing = { title: string; gtin?: string; mpn?: string; sku?: string; price: number; currency: string; inStock: boolean; condition: Condition | null };
+export type PageListing = {
+  title: string;
+  gtin?: string;
+  mpn?: string;
+  sku?: string;
+  price: number;
+  currency: string;
+  inStock: boolean;
+  condition: Condition | null;
+  /** The page's own strikethrough / list price (priceSpecification), above `price`. */
+  wasPrice?: number | null;
+  availability?: Availability | null;
+  description?: string;
+};
 
 const str = (v: unknown): string | undefined => (typeof v === "string" && v.trim() ? v.trim() : typeof v === "number" ? String(v) : undefined);
 const decode = (s: string) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#0?39;|&apos;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)));
@@ -113,20 +133,31 @@ export function pageListings(html: string): PageListing[] {
     name = decode(name);
     const brand = str((n.brand as Record<string, unknown>)?.name ?? n.brand);
     const title = brand && !name.toLowerCase().includes(brand.toLowerCase()) ? `${brand} ${name}` : name;
-    const gtin = str(n.gtin13 ?? n.gtin12 ?? n.gtin14 ?? n.gtin ?? n.gtin8);
+    // Only a real GTIN length: Camera House puts its 5-digit SKU in `gtin8`.
+    const gtin = [n.gtin13, n.gtin12, n.gtin14, n.gtin, n.gtin8].map(str).find((g) => g && /^\d{8}$|^\d{12,14}$/.test(g.replace(/\D/g, "")));
+    const description = str(n.description);
     const offers = ([] as unknown[]).concat(n.offers ?? []).flatMap((o) => {
       const r = o as Record<string, unknown>;
       return r?.["@type"] === "AggregateOffer" && r.offers ? ([] as unknown[]).concat(r.offers) : [r];
     }) as Record<string, unknown>[];
     for (const o of offers) {
       if (!o) continue;
-      const spec = ([] as Record<string, unknown>[]).concat((o.priceSpecification as Record<string, unknown>) ?? []).find((s) => !/strikethrough|listprice/i.test(str(s.priceType) ?? ""));
+      const specs = ([] as Record<string, unknown>[]).concat((o.priceSpecification as Record<string, unknown>) ?? []);
+      const spec = specs.find((s) => !/strikethrough|listprice/i.test(str(s.priceType) ?? ""));
+      // The store's own struck-through price: a StrikethroughPrice or ListPrice
+      // specification. AggregateOffer's highPrice is the dearest variant, not
+      // a former price, so it never counts.
+      const struck = specs.find((s) => /strikethrough|listprice/i.test(str(s.priceType) ?? ""));
       const raw = o.price ?? o.lowPrice ?? spec?.price;
       const price = typeof raw === "number" ? Math.round(raw * 100) : str(raw) ? toMinor(str(raw)!) : 0;
       const currency = str(o.priceCurrency ?? spec?.priceCurrency)?.toUpperCase();
       const cond = schemaCondition(o.itemCondition ?? n.itemCondition);
       if (!price || !currency || cond === "refuse") continue;
-      out.push({ title, gtin, mpn: str(n.mpn), sku: str(o.sku ?? n.sku), price, currency, inStock: inStockOf(o.availability), condition: cond });
+      const wasRaw = struck?.price;
+      const was = typeof wasRaw === "number" ? Math.round(wasRaw * 100) : str(wasRaw) ? toMinor(str(wasRaw)!) : 0;
+      const sameCurrency = !struck?.priceCurrency || str(struck.priceCurrency)?.toUpperCase() === currency;
+      const availability = schemaAvailability(str(o.availability));
+      out.push({ title, gtin, mpn: str(n.mpn), sku: str(o.sku ?? n.sku), price, currency, inStock: availability ? availableNow(availability, false) : inStockOf(o.availability), condition: cond, wasPrice: sameCurrency ? wasPriceOf(price, was) : null, availability, description: description ? decode(description) : undefined });
     }
   }
   if (out.length) return out;
@@ -134,13 +165,17 @@ export function pageListings(html: string): PageListing[] {
   const amount = meta("product:price:amount");
   const currency = meta("product:price:currency");
   const title = meta("og:title");
-  if (amount && currency && title) out.push({ title: decode(title), price: toMinor(amount), currency: currency.toUpperCase(), inStock: !/out ?of ?stock|oos/i.test(meta("product:availability") ?? ""), condition: schemaCondition(meta("product:condition")) as Condition | null });
+  if (amount && currency && title) {
+    const av = meta("product:availability") ?? "";
+    const availability = /pre-?order/i.test(av) ? "preorder" : /back ?order/i.test(av) ? "backorder" : /out ?of ?stock|oos/i.test(av) ? "out_of_stock" : /in ?stock/i.test(av) ? "in_stock" : null;
+    out.push({ title: decode(title), price: toMinor(amount), currency: currency.toUpperCase(), inStock: availability ? availableNow(availability, false) : !/out ?of ?stock|oos/i.test(av), condition: schemaCondition(meta("product:condition")) as Condition | null, availability });
+  }
   return out;
 }
 
 export const structuredSource = (retailerKey: string): PriceSource => ({
   retailer: retailerKey,
-  async run({ market, retailer: r, index, now, log }) {
+  async run({ market, retailer: r, index, lenses, now, log }) {
     const cfg = r.structured;
     if (!cfg) return { status: "skipped", note: "no structured-data config" };
     const origin = new URL(r.site).origin;
@@ -216,6 +251,7 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
       }
       fetched++;
       if (p.status !== 200) continue;
+      const branch = cfg.branch ? (cfg.branch.exec(p.text)?.[1] ?? null) : null;
       for (const l of pageListings(p.text)) {
         // A page priced in another currency is refused, never converted.
         if (l.currency !== currency) continue;
@@ -229,7 +265,29 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
         const fromTitle = shopifyCondition({ title: `${l.title} ${slugText(u)}` }, "");
         const cond = fromTitle !== "new" ? fromTitle : (l.condition ?? "new");
         if (!r.conditions.includes(cond) || !plausiblePrice(m.product, cond, l.price / 100, currency, m.via)) continue;
-        offers.push({ product: m.product.slug, kind: m.kind, retailer: r.key, condition: cond, price: l.price, currency, url: u, title: l.title, seller: null, inStock: l.inStock, kit: m.kit, mount: m.mount, seenAt: now, sourceId: l.sku ?? null });
+        const kit = m.kit && m.kind === "camera" ? kitLensOf(l.title, index, lenses, m.product) : null;
+        offers.push({
+          product: m.product.slug,
+          kind: m.kind,
+          retailer: r.key,
+          condition: cond,
+          price: l.price,
+          currency,
+          url: u,
+          title: l.title,
+          seller: null,
+          inStock: l.inStock,
+          kit: m.kit,
+          mount: m.mount,
+          seenAt: now,
+          sourceId: l.sku ?? null,
+          wasPrice: l.wasPrice ?? null,
+          availability: l.availability ?? null,
+          kitLens: kit?.kitLens ?? null,
+          kitLensName: kit?.kitLensName ?? null,
+          promo: promoOf({ title: l.title, body: l.description }),
+          detail: detailOf({ branch: branch ? decode(branch) : null, title: l.title, text: cond === "new" ? null : l.description, used: cond !== "new" }),
+        });
       }
     }
     if (!cfg.slugless) for (const [p] of window.slice(0, fetched)) covered.add(p);

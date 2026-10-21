@@ -1,12 +1,16 @@
-// POST /api/alerts: one price alert from the "Track this price" form into the
-// private price_alerts table (lib/alerts.ts). Double opt-in: a new address
+// POST /api/alerts: one alert from the "Track this price" form (price drop,
+// deal under a price, back in stock, preorder opens) or from /releases
+// (preorder for a release, a maker's announcements) into the private
+// price_alerts table (lib/alerts.ts). Double opt-in: a new address
 // gets a confirm email and nothing else until it clicks. Without DATABASE_URL
 // and RESEND_API_KEY it answers 503 and the form says alerts aren't connected.
 // Logs never carry the email address or the connection string.
-import { alertsConfigured, alertsLimiter, ALERTS_NOT_CONNECTED, checkAlertRequest, confirmEmail, createAlert, lowestFor, sendEmail } from "@/lib/alerts";
+import { alertOrderState, alertsConfigured, alertsLimiter, ALERTS_NOT_CONNECTED, checkAlertRequest, confirmEmail, createAlert, lowestFor, sendEmail } from "@/lib/alerts";
 import { ALERTS_PER_EMAIL } from "@/lib/alert-kinds";
 import { displayName, offersFor, product } from "@/lib/catalog";
 import { clientIp, logSafe } from "@/lib/feedback";
+import { releaseBrandName, isReleaseBrand } from "@/lib/releases/brands";
+import { releaseById } from "@/lib/releases/data";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -36,14 +40,27 @@ export async function POST(req: Request) {
   if (verdict.action === "reject") return reply(verdict.status, { ok: false, error: verdict.error });
   if (verdict.action === "drop") return reply(200, { ok: true, confirm: true });
   const a = verdict.alert;
-  const p = product(a.slug);
-  if (!p || p.kind !== a.kind) return reply(400, { ok: false, error: "We couldn't find that product." });
+  // The subject must exist in this build: a product, a release in data/releases.json, or a watched maker.
+  let name: string;
+  if (a.kind === "brand") {
+    if (!isReleaseBrand(a.slug)) return reply(400, { ok: false, error: "We don't watch that maker yet." });
+    name = releaseBrandName(a.slug);
+  } else if (a.kind === "release") {
+    const r = releaseById(a.slug);
+    if (!r) return reply(400, { ok: false, error: "We couldn't find that announcement." });
+    name = r.title.length > 80 ? `${r.title.slice(0, 77)}…` : r.title;
+  } else {
+    const p = product(a.slug);
+    if (!p || p.kind !== a.kind) return reply(400, { ok: false, error: "We couldn't find that product." });
+    name = displayName(p.item, a.market);
+  }
 
   try {
-    const seen = lowestFor(offersFor(a.slug, a.market), a.condition)?.price ?? null;
-    const r = await createAlert(a, seen);
+    const seen = a.type === "price" ? lowestFor(offersFor(a.slug, a.market), a.condition)?.price ?? null : null;
+    const state = a.type === "brand" ? new Date().toISOString() : a.type === "price" ? null : alertOrderState({ ...a, product: a.slug }, (s) => offersFor(s, a.market), (id) => releaseById(id)?.products ?? []);
+    const r = await createAlert(a, seen, state);
     if (r.status === "full") return reply(409, { ok: false, error: `You already have ${ALERTS_PER_EMAIL} alerts. Remove one from the link in any alert email first.` });
-    if (r.sendConfirm) await sendEmail(confirmEmail(r.row, displayName(p.item, a.market)));
+    if (r.sendConfirm) await sendEmail(confirmEmail(r.row, name));
     return reply(r.status === "created" ? 201 : 200, { ok: true, confirm: !r.row.confirmed, updated: r.status === "updated" });
   } catch (e) {
     console.error(`alerts: save failed (${a.slug}, ${a.market}): ${logSafe(e)}`);

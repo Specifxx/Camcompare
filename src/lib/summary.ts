@@ -3,7 +3,8 @@
 import type { Camera, Lens } from "./catalog/schema";
 import { brandName, displayName, displayShortName, launchPrice, offersFor } from "./catalog";
 import { MARKETS, type MarketCode } from "./markets";
-import { isAmazonOffer, lowest } from "./offers";
+import { isAmazonOffer } from "./offers";
+import { headline } from "./price-rules";
 import { thumbSrc } from "./thumb";
 import { cropFactor, lensCategories } from "./specs/lens";
 import type { Base, CameraSummary, LensSummary } from "./summary-types";
@@ -13,6 +14,7 @@ export { priceOf } from "./summary-types";
 
 function base(p: Camera | Lens, m: MarketCode): Base {
   const offers = offersFor(p.slug, m);
+  const h = headline(offers);
   return {
     slug: p.slug,
     name: displayName(p, m),
@@ -23,8 +25,9 @@ function base(p: Camera | Lens, m: MarketCode): Base {
     status: p.status,
     currency: MARKETS[m].currency,
     launch: launchPrice(p, m)?.amount ?? null,
-    lowestNew: lowest(offers, "new")?.price ?? null,
-    lowestUsed: lowest(offers, "used")?.price ?? null,
+    lowestNew: h.new?.price ?? null,
+    lowestUsed: h.used?.price ?? null,
+    ...(h.kit ? { kitFrom: h.kit.price } : {}),
     // Stores with it in stock today. Amazon's price is never in a summary
     // (they are embedded in static pages), so neither is its count.
     stores: new Set(offers.filter((o) => o.inStock && !isAmazonOffer(o)).map((o) => o.retailer)).size,

@@ -28,7 +28,23 @@ export type OfferRow = {
   /** Amazon's time, so its price can hide itself after 24 hours. Never in a public file. */
   seenAt?: string;
   amazon?: boolean;
+  /** The tab a row belongs to: "new", "used" (used and open box) or "refurb". */
+  cond?: RowCond;
+  /** The store's own struck-through price, minor units, when it is above `price`. */
+  was?: number;
+  /** Stock beyond in/out, when the source says (low stock, preorder, backorder). */
+  avail?: "low_stock" | "preorder" | "backorder";
+  promo?: string; // the store's bonus or promotion, as it words it
+  detail?: string; // variant, branch or grade: what tells two listings apart
+  /** A kit's lens: "RF-S 18-45mm". The kit is labelled even when it is unknown. */
+  kitLens?: string;
+  /** Identical listings (same store, condition, price, stock and detail) merged into one row. */
+  count?: number;
+  /** The page's headline offers (lib/price-rules.ts): "best" new, cheapest "used", the headline or cheapest new "kit". */
+  tag?: "best" | "used" | "kit";
 };
+
+export type RowCond = "new" | "used" | "refurb";
 
 /** A store whose price we can't show yet (Amazon before its API, eBay before its keys): a tagged link. */
 export type CheckLink = {
@@ -60,6 +76,9 @@ export type QuickViewData = {
   usedTypical?: number | null;
   /** Today's cheapest used, minor units, for "Used from" when there is no typical value yet. */
   lowestUsed?: number | null;
+  /** The headline (lib/price-rules.ts): body-only new, else used, else a kit, labelled. Same rule as the product page. */
+  from?: { price: number; what: "new" | "used" | "kit"; label?: string } | null;
+  lowestNew?: number | null;
 };
 
 export const QUICKVIEW_PARAM = "view";

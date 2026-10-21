@@ -16,6 +16,8 @@ module.exports = {
     return [
       { source: "/community/t/:id(\\d{1,18})", destination: "/community/t" },
       { source: "/u/:username([A-Za-z][A-Za-z0-9_]{2,19})", destination: "/u" },
+      // Member stories, the same way (DECISIONS.md, "Member stories and My gear").
+      { source: "/stories/p/:id(\\d{1,18})", destination: "/stories/p" },
     ];
   },
   async headers() {

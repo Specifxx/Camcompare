@@ -4,7 +4,9 @@ import type { Camera } from "./catalog/schema";
 import { publishedCameras } from "./catalog";
 import { convert, type Fx } from "./fx";
 import { MARKET_CODES, MARKETS, type Currency, type MarketCode } from "./markets";
+import { price } from "./format";
 import { isAmazonOffer, lowest, type HistoryPoint, type Offer } from "./offers";
+import { lowestKit } from "./price-rules";
 import { sensorLabel, typeLabel } from "./specs/definitions";
 
 type Metric = { key: string; label: string; phrase: string; better: "higher" | "lower"; get: (c: Camera) => number | null; unit: (v: number) => string };
@@ -128,22 +130,51 @@ export function topBargains(items: BargainInput[], field: "new" | "used", minPct
 export type WorldRow = {
   market: MarketCode;
   currency: Currency;
-  new: number | null; // minor units, the market's own currency
-  used: number | null;
+  new: number | null; // minor units, the market's own currency: cheapest in-stock body-only new
+  used: number | null; // the same, used / open box / refurbished
   /** The same, converted approximately into the page market's currency (minor units). */
   newHere: number | null;
   usedHere: number | null;
+  /**
+   * Only where that condition has no body-only price: its cheapest in-stock
+   * kit, labelled ("Kit with RF-S 18-45mm"). Shown as a kit, never compared
+   * as the body price (lib/price-rules.ts).
+   */
+  newKit?: { price: number; here: number; label: string } | null;
+  usedKit?: { price: number; here: number; label: string } | null;
+  /** Any offer at all, in stock or not (Amazon left out): a listed market is never "not priced". */
+  listed?: boolean;
 };
 
-/** Each market's lowest new and used price, with an approximate conversion into `here`'s currency. */
-export function worldRows(offersByMarket: Record<MarketCode, Offer[]>, here: MarketCode, fx: Fx): WorldRow[] {
+/**
+ * Each market's lowest new and used price, with an approximate conversion
+ * into `here`'s currency. The same rules as the product page's table and
+ * price box (lib/price-rules.ts): in stock, body only, Amazon left out; a
+ * condition with kits only shows its cheapest kit, labelled.
+ */
+export function worldRows(offersByMarket: Record<MarketCode, Offer[]>, here: MarketCode, fx: Fx, kitLabel: (o: Offer) => string = () => "Kit"): WorldRow[] {
   const to = MARKETS[here].currency;
   return MARKET_CODES.map((m) => {
     const cur = MARKETS[m].currency;
-    const n = lowest(offersByMarket[m] ?? [], "new")?.price ?? null;
-    const u = lowest(offersByMarket[m] ?? [], "used")?.price ?? null;
-    const conv = (v: number | null) => (v === null ? null : cur === to ? v : Math.round(convert(v, cur, to, fx)));
-    return { market: m, currency: cur, new: n, used: u, newHere: conv(n), usedHere: conv(u) };
+    const offers = offersByMarket[m] ?? [];
+    const n = lowest(offers, "new")?.price ?? null;
+    const u = lowest(offers, "used")?.price ?? null;
+    const conv = (v: number) => (cur === to ? v : Math.round(convert(v, cur, to, fx)));
+    const kit = (group: "new" | "used") => {
+      const k = lowestKit(offers, group);
+      return k ? { price: k.price, here: conv(k.price), label: kitLabel(k) } : null;
+    };
+    return {
+      market: m,
+      currency: cur,
+      new: n,
+      used: u,
+      newHere: n === null ? null : conv(n),
+      usedHere: u === null ? null : conv(u),
+      newKit: n === null ? kit("new") : null,
+      usedKit: u === null ? kit("used") : null,
+      listed: offers.some((o) => !isAmazonOffer(o)),
+    };
   });
 }
 
@@ -151,22 +182,36 @@ const ADJ: Record<MarketCode, string> = { us: "US", uk: "UK", eu: "European", au
 
 export type WorldVerdict = { field: "new" | "used"; cheapest: MarketCode; here: MarketCode; pct: number | null; text: string };
 
+const place = (m: MarketCode) => (m === "us" ? "the US" : m === "uk" ? "the UK" : m === "eu" ? "Europe" : MARKETS[m].name);
+
 /**
  * Where it is cheapest, converted at today's rate, against this market:
- * "Cheapest in Australia: about 12% under the US price". New prices decide;
- * used ones only when fewer than two markets price it new. Needs two markets.
- * A gap under 2% is called "about the same".
+ * "Cheapest in Australia: about 12% under the US price". Body-only prices
+ * decide, new first; used ones when fewer than two markets price it new, or
+ * when this market has a used body price and no new one. Needs two markets.
+ * A gap under 2% is called "about the same". A market with offers is never
+ * called "not priced": it has kits only, used only, or is out of stock.
  */
 export function worldVerdict(rows: WorldRow[], here: MarketCode): WorldVerdict | null {
+  const me = rows.find((r) => r.market === here);
   for (const field of ["new", "used"] as const) {
     const key = field === "new" ? "newHere" : "usedHere";
     const priced = rows.filter((r) => r[key] !== null);
     if (priced.length < 2) continue;
     const best = priced.reduce((a, b) => (b[key]! < a[key]! ? b : a));
-    const mine = rows.find((r) => r.market === here)?.[key] ?? null;
-    const place = (m: MarketCode) => (m === "us" ? "the US" : m === "uk" ? "the UK" : m === "eu" ? "Europe" : MARKETS[m].name);
+    const mine = me?.[key] ?? null;
     const label = field === "new" ? "" : " used";
-    if (mine === null) return { field, cheapest: best.market, here, pct: null, text: `Cheapest${label} in ${place(best.market)}. Not priced${label} in ${place(here)} yet.` };
+    if (mine === null) {
+      // Let used decide when this market prices it used and others do too.
+      if (field === "new" && me?.usedHere != null && rows.filter((r) => r.usedHere !== null).length >= 2) continue;
+      const lead = `Cheapest${label} in ${place(best.market)}.`;
+      const kit = field === "new" ? me?.newKit ?? me?.usedKit : me?.usedKit ?? me?.newKit;
+      const curHere = MARKETS[here].currency;
+      if (kit) return { field, cheapest: best.market, here, pct: null, text: `${lead} In ${place(here)} only kits are priced today (from ${price(kit.price, curHere)}, ${kit.label.charAt(0).toLowerCase()}${kit.label.slice(1)}), so there's no body-only price to compare.` };
+      if (field === "new" && me?.used != null) return { field, cheapest: best.market, here, pct: null, text: `${lead} In ${place(here)} it's priced used only today (from ${price(me.used, curHere)}).` };
+      if (me?.listed) return { field, cheapest: best.market, here, pct: null, text: `${lead} Listed in ${place(here)}, but out of stock at every store we track today.` };
+      return { field, cheapest: best.market, here, pct: null, text: `${lead} Not priced${label} in ${place(here)} yet.` };
+    }
     if (best.market === here) {
       const next = priced.filter((r) => r.market !== here).reduce((a, b) => (b[key]! < a[key]! ? b : a));
       const pct = Math.round(((next[key]! - mine) / next[key]!) * 100);

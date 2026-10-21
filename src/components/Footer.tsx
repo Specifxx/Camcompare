@@ -34,6 +34,11 @@ export default function Footer() {
           <p className="eyebrow mb-1 text-subtle">About</p>
           <Link href="/guides" prefetch={false}>Guides</Link>
           <Link href="/community" prefetch={false}>Community</Link>
+          <Link href="/stories" prefetch={false}>Member stories</Link>
+          <Link href="/collection" prefetch={false}>My gear</Link>
+          <Link href={marketPath(here, "/viral-cameras")} prefetch={false}>Viral cameras</Link>
+          <Link href={marketPath(here, "/digicams")} prefetch={false}>Digicams</Link>
+          <Link href="/requests" prefetch={false}>Feedback &amp; requests</Link>
           <Link href={marketPath(here, "/mounts")} prefetch={false}>Camera systems</Link>
           <Link href="/about" prefetch={false}>How we price &amp; check specs</Link>
           <Link href="/disclosure" prefetch={false}>Affiliate disclosure</Link>

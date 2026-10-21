@@ -33,7 +33,8 @@ const ITEM_CONDITION: Record<Offer["condition"], string> = {
  */
 export function productLd(p: Camera | Lens, kind: "camera" | "lens", offers: Offer[], m: MarketCode) {
   const path = marketPath(m, `/${kind === "camera" ? "cameras" : "lenses"}/${p.slug}`);
-  const body = offers.filter((o) => !o.kit && o.inStock && !isAmazonOffer(o));
+  // Cheapest first, so the ten listed include the page's headline prices (lib/price-rules.ts).
+  const body = offers.filter((o) => !o.kit && o.inStock && !isAmazonOffer(o)).sort((a, b) => a.price - b.price);
   if (!body.length) return null;
   const prices = body.map((o) => o.price / 100);
   const validUntil = new Date(Date.now() + 86400_000).toISOString().slice(0, 10);

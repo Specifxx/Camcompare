@@ -20,7 +20,22 @@ import { CONDITIONS, type Condition } from "./retailers";
 
 // ---------------------------------------------------------------- categories
 
-export type CategoryGroup = "support" | "power" | "carry" | "media" | "light" | "audio" | "lens" | "other";
+// Sections of /accessories, one per line of the owner's list (2026-10-22),
+// mirrored in every market; categories that existed before it sit in the
+// section nearest them, and the rest under "other".
+export type CategoryGroup = "rigs" | "power" | "flash-support" | "light" | "video" | "media" | "recording" | "audio" | "other";
+export const GROUP_ORDER: CategoryGroup[] = ["rigs", "power", "flash-support", "light", "video", "media", "recording", "audio", "other"];
+export const GROUP_LABEL: Record<CategoryGroup, string> = {
+  rigs: "Gimbals, cages, drones, PTZ cameras and monitors",
+  power: "Cables, tether cables and batteries",
+  "flash-support": "Flashes, backdrops, tripods and bags",
+  light: "Filters, LED lights and light modifiers",
+  video: "Video transmitters and switchers",
+  media: "SD cards, SSDs and drives",
+  recording: "Video recorders and matte boxes",
+  audio: "Audio recorders and microphones",
+  other: "Everything else",
+};
 
 export type AccessoryCategoryDef = {
   slug: string;
@@ -29,6 +44,8 @@ export type AccessoryCategoryDef = {
   group: CategoryGroup;
   /** Tested in order against the lowercased title; the first category that matches wins. */
   re: RegExp;
+  /** The title's head (before "with", "+", "combo", "(") matching this is never this category: a drone's battery is a battery. */
+  not?: RegExp;
   /** Most expensive believable listing, in USD at reference rates: a refuse-only sanity cap. */
   maxUsd: number;
   /** Shown on a camera page's accessories block, in this order (lower first). */
@@ -39,34 +56,47 @@ export type AccessoryCategoryDef = {
 // battery; "screen protector film" is no film; "gimbal head" is a tripod head).
 export const CATEGORIES: AccessoryCategoryDef[] = [
   { slug: "screen-protectors", label: "Screen protectors", one: "screen protector", group: "other", maxUsd: 80, cameraRank: 5, re: /\b(screen|lcd|display)\s*(protectors?|guard|protection|film)\b|\btempered glass\b|\bglass protector\b/ },
-  { slug: "cables", label: "Cables", one: "cable", group: "media", maxUsd: 300, re: /\b(hdmi|usb|usb-c|type-c|thunderbolt|sdi|lightning)\b[^,()]*\b(cable|cord|lead)\b|\b(cable|cord)\b[^,()]*\b(hdmi|usb-c|type-c|thunderbolt|sdi)\b/ },
-  { slug: "memory-cards", label: "Memory cards", one: "memory card", group: "media", maxUsd: 2500, re: /\b(cfexpress|cf express|xqd|cfast|compactflash|compact flash|microsdxc|microsdhc|microsd|micro sd|sdxc|sdhc|sduc|memory card)\b|\bsd\b[^,()]*\b(card|\d+\s?gb|\d+\s?tb)\b|\bcf card\b/ },
-  { slug: "storage", label: "SSDs & drives", one: "drive", group: "media", maxUsd: 5000, re: /\b(ssd|ssds|nvme|m\.2|hard drive|hard disk|hdd|portable drive|external drive|card reader|memory card reader|media reader|master caddy|ssd mini)\b/ },
-  { slug: "film", label: "Film", one: "film", group: "media", maxUsd: 400, re: /$^/ /* decided by isFilmStock */ },
-  { slug: "cages", label: "Cages & rigs", one: "cage", group: "support", maxUsd: 2500, cameraRank: 0, re: /\b(cage|cages|half cage|camera rig|shoulder rig|rig kit|rig|top handle|side handle|follow focus|matte box|rod clamp|rod rig|nato rail|nato clamp|cheese plate|magic arm|articulating arm|super clamp)\b/ },
-  { slug: "plates", label: "L-brackets & plates", one: "plate", group: "support", maxUsd: 500, cameraRank: 3, re: /\b(l[- ]?bracket|l[- ]?plate|l[- ]?shape(d)? (bracket|plate)|quick[- ]release plate|qr plate|arca[- ]?(swiss)?([- ]type)?( compatible)? plate|base ?plate|camera plate|mounting plate|quick[- ]release|tripod (collar|foot|ring|mount ring)|lens (collar|foot|support))\b/ },
-  { slug: "monopods", label: "Monopods", one: "monopod", group: "support", maxUsd: 1500, re: /\bmonopods?\b/ },
-  { slug: "tripods", label: "Tripods & heads", one: "tripod", group: "support", maxUsd: 4000, re: /\b(tripods?|ball ?head|fluid head|pan[- ]?head|gimbal head|geared head|tripod head|pan[- ]tilt head|tabletop stand|gorillapod|travel tripod)\b/ },
-  { slug: "gimbals", label: "Gimbals & stabilizers", one: "gimbal", group: "support", maxUsd: 2500, re: /\b(gimbals?|stabili[sz]ers?|steadicam)\b/ },
+  { slug: "tether-cables", label: "Tether cables", one: "tether cable", group: "power", maxUsd: 300, re: /\b(tether ?pro|tether ?boost|tethering cables?|tether cables?|tether tools\b[^,()]*\bcables?|jerk ?stopper|tethering kit)\b/ },
+  { slug: "cables", label: "Camera cables (HDMI, SDI, USB)", one: "cable", group: "power", maxUsd: 300, re: /\b(hdmi|usb|usb-c|type-c|thunderbolt|sdi|lightning)\b[^,()]*\b(cable|cord|lead)\b|\b(cable|cord)\b[^,()]*\b(hdmi|usb-c|type-c|thunderbolt|sdi)\b/ },
+  { slug: "memory-cards", label: "Memory cards", one: "memory card", group: "media", maxUsd: 2500, re: /\b(cfexpress|cf express|xqd|cfast|compactflash|compact flash|microsdxc|microsdhc|microsd|micro sd|sdxc|sdhc|sduc|memory cards?)\b|\bsd\b[^,()]*\b(card|\d+\s?gb|\d+\s?tb)\b|\bcf card\b/ },
+  { slug: "storage", label: "SSDs, SATA & hard drives", one: "drive", group: "media", maxUsd: 5000, re: /\b(ssd|ssds|sata|nvme|m\.2|hard drive|hard disk|hdd|portable drive|external drive|card reader|memory card reader|media reader|master caddy|ssd mini)\b/ },
+  { slug: "film", label: "Film", one: "film", group: "other", maxUsd: 400, re: /$^/ /* decided by isFilmStock */ },
+  { slug: "matte-boxes", label: "Matte boxes", one: "matte box", group: "recording", maxUsd: 6000, re: /\b(matte ?box(es)?|mattebox|mini ?matte|tilta mirage|top flag|french flag|side flags?|eyebrow flag)\b/ },
+  { slug: "cages", label: "Cages & rigs", one: "cage", group: "rigs", maxUsd: 2500, cameraRank: 0, re: /\b(cage|cages|half cage|camera rig|shoulder rig|rig kit|rig|top handle|side handle|follow focus|rod clamp|rod rig|nato rail|nato clamp|cheese plate|magic arm|articulating arm|super clamp)\b/ },
+  { slug: "plates", label: "L-brackets & plates", one: "plate", group: "flash-support", maxUsd: 500, cameraRank: 3, re: /\b(l[- ]?bracket|l[- ]?plate|l[- ]?shape(d)? (bracket|plate)|quick[- ]release plate|qr plate|arca[- ]?(swiss)?([- ]type)?( compatible)? plate|base ?plate|camera plate|mounting plate|quick[- ]release|tripod (collar|foot|ring|mount ring)|lens (collar|foot|support))\b/ },
+  { slug: "action-camera", label: "Action camera mounts", one: "action camera mount", group: "rigs", maxUsd: 600, re: /\b(chest mount|chesty|head ?strap mount|helmet (front[- ]and[- ]side )?mount|vented helmet strap|(invisible )?selfie sticks?|bite mount|the handler|handler floating|floaty|dive housing|protective housing|bullet time|3-way (grip|2\.0)|gopro shorty|bike (seat rail )?mount|handlebar (mount|seatpost)|jaws flex clamp|mounting buckles?|curved adhesive mounts?|action camera mounts?|gopro mounts?|magnetic swivel clip|media mod|light mod|display mod)\b/ },
+  { slug: "monopods", label: "Monopods", one: "monopod", group: "flash-support", maxUsd: 1500, re: /\bmonopods?\b/ },
+  { slug: "tripods", label: "Tripods & heads", one: "tripod", group: "flash-support", maxUsd: 4000, re: /\b(tripods?|ball ?head|fluid head|pan[- ]?head|gimbal head|geared head|tripod head|pan[- ]tilt head|tabletop stand|gorillapod|travel tripod)\b/ },
+  { slug: "gimbals", label: "Gimbals & stabilizers", one: "gimbal", group: "rigs", maxUsd: 2500, re: /\b(gimbals?|stabili[sz]ers?|steadicam|ronin( rs| s| sc)?|rsc ?2|dji rs ?\d( pro| mini)?|rs ?[2-5] (pro|mini)|weebill( \d| s| lab)?|zhiyun (crane|smooth|weebill)|crane (m3s?|4|3s|2s|plus)|smooth (5s?|q\d|x)|moza (air|aircross|mini|slypod)|aircross|osmo mobile|feiyu(tech)? (scorp|ak\d+|g6))\b/, not: /\b(transmitter|transmission|receiver)\b/ },
+  // Drones, unless the head names a part of one ("DJI Mini 4 Pro Intelligent Flight Battery" is a battery).
+  { slug: "drones", label: "Drones", one: "drone", group: "rigs", maxUsd: 20000, re: /\b(drones?|quadcopters?|fpv (drone|kit|combo)|dji (mini (\d|se|pro)|air (\d|2s)|mavic|avata|neo|flip|inspire|matrice|fpv)|mavic( \d| air| mini| pro)?|avata( \d)?|autel (robotics|evo)|evo (lite|nano|max)|potensic( atom| dreamer| p\d)?|hubsan|holy ?stone|skydio)\b/, not: /\b(propellers?|props|batter(y|ies)|charg(er|ers|ing)|filters?|nd ?\d+|cases?|bags?|backpacks?|guards?|landing (gear|pad)|lanyard|stickers?|skins?|covers?|caps?|replacement|spare|parts?|motors?|shells?|holders?|mounts?|adapters?|cables?|controller|rc-n\d|rc ?\d? only|goggles|care refresh|insurance|screen protector|strap|transceiver)\b/ },
+  { slug: "ptz-cameras", label: "PTZ cameras", one: "PTZ camera", group: "rigs", maxUsd: 20000, re: /\b(ptz|pan[- ]tilt[- ]zoom)( (cameras?|camera system|webcam|streaming camera))?\b|\b(obsbot tail|ptzoptics|birddog (p\d+|x\d|maxi|eyes)|aw-ue\d+|cr-n\d{3}|srg-[a-z0-9]+)\b/, not: /\b(controller|keyboard|joystick|mount|bracket|cable)\b/ },
   { slug: "grips", label: "Battery grips & hand grips", one: "grip", group: "power", maxUsd: 900, cameraRank: 2, re: /\b(battery grip|vertical grip|hand ?grip|camera grip|power grip|shooting grip|grip extension|extension grip|metal grip|grip)\b/ },
   { slug: "chargers", label: "Chargers & power", one: "charger", group: "power", maxUsd: 500, cameraRank: 4, re: /\b(battery chargers?|chargers?|charging (dock|station|hub|cradle)|dc coupler|dummy battery|ac adapter|power adapter|power supply|power bank)\b/ },
   { slug: "batteries", label: "Batteries", one: "battery", group: "power", maxUsd: 500, cameraRank: 1, re: /\b(battery|batteries|battery pack)\b(?!\s*(cover|door|compartment|lid))|\b(np-?f[wz]\d{2,3}|np-?(bx|bn|bg|fh|fm|fv|fp|w)\d{1,3}|lp-?e\d{1,2}[a-z]*|en-?el\d{1,2}[a-z]*|nb-?\d{1,2}[a-z]*|np-?w\d{3}[a-z]*|dmw-?bl[a-z]{1,2}\d{2}[a-z]*|bln-?\d|blx-?\d|blh-?\d|d-?li\d{2,3}|bp-?\d{3}|db-?\d{3})\b/ },
-  { slug: "straps", label: "Straps & clips", one: "strap", group: "carry", maxUsd: 400, re: /\b(straps?|wrist strap|neck strap|sling strap|harness|capture clip|camera clip|anchor links)\b/ },
-  { slug: "filters", label: "Filters", one: "filter", group: "lens", maxUsd: 1000, re: /\b(filters?|polari[sz]ers?|polari[sz]ing|cpl|nd\d{1,4}|vnd|variable nd|uv protector|step[- ]up ring|step[- ]down ring|filter holder|filter kit|black mist|mist filter|diffusion)\b/ },
+  { slug: "straps", label: "Straps & clips", one: "strap", group: "flash-support", maxUsd: 400, re: /\b(straps?|wrist strap|neck strap|sling strap|harness|capture clip|camera clip|anchor links)\b/ },
+  { slug: "filters", label: "Filters", one: "filter", group: "light", maxUsd: 1000, re: /\b(filters?|polari[sz]ers?|polari[sz]ing|cpl|nd\d{1,4}|vnd|variable nd|uv protector|step[- ]up ring|step[- ]down ring|filter holder|filter kit|black mist|mist filter|diffusion)\b/ },
   // Lighting: flash heads on the camera, battery/studio strobes, triggers,
   // continuous LEDs and modifiers are bought and compared separately.
-  { slug: "modifiers", label: "Light modifiers", one: "modifier", group: "light", maxUsd: 2000, re: /\b((speedlite|speedlight|flash) (bracket|insert|shoe|mount|holder|diffuser|bender|gel|stand adapter)|magmod|maggrid|magbounce|magsphere|softbox|soft box|umbrella|reflector|beauty dish|octabox|strip ?box|stripbox|light modifier|diffuser|barndoors?|snoot|grid|honeycomb|gel(s)?|light stand|c-stand|boom arm|backdrop|background)\b/ },
-  { slug: "triggers", label: "Wireless triggers", one: "trigger", group: "light", maxUsd: 600, cameraRank: 7, re: /\b(flash trigger|wireless trigger|triggers?|transmitter|transceiver|flash receiver|pocket ?wizard|profoto connect|air remote|godox (x3|x2t|x1t|xpro(ii)?|x pro)|xproii|x2t-[cnsfop]|xpro-[cnsfop]|x3-[cnsfop])\b/ },
-  { slug: "strobes", label: "Studio & portable strobes", one: "strobe", group: "light", maxUsd: 8000, re: /\b(strobes?|monolights?|studio flash|flash head|pack ?flash|ad100 ?pro|ad200 ?pro( ?ii)?|ad200|ad300 ?pro|ad400 ?pro|ad600 ?(pro|bm)?( ?ii)?|ad1200 ?pro|ad300|ad600|profoto (b10x?|b1x|d2|d30|b2)|fj400|fj80|elinchrom (one|three|five|elc|elb)|siros|lumedyne)\b/ },
-  { slug: "flashes", label: "Speedlights & flashes", one: "flash", group: "light", maxUsd: 1500, cameraRank: 6, re: /\b(flash|flashgun|speedlite|speedlight|speedlites|speedlights|ring flash|macro flash|(godox|neewer|profoto|flashpoint) (v1|v1pro|v100|v860 ?(ii|iii)?|v850|tt685 ?(ii)?|tt350|tt600|v350|iv?60|lux|a10|a1x|a1)|sb-\d{3,4}|hvl-f\d{2}[a-z]*|fl-\d{3}r?|dmw-fl\d{3}[a-z]*|speedlite el-\d{1,3})\b(?![- ]?(drive|memory|card|storage|ssd))/ },
-  { slug: "led-lights", label: "Continuous LED lights", one: "LED light", group: "light", maxUsd: 6000, re: /\b(led (video |panel |light|lamp|tube)|video light|light panel|led panel|cob light|cob led|tube light|light tube|ring ?light|fill light|amaran|nanlite|forza|aputure ls|light storm|sl60|sl150|sl200|ml60|ml30|lc500|led light|on-camera light)\b/ },
-  { slug: "microphones", label: "Microphones & audio", one: "microphone", group: "audio", maxUsd: 2000, re: /\b(microphones?|mic|mics|lavalier|lav|shotgun|windscreen|deadcat|dead cat|wind ?muff|audio recorder|handy recorder|field recorder|wireless audio|xlr adapter|audio adapter)\b/ },
+  { slug: "backdrops", label: "Backdrops & backgrounds", one: "backdrop", group: "flash-support", maxUsd: 1000, re: /\b(backdrops?|backgrounds?|seamless (paper|background)|muslin|chroma ?key|green screen|colorama|savage (seamless|universal)|x-drop)\b/ },
+  { slug: "modifiers", label: "Light modifiers", one: "modifier", group: "light", maxUsd: 2000, re: /\b((speedlite|speedlight|flash) (bracket|insert|shoe|mount|holder|diffuser|bender|gel|stand adapter)|magmod|maggrid|magbounce|magsphere|softbox|soft box|umbrella|reflector|beauty dish|octabox|strip ?box|stripbox|light modifier|diffuser|barndoors?|snoot|grid|honeycomb|gel(s)?|light stand|c-stand|boom arm|light ?dome|softdome|lantern|parabolic)\b/ },
+  { slug: "video-transmitters", label: "Video transmitters", one: "video transmitter", group: "video", maxUsd: 15000, re: /\b(video transmitters?|wireless video( transmission| transmitter| system| link)?|video transmission( system)?|wireless hdmi|hollyland (mars|cosmo|pyro)|mars (300|400s?|4k|m1)( pro)?|cosmo c1|pyro (s|7|h)|teradek (bolt|ace|serv|rt|prism)|bolt (4k|6|xt)|accsoon (cineeye|cineview|ceeye|seeup)|cineeye|cineview|vaxis (atom|storm)|dji (sdr|video) transmission|transvideo)\b/ },
+  { slug: "video-switchers", label: "Video switchers", one: "video switcher", group: "video", maxUsd: 10000, re: /\b(video switchers?|live (stream(ing)? )?switchers?|production switcher|streaming switcher|atem (mini|sdi|television studio|constellation)|roland v-\d+hd|v-[18]hd|rgblink|feelworld livepro|livepro l1|hdmi switcher|osee gostream|gostream)\b/ },
+  { slug: "triggers", label: "Wireless triggers", one: "trigger", group: "flash-support", maxUsd: 600, cameraRank: 7, re: /\b(flash trigger|wireless trigger|triggers?|transmitter|transceiver|flash receiver|pocket ?wizard|profoto connect|air remote|godox (x3|x2t|x1t|xpro(ii)?|x pro)|xproii|x2t-[cnsfop]|xpro-[cnsfop]|x3-[cnsfop])\b/ },
+  { slug: "strobes", label: "Studio & portable strobes", one: "strobe", group: "flash-support", maxUsd: 8000, re: /\b(strobes?|monolights?|studio flash|flash head|pack ?flash|ad100 ?pro|ad200 ?pro( ?ii)?|ad200|ad300 ?pro|ad400 ?pro|ad600 ?(pro|bm)?( ?ii)?|ad1200 ?pro|ad300|ad600|profoto (b10x?|b1x|d2|d30|b2)|fj400|elinchrom (one|three|five|elc|elb)|siros|lumedyne)\b/ },
+  { slug: "flashes", label: "Speedlights & flashes", one: "flash", group: "flash-support", maxUsd: 1500, cameraRank: 6, re: /\b(flash|flashgun|speedlite|speedlight|speedlites|speedlights|ring flash|macro flash|(godox|neewer|profoto|flashpoint) (v1|v1pro|v100|v860 ?(ii|iii)?|v850|tt685 ?(ii)?|tt350|tt600|v350|iv?60|lux|a10|a1x|a1)|fj80( ii)?|sb-\d{3,4}|hvl-f\d{2}[a-z]*|fl-\d{3}r?|dmw-fl\d{3}[a-z]*|speedlite el-\d{1,3})\b(?![- ]?(drive|memory|card|storage|ssd))/ },
+  { slug: "led-lights", label: "Continuous LED lights", one: "LED light", group: "light", maxUsd: 6000, re: /\b(led (video |panel |light|lamp|tube)|video light|light panel|led panel|cob light|cob led|tube light|light tube|ring ?light|fill light|amaran|nanlite|forza|aputure ls|light storm|sl60|sl150|sl200|ml60|ml30|lc500|led light|on-camera light|cob|cob lights?|bi-?colou?r (led|light|cob)|rgb (light|led|tube)|pavotube|pavoslim|forza \d+|amaran (\d{2,3}[a-z]*|ace|cob|f\d|t\d|p60)|aputure (ls ?\d+[a-z]*|nova|mc|storm|electro storm|infinibar)|godox (sl\d+|ml\d+|ul\d+|litemons|knowled|tl\d+|lc\d+)|zhiyun (molus|fiveray)|molus (x\d+|g\d+|b\d+)|fiveray)\b/, not: /\b(grids?|diffusers?|barn ?doors?|soft ?box|light ?dome|lantern|fresnel|adapters?|adaptors?|splitter|mat|protective caps?|caps?|case|bags?|batter(y|ies)|chargers?|cables?|power supply|clamps?|brackets?|yoke|stands?|gels?|reflectors?|snoot|spotlight (attachment|mount)|projection lens)\b/ },
+  { slug: "audio-recorders", label: "Audio recorders", one: "audio recorder", group: "audio", maxUsd: 8000, re: /\b(audio recorders?|handy recorders?|field recorders?|portable recorders?|voice recorders?|digital recorders?|zoom (h\d+[a-z]*|f[1-8]n?|m[234]|podtrak ?p?\d*|h\d essential)|h[1-8]n|h[1-6] ?essential|tascam (dr-?\d+[a-z]*|portacapture|frontier|x8|x6)|portacapture|mixpre(-\d+)?|sound devices (mixpre|8\d\d|scorpio))\b/, not: /\b\d{1,4}(-\d{1,4})?\s?mm\b/ },
+  { slug: "shotgun-mics", label: "Shotgun & on-camera microphones", one: "shotgun microphone", group: "audio", maxUsd: 3000, re: /\b(shotgun( mic(rophone)?s?)?|videomic( go| pro| ntg| me)?|video mic|ntg ?\d*|mke ?(600|400|200)|mkh ?\d+|vmgo|vmpr|deity v-mic|v-mic d\d|azden sgm|sgm-\d+|boom mic(rophone)?|on-camera mic(rophone)?)\b/ },
+  { slug: "wireless-mics", label: "Wireless microphones", one: "wireless microphone", group: "audio", maxUsd: 5000, re: /\b(wireless (mic|mics|microphones?|lav(alier)?s?|audio|lapel)|wireless (go|pro|me)\b|dji mic( mini| \d)?|lark (m\d|max|c1|a1)|hollyland lark|rode wireless|sennheiser (ew|avx|xsw)|ew-dp|ew 112|xsw-d|uwmic|uwp-d|deity theos|saramonic (blink|air)|blink ?500|comica (vimo|boomx)|movo (wireless|edge)|rode go|shure (mvx|slx-d|blx))\b/ },
+  { slug: "microphones", label: "Other microphones & audio", one: "microphone", group: "audio", maxUsd: 2000, re: /\b(microphones?|mic|mics|lavalier|lav|windscreen|deadcat|dead cat|wind ?muff|wireless audio|xlr adapter|audio adapter|audio interface|boom pole|shock ?mount)\b/ },
   { slug: "remotes", label: "Remotes & releases", one: "remote", group: "other", maxUsd: 500, re: /\b(remote|remotes|shutter release|cable release|release cable|intervalometer|remote commander|remote control|bluetooth remote)\b/ },
-  { slug: "caps-hoods", label: "Lens caps & hoods", one: "cap or hood", group: "lens", maxUsd: 200, re: /\b(lens cap|lens caps|front cap|rear cap|rear lens cap|body cap|snap cap|cap set|lens hood|hood|lens cover|body cover)\b/ },
-  { slug: "adapters", label: "Mount adapters & teleconverters", one: "adapter", group: "lens", maxUsd: 2500, re: /\b(mount adapter|lens adapter|adapter ring|speed ?booster|focal reducer|lens turbo|teleconverter|tele-converter|tele converter|extender|extension tubes?|macro tubes?|adapter|adaptor)\b/ },
+  { slug: "caps-hoods", label: "Lens caps & hoods", one: "cap or hood", group: "other", maxUsd: 200, re: /\b(lens cap|lens caps|front cap|rear cap|rear lens cap|body cap|snap cap|cap set|lens hood|hood|lens cover|body cover)\b/ },
+  { slug: "adapters", label: "Mount adapters & teleconverters", one: "adapter", group: "other", maxUsd: 2500, re: /\b(mount adapter|lens adapter|adapter ring|speed ?booster|focal reducer|lens turbo|teleconverter|tele-converter|tele converter|extender|extension tubes?|macro tubes?|adapter|adaptor)\b/ },
   { slug: "cleaning", label: "Cleaning", one: "cleaning kit", group: "other", maxUsd: 250, re: /\b(cleaning|cleaner|sensor swabs?|swabs?|air blower|rocket blower|blower|lens pen|lenspen|microfib(er|re) cloth|lens tissue|lens wipes|sensor (clean|loupe))\b/ },
-  { slug: "monitors", label: "Monitors & recorders", one: "monitor", group: "other", maxUsd: 6000, re: /\b(field monitor|on-camera monitor|camera monitor|monitor[- ]recorder|recording monitor|external recorder|ninja (v|ultra|phone)|shogun|shinobi|smallhd|director'?s monitor|evf|electronic viewfinder)\b/ },
-  { slug: "bags", label: "Bags & cases", one: "bag", group: "carry", maxUsd: 1500, re: /\b(camera bag|bags?|backpacks?|sling|slings|messenger|shoulder bag|camera case|hard case|rolling case|roller|holster|pouch|camera insert|camera cube|core unit|lens case|half case|leather case|body case|camera jacket|protector jacket|wrap|cases?|duffel|tote|rain cover|rain sleeve)\b/ },
+  { slug: "recorders", label: "Video & external recorders", one: "recorder", group: "recording", maxUsd: 8000, re: /\b(external recorders?|video recorders?|monitor[- ]recorders?|recording monitors?|recorder monitors?|ninja (v\+?|ultra|phone|tx)|atomos (ninja|shogun|sumo)|shogun( 7| connect| ultra| studio| inferno| flame)?|video assist|hyperdeck|prores raw recorder)\b/ },
+  { slug: "monitors", label: "Monitors", one: "monitor", group: "rigs", maxUsd: 10000, re: /\b(field monitors?|on-camera monitors?|camera monitors?|director'?s monitors?|production monitors?|reference monitors?|([3-9]|1[0-9])(\.\d+)?(\"| ?inch| ?in| ?'')? (4k |hdr |touch ?screen |hdmi |sdi |3g-sdi |12g-sdi |ultra bright |high bright(ness)? |daylight viewable )*monitors?|shinobi|smallhd|small hd (ultra|cine|indie|focus|action)|feelworld (f\d+|lut\d+|fw\d+|t\d+)|portkeys|lilliput|desview|evf|electronic viewfinder)\b/, not: /\b(benq|eizo|coloredge|dell|asus|viewsonic|desktop|computer|pc monitor|gaming)\b/ },
+  { slug: "bags", label: "Bags & cases", one: "bag", group: "flash-support", maxUsd: 1500, re: /\b(camera bag|bags?|backpacks?|sling|slings|messenger|shoulder bag|camera case|hard case|rolling case|roller|holster|pouch|camera insert|camera cube|core unit|lens case|half case|leather case|body case|camera jacket|protector jacket|wrap|cases?|duffel|tote|rain cover|rain sleeve)\b/ },
 ];
 
 export const CATEGORY_SLUGS = CATEGORIES.map((c) => c.slug);
@@ -75,11 +105,15 @@ export const accessoryCategory = (slug: string) => CATEGORIES.find((c) => c.slug
 export const PER_GB_CATEGORIES = new Set(["memory-cards", "storage"]);
 /** Lighting categories that work with one camera maker's TTL (`cameraBrands`). */
 export const SYSTEM_CATEGORIES = new Set(["flashes", "triggers"]);
+/** Categories that are devices in their own right, never "for" a camera. */
+export const DEVICE_CATEGORIES = new Set(["drones", "ptz-cameras"]);
+/** Categories whose specs are a cable's (connector, speed, length). */
+export const CABLE_CATEGORIES = new Set(["cables", "tether-cables"]);
 
 // Not camera accessories at all, whatever else the title says. Camera shops
 // sell binoculars, knives, TVs and printer ink too.
 const JUNK =
-  /\b(binoculars?|monocular|riflescope|rifle ?scope|spotting scope|scope mount|scope rings?|red dot|reflex sight|thermal|night vision|knife|knives|blade|multi-tool|telescope|tvs?|soundbar|sound bar|turntable|headphones?|earbuds|speakers?|printers?|ink|toner|cartridges?|filament|sunglasses|goggles|drones?|fishfinder|sonar|smartwatch|watch|keyboard|midi|gaming|iphone|ipad|airpods|phone case|smartphone|laptop|macbook|notebook|chromebook|imac|desktop pc|playstation|xbox|nintendo|guidebook|ebook|book|warranty|protection plan|protection pack|gift card|archery|crossbow|pistol|gun|ammo|hunting|golf|rangefinder binocular|microscope|projector|vacuum|ice maker|blender|e-?bike|scooter|router|wi-?fi mesh|garmin|fitbit|toy|lego|guitar|ukulele|violin|hearing protection|heater|simulator|aviation|handbag|purse|trijicon|holosun|glock|aimpoint|surface pro|snapdragon|\d+\s?gb ram|tablet pcs?|trail cam(era)?s?|game cam(era)?s?|security cam(era)?s?|dash ?cam|doorbell|baby monitor|blu-?ray|dvd|calculators?|chrono|sig sauer|trigger guard|laser sight|gun laser)\b/;
+  /\b(binoculars?|monocular|riflescope|rifle ?scope|spotting scope|scope mount|scope rings?|red dot|reflex sight|thermal|night vision|knife|knives|blade|multi-tool|telescope|tvs?|benq|eizo|soundbar|sound bar|turntable|headphones?|earbuds|speakers?|printers?|ink|toner|cartridges?|filament|sunglasses|goggles|fishfinder|sonar|smartwatch|watch|keyboard|midi|gaming|iphone|ipad|airpods|phone case|smartphone|laptop|macbook|notebook|chromebook|imac|desktop pc|playstation|xbox|nintendo|guidebook|ebook|book|warranty|protection plan|protection pack|gift card|archery|crossbow|pistol|gun|ammo|hunting|golf|rangefinder binocular|microscope|projector|vacuum|ice maker|blender|e-?bike|scooter|router|wi-?fi mesh|garmin|fitbit|toy|lego|guitar|ukulele|violin|hearing protection|heater|simulator|aviation|handbag|purse|trijicon|holosun|glock|aimpoint|surface pro|snapdragon|\d+\s?gb ram|tablet pcs?|trail cam(era)?s?|game cam(era)?s?|security cam(era)?s?|dash ?cam|doorbell|baby monitor|blu-?ray|dvd|calculators?|chrono|sig sauer|trigger guard|laser sight|gun laser)\b/;
 // A Shopify product type that says the listing is a camera, a lens or something else entirely.
 const JUNK_TYPE = /^(film |digital )?(bodies|body|lens|lenses)$|\b(camera (bundle|kit)s?|digital cameras?|mirrorless cameras?|dslrs?|compact cameras?|film bodies|laptops?|notebooks?|tablets?|umbrellas|optic|scope|guitar)\b/;
 // Not a working item.
@@ -127,7 +161,33 @@ export const ACCESSORY_BRANDS: AccessoryBrand[] = [
   b("saramonic", "Saramonic", /\bsaramonic\b/),
   b("shure", "Shure", /\bshure\b/),
   b("hollyland", "Hollyland", /\bhollyland\b/),
-  b("zoom", "Zoom", /^zoom\b|\bzoom (h\d|f\d|f-\d)/),
+  b("teradek", "Teradek", /\bteradek\b/),
+  b("accsoon", "Accsoon", /\baccsoon\b/),
+  b("vaxis", "Vaxis", /\bvaxis\b/),
+  b("zoom", "Zoom", /^zoom\b(?! (lens|ef|rf|nikkor))|\bzoom (h\d|f\d|f-\d|m[234]\b|podtrak|am7|iq7)|\bh[1-8]n\b|\bh[1-6] ?essential\b/),
+  b("sound-devices", "Sound Devices", /\bsound devices\b/),
+  b("akg", "AKG", /\bakg\b/),
+  b("neumann", "Neumann", /\bneumann\b/),
+  b("comica", "Comica", /\bcomica\b/),
+  b("azden", "Azden", /\bazden\b/),
+  b("movo", "Movo", /\bmovo\b/),
+  b("roland", "Roland", /\broland\b/),
+  b("rgblink", "RGBlink", /\brgblink\b/),
+  b("obsbot", "OBSBOT", /\bobsbot\b/),
+  b("ptzoptics", "PTZOptics", /\bptzoptics\b/),
+  b("birddog", "BirdDog", /\bbirddog\b/),
+  b("lilliput", "Lilliput", /\blilliput\b/),
+  b("desview", "Desview", /\bdesview\b/),
+  b("autel", "Autel Robotics", /\bautel\b/),
+  b("potensic", "Potensic", /\bpotensic\b/),
+  b("holy-stone", "Holy Stone", /\bholy ?stone\b/),
+  b("hubsan", "Hubsan", /\bhubsan\b/),
+  b("arri", "ARRI", /\barri\b/),
+  b("cooke", "Cooke", /\bcooke\b/),
+  b("dzofilm", "DZOFilm", /\bdzo ?(film|optics)?\b/),
+  b("fujinon", "Fujinon", /\bfujinon\b/),
+  // RED the cinema maker, never the colour: only with one of its product names.
+  b("red", "RED", /\bred (komodo|v-?raptor|raptor|dsmc\d?|mini-?mag|digital cinema|ranger|monstro|gemini|helium|epic|scarlet|weapon|pro (mini-?mag|ssd|media|cfexpress)|redvolt|compact evf)\b|^red digital\b/),
   b("tascam", "Tascam", /\btascam\b/),
   b("godox", "Godox", /\bgodox\b/),
   b("profoto", "Profoto", /\bprofoto\b/),
@@ -346,7 +406,7 @@ export const CARD_FORMATS: Record<string, string> = {
 export const STORAGE_FORMATS: Record<string, string> = {
   "portable-ssd": "Portable SSD",
   nvme: "NVMe / M.2 SSD",
-  ssd: "SSD (2.5-inch / recorder)",
+  ssd: "SATA / 2.5-inch SSD",
   hdd: "Hard drive",
   "card-reader": "Card reader",
 };
@@ -360,7 +420,7 @@ export const CABLE_FORMATS: Record<string, string> = {
   other: "Other cable",
 };
 export const formatLabel = (category: string, f: string | undefined) =>
-  f ? ((category === "memory-cards" ? CARD_FORMATS : category === "storage" ? STORAGE_FORMATS : category === "cables" ? CABLE_FORMATS : {})[f] ?? f) : null;
+  f ? ((category === "memory-cards" ? CARD_FORMATS : category === "storage" ? STORAGE_FORMATS : CABLE_CATEGORIES.has(category) ? CABLE_FORMATS : {})[f] ?? f) : null;
 
 function cardFormat(l: string): string | undefined {
   if (/\bcf ?express\b/.test(l)) {
@@ -509,7 +569,7 @@ function rawSpecs(category: string, title: string): AccessorySpecs {
     }
     return s;
   }
-  if (category === "cables") return cableSpecs(l);
+  if (CABLE_CATEGORIES.has(category)) return cableSpecs(l);
   return {};
 }
 
@@ -627,8 +687,9 @@ export function classifyAccessory(listing: { title: string; productType?: string
     // A part for a flash ("Flash Sync Cable", "Flash Diffuser for SB900",
     // "Pocket Wizard Motor Drive Cable") is not a flash or a trigger.
     const flashPart = FLASH_PART.test(lower.split(/\bwith\b|\bw\/|\+|\bincl|\bkit\b/)[0]); // "V1 Flash with Battery" is a flash
+    const headOnly = lower.split(/\bwith\b|\bw\/|\+|\bincl|\bcombo\b|\bfly more\b|\(/)[0];
     for (const c of CATEGORIES) {
-      if (c.slug === "film" || (flashPart && (c.slug === "flashes" || c.slug === "triggers"))) continue;
+      if (c.slug === "film" || (flashPart && (c.slug === "flashes" || c.slug === "triggers")) || c.not?.test(headOnly)) continue;
       const m = c.re.exec(lower);
       if (m && (!cat || m.index < at)) {
         cat = c;
@@ -652,9 +713,11 @@ export function classifyAccessory(listing: { title: string; productType?: string
   const head = forAt >= 0 ? lower.slice(0, forAt) : lower;
   // A lens being sold ("Nikon Z 24-70mm f/2.8 S, Hood"), or a camera with
   // the accessory thrown in ("… Camera + 64GB Memory Bundle").
-  if (LENSY.test(head)) return null;
+  // Drones and PTZ cameras are cameras of a kind: their titles name megapixels and a lens.
+  const selfContained = DEVICE_CATEGORIES.has(cat.slug);
+  if (!selfContained && LENSY.test(head)) return null;
   const before = lower.slice(0, Math.max(0, at));
-  if (CAMERA_PRODUCT.test(head) && (ADDON.test(before) || !/\bcamera (cage|bag|backpack|strap|battery|grip|plate|case|insert|cube|sling|holster|harness|clip|remote|monitor|rig|light|flash|microphone|mic|screen|cleaning|charger)\b/.test(lower))) {
+  if (!selfContained && CAMERA_PRODUCT.test(head) && (ADDON.test(before) || !/\bcamera (cage|bag|backpack|strap|battery|grip|plate|case|insert|cube|sling|holster|harness|clip|remote|monitor|rig|light|flash|microphone|mic|screen|cleaning|charger)\b/.test(lower))) {
     // "DSLR camera bag" and "mirrorless camera cage" are fine; a camera spec ("24MP", "Mirrorless Camera Body") ahead of an add-on is not.
     if (/\b\d{1,3}(\.\d)?\s?mp\b|\b(camera body|body only|lens kit)\b/.test(head) || ADDON.test(before)) return null;
   }
@@ -662,7 +725,7 @@ export function classifyAccessory(listing: { title: string; productType?: string
   const cams = index ? camerasIn(listing.title, index, brand) : [];
   if (cams.some((c) => c.direct) && ADDON.test(before) && /\b(camera|body|kit|bundle|combo)\b/.test(before)) return null;
   // Film and memory are for any camera that takes them; never "for" one model.
-  const camAware = !["film", "memory-cards", "storage", "cables", "adapters"].includes(cat.slug); // an adapter names mounts ("EF-EOS R"), not bodies
+  const camAware = !["film", "memory-cards", "storage", "cables", "adapters", ...DEVICE_CATEGORIES, "video-switchers", "backdrops", "audio-recorders"].includes(cat.slug); // an adapter names mounts ("EF-EOS R"), not bodies
   const cameras = camAware ? cams.map((c) => c.slug) : [];
   const direct = camAware ? cams.filter((c) => c.direct).map((c) => c.slug) : [];
   const brands = new Set(cameraBrandsIn(lower, cat.slug, brand));
@@ -748,7 +811,7 @@ export function capAccessories(list: AccessoryOffer[]): AccessoryOffer[] {
   const out: AccessoryOffer[] = [];
   for (const a of sorted) {
     const groups: [string, number][] = [[a.category, CAP_PER_CATEGORY], ...a.cameras.map((c) => [`${a.category}|${c}`, CAP_PER_CAMERA] as [string, number])];
-    if (a.specs.format && (a.specs.capacityGB || a.category === "cables")) groups.push([`${a.category}|${a.specs.format}|${a.specs.capacityGB ?? a.specs.gbps ?? a.specs.hdmiVersion ?? ""}`, CAP_PER_FORMAT_SIZE]);
+    if (a.specs.format && (a.specs.capacityGB || CABLE_CATEGORIES.has(a.category))) groups.push([`${a.category}|${a.specs.format}|${a.specs.capacityGB ?? a.specs.gbps ?? a.specs.hdmiVersion ?? ""}`, CAP_PER_FORMAT_SIZE]);
     // Lighting: per camera system too, so every maker's flashes and triggers survive the cap.
     if (SYSTEM_CATEGORIES.has(a.category)) for (const s of a.cameraBrands) groups.push([`${a.category}|sys|${s}`, CAP_PER_CAMERA]);
     if (!groups.some(([k, cap]) => room(k, cap))) continue;

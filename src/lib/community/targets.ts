@@ -2,6 +2,8 @@
 // products come from the catalog files, threads from the database.
 import { product, productPath } from "../catalog";
 import { threadVisible } from "./db";
+import { requestVisible, storyVisible } from "./stories-db";
+import { storyPath } from "./stories";
 import { threadPath, type Target } from "./rules";
 
 /**
@@ -12,6 +14,8 @@ import { threadPath, type Target } from "./rules";
 export async function targetExists(t: Target, forWrite = false): Promise<boolean> {
   if (t.kind === "product") return product(t.slug) !== null;
   if (t.kind === "thread") return threadVisible(t.id, forWrite);
+  if (t.kind === "post") return storyVisible(t.id, forWrite);
+  if (t.kind === "request") return requestVisible(t.id, forWrite);
   return true;
 }
 
@@ -23,5 +27,7 @@ export function targetLink(key: string): { href: string; label: string } {
     return p ? { href: `${productPath(p)}#discussion`, label: p.item.name } : { href: "/", label: rest };
   }
   if (kind === "thread") return { href: threadPath(rest), label: "a discussion thread" };
+  if (kind === "post") return { href: storyPath(rest), label: "a member story" };
+  if (kind === "request") return { href: `/requests#r${rest}`, label: "a request" };
   return { href: "/deals", label: "a deal" };
 }

@@ -1,0 +1,18 @@
+{
+  "note": "Viral cameras right now (/viral-cameras). Owner-edited: one entry per camera, in the order shown. `slug` must be a published catalog camera (data/cameras/<slug>.json); `why` is one plain line. Kodak isn't in the catalog yet: add its catalog file first, then an entry here.",
+  "updated": "2026-10-21",
+  "cameras": [
+    { "slug": "ricoh-gr-iiix", "why": "The street photographer's pocket camera: 40mm lens, tiny body, and often sold out since it went viral." },
+    { "slug": "ricoh-gr-iv", "why": "The newest GR: the same shirt-pocket size, and the one people are queueing for." },
+    { "slug": "ricoh-gr-iii", "why": "The 28mm original of the current GR craze, often cheaper used than the IIIx." },
+    { "slug": "fujifilm-x100vi", "why": "Film-simulation looks straight out of camera; months-long waitlists made it a status item." },
+    { "slug": "fujifilm-x100v", "why": "The one that started the X100 trend on social media, now mostly bought used." },
+    { "slug": "canon-powershot-g7-x-mark-iii", "why": "The vlogger's classic: flip screen, 1-inch sensor, and a cult following on TikTok." },
+    { "slug": "sony-zv-1", "why": "Built for vlogging: flip-out screen, good autofocus on faces and a windscreen mic." },
+    { "slug": "sony-zv-1-ii", "why": "The wider-lens ZV-1 for selfie-distance vlogs." },
+    { "slug": "fujifilm-x-half", "why": "A half-frame digital camera with a film-camera feel and a frame-advance lever." },
+    { "slug": "dji-osmo-pocket-3", "why": "A gimbal camera that fits a pocket: smooth walking shots with a 1-inch sensor." },
+    { "slug": "insta360-x5", "why": "360° video you reframe later, the 'invisible selfie stick' shots all over social feeds." },
+    { "slug": "insta360-go-3s", "why": "A thumb-sized camera you can clip anywhere for hands-free first-person clips." }
+  ]
+}

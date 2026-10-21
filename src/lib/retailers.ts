@@ -17,6 +17,14 @@ export type Condition = "new" | "open-box" | "refurbished" | "used";
 export const CONDITIONS: Condition[] = ["new", "open-box", "refurbished", "used"];
 export const CONDITION_LABEL: Record<Condition, string> = { new: "New", "open-box": "Open box", refurbished: "Refurbished", used: "Used" };
 
+/**
+ * Read a Shopify store through its product sitemaps and /products/<handle>.js
+ * instead of the paged products.json (sources/shopify.ts): `window` product
+ * sitemaps per run (rotating; default all), `budget` products per run
+ * (default 300), `accessories` of them for accessory handles (default 60).
+ */
+export type ShopifySitemap = { window?: number; budget?: number; accessories?: number; delayMs?: number };
+
 export type RetailerSource = "amazon-creators" | "ebay-browse" | "bestbuy-api" | "feed" | "shopify" | "structured" | "link-only";
 export type Network =
   | "amazon"
@@ -63,7 +71,12 @@ export type Retailer = {
    * `brand`: a maker's own store, whose titles leave the maker out ("EOS R8
    * Body only"); the brand is put in front before matching.
    */
-  shopify?: { base: string; collections?: string[]; currency?: string; disabled?: string; brand?: string };
+  shopify?: { base: string; collections?: string[]; currency?: string; disabled?: string; brand?: string; sitemap?: ShopifySitemap };
+  /**
+   * Why this retailer's own pages can't be read (bot wall, robots.txt), so
+   * its prices wait for its affiliate feed; the feed source reports it.
+   */
+  disabled?: string;
   /** schema.org data on the shop's own product pages (sources/structured.ts); a feed retailer's fallback until its feed exists. */
   structured?: StructuredConfig;
 };
@@ -110,7 +123,7 @@ const used = (r: Omit<Retailer, "source" | "conditions" | "authorized"> & Partia
   authorized: false,
   ...r,
 });
-const shop = (base: string, extra: { collections?: string[]; currency?: string; disabled?: string; brand?: string } = {}) => ({ source: "shopify" as const, shopify: { base, ...extra } });
+const shop = (base: string, extra: { collections?: string[]; currency?: string; disabled?: string; brand?: string; sitemap?: ShopifySitemap } = {}) => ({ source: "shopify" as const, shopify: { base, ...extra } });
 const pages = (structured: StructuredConfig = {}) => ({ source: "structured" as const, structured });
 // Cash Converters AU/UK product pages for lenses and digital bodies (the UK
 // site doubles the dashes: "lenses--filters", "dslr--slr-…").

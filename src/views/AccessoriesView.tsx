@@ -6,7 +6,7 @@ import Link from "next/link";
 import AccessoryBrowser from "@/components/AccessoryBrowser";
 import AdSlot from "@/components/AdSlot";
 import PerGbTrend from "@/components/PerGbTrend";
-import { accessoryCategory, CATEGORIES, formatLabel, PER_GB_CATEGORIES, SYSTEM_CATEGORIES } from "@/lib/accessories";
+import { accessoryCategory, CATEGORIES, formatLabel, GROUP_LABEL, GROUP_ORDER, PER_GB_CATEGORIES, SYSTEM_CATEGORIES } from "@/lib/accessories";
 import { accessoriesIn, marketAccessories, readAccessoryHistory } from "@/lib/accessory-data";
 import { accessoriesIndexable, accessoryRows, cameraNames, categoryIndexable, categorySummaries } from "@/lib/accessory-rows";
 import { AD_SLOTS } from "@/lib/ads";
@@ -14,22 +14,11 @@ import { price } from "@/lib/format";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
 
-const GROUP_LABEL: Record<string, string> = {
-  support: "Rigs and support",
-  power: "Power",
-  media: "Cards, drives, cables and film",
-  light: "Lighting",
-  audio: "Audio",
-  lens: "For your lenses",
-  carry: "Carry",
-  other: "Everything else",
-};
-const GROUP_ORDER = ["support", "power", "media", "light", "audio", "lens", "carry", "other"];
 
 export function accessoriesMetadata(m: MarketCode): Metadata {
   return pageMeta({
     title: "Camera accessories: compare prices",
-    description: `Camera cages, batteries, grips, L-brackets, tripods, gimbals, memory cards, SSDs, film, flashes and more at camera shops in ${MARKETS[m].name}, cheapest first, with accessory brands side by side.`,
+    description: `Gimbals, cages, drones, monitors, recorders, video transmitters, batteries, cables, flashes, tripods, bags, filters, LED lights, microphones, SD cards, SSDs and more at camera shops in ${MARKETS[m].name}, cheapest first, with accessory brands side by side.`,
     path: "/accessories",
     market: m,
     index: accessoriesIndexable(m),
@@ -38,7 +27,9 @@ export function accessoriesMetadata(m: MarketCode): Metadata {
 }
 
 export default function AccessoriesView({ market: m }: { market: MarketCode }) {
-  const sums = categorySummaries(m);
+  // Every category in every market, listed or not, so the sections match across markets.
+  const sums = categorySummaries(m, true);
+  const listed = sums.some((s) => s.count > 0);
   const cur = MARKETS[m].currency;
   const updated = marketAccessories(m).generatedAt;
   return (
@@ -46,11 +37,11 @@ export default function AccessoriesView({ market: m }: { market: MarketCode }) {
       <div>
         <h1 className="text-2xl font-extrabold tracking-tight">Camera accessories in {MARKETS[m].name}</h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
-          Cages, batteries, tripods, cards, film, lights and more from the camera shops we already check for camera prices, sorted by price. Filter by accessory brand or by the camera it fits, and compare brands side by side. No sponsored placements.
+          Gimbals, cages, drones, monitors, recorders, transmitters, batteries, cables, flashes, tripods, bags, filters, lights, microphones, cards and drives from the camera shops we already check for camera prices, sorted by price. Filter by accessory brand or by the camera it fits, and compare brands side by side. No sponsored placements.
           {updated ? ` Prices checked ${new Date(updated).toUTCString().slice(5, 16)}.` : ""}
         </p>
       </div>
-      {!sums.length && (
+      {!listed && (
         <p className="card p-6 text-sm text-muted">
           No accessory listings for {MARKETS[m].name} yet: they appear after the next price check of shops here. Until then, <Link href={marketPath(m, "/cameras")}>browse cameras</Link>.
         </p>
@@ -67,7 +58,7 @@ export default function AccessoriesView({ market: m }: { market: MarketCode }) {
                   <Link href={marketPath(m, `/accessories/${s.slug}`)} prefetch={false} className="card flex h-full flex-col gap-1 p-4 text-fg no-underline hover:no-underline">
                     <span className="font-semibold">{s.label}</span>
                     <span className="text-xs text-muted">
-                      {s.count} listing{s.count === 1 ? "" : "s"}
+                      {s.count ? `${s.count} listing${s.count === 1 ? "" : "s"}` : "None listed yet"}
                       {s.brands ? ` · ${s.brands} brand${s.brands === 1 ? "" : "s"}` : ""}
                     </span>
                     {s.low !== null && (
@@ -83,7 +74,7 @@ export default function AccessoriesView({ market: m }: { market: MarketCode }) {
           </section>
         );
       })}
-      {sums.length > 0 && <AdSlot slot={AD_SLOTS.listing} />}
+      {listed && <AdSlot slot={AD_SLOTS.listing} />}
     </div>
   );
 }

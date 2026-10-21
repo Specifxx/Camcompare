@@ -19,37 +19,81 @@ export function retailerButtonClass(key: string, paid: boolean): string {
 
 const PaidNote = ({ paid }: { paid: boolean }) => (paid ? <p className="mt-0.5 text-[10px] leading-none text-subtle">Paid link</p> : null);
 
+const AVAIL: Record<NonNullable<OfferRow["avail"]>, { text: string; cls: string }> = {
+  low_stock: { text: "Low stock", cls: "text-warn" },
+  preorder: { text: "Preorder", cls: "text-accent" },
+  backorder: { text: "Backorder", cls: "text-warn" },
+};
+
+/** "In stock" (green), "Low stock" / "Backorder" (amber), "Preorder" (blue), "Out of stock" (grey). */
+export function Availability({ row }: { row: Pick<OfferRow, "inStock" | "avail"> }) {
+  const a = row.inStock ? (row.avail ? AVAIL[row.avail] : { text: "In stock", cls: "text-win" }) : { text: "Out of stock", cls: "text-subtle" };
+  return (
+    <span className={`inline-flex items-center gap-1 font-medium ${a.cls}`}>
+      <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-current" />
+      {a.text}
+    </span>
+  );
+}
+
+const TAG: Record<NonNullable<OfferRow["tag"]>, string> = { best: "Best price", used: "Lowest used", kit: "Lowest kit price" };
+
+/** "N% off" from the store's own was-price, only when it is above today's price. Client-safe twin of percentOff. */
+export const pctOff = (p: number, was?: number) => (was && was > p ? Math.floor(((was - p) / was) * 100) : 0);
+
 /**
  * One offer. `rrp` (this market's launch RRP) and `usedTypical` (the typical
  * used price), both in minor units, add a warning badge to a row priced above
- * them. The badge flags the price, never the seller.
+ * them. The badge flags the price, never the seller. `className` carries the
+ * tab filter classes (OffersTable).
  */
-export function OfferRowItem({ row, product, placement, priceNode, dense = false, rrp, usedTypical }: { row: OfferRow; product: string; placement: string; priceNode?: React.ReactNode; dense?: boolean; rrp?: number | null; usedTypical?: number | null }) {
+export function OfferRowItem({ row, product, placement, priceNode, dense = false, rrp, usedTypical, className = "" }: { row: OfferRow; product: string; placement: string; priceNode?: React.ReactNode; dense?: boolean; rrp?: number | null; usedTypical?: number | null; className?: string }) {
   const warn = rowWarning(row, rrp, usedTypical);
   const who = row.seller ? `Seller: ${row.seller}` : row.authorized ? "Authorized dealer" : null;
-  const details = [who, row.variant ? `${row.variant} version` : null].filter(Boolean).join(" · ");
+  const details = [row.detail, who, row.variant ? `${row.variant} version` : null].filter(Boolean).join(" · ");
+  const off = pctOff(row.price, row.was);
   return (
-    <li className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-4 py-3"}`}>
+    <li className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${row.tag === "best" ? "bg-buy-soft/40" : ""} ${className}`}>
       <div className="min-w-0 flex-1">
-        <p className="truncate font-semibold leading-tight">{row.name}</p>
-        <p className="mt-0.5 text-xs text-muted">
-          {row.condition}
-          {row.pack && <> · {row.pack}</>}
-          {" · "}
-          <span className={row.inStock ? "text-win" : "font-medium text-warn"}>{row.inStock ? "In stock" : "Out of stock"}</span>
+        <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
+          <span className="truncate font-semibold">{row.name}</span>
+          {row.tag && <span className={`rounded px-1.5 py-px text-[11px] font-semibold ${row.tag === "best" ? "bg-buy text-buy-fg" : "bg-buy-soft text-win"}`}>{TAG[row.tag]}</span>}
         </p>
+        <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-xs text-muted">
+          <span>{row.condition}</span>
+          {row.pack && !row.kit && <span>· {row.pack}</span>}
+          <span aria-hidden>·</span>
+          <Availability row={row} />
+          {row.count && row.count > 1 ? <span className="text-subtle">· ×{row.count} listings</span> : null}
+        </p>
+        {row.kit && row.pack && <p className="mt-0.5 text-xs font-medium text-fg">{row.pack}</p>}
         {details && <p className="truncate text-xs text-subtle">{details}</p>}
-        {warn && (
-          <p className="mt-1">
-            <span className="inline-flex items-center gap-1 rounded-full border border-warn/50 bg-warn/10 px-2 py-0.5 text-[11px] font-semibold text-warn" title={warn.kind === "rrp" ? "Priced above the maker's launch RRP in this market" : "Priced above the typical used asking price we've recorded"}>
-              <span aria-hidden>▲</span>
-              {warn.text}
-            </span>
+        {(row.promo || warn) && (
+          <p className="mt-1 flex flex-wrap gap-1">
+            {row.promo && (
+              <span className="inline-flex max-w-full items-center gap-1 truncate rounded-full border border-accent/30 bg-accent-soft px-2 py-0.5 text-[11px] font-medium text-fg" title={row.promo}>
+                <span aria-hidden className="text-accent">+</span>
+                {row.promo}
+              </span>
+            )}
+            {warn && (
+              <span className="inline-flex items-center gap-1 rounded-full border border-warn/50 bg-warn/10 px-2 py-0.5 text-[11px] font-semibold text-warn" title={warn.kind === "rrp" ? "Priced above the maker's launch RRP in this market" : "Priced above the typical used asking price we've recorded"}>
+                <span aria-hidden>▲</span>
+                {warn.text}
+              </span>
+            )}
           </p>
         )}
       </div>
-      <p className={`price shrink-0 text-right font-bold ${dense ? "text-[15px]" : "text-base"} ${row.inStock ? "" : "text-muted"}`}>{priceNode ?? price(row.price, row.currency)}</p>
-      <div className={`${dense ? "w-[4.5rem]" : "w-24"} shrink-0 text-right`}>
+      <div className="shrink-0 text-right">
+        <p className={`price font-bold ${dense ? "text-[15px]" : "text-base"} ${row.inStock ? "" : "text-muted"}`}>{priceNode ?? price(row.price, row.currency)}</p>
+        {off > 0 && row.was && (
+          <p className="text-[11px] leading-tight">
+            <span className="rounded bg-buy-soft px-1 font-semibold text-win">{off}% off</span> <s className="price text-subtle">{price(row.was, row.currency)}</s>
+          </p>
+        )}
+      </div>
+      <div className={`${dense ? "w-[4.5rem]" : "w-20 sm:w-24"} shrink-0 text-right`}>
         <OutboundLink href={row.href} retailer={row.retailer} product={product} placement={placement} className={`${retailerButtonClass(row.retailer, row.paid)} w-full ${dense ? "px-2" : ""}`}>
           View<span className="sr-only"> at {row.name}</span>
         </OutboundLink>
@@ -69,6 +113,7 @@ export function EbayListings({ listings, product, placement }: { listings: Offer
             <span className="min-w-0 truncate text-xs text-muted">
               {o.condition}
               {o.seller ? ` · ${o.seller}` : ""}
+              {o.tag && <span className="ml-1 rounded bg-buy-soft px-1 text-[10px] font-semibold text-win">{TAG[o.tag]}</span>}
             </span>
             <span className="price shrink-0 font-bold">{price(o.price, o.currency)}</span>
           </OutboundLink>

@@ -71,7 +71,7 @@ test("price rows: sorted by price, eBay apart, Amazon only where shown live, lin
     assert.ok(ad.paid && ad.href.includes("sjv.io") && ad.href.includes("quickview"));
     assert.equal(rows.find((r) => r.retailer === "bh")!.paid, false);
     assert.equal(rows[0].pack, "Body only");
-    assert.equal(rows.at(-1)!.pack, "With lens");
+    assert.equal(rows.at(-1)!.pack, "Kit with a lens");
     assert.ok(offerRows(offers, { page: "p", placement: "offers", pack: "body", withAmazon: true }).some((r) => r.amazon && r.seenAt));
   } finally {
     if (env === undefined) delete process.env.AFFILIATE_DEEPLINK_ADORAMA;

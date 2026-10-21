@@ -11,6 +11,7 @@ import { MARKETS, marketPath } from "@/lib/markets";
 import { useMarket } from "@/lib/market-client";
 import { SITE_NAME } from "@/lib/site";
 import MarketSwitcher from "./MarketSwitcher";
+import MoreMenu from "./MoreMenu";
 import SearchBox from "./SearchBox";
 
 const NAV = [
@@ -41,6 +42,7 @@ export default function Header() {
               </Link>
             );
           })}
+          <MoreMenu market={m} pathname={pathname} />
         </nav>
         <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-2 md:flex-none">
           <SearchBox market={m} />
@@ -57,6 +59,7 @@ export default function Header() {
             </Link>
           );
         })}
+        <MoreMenu market={m} pathname={pathname} className="shrink-0" />
       </nav>
       <span className="sr-only">{MARKETS[m].name} prices</span>
     </header>

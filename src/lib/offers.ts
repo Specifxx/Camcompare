@@ -10,6 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { z } from "zod";
 import { CURRENCIES, MARKET_CODES, MARKETS, type MarketCode } from "./markets";
+import { ARCHIVE_DIR, readArchiveFile, type ArchivePoint } from "./price-history-archive";
 import { CONDITIONS, retailer, type Condition } from "./retailers";
 
 const DATA = path.join(process.cwd(), "data");
@@ -123,6 +124,39 @@ export function readHistory(m: MarketCode, dir = historyDir(m), days = HISTORY_D
     .sort()
     .slice(-days)
     .map((f) => historyDaySchema.parse(JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"))));
+}
+
+/**
+ * One day of a product's chart: what we recorded ourselves (`archived`
+ * false), or the lowest an archived copy of a store's page showed that day
+ * (`archived` true, from data/price-history-archive via
+ * lib/price-history-archive.ts; DECISIONS "Price history backfill from
+ * archived store pages"). `newAt`/`usedAt`: the store, when known.
+ */
+export type ChartDay = { day: string; new?: number; used?: number; newAt?: string; usedAt?: string; archived: boolean };
+
+/** A product's archived points in a market (empty when it has none). */
+export function readArchivedHistory(m: MarketCode, slug: string, dir = ARCHIVE_DIR): ArchivePoint[] {
+  return readArchiveFile(m, slug, dir)?.points ?? [];
+}
+
+/**
+ * Recorded and archived history as one series of days, archived days
+ * labelled. Archived points become each day's lowest across stores; a day we
+ * recorded ourselves always wins over an archived one.
+ */
+export function mergeArchivedHistory(live: HistoryPoint[], archived: ArchivePoint[]): ChartDay[] {
+  const by = new Map<string, ChartDay>();
+  for (const a of archived) {
+    const d = by.get(a.day) ?? by.set(a.day, { day: a.day, archived: true }).get(a.day)!;
+    if (a.new !== undefined && (d.new === undefined || a.new < d.new)) Object.assign(d, { new: a.new, newAt: a.store });
+    if (a.used !== undefined && (d.used === undefined || a.used < d.used)) Object.assign(d, { used: a.used, usedAt: a.store });
+  }
+  for (const p of live) {
+    if (p.new === undefined && p.used === undefined) continue;
+    by.set(p.day, { day: p.day, ...(p.new !== undefined ? { new: p.new } : {}), ...(p.used !== undefined ? { used: p.used } : {}), archived: false });
+  }
+  return [...by.values()].sort((a, b) => a.day.localeCompare(b.day));
 }
 
 /** Body-only offers cheapest first; kits and out-of-stock last. */

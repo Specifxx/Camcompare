@@ -9,6 +9,7 @@ import { ADMIN_COOKIE, ADMIN_LIST_MAX, adminSessionValid, feedbackConfigured, fe
 import { FEEDBACK_KINDS, KIND_LABEL, type FeedbackKind } from "@/lib/feedback-kinds";
 import { isMarket, MARKETS } from "@/lib/markets";
 import CommunityAdmin from "./community";
+import StoriesAdmin from "./stories";
 import { allMarketStatus, catalogStatus, envStatus } from "./status";
 
 export const dynamic = "force-dynamic";
@@ -108,6 +109,7 @@ export default async function AdminPage({ searchParams }: { searchParams: { kind
       </section>
 
       <CommunityAdmin />
+      <StoriesAdmin />
 
       <section aria-labelledby="site">
         <h2 id="site" className="h-section">Site status</h2>

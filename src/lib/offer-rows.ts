@@ -17,7 +17,8 @@ import { cameraHighlights, cardSubline, lensHighlights } from "./highlights";
 import { MARKETS, marketPath, type MarketCode } from "./markets";
 import { isAmazonOffer, lowest, sortOffers, type Offer } from "./offers";
 import { usedValue } from "./value";
-import type { CheckLink, OfferRow, QuickViewData } from "./quickview";
+import { headline, kitLensLabel, kitText, leadOffer, lowestKit, percentOff } from "./price-rules";
+import type { CheckLink, OfferRow, QuickViewData, RowCond } from "./quickview";
 import { CONDITION_LABEL, ebayFor, retailer, retailersFor } from "./retailers";
 import { summarizeCamera, summarizeLens } from "./summary";
 
@@ -26,21 +27,39 @@ const MOUNT_SHORT: Record<string, string> = {
   "fujifilm-x": "Fujifilm X", "fujifilm-g": "Fujifilm G", "l-mount": "L-Mount", "micro-four-thirds": "MFT", "pentax-k": "Pentax K", "leica-m": "Leica M",
 };
 
-/** What an offer's `kit` means for this product: a body with a mount is "Body only" or "With lens". */
+/** What an offer's `kit` means for this product: a body with a mount is "Body only" or a kit with a lens. */
 export type PackKind = "body" | "fixed" | "lens";
 export const packKind = (p: AnyProduct): PackKind => (p.kind === "lens" ? "lens" : p.item.mount ? "body" : "fixed");
-function packLabel(kit: boolean, k: PackKind): string | null {
-  if (k === "body") return kit ? "With lens" : "Body only";
-  return kit ? "Kit" : null;
+function packLabel(o: Offer, k: PackKind): string | null {
+  if (o.kit) return kitText(o, k);
+  return k === "body" ? "Body only" : null;
 }
 
-export type RowContext = { page: string; placement: string; pack: PackKind };
+const COND: Record<Offer["condition"], RowCond> = { new: "new", "open-box": "used", used: "used", refurbished: "refurb" };
+
+export type RowContext = { page: string; placement: string; pack: PackKind; tags?: Map<Offer, NonNullable<OfferRow["tag"]>> };
+
+/** The page's headline offers, tagged on their rows (lib/price-rules.ts): the same rule as the hero, cards and metadata. */
+export function rowTags(offers: Offer[], withAmazon: boolean): Map<Offer, NonNullable<OfferRow["tag"]>> {
+  const h = headline(offers, withAmazon);
+  // The hero's kit when there is no body price; else the cheapest new kit, for the Kits filter.
+  const kit = h.kit ?? lowestKit(offers, "new", withAmazon);
+  const t = new Map<Offer, NonNullable<OfferRow["tag"]>>();
+  if (kit) t.set(kit, "kit");
+  if (h.used) t.set(h.used, "used");
+  if (h.new) t.set(h.new, "best");
+  return t;
+}
 
 export function toRow(o: Offer, ctx: RowContext): OfferRow {
   const r = retailer(o.retailer);
   // A feed or eBay link may already carry the affiliate id the import ran with.
   const href = affiliateUrl(o.retailer, o.url, subId(ctx.page, ctx.placement));
   const amazon = isAmazonOffer(o);
+  const kitLens = o.kit ? kitLensLabel(o, ctx.pack) : null;
+  const was = o.wasPrice && percentOff(o.price, o.wasPrice) !== null ? o.wasPrice : null;
+  const avail = o.inStock && o.availability && o.availability !== "in_stock" && o.availability !== "out_of_stock" ? o.availability : null;
+  const tag = ctx.tags?.get(o);
   return {
     id: `${o.retailer}-${o.sourceId ?? o.url}`,
     retailer: o.retailer,
@@ -52,28 +71,69 @@ export function toRow(o: Offer, ctx: RowContext): OfferRow {
     paid: isPaid(o.retailer, href),
     inStock: o.inStock,
     kit: o.kit,
-    pack: packLabel(o.kit, ctx.pack),
+    pack: packLabel(o, ctx.pack),
     seller: o.seller,
     authorized: r?.authorized ?? null,
     variant: o.mount ? MOUNT_SHORT[o.mount] ?? null : null,
+    cond: COND[o.condition],
+    // Optional detail only when a source gave it, so the public files stay small.
+    ...(was ? { was } : {}),
+    ...(avail ? { avail } : {}),
+    ...(o.promo ? { promo: o.promo } : {}),
+    ...(o.detail ? { detail: o.detail } : {}),
+    ...(kitLens ? { kitLens } : {}),
+    ...(tag ? { tag } : {}),
     ...(amazon ? { amazon: true, seenAt: o.seenAt } : {}),
   };
 }
 
-/** Priced rows, eBay apart. Amazon's only with `withAmazon` (the product page, shown live). */
+/**
+ * Identical listings, one row: the same store, condition, price, stock,
+ * pack, seller, mount version, detail, promotion and was-price (a store
+ * listing the black and the silver body at one price, or one shop's two
+ * branches with no branch named). The row says "×N listings" and links to
+ * the first. Different prices or details stay apart.
+ */
+export function mergeKey(o: Offer, pack: PackKind): string {
+  return [o.retailer, o.condition, o.price, o.inStock, o.kit, o.kit ? kitLensLabel(o, pack) ?? "" : "", o.seller ?? "", o.mount ?? "", o.detail ?? "", o.promo ?? "", o.wasPrice ?? ""].join("|");
+}
+
+function mergeRows(sorted: Offer[], ctx: RowContext): OfferRow[] {
+  const out: OfferRow[] = [];
+  const at = new Map<string, number>();
+  for (const o of sorted) {
+    const k = mergeKey(o, ctx.pack);
+    const i = at.get(k);
+    if (i === undefined) {
+      at.set(k, out.length);
+      out.push(toRow(o, ctx));
+      continue;
+    }
+    const row = out[i];
+    row.count = (row.count ?? 1) + 1;
+    const tag = ctx.tags?.get(o);
+    if (tag && !row.tag) row.tag = tag;
+  }
+  return out;
+}
+
+/** Priced rows, eBay apart, identical listings merged. Amazon's only with `withAmazon` (the product page, shown live). */
 export function offerRows(offers: Offer[], ctx: RowContext & { withAmazon: boolean }): OfferRow[] {
-  return sortOffers(offers.filter((o) => !retailer(o.retailer)?.ebay && (ctx.withAmazon || !isAmazonOffer(o)))).map((o) => toRow(o, ctx));
+  const c = { ...ctx, tags: ctx.tags ?? rowTags(offers, ctx.withAmazon) };
+  return mergeRows(sortOffers(offers.filter((o) => !retailer(o.retailer)?.ebay && (ctx.withAmazon || !isAmazonOffer(o)))), c);
 }
 
 /** Up to four live eBay listings in this market, in stock, cheapest first. */
 export function ebayRows(offers: Offer[], m: MarketCode, ctx: RowContext, max = 4): OfferRow[] {
   const r = ebayFor(m);
   if (!r) return [];
+  // Tagged as the product page does (Amazon live); the quick view passes its own tags.
+  const c = { ...ctx, tags: ctx.tags ?? rowTags(offers, true) };
   return offers
     .filter((o) => o.retailer === r.key && o.inStock)
     .sort((a, b) => a.price - b.price)
     .slice(0, max)
-    .map((o) => toRow(o, ctx));
+    .map((o) => toRow(o, c));
 }
 
 export type CheckInput = { product: string; query: string; offers: Offer[]; market: MarketCode; page: string; amazonAsin?: string; placement: string; amazonShown: boolean };
@@ -128,12 +188,20 @@ export function rrpMinor(p: AnyProduct, m: MarketCode): number | null {
   return l && l.currency === MARKETS[m].currency ? Math.round(l.amount * 100) : null;
 }
 
+/** The quick view's "From" line: the same headline as the product page, without Amazon (a public file never stores its price). */
+export function fromLine(offers: Offer[], pack: PackKind): QuickViewData["from"] {
+  const lead = leadOffer(headline(offers, false));
+  if (!lead) return null;
+  return { price: lead.offer.price, what: lead.what, ...(lead.what === "kit" ? { label: kitText(lead.offer, pack) } : {}) };
+}
+
 export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = offersFor(p.item.slug, m), updated: string | null = offersGeneratedAt(m)): QuickViewData {
   const slug = p.item.slug;
   const page = `qv-${m}-${slug}`;
   const pack = packKind(p);
   const query = retailerQuery(p, m);
-  const listings = ebayRows(offers, m, { page, placement: "quickview-ebay", pack });
+  const tags = rowTags(offers, false);
+  const listings = ebayRows(offers, m, { page, placement: "quickview-ebay", pack, tags });
   const eb = ebayFor(m);
   return {
     slug,
@@ -145,7 +213,7 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
     subline: cardSubline(p.kind === "camera" ? summarizeCamera(p.item, m) : summarizeLens(p.item, m)),
     href: marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`),
     highlights: p.kind === "camera" ? cameraHighlights(p.item) : lensHighlights(p.item),
-    rows: offerRows(offers, { page, placement: "quickview", pack, withAmazon: false }),
+    rows: offerRows(offers, { page, placement: "quickview", pack, withAmazon: false, tags }),
     ebay: eb && listings.length ? { name: eb.name, listings, all: ebaySearch(query, m, page, "quickview-ebay-search", listings) } : null,
     alsoCheck: alsoCheckLinks({ product: slug, query, offers, market: m, page, amazonAsin: p.item.amazonAsin, placement: "quickview-check", amazonShown: false }),
     updated,
@@ -153,5 +221,7 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
     rrp: rrpMinor(p, m),
     usedTypical: usedValue(historyFor(slug, m))?.value ?? null,
     lowestUsed: lowest(offers, "used")?.price ?? null,
+    lowestNew: lowest(offers, "new")?.price ?? null,
+    from: fromLine(offers, pack),
   };
 }

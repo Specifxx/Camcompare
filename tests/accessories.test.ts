@@ -28,7 +28,7 @@ test("categories from real-looking titles", () => {
   assert.equal(cat("NiSi 82mm True Color Variable ND Filter"), "filters");
   assert.equal(cat("Tiffen 62mm Variable ND Filter (Open Box)"), "filters");
   assert.equal(cat("SanDisk 128GB Extreme PRO SDXC UHS-I Card 200MB/s"), "memory-cards");
-  assert.equal(cat("Rode VideoMic NTG On-Camera Shotgun Microphone"), "microphones");
+  assert.equal(cat("Rode VideoMic NTG On-Camera Shotgun Microphone"), "shotgun-mics");
   assert.equal(cat("Godox V1-S Round Head Flash for Sony"), "flashes");
   assert.equal(cat("Godox AD200Pro TTL Pocket Flash"), "strobes");
   assert.equal(cat("Godox X2T-C TTL Wireless Flash Trigger for Canon"), "triggers");
@@ -39,7 +39,7 @@ test("categories from real-looking titles", () => {
   assert.equal(cat("Brandess 77mm Snap Cap"), "caps-hoods");
   assert.equal(cat("Metabones Canon EF to Sony E Mount T Smart Adapter"), "adapters");
   assert.equal(cat("VSGO Sensor Cleaning Swab Kit Full Frame"), "cleaning");
-  assert.equal(cat("Atomos Ninja V 5\" 4K HDMI Recording Monitor"), "monitors");
+  assert.equal(cat("Atomos Ninja V 5\" 4K HDMI Recording Monitor"), "recorders");
   assert.equal(cat("Samsung T7 Shield 2TB Portable SSD USB 3.2 Gen 2"), "storage");
   assert.equal(cat("SmallRig Ultra Slim 4K HDMI Cable (Micro HDMI to HDMI) 55cm"), "cables");
   assert.equal(cat("Expert Shield Screen Protector for Sony a7 IV"), "screen-protectors");
@@ -183,4 +183,92 @@ test("flash parts are not flashes or triggers", () => {
 
 test("a flash sold with its battery is still a flash", () => {
   assert.equal(cat("Godox V1-C Flash with VB26 Battery for Canon"), "flashes");
+});
+
+test("owner's sections, 2026-10-22: every category reads its own listings", () => {
+  // Gimbals, cages, drones, PTZ cameras, monitors
+  assert.equal(cat("DJI RS 4 Pro Combo"), "gimbals");
+  assert.equal(cat("DJI RS 3 Mini"), "gimbals");
+  assert.equal(cat("Zhiyun Weebill 3S Combo"), "gimbals");
+  assert.equal(cat("Moza AirCross 3 Professional Kit"), "gimbals");
+  assert.equal(cat("Tilta Full Camera Cage for Sony FX3"), "cages");
+  assert.equal(cat("8Sinn Cage for Canon R5 + Black Mamba Top Handle"), "cages");
+  assert.equal(cat("Kondor Blue Cage for Blackmagic Cinema Camera 6K"), "cages");
+  assert.equal(cat("DJI Mini 4 Pro Fly More Combo (DJI RC 2)"), "drones");
+  assert.equal(cat("DJI Air 3S Drone 4K HDR 50MP"), "drones");
+  assert.equal(cat("DJI Avata 2 Fly More Combo (Three Batteries)"), "drones");
+  assert.equal(cat("DJI Neo"), "drones");
+  assert.equal(cat("Autel EVO Lite+ Premium Bundle"), "drones");
+  assert.equal(cat("Potensic Atom 2 GPS Drone"), "drones");
+  assert.equal(cat("DJI Mini 4 Pro Intelligent Flight Battery Plus"), "batteries");
+  assert.equal(cat("DJI Mini 4 Pro ND Filter Set"), "filters");
+  assert.equal(cat("OBSBOT Tail Air 4K PTZ Streaming Camera"), "ptz-cameras");
+  assert.equal(cat("PTZOptics Move 4K 20x PTZ Camera"), "ptz-cameras");
+  assert.equal(cat("SmallHD Ultra 7 Monitor"), "monitors");
+  assert.equal(cat("Atomos Shinobi 5.2\" 4K HDMI Monitor"), "monitors");
+  assert.equal(cat("Feelworld F6 Plus 5.5\" Touchscreen Monitor"), "monitors");
+  assert.equal(cat("BenQ SW272U 27\" 4K Photo Editing Monitor"), null);
+  // Cables, tether cables, batteries
+  assert.equal(cat("Tether Tools TetherPro USB-C to USB-C 4.6m Orange"), "tether-cables");
+  assert.equal(cat("Kondor Blue 12G-SDI Cable 3ft"), "cables");
+  // Flashes, backdrops, tripods, bags
+  assert.equal(cat("Profoto A10 AirTTL Flash for Sony"), "flashes");
+  assert.equal(cat("Neewer Z1-S Round Head Flash"), "flashes");
+  assert.equal(cat("Westcott FJ80 II S Universal Speedlight"), "flashes");
+  assert.equal(cat("Westcott X-Drop Pro Wrinkle-Resistant Backdrop Kit"), "backdrops");
+  assert.equal(cat("Savage Seamless Background Paper 2.72m x 11m Super White"), "backdrops");
+  // Filters, LED/COB lights, light modifiers
+  assert.equal(cat("Aputure LS 600d Pro V-Mount"), "led-lights");
+  assert.equal(cat("Amaran 150c RGB LED COB Light"), "led-lights");
+  assert.equal(cat("Godox SL60IIBi Bi-Color LED Video Light"), "led-lights");
+  assert.equal(cat("Nanlite Forza 60C RGBLAC LED Spot Light"), "led-lights");
+  assert.equal(cat("Zhiyun Molus X100 Pocket COB Light"), "led-lights");
+  assert.equal(cat("Aputure Light Dome 150"), "modifiers");
+  assert.equal(cat("Neewer 110cm 5-in-1 Collapsible Reflector"), "modifiers");
+  // Video transmitters, switchers
+  assert.equal(cat("Hollyland Mars 4K Wireless Video Transmission System"), "video-transmitters");
+  assert.equal(cat("Teradek Bolt 6 XT 750 TX/RX Set"), "video-transmitters");
+  assert.equal(cat("Blackmagic Design ATEM Mini Pro ISO"), "video-switchers");
+  // Cards, SSDs, SATA
+  assert.equal(c("Samsung 870 EVO 2TB 2.5\" SATA SSD")?.category, "storage");
+  assert.equal(c("Samsung 870 EVO 2TB 2.5\" SATA SSD")?.specs.format, "ssd");
+  // Recorders, matte boxes
+  assert.equal(cat("Blackmagic Video Assist 7\" 12G HDR"), "recorders");
+  assert.equal(cat("Atomos Shogun Ultra 7\" Monitor-Recorder"), "recorders");
+  assert.equal(cat("Tilta Mirage Matte Box Kit"), "matte-boxes");
+  assert.equal(cat("SmallRig Mini Matte Box Lite 3575"), "matte-boxes");
+  // Audio recorders, shotgun and wireless microphones
+  assert.equal(cat("Zoom H2essential Handy Recorder"), "audio-recorders");
+  assert.equal(cat("Zoom H6essential 32-Bit Float Recorder"), "audio-recorders");
+  assert.equal(cat("Tascam DR-40X Four-Track Audio Recorder"), "audio-recorders");
+  assert.equal(cat("Sennheiser MKE 600 Shotgun Microphone"), "shotgun-mics");
+  assert.equal(cat("Rode Wireless GO II Dual Channel Wireless Microphone System"), "wireless-mics");
+  assert.equal(cat("DJI Mic 2 (2 TX + 1 RX + Charging Case)"), "wireless-mics");
+  assert.equal(cat("Hollyland Lark M2 Duo"), "wireless-mics");
+  assert.equal(cat("Rode Wireless Pro Transmitter"), "wireless-mics");
+  // Action camera accessories
+  assert.equal(cat("GoPro Chesty (Performance Chest Mount)"), "action-camera");
+  assert.equal(cat("Insta360 Invisible Selfie Stick 114cm"), "action-camera");
+  assert.equal(cat("GoPro Enduro Rechargeable Battery"), "batteries");
+});
+
+test("owner's brands, 2026-10-22", () => {
+  const brand = (t: string) => c(t)?.brand ?? null;
+  assert.equal(brand("Teradek Bolt 6 XT 750 TX/RX Set"), "teradek");
+  assert.equal(brand("Hollyland Mars 4K Wireless Video Transmission System"), "hollyland");
+  assert.equal(brand("SmallHD Ultra 7 Monitor"), "smallhd");
+  assert.equal(brand("Atomos Shinobi 5.2\" 4K HDMI Monitor"), "atomos");
+  assert.equal(brand("Kondor Blue 12G-SDI Cable 3ft"), "kondor-blue");
+  assert.equal(brand("Zoom H2essential Handy Recorder"), "zoom");
+  assert.equal(brand("AKG C451 B Microphone"), "akg");
+  assert.equal(brand("Neumann KMR 81 i Shotgun Microphone"), "neumann");
+  assert.equal(brand("Shure VP83F LensHopper Shotgun Microphone"), "shure");
+  assert.equal(brand("Broncolor Para 88 Reflector"), "broncolor");
+  assert.equal(brand("Sachtler Flowtech 75 Tripod"), "sachtler");
+  assert.equal(brand("ARRI LMB 4x5 Matte Box"), "arri");
+  assert.equal(brand("RED Komodo REDVOLT Micro-V Battery"), "red");
+  assert.equal(brand("DZOFilm Vespid Matte Box"), "dzofilm");
+  assert.equal(brand("Ulanzi F38 Quick Release Plate"), "ulanzi");
+  assert.equal(brand("DJI Mini 4 Pro Fly More Combo (DJI RC 2)"), "dji");
+  assert.equal(brand("Red Variable ND Filter 77mm"), null);
 });

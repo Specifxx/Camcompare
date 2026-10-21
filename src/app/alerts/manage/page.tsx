@@ -8,17 +8,27 @@ import { alertsForToken, describeAlert, isToken, type AlertRow } from "@/lib/ale
 import { displayName, product } from "@/lib/catalog";
 import { logSafe } from "@/lib/feedback";
 import { MARKETS, marketPath } from "@/lib/markets";
+import { releaseBrandName } from "@/lib/releases/brands";
+import { releaseById } from "@/lib/releases/data";
+
+/** A name and a link for what an alert watches: a product, a release card or a maker. */
+function subject(a: AlertRow): { name: string; href: string } {
+  if (a.kind === "brand") return { name: `${releaseBrandName(a.product)} announcements`, href: marketPath(a.market, "/releases") };
+  if (a.kind === "release") return { name: releaseById(a.product)?.title ?? "An announcement", href: marketPath(a.market, `/releases#${a.product}`) };
+  const p = product(a.product);
+  return { name: p ? displayName(p.item, a.market) : a.product, href: marketPath(a.market, `/${a.kind === "camera" ? "cameras" : "lenses"}/${a.product}`) };
+}
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Your price alerts",
+  title: "Your alerts",
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
   referrer: "no-referrer",
 };
 
 const NOTICE: Record<string, string> = {
-  confirmed: "Thanks, your address is confirmed. We'll email you when a price you're tracking drops.",
+  confirmed: "Thanks, your address is confirmed. We'll email you when something you're tracking changes.",
   removed: "Done: that alert is off. You won't get emails for it again.",
   "removed-all": "Done: every alert for this address is off.",
 };
@@ -44,7 +54,7 @@ export default async function ManageAlerts({ searchParams }: { searchParams: { t
 
   return (
     <div className="max-w-2xl space-y-4">
-      <h1 className="text-2xl font-extrabold tracking-tight">Your price alerts</h1>
+      <h1 className="text-2xl font-extrabold tracking-tight">Your alerts</h1>
       {notice && <p className="card p-3 text-sm">{notice}</p>}
       {error && <p className="rounded-lg border border-warn/40 bg-warn/10 px-3 py-2 text-sm">{error}</p>}
       {data && data !== "down" && (
@@ -56,9 +66,7 @@ export default async function ManageAlerts({ searchParams }: { searchParams: { t
           {data.alerts.length ? (
             <ul className="card divide-y divide-line">
               {data.alerts.map((a) => {
-                const p = product(a.product);
-                const name = p ? displayName(p.item, a.market) : a.product;
-                const href = marketPath(a.market, `/${a.kind === "camera" ? "cameras" : "lenses"}/${a.product}`);
+                const { name, href } = subject(a);
                 return (
                   <li key={a.id} className="flex flex-wrap items-center justify-between gap-3 p-3">
                     <div className="min-w-0">
@@ -66,7 +74,8 @@ export default async function ManageAlerts({ searchParams }: { searchParams: { t
                         {name}
                       </Link>
                       <p className="text-xs text-muted">
-                        {MARKETS[a.market]?.short ?? a.market} · {ALERT_CONDITION_LABEL[a.condition]} · {describeAlert(a)}
+                        {MARKETS[a.market]?.short ?? a.market}
+                        {a.type === "price" || a.type === "restock" ? ` · ${ALERT_CONDITION_LABEL[a.condition]}` : ""} · {describeAlert(a)}
                         {a.confirmed ? "" : " · not confirmed yet"}
                       </p>
                     </div>
@@ -82,7 +91,7 @@ export default async function ManageAlerts({ searchParams }: { searchParams: { t
               })}
             </ul>
           ) : (
-            <p className="card p-4 text-sm text-muted">No active alerts. Use &ldquo;Track this price&rdquo; on any camera or lens page to add one.</p>
+            <p className="card p-4 text-sm text-muted">No active alerts. Use &ldquo;Track this price&rdquo; on any camera or lens page, or &ldquo;Notify me&rdquo; on Just announced, to add one.</p>
           )}
           {data.alerts.length > 1 && (
             <form method="post" action="/api/alerts/unsubscribe">

@@ -20,6 +20,13 @@ export default function FeedbackPage() {
         Spotted a wrong price or spec, a bug, or a camera or lens we don&apos;t list yet? Have an idea? Every message goes straight to the people who run{" "}
         {SITE_NAME}, and we read all of them.
       </p>
+      <p className="mt-2 text-sm text-muted">
+        Want a store tracked, a camera added or a new feature? Post it on the public{" "}
+        <Link href="/requests" prefetch={false}>
+          feedback &amp; request board
+        </Link>{" "}
+        so other members can vote for it. This form stays private.
+      </p>
       <div className="mt-6">
         <FeedbackForm connected={Boolean(process.env.DATABASE_URL?.trim())} />
       </div>

@@ -6,26 +6,34 @@ import { AD_SLOTS } from "@/lib/ads";
 import OffersTable from "@/components/OffersTable";
 import LowLight from "@/components/LowLight";
 import PeerRanks from "@/components/PeerRanks";
-import PhotoCredit from "@/components/PhotoCredit";
 import PriceBox from "@/components/PriceBox";
 import OfficialLink from "@/components/OfficialLink";
 import WorldPrices from "@/components/WorldPrices";
 import PriceHistory from "@/components/PriceHistory";
 import UsedValue from "@/components/UsedValue";
 import ProductCard from "@/components/ProductCard";
-import ProductThumb from "@/components/ProductThumb";
 import SaveButton from "@/components/SaveButton";
 import PriceAlert from "@/components/PriceAlert";
-import Discussion from "@/components/community/Discussion";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
 import SuggestedKit from "@/components/SuggestedKit";
-import ReviewHub from "@/components/ReviewHub";
+import Gallery from "@/components/product/Gallery";
+import MoreOptions from "@/components/product/MoreOptions";
+import PageNav from "@/components/product/PageNav";
+import ProductDiscussions from "@/components/product/ProductDiscussions";
+import ProductReviews from "@/components/product/ProductReviews";
+import ProductVideos from "@/components/product/ProductVideos";
+import ReviewStars from "@/components/product/ReviewStars";
+import ThingsToKnow from "@/components/product/ThingsToKnow";
+import { galleryFor } from "@/lib/gallery";
+import { discussionLinks, videoLinks } from "@/lib/media-links";
+import { headline, priceSentence } from "@/lib/price-rules";
+import { cameraThings } from "@/lib/things-to-know";
+import { usedValue } from "@/lib/value";
 import { cameraHighlights } from "@/lib/highlights";
 import {
   brandName,
   camera as getCamera,
-  credit,
   displayName,
   displayShortName,
   historyFor,
@@ -40,10 +48,8 @@ import {
   rivalsOf,
 } from "@/lib/catalog";
 import type { Camera } from "@/lib/catalog/schema";
-import { price } from "@/lib/format";
 import { breadcrumb, ldJson, productLd } from "@/lib/jsonld";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
-import { lowest } from "@/lib/offers";
 import { pageMeta } from "@/lib/seo";
 import { SPEC_GROUPS, lensLabel, sensorLabel, typeLabel } from "@/lib/specs/definitions";
 import { CATEGORY_LABEL, cropOn, lensCategories, type LensCategory } from "@/lib/specs/lens";
@@ -57,11 +63,10 @@ export function cameraMetadata(slug: string, m: MarketCode): Metadata {
   const c = getCamera(slug);
   if (!c) return {};
   const offers = offersFor(c.slug, m);
-  const n = lowest(offers, "new");
-  const u = lowest(offers, "used");
   const cur = MARKETS[m].currency;
   const name = displayName(c, m);
-  const priceText = n ? ` New from ${price(n.price, cur)}${u ? `, used from ${price(u.price, cur)}` : ""}.` : u ? ` Used from ${price(u.price, cur)}.` : "";
+  // The same headline rule as the page (lib/price-rules.ts): body only, else a kit, labelled.
+  const priceText = priceSentence(offers, cur, c.mount ? "body" : "fixed");
   return pageMeta({
     title: `${name} price & specs`,
     description: `${name}: ${c.specs.megapixels} MP ${sensorLabel(c.specs.sensorFormat).toLowerCase()} ${typeLabel(c.type).toLowerCase()}, announced ${c.announced.slice(0, 4)}.${priceText} Full specs, price history and side-by-side comparisons.`,
@@ -113,33 +118,36 @@ function LensesForCamera({ c, m }: { c: Camera; m: MarketCode }) {
 export default function CameraView({ slug, market: m }: { slug: string; market: MarketCode }) {
   const c = getCamera(slug)!;
   const offers = offersFor(c.slug, m);
-  // The price box shows Amazon's price live, with its time (TimedPrice).
-  const n = lowest(offers, "new", true);
-  const u = lowest(offers, "used", true);
+  // Body-only, in stock, Amazon left out: what the alert and the saved list compare (lib/price-rules.ts).
+  const h = headline(offers);
   const mt = c.mount ? mount(c.mount) : null;
   const self = product(c.slug)!;
   const rivals = rivalsOf(self);
-  const family = [c.predecessor, c.successor].map((s) => (s ? product(s) : null)).filter((x): x is NonNullable<typeof x> => x !== null);
   const name = displayName(c, m);
   const short = displayShortName(c, m);
   const page = `cam-${m}-${c.slug}`;
+  const cur = MARKETS[m].currency;
+  const history = historyFor(c.slug, m);
+  const used = usedValue(history);
+  const things = cameraThings(c, { offers, currency: cur, market: m, marketName: MARKETS[m].name, used, todayUsed: h.used?.price ?? null });
+  const brand = brandName(c.brand);
+  const rival = rivals[0] ? { item: rivals[0].item, brandName: brandName(rivals[0].item.brand) } : null;
+  const compareHref = rivals[0] ? (isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)) : null;
   return (
     <article className="flex flex-col gap-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(productLd(c, "camera", offers, m))} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={ldJson(breadcrumb([{ name: "Cameras", path: marketPath(m, "/cameras") }, { name: brandName(c.brand), path: marketPath(m, `/brands/${c.brand}`) }, { name, path: marketPath(m, `/cameras/${c.slug}`) }]))}
+        dangerouslySetInnerHTML={ldJson(breadcrumb([{ name: "Cameras", path: marketPath(m, "/cameras") }, { name: brand, path: marketPath(m, `/brands/${c.brand}`) }, { name, path: marketPath(m, `/cameras/${c.slug}`) }]))}
       />
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-5">
         <nav className="text-xs text-subtle" aria-label="Breadcrumb">
-          <Link href={marketPath(m, "/cameras")}>Cameras</Link> / <Link href={marketPath(m, `/brands/${c.brand}`)}>{brandName(c.brand)}</Link> / <span>{short}</span>
+          <Link href={marketPath(m, "/cameras")}>Cameras</Link> / <Link href={marketPath(m, `/brands/${c.brand}`)}>{brand}</Link> / <span>{short}</span>
         </nav>
-        <header className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)]">
-          <figure>
-            <ProductThumb slug={c.slug} alt={name} priority className="border border-line" />
-            <PhotoCredit credit={credit(c.slug)} />
-          </figure>
-          <div className="flex flex-col gap-4">
+        {/* Hero: photo, then name, stars, the best price and the actions (shopping-panel order). */}
+        <header className="grid grid-cols-1 gap-5 md:grid-cols-[minmax(0,340px)_minmax(0,1fr)] md:gap-8">
+          <Gallery slug={c.slug} images={galleryFor(c.slug, name)} />
+          <div className="flex min-w-0 flex-col gap-4">
             <div>
               <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{name}</h1>
               <p className="mt-1 text-sm text-muted">
@@ -147,46 +155,77 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
                 {c.status === "discontinued" ? " · Discontinued (new stock may be limited)" : ""}
                 {name !== c.name ? ` · Sold as ${c.name} in the US` : ""}
               </p>
-              <p className="mt-1">
+              <p className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1">
+                <ReviewStars slug={c.slug} />
                 <OfficialLink p={c} />
               </p>
             </div>
-            <PriceBox newOffer={n} usedOffer={u} history={historyFor(c.slug, m)} launch={launchPrice(c, m)} market={m} extra={c.mount ? " (body only)" : ""} />
+            <PriceBox offers={offers} history={history} launch={launchPrice(c, m)} market={m} pack={c.mount ? "body" : "fixed"} page={page} extra={c.mount ? " (body)" : ""} />
             <div className="flex flex-wrap gap-2">
-              <SaveButton slug={c.slug} kind="camera" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} cond={lowest(offers, "new") ? "new" : "used"} />
-              <PriceAlert slug={c.slug} kind="camera" market={m} newPrice={lowest(offers, "new")?.price ?? null} usedPrice={lowest(offers, "used")?.price ?? null} />
-              {rivals[0] && (
-                <Link href={isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)} className="btn-ghost">
+              <PriceAlert slug={c.slug} kind="camera" market={m} newPrice={h.new?.price ?? null} usedPrice={h.used?.price ?? null} />
+              {compareHref && rivals[0] && (
+                <Link href={compareHref} className="btn-ghost">
                   Compare with {displayShortName(rivals[0].item, m)}
                 </Link>
               )}
+              <SaveButton slug={c.slug} kind="camera" market={m} seen={(h.new ?? h.used)?.price ?? null} cond={h.new ? "new" : "used"} />
             </div>
-            <section id="history" className="scroll-mt-20">
-              <h2 className="mb-2 text-sm font-bold text-muted">Price history</h2>
-              <div className="card p-3">
-                <PriceHistory points={historyFor(c.slug, m)} currency={MARKETS[m].currency} />
-              </div>
-            </section>
           </div>
         </header>
         <SpecHighlights items={cameraHighlights(c)} />
       </div>
 
-      <section id="prices">
+      <PageNav
+        items={[
+          { id: "prices", label: "Prices" },
+          { id: "reviews", label: "Reviews" },
+          { id: "things-to-know", label: "Things to know" },
+          { id: "history", label: "Price history" },
+          { id: "videos", label: "Videos" },
+          { id: "discussions", label: "Discussions" },
+          { id: "more-options", label: "More options" },
+          { id: "specs", label: "Specs" },
+        ]}
+      />
+
+      <section id="prices" className="scroll-mt-28">
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
         <OffersTable product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} amazonAsin={c.amazonAsin} />
+      </section>
+
+      <ProductReviews p={c} kind="camera" name={short} />
+
+      <ThingsToKnow t={things} name={short} />
+
+      {/* SLOT: price history. Owned by the history agent (components/PriceHistory.tsx); keep the id. */}
+      <section id="history" className="scroll-mt-28">
+        <h2 className="h-section mb-3">Price history</h2>
+        <div className="card p-3">
+          <PriceHistory slug={c.slug} market={m} currency={cur} />
+        </div>
       </section>
 
       <WorldPrices slug={c.slug} path={`/cameras/${c.slug}`} market={m} name={short} />
 
       <section>
         <h2 className="h-section mb-3">Used: what it should be worth</h2>
-        <UsedValue history={historyFor(c.slug, m)} currency={MARKETS[m].currency} todayUsed={lowest(offers, "used")?.price ?? null} name={short} />
+        <UsedValue history={history} currency={cur} todayUsed={h.used?.price ?? null} name={short} />
+      </section>
+
+      <ProductVideos links={videoLinks(c, "camera", brand, rival)} name={short} />
+
+      <ProductDiscussions links={discussionLinks(c, "camera", brand)} slug={c.slug} name={short} />
+
+      <MoreOptions self={self} m={m} />
+
+      <section id="specs" className="scroll-mt-28">
+        <h2 className="h-section mb-3">{short} specifications</h2>
+        <SpecSheet item={c} groups={SPEC_GROUPS} />
       </section>
 
       <section>
         <h2 className="h-section mb-3">Low light & noise</h2>
-        <LowLight cams={[{ c, brandName: brandName(c.brand) }]} />
+        <LowLight cams={[{ c, brandName: brand }]} />
       </section>
 
       <section>
@@ -194,36 +233,12 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         <PeerRanks camera={c} />
       </section>
 
-      {(rivals.length > 0 || family.length > 0) && (
-        <section>
-          <h2 className="h-section mb-3">Compare the {short}</h2>
-          <div className="flex flex-wrap gap-2">
-            {[...family, ...rivals]
-              .filter((x, i, arr) => arr.findIndex((y) => y.item.slug === x.item.slug) === i)
-              .map((r) => (
-                <Link key={r.item.slug} href={isIndexedPair(self, r) ? `/compare/${pairSlug(c, r.item)}` : marketPath(m, `/compare?c=${c.slug},${r.item.slug}`)} className="btn-ghost">
-                  vs {displayName(r.item, m)}
-                  {r.item.slug === c.predecessor ? <span className="text-xs font-normal text-subtle">(predecessor)</span> : r.item.slug === c.successor ? <span className="text-xs font-normal text-subtle">(successor)</span> : null}
-                </Link>
-              ))}
-          </div>
-        </section>
-      )}
-
       <SuggestedKit c={c} m={m} />
 
       <LensesForCamera c={c} m={m} />
 
       <CameraAccessories slug={c.slug} market={m} />
 
-      <ReviewHub p={c} kind="camera" />
-
-      <section>
-        <h2 className="h-section mb-3">{short} specifications</h2>
-        <SpecSheet item={c} groups={SPEC_GROUPS} />
-      </section>
-
-      <Discussion target={`product:${c.slug}`} name={short} />
       <AdSlot slot={AD_SLOTS.product} />
     </article>
   );

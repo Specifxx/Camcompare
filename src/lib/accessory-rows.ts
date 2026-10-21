@@ -65,14 +65,14 @@ export function accessoryRows(list: AccessoryOffer[], m: MarketCode, page: strin
 
 export type CategorySummary = { slug: string; label: string; group: string; count: number; low: number | null; high: number | null; brands: number };
 
-/** Per category: listings, in-stock price range, accessory brands. Only categories with listings. */
-export function categorySummaries(m: MarketCode): CategorySummary[] {
-  const all = marketAccessories(m).accessories;
+/** Per category: listings, in-stock price range, accessory brands. Only categories with listings, unless `all`. */
+export function categorySummaries(m: MarketCode, all = false): CategorySummary[] {
+  const rows = marketAccessories(m).accessories;
   return CATEGORIES.map((c) => {
-    const list = all.filter((a) => a.category === c.slug);
+    const list = rows.filter((a) => a.category === c.slug);
     const prices = list.filter((a) => a.inStock).map((a) => a.price);
     return { slug: c.slug, label: c.label, group: c.group, count: list.length, low: prices.length ? Math.min(...prices) : null, high: prices.length ? Math.max(...prices) : null, brands: new Set(list.map((a) => a.brand).filter(Boolean)).size };
-  }).filter((s) => s.count > 0);
+  }).filter((s) => all || s.count > 0);
 }
 
 export const categoryIndexable = (category: string) => (m: MarketCode) => accessoriesIn(m, category).length > 0;

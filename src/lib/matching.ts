@@ -334,3 +334,66 @@ export function plausiblePrice(p: Pick<Matchable, "launchPriceUsd" | "launchPric
   const floor = condition === "new" ? 0.4 : 0.12;
   return price >= launch * floor && price <= launch * 2.5;
 }
+
+// ---------------------------------------------------------------- kit lenses
+
+// A lens as a kit title names it: optional prefix words ("RF-S", "NIKKOR Z
+// DX", "M.Zuiko Digital ED"), the focal length or range, the aperture, then
+// designators ("IS STM", "OSS", "G", "WR"). Built for the text, not for
+// matching: what the listing calls its lens, cleaned.
+const NOT_PREFIX = "(?!(?:II|III|IV|VI|KIT|BODY|AND|WITH|W|PLUS|BONUS|BLACK|SILVER|CAMERA|MIRRORLESS|DSLR|DIGITAL CAMERA)\\b)";
+const LENS_NAME = new RegExp(
+  `(?:\\b${NOT_PREFIX}(?:[A-Z]{1,6}(?:-[A-Z]{1,2})?|NIKKOR|Nikkor|M\\.\\s?Zuiko|M\\.ZUIKO|Zuiko|ZUIKO|Digital|DIGITAL|ED|Lumix|LUMIX|Vario|Fujinon|FUJINON)\\s+){0,3}` +
+    `(?:[A-Z]{1,4}(?:-[A-Z])?)?\\d{1,3}(?:\\.\\d)?(?:\\s?-\\s?\\d{1,3}(?:\\.\\d)?)?\\s?[mM]{2}(?![a-eg-zA-EG-Z])` +
+    `(?:\\s*(?:[fF]\\/?|1:)\\s?\\d{1,2}(?:\\.\\d{1,2})?(?:\\s?-\\s?\\d{1,2}(?:\\.\\d{1,2})?)?)?` +
+    `(?:\\s+${NOT_PREFIX}(?:[A-Z]{1,4}|II|III|IV|Macro|MACRO|OSS|STM|USM|VR|WR|OIS|ASPH\\.?|Power|POWER|PZ|LM|DN|DG|DC|HSM|Di|VXD|RXD|IS|G|GM|S|L|R|Pro|PRO|IF|AF-S|AF-P|DX|Master|MASTER|Lens|LENS)\\b)*`,
+  "g",
+);
+
+/** Every lens a kit title names with a focal length, as it names them ("RF-S 18-45mm f/4.5-6.3 IS STM"). */
+export function kitLensNames(title: string): string[] {
+  return [...title.matchAll(LENS_NAME)].map((m) => m[0].replace(/\s+/g, " ").replace(/\s+(lens|kit)$/i, "").trim()).filter((s) => /\d\s?mm/i.test(s));
+}
+
+type KitLensCatalog = { slug: string; brand: string; mounts: string[]; specs: { focalMinMm: number; focalMaxMm: number; apertureMax: number; apertureMaxTele: number | null } };
+
+/**
+ * The catalog lens in a camera kit, and the lens as the listing names it.
+ * `kitLensName` is filled whenever the title gives a focal length (several
+ * joined with " + "). `kitLens` only when exactly one catalog lens for the
+ * camera's mount fits: by alias (its brand named, or the camera's maker),
+ * else by focal range and, when the title gives one, aperture, among the
+ * camera maker's lenses (or the lens maker the title names). A twin-lens kit,
+ * or two lenses that fit, gives no slug: refused, never guessed.
+ */
+export function kitLensOf(title: string, index: CatalogIndex, lenses: KitLensCatalog[], camera: Pick<Matchable, "brand" | "mounts">): { kitLens: string | null; kitLensName: string | null } {
+  const names = kitLensNames(title);
+  const kitLensName = names.length ? names.join(" + ").slice(0, 120) : null;
+  const mount = camera.mounts[0];
+  if (!mount) return { kitLens: null, kitLensName };
+  const words = tokens(title);
+  const joined = words.join("");
+  const lensHits = aliasHits(words, index).filter((h) => h.p.kind === "lens" && h.p.mounts.includes(mount) && (h.p.brand === camera.brand || brandNamed(h.p, words, joined)));
+  const bySlug = new Set(lensHits.map((h) => h.p.slug));
+  if (bySlug.size === 1 && names.length <= 1) return { kitLens: [...bySlug][0], kitLensName };
+  if (bySlug.size > 1 || names.length !== 1) return { kitLens: null, kitLensName };
+  // By focal range among the mount's lenses of the camera maker (or the named lens maker).
+  const m = names[0].match(/(\d{1,3}(?:\.\d)?)(?:\s?-\s?(\d{1,3}(?:\.\d)?))?\s?mm(?:\s*(?:f\/?|1:)\s?(\d{1,2}(?:\.\d{1,2})?)(?:\s?-\s?(\d{1,2}(?:\.\d{1,2})?))?)?/i);
+  if (!m) return { kitLens: null, kitLensName };
+  const lo = Number(m[1]);
+  const hi = m[2] ? Number(m[2]) : lo;
+  const f1 = m[3] ? Number(m[3]) : null;
+  const f2 = m[4] ? Number(m[4]) : null;
+  const named = Object.entries(BRAND_WORDS).find(([b, ws]) => b !== camera.brand && ws.some((w) => (compact(w).length >= 5 ? joined.includes(compact(w)) : words.includes(compact(w)))) && lenses.some((l) => l.brand === b && l.mounts.includes(mount)));
+  const brand = named?.[0] ?? camera.brand;
+  const fits = lenses.filter(
+    (l) =>
+      l.brand === brand &&
+      l.mounts.includes(mount) &&
+      l.specs.focalMinMm === lo &&
+      l.specs.focalMaxMm === hi &&
+      (f1 === null || l.specs.apertureMax === f1) &&
+      (f2 === null || (l.specs.apertureMaxTele ?? l.specs.apertureMax) === f2),
+  );
+  return { kitLens: fits.length === 1 ? fits[0].slug : null, kitLensName };
+}

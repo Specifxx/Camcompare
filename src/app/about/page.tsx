@@ -12,6 +12,20 @@ export default function About() {
         {SITE_NAME} puts camera and lens spec sheets side by side and shows what each costs today, new, used and refurbished, at retailers in the
         United States, the United Kingdom, Europe, Australia and Singapore. It is free to use and has no paid placements.
       </p>
+      <h2 className="h-section pt-2">Why {SITE_NAME} exists</h2>
+      <p>
+        About five years ago, Yves Yang borrowed $100 to buy a broken Sony camera, and resold it. Then he kept going, buying and reselling cameras and lenses, one
+        after another, until he bought his first full-frame mirrorless camera and lenses. That&apos;s when he became a proper photographer.
+      </p>
+      <p>
+        It was before AI, so he did every price calculation himself, in Google Sheets: what something was selling for, what it was worth used, and whether a deal was
+        really a deal. Everything he has spent on cameras since has come from cameras. His collection is now worth at least $20k, probably up about 2x: &ldquo;like my
+        stock portfolio&rdquo;.
+      </p>
+      <p>
+        {SITE_NAME} is that spreadsheet, built for everyone: the price tracking he did by hand, for every camera and lens we list, every day, in five markets. And{" "}
+        <Link href="/collection" prefetch={false}>My gear</Link> is the portfolio part: add what you own and see what it&apos;s worth today.
+      </p>
       <h2 className="h-section pt-2">What we list</h2>
       <p>
         Cameras and lenses announced in 2012 or later: interchangeable-lens bodies, premium and travel compacts, action and 360° cameras and cinema

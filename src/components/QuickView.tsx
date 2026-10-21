@@ -180,8 +180,8 @@ function Dialog({ target }: { target: Target }) {
   const m = target.market;
   const href = data?.href ?? target.href;
   const name = data?.name ?? target.name ?? "";
-  const inStock = data?.rows.filter((r) => r.inStock) ?? [];
-  const low = inStock.length ? Math.min(...inStock.map((r) => r.price)) : null;
+  // The same headline as the product page (lib/price-rules.ts): body-only new, else used, else a kit, labelled.
+  const from = data?.from ?? null;
   const stores = new Set(data?.rows.map((r) => r.retailer)).size + (data?.ebay ? 1 : 0);
   const goFull = (e: React.MouseEvent) => {
     if (!href || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -225,11 +225,12 @@ function Dialog({ target }: { target: Target }) {
               {data && <p className="mt-1 text-xs text-muted">{data.subline}</p>}
               {data && (
                 <p className="mt-2 text-sm">
-                  {low !== null ? (
+                  {from ? (
                     <>
-                      <span className="text-xs text-subtle">From </span>
-                      <span className="price text-lg font-bold text-buy">{price(low, data.currency)}</span>
+                      <span className="text-xs text-subtle">{from.what === "new" ? "New from " : from.what === "used" ? "Used from " : "Kit from "}</span>
+                      <span className={`price text-lg font-bold ${from.what === "new" ? "text-buy" : ""}`}>{price(from.price, data.currency)}</span>
                       <span className="text-xs text-subtle"> · {stores} store{stores === 1 ? "" : "s"}</span>
+                      {from.label && <span className="block text-xs text-subtle">{from.label}; no body-only price today</span>}
                     </>
                   ) : (
                     <span className="text-xs text-subtle">No live price in {MARKETS[m].name} yet</span>

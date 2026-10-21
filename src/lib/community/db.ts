@@ -130,8 +130,49 @@ const DDL = [
     n integer not null default 0,
     primary key (day, kind)
   )`,
+  // 2026-10-21 "Member stories and My gear": stories (public), requests
+  // (public) and each member's gear list (private: only its owner reads it).
+  `CREATE TABLE IF NOT EXISTS community_posts (
+    id bigserial primary key,
+    created_at timestamptz not null default now(),
+    user_id bigint not null references community_users(id),
+    title text not null,
+    body text not null,
+    verdict text,
+    cover_url text,
+    tags text[] not null default '{}',
+    products text[] not null default '{}',
+    edited_at timestamptz,
+    deleted boolean not null default false,
+    hidden boolean not null default false,
+    featured boolean not null default false,
+    featured_at timestamptz
+  )`,
+  "CREATE INDEX IF NOT EXISTS community_posts_list ON community_posts (featured, id)",
+  "CREATE INDEX IF NOT EXISTS community_posts_products ON community_posts USING gin (products)",
+  "CREATE INDEX IF NOT EXISTS community_posts_user ON community_posts (user_id, id)",
+  `CREATE TABLE IF NOT EXISTS community_requests (
+    id bigserial primary key,
+    created_at timestamptz not null default now(),
+    user_id bigint not null references community_users(id),
+    kind text not null,
+    title text not null,
+    body text not null default '',
+    status text not null default 'open',
+    status_note text,
+    status_at timestamptz,
+    edited_at timestamptz,
+    deleted boolean not null default false,
+    hidden boolean not null default false
+  )`,
+  "CREATE INDEX IF NOT EXISTS community_requests_user ON community_requests (user_id, id)",
+  `CREATE TABLE IF NOT EXISTS community_collection (
+    user_id bigint primary key references community_users(id) on delete cascade,
+    items jsonb not null default '[]',
+    updated_at timestamptz not null default now()
+  )`,
 ];
-const SENTINEL = "community_notices";
+const SENTINEL = "community_collection";
 
 function ensureTables(s: Sql): Promise<void> {
   ready ??= (async () => {
@@ -153,7 +194,8 @@ function ensureTables(s: Sql): Promise<void> {
   return ready;
 }
 
-async function q(text: string, params: unknown[] = []): Promise<Record<string, unknown>[]> {
+/** One query against the community tables (created first if needed). For the other community modules (lib/community/stories-db.ts). */
+export async function q(text: string, params: unknown[] = []): Promise<Record<string, unknown>[]> {
   const s = db();
   await ensureTables(s);
   return (await s.query(text, params, opts())) as Record<string, unknown>[];
@@ -164,7 +206,7 @@ const n = (v: unknown) => Number(v ?? 0);
 
 // A vote counts only while its member isn't banned. `kind` is one of our own
 // constants, never input, so it is safe inline.
-const SCORE = (kind: VoteKind, idExpr: string) =>
+export const SCORE = (kind: VoteKind, idExpr: string) =>
   `COALESCE((SELECT SUM(v.value) FROM community_votes v JOIN community_users vu ON vu.id = v.user_id AND NOT vu.banned WHERE v.kind = '${kind}' AND v.target = ${idExpr}), 0)::int`;
 
 // ---------------------------------------------------------------- users and sessions
@@ -245,7 +287,7 @@ export async function karmaFor(userIds: string[]): Promise<Map<string, { karma: 
   return out;
 }
 
-async function authorsFor(rows: Record<string, unknown>[]): Promise<Map<string, Author>> {
+export async function authorsFor(rows: Record<string, unknown>[]): Promise<Map<string, Author>> {
   const ids = [...new Set(rows.filter((r) => r.uid != null).map((r) => String(r.uid)))];
   const k = await karmaFor(ids);
   const out = new Map<string, Author>();
@@ -431,9 +473,9 @@ export async function deleteReview(id: string, userId: string): Promise<boolean>
 
 // ---------------------------------------------------------------- votes
 
-/** The author of a visible comment, review or thread (to refuse self-votes), or null when there is none to vote on. */
-export async function postAuthor(kind: "comment" | "review" | "thread", id: string): Promise<string | null> {
-  const table = kind === "comment" ? "community_comments" : kind === "review" ? "community_reviews" : "community_threads";
+/** The author of a visible comment, review, thread, story or request (to refuse self-votes), or null when there is none to vote on. */
+export async function postAuthor(kind: PostKind, id: string): Promise<string | null> {
+  const table = TABLE[kind];
   const deleted = kind === "review" ? "" : "AND NOT p.deleted";
   const [r] = await q(`SELECT p.user_id::text AS uid FROM ${table} p JOIN community_users u ON u.id = p.user_id AND NOT u.banned WHERE p.id = $1::bigint AND NOT p.hidden ${deleted}`, [id]);
   return r ? String(r.uid) : null;
@@ -486,8 +528,9 @@ export async function recentPosts(userId: string, minutes: number): Promise<numb
 
 // ---------------------------------------------------------------- reports and moderation
 
-export type PostKind = "comment" | "review" | "thread";
-const TABLE: Record<PostKind, string> = { comment: "community_comments", review: "community_reviews", thread: "community_threads" };
+/** "post" is a member story, "request" a board request (lib/community/stories.ts, requests.ts). */
+export type PostKind = "comment" | "review" | "thread" | "post" | "request";
+const TABLE: Record<PostKind, string> = { comment: "community_comments", review: "community_reviews", thread: "community_threads", post: "community_posts", request: "community_requests" };
 
 /** Saves one report (once per member per post) and says how many members have reported it. */
 export async function addReport(userId: string, kind: PostKind, id: string, reason: string, note: string | null): Promise<{ inserted: boolean; reporters: number }> {
@@ -512,8 +555,8 @@ export async function resolveReports(kind: PostKind, id: string): Promise<void> 
 
 /** A short excerpt of any post, with its author, for the owner's email and admin page. */
 export async function postSummary(kind: PostKind, id: string): Promise<{ excerpt: string; username: string | null; where: string } | null> {
-  const col = kind === "thread" ? "p.title || ': ' || p.body" : "p.body";
-  const where = kind === "comment" ? "p.target" : kind === "review" ? "'product:' || p.product" : "'thread:' || p.id::text";
+  const col = kind === "thread" || kind === "post" || kind === "request" ? "p.title || ': ' || p.body" : "p.body";
+  const where = kind === "comment" ? "p.target" : kind === "review" ? "'product:' || p.product" : `'${kind}:' || p.id::text`;
   const [r] = await q(`SELECT left(${col}, 300) AS excerpt, u.username, ${where} AS loc FROM ${TABLE[kind]} p JOIN community_users u ON u.id = p.user_id WHERE p.id = $1::bigint`, [id]);
   return r ? { excerpt: String(r.excerpt ?? ""), username: (r.username as string | null) ?? null, where: String(r.loc ?? "") } : null;
 }
@@ -531,6 +574,8 @@ export async function adminReports(limit = 50): Promise<AdminReport[]> {
        SELECT left(c.body, 300) AS excerpt, u.username, u.id::text AS uid, u.banned, c.hidden, c.target AS loc FROM community_comments c JOIN community_users u ON u.id = c.user_id WHERE g.kind = 'comment' AND c.id::text = g.target_id
        UNION ALL SELECT left(r.body, 300), u.username, u.id::text, u.banned, r.hidden, 'product:' || r.product FROM community_reviews r JOIN community_users u ON u.id = r.user_id WHERE g.kind = 'review' AND r.id::text = g.target_id
        UNION ALL SELECT left(t.title || ': ' || t.body, 300), u.username, u.id::text, u.banned, t.hidden, 'thread:' || t.id::text FROM community_threads t JOIN community_users u ON u.id = t.user_id WHERE g.kind = 'thread' AND t.id::text = g.target_id
+       UNION ALL SELECT left(s.title || ': ' || s.body, 300), u.username, u.id::text, u.banned, s.hidden, 'post:' || s.id::text FROM community_posts s JOIN community_users u ON u.id = s.user_id WHERE g.kind = 'post' AND s.id::text = g.target_id
+       UNION ALL SELECT left(r.title || ': ' || r.body, 300), u.username, u.id::text, u.banned, r.hidden, 'request:' || r.id::text FROM community_requests r JOIN community_users u ON u.id = r.user_id WHERE g.kind = 'request' AND r.id::text = g.target_id
      ) p ON true ORDER BY g.last_at DESC`,
     [limit],
   );
@@ -557,6 +602,8 @@ export async function adminRecentPosts(limit = 50): Promise<AdminPost[]> {
        SELECT 'comment' AS kind, c.id::text AS id, c.created_at, left(c.body, 300) AS excerpt, u.username, u.id::text AS uid, u.banned, c.hidden, c.deleted, c.target AS loc FROM community_comments c JOIN community_users u ON u.id = c.user_id
        UNION ALL SELECT 'review', r.id::text, r.created_at, left(r.rating || '★ ' || r.body, 300), u.username, u.id::text, u.banned, r.hidden, false, 'product:' || r.product FROM community_reviews r JOIN community_users u ON u.id = r.user_id
        UNION ALL SELECT 'thread', t.id::text, t.created_at, left(t.title || ': ' || t.body, 300), u.username, u.id::text, u.banned, t.hidden, t.deleted, 'thread:' || t.id::text FROM community_threads t JOIN community_users u ON u.id = t.user_id
+       UNION ALL SELECT 'post', s.id::text, s.created_at, left(s.title || ': ' || s.body, 300), u.username, u.id::text, u.banned, s.hidden, s.deleted, 'post:' || s.id::text FROM community_posts s JOIN community_users u ON u.id = s.user_id
+       UNION ALL SELECT 'request', r.id::text, r.created_at, left(r.title || ': ' || r.body, 300), u.username, u.id::text, u.banned, r.hidden, r.deleted, 'request:' || r.id::text FROM community_requests r JOIN community_users u ON u.id = r.user_id
      ) p ORDER BY created_at DESC LIMIT $1`,
     [limit],
   );

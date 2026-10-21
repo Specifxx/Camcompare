@@ -29,7 +29,7 @@ export default function ProductCard({ p, market }: { p: ProductSummary; market: 
         <div className="relative">
           <ProductThumb slug={p.slug} alt={p.name} className="rounded-md" />
           <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-1.5 mx-auto w-max rounded-full bg-fg/85 px-2.5 py-0.5 text-[11px] font-semibold text-bg opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
-            {now !== null ? "Compare prices" : "Quick view"}
+            {now !== null || p.kitFrom ? "Compare prices" : "Quick view"}
           </span>
         </div>
         <div className="flex-1">
@@ -62,6 +62,13 @@ export default function ProductCard({ p, market }: { p: ProductSummary; market: 
                   Launch RRP <span className="price">{listPrice(p.launch, p.currency)}</span>
                 </span>
               )}
+            </>
+          ) : p.kitFrom ? (
+            <>
+              {/* No body-only price here today: the cheapest kit, labelled (lib/price-rules.ts). */}
+              <span className="text-xs text-subtle">Kit from </span>
+              <span className="price font-bold">{price(p.kitFrom, p.currency)}</span>
+              <span className="block text-xs text-subtle">no body-only price today</span>
             </>
           ) : p.launch ? (
             <span>
