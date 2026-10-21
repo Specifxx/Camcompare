@@ -1,5 +1,9 @@
 export const SITE_NAME = "CamCompare";
 export const SITE_TAGLINE = "Camera prices and specs, side by side";
+// The site's one contact address: owner notices go to it, emails sent to
+// visitors reply to it, and the privacy page names it. It is in code, not a
+// Vercel variable, so no personal address can stand in for it.
+export const CONTACT_EMAIL = "camcompareapp@gmail.com";
 // The canonical address: canonical URLs, the sitemap, og tags and JSON-LD all
 // read it. NEXT_PUBLIC_SITE_URL can override it (a staging domain), but never
 // with a *.vercel.app host: those are deployment addresses, and a canonical

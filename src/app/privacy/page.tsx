@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Privacy", alternates: { canonical: "/privacy" } };
 
@@ -17,7 +17,8 @@ export default function Privacy() {
         to anyone), the username you pick, what you post and your votes. Comments, reviews, threads and your username are public. A sign-in cookie
         (<code>cc_session</code>, with <code>cc_member</code> beside it) keeps you signed in for 30 days; signing out removes both. To limit abuse we
         keep a one-way scrambled form of the IP address that asked for a sign-in link, never the address itself, and delete it after two days.
-        To delete your account and everything you posted, use the feedback form with the email you signed in with.
+        To delete your account and everything you posted, use the feedback form with the email you signed in with, or email{" "}
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from it.
       </p>
       <h2 className="h-section pt-2">Price alerts</h2>
       <p>

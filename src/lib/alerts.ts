@@ -12,6 +12,7 @@
 import { randomBytes } from "node:crypto";
 import { neon } from "@neondatabase/serverless";
 import { z } from "zod";
+import { CONTACT_EMAIL } from "./site";
 import { ALERT_CONDITIONS, ALERT_MIN_FILL_MS, ALERTS_PER_EMAIL, DROP_FRACTION, NOTIFY_GAP_MS, type AlertCondition } from "./alert-kinds";
 import { EMAIL_MAX } from "./feedback-kinds";
 import { createRateLimiter } from "./feedback";
@@ -121,7 +122,7 @@ export async function sendEmail(e: Email): Promise<void> {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: alertsFrom(), to: [e.to], subject: e.subject, text: e.text, html: e.html, headers }),
+    body: JSON.stringify({ from: alertsFrom(), reply_to: CONTACT_EMAIL, to: [e.to], subject: e.subject, text: e.text, html: e.html, headers }),
     cache: "no-store",
     signal: AbortSignal.timeout(15_000),
   });

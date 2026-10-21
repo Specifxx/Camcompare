@@ -688,7 +688,7 @@ No random shapes and graphics."
   everything by a banned member disappear from every public read; banning
   ends their sessions.
 - **Owner notices are bounded** (`notifyOwnerBounded`, `lib/community/notify.ts`):
-  one email per event to `OWNER_EMAIL` through Resend, at most 20 reports,
+  one email per event to the owner through Resend, at most 20 reports,
   10 new posts and 5 new members a day (UTC), counted in `community_notices`
   so every instance shares the cap; the last one says the cap was hit.
 - **Plain UI.** Text, thin rules, small ▲▼ arrows, "[CamExpert]" in text, no
@@ -751,3 +751,17 @@ Found on the way: Cash Converters Singapore (Shopify, second-hand only)
 doesn't tag stock as used, so every listing came through as new.
 `storeCondition` makes an untagged listing at a store that sells no new gear
 the store's own condition.
+
+## 2026-10-21: One contact address, in code
+
+Owner notices went to `OWNER_EMAIL`, a Vercel variable holding the owner's
+personal address. The site now has its own: `CONTACT_EMAIL`
+(`camcompareapp@gmail.com`, `src/lib/site.ts`). Owner notices always go to
+it, every email sent to visitors (alerts, sign-in links) carries it as
+`reply_to`, and the privacy page names it. It is a constant, not a
+variable, so a stale personal address on Vercel can't override it;
+`OWNER_EMAIL` is no longer read.
+
+Product pages: the price history chart moved from below "Where to buy" and
+"Price around the world" into the header, under the price box, so it shows
+without scrolling.

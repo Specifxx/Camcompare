@@ -116,6 +116,12 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
               <SaveButton slug={l.slug} kind="lens" market={m} seen={(lowest(offers, "new") ?? lowest(offers, "used"))?.price ?? null} cond={lowest(offers, "new") ? "new" : "used"} />
               <PriceAlert slug={l.slug} kind="lens" market={m} newPrice={lowest(offers, "new")?.price ?? null} usedPrice={lowest(offers, "used")?.price ?? null} />
             </div>
+            <section id="history" className="scroll-mt-20">
+              <h2 className="mb-2 text-sm font-bold text-muted">Price history</h2>
+              <div className="card p-3">
+                <PriceHistory points={historyFor(l.slug, m)} currency={MARKETS[m].currency} />
+              </div>
+            </section>
           </div>
         </header>
         <SpecHighlights items={lensHighlights(l)} />
@@ -128,13 +134,6 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
       </section>
 
       <WorldPrices slug={l.slug} path={`/lenses/${l.slug}`} market={m} name={short} />
-
-      <section id="history" className="scroll-mt-20">
-        <h2 className="h-section mb-3">Price history</h2>
-        <div className="card p-4">
-          <PriceHistory points={historyFor(l.slug, m)} currency={MARKETS[m].currency} />
-        </div>
-      </section>
 
       <section>
         <h2 className="h-section mb-3">Used: what it should be worth</h2>

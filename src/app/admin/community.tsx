@@ -5,6 +5,7 @@
 import { adminRecentPosts, adminReports, communityConfigured, communityCounts, type AdminPost, type AdminReport } from "@/lib/community/db";
 import { authSecret } from "@/lib/community/auth";
 import { ownerEmail } from "@/lib/community/notify";
+import { emailConfigured } from "@/lib/alerts";
 import { AUTO_HIDE_REPORTS, CAMEXPERT_KARMA, CAMEXPERT_MIN_ACCOUNT_DAYS, REPORT_REASON_LABEL, userPath, type ReportReason } from "@/lib/community/rules";
 import { targetLink } from "@/lib/community/targets";
 import { logSafe } from "@/lib/feedback";
@@ -60,7 +61,7 @@ export default async function CommunityAdmin() {
     <section aria-labelledby="community-h" id="community">
       <h2 id="community-h" className="h-section">Community</h2>
       <p className="mt-1 text-sm text-muted">
-        Sign-in {authSecret() ? "is on" : "is off: set AUTH_SECRET on Vercel"}. Owner emails {ownerEmail() ? "go to OWNER_EMAIL" : "are off: set OWNER_EMAIL"} (capped per day). {AUTO_HIDE_REPORTS} reports hide a post automatically. CamExpert: {CAMEXPERT_KARMA} CamKarma and an account {CAMEXPERT_MIN_ACCOUNT_DAYS}+ days old. Hiding takes up to a
+        Sign-in {authSecret() ? "is on" : "is off: set AUTH_SECRET on Vercel"}. Owner emails {emailConfigured() ? `go to ${ownerEmail()}` : "are off: set RESEND_API_KEY"} (capped per day). {AUTO_HIDE_REPORTS} reports hide a post automatically. CamExpert: {CAMEXPERT_KARMA} CamKarma and an account {CAMEXPERT_MIN_ACCOUNT_DAYS}+ days old. Hiding takes up to a
         minute and a half to leave every cached page.
       </p>
       {!data ? (
