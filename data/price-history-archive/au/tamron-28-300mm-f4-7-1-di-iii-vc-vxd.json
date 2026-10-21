@@ -1,3 +1,5 @@
 {"slug":"tamron-28-300mm-f4-7-1-di-iii-vc-vxd","market":"au","currency":"AUD","points":[
-{"day":"2024-08-14","new":159800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641113960.89/warc/CC-MAIN-20240814123926-20240814153926-00052.warc.gz#offset=564725268&length=70367"}
+{"day":"2024-08-14","new":159800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641113960.89/warc/CC-MAIN-20240814123926-20240814153926-00052.warc.gz#offset=564725268&length=70367"},
+{"day":"2025-01-16","new":159900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00052.warc.gz#offset=779651833&length=131897"},
+{"day":"2025-07-19","new":159900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231904.78/warc/CC-MAIN-20250719010736-20250719040736-00452.warc.gz#offset=634710051&length=135468"}
 ]}

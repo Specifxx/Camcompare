@@ -1,4 +1,6 @@
 {"slug":"laowa-14mm-f4-ff-rl-zero-d","market":"au","currency":"AUD","points":[
 {"day":"2024-06-14","new":78115,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861567.95/warc/CC-MAIN-20240614141929-20240614171929-00668.warc.gz#offset=667933482&length=70126"},
+{"day":"2025-04-20","new":71315,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135755.32/warc/CC-MAIN-20250420181556-20250420211556-00062.warc.gz#offset=736836435&length=115403"},
+{"day":"2025-04-22","new":71315,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135807.33/warc/CC-MAIN-20250422082850-20250422112850-00607.warc.gz#offset=745000510&length=116473"},
 {"day":"2025-10-15","new":91900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/warc/CC-MAIN-20251015133709-20251015163709-00235.warc.gz#offset=763040038&length=114708"}
 ]}

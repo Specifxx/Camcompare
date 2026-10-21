@@ -1,4 +1,7 @@
 {"slug":"sony-fe-85mm-f1-4-gm","market":"au","currency":"AUD","points":[
 {"day":"2024-10-07","new":179900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253467.23/warc/CC-MAIN-20241007100838-20241007130838-00151.warc.gz#offset=677943894&length=113155"},
+{"day":"2025-01-16","new":209900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00624.warc.gz#offset=796486474&length=134981"},
+{"day":"2025-02-09","new":209900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951598.53/warc/CC-MAIN-20250209101237-20250209131237-00859.warc.gz#offset=689074359&length=140266"},
+{"day":"2025-08-06","new":209900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279884.50/warc/CC-MAIN-20250805222253-20250806012253-00024.warc.gz#offset=641987006&length=148851"},
 {"day":"2025-11-14","new":192949,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439343932.66/warc/CC-MAIN-20251114104301-20251114134301-00024.warc.gz#offset=560593772&length=172765"}
 ]}

@@ -1,4 +1,7 @@
 {"slug":"sigma-15mm-f1-4-dg-dn-diagonal-fisheye-art","market":"au","currency":"AUD","points":[
+{"day":"2025-04-21","new":341010,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135788.26/warc/CC-MAIN-20250421194220-20250421224220-00027.warc.gz#offset=723502310&length=122999"},
+{"day":"2025-07-17","new":378900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934542.0/warc/CC-MAIN-20250717174350-20250717204350-00880.warc.gz#offset=638290394&length=117192"},
+{"day":"2025-08-05","new":378900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279867.65/warc/CC-MAIN-20250805125539-20250805155539-00027.warc.gz#offset=658018700&length=118173"},
 {"day":"2026-02-11","new":339900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506135.63/warc/CC-MAIN-20260211021735-20260211051735-00880.warc.gz#offset=561059870&length=163698"},
 {"day":"2026-05-10","new":322065,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377272.68/warc/CC-MAIN-20260510072358-20260510102358-00027.warc.gz#offset=589465399&length=156043"}
 ]}

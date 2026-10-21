@@ -1,8 +1,10 @@
 {"slug":"canon-rf-100-400mm-f5-6-8-is-usm","market":"au","currency":"AUD","points":[
 {"day":"2024-05-27","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059039.52/warc/CC-MAIN-20240527083011-20240527113011-00603.warc.gz#offset=849045580&length=81850"},
 {"day":"2024-10-04","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253306.52/warc/CC-MAIN-20241004103433-20241004133433-00603.warc.gz#offset=881134605&length=81656"},
+{"day":"2024-12-02","new":97665,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066127466.39/warc/CC-MAIN-20241202094452-20241202124452-00291.warc.gz#offset=684305591&length=127412"},
 {"day":"2025-02-18","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832261702.77/warc/CC-MAIN-20250218113527-20250218143527-00603.warc.gz#offset=907104986&length=80397"},
 {"day":"2025-06-14","new":99900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481310.69/warc/CC-MAIN-20250614065311-20250614095311-00803.warc.gz#offset=859483128&length=79766"},
+{"day":"2025-08-08","new":114900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280040.84/warc/CC-MAIN-20250808192612-20250808222612-00691.warc.gz#offset=634445964&length=126741"},
 {"day":"2025-09-09","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533029.41/warc/CC-MAIN-20250909025155-20250909055155-00803.warc.gz#offset=868818886&length=80870"},
 {"day":"2026-01-19","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469505.90/warc/CC-MAIN-20260119193727-20260119223727-00803.warc.gz#offset=853590479&length=80297"}
 ]}

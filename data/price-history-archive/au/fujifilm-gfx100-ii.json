@@ -1,7 +1,10 @@
 {"slug":"fujifilm-gfx100-ii","market":"au","currency":"AUD","points":[
 {"day":"2024-06-18","new":1136400,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861794.76/warc/CC-MAIN-20240618203026-20240618233026-00684.warc.gz#offset=878532510&length=85988"},
+{"day":"2024-10-04","new":1239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253268.46/warc/CC-MAIN-20241004011336-20241004041336-00222.warc.gz#offset=672554123&length=92187"},
 {"day":"2024-11-10","new":1249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028166.65/warc/CC-MAIN-20241110040813-20241110070813-00684.warc.gz#offset=931902179&length=83163"},
 {"day":"2025-03-20","new":1249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433132.75/warc/CC-MAIN-20250320101927-20250320131927-00084.warc.gz#offset=984747333&length=82664"},
+{"day":"2025-05-19","new":1239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412655.60/warc/CC-MAIN-20250519005152-20250519035152-00422.warc.gz#offset=678275824&length=138952"},
+{"day":"2025-09-07","new":1239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00422.warc.gz#offset=681969783&length=149915"},
 {"day":"2025-09-07","new":1219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532882.49/warc/CC-MAIN-20250907133053-20250907163053-00084.warc.gz#offset=860254688&length=82974"},
 {"day":"2025-12-07","new":1249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307265.39/warc/CC-MAIN-20251207210305-20251208000305-00084.warc.gz#offset=848315803&length=82492"}
 ]}

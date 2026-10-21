@@ -1,4 +1,6 @@
 {"slug":"panasonic-leica-dg-summilux-15mm-f1-7-asph","market":"au","currency":"AUD","points":[
 {"day":"2024-06-22","new":72165,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862404.32/warc/CC-MAIN-20240622144011-20240622174011-00615.warc.gz#offset=660833419&length=68754"},
+{"day":"2024-11-04","new":84900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027821.39/warc/CC-MAIN-20241104100555-20241104130555-00615.warc.gz#offset=696573580&length=117001"},
+{"day":"2025-07-10","new":72165,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933771.26/warc/CC-MAIN-20250710190434-20250710220434-00115.warc.gz#offset=661752642&length=129424"},
 {"day":"2026-01-14","new":76570,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469122.50/warc/CC-MAIN-20260114153623-20260114183623-00115.warc.gz#offset=585182800&length=163246"}
 ]}

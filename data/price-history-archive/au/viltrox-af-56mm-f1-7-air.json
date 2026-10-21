@@ -1,4 +1,6 @@
 {"slug":"viltrox-af-56mm-f1-7-air","market":"au","currency":"AUD","points":[
+{"day":"2025-05-18","new":26900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412609.63/warc/CC-MAIN-20250518121532-20250518151532-00972.warc.gz#offset=694691484&length=111934"},
+{"day":"2025-07-18","new":29900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934598.56/warc/CC-MAIN-20250718000345-20250718030345-00349.warc.gz#offset=626853622&length=114016"},
 {"day":"2026-05-10","new":22425,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377288.18/warc/CC-MAIN-20260510102809-20260510132809-00349.warc.gz#offset=638886414&length=154254"},
 {"day":"2026-05-21","new":22958,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377112.37/warc/CC-MAIN-20260521004617-20260521034617-00972.warc.gz#offset=596255433&length=148466"},
 {"day":"2026-07-19","new":29900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663952069.24/warc/CC-MAIN-20260719053429-20260719083429-00601.warc.gz#offset=611575203&length=143848"}

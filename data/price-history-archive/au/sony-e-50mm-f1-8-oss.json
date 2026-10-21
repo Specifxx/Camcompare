@@ -1,0 +1,5 @@
+{"slug":"sony-e-50mm-f1-8-oss","market":"au","currency":"AUD","points":[
+{"day":"2024-09-16","new":45900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651668.29/warc/CC-MAIN-20240916012328-20240916042328-00059.warc.gz#offset=702933902&length=81480"},
+{"day":"2025-05-18","new":36720,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412609.76/warc/CC-MAIN-20250518152414-20250518182414-00959.warc.gz#offset=639599330&length=122310"},
+{"day":"2025-09-13","new":45900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533430.77/warc/CC-MAIN-20250913095118-20250913125118-00959.warc.gz#offset=598010020&length=122181"}
+]}

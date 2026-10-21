@@ -1,0 +1,32 @@
+# .github/workflows/watch-alerts.yml: restock and preorder alerts between
+# imports (scripts/check-watched.ts). Writes and commits nothing, so it never
+# deploys. Runs only while the repository variable WATCH_CHECKS is 1.
+name: watch-alerts
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+concurrency: watch-alerts
+permissions:
+  contents: read
+jobs:
+  watch:
+    if: vars.WATCH_CHECKS == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check watched products
+        env:
+          WATCH_CHECKS: "1"
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERTS_FROM_EMAIL: ${{ secrets.ALERTS_FROM_EMAIL }}
+        run: npx tsx scripts/check-watched.ts

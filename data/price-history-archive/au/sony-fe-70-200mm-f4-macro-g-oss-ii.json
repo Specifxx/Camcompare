@@ -1,4 +1,7 @@
 {"slug":"sony-fe-70-200mm-f4-macro-g-oss-ii","market":"au","currency":"AUD","points":[
 {"day":"2024-05-29","new":225000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059167.30/warc/CC-MAIN-20240529010927-20240529040927-00362.warc.gz#offset=621045186&length=69379"},
-{"day":"2025-07-07","new":229415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933621.6/warc/CC-MAIN-20250707214447-20250708004447-00843.warc.gz#offset=666540080&length=119338"}
+{"day":"2024-11-07","new":258800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028017.48/warc/CC-MAIN-20241107212632-20241108002632-00362.warc.gz#offset=689118617&length=114807"},
+{"day":"2024-11-09","new":309900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028142.18/warc/CC-MAIN-20241109182954-20241109212954-00247.warc.gz#offset=691266229&length=135943"},
+{"day":"2025-07-07","new":229415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933621.6/warc/CC-MAIN-20250707214447-20250708004447-00843.warc.gz#offset=666540080&length=119338"},
+{"day":"2025-08-08","new":258800,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279985.36/warc/CC-MAIN-20250808003938-20250808033938-00062.warc.gz#offset=655733593&length=132800"}
 ]}

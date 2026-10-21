@@ -1,6 +1,8 @@
 {"slug":"canon-rf-10-20mm-f4l-is-stm","market":"au","currency":"AUD","points":[
 {"day":"2024-11-01","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00490.warc.gz#offset=934068219&length=80803"},
+{"day":"2024-12-10","new":419900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066067282.2/warc/CC-MAIN-20241210163759-20241210193759-00168.warc.gz#offset=646595100&length=138954"},
 {"day":"2025-02-09","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951591.15/warc/CC-MAIN-20250209034623-20250209064623-00490.warc.gz#offset=966780583&length=79910"},
 {"day":"2025-09-07","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532882.49/warc/CC-MAIN-20250907133053-20250907163053-00790.warc.gz#offset=914279572&length=80428"},
+{"day":"2025-09-14","new":419900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533671.75/warc/CC-MAIN-20250914012700-20250914042700-00068.warc.gz#offset=618769923&length=137406"},
 {"day":"2026-08-10","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385311.32/warc/CC-MAIN-20260810035143-20260810065143-00391.warc.gz#offset=901920941&length=233010"}
 ]}

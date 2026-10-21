@@ -1,4 +1,7 @@
 {"slug":"sony-e-55-210mm-f4-5-6-3-oss","market":"au","currency":"AUD","points":[
 {"day":"2024-08-04","new":23500,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640398413.11/warc/CC-MAIN-20240804102507-20240804132507-00774.warc.gz#offset=620420599&length=100196"},
-{"day":"2025-10-06","new":22077,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358252.37/warc/CC-MAIN-20251006191251-20251006221251-00674.warc.gz#offset=797369038&length=124208"}
+{"day":"2024-11-04","new":25900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027838.15/warc/CC-MAIN-20241104163253-20241104193253-00274.warc.gz#offset=674927702&length=139145"},
+{"day":"2025-09-07","new":25900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00974.warc.gz#offset=652597247&length=124774"},
+{"day":"2025-10-06","new":22077,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358252.37/warc/CC-MAIN-20251006191251-20251006221251-00674.warc.gz#offset=797369038&length=124208"},
+{"day":"2025-10-14","new":25900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359067.16/warc/CC-MAIN-20251014060244-20251014090244-00367.warc.gz#offset=720751937&length=130518"}
 ]}

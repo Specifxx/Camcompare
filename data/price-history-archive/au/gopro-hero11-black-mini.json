@@ -1,5 +1,6 @@
 {"slug":"gopro-hero11-black-mini","market":"au","currency":"AUD","points":[
 {"day":"2024-11-07","new":42995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00370.warc.gz#offset=947477991&length=81267"},
+{"day":"2024-11-09","new":42900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028142.18/warc/CC-MAIN-20241109182954-20241109212954-00278.warc.gz#offset=699053365&length=116535"},
 {"day":"2025-03-26","new":42995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004755464.68/warc/CC-MAIN-20250326230641-20250327020641-00170.warc.gz#offset=1022651909&length=80858"},
 {"day":"2025-09-15","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533971.68/warc/CC-MAIN-20250915052735-20250915082735-00170.warc.gz#offset=868750780&length=81144"},
 {"day":"2026-01-21","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469644.9/warc/CC-MAIN-20260121053530-20260121083530-00170.warc.gz#offset=852619462&length=81036"}

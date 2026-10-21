@@ -1,4 +1,6 @@
 {"slug":"om-system-m-zuiko-digital-ed-14-150mm-f4-0-5-6-ii","market":"au","currency":"AUD","points":[
 {"day":"2024-12-08","new":74900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066441563.87/warc/CC-MAIN-20241208045820-20241208075820-00833.warc.gz#offset=625617610&length=109048"},
-{"day":"2025-09-06","new":74900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532791.98/warc/CC-MAIN-20250906153317-20250906183317-00233.warc.gz#offset=620529134&length=164270"}
+{"day":"2025-02-12","new":63665,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951756.63/warc/CC-MAIN-20250212155629-20250212185629-00383.warc.gz#offset=660969978&length=128395"},
+{"day":"2025-09-06","new":74900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532791.98/warc/CC-MAIN-20250906153317-20250906183317-00233.warc.gz#offset=620529134&length=164270"},
+{"day":"2025-09-14","new":74900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533671.75/warc/CC-MAIN-20250914012700-20250914042700-00083.warc.gz#offset=630324275&length=124073"}
 ]}

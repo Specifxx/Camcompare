@@ -189,7 +189,7 @@ export const RETAILERS: Retailer[] = [
   // but allows its sitemaps and /products/<handle>.js (checked 2026-10-22),
   // so it is read through those. Its second-hand stock ("…-secondhand"
   // handles, vendor USED) comes in as used.
-  dealer({ key: "teds", name: "Ted's Cameras", market: "au", country: "AU", site: "https://www.teds.com.au", network: null, ...shop("https://www.teds.com.au", { sitemap: { budget: 300 } }), conditions: ["new", "used"], searchUrl: (q) => `https://www.teds.com.au/search?q=${enc(q)}` }),
+  dealer({ key: "teds", name: "Ted's Cameras", market: "au", country: "AU", site: "https://www.teds.com.au", network: null, ...shop("https://www.teds.com.au", { sitemap: { budget: 150 } }), conditions: ["new", "used"], searchUrl: (q) => `https://www.teds.com.au/search?q=${enc(q)}` }),
   dealer({ key: "digidirect", name: "Digidirect", market: "au", country: "AU", site: "https://www.digidirect.com.au", network: null, ...shop("https://www.digidirect.com.au"), searchUrl: (q) => `https://www.digidirect.com.au/search?q=${enc(q)}` }),
   dealer({ key: "georges", name: "Georges Cameras", market: "au", country: "AU", site: "https://www.georges.com.au", network: null, ...shop("https://www.georges.com.au") }),
   dealer({ key: "camera-electronic", name: "Camera Electronic", market: "au", country: "AU", site: "https://www.cameraelectronic.com.au", network: null, ...shop("https://www.cameraelectronic.com.au"), conditions: ["new", "used"] }),

@@ -1,3 +1,5 @@
 {"slug":"om-system-m-zuiko-digital-ed-25mm-f1-2-pro","market":"au","currency":"AUD","points":[
+{"day":"2024-12-10","new":184900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066067826.3/warc/CC-MAIN-20241210194529-20241210224529-00725.warc.gz#offset=649540095&length=125494"},
+{"day":"2025-08-11","new":184900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280245.49/warc/CC-MAIN-20250811034648-20250811064648-00025.warc.gz#offset=629021150&length=130888"},
 {"day":"2026-07-13","new":189900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663951639.34/warc/CC-MAIN-20260713084117-20260713114117-00025.warc.gz#offset=616921909&length=159066"}
 ]}

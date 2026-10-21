@@ -1,3 +1,6 @@
 {"slug":"leica-sl3-s","market":"au","currency":"AUD","points":[
+{"day":"2025-02-19","new":899000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832263171.96/warc/CC-MAIN-20250219035452-20250219065452-00369.warc.gz#offset=630995220&length=113979"},
+{"day":"2025-05-14","new":899000,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412415.74/warc/CC-MAIN-20250514070302-20250514100302-00713.warc.gz#offset=572176946&length=167017"},
+{"day":"2025-10-08","new":899000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00157.warc.gz#offset=779883329&length=145239"},
 {"day":"2026-06-10","new":929900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687572521.56/warc/CC-MAIN-20260609231516-20260610021516-00157.warc.gz#offset=600294025&length=168787"}
 ]}

@@ -1,3 +1,4 @@
 {"slug":"leica-m11-monochrom","market":"au","currency":"AUD","points":[
-{"day":"2024-10-10","new":1639000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253693.30/warc/CC-MAIN-20241010155548-20241010185548-00817.warc.gz#offset=640141461&length=89184"}
+{"day":"2024-10-10","new":1639000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253693.30/warc/CC-MAIN-20241010155548-20241010185548-00817.warc.gz#offset=640141461&length=89184"},
+{"day":"2025-10-08","new":1649000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00317.warc.gz#offset=716083550&length=142240"}
 ]}

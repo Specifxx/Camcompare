@@ -1,5 +1,6 @@
 {"slug":"sony-fe-16mm-f1-8-g","market":"au","currency":"AUD","points":[
 {"day":"2025-07-12","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00105.warc.gz#offset=913360468&length=77859"},
+{"day":"2025-10-06","new":139900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358231.24/warc/CC-MAIN-20251006094442-20251006124442-00238.warc.gz#offset=743620861&length=155206"},
 {"day":"2025-12-17","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658363.90/warc/CC-MAIN-20251217112246-20251217142246-00105.warc.gz#offset=751796053&length=78804"},
 {"day":"2026-07-12","new":159900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663951589.47/warc/CC-MAIN-20260712080722-20260712110722-00238.warc.gz#offset=657373881&length=169600"}
 ]}

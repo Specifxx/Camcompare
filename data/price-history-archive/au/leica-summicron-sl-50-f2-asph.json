@@ -1,3 +1,5 @@
 {"slug":"leica-summicron-sl-50-f2-asph","market":"au","currency":"AUD","points":[
+{"day":"2024-11-04","new":349000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027821.39/warc/CC-MAIN-20241104100555-20241104130555-00791.warc.gz#offset=698348077&length=109914"},
+{"day":"2025-06-14","new":314100,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481322.4/warc/CC-MAIN-20250614130336-20250614160336-00291.warc.gz#offset=591937073&length=122651"},
 {"day":"2025-11-12","new":349000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439343244.40/warc/CC-MAIN-20251112130838-20251112160838-00291.warc.gz#offset=554169840&length=153112"}
 ]}

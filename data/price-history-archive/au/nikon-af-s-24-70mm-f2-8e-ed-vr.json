@@ -1,3 +1,6 @@
 {"slug":"nikon-af-s-24-70mm-f2-8e-ed-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-10-09","new":403900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253565.32/warc/CC-MAIN-20241008232729-20241009022729-00518.warc.gz#offset=661101222&length=88132"},
+{"day":"2025-04-27","new":403900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136091.64/warc/CC-MAIN-20250426230106-20250427020106-00018.warc.gz#offset=716110470&length=140412"},
+{"day":"2025-09-07","new":403900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00018.warc.gz#offset=633990218&length=132476"},
 {"day":"2026-06-15","new":343315,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687573310.71/warc/CC-MAIN-20260615071330-20260615101330-00018.warc.gz#offset=576847225&length=171687"}
 ]}

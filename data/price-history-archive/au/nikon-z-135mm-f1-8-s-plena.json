@@ -1,6 +1,8 @@
 {"slug":"nikon-z-135mm-f1-8-s-plena","market":"au","currency":"AUD","points":[
 {"day":"2024-10-14","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00771.warc.gz#offset=875548315&length=81285"},
+{"day":"2024-11-06","new":429900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027910.12/warc/CC-MAIN-20241106065928-20241106095928-00644.warc.gz#offset=695799857&length=139675"},
 {"day":"2025-02-12","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951759.83/warc/CC-MAIN-20250212191228-20250212221228-00771.warc.gz#offset=946369136&length=79584"},
+{"day":"2025-07-10","new":365415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933757.20/warc/CC-MAIN-20250710094101-20250710124101-00744.warc.gz#offset=628520364&length=155853"},
 {"day":"2025-09-12","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00571.warc.gz#offset=898950053&length=80050"},
 {"day":"2026-01-14","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469122.50/warc/CC-MAIN-20260114153623-20260114183623-00571.warc.gz#offset=839643052&length=79919"}
 ]}

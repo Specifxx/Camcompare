@@ -1,4 +1,6 @@
 {"slug":"sigma-28-45mm-f1-8-dg-dn-art","market":"au","currency":"AUD","points":[
+{"day":"2025-07-11","new":246415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933819.2/warc/CC-MAIN-20250711201717-20250711231717-00852.warc.gz#offset=638482298&length=138179"},
+{"day":"2025-07-12","new":246415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933831.10/warc/CC-MAIN-20250711232641-20250712022641-00519.warc.gz#offset=631073008&length=127829"},
 {"day":"2026-02-13","new":236507,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506264.64/warc/CC-MAIN-20260213000354-20260213030354-00519.warc.gz#offset=553880042&length=165008"},
 {"day":"2026-03-12","new":231920,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687278259.60/warc/CC-MAIN-20260312124909-20260312154909-00852.warc.gz#offset=519688703&length=187849"}
 ]}

@@ -1,0 +1,4 @@
+{"slug":"sigma-35mm-f1-2-dg-dn-art","market":"au","currency":"AUD","points":[
+{"day":"2025-04-27","new":219900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136160.5/warc/CC-MAIN-20250427021853-20250427051853-00072.warc.gz#offset=722690284&length=140654"},
+{"day":"2025-09-07","new":209900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00072.warc.gz#offset=635929682&length=140380"}
+]}

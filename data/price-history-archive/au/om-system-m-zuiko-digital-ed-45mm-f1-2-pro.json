@@ -1,4 +1,6 @@
 {"slug":"om-system-m-zuiko-digital-ed-45mm-f1-2-pro","market":"au","currency":"AUD","points":[
 {"day":"2024-04-17","new":184900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817128.7/warc/CC-MAIN-20240417013540-20240417043540-00326.warc.gz#offset=705751102&length=59209"},
+{"day":"2024-11-04","new":159900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027821.39/warc/CC-MAIN-20241104100555-20241104130555-00326.warc.gz#offset=697720101&length=108302"},
+{"day":"2025-08-09","new":159900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280106.5/warc/CC-MAIN-20250809141352-20250809171352-00026.warc.gz#offset=611318936&length=132987"},
 {"day":"2026-07-13","new":159900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663951639.34/warc/CC-MAIN-20260713084117-20260713114117-00026.warc.gz#offset=612364007&length=158224"}
 ]}

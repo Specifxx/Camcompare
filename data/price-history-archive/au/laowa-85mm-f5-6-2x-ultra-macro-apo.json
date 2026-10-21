@@ -1,3 +1,5 @@
 {"slug":"laowa-85mm-f5-6-2x-ultra-macro-apo","market":"au","currency":"AUD","points":[
+{"day":"2025-08-04","new":79900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279759.90/warc/CC-MAIN-20250804021851-20250804051851-00612.warc.gz#offset=652663698&length=116281"},
+{"day":"2025-08-09","new":79900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280106.5/warc/CC-MAIN-20250809141352-20250809171352-00258.warc.gz#offset=643716736&length=120356"},
 {"day":"2025-10-11","new":70124,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358693.72/warc/CC-MAIN-20251011152422-20251011182422-00158.warc.gz#offset=778334731&length=114617"}
 ]}

@@ -1,4 +1,7 @@
 {"slug":"fujifilm-xf-50-140mm-f2-8-r-lm-ois-wr","market":"au","currency":"AUD","points":[
+{"day":"2024-09-16","new":239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651668.29/warc/CC-MAIN-20240916012328-20240916042328-00653.warc.gz#offset=673438375&length=79752"},
 {"day":"2025-01-14","new":196976,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362192.26/warc/CC-MAIN-20250114050027-20250114080027-00330.warc.gz#offset=812046848&length=104078"},
+{"day":"2025-05-22","new":239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413169.44/warc/CC-MAIN-20250521225947-20250522015947-00953.warc.gz#offset=618115669&length=123531"},
+{"day":"2025-09-07","new":239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532848.20/warc/CC-MAIN-20250907071249-20250907101249-00953.warc.gz#offset=660107778&length=121265"},
 {"day":"2026-02-11","new":198897,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506125.22/warc/CC-MAIN-20260210231502-20260211021502-00953.warc.gz#offset=561010301&length=160127"}
 ]}

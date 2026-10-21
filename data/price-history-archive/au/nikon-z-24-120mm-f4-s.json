@@ -1,3 +1,4 @@
 {"slug":"nikon-z-24-120mm-f4-s","market":"au","currency":"AUD","points":[
-{"day":"2025-02-17","new":166441,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832253764.91/warc/CC-MAIN-20250217093034-20250217123034-00315.warc.gz#offset=704249617&length=111525"}
+{"day":"2025-02-17","new":166441,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832253764.91/warc/CC-MAIN-20250217093034-20250217123034-00315.warc.gz#offset=704249617&length=111525"},
+{"day":"2025-08-14","new":206900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573816.93/warc/CC-MAIN-20250814035453-20250814065453-00255.warc.gz#offset=610339439&length=167260"}
 ]}

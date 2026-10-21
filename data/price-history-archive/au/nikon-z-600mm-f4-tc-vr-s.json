@@ -1,4 +1,5 @@
 {"slug":"nikon-z-600mm-f4-tc-vr-s","market":"au","currency":"AUD","points":[
+{"day":"2024-09-17","new":2654900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651800.83/warc/CC-MAIN-20240917140525-20240917170525-00627.warc.gz#offset=648834703&length=89833"},
 {"day":"2024-11-10","new":2399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.61/warc/CC-MAIN-20241110170046-20241110200046-00008.warc.gz#offset=926634058&length=81297"},
 {"day":"2025-03-15","new":2399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00808.warc.gz#offset=986268119&length=80840"},
 {"day":"2025-09-12","new":2399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00808.warc.gz#offset=887149661&length=80970"},

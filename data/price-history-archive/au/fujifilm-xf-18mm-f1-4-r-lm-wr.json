@@ -1,3 +1,4 @@
 {"slug":"fujifilm-xf-18mm-f1-4-r-lm-wr","market":"au","currency":"AUD","points":[
-{"day":"2024-06-24","new":127400,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198864986.57/warc/CC-MAIN-20240624021134-20240624051134-00595.warc.gz#offset=691207900&length=99203"}
+{"day":"2024-06-24","new":127400,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198864986.57/warc/CC-MAIN-20240624021134-20240624051134-00595.warc.gz#offset=691207900&length=99203"},
+{"day":"2025-08-06","new":149900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279901.12/warc/CC-MAIN-20250806074443-20250806104443-00910.warc.gz#offset=658635337&length=119219"}
 ]}

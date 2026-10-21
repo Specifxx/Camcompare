@@ -1,7 +1,9 @@
 {"slug":"canon-rf-5-2mm-f2-8l-dual-fisheye","market":"au","currency":"AUD","points":[
 {"day":"2024-11-03","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027796.35/warc/CC-MAIN-20241103212031-20241104002031-00532.warc.gz#offset=945724985&length=78631"},
+{"day":"2024-12-05","new":319900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066329562.60/warc/CC-MAIN-20241205023821-20241205053821-00271.warc.gz#offset=669396884&length=135059"},
 {"day":"2025-02-12","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951759.83/warc/CC-MAIN-20250212191228-20250212221228-00532.warc.gz#offset=952243918&length=77836"},
 {"day":"2025-07-09","new":339995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00432.warc.gz#offset=917814335&length=77233"},
+{"day":"2025-08-15","new":319900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151579063.98/warc/CC-MAIN-20250815204238-20250815234238-00771.warc.gz#offset=607577041&length=153814"},
 {"day":"2025-11-19","new":288996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657349.95/warc/CC-MAIN-20251119032929-20251119062929-00432.warc.gz#offset=853367990&length=77951"},
 {"day":"2026-07-12","new":319900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663951589.47/warc/CC-MAIN-20260712080722-20260712110722-00771.warc.gz#offset=592668521&length=168801"}
 ]}

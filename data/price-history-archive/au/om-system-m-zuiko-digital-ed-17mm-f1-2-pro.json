@@ -1,4 +1,6 @@
 {"slug":"om-system-m-zuiko-digital-ed-17mm-f1-2-pro","market":"au","currency":"AUD","points":[
 {"day":"2025-04-17","new":129900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00255.warc.gz#offset=767443060&length=104500"},
+{"day":"2025-04-21","new":157165,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135784.9/warc/CC-MAIN-20250421163111-20250421193111-00092.warc.gz#offset=720321453&length=126993"},
+{"day":"2025-08-12","new":184900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280955.44/warc/CC-MAIN-20250812172433-20250812202433-00092.warc.gz#offset=638231669&length=123354"},
 {"day":"2026-03-06","new":152096,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687277388.54/warc/CC-MAIN-20260306044008-20260306074008-00092.warc.gz#offset=547552358&length=165065"}
 ]}

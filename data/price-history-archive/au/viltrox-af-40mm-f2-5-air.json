@@ -1,0 +1,4 @@
+{"slug":"viltrox-af-40mm-f2-5-air","market":"au","currency":"AUD","points":[
+{"day":"2025-07-18","new":26900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934611.62/warc/CC-MAIN-20250718031256-20250718061256-00480.warc.gz#offset=663029952&length=114110"},
+{"day":"2025-07-19","new":26900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906234196.93/warc/CC-MAIN-20250719134031-20250719164031-00849.warc.gz#offset=642030900&length=112764"}
+]}

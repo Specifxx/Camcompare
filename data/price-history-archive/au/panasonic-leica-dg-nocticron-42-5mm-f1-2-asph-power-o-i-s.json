@@ -1,3 +1,5 @@
 {"slug":"panasonic-leica-dg-nocticron-42-5mm-f1-2-asph-power-o-i-s","market":"au","currency":"AUD","points":[
-{"day":"2024-06-25","new":192300,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00677.warc.gz#offset=632994938&length=70361"}
+{"day":"2024-06-25","new":192300,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198866218.13/warc/CC-MAIN-20240625171218-20240625201218-00677.warc.gz#offset=632994938&length=70361"},
+{"day":"2025-05-23","new":239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990720468.83/warc/CC-MAIN-20250523100951-20250523130951-00077.warc.gz#offset=610893079&length=123150"},
+{"day":"2025-09-07","new":239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532848.20/warc/CC-MAIN-20250907071249-20250907101249-00077.warc.gz#offset=609599755&length=120886"}
 ]}

@@ -1,4 +1,7 @@
 {"slug":"om-system-m-zuiko-digital-ed-8-25mm-f4-0-pro","market":"au","currency":"AUD","points":[
+{"day":"2024-10-07","new":149900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253447.49/warc/CC-MAIN-20241007004935-20241007034935-00828.warc.gz#offset=638864939&length=84443"},
+{"day":"2025-07-15","new":149900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934097.18/warc/CC-MAIN-20250715055718-20250715085718-00328.warc.gz#offset=676474997&length=126928"},
+{"day":"2025-08-05","new":147400,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279837.14/warc/CC-MAIN-20250805001900-20250805031900-00612.warc.gz#offset=660480001&length=147011"},
 {"day":"2025-12-17","new":169900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658078.94/warc/CC-MAIN-20251217021107-20251217051107-00328.warc.gz#offset=560562133&length=158798"},
 {"day":"2026-05-11","new":132660,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377391.46/warc/CC-MAIN-20260511201502-20260511231502-00612.warc.gz#offset=624394658&length=170029"}
 ]}

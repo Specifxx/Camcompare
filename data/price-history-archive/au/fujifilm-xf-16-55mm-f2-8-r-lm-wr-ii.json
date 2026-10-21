@@ -1,3 +1,5 @@
 {"slug":"fujifilm-xf-16-55mm-f2-8-r-lm-wr-ii","market":"au","currency":"AUD","points":[
+{"day":"2025-06-20","new":199900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481566.23/warc/CC-MAIN-20250620030731-20250620060731-00716.warc.gz#offset=609977557&length=142017"},
+{"day":"2025-09-07","new":199900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532799.14/warc/CC-MAIN-20250906214945-20250907004945-00716.warc.gz#offset=639031670&length=135707"},
 {"day":"2026-06-09","new":173300,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687572430.69/warc/CC-MAIN-20260609014839-20260609044839-00331.warc.gz#offset=561352076&length=167513"}
 ]}

@@ -1,4 +1,6 @@
 {"slug":"sigma-50-100mm-f1-8-dc-hsm-art","market":"au","currency":"AUD","points":[
 {"day":"2024-08-15","new":136200,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641291968.96/warc/CC-MAIN-20240815110654-20240815140654-00484.warc.gz#offset=606681956&length=112115"},
+{"day":"2025-01-13","new":144415,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362161.33/warc/CC-MAIN-20250113085647-20250113115647-00127.warc.gz#offset=784499560&length=127185"},
+{"day":"2025-07-17","new":149900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934570.42/warc/CC-MAIN-20250717205317-20250717235317-00927.warc.gz#offset=639855022&length=124541"},
 {"day":"2026-02-11","new":138711,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506135.63/warc/CC-MAIN-20260211021735-20260211051735-00927.warc.gz#offset=556354024&length=166580"}
 ]}

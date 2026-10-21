@@ -72,6 +72,10 @@ jobs:
           FEED_URL_CAMERA_HOUSE: ${{ secrets.FEED_URL_CAMERA_HOUSE }}
           FEED_URL_CAMERAPRO: ${{ secrets.FEED_URL_CAMERAPRO }}
           FEED_URL_JBHIFI: ${{ secrets.FEED_URL_JBHIFI }}
+          FEED_URL_THE_GOOD_GUYS: ${{ secrets.FEED_URL_THE_GOOD_GUYS }}
+          FEED_URL_HARVEY_NORMAN: ${{ secrets.FEED_URL_HARVEY_NORMAN }}
+          FEED_URL_BIGW: ${{ secrets.FEED_URL_BIGW }}
+          FEED_URL_BUNNINGS: ${{ secrets.FEED_URL_BUNNINGS }}
           # FEEDS-END
         run: npm run import:prices
       - name: Deal log
@@ -85,11 +89,20 @@ jobs:
         # on any error the script keeps the last data/fx.json.
         continue-on-error: true
         run: npx tsx scripts/fetch-fx.ts && git add data/fx.json
+      - name: Just announced
+        # Makers' launch videos and press releases -> data/releases.json
+        # (scripts/fetch-releases.ts). Rides the price commit: no extra build.
+        # YouTube videos need YOUTUBE_API_KEY (its robots.txt disallows the feeds).
+        continue-on-error: true
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          RELEASES_YOUTUBE_RSS: ${{ vars.RELEASES_YOUTUBE_RSS }}
+        run: npx tsx scripts/fetch-releases.ts
       - name: Commit data
         run: |
           git config user.name "camcompare-bot"
           git config user.email "camcompare-bot@users.noreply.github.com"
-          git add data/offers data/price-history data/deal-log data/accessories data/accessory-history data/amazon-asins.json 2>/dev/null || git add data/offers data/price-history data/deal-log data/accessories data/accessory-history
+          git add data/offers data/price-history data/deal-log data/accessories data/accessory-history data/releases.json data/amazon-asins.json 2>/dev/null || git add data/offers data/price-history data/deal-log data/accessories data/accessory-history data/releases.json
           if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: prices $(date -u +%FT%H:%MZ)" && git pull --rebase origin main && git push; fi
       - name: Price alerts
         # Emails confirmed price alerts (scripts/check-alerts.ts). Skips cleanly

@@ -1,5 +1,8 @@
 {"slug":"gopro-hero12-black","market":"au","currency":"AUD","points":[
 {"day":"2024-07-21","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517544.48/warc/CC-MAIN-20240720235600-20240721025600-00887.warc.gz#offset=875378848&length=86810"},
+{"day":"2024-10-03","new":89900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253146.59/warc/CC-MAIN-20241003094020-20241003124020-00167.warc.gz#offset=669122612&length=90625"},
+{"day":"2024-10-07","new":57900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253503.25/warc/CC-MAIN-20241007192741-20241007222741-00103.warc.gz#offset=646190776&length=91027"},
 {"day":"2024-11-04","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027819.53/warc/CC-MAIN-20241104065437-20241104095437-00887.warc.gz#offset=942877949&length=83749"},
-{"day":"2024-11-10","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028179.55/warc/CC-MAIN-20241110072033-20241110102033-00622.warc.gz#offset=924022935&length=85116"}
+{"day":"2024-11-10","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028179.55/warc/CC-MAIN-20241110072033-20241110102033-00622.warc.gz#offset=924022935&length=85116"},
+{"day":"2025-05-19","new":89900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412655.60/warc/CC-MAIN-20250519005152-20250519035152-00667.warc.gz#offset=672504986&length=133644"}
 ]}

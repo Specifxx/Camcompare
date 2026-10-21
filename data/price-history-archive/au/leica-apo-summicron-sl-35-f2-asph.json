@@ -1,3 +1,5 @@
 {"slug":"leica-apo-summicron-sl-35-f2-asph","market":"au","currency":"AUD","points":[
+{"day":"2025-04-22","new":806550,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135803.30/warc/CC-MAIN-20250422051655-20250422081655-00141.warc.gz#offset=752024035&length=133169"},
+{"day":"2025-08-14","new":849000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573405.85/warc/CC-MAIN-20250814004736-20250814034736-00141.warc.gz#offset=630660022&length=116850"},
 {"day":"2026-08-17","new":845405,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091387120.69/warc/CC-MAIN-20260817065350-20260817095350-00032.warc.gz#offset=602688362&length=149202"}
 ]}

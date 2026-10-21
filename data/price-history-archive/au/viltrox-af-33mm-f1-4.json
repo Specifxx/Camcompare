@@ -1,3 +1,5 @@
 {"slug":"viltrox-af-33mm-f1-4","market":"au","currency":"AUD","points":[
-{"day":"2025-06-14","new":33520,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481300.24/warc/CC-MAIN-20250614003922-20250614033922-00544.warc.gz#offset=633585202&length=114864"}
+{"day":"2025-06-14","new":33520,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481300.24/warc/CC-MAIN-20250614003922-20250614033922-00544.warc.gz#offset=633585202&length=114864"},
+{"day":"2025-07-17","new":41900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934437.30/warc/CC-MAIN-20250717081801-20250717111801-00842.warc.gz#offset=652035226&length=112401"},
+{"day":"2025-07-18","new":41900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906230120.79/warc/CC-MAIN-20250718093011-20250718123011-00081.warc.gz#offset=619397216&length=112799"}
 ]}

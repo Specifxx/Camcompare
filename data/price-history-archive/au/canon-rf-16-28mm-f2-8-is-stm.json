@@ -1,4 +1,5 @@
 {"slug":"canon-rf-16-28mm-f2-8-is-stm","market":"au","currency":"AUD","points":[
+{"day":"2025-05-18","new":184900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412609.63/warc/CC-MAIN-20250518121532-20250518151532-00511.warc.gz#offset=634498172&length=124562"},
 {"day":"2025-05-20","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412798.22/warc/CC-MAIN-20250520084021-20250520114021-00092.warc.gz#offset=919358444&length=78604"},
 {"day":"2025-09-07","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00092.warc.gz#offset=869317414&length=79824"},
 {"day":"2026-02-14","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506469.31/warc/CC-MAIN-20260214123803-20260214153803-00092.warc.gz#offset=801696406&length=79404"},

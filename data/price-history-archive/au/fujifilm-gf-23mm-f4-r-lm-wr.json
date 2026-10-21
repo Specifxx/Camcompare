@@ -1,4 +1,6 @@
 {"slug":"fujifilm-gf-23mm-f4-r-lm-wr","market":"au","currency":"AUD","points":[
 {"day":"2024-08-04","new":335076,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640398413.11/warc/CC-MAIN-20240804102507-20240804132507-00174.warc.gz#offset=614660198&length=100028"},
-{"day":"2025-04-20","new":335076,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135740.31/warc/CC-MAIN-20250420084231-20250420114231-00274.warc.gz#offset=779100816&length=106027"}
+{"day":"2025-04-20","new":335076,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135740.31/warc/CC-MAIN-20250420084231-20250420114231-00274.warc.gz#offset=779100816&length=106027"},
+{"day":"2025-04-21","new":339915,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135788.26/warc/CC-MAIN-20250421194220-20250421224220-00267.warc.gz#offset=764156802&length=127304"},
+{"day":"2025-09-15","new":359910,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533971.68/warc/CC-MAIN-20250915052735-20250915082735-00267.warc.gz#offset=608296777&length=130045"}
 ]}

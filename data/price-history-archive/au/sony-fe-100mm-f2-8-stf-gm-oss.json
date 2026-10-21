@@ -1,6 +1,8 @@
 {"slug":"sony-fe-100mm-f2-8-stf-gm-oss","market":"au","currency":"AUD","points":[
 {"day":"2024-05-19","new":185093,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057819.74/warc/CC-MAIN-20240519162917-20240519192917-00462.warc.gz#offset=695399849&length=103142"},
 {"day":"2025-01-22","new":169325,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363378.60/warc/CC-MAIN-20250122095114-20250122125114-00462.warc.gz#offset=801393084&length=108860"},
+{"day":"2025-02-09","new":194600,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951598.53/warc/CC-MAIN-20250209101237-20250209131237-00038.warc.gz#offset=703120819&length=131340"},
+{"day":"2025-08-14","new":194600,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151577363.78/warc/CC-MAIN-20250814193753-20250814223753-00377.warc.gz#offset=645715407&length=127657"},
 {"day":"2025-08-14","new":192746,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151577992.76/warc/CC-MAIN-20250814224625-20250815014625-00562.warc.gz#offset=709604295&length=117669"},
 {"day":"2026-01-13","new":239900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00838.warc.gz#offset=577245886&length=172641"}
 ]}

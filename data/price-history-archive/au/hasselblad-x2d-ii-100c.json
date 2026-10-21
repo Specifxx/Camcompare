@@ -1,3 +1,4 @@
 {"slug":"hasselblad-x2d-ii-100c","market":"au","currency":"AUD","points":[
+{"day":"2025-09-08","new":1265000,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00195.warc.gz#offset=641922383&length=127082"},
 {"day":"2026-05-21","new":1199900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377112.37/warc/CC-MAIN-20260521004617-20260521034617-00195.warc.gz#offset=639463186&length=176085"}
 ]}

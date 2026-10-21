@@ -62,7 +62,10 @@ test("promo: bonus and promotion text, short and cleaned", () => {
   assert.equal(promoOf({ title: "Nikon Z6 III", tags: ["Nikon", "Nikon Cashback"] }), "Nikon Cashback");
   assert.equal(promoOf({ title: "Sony A7 IV", body: "<p>Great camera.</p><p>Claim a $300 trade-in bonus when you trade any camera.</p>" }), "Claim a $300 trade-in bonus when you trade any camera.");
   assert.equal(promoOf({ title: "Sony A7 IV", body: "<p>Dust-free sensor. Free delivery Australia wide.</p>" }), null);
-  const long = promoOf({ title: `Sony A7 IV with Bonus ${"very long accessory name ".repeat(10)}` })!;
+  assert.equal(promoOf({ title: "Panasonic Lumix GX7 Body | Secondhand", body: "<p>Another bonus of the Lumix GX7 is the built-in WiFi and NFC connectivity.</p>" }), null);
+  assert.equal(promoOf({ title: "Sony A7 IV", body: "<p>Receive a bonus NP-FZ100 battery with every A7 IV.</p>" }), "Receive a bonus NP-FZ100 battery with every A7 IV.");
+  assert.equal(promoOf({ title: "Canon EOS R6 Mark II Body", tags: ["Canon", "promo:trade-in-200"] }), "Trade-in offer: $200"); // Ted's
+    const long = promoOf({ title: `Sony A7 IV with Bonus ${"very long accessory name ".repeat(10)}` })!;
   assert.ok(long.length <= 120, long);
 });
 

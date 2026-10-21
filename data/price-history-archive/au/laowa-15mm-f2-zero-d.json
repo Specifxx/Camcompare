@@ -1,3 +1,9 @@
 {"slug":"laowa-15mm-f2-zero-d","market":"au","currency":"AUD","points":[
+{"day":"2025-04-18","new":114665,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135666.23/warc/CC-MAIN-20250418090125-20250418120125-00652.warc.gz#offset=715565232&length=116901"},
+{"day":"2025-04-25","new":134900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135921.19/warc/CC-MAIN-20250425074148-20250425104148-00169.warc.gz#offset=692602409&length=122387"},
+{"day":"2025-04-28","new":134900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889456347.84/warc/CC-MAIN-20250428141617-20250428171617-00725.warc.gz#offset=735613667&length=120391"},
+{"day":"2025-08-05","new":134900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279884.50/warc/CC-MAIN-20250805222253-20250806012253-00652.warc.gz#offset=633889024&length=121078"},
+{"day":"2025-09-09","new":134900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00169.warc.gz#offset=620117525&length=121195"},
+{"day":"2025-09-15","new":134900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533967.57/warc/CC-MAIN-20250915022230-20250915052230-00842.warc.gz#offset=628512688&length=112225"},
 {"day":"2025-10-16","new":129500,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/warc/CC-MAIN-20251016145047-20251016175047-00881.warc.gz#offset=755614029&length=111482"}
 ]}

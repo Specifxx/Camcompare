@@ -1,3 +1,5 @@
 {"slug":"canon-rf-200-800mm-f6-3-9-is-usm","market":"au","currency":"AUD","points":[
+{"day":"2024-12-12","new":349900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066107376.23/warc/CC-MAIN-20241212062325-20241212092325-00819.warc.gz#offset=669511812&length=140268"},
+{"day":"2025-07-15","new":349900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934081.64/warc/CC-MAIN-20250714234052-20250715024052-00519.warc.gz#offset=652735227&length=134251"},
 {"day":"2026-02-13","new":293150,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506264.64/warc/CC-MAIN-20260213000354-20260213030354-00519.warc.gz#offset=553718436&length=160616"}
 ]}

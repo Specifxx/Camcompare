@@ -1,3 +1,6 @@
 {"slug":"nikon-af-s-70-200mm-f2-8e-fl-ed-vr","market":"au","currency":"AUD","points":[
+{"day":"2024-12-12","new":379900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066107376.23/warc/CC-MAIN-20241212062325-20241212092325-00112.warc.gz#offset=682657396&length=125280"},
+{"day":"2025-01-14","new":379900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362192.26/warc/CC-MAIN-20250114050027-20250114080027-00112.warc.gz#offset=774555462&length=141867"},
+{"day":"2025-07-08","new":322915,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933638.52/warc/CC-MAIN-20250708071141-20250708101141-00412.warc.gz#offset=662250549&length=140107"},
 {"day":"2025-10-15","new":333119,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/warc/CC-MAIN-20251015133709-20251015163709-00691.warc.gz#offset=760681515&length=115488"}
 ]}

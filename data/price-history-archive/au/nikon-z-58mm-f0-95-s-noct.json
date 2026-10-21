@@ -1,6 +1,7 @@
 {"slug":"nikon-z-58mm-f0-95-s-noct","market":"au","currency":"AUD","points":[
 {"day":"2024-11-01","new":1399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00467.warc.gz#offset=956847330&length=81667"},
 {"day":"2025-01-16","new":1399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.32/warc/CC-MAIN-20250116035220-20250116065220-00467.warc.gz#offset=1084240918&length=81973"},
+{"day":"2025-07-12","new":1259910,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00148.warc.gz#offset=649869125&length=157507"},
 {"day":"2025-09-16","new":1399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00767.warc.gz#offset=872910536&length=81219"},
 {"day":"2026-02-15","new":1399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506531.51/warc/CC-MAIN-20260215095839-20260215125839-00767.warc.gz#offset=790924703&length=81038"}
 ]}

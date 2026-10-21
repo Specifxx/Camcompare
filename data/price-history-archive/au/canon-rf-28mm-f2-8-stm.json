@@ -1,7 +1,9 @@
 {"slug":"canon-rf-28mm-f2-8-stm","market":"au","currency":"AUD","points":[
 {"day":"2024-04-24","new":44965,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819971.86/warc/CC-MAIN-20240424205851-20240424235851-00541.warc.gz#offset=650171551&length=58565"},
+{"day":"2024-09-09","new":52900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651133.92/warc/CC-MAIN-20240909170505-20240909200505-00541.warc.gz#offset=701623432&length=81564"},
 {"day":"2024-10-14","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255412.80/warc/CC-MAIN-20241014071254-20241014101254-00693.warc.gz#offset=857853598&length=81193"},
 {"day":"2025-01-13","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362161.33/warc/CC-MAIN-20250113085647-20250113115647-00693.warc.gz#offset=1074010190&length=80820"},
+{"day":"2025-08-15","new":52900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151579063.98/warc/CC-MAIN-20250815204238-20250815234238-00441.warc.gz#offset=640849943&length=123539"},
 {"day":"2025-09-12","new":46746,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00193.warc.gz#offset=879877317&length=80253"},
 {"day":"2026-02-09","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505946.14/warc/CC-MAIN-20260209041804-20260209071804-00193.warc.gz#offset=808349448&length=79825"}
 ]}

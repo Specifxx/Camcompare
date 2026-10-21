@@ -1,4 +1,7 @@
 {"slug":"sigma-500mm-f5-6-dg-dn-os-sports","market":"au","currency":"AUD","points":[
+{"day":"2025-04-25","new":568900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135921.19/warc/CC-MAIN-20250425074148-20250425104148-00516.warc.gz#offset=766318282&length=130746"},
+{"day":"2025-07-11","new":483565,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933819.2/warc/CC-MAIN-20250711201717-20250711231717-00879.warc.gz#offset=660058351&length=133767"},
+{"day":"2025-09-07","new":568900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00516.warc.gz#offset=655643586&length=124018"},
 {"day":"2026-02-11","new":468523,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506135.63/warc/CC-MAIN-20260211021735-20260211051735-00516.warc.gz#offset=514434519&length=160321"},
 {"day":"2026-05-21","new":393675,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377112.37/warc/CC-MAIN-20260521004617-20260521034617-00879.warc.gz#offset=599411174&length=172767"}
 ]}

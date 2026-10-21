@@ -1,3 +1,6 @@
 {"slug":"panasonic-lumix-s5","market":"au","currency":"AUD","points":[
+{"day":"2025-04-27","new":269900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136254.59/warc/CC-MAIN-20250427215323-20250428005323-00338.warc.gz#offset=726456305&length=182811"},
+{"day":"2025-05-19","new":269900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412741.46/warc/CC-MAIN-20250519164124-20250519194124-00415.warc.gz#offset=620989231&length=181184"},
+{"day":"2025-09-07","new":269900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00415.warc.gz#offset=622456814&length=179698"},
 {"day":"2026-08-17","new":129900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091387120.69/warc/CC-MAIN-20260817065350-20260817095350-00042.warc.gz#offset=614655216&length=166620"}
 ]}

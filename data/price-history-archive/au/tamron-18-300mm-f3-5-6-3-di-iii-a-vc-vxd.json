@@ -1,5 +1,7 @@
 {"slug":"tamron-18-300mm-f3-5-6-3-di-iii-a-vc-vxd","market":"au","currency":"AUD","points":[
+{"day":"2025-08-14","new":99900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151573816.93/warc/CC-MAIN-20250814035453-20250814065453-00517.warc.gz#offset=584346519&length=139129"},
 {"day":"2025-09-08","new":119900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00999.warc.gz#offset=642045103&length=129521"},
 {"day":"2025-09-10","new":119900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00791.warc.gz#offset=601781048&length=129991"},
+{"day":"2025-09-17","new":104900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00627.warc.gz#offset=564078757&length=170405"},
 {"day":"2026-07-13","new":114900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663951639.34/warc/CC-MAIN-20260713084117-20260713114117-00517.warc.gz#offset=585178351&length=162257"}
 ]}

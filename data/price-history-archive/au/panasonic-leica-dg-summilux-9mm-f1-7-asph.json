@@ -1,3 +1,4 @@
 {"slug":"panasonic-leica-dg-summilux-9mm-f1-7-asph","market":"au","currency":"AUD","points":[
-{"day":"2025-06-19","new":65600,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481539.80/warc/CC-MAIN-20250619144242-20250619174242-00215.warc.gz#offset=670827766&length=106144"}
+{"day":"2025-06-19","new":65600,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481539.80/warc/CC-MAIN-20250619144242-20250619174242-00215.warc.gz#offset=670827766&length=106144"},
+{"day":"2025-08-07","new":79900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279957.1/warc/CC-MAIN-20250807120334-20250807150334-00478.warc.gz#offset=630887776&length=133021"}
 ]}

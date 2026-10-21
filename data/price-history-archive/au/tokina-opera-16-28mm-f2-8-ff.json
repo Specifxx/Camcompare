@@ -1,3 +1,4 @@
 {"slug":"tokina-opera-16-28mm-f2-8-ff","market":"au","currency":"AUD","points":[
+{"day":"2025-08-11","new":107900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280328.73/warc/CC-MAIN-20250811100340-20250811130340-00256.warc.gz#offset=630764672&length=122616"},
 {"day":"2025-09-08","new":107900,"store":"georges","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00735.warc.gz#offset=681337089&length=112890"}
 ]}

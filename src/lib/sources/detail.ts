@@ -87,7 +87,10 @@ export const availableNow = (a: Availability | null | undefined, fallback: boole
 // "free" counts only when something is given free, never "free shipping",
 // "hands-free" or "dust-free".
 const PROMO = /\b(bonus|cash ?back|gift ?cards?|e-?gift|trade[- ]?in (bonus|offer|credit)|giftober|redemption|redeem|promo(tion)?|voucher)\b|(?<![-\w])free (?!shipping|delivery|returns?|postage|express|standard|click|pick|of charge on orders)(gift|[a-z0-9$][\w$.-]*)|\+\s?\$\d[\d,]*\s?(gift|voucher|e-?gift|credit)/i;
-const PROMO_BODY = /\b(bonus|cash ?back|gift ?cards?|e-?gift|trade[- ]?in (bonus|offer|credit)|giftober|redemption|redeem)\b|(?<![-\w])free gift\b/i;
+// In prose "bonus" is often just a word ("another bonus of the GX7 is its
+// WiFi"): there it counts only as an offer ("receive a bonus …", "bonus
+// battery", "$200 bonus").
+const PROMO_BODY = /\b(cash ?back|gift ?cards?|e-?gift|trade[- ]?in (bonus|offer|credit)|giftober|redemption|redeem)\b|(?<![-\w])free gift\b|\b(receive|get|claim|includes?|plus|with) (a |an |your )?(free )?bonus\b|\bbonus (gift|offer|battery|batteries|lens|card|bag|kit|accessor\w*|memory|sd|grip|strap|tripod|\$)|\$\d[\d,]* (trade-in )?bonus\b/i;
 const MAX_PROMO = 120;
 
 const tidy = (s: string) => {
@@ -111,8 +114,14 @@ export function promoOf(p: { title: string; tags?: string[] | string | null; bod
     const out = tidy(hit.slice(from));
     if (out.length >= 4) return out;
   }
-  const tags = Array.isArray(p.tags) ? p.tags : (p.tags ?? "").split(",");
-  const tag = tags.map((t) => t.trim()).find((t) => PROMO.test(t) && !/^(no|not)\b/i.test(t));
+  const tags = (Array.isArray(p.tags) ? p.tags : (p.tags ?? "").split(",")).map((t) => t.trim());
+  // Ted's machine tags: "promo:trade-in-200".
+  const machine = tags.map((t) => t.match(/^promo:\s*(.+)$/i)?.[1]).find(Boolean);
+  if (machine) {
+    const trade = machine.match(/^trade-?in-(\d+)$/i);
+    return tidy(trade ? `Trade-in offer: $${trade[1]}` : machine.replace(/[-_]+/g, " ").replace(/^\w/, (c) => c.toUpperCase()));
+  }
+  const tag = tags.find((t) => PROMO.test(t) && !/^(no|not)\b/i.test(t));
   if (tag) return tidy(tag);
   if (p.body) {
     const text = strip(p.body).slice(0, 4000);

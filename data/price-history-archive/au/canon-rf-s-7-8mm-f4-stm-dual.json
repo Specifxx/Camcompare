@@ -1,6 +1,7 @@
 {"slug":"canon-rf-s-7-8mm-f4-stm-dual","market":"au","currency":"AUD","points":[
 {"day":"2024-11-07","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00516.warc.gz#offset=946369218&length=78616"},
 {"day":"2025-05-20","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412798.22/warc/CC-MAIN-20250520084021-20250520114021-00616.warc.gz#offset=889406895&length=77533"},
+{"day":"2025-09-08","new":77900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00781.warc.gz#offset=646021240&length=120255"},
 {"day":"2025-09-09","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533029.41/warc/CC-MAIN-20250909025155-20250909055155-00616.warc.gz#offset=942421776&length=78567"},
 {"day":"2026-01-13","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468912.16/warc/CC-MAIN-20260113044442-20260113074442-00616.warc.gz#offset=877545012&length=78490"}
 ]}
