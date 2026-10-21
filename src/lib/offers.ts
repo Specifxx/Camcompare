@@ -32,6 +32,10 @@ export const OFFER_MAX_AGE_H = 72;
 /** Amazon's limit: a price from its API may be shown for at most 24 hours. */
 export const AMAZON_MAX_AGE_H = 24;
 
+/** Stock beyond in/out: what a source says (Shopify tags, JSON-LD availability, feed fields). */
+export const AVAILABILITY = ["in_stock", "low_stock", "preorder", "backorder", "out_of_stock"] as const;
+export type Availability = (typeof AVAILABILITY)[number];
+
 export const offerSchema = z
   .object({
     product: z.string(), // catalog slug (camera or lens)
@@ -48,6 +52,16 @@ export const offerSchema = z
     mount: z.string().nullable(), // lens version ("sony-e") when the listing says
     seenAt: z.string(),
     sourceId: z.string().nullable(),
+    // Optional detail a source may know (all absent on older files). Feedback
+    // round 2026-10-22: a was-price for "N% off", stock beyond in/out, the
+    // kit's lens, a store's bonus or promotion, and what tells two listings
+    // at the same store apart.
+    wasPrice: z.number().int().positive().nullable().optional(), // the store's own struck-through price, minor units
+    availability: z.enum(AVAILABILITY).nullable().optional(),
+    kitLens: z.string().nullable().optional(), // catalog lens slug in a kit, when matched
+    kitLensName: z.string().nullable().optional(), // "RF-S 18-45mm F4.5-6.3 IS STM", as the listing names it
+    promo: z.string().max(200).nullable().optional(), // "Bonus RF 35mm F1.4 + adapter", "$250 trade-in bonus"
+    detail: z.string().max(120).nullable().optional(), // variant, branch or grade: "Parramatta store", "Grade 8/10"
   })
   .strict();
 export type Offer = z.infer<typeof offerSchema>;
