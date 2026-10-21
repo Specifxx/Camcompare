@@ -175,7 +175,7 @@ export default function ReleasesView({ market: m }: { market: MarketCode }) {
         {file.generatedAt && (
           <p className="mt-2 text-xs text-subtle">
             <span className="cc-live" aria-hidden />
-            Checked <Ago at={file.generatedAt} />
+            Updated <Ago at={file.generatedAt} />
           </p>
         )}
       </header>

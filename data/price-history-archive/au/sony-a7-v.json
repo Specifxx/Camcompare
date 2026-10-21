@@ -1,3 +1,4 @@
 {"slug":"sony-a7-v","market":"au","currency":"AUD","points":[
+{"day":"2025-12-10","new":469900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307451.48/warc/CC-MAIN-20251210041909-20251210071909-00281.warc.gz#offset=585152356&length=174222"},
 {"day":"2026-01-21","new":469995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469608.70/warc/CC-MAIN-20260121023113-20260121053113-00841.warc.gz#offset=836219474&length=84783"}
 ]}

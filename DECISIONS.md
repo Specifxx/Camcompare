@@ -966,3 +966,75 @@ about the stores and the accessories.
   Cooke, DZOFilm, Fujinon, and RED, matched only with one of its product
   names, never the colour.
 - **Japan and Hong Kong**: researched, not added (docs/retailers.md).
+
+## 2026-10-21: Just announced, and alerts for stock, preorders and makers
+
+The owner's friends: "almost a news marketplace". Makers "randomly release
+things… nobody's out here waiting and checking". A Godox flash found five
+hours late and bought from a scam reseller, an FX5 preorder gone in ten
+minutes. So: a page of announcements with the stores that take orders, and an
+email when something can be ordered.
+
+**Sources.** `scripts/fetch-releases.ts` reads makers' own channels and
+newsrooms (`src/lib/releases/brands.ts`, 44 makers, 51 YouTube channels, 4
+newsroom RSS feeds). Every channel was resolved and fetched on 2026-10-21; 29
+are linked from the maker's own website, the rest found by YouTube's channel
+search and checked by eye. Dropped: @SonyAlpha (last upload 2009), @Canon (no
+uploads), Canon Global (2013), LUMIX USA (one video), Ricoh Imaging Americas'
+old channel (2016), @PENTAXofficial (a fan channel), "Walden Harris" behind
+@nikonofficial. Newsrooms: Nikon imaging, Panasonic (LUMIX items only),
+Ricoh Imaging Americas, Hollyland and Apple (iPhone and camera items only)
+work. Sony, Canon USA, GoPro, Insta360 and Fujifilm answer 403, and Samsung's
+robots.txt disallows us: not worked around. No maker's launch-page sitemap
+was usable, so none is read. AKG (403, no official channel found) and
+Bronica (a dormant Tamron brand) aren't watched.
+
+**YouTube's robots.txt disallows `/feeds/videos.xml` for every crawler.**
+The feed is still the one each channel page links for feed readers, but our
+rule is "only where robots.txt allows". So the script reads uploads through
+the YouTube Data API when `YOUTUBE_API_KEY` is set (free key, 1 quota unit per
+channel, ~410 of 10,000 a day at every three hours), and reads the public
+feed only when `RELEASES_YOUTUBE_RSS=1` says the owner chose to. The first
+data/releases.json was made that way, by hand, to check the feeds.
+
+**The file.** One release per line: id (`r` + 12 hex of the URL, slug-safe
+for alerts and comment targets), brand, title, url, time, video id, the
+catalog products it names, and `isAnnouncement`. A launch word without a
+tutorial, firmware or corporate word, tested in tests/releases.test.ts.
+Announcements are kept six months, everything else three weeks, so a
+heuristic miss can still be fixed. Products are matched with `matchListing`
+plus an alias search for the release's own brand only. A name followed by a
+variant or generation word doesn't count: `matchListing` itself takes "DJI
+Osmo Pocket 4P" as the original Osmo Pocket, which the sources agent may
+want a test for. The script runs before the price commit and writes only
+when something changed, so a release rides the price commit: **no extra
+build.** The page is static (no revalidate); comments load only when a
+card's Comments button is pressed (`release:<id>` targets).
+
+**Where to buy** comes from our offers and counts **stores only**: never eBay,
+never a marketplace seller, never Amazon (`lib/releases/stock.ts`). The
+friend's scam is exactly what it must never point at. A market's /releases
+is noindex until a store there lists something on it.
+
+**Alerts.** `price_alerts` gains `alert_type` (price, restock, preorder,
+brand; old rows default to price) and `last_state`, added in place with
+`ALTER TABLE … ADD COLUMN IF NOT EXISTS`. "Any price drop" and "Only deals
+under a price" are the old no-target and target alerts. Restock and preorder
+fire on a **transition** against the state stored on the alert: the last
+import's view, which survives skipped imports and counts the watch check's
+runs too. The previous offers file isn't diffed, since a git diff is wrong
+whenever a commit is skipped. A preorder alert can be on a release card
+before we list the product: it fires once a store lists a product the
+release names. Brand alerts keep the newest announcement time they reported.
+Bounds: 90 emails a run, 3 per address a run, time-critical kinds first,
+3 h between stock emails, 2 h between brand emails, 24 h between price
+emails. Every email has the one-click stop link.
+
+**Instant-ish checks (built, off).** `scripts/check-watched.ts`, behind
+`WATCH_CHECKS=1`, re-reads only the stored store listings of products with
+restock or preorder alerts: Shopify `/products/<handle>.js`, structured-data
+pages. Same robots and bot-wall rules, at most 60 pages a run and 12 per
+store. It emails through the same `runAlerts` and writes nothing, so it
+commits and deploys nothing. At 30 minutes: free Actions minutes (public
+repo), one Neon SELECT a run, zero Vercel builds. Its workflow and the
+premium plan are in docs/premium-plan.md.

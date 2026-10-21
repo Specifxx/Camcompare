@@ -1,0 +1,5 @@
+{"slug":"nikon-z30","market":"us","currency":"USD","points":[
+{"day":"2024-07-18","new":60695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514848.78/warc/CC-MAIN-20240718161144-20240718191144-00036.warc.gz#offset=569198836&length=114454"},
+{"day":"2024-08-07","new":84999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640694449.36/warc/CC-MAIN-20240807111957-20240807141957-00682.warc.gz#offset=534475247&length=113271"},
+{"day":"2024-09-08","new":77999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651013.49/warc/CC-MAIN-20240908150334-20240908180334-00333.warc.gz#offset=657690400&length=122820"}
+]}

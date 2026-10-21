@@ -321,9 +321,13 @@ async function ccRecords(crawl: string, prefix: string): Promise<CcRecord[]> {
   const hit = cached<CcRecord[]>("ccrec", ck);
   if (hit) return hit;
   const out: CcRecord[] = [];
+  let complete = true;
   for (const b of await ccBlocks(crawl, prefix)) {
     const res = await politeFetch(gates.cc, `${CC}/cc-index/collections/${crawl}/indexes/${b.file}`, { Range: `bytes=${b.offset}-${b.offset + b.length - 1}` });
-    if (!res || !(res.status === 206 || res.ok)) continue;
+    if (!res || !(res.status === 206 || res.ok)) {
+      complete = false;
+      continue;
+    }
     const text = gunzipSync(Buffer.from(await res.arrayBuffer())).toString("utf8");
     for (const l of text.split("\n")) {
       if (!l.startsWith(prefix)) continue;
@@ -334,7 +338,8 @@ async function ccRecords(crawl: string, prefix: string): Promise<CcRecord[]> {
       } catch {}
     }
   }
-  store("ccrec", ck, out);
+  // A block that failed to load is read again next run, not cached as empty.
+  if (complete) store("ccrec", ck, out);
   return out;
 }
 

@@ -1,4 +1,5 @@
 {"slug":"sony-a6700","market":"us","currency":"USD","points":[
 {"day":"2024-11-12","new":139800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.50/warc/CC-MAIN-20241112014152-20241112044152-00481.warc.gz#offset=710515802&length=143532"},
+{"day":"2025-03-20","new":144900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433122.11/warc/CC-MAIN-20250320070413-20250320100413-00153.warc.gz#offset=618770935&length=103659"},
 {"day":"2025-08-04","new":149800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279830.39/warc/CC-MAIN-20250804210957-20250805000957-00793.warc.gz#offset=668868712&length=154869"}
 ]}
