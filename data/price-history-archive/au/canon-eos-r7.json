@@ -1,0 +1,6 @@
+{"slug":"canon-eos-r7","market":"au","currency":"AUD","points":[
+{"day":"2025-07-16","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934234.44/warc/CC-MAIN-20250716005150-20250716035150-00206.warc.gz#offset=903612571&length=86139"},
+{"day":"2025-09-14","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533671.75/warc/CC-MAIN-20250914012700-20250914042700-00278.warc.gz#offset=881827322&length=82801"},
+{"day":"2025-11-18","new":186996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439649042.63/warc/CC-MAIN-20251118000149-20251118030149-00206.warc.gz#offset=833014960&length=86523"},
+{"day":"2026-01-13","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468912.16/warc/CC-MAIN-20260113044442-20260113074442-00278.warc.gz#offset=834390836&length=82838"}
+]}

@@ -59,11 +59,11 @@ function family(p: Camera | Lens, kind: "camera" | "lens", m: MarketCode): strin
   return out;
 }
 
-/** Kits on sale in this market, cheapest per lens, from today's offers. */
+/** New kits on sale in this market, cheapest per lens, from today's offers. */
 function kitsLine(offers: Offer[], currency: Currency, marketName: string): string | null {
   const byLens = new Map<string, number>();
   for (const o of offers) {
-    if (!o.kit || !o.inStock) continue;
+    if (!o.kit || !o.inStock || o.condition !== "new") continue;
     const l = kitLensLabel(o);
     if (!l) continue;
     const had = byLens.get(l);
@@ -71,7 +71,7 @@ function kitsLine(offers: Offer[], currency: Currency, marketName: string): stri
   }
   const kits = [...byLens.entries()].sort((a, b) => a[1] - b[1]).slice(0, 3);
   if (!kits.length) return lowestKit(offers) ? `Also sold in kits with a lens in ${marketName}: see the Kits filter above. A kit price is never the body price.` : null;
-  return `Kits on sale in ${marketName}: ${list(kits.map(([l, p]) => `with ${l} (from ${price(p, currency)})`))}. A kit price is never the body price.`;
+  return `New kits on sale in ${marketName}: ${list(kits.map(([l, p]) => `with ${l} (from ${price(p, currency)})`))}. A kit price is never the body price.`;
 }
 
 function usedLine(used: UsedValue | null, todayUsed: number | null, currency: Currency, marketName: string): string {

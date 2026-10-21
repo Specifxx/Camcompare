@@ -1,0 +1,5 @@
+{"slug":"nikon-z-17-28mm-f2-8","market":"us","currency":"USD","points":[
+{"day":"2024-05-25","new":99695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058829.24/warc/CC-MAIN-20240525131056-20240525161056-00038.warc.gz#offset=672277540&length=138028"},
+{"day":"2024-10-11","new":99695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253776.45/warc/CC-MAIN-20241011134210-20241011164210-00619.warc.gz#offset=675241441&length=136817"},
+{"day":"2025-08-04","new":129695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279789.28/warc/CC-MAIN-20250804114251-20250804144251-00438.warc.gz#offset=686531092&length=171485"}
+]}

@@ -1,0 +1,6 @@
+{"slug":"fujifilm-gfx50s-ii","market":"us","currency":"USD","points":[
+{"day":"2024-07-17","new":419900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514789.19/warc/CC-MAIN-20240717151625-20240717181625-00740.warc.gz#offset=672539795&length=141117"},
+{"day":"2024-07-22","new":399900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517823.95/warc/CC-MAIN-20240722033934-20240722063934-00458.warc.gz#offset=676761941&length=154096"},
+{"day":"2024-10-07","new":299900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253447.49/warc/CC-MAIN-20241007004935-20241007034935-00531.warc.gz#offset=682949045&length=139270"},
+{"day":"2025-04-21","new":419900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135788.26/warc/CC-MAIN-20250421194220-20250421224220-00840.warc.gz#offset=763520056&length=143861"}
+]}

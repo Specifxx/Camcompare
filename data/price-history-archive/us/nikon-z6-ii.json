@@ -1,0 +1,5 @@
+{"slug":"nikon-z6-ii","market":"us","currency":"USD","points":[
+{"day":"2024-10-10","new":159695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253660.66/warc/CC-MAIN-20241010032709-20241010062709-00180.warc.gz#offset=673708221&length=136299"},
+{"day":"2024-10-11","new":159695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253749.74/warc/CC-MAIN-20241011011611-20241011041611-00016.warc.gz#offset=679286099&length=136414"},
+{"day":"2025-08-11","new":149695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280267.35/warc/CC-MAIN-20250811065521-20250811095521-00374.warc.gz#offset=694685500&length=147112"}
+]}

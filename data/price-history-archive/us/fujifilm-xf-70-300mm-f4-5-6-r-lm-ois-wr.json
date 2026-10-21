@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-70-300mm-f4-5-6-r-lm-ois-wr","market":"us","currency":"USD","points":[
+{"day":"2024-07-15","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514659.22/warc/CC-MAIN-20240715040934-20240715070934-00158.warc.gz#offset=677410084&length=132128"},
+{"day":"2025-02-10","new":84999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951669.40/warc/CC-MAIN-20250210151118-20250210181118-00428.warc.gz#offset=736058590&length=147958"},
+{"day":"2025-03-20","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433132.75/warc/CC-MAIN-20250320101927-20250320131927-00858.warc.gz#offset=746296224&length=278589"}
+]}

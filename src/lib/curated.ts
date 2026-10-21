@@ -57,7 +57,7 @@ export function availabilityOf(offers: Offer[], retailerName: (id: string) => st
   const parts: string[] = [];
   if (backorder.length) parts.push(`Backordered at ${backorder.join(", ")}`);
   if (preorder.length) parts.push(`Pre-order at ${preorder.join(", ")}`);
-  if (!inStock && listed && !parts.length) parts.push(`Out of stock at all ${listed} store${listed === 1 ? "" : "s"} we track`);
+  if (!inStock && listed && !parts.length) parts.push(listed === 1 ? "Out of stock at the one store we track" : `Out of stock at all ${listed} stores we track`);
   if (!listed) parts.push("No store we track lists it in this market yet");
   return { inStock, backorder, preorder, listed, note: parts.length ? parts.join(" · ") : null };
 }

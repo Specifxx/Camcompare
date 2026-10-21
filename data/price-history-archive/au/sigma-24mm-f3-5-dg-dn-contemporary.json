@@ -1,0 +1,4 @@
+{"slug":"sigma-24mm-f3-5-dg-dn-contemporary","market":"au","currency":"AUD","points":[
+{"day":"2026-02-10","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506125.22/warc/CC-MAIN-20260210231502-20260211021502-00916.warc.gz#offset=850892787&length=80941"},
+{"day":"2026-02-15","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506531.51/warc/CC-MAIN-20260215095839-20260215125839-00447.warc.gz#offset=796526705&length=79149"}
+]}

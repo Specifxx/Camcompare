@@ -1,0 +1,5 @@
+{"slug":"sigma-150-600mm-f5-6-3-dg-os-hsm-sports","market":"us","currency":"USD","points":[
+{"day":"2024-09-10","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651164.37/warc/CC-MAIN-20240909233606-20240910023606-00230.warc.gz#offset=750054809&length=137172"},
+{"day":"2025-04-23","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135835.77/warc/CC-MAIN-20250423004424-20250423034424-00414.warc.gz#offset=748625877&length=146603"},
+{"day":"2025-05-25","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990726410.98/warc/CC-MAIN-20250525003427-20250525033427-00630.warc.gz#offset=676219476&length=147735"}
+]}

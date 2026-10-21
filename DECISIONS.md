@@ -765,3 +765,204 @@ variable, so a stale personal address on Vercel can't override it;
 Product pages: the price history chart moved from below "Where to buy" and
 "Price around the world" into the header, under the price box, so it shows
 without scrolling.
+
+## 2026-10-21: Member stories, My gear, a request board, digicams and viral cameras
+
+Owner asks: a user blog like a shop's product-review blog, a collection
+tracker ("my entire camera and lens collection is like up… it's like my
+stock portfolio… probably up 2x"), the founder story on /about, a public
+"feedback and request section", a digicam page and "viral cameras rn".
+
+- **Member stories (`/stories`) live in the community tables**, under the
+  same exception as comments: `community_posts`, read only by client
+  fetches through CDN-cached `/api/community/stories` GETs; `/stories`,
+  `/stories/new` and the `/stories/p` shell (a rewrite, like `/community/t`)
+  are static. Votes (`post`), comments (target `post:<id>`), reports, hide
+  and ban reuse the community's code paths, as do the posting limits, plus
+  3 stories per member per day. New stories notify the owner (the bounded
+  `post` notice). Story votes don't earn CamKarma (unchanged rule: comments
+  and reviews only). `ProductStories` lists a product's stories.
+- **Bodies are a Markdown subset parsed into a tree** (`lib/community/stories.ts`)
+  and rendered as React elements: headings, lists, quotes, bold, italic,
+  code and http(s) links (`rel="nofollow ugc noopener"`). No HTML is ever
+  inserted, and sanitizeText still strips tags first.
+- **Images: one cover per story, shown only once the owner features it.**
+  Uploads need storage we don't have, so a cover is an https address on a
+  real host name (no IPs, localhost, ports or credentials). A hotlinked
+  image can be swapped for anything after it's checked and it tells the host
+  who is reading, so: no pictures inside bodies (image syntax becomes a
+  link), the cover is stored but the public API returns it only for featured
+  stories, rendered lazily with `referrerpolicy="no-referrer"`, and an
+  author's edit unfeatures the story until the owner looks again.
+- **Stories are noindex unless featured.** The shell's HTML has no robots
+  tag (a noindex there would stop crawlers rendering featured stories too);
+  the page's script adds `noindex` for anything not featured, and a canonical
+  for featured ones. Featured stories list first. They aren't in the sitemap
+  (that would be a build-time database read); `/stories` links them.
+- **My gear (`/collection`) works signed out in localStorage**, and signed in
+  syncs to `community_collection` (one private JSONB row per member, read
+  only through the member's own no-store `/api/community/collection`). A
+  browser that never synced adds its items to the account's once; after
+  that the account's list wins, so a deletion elsewhere sticks.
+- **Values are static JSON from the build** (`scripts/build-values.ts`,
+  `lib/gear-values.ts`): `public/values/<market>.json` (typical used, lowest
+  new) and a per-product value series, daily for 28 days and weekly before,
+  each point the typical used price as it stood that day (else that day's
+  lowest new). Items are valued in the market they were priced in; totals
+  are per currency, never converted. Faulty gear isn't valued, and the
+  condition otherwise doesn't adjust anything: we don't guess discounts.
+  The "sell or keep" line appears only when the typical used price is above
+  what was paid, never off a new price.
+- **The request board (`/requests`)** is `community_requests` with votes
+  (`request`), comments under each and an owner status (open, planned, done,
+  won't do, with a public note) set from `/admin` through `/admin/curate`
+  (same admin-cookie guard as `/admin/moderate`). The private feedback form
+  stays and links to it.
+- **`/digicams` and `/viral-cameras`** are static per-market pages from the
+  catalog and offers: digicams are every `compact`, grouped by sensor size,
+  plus older ones with a used price; the viral list is `data/viral.json`
+  (owner-edited, slugs checked by a test). Stock notes come from the offers'
+  optional `availability` (backorder, pre-order) and in-stock flags, Amazon
+  left out. Both sit in the header's new "More" menu (the phone nav had no
+  room for more links) and the footer.
+
+## 2026-10-22: Product pages like a shopping panel, one rule for every "best price"
+
+Friends filmed Google's product panel for "r50 canon" in Australia: "I want
+this entire thing… except including second-hand, including the user
+reviews". Camera and lens pages now follow its order: buy first, then
+reviews and things to know, then the rest.
+
+- **Hero.** The photo (a gallery: `data/gallery/<slug>.json` may add more
+  licensed, credited photos later; none exist, so it is one photo today), the
+  name, our members' star average (client-loaded once the page is idle,
+  hidden with no reviews), "Typically X–Y" (20th to 80th percentile of
+  today's one-price-per-store body-only new prices pooled with 90 days of
+  daily lows; at least four numbers or nothing), the best price with its tag
+  and one "Best price at <store>" button, then Track price, Compare, Save.
+  That button is filled even when its link doesn't earn: an exception to
+  "filled buttons only when paid", because price alone picks it, and "Paid
+  link" still shows when it earns.
+- **Where to buy** has filters (All, New, Used & second-hand, Refurbished,
+  Kits). Rows show stock (in, low, preorder, backorder, out) in colour, "N%
+  off" with the struck-through was-price only when the store gives one, the
+  promotion as a badge, the detail, and the kit's lens. Identical listings
+  (same store, condition, price, stock, pack, seller, mount, detail, promo,
+  was-price) merge into one row, "×N listings". Each row is rendered once;
+  the filters hide rows by CSS (`lib/offer-tabs.ts`), so the HTML carries
+  only the first five body-only rows and three kits of each filter, and
+  "Show N more" loads the rest from the static quick-view file
+  (`MoreOffers.tsx`). Those rows keep the quick view's affiliate sub-id.
+- **One rule for every lowest, cheapest and best price** (`lib/price-rules.ts`).
+  The R50's Australian page listed used and kit prices while "Price around the
+  world" said "Not priced in Australia yet": the panel counted body-only
+  offers and found none. Now the hero, the table's "Best price" tag, cards,
+  the quick view, the world panel, metadata and JSON-LD all use: cheapest
+  in-stock body-only new, else used; a kit is never the body price, and when
+  a market has no body-only price at all the cheapest kit (new first) shows,
+  labelled with its lens (`kitLensName`, else the catalog lens, else the
+  focal lengths in the title). The world panel shows kits marked "kit", and
+  its verdict never says "not priced" for a market with offers ("only kits
+  are priced", "priced used only", "out of stock everywhere"). JSON-LD stays
+  body-only, so a kits-only page has no Product offer: a kit is a different
+  product. Tests: `tests/product-page.test.ts`.
+- **Reviews**: our members' average, histogram and the community Reviews
+  component (top or newest), "What people are saying" counted from members'
+  own words (topics mentioned, and whether mostly in 4-5 or 1-2 star
+  reviews; hidden under three reviews), and the critics as links
+  (`reviewLinks`). Nothing copied from other sites. The hero's stars and the
+  section share one fetch of the CDN-cached reviews API; that hero fetch is
+  the one community read a visit makes without scrolling, bounded by the
+  API's 30-second CDN cache.
+- **Things to know** (`lib/things-to-know.ts`): bullets from spec-sheet facts
+  and today's offers (kits on sale, used value, successor, same-line
+  siblings), and "Good for / Not the best for" from fixed thresholds, each
+  naming the spec behind it. A null spec says nothing.
+- **Videos and discussions** are links (`lib/media-links.ts`): YouTube
+  searches, the maker's official channel where one was checked, Reddit
+  searches in the brand's or mount's subreddit plus r/photography (and
+  r/videography for 10-bit bodies), DPReview's forum index (its search
+  answers bots with a challenge), and our members' comments, loaded when
+  scrolled near. No embeds until the catalog holds a specific video ID.
+- **More options**: successor, same-line siblings, predecessor and rivals as
+  cards with today's price and "Newer model" / "N% under RRP" badges. It
+  replaces the "Compare the X" buttons (each card links its comparison).
+- An in-page nav (sticky under the header on wide screens) and a marked slot
+  for the history agent's price history. "Lenses for the X" shows three per
+  group instead of four, for weight.
+
+## 2026-10-22: Australian stores, offer detail from the sources, and one accessory section per kind
+
+Friends who buy and resell cameras in Australia asked for "OzBargain +
+camelcamelcamel + price checker + availability tracker". The offer schema
+had just gained optional `wasPrice`, `availability`, `kitLens`,
+`kitLensName`, `promo` and `detail`. This entry is about filling them, and
+about the stores and the accessories.
+
+- **Only the store's own data.** `wasPrice` is Shopify's `compare_at_price`
+  when it is above the price, a JSON-LD `priceSpecification` with priceType
+  StrikethroughPrice or ListPrice, or a feed's full price when its sale price
+  is lower. AggregateOffer `highPrice` is never one: it is the dearest
+  variant, not a former price. Never a launch price or RRP from the catalog
+  (`src/lib/sources/detail.ts`).
+- **Availability.** Shopify: `available` false is out of stock; then a
+  pre-order or back-order named in tags, title or product type (JB Hi-Fi's
+  `AwaitingStock` tag is back-order); low stock from a tag or an
+  `inventory_quantity` of 3 or fewer. A description counts only when it
+  plainly says so about this item ("this item is available for pre-order"):
+  store boilerplate like "pre-order items ship when…" or "ETA varies" appears
+  on every page. JSON-LD and feed values map one to one (LimitedAvailability
+  is low stock). Pre-orders and back-orders are shown but `inStock: false`, so
+  they never set a lowest price.
+- **Kit lens** (`kitLensOf`, `src/lib/matching.ts`). `kitLensName` is the
+  lens as the title names it whenever it gives a focal length. `kitLens` is
+  set only when exactly one catalog lens for the camera's mount fits: by
+  alias, else by focal range (and aperture, when given) among the camera
+  maker's lenses. Two Canon RF 24-105mm lenses start at f/4, so "w/
+  24-105mm" names no slug; a twin-lens kit names none either. One-way like
+  the matcher: it refuses rather than guesses, and it changes no match.
+- **Promo** is the piece of the title, tag or description sentence that names
+  a bonus, cashback, gift card, trade-in bonus or Giftober, at most 120
+  characters. "Free" counts only when something is given free, never "free
+  shipping" or "hands-free".
+- **Detail**: the variant (not "Default Title"), the branch (Cash Converters
+  pages name it), the grade ("EX+", "Grade 9/10", "Mint in Box"), the
+  shutter count, then the serial. It is filled whenever the store says one of
+  these, so the product page can tell identical rows apart.
+- **Stores** (docs/retailers.md, "Australian stores checked"). Ted's is now
+  read through its sitemaps and `/products/<handle>.js`. Its robots.txt
+  disallows `/*?limit=`, which keeps the paged products.json out, but it
+  allows sitemaps and product pages. The same sitemap mode reads JB Hi-Fi,
+  whose ~108,000-product catalogue is mostly music and TVs. Only handles the
+  matcher reads as a catalog product (or an accessory) are fetched, on a
+  rotating budget, and unread products keep their offers (`covered`). Camera
+  House's JSON-LD is read until its Commission Factory feed. The Good Guys
+  (robots.txt disallows `/products/`), Harvey Norman (Imperva on every page,
+  JSON-LD price 0), BIG W (drops requests) and Bunnings (Cloudflare
+  challenge) are refused and listed as feed retailers with a `disabled`
+  reason.
+- **robots.txt line endings.** Broadway HK's robots.txt ends lines with bare
+  CRs, which the parser read as one line, i.e. no rules. It now splits on CR,
+  LF and CRLF (RFC 9309): stricter, never looser.
+- **Accessories: the owner's sections.** /accessories is now grouped by the
+  owner's list, one section per line: gimbals, cages, drones, PTZ cameras and
+  monitors; cables, tether cables and batteries; flashes, backdrops, tripods
+  and bags; filters, LED lights and modifiers; video transmitters and
+  switchers; cards, SSDs and SATA drives; recorders and matte boxes; audio
+  recorders, shotgun and wireless microphones. Every category shows in every
+  market, "None listed yet" where a market has none; the sitemap still lists
+  only categories with listings, and an empty category page stays noindex.
+  New categories: drones, PTZ cameras, tether cables, backdrops, video
+  transmitters, video switchers, recorders (split from monitors), matte boxes
+  (split from cages), audio recorders, shotgun and wireless microphones
+  (split from microphones), and action camera mounts. No existing slug was
+  removed, so no URL or stored row is lost. Drones were junk before; now a
+  drone is a drone, but a drone's battery, propellers or ND filters are a
+  battery, a part or a filter (a category's `not` guard reads the title
+  before "with", "+", "combo" or "("). An LED light's grid, dome or barn
+  doors are modifiers. New brands: Teradek, Accsoon, Vaxis, AKG, Neumann,
+  Sound Devices, Comica, Azden, Movo, Roland, RGBlink, OBSBOT, PTZOptics,
+  BirdDog, Lilliput, Desview, Autel, Potensic, Holy Stone, Hubsan, ARRI,
+  Cooke, DZOFilm, Fujinon, and RED, matched only with one of its product
+  names, never the colour.
+- **Japan and Hong Kong**: researched, not added (docs/retailers.md).

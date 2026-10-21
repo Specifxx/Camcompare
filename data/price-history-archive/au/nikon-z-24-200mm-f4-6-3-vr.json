@@ -1,0 +1,5 @@
+{"slug":"nikon-z-24-200mm-f4-6-3-vr","market":"au","currency":"AUD","points":[
+{"day":"2025-09-13","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533670.32/warc/CC-MAIN-20250913222048-20250914012048-00342.warc.gz#offset=872861471&length=79328"},
+{"day":"2025-09-14","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533671.75/warc/CC-MAIN-20250914012700-20250914042700-00286.warc.gz#offset=846016922&length=73970"},
+{"day":"2026-01-23","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00342.warc.gz#offset=874443510&length=79356"}
+]}

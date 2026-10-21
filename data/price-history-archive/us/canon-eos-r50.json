@@ -1,0 +1,5 @@
+{"slug":"canon-eos-r50","market":"us","currency":"USD","points":[
+{"day":"2024-05-27","new":67900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059045.34/warc/CC-MAIN-20240527205559-20240527235559-00755.warc.gz#offset=655996794&length=142569"},
+{"day":"2024-07-23","new":57900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518029.87/warc/CC-MAIN-20240723102757-20240723132757-00277.warc.gz#offset=676059709&length=143173"},
+{"day":"2025-02-19","new":62900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262974.94/warc/CC-MAIN-20250219003812-20250219033812-00755.warc.gz#offset=694456513&length=153180"}
+]}

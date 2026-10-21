@@ -1,0 +1,5 @@
+{"slug":"canon-eos-rebel-sl3","market":"us","currency":"USD","points":[
+{"day":"2024-10-14","new":64900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255505.76/warc/CC-MAIN-20241014194408-20241014224408-00506.warc.gz#offset=654230654&length=150175"},
+{"day":"2024-11-05","new":64900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027881.88/warc/CC-MAIN-20241105114407-20241105144407-00240.warc.gz#offset=710846408&length=150943"},
+{"day":"2025-06-13","new":64900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481231.7/warc/CC-MAIN-20250613025422-20250613055422-00706.warc.gz#offset=647673659&length=181988"}
+]}

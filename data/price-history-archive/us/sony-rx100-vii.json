@@ -1,0 +1,8 @@
+{"slug":"sony-rx100-vii","market":"us","currency":"USD","points":[
+{"day":"2024-07-24","new":129800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518427.68/warc/CC-MAIN-20240724171328-20240724201328-00345.warc.gz#offset=661168163&length=146807"},
+{"day":"2024-08-04","new":134800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640404969.12/warc/CC-MAIN-20240804133418-20240804163418-00509.warc.gz#offset=633022043&length=147497"},
+{"day":"2024-09-11","new":134800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651387.63/warc/CC-MAIN-20240911120037-20240911150037-00425.warc.gz#offset=717595652&length=146042"},
+{"day":"2024-10-10","new":129800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253682.6/warc/CC-MAIN-20241010124812-20241010154812-00777.warc.gz#offset=677138289&length=145183"},
+{"day":"2025-02-15","new":129800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951994.86/warc/CC-MAIN-20250215214935-20250216004935-00460.warc.gz#offset=698469573&length=151845"},
+{"day":"2025-08-04","new":169800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279830.39/warc/CC-MAIN-20250804210957-20250805000957-00777.warc.gz#offset=653892094&length=155891"}
+]}

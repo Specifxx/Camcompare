@@ -1,0 +1,7 @@
+{"slug":"sony-fe-50mm-f1-8","market":"us","currency":"USD","points":[
+{"day":"2024-08-03","new":19800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640361431.2/warc/CC-MAIN-20240803060126-20240803090126-00848.warc.gz#offset=613347972&length=139352"},
+{"day":"2024-11-09","new":19800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028115.85/warc/CC-MAIN-20241109022607-20241109052607-00527.warc.gz#offset=716706745&length=137155"},
+{"day":"2025-03-15","new":19800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432896.84/warc/CC-MAIN-20250315125812-20250315155812-00875.warc.gz#offset=755552941&length=147587"},
+{"day":"2025-03-17","new":19800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433031.79/warc/CC-MAIN-20250317164600-20250317194600-00448.warc.gz#offset=754844057&length=147650"},
+{"day":"2025-05-19","new":24800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00823.warc.gz#offset=673917571&length=148109"}
+]}

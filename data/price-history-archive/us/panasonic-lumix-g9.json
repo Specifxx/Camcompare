@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-g9","market":"us","currency":"USD","points":[
+{"day":"2024-05-23","new":149799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058671.46/warc/CC-MAIN-20240523204210-20240523234210-00787.warc.gz#offset=682681371&length=149857"},
+{"day":"2024-10-13","new":129799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255165.86/warc/CC-MAIN-20241013061417-20241013091417-00299.warc.gz#offset=658204314&length=146547"},
+{"day":"2025-03-24","new":129799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433351.85/warc/CC-MAIN-20250324114919-20250324144919-00499.warc.gz#offset=711837250&length=197020"}
+]}

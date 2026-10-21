@@ -1,0 +1,4 @@
+{"slug":"sigma-65mm-f2-dg-dn-contemporary","market":"au","currency":"AUD","points":[
+{"day":"2026-01-18","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469410.3/warc/CC-MAIN-20260118124654-20260118154654-00113.warc.gz#offset=854687681&length=79487"},
+{"day":"2026-02-07","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505791.29/warc/CC-MAIN-20260207093355-20260207123355-00374.warc.gz#offset=844839609&length=79641"}
+]}

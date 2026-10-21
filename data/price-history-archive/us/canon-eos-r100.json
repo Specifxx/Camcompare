@@ -1,0 +1,4 @@
+{"slug":"canon-eos-r100","market":"us","currency":"USD","points":[
+{"day":"2024-05-27","new":47900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059045.34/warc/CC-MAIN-20240527205559-20240527235559-00142.warc.gz#offset=656953371&length=144533"},
+{"day":"2025-01-24","new":47900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703692178.96/warc/CC-MAIN-20250123223358-20250124013358-00142.warc.gz#offset=785839335&length=159369"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"nikon-z-28mm-f2-8","market":"au","currency":"AUD","points":[
+{"day":"2025-09-17","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00674.warc.gz#offset=876525508&length=79741"},
+{"day":"2025-11-19","new":42496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657679.99/warc/CC-MAIN-20251119093413-20251119123413-00765.warc.gz#offset=870540940&length=80406"},
+{"day":"2025-12-14","new":49995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871308241.81/warc/CC-MAIN-20251214184959-20251214214959-00674.warc.gz#offset=777264505&length=79324"}
+]}

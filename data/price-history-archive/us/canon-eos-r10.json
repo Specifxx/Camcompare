@@ -1,0 +1,4 @@
+{"slug":"canon-eos-r10","market":"us","currency":"USD","points":[
+{"day":"2024-08-09","new":87900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00817.warc.gz#offset=608983218&length=146797"},
+{"day":"2025-03-18","new":87900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433039.83/warc/CC-MAIN-20250317231956-20250318021956-00117.warc.gz#offset=785438215&length=154480"}
+]}

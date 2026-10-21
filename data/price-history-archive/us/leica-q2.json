@@ -1,0 +1,4 @@
+{"slug":"leica-q2","market":"us","currency":"USD","points":[
+{"day":"2024-11-12","new":599500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00505.warc.gz#offset=715089934&length=153015"},
+{"day":"2025-07-08","new":599500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933687.71/warc/CC-MAIN-20250708225839-20250709015839-00205.warc.gz#offset=678688980&length=183088"}
+]}

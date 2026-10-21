@@ -1,0 +1,6 @@
+{"slug":"nikon-z-40mm-f2","market":"us","currency":"USD","points":[
+{"day":"2024-10-14","new":27695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255435.42/warc/CC-MAIN-20241014132752-20241014162752-00094.warc.gz#offset=673755656&length=135688"},
+{"day":"2024-10-16","new":29995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944592142.94/warc/CC-MAIN-20241015235640-20241016025640-00461.warc.gz#offset=649600752&length=137989"},
+{"day":"2025-03-15","new":22695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432896.84/warc/CC-MAIN-20250315125812-20250315155812-00094.warc.gz#offset=755218721&length=145291"},
+{"day":"2025-07-11","new":22695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933802.11/warc/CC-MAIN-20250711135917-20250711165917-00082.warc.gz#offset=716881903&length=146581"}
+]}

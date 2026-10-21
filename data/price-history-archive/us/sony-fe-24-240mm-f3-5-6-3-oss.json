@@ -1,0 +1,5 @@
+{"slug":"sony-fe-24-240mm-f3-5-6-3-oss","market":"us","currency":"USD","points":[
+{"day":"2024-11-05","new":94800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027881.88/warc/CC-MAIN-20241105114407-20241105144407-00714.warc.gz#offset=712733679&length=139590"},
+{"day":"2025-09-13","new":104800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533316.46/warc/CC-MAIN-20250913033418-20250913063418-00002.warc.gz#offset=194447890&length=106296"},
+{"day":"2025-10-09","new":124800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358353.67/warc/CC-MAIN-20251009004034-20251009034034-00433.warc.gz#offset=271011946&length=112987"}
+]}

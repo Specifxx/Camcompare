@@ -1,0 +1,9 @@
+{"slug":"sigma-60-600mm-f4-5-6-3-dg-os-hsm-sports","market":"us","currency":"USD","points":[
+{"day":"2024-07-24","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518427.68/warc/CC-MAIN-20240724171328-20240724201328-00114.warc.gz#offset=671373270&length=156216"},
+{"day":"2025-01-16","new":198900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362307.18/warc/CC-MAIN-20250116135418-20250116165418-00485.warc.gz#offset=820373773&length=150984"},
+{"day":"2025-02-10","new":199999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951669.40/warc/CC-MAIN-20250210151118-20250210181118-00362.warc.gz#offset=731224404&length=154587"},
+{"day":"2025-02-16","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831952410.39/warc/CC-MAIN-20250216041522-20250216071522-00221.warc.gz#offset=692254843&length=153141"},
+{"day":"2025-03-18","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433039.83/warc/CC-MAIN-20250317231956-20250318021956-00772.warc.gz#offset=738705200&length=185146"},
+{"day":"2025-08-04","new":199999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279789.28/warc/CC-MAIN-20250804114251-20250804144251-00762.warc.gz#offset=693129110&length=157179"},
+{"day":"2025-08-11","new":194999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280504.46/warc/CC-MAIN-20250811162052-20250811192052-00021.warc.gz#offset=677004629&length=155768"}
+]}

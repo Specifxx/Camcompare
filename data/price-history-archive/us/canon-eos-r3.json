@@ -1,0 +1,6 @@
+{"slug":"canon-eos-r3","market":"us","currency":"USD","points":[
+{"day":"2024-04-15","new":499900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816977.38/warc/CC-MAIN-20240415111434-20240415141434-00778.warc.gz#offset=710857862&length=244636"},
+{"day":"2024-10-15","new":449900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255885.83/warc/CC-MAIN-20241015143046-20241015173046-00778.warc.gz#offset=693048395&length=143286"},
+{"day":"2024-11-08","new":449900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028019.71/warc/CC-MAIN-20241108003811-20241108033811-00336.warc.gz#offset=720223129&length=147840"},
+{"day":"2025-05-13","new":399900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412381.25/warc/CC-MAIN-20250513151324-20250513181324-00137.warc.gz#offset=719769257&length=152739"}
+]}

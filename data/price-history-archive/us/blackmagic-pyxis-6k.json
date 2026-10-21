@@ -1,0 +1,6 @@
+{"slug":"blackmagic-pyxis-6k","market":"us","currency":"USD","points":[
+{"day":"2024-07-13","new":299500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514517.94/warc/CC-MAIN-20240713212202-20240714002202-00310.warc.gz#offset=675243625&length=152540"},
+{"day":"2025-04-21","new":299500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135788.26/warc/CC-MAIN-20250421194220-20250421224220-00114.warc.gz#offset=760870993&length=160201"},
+{"day":"2025-04-25","new":319500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135943.10/warc/CC-MAIN-20250425204919-20250425234919-00951.warc.gz#offset=761416621&length=162248"},
+{"day":"2025-05-14","new":299500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412413.62/warc/CC-MAIN-20250514035409-20250514065409-00910.warc.gz#offset=711788817&length=161671"}
+]}

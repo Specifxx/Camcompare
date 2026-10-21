@@ -1,0 +1,5 @@
+{"slug":"sony-fe-200-600mm-f5-6-6-3-g-oss","market":"au","currency":"AUD","points":[
+{"day":"2025-07-13","new":249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934009.3/warc/CC-MAIN-20250713223153-20250714013153-00788.warc.gz#offset=918710300&length=78763"},
+{"day":"2025-11-06","new":249995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342313.22/warc/CC-MAIN-20251106231041-20251107021041-00788.warc.gz#offset=841547183&length=79540"},
+{"day":"2026-03-09","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687277752.1/warc/CC-MAIN-20260309111132-20260309141132-00130.warc.gz#offset=776582611&length=182946"}
+]}

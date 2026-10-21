@@ -1,0 +1,5 @@
+{"slug":"tamron-17-50mm-f4-di-iii-vxd","market":"us","currency":"USD","points":[
+{"day":"2024-08-03","new":69900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640380725.7/warc/CC-MAIN-20240803214957-20240804004957-00839.warc.gz#offset=622318687&length=151294"},
+{"day":"2024-11-12","new":54900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.50/warc/CC-MAIN-20241112014152-20241112044152-00782.warc.gz#offset=702161214&length=135000"},
+{"day":"2024-11-14","new":54900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477395538.95/warc/CC-MAIN-20241114194152-20241114224152-00300.warc.gz#offset=690548772&length=134927"}
+]}

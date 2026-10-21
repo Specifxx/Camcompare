@@ -1,0 +1,5 @@
+{"slug":"fujifilm-x-s10","market":"us","currency":"USD","points":[
+{"day":"2024-10-10","new":99900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253682.6/warc/CC-MAIN-20241010124812-20241010154812-00724.warc.gz#offset=685127985&length=150984"},
+{"day":"2024-11-14","new":99900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00348.warc.gz#offset=700723175&length=144955"},
+{"day":"2025-07-18","new":99900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934598.56/warc/CC-MAIN-20250718000345-20250718030345-00348.warc.gz#offset=659602035&length=183770"}
+]}

@@ -1,0 +1,7 @@
+{"slug":"canon-eos-r10","market":"au","currency":"AUD","points":[
+{"day":"2025-07-09","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00528.warc.gz#offset=929044874&length=87338"},
+{"day":"2025-09-09","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00583.warc.gz#offset=889298859&length=86654"},
+{"day":"2025-10-16","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00528.warc.gz#offset=978404156&length=88264"},
+{"day":"2025-12-14","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871308241.81/warc/CC-MAIN-20251214184959-20251214214959-00583.warc.gz#offset=797003972&length=86762"},
+{"day":"2026-01-21","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469644.9/warc/CC-MAIN-20260121053530-20260121083530-00528.warc.gz#offset=832955940&length=87322"}
+]}

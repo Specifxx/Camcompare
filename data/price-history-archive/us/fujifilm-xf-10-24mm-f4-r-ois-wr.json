@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-10-24mm-f4-r-ois-wr","market":"us","currency":"USD","points":[
+{"day":"2024-07-23","new":99900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518029.87/warc/CC-MAIN-20240723102757-20240723132757-00569.warc.gz#offset=670711876&length=138823"},
+{"day":"2024-12-04","new":99900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066156662.62/warc/CC-MAIN-20241204080324-20241204110324-00259.warc.gz#offset=710544918&length=139638"},
+{"day":"2025-03-19","new":99900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.67/warc/CC-MAIN-20250319175833-20250319205833-00359.warc.gz#offset=790245642&length=146160"}
+]}

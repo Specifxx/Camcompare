@@ -1,0 +1,7 @@
+{"slug":"ricoh-gr-iiix","market":"au","currency":"AUD","points":[
+{"day":"2025-07-12","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00530.warc.gz#offset=892128948&length=80459"},
+{"day":"2025-08-03","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279594.9/warc/CC-MAIN-20250803072640-20250803102640-00971.warc.gz#offset=905255194&length=80862"},
+{"day":"2025-11-18","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439649042.63/warc/CC-MAIN-20251118000149-20251118030149-00342.warc.gz#offset=818600221&length=81484"},
+{"day":"2025-11-19","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657679.99/warc/CC-MAIN-20251119093413-20251119123413-00530.warc.gz#offset=852374809&length=80999"},
+{"day":"2025-12-07","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307221.56/warc/CC-MAIN-20251207023705-20251207053705-00971.warc.gz#offset=782167210&length=81268"}
+]}

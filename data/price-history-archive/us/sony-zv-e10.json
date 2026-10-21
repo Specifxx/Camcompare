@@ -1,0 +1,6 @@
+{"slug":"sony-zv-e10","market":"us","currency":"USD","points":[
+{"day":"2024-10-10","new":59800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253682.6/warc/CC-MAIN-20241010124812-20241010154812-00388.warc.gz#offset=681861938&length=127013"},
+{"day":"2024-10-13","new":59800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255165.86/warc/CC-MAIN-20241013061417-20241013091417-00452.warc.gz#offset=674020598&length=127192"},
+{"day":"2025-05-15","new":69800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412452.68/warc/CC-MAIN-20250514225643-20250515015643-00388.warc.gz#offset=688746732&length=153210"},
+{"day":"2025-07-11","new":64800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933802.11/warc/CC-MAIN-20250711135917-20250711165917-00406.warc.gz#offset=663012540&length=154665"}
+]}

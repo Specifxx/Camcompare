@@ -1,0 +1,8 @@
+{"slug":"sony-a7s-iii","market":"us","currency":"USD","points":[
+{"day":"2024-10-10","new":319800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253660.66/warc/CC-MAIN-20241010032709-20241010062709-00472.warc.gz#offset=658552902&length=125490"},
+{"day":"2024-10-11","new":319800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253833.75/warc/CC-MAIN-20241011195543-20241011225543-00461.warc.gz#offset=651475897&length=125612"},
+{"day":"2025-01-13","new":349800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362175.46/warc/CC-MAIN-20250113221944-20250114011944-00398.warc.gz#offset=802284431&length=126168"},
+{"day":"2025-03-20","new":349800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433107.70/warc/CC-MAIN-20250320003322-20250320033322-00261.warc.gz#offset=754951353&length=238414"},
+{"day":"2025-04-21","new":419800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135788.26/warc/CC-MAIN-20250421194220-20250421224220-00362.warc.gz#offset=762593104&length=160936"},
+{"day":"2025-05-19","new":349800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00168.warc.gz#offset=721129645&length=154250"}
+]}

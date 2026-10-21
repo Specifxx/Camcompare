@@ -1,0 +1,5 @@
+{"slug":"nikon-z6-iii","market":"au","currency":"AUD","points":[
+{"day":"2025-09-12","new":389995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00079.warc.gz#offset=856035746&length=85045"},
+{"day":"2025-09-16","new":389995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00528.warc.gz#offset=891975148&length=85448"},
+{"day":"2025-12-05","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00528.warc.gz#offset=813006060&length=84921"}
+]}

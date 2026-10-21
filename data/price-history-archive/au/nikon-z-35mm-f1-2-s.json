@@ -1,0 +1,5 @@
+{"slug":"nikon-z-35mm-f1-2-s","market":"au","currency":"AUD","points":[
+{"day":"2025-07-12","new":479995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00386.warc.gz#offset=951333190&length=78165"},
+{"day":"2025-11-19","new":407996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657349.95/warc/CC-MAIN-20251119032929-20251119062929-00386.warc.gz#offset=842800271&length=79040"},
+{"day":"2026-02-11","new":479995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506172.6/warc/CC-MAIN-20260211173508-20260211203508-00386.warc.gz#offset=820469072&length=78985"}
+]}

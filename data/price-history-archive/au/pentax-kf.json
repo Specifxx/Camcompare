@@ -1,0 +1,5 @@
+{"slug":"pentax-kf","market":"au","currency":"AUD","points":[
+{"day":"2025-09-06","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532791.98/warc/CC-MAIN-20250906153317-20250906183317-00081.warc.gz#offset=913819204&length=81109"},
+{"day":"2025-09-10","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533073.7/warc/CC-MAIN-20250910004335-20250910034335-00095.warc.gz#offset=918100757&length=81079"},
+{"day":"2025-12-17","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658363.90/warc/CC-MAIN-20251217112246-20251217142246-00290.warc.gz#offset=777031314&length=80989"}
+]}

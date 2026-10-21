@@ -1,0 +1,8 @@
+{"slug":"fujifilm-x-m5","market":"au","currency":"AUD","points":[
+{"day":"2025-08-09","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280076.69/warc/CC-MAIN-20250809045158-20250809075158-00209.warc.gz#offset=895515921&length=83367"},
+{"day":"2025-09-09","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533029.41/warc/CC-MAIN-20250909025155-20250909055155-00108.warc.gz#offset=900379854&length=80483"},
+{"day":"2025-09-10","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00176.warc.gz#offset=924663558&length=80388"},
+{"day":"2025-11-19","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657679.99/warc/CC-MAIN-20251119093413-20251119123413-00209.warc.gz#offset=844972742&length=83773"},
+{"day":"2025-12-07","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307221.56/warc/CC-MAIN-20251207023705-20251207053705-00108.warc.gz#offset=808154012&length=80015"},
+{"day":"2026-02-11","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506172.6/warc/CC-MAIN-20260211173508-20260211203508-00176.warc.gz#offset=795589484&length=80323"}
+]}

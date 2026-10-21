@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-16-55mm-f2-8-r-lm-wr","market":"us","currency":"USD","points":[
+{"day":"2024-10-07","new":119900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253447.49/warc/CC-MAIN-20241007004935-20241007034935-00460.warc.gz#offset=663168443&length=131149"},
+{"day":"2025-01-19","new":119900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362532.35/warc/CC-MAIN-20250119214819-20250120004819-00893.warc.gz#offset=809586134&length=130245"},
+{"day":"2025-03-20","new":119900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433136.71/warc/CC-MAIN-20250320165433-20250320195433-00460.warc.gz#offset=697443077&length=214234"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"nikon-zfc","market":"au","currency":"AUD","points":[
+{"day":"2025-08-15","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00751.warc.gz#offset=896004769&length=82926"},
+{"day":"2025-11-19","new":127496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657349.95/warc/CC-MAIN-20251119032929-20251119062929-00751.warc.gz#offset=841553108&length=84052"}
+]}

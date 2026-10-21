@@ -1,0 +1,5 @@
+{"slug":"sony-fe-20-70mm-f4-g","market":"us","currency":"USD","points":[
+{"day":"2024-09-11","new":99800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651387.63/warc/CC-MAIN-20240911120037-20240911150037-00771.warc.gz#offset=720895072&length=139313"},
+{"day":"2024-11-12","new":99800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.50/warc/CC-MAIN-20241112014152-20241112044152-00271.warc.gz#offset=696031657&length=140313"},
+{"day":"2025-05-13","new":109800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412381.25/warc/CC-MAIN-20250513151324-20250513181324-00171.warc.gz#offset=664484294&length=153346"}
+]}

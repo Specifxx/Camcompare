@@ -1,0 +1,4 @@
+{"slug":"sigma-14-24mm-f2-8-dg-hsm-art","market":"au","currency":"AUD","points":[
+{"day":"2026-01-21","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469644.9/warc/CC-MAIN-20260121053530-20260121083530-00836.warc.gz#offset=836145834&length=79879"},
+{"day":"2026-02-07","new":199995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505791.29/warc/CC-MAIN-20260207093355-20260207123355-00660.warc.gz#offset=779637874&length=79702"}
+]}

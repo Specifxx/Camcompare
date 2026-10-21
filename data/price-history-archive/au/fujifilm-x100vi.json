@@ -1,0 +1,8 @@
+{"slug":"fujifilm-x100vi","market":"au","currency":"AUD","points":[
+{"day":"2025-09-07","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532882.49/warc/CC-MAIN-20250907133053-20250907163053-00442.warc.gz#offset=898017283&length=82659"},
+{"day":"2025-09-14","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533671.75/warc/CC-MAIN-20250914012700-20250914042700-00210.warc.gz#offset=936114852&length=82686"},
+{"day":"2025-10-15","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00392.warc.gz#offset=967575425&length=85462"},
+{"day":"2026-01-13","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468912.16/warc/CC-MAIN-20260113044442-20260113074442-00442.warc.gz#offset=886939023&length=82594"},
+{"day":"2026-01-19","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469448.29/warc/CC-MAIN-20260119102210-20260119132210-00392.warc.gz#offset=876662864&length=85296"},
+{"day":"2026-01-20","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469561.38/warc/CC-MAIN-20260120171558-20260120201558-00210.warc.gz#offset=870930673&length=82533"}
+]}

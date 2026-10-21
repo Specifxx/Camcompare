@@ -16,8 +16,26 @@ export function readReleases(file = RELEASES_FILE): ReleasesFile {
   return data;
 }
 
-/** Announcements only, newest first: what the page shows. */
-export const announcements = (file?: string): Release[] => readReleases(file).releases.filter((r) => r.isAnnouncement);
+const sameWeek = (a: Release, b: Release) => Math.abs(Date.parse(a.publishedAt) - Date.parse(b.publishedAt)) < 7 * 86_400_000;
+const titleKey = (r: Release) => `${r.brand}:${r.title.toLowerCase().replace(/[^a-z0-9]+/g, "")}`;
+
+/**
+ * Announcements only, newest first: what the page shows. A maker that posts
+ * the same video twice (two channels, a re-upload) shows once: the same
+ * title from the same maker within a week is one card, the newest.
+ */
+export function announcements(file?: string): Release[] {
+  const seen = new Map<string, Release[]>();
+  const out: Release[] = [];
+  for (const r of readReleases(file).releases) {
+    if (!r.isAnnouncement) continue;
+    const k = titleKey(r);
+    if ((seen.get(k) ?? []).some((o) => sameWeek(o, r))) continue;
+    (seen.get(k) ?? seen.set(k, []).get(k)!).push(r);
+    out.push(r);
+  }
+  return out;
+}
 export const releaseById = (id: string, file?: string): Release | null => readReleases(file).releases.find((r) => r.id === id) ?? null;
 
 /** The compact JSON the script writes: one release per line, so a day's diff is a few lines. */

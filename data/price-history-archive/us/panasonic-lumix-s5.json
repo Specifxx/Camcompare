@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-s5","market":"us","currency":"USD","points":[
+{"day":"2024-04-12","new":119799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816024.45/warc/CC-MAIN-20240412132154-20240412162154-00165.warc.gz#offset=688775854&length=246692"},
+{"day":"2024-05-23","new":119799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058625.16/warc/CC-MAIN-20240523111540-20240523141540-00456.warc.gz#offset=677849741&length=135679"},
+{"day":"2025-07-10","new":179799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933759.4/warc/CC-MAIN-20250710124949-20250710154949-00556.warc.gz#offset=669707628&length=273269"}
+]}

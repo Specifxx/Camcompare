@@ -19,6 +19,8 @@ price" row on every product page where we have no price from it.
 | Best Buy Products API | free key from developer.bestbuy.com (`BESTBUY_API_KEY`) | daily import |
 | Affiliate-network product feeds | approval in the retailer's programme, then the feed URL as GitHub secret `FEED_URL_<KEY>` | daily import |
 | Shopify products.json | nothing: public, read only where robots.txt allows (RiftCompare's method) | daily import |
+| Shopify sitemaps + `/products/<handle>.js` | nothing: for Shopify stores whose robots.txt keeps out the paged catalogue but allows sitemaps and product pages (Ted's), or whose catalogue is mostly not cameras (JB Hi-Fi). Only handles the matcher reads as a catalog product (or an accessory) are fetched, one at a time, within a rotating budget | daily import |
+| schema.org structured data | nothing: JSON-LD on a shop's own product pages, through its sitemaps, where robots.txt allows | daily import |
 
 ## How links earn
 
@@ -144,13 +146,17 @@ priced in another currency is refused.
 | Retailer | Ships from | Prices from | Affiliate programme | Link variable |
 |---|---|---|---|---|
 | Amazon.com.au ★ | AU | Creators API (after the account's first sales) | Amazon Associates | `AMAZON_TAG_AU` |
-| Ted's Cameras | AU | Shopify products.json (no setup) | none known | — |
+| Ted's Cameras | AU | Shopify sitemaps and product .js (no setup) | none known | — |
 | Digidirect | AU | Shopify products.json (no setup) | none known | — |
 | Georges Cameras | AU | Shopify products.json (no setup) | none known | — |
 | Camera Electronic | AU | Shopify products.json (no setup) | none known | — |
-| Camera House ★ | AU | Product feed `FEED_URL_CAMERA_HOUSE` | Commission Factory | `AFFILIATE_DEEPLINK_CAMERA_HOUSE` |
+| Camera House ★ | AU | Product feed `FEED_URL_CAMERA_HOUSE`; until then its pages' structured data | Commission Factory | `AFFILIATE_DEEPLINK_CAMERA_HOUSE` |
 | CameraPro ★ | AU | Product feed `FEED_URL_CAMERAPRO` | Commission Factory | `AFFILIATE_DEEPLINK_CAMERAPRO` |
-| JB Hi-Fi ★ | AU | Product feed `FEED_URL_JBHIFI` | Partnerize | `AFFILIATE_DEEPLINK_JBHIFI` |
+| JB Hi-Fi ★ | AU | Product feed `FEED_URL_JBHIFI`; until then its Shopify sitemaps and product .js | Partnerize | `AFFILIATE_DEEPLINK_JBHIFI` |
+| The Good Guys | AU | Product feed `FEED_URL_THE_GOOD_GUYS` only (own pages refused: robots.txt disallows /products/ (Shopify Hydrogen, no products.json)) | Partnerize | `AFFILIATE_DEEPLINK_THE_GOOD_GUYS` |
+| Harvey Norman | AU | Product feed `FEED_URL_HARVEY_NORMAN` only (own pages refused: Imperva bot protection on every page, and product JSON-LD carries price 0 (prices load in the browser)) | none known | — |
+| BIG W | AU | Product feed `FEED_URL_BIGW` only (own pages refused: drops plain requests (no answer, even to robots.txt)) | Impact | `AFFILIATE_DEEPLINK_BIGW` |
+| Bunnings | AU | Product feed `FEED_URL_BUNNINGS` only (own pages refused: Cloudflare challenge on every page, robots.txt included) | none known | — |
 | Cash Converters | AU | Structured data on its product pages (no setup) | none known | — |
 | eBay.com.au | AU | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | `EBAY_AFFILIATE_CAMPAIGN` |
 
@@ -193,7 +199,8 @@ runners may be treated differently.
   (Cloudflare challenge), Foto Erhardt, Cyberport, Sony AU (403), Roberts
   Camera and Used Photo Pro (Cloudflare challenge on products.json).
 - **robots.txt disallows the Shopify catalogue:** Hunt's Photo, Leica Camera
-  USA, Sigma America, Ted's Cameras, CameraPro, Ricoh Imaging Europe, Coolblue.
+  USA, Sigma America, CameraPro, Ricoh Imaging Europe, Coolblue. (Ted's
+  Cameras was here; since 2026-10-22 it is read through its sitemaps, below.)
 - **Answer, but no usable product data yet:** Adorama and Unique Photo (no
   JSON-LD offer on product pages), Samy's (microdata price without a stated
   currency), Moment (sells only its own accessories now), JB Hi-Fi (Shopify,
@@ -217,3 +224,63 @@ runners may be treated differently.
 - **Next candidates:** MS Color and other WooCommerce shops (public Store
   API, SGD), Kamera Express, Calumet DE, Conns Cameras (EUR), Jessops, Mifsuds,
   Wilkinson (GBP) answer plain requests and need a per-site check.
+
+## Australian stores checked, 2026-10-22
+
+Friends' feedback (camera buyers and resellers in Australia) asked for every
+big AU store. Each was checked with a plain request with CamCompare's
+User-Agent from a cloud machine: platform, robots.txt, bot protection.
+
+| Store | Platform | Result |
+|---|---|---|
+| Georges Cameras | Shopify | Already priced through products.json (no change). |
+| digiDirect | Shopify | Already priced through products.json (no change). |
+| Camera Electronic | Shopify | Already priced through products.json (no change). |
+| Ted's Cameras | Shopify | **Added.** robots.txt has `Disallow: /*?limit=`, so `products.json?limit=250` stays out, but it allows `/sitemap.xml` and `/products/*`. So it is read through its 14 product sitemaps and `/products/<handle>.js` (Shopify's product JSON: price, compare-at price, `available`, tags, description), 300 products a run at one a second. Its second-hand stock (`…-secondhand` handles, vendor `USED`, "\| Secondhand" titles) comes in as used. |
+| Camera House | Magento | **Added** as the fallback until its Commission Factory feed: robots.txt allows product pages, and each carries a JSON-LD Product/Offer (price, AUD, availability). About 27,000 sitemap URLs, many of them old products that redirect to a category, so only slugs the matcher reads are fetched, 250 a run. Its JSON-LD `gtin8` is the store's 5-digit SKU, so GTINs are now accepted only at real GTIN lengths (8, 12, 13, 14 digits). |
+| JB Hi-Fi | Shopify (behind Cloudflare, no challenge) | **Added** as the fallback until its Partnerize feed. Its camera collections' products.json come back empty and the catalogue is about 108,000 products (music, film, TVs), so it is read through its 108 product sitemaps (a rotating 36 a run) and `/products/<handle>.js`, 250 a run. Its tag `AwaitingStock` is read as back-order. |
+| The Good Guys | Shopify Hydrogen (headless) | **Refused:** robots.txt disallows `/products/`, and Hydrogen has no products.json. Feed needed: its affiliate page sends publishers to **Partnerize** (directories also list Commission Factory and Impact). Listed as `the-good-guys`, `FEED_URL_THE_GOOD_GUYS` / `AFFILIATE_DEEPLINK_THE_GOOD_GUYS`. |
+| Harvey Norman | Magento behind Imperva | **Refused:** every page carries Imperva's bot-protection script (`_Incapsula_Resource`, which `blockedReason` stops at), and product JSON-LD has `price: 0` (prices load in the browser). Feed needed; no public affiliate programme found (its "Customer Direct Partner Program" is for brands selling through it). Listed as `harvey-norman` with no network. |
+| BIG W | (Akamai) | **Refused:** drops plain requests (HTTP/2 reset; no answer even for robots.txt). Feed needed: directories list a BIG W programme on **Impact** (FlexOffers' listing is closed). Listed as `bigw`. |
+| Bunnings | (Cloudflare) | **Refused:** Cloudflare challenge on every page, robots.txt included. No public affiliate programme found; it sells few cameras anyway. Listed as `bunnings` with no network. |
+| Camera House, CameraPro | | Already listed as Commission Factory feed retailers. CameraPro's robots.txt still disallows its catalogue. |
+
+The four refused chains are feed retailers with a `disabled` reason: the
+import reports "FEED_URL_… not set; <reason>" until the feed exists. Their
+affiliate networks come from public directories and the stores' own affiliate
+pages, not from an approved account, so check them when applying.
+
+Cash Converters pages name the branch that holds the item
+(`store-details__title store-name`). It is read into each offer's `detail`
+("Osborne Park store · Good"), so two identical Cash Converters rows can be
+told apart.
+
+## Japan and Hong Kong (researched 2026-10-22)
+
+Research only: no market added. Checked with the same plain requests.
+
+| Store | Market | Platform | Prices in | What we can read |
+|---|---|---|---|---|
+| Map Camera (mapcamera.com) | JP | Custom, Akamai | JPY | Answers plain requests. robots.txt returns the home page (no rules), and product pages are a client-rendered shell with no JSON-LD or OpenGraph price. **No usable source.** |
+| Yodobashi (yodobashi.com) | JP | Akamai | JPY | Drops plain requests (HTTP/2 reset). **Bot wall.** |
+| Bic Camera (biccamera.com) | JP | Akamai | JPY | Drops plain requests (HTTP/2 reset). **Bot wall.** |
+| Kitamura (shop.kitamura.jp) | JP | Custom SPA | JPY | robots.txt blocks only Meta's and ByteDance's crawlers, but the store is a JavaScript app: no products.json, no product data in the HTML. **No usable source.** |
+| Fujiya Camera (fujiya-camera.co.jp) | JP | futureshop | JPY | robots.txt allows us; its sitemaps list only categories and topics, no product pages. Would need category-page parsing. **Not worth it yet.** |
+| Broadway (broadway.com.hk → broadwaylifestyle.com) | HK | Shopify | HKD (`/meta.json`) | products.json answers and robots.txt allows it. A general electronics chain: the first 250 products have no product types and almost no cameras. **Usable** with a collection filter or the sitemap mode. |
+| Fortress (fortress.com.hk) | HK | Akamai | HKD | 403 "Access Denied" to every request. **Bot wall.** |
+| Fotopro, Wing Shing, Tin Cheung, Hing Lee and other Mong Kok shops | HK | | HKD | No online catalogue with prices found. |
+
+**Recommendation:** don't add Japan or Hong Kong yet. Japan's volume sits
+with Yodobashi, Bic Camera and Map Camera: two are behind bot walls and the
+third has no machine-readable prices. The way in would be affiliate product
+feeds, as in the other markets. Japan's main networks are ValueCommerce and
+A8.net; which of these chains run a programme there, and whether it includes
+a feed, is not confirmed (not checked from an account). Japan becomes worth a
+market once one such feed is approved, priced in JPY, with Amazon.co.jp through the
+Creators API. Hong Kong has one readable Shopify store (Broadway) and the
+camera specialists sell in person. A Hong Kong market would be one store
+deep, so it can wait. Found along the way: Broadway's robots.txt ends its
+lines with bare carriage returns, which the robots parser read as no rules at
+all. It now splits on CR, LF and CRLF (RFC 9309), so a rule written that way
+is obeyed.
+

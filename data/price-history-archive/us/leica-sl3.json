@@ -1,0 +1,4 @@
+{"slug":"leica-sl3","market":"us","currency":"USD","points":[
+{"day":"2024-07-13","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514517.94/warc/CC-MAIN-20240713212202-20240714002202-00251.warc.gz#offset=678751400&length=144111"},
+{"day":"2025-03-18","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433039.83/warc/CC-MAIN-20250317231956-20250318021956-00651.warc.gz#offset=773491555&length=184058"}
+]}

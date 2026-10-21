@@ -1,0 +1,6 @@
+{"slug":"panasonic-lumix-gh5-ii","market":"us","currency":"USD","points":[
+{"day":"2024-04-12","new":119799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816024.45/warc/CC-MAIN-20240412132154-20240412162154-00743.warc.gz#offset=664701602&length=252539"},
+{"day":"2024-05-25","new":119799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058822.89/warc/CC-MAIN-20240525100447-20240525130447-00705.warc.gz#offset=678081800&length=139915"},
+{"day":"2025-03-17","new":119799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433031.79/warc/CC-MAIN-20250317164600-20250317194600-00343.warc.gz#offset=768738483&length=149882"},
+{"day":"2025-05-14","new":139799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412413.62/warc/CC-MAIN-20250514035409-20250514065409-00505.warc.gz#offset=673310219&length=151734"}
+]}

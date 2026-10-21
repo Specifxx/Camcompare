@@ -1,0 +1,5 @@
+{"slug":"sigma-35mm-f2-dg-dn-contemporary","market":"us","currency":"USD","points":[
+{"day":"2024-04-18","new":63900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817206.54/warc/CC-MAIN-20240418124808-20240418154808-00042.warc.gz#offset=699712623&length=115718"},
+{"day":"2024-05-27","new":63900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059039.52/warc/CC-MAIN-20240527083011-20240527113011-00015.warc.gz#offset=649917964&length=130982"},
+{"day":"2025-01-14","new":63900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362175.46/warc/CC-MAIN-20250113221944-20250114011944-00463.warc.gz#offset=839356569&length=129536"}
+]}

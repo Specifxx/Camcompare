@@ -31,11 +31,11 @@ function prices(r: Retailer): string {
     case "bestbuy-api":
       return "Products API (`BESTBUY_API_KEY`)";
     case "shopify":
-      return "Shopify products.json (no setup)";
+      return r.shopify?.sitemap ? "Shopify sitemaps and product .js (no setup)" : "Shopify products.json (no setup)";
     case "structured":
       return "Structured data on its product pages (no setup)";
     case "feed":
-      return `Product feed \`FEED_URL_${envKey(r)}\`${r.structured ? "; until then its pages' structured data" : ""}`;
+      return `Product feed \`FEED_URL_${envKey(r)}\`${r.structured ? "; until then its pages' structured data" : r.shopify ? "; until then its Shopify sitemaps and product .js" : r.disabled ? ` only (own pages refused: ${r.disabled})` : ""}`;
     default:
       return "Link only";
   }

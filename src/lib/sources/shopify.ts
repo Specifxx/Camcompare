@@ -47,7 +47,9 @@ export function robotsAllows(robots: string, path: string): boolean {
   let applies = false;
   let group = false; // consecutive User-agent lines share one group
   let best = { length: -1, allow: true };
-  for (const raw of robots.split(/\r?\n/)) {
+  // RFC 9309 lines end in CR, LF or CRLF: Broadway HK's ends in bare CRs,
+  // which a split on \n read as one line, i.e. no rules at all.
+  for (const raw of robots.split(/\r\n|\r|\n/)) {
     const line = raw.replace(/#.*/, "").trim();
     const m = line.match(/^(user-agent|disallow|allow)\s*:\s*(.*)$/i);
     if (!m) continue;

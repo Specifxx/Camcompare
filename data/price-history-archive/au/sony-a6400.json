@@ -1,0 +1,4 @@
+{"slug":"sony-a6400","market":"au","currency":"AUD","points":[
+{"day":"2025-07-16","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00951.warc.gz#offset=894590608&length=81599"},
+{"day":"2026-01-20","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469561.38/warc/CC-MAIN-20260120171558-20260120201558-00951.warc.gz#offset=849293704&length=81970"}
+]}

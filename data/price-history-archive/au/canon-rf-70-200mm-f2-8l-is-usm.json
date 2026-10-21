@@ -1,0 +1,5 @@
+{"slug":"canon-rf-70-200mm-f2-8l-is-usm","market":"au","currency":"AUD","points":[
+{"day":"2025-08-15","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00332.warc.gz#offset=926056963&length=80124"},
+{"day":"2025-09-07","new":389995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00296.warc.gz#offset=888184919&length=80853"},
+{"day":"2025-12-14","new":419995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871308241.81/warc/CC-MAIN-20251214184959-20251214214959-00296.warc.gz#offset=792057398&length=80136"}
+]}

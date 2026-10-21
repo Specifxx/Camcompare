@@ -15,7 +15,12 @@ export const MORE = [
   { path: "/requests", label: "Requests", market: false },
 ] as const;
 
-export default function MoreMenu({ market, pathname, className = "" }: { market: MarketCode; pathname: string; className?: string }) {
+/**
+ * `icon`: a compact "⋯" button for the phone header's top row (the section
+ * row below it is full at 390px); otherwise a "More" text link for the
+ * desktop nav.
+ */
+export default function MoreMenu({ market, pathname, className = "", icon = false }: { market: MarketCode; pathname: string; className?: string; icon?: boolean }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => setOpen(false), [pathname]);
@@ -35,12 +40,22 @@ export default function MoreMenu({ market, pathname, className = "" }: { market:
   const active = links.some((l) => pathname === l.href || pathname.startsWith(`${l.href}/`));
   return (
     <div ref={ref} className={`relative ${className}`}>
-      <button type="button" aria-expanded={open} aria-haspopup="true" onClick={() => setOpen(!open)} className={`cc-nav-link inline-flex items-center gap-0.5 ${active || open ? "text-fg" : "text-muted hover:text-fg"}`}>
-        More
-        <svg aria-hidden width="10" height="10" viewBox="0 0 10 10" className={`transition-transform ${open ? "rotate-180" : ""}`}>
-          <path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
+      {icon ? (
+        <button type="button" aria-expanded={open} aria-haspopup="true" aria-label="More sections" onClick={() => setOpen(!open)} className={`flex h-9 w-8 items-center justify-center rounded-md border border-line ${active || open ? "text-fg" : "text-muted"}`}>
+          <svg aria-hidden width="16" height="16" viewBox="0 0 16 16">
+            <circle cx="3" cy="8" r="1.5" fill="currentColor" />
+            <circle cx="8" cy="8" r="1.5" fill="currentColor" />
+            <circle cx="13" cy="8" r="1.5" fill="currentColor" />
+          </svg>
+        </button>
+      ) : (
+        <button type="button" aria-expanded={open} aria-haspopup="true" onClick={() => setOpen(!open)} className={`cc-nav-link inline-flex items-center gap-0.5 ${active || open ? "text-fg" : "text-muted hover:text-fg"}`}>
+          More
+          <svg aria-hidden width="10" height="10" viewBox="0 0 10 10" className={`transition-transform ${open ? "rotate-180" : ""}`}>
+            <path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      )}
       {open && (
         <ul className="absolute right-0 top-full z-40 mt-2 w-48 rounded-md border border-line bg-surface py-1 text-sm shadow-lift">
           {links.map((l) => {

@@ -1,0 +1,8 @@
+{"slug":"fujifilm-x100v","market":"us","currency":"USD","points":[
+{"day":"2024-05-27","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059039.52/warc/CC-MAIN-20240527083011-20240527113011-00565.warc.gz#offset=670849021&length=126822"},
+{"day":"2024-11-09","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028125.59/warc/CC-MAIN-20241109151915-20241109181915-00219.warc.gz#offset=703678305&length=126074"},
+{"day":"2024-11-14","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00211.warc.gz#offset=706842879&length=126607"},
+{"day":"2025-01-16","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362307.18/warc/CC-MAIN-20250116135418-20250116165418-00565.warc.gz#offset=800562118&length=127122"},
+{"day":"2025-06-15","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481343.22/warc/CC-MAIN-20250615074242-20250615104242-00119.warc.gz#offset=652307750&length=241575"},
+{"day":"2025-08-04","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279789.28/warc/CC-MAIN-20250804114251-20250804144251-00711.warc.gz#offset=727986764&length=241497"}
+]}

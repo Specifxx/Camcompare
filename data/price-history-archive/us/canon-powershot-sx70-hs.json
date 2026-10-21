@@ -1,0 +1,5 @@
+{"slug":"canon-powershot-sx70-hs","market":"us","currency":"USD","points":[
+{"day":"2024-12-06","new":69900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066368854.91/warc/CC-MAIN-20241206032528-20241206062528-00178.warc.gz#offset=696256872&length=154559"},
+{"day":"2025-01-19","new":69900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362532.35/warc/CC-MAIN-20250119214819-20250120004819-00118.warc.gz#offset=793560143&length=155642"},
+{"day":"2025-04-26","new":69900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136069.16/warc/CC-MAIN-20250426194420-20250426224420-00218.warc.gz#offset=721481128&length=170031"}
+]}

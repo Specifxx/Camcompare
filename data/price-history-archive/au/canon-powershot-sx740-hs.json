@@ -1,0 +1,4 @@
+{"slug":"canon-powershot-sx740-hs","market":"au","currency":"AUD","points":[
+{"day":"2025-10-07","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358264.45/warc/CC-MAIN-20251007013002-20251007043002-00149.warc.gz#offset=1023399792&length=82340"},
+{"day":"2026-02-15","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506531.51/warc/CC-MAIN-20260215095839-20260215125839-00149.warc.gz#offset=763040678&length=80900"}
+]}

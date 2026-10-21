@@ -1,0 +1,4 @@
+{"slug":"sony-fx30","market":"au","currency":"AUD","points":[
+{"day":"2025-09-08","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532976.73/warc/CC-MAIN-20250908081304-20250908111304-00232.warc.gz#offset=909976544&length=84428"},
+{"day":"2026-01-16","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00232.warc.gz#offset=882964624&length=84104"}
+]}

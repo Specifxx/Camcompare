@@ -1,0 +1,6 @@
+{"slug":"fujifilm-x-h2","market":"au","currency":"AUD","points":[
+{"day":"2025-09-08","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00051.warc.gz#offset=935735573&length=87783"},
+{"day":"2025-10-16","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00644.warc.gz#offset=961241648&length=86011"},
+{"day":"2026-01-13","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00051.warc.gz#offset=871594056&length=87699"},
+{"day":"2026-01-22","new":254996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469991.35/warc/CC-MAIN-20260122030830-20260122060830-00644.warc.gz#offset=879426724&length=86252"}
+]}

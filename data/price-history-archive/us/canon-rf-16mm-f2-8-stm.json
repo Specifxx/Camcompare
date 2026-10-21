@@ -1,0 +1,5 @@
+{"slug":"canon-rf-16mm-f2-8-stm","market":"us","currency":"USD","points":[
+{"day":"2024-04-19","new":29999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817289.27/warc/CC-MAIN-20240419043820-20240419073820-00411.warc.gz#offset=688981024&length=239447"},
+{"day":"2025-05-17","new":27999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412572.51/warc/CC-MAIN-20250517172534-20250517202534-00019.warc.gz#offset=686970796&length=148407"},
+{"day":"2025-08-10","new":29900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00776.warc.gz#offset=686798931&length=148802"}
+]}

@@ -1,0 +1,9 @@
+{"slug":"canon-eos-5d-mark-iv","market":"us","currency":"USD","points":[
+{"day":"2024-04-18","new":229900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817239.30/warc/CC-MAIN-20240418191007-20240418221007-00100.warc.gz#offset=706211550&length=247173"},
+{"day":"2024-05-27","new":229900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059045.34/warc/CC-MAIN-20240527205559-20240527235559-00296.warc.gz#offset=659328656&length=147706"},
+{"day":"2024-10-07","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253447.49/warc/CC-MAIN-20241007004935-20241007034935-00296.warc.gz#offset=664204738&length=140465"},
+{"day":"2024-12-06","new":179900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066400558.71/warc/CC-MAIN-20241206093646-20241206123646-00484.warc.gz#offset=706403107&length=143501"},
+{"day":"2025-01-16","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362307.18/warc/CC-MAIN-20250116135418-20250116165418-00045.warc.gz#offset=802014102&length=143256"},
+{"day":"2025-03-17","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433005.64/warc/CC-MAIN-20250317003559-20250317033559-00696.warc.gz#offset=773278661&length=148617"},
+{"day":"2025-05-17","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412560.18/warc/CC-MAIN-20250517075946-20250517105946-00794.warc.gz#offset=667570955&length=155668"}
+]}

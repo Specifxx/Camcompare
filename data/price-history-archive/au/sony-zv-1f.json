@@ -1,0 +1,4 @@
+{"slug":"sony-zv-1f","market":"au","currency":"AUD","points":[
+{"day":"2025-09-13","new":74995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533670.32/warc/CC-MAIN-20250913222048-20250914012048-00488.warc.gz#offset=912902253&length=85440"},
+{"day":"2026-02-14","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506469.31/warc/CC-MAIN-20260214123803-20260214153803-00488.warc.gz#offset=788150023&length=84907"}
+]}

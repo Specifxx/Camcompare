@@ -1,0 +1,5 @@
+{"slug":"nikon-z-mc-105mm-f2-8-vr-s","market":"us","currency":"USD","points":[
+{"day":"2024-09-11","new":84695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651387.63/warc/CC-MAIN-20240911120037-20240911150037-00037.warc.gz#offset=732453682&length=137135"},
+{"day":"2025-02-16","new":85990,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831952410.39/warc/CC-MAIN-20250216041522-20250216071522-00463.warc.gz#offset=722494154&length=149911"},
+{"day":"2025-06-15","new":84695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481366.62/warc/CC-MAIN-20250615170437-20250615200437-00337.warc.gz#offset=628520333&length=149019"}
+]}

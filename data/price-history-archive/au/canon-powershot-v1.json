@@ -1,0 +1,4 @@
+{"slug":"canon-powershot-v1","market":"au","currency":"AUD","points":[
+{"day":"2025-09-15","new":129995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533971.68/warc/CC-MAIN-20250915052735-20250915082735-00942.warc.gz#offset=872237188&length=85129"},
+{"day":"2026-01-15","new":139995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00942.warc.gz#offset=872636013&length=84833"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"fujifilm-x-t30-ii","market":"us","currency":"USD","points":[
+{"day":"2025-03-20","new":99995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433136.71/warc/CC-MAIN-20250320165433-20250320195433-00160.warc.gz#offset=748071481&length=148176"},
+{"day":"2025-05-19","new":129995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00942.warc.gz#offset=697887256&length=149222"},
+{"day":"2025-05-25","new":99995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990726410.98/warc/CC-MAIN-20250525003427-20250525033427-00327.warc.gz#offset=659882546&length=149964"}
+]}

@@ -18,12 +18,12 @@ export function sourcesFor(market: MarketCode): PriceSource[] {
       case "bestbuy-api":
         return [bestBuySource(r.key)];
       case "feed": {
-        // A feed retailer with a structured-data fallback reads its pages
-        // until its FEED_URL_* secret exists; then the feed alone (never both).
+        // A feed retailer with a structured-data or Shopify fallback reads its
+        // pages until its FEED_URL_* secret exists; then the feed alone (never both).
         const feed = feedSource(r.key);
-        if (!r.structured) return [feed];
+        if (!r.structured && !r.shopify) return [feed];
         const env = `FEED_URL_${r.key.toUpperCase().replace(/-/g, "_")}`;
-        const pages = structuredSource(r.key);
+        const pages = r.structured ? structuredSource(r.key) : shopifySource(r.key);
         return [{ retailer: r.key, run: (ctx) => (process.env[env] ? feed.run(ctx) : pages.run(ctx)) }];
       }
       case "structured":

@@ -1,0 +1,5 @@
+{"slug":"tokina-atx-i-100mm-f2-8-ff-macro","market":"au","currency":"AUD","points":[
+{"day":"2025-09-12","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00211.warc.gz#offset=902925608&length=80383"},
+{"day":"2025-12-05","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00341.warc.gz#offset=834799255&length=78366"},
+{"day":"2026-01-22","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469991.35/warc/CC-MAIN-20260122030830-20260122060830-00211.warc.gz#offset=828593330&length=80482"}
+]}

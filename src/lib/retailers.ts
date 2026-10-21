@@ -128,6 +128,9 @@ const pages = (structured: StructuredConfig = {}) => ({ source: "structured" as 
 // Cash Converters AU/UK product pages for lenses and digital bodies (the UK
 // site doubles the dashes: "lenses--filters", "dslr--slr-…").
 const CASH_CONVERTERS_CAMERAS = /\/cameras\/(lenses-+filters\/camera-lens|dslr-+slr-detachable-lens-cameras\/[^/]+|compact-cameras\/digital-camera|other\/camera---other)\/\d+$/;
+// The branch holding the item, on every Cash Converters product page
+// ("<p class="store-details__title store-name"><i …></i>Osborne Park Buys & Loans Centre</p>").
+const CASH_CONVERTERS_BRANCH = /class="[^"]*\bstore-name\b[^"]*"[^>]*>\s*(?:<i[^>]*>\s*<\/i>)?\s*([^<]{2,80}?)\s*</;
 
 // Sources and programmes from the 2026-10-17 retailer research (docs/retailers.md).
 export const RETAILERS: Retailer[] = [
@@ -167,7 +170,7 @@ export const RETAILERS: Retailer[] = [
   used({ key: "mpb-uk", name: "MPB", market: "uk", country: "GB", site: "https://www.mpb.com/en-uk", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.mpb.com/en-uk/search?q=${enc(q)}` }),
   used({ key: "harrison-cameras", name: "Harrison Cameras", market: "uk", country: "GB", site: "https://www.harrisoncameras.co.uk", network: null, ...shop("https://www.harrisoncameras.co.uk"), conditions: ["used", "new"] }),
   // Same platform as cash-converters-au (checked 2026-10-17).
-  used({ key: "cash-converters-uk", name: "Cash Converters", market: "uk", country: "GB", site: "https://www.cashconverters.co.uk", network: null, ...pages({ slugless: true, sitemapWindow: 36, budget: 200, urlFilter: CASH_CONVERTERS_CAMERAS }) }),
+  used({ key: "cash-converters-uk", name: "Cash Converters", market: "uk", country: "GB", site: "https://www.cashconverters.co.uk", network: null, ...pages({ slugless: true, sitemapWindow: 36, budget: 200, urlFilter: CASH_CONVERTERS_CAMERAS, branch: CASH_CONVERTERS_BRANCH }) }),
   ebay("uk", "GB", "www.ebay.co.uk", "EBAY_GB", "710-53481-19255-0", "3"),
 
   // ---- Europe (euro)
@@ -182,18 +185,34 @@ export const RETAILERS: Retailer[] = [
 
   // ---- Australia
   { ...amazon("au", "AU", "www.amazon.com.au", "AMAZON_TAG_AU"), checkRow: true },
-  dealer({ key: "teds", name: "Ted's Cameras", market: "au", country: "AU", site: "https://www.teds.com.au", network: null, ...shop("https://www.teds.com.au"), searchUrl: (q) => `https://www.teds.com.au/search?q=${enc(q)}` }),
+  // Ted's robots.txt has `Disallow: /*?limit=` (products.json?limit=250 is out)
+  // but allows its sitemaps and /products/<handle>.js (checked 2026-10-22),
+  // so it is read through those. Its second-hand stock ("…-secondhand"
+  // handles, vendor USED) comes in as used.
+  dealer({ key: "teds", name: "Ted's Cameras", market: "au", country: "AU", site: "https://www.teds.com.au", network: null, ...shop("https://www.teds.com.au", { sitemap: { budget: 300 } }), conditions: ["new", "used"], searchUrl: (q) => `https://www.teds.com.au/search?q=${enc(q)}` }),
   dealer({ key: "digidirect", name: "Digidirect", market: "au", country: "AU", site: "https://www.digidirect.com.au", network: null, ...shop("https://www.digidirect.com.au"), searchUrl: (q) => `https://www.digidirect.com.au/search?q=${enc(q)}` }),
   dealer({ key: "georges", name: "Georges Cameras", market: "au", country: "AU", site: "https://www.georges.com.au", network: null, ...shop("https://www.georges.com.au") }),
   dealer({ key: "camera-electronic", name: "Camera Electronic", market: "au", country: "AU", site: "https://www.cameraelectronic.com.au", network: null, ...shop("https://www.cameraelectronic.com.au"), conditions: ["new", "used"] }),
-  dealer({ key: "camera-house", name: "Camera House", market: "au", country: "AU", site: "https://www.camerahouse.com.au", network: "commission-factory", checkRow: true, searchUrl: (q) => `https://www.camerahouse.com.au/catalogsearch/result/?q=${enc(q)}` }),
+  // Magento; robots.txt allows product pages, which carry a JSON-LD Product/Offer
+  // (checked 2026-10-22). Read until its Commission Factory feed exists.
+  dealer({ key: "camera-house", name: "Camera House", market: "au", country: "AU", site: "https://www.camerahouse.com.au", network: "commission-factory", checkRow: true, structured: { sitemaps: ["https://www.camerahouse.com.au/media/sitemaps/sitemap.xml"], sitemapFilter: /sitemap-\d+-\d+\.xml/, budget: 250 }, searchUrl: (q) => `https://www.camerahouse.com.au/catalogsearch/result/?q=${enc(q)}` }),
   dealer({ key: "camerapro", name: "CameraPro", market: "au", country: "AU", site: "https://www.camerapro.com.au", network: "commission-factory", checkRow: true, searchUrl: (q) => `https://www.camerapro.com.au/catalogsearch/result/?q=${enc(q)}` }),
-  dealer({ key: "jbhifi", name: "JB Hi-Fi", market: "au", country: "AU", site: "https://www.jbhifi.com.au", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.jbhifi.com.au/search?page=1&query=${enc(q)}` }),
+  // Shopify: its camera collections' products.json come back empty and the
+  // whole catalogue is ~100k products (music, TVs), so until its feed exists
+  // it is read through its 108 product sitemaps (36 a run) and
+  // /products/<handle>.js, which robots.txt allows (checked 2026-10-22).
+  dealer({ key: "jbhifi", name: "JB Hi-Fi", market: "au", country: "AU", site: "https://www.jbhifi.com.au", network: "partnerize", checkRow: true, ...shop("https://www.jbhifi.com.au", { sitemap: { window: 36, budget: 250 } }), source: "feed", searchUrl: (q) => `https://www.jbhifi.com.au/search?page=1&query=${enc(q)}` }),
+  // Big chains whose own pages can't be read (2026-10-22): prices wait for
+  // each one's affiliate product feed (docs/retailers.md).
+  dealer({ key: "the-good-guys", name: "The Good Guys", market: "au", country: "AU", site: "https://www.thegoodguys.com.au", network: "partnerize", disabled: "robots.txt disallows /products/ (Shopify Hydrogen, no products.json)", searchUrl: (q) => `https://www.thegoodguys.com.au/search?q=${enc(q)}` }),
+  dealer({ key: "harvey-norman", name: "Harvey Norman", market: "au", country: "AU", site: "https://www.harveynorman.com.au", network: null, disabled: "Imperva bot protection on every page, and product JSON-LD carries price 0 (prices load in the browser)", searchUrl: (q) => `https://www.harveynorman.com.au/search?q=${enc(q)}` }),
+  dealer({ key: "bigw", name: "BIG W", market: "au", country: "AU", site: "https://www.bigw.com.au", network: "impact", disabled: "drops plain requests (no answer, even to robots.txt)", searchUrl: (q) => `https://www.bigw.com.au/search?text=${enc(q)}` }),
+  dealer({ key: "bunnings", name: "Bunnings", market: "au", country: "AU", site: "https://www.bunnings.com.au", network: null, disabled: "Cloudflare challenge on every page, robots.txt included", searchUrl: (q) => `https://www.bunnings.com.au/search/products?q=${enc(q)}` }),
   // Pawn-shop chain, one site for every store (checked 2026-10-17: robots.txt
   // allows /shop, JSON-LD Product/Offer with itemCondition Used, no bot wall).
   // Its URLs don't name the item and it has ~230 product sitemaps, so it is
   // read slugless over a rotating window of them (sources/structured.ts).
-  used({ key: "cash-converters-au", name: "Cash Converters", market: "au", country: "AU", site: "https://www.cashconverters.com.au", network: null, ...pages({ slugless: true, sitemapWindow: 36, budget: 200, urlFilter: CASH_CONVERTERS_CAMERAS }) }),
+  used({ key: "cash-converters-au", name: "Cash Converters", market: "au", country: "AU", site: "https://www.cashconverters.com.au", network: null, ...pages({ slugless: true, sitemapWindow: 36, budget: 200, urlFilter: CASH_CONVERTERS_CAMERAS, branch: CASH_CONVERTERS_BRANCH }) }),
   ebay("au", "AU", "www.ebay.com.au", "EBAY_AU", "705-53470-19255-0", "15"),
 
   // ---- Singapore (eBay Partner Network has no ebay.com.sg programme)

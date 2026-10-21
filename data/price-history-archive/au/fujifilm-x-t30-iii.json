@@ -1,0 +1,4 @@
+{"slug":"fujifilm-x-t30-iii","market":"au","currency":"AUD","points":[
+{"day":"2025-11-10","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342882.0/warc/CC-MAIN-20251110154150-20251110184150-00443.warc.gz#offset=849363049&length=84540"},
+{"day":"2026-02-11","new":164995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506172.6/warc/CC-MAIN-20260211173508-20260211203508-00561.warc.gz#offset=823658378&length=84673"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-fz300","market":"au","currency":"AUD","points":[
+{"day":"2025-12-05","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00233.warc.gz#offset=870289176&length=78506"},
+{"day":"2025-12-11","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307625.41/warc/CC-MAIN-20251211140644-20251211170644-00278.warc.gz#offset=794981858&length=79274"},
+{"day":"2026-01-21","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469608.70/warc/CC-MAIN-20260121023113-20260121053113-00220.warc.gz#offset=865640867&length=79081"}
+]}

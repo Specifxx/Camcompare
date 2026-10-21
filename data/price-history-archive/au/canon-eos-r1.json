@@ -1,0 +1,4 @@
+{"slug":"canon-eos-r1","market":"au","currency":"AUD","points":[
+{"day":"2025-09-15","new":969995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533971.68/warc/CC-MAIN-20250915052735-20250915082735-00727.warc.gz#offset=862507858&length=85160"},
+{"day":"2026-01-13","new":999995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468912.16/warc/CC-MAIN-20260113044442-20260113074442-00727.warc.gz#offset=893073396&length=84939"}
+]}

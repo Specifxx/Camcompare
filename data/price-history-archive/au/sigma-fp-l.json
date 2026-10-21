@@ -1,0 +1,6 @@
+{"slug":"sigma-fp-l","market":"au","currency":"AUD","points":[
+{"day":"2025-09-09","new":319995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533029.41/warc/CC-MAIN-20250909025155-20250909055155-00047.warc.gz#offset=869445103&length=81792"},
+{"day":"2025-09-12","new":319995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00872.warc.gz#offset=891549707&length=83336"},
+{"day":"2025-12-05","new":319995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00872.warc.gz#offset=808440075&length=82832"},
+{"day":"2026-02-07","new":319995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505791.29/warc/CC-MAIN-20260207093355-20260207123355-00047.warc.gz#offset=770008683&length=81569"}
+]}

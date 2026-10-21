@@ -47,6 +47,7 @@ export default function Header() {
         <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-2 md:flex-none">
           <SearchBox market={m} />
           <MarketSwitcher current={m} />
+          <MoreMenu market={m} pathname={pathname} icon className="shrink-0 md:hidden" />
         </div>
       </div>
       <nav className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-t border-line px-4 py-2.5 text-xs font-medium min-[380px]:text-[13px] md:hidden" aria-label="Sections">
@@ -59,7 +60,6 @@ export default function Header() {
             </Link>
           );
         })}
-        <MoreMenu market={m} pathname={pathname} className="shrink-0" />
       </nav>
       <span className="sr-only">{MARKETS[m].name} prices</span>
     </header>

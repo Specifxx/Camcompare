@@ -1,0 +1,5 @@
+{"slug":"canon-rf-85mm-f1-2l-usm-ds","market":"us","currency":"USD","points":[
+{"day":"2024-04-24","new":309900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296818999.68/warc/CC-MAIN-20240424014618-20240424044618-00056.warc.gz#offset=715134761&length=242447"},
+{"day":"2025-01-25","new":289900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703698937.82/warc/CC-MAIN-20250125075847-20250125105847-00056.warc.gz#offset=811510157&length=156579"},
+{"day":"2025-09-17","new":329900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826285.80/warc/CC-MAIN-20250917102214-20250917132214-00008.warc.gz#offset=201450070&length=107156"}
+]}

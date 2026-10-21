@@ -12,7 +12,7 @@ type Choice = { p: AnyProduct; why: string };
  * rivals buyers cross-shop (catalog data), as cards with today's price, and
  * a badge: "Newer model", "N% under RRP". Cards scroll sideways on a phone.
  */
-export default function MoreOptions({ self, m, max = 8 }: { self: AnyProduct; m: MarketCode; max?: number }) {
+export default function MoreOptions({ self, m, max = 6 }: { self: AnyProduct; m: MarketCode; max?: number }) {
   const it = self.item;
   const seen = new Set<string>([it.slug]);
   const picks: Choice[] = [];
@@ -32,7 +32,7 @@ export default function MoreOptions({ self, m, max = 8 }: { self: AnyProduct; m:
       <h2 id="more-h" className="h-section mb-3">
         More options
       </h2>
-      <ul className="-mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-4">
+      <ul className="-mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-6">
         {list.map(({ p, why }) => {
           const s = p.kind === "camera" ? summarizeCamera(p.item, m) : summarizeLens(p.item, m);
           const rrp = s.launch ? s.launch * 100 : null;

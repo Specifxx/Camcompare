@@ -1,0 +1,5 @@
+{"slug":"nikon-zr","market":"au","currency":"AUD","points":[
+{"day":"2025-10-16","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648661376.98/warc/CC-MAIN-20251016021312-20251016051312-00440.warc.gz#offset=1007635165&length=82374"},
+{"day":"2026-01-21","new":319995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469644.9/warc/CC-MAIN-20260121053530-20260121083530-00440.warc.gz#offset=842406853&length=82260"},
+{"day":"2026-02-15","new":329995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506531.51/warc/CC-MAIN-20260215095839-20260215125839-00967.warc.gz#offset=765651543&length=84202"}
+]}

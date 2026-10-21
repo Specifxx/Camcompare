@@ -1,0 +1,4 @@
+{"slug":"sigma-17mm-f4-dg-dn-contemporary","market":"au","currency":"AUD","points":[
+{"day":"2026-01-16","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469278.7/warc/CC-MAIN-20260116081156-20260116111156-00531.warc.gz#offset=885016851&length=80100"},
+{"day":"2026-01-19","new":39995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469505.90/warc/CC-MAIN-20260119193727-20260119223727-00899.warc.gz#offset=876547960&length=79191"}
+]}

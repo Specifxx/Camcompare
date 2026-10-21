@@ -1,0 +1,6 @@
+{"slug":"panasonic-lumix-fz1000-ii","market":"us","currency":"USD","points":[
+{"day":"2024-05-19","new":89799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057922.86/warc/CC-MAIN-20240519193629-20240519223629-00132.warc.gz#offset=710350227&length=138601"},
+{"day":"2025-01-26","new":89799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703361941.29/warc/CC-MAIN-20250126135402-20250126165402-00132.warc.gz#offset=814412436&length=141517"},
+{"day":"2025-02-17","new":89799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00048.warc.gz#offset=689360876&length=143655"},
+{"day":"2025-03-20","new":89799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433132.75/warc/CC-MAIN-20250320101927-20250320131927-00319.warc.gz#offset=754427304&length=187037"}
+]}

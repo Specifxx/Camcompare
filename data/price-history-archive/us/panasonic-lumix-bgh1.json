@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-bgh1","market":"us","currency":"USD","points":[
+{"day":"2024-05-18","new":199799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057422.43/warc/CC-MAIN-20240518121005-20240518151005-00855.warc.gz#offset=698545103&length=132075"},
+{"day":"2024-11-12","new":199799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00285.warc.gz#offset=693336983&length=130181"},
+{"day":"2025-05-20","new":199799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412887.6/warc/CC-MAIN-20250520181907-20250520211907-00155.warc.gz#offset=696857770&length=228022"}
+]}

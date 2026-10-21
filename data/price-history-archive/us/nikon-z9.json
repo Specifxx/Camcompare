@@ -1,0 +1,5 @@
+{"slug":"nikon-z9","market":"us","currency":"USD","points":[
+{"day":"2024-04-12","new":549695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816024.45/warc/CC-MAIN-20240412132154-20240412162154-00790.warc.gz#offset=673580052&length=243185"},
+{"day":"2025-01-19","new":499695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362532.35/warc/CC-MAIN-20250119214819-20250120004819-00059.warc.gz#offset=791015382&length=145759"},
+{"day":"2025-07-11","new":519695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933789.47/warc/CC-MAIN-20250711074015-20250711104015-00459.warc.gz#offset=671705838&length=152782"}
+]}

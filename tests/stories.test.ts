@@ -118,7 +118,8 @@ test("availability: backorder and pre-order notes, Amazon and kits left out", ()
   const bo = availabilityOf([o({ availability: "backorder" }), o({ retailer: "bh", availability: "preorder", inStock: false })], (id) => id.toUpperCase());
   assert.equal(bo.inStock, 0);
   assert.equal(bo.note, "Backordered at ADORAMA · Pre-order at BH");
-  assert.match(availabilityOf([o({ inStock: false })]).note ?? "", /Out of stock at all 1 store/);
+  assert.equal(availabilityOf([o({ inStock: false })]).note, "Out of stock at the one store we track");
+  assert.match(availabilityOf([o({ inStock: false }), o({ retailer: "bh", inStock: false })]).note ?? "", /Out of stock at all 2 stores/);
   assert.match(availabilityOf([]).note ?? "", /No store we track/);
   assert.equal(availabilityOf([o({ kit: true, availability: "backorder" })]).backorder.length, 0);
 });

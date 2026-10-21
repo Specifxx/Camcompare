@@ -1,0 +1,11 @@
+{"slug":"fujifilm-x-half","market":"au","currency":"AUD","points":[
+{"day":"2025-07-12","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00394.warc.gz#offset=896969483&length=83990"},
+{"day":"2025-09-09","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00684.warc.gz#offset=927944829&length=80867"},
+{"day":"2025-10-14","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359227.51/warc/CC-MAIN-20251014183945-20251014213945-00152.warc.gz#offset=969268838&length=83182"},
+{"day":"2025-10-16","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648659977.75/warc/CC-MAIN-20251015230254-20251016020254-00848.warc.gz#offset=1011564756&length=82850"},
+{"day":"2025-10-18","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648665892.58/warc/CC-MAIN-20251018062016-20251018092016-00394.warc.gz#offset=963154460&length=84986"},
+{"day":"2026-01-20","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469561.38/warc/CC-MAIN-20260120171558-20260120201558-00684.warc.gz#offset=915857149&length=78849"},
+{"day":"2026-01-22","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469991.35/warc/CC-MAIN-20260122030830-20260122060830-00848.warc.gz#offset=850014123&length=82446"},
+{"day":"2026-01-23","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00394.warc.gz#offset=826150995&length=84932"},
+{"day":"2026-02-15","new":79995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506681.61/warc/CC-MAIN-20260215221156-20260216011156-00152.warc.gz#offset=795354155&length=82576"}
+]}

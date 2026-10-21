@@ -1,0 +1,8 @@
+{"slug":"nikon-z-85mm-f1-8-s","market":"us","currency":"USD","points":[
+{"day":"2024-08-04","new":79695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640404969.12/warc/CC-MAIN-20240804133418-20240804163418-00479.warc.gz#offset=615111110&length=156339"},
+{"day":"2024-11-12","new":69995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.50/warc/CC-MAIN-20241112014152-20241112044152-00848.warc.gz#offset=710522766&length=140931"},
+{"day":"2025-01-15","new":140900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362284.61/warc/CC-MAIN-20250115210945-20250116000945-00160.warc.gz#offset=812841319&length=149606"},
+{"day":"2025-02-09","new":69695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00479.warc.gz#offset=728123664&length=145885"},
+{"day":"2025-05-13","new":79995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412381.25/warc/CC-MAIN-20250513151324-20250513181324-00848.warc.gz#offset=737065865&length=148254"},
+{"day":"2025-08-04","new":84695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279830.39/warc/CC-MAIN-20250804210957-20250805000957-00679.warc.gz#offset=689205891&length=169426"}
+]}

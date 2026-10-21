@@ -1,0 +1,10 @@
+{"slug":"leica-sl2","market":"us","currency":"USD","points":[
+{"day":"2024-04-12","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296815919.75/warc/CC-MAIN-20240412101354-20240412131354-00388.warc.gz#offset=667118647&length=246750"},
+{"day":"2024-04-21","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817780.88/warc/CC-MAIN-20240421132819-20240421162819-00083.warc.gz#offset=700286309&length=245746"},
+{"day":"2024-04-24","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819668.74/warc/CC-MAIN-20240424143432-20240424173432-00006.warc.gz#offset=709776947&length=245733"},
+{"day":"2024-05-19","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057922.86/warc/CC-MAIN-20240519193629-20240519223629-00263.warc.gz#offset=683653778&length=133667"},
+{"day":"2024-11-09","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028115.85/warc/CC-MAIN-20241109022607-20241109052607-00388.warc.gz#offset=707392869&length=128986"},
+{"day":"2024-12-04","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066181697.67/warc/CC-MAIN-20241204141508-20241204171508-00263.warc.gz#offset=709595719&length=129667"},
+{"day":"2025-03-20","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433136.71/warc/CC-MAIN-20250320165433-20250320195433-00363.warc.gz#offset=781595075&length=209889"},
+{"day":"2025-07-11","new":699500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933802.11/warc/CC-MAIN-20250711135917-20250711165917-00688.warc.gz#offset=708631608&length=191157"}
+]}

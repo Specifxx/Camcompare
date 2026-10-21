@@ -11,10 +11,11 @@
 // sits in memory; only rows that match a catalog camera are kept.
 import { Readable } from "node:stream";
 import { createGunzip } from "node:zlib";
-import { matchListing, plausiblePrice } from "../matching";
+import { kitLensOf, matchListing, plausiblePrice } from "../matching";
 import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
 import { retailer as getRetailer, type Condition } from "../retailers";
+import { availableNow, detailOf, feedAvailability, promoOf, wasPriceOf } from "./detail";
 import { toMinor, type PriceSource, type SourceContext } from "./types";
 
 // Header spellings across Google Shopping, Impact, CJ and Awin feeds.
@@ -167,7 +168,7 @@ export function priceCurrency(v: string | undefined): string | null {
   return null;
 }
 
-type RowCtx = Pick<SourceContext, "index" | "now" | "market">;
+type RowCtx = Pick<SourceContext, "index" | "now" | "market"> & Partial<Pick<SourceContext, "lenses">>;
 
 /** Exported for tests: rows → offers, with every catalog and sanity rule applied. */
 export function rowsToOffers(key: string, input: Iterable<FeedRow>, ctx: RowCtx): Offer[] {
@@ -189,7 +190,7 @@ function safeLink(v: string): string | null {
   }
 }
 
-function rowToOffer(key: string, r: FeedRow, { index, now, market }: RowCtx): Offer | null {
+function rowToOffer(key: string, r: FeedRow, { index, now, market, lenses = [] }: RowCtx): Offer | null {
   const link = r.link ? safeLink(r.link) : null;
   if (!r.title || !link) return null;
   const allowed = getRetailer(key)?.conditions ?? ["new"];
@@ -207,6 +208,10 @@ function rowToOffer(key: string, r: FeedRow, { index, now, market }: RowCtx): Of
   const full = r.price ? toMinor(r.price) : 0;
   const price = sale > 0 && (!full || sale < full) ? sale : full;
   if (!price || !plausiblePrice(m.product, cond, price / 100, currency, m.via)) return null;
+  // A sale price under the full one: the full one is the store's was-price.
+  const wasPrice = sale > 0 && full > sale ? wasPriceOf(sale, full) : null;
+  const availability = feedAvailability(r.availability);
+  const kit = m.kit && m.kind === "camera" ? kitLensOf(r.title, index, lenses, m.product) : null;
   return {
     product: m.product.slug,
     kind: m.kind,
@@ -217,11 +222,17 @@ function rowToOffer(key: string, r: FeedRow, { index, now, market }: RowCtx): Of
     url: link,
     title: r.title,
     seller: null,
-    inStock: inStock(r.availability),
+    inStock: availableNow(availability, inStock(r.availability)),
     kit: m.kit,
     mount: m.mount,
     seenAt: now,
     sourceId: r.id ?? null,
+    wasPrice,
+    availability,
+    kitLens: kit?.kitLens ?? null,
+    kitLensName: kit?.kitLensName ?? null,
+    promo: promoOf({ title: r.title }),
+    detail: cond === "new" ? null : detailOf({ title: r.title, used: true }),
   };
 }
 
@@ -241,7 +252,7 @@ export function feedSource(key: string): PriceSource {
     async run(ctx) {
       const envName = `FEED_URL_${key.toUpperCase().replace(/-/g, "_")}`;
       const url = process.env[envName] || "";
-      if (!url) return { status: "skipped", note: `${envName} not set` };
+      if (!url) return { status: "skipped", note: `${envName} not set${ctx.retailer.disabled ? `; ${ctx.retailer.disabled}` : ""}` };
       const offers: Offer[] = [];
       let seen = 0;
       for await (const r of rows(url)) {

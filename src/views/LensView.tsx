@@ -195,8 +195,8 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
               </Link>
             )}
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {bodies.slice(0, 8).map((c) => (
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {bodies.slice(0, 6).map((c) => (
               <ProductCard key={c.slug} p={summarizeCamera(c, m)} market={m} />
             ))}
           </div>

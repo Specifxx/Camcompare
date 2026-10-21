@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-gh7","market":"au","currency":"AUD","points":[
+{"day":"2025-09-07","new":369995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00416.warc.gz#offset=929148155&length=84269"},
+{"day":"2025-09-09","new":369995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533070.38/warc/CC-MAIN-20250909213706-20250910003706-00735.warc.gz#offset=911354024&length=82231"},
+{"day":"2026-03-09","new":349995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687277752.1/warc/CC-MAIN-20260309111132-20260309141132-00468.warc.gz#offset=819037176&length=187047"}
+]}

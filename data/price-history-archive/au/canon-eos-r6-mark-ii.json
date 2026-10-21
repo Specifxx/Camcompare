@@ -1,0 +1,6 @@
+{"slug":"canon-eos-r6-mark-ii","market":"au","currency":"AUD","points":[
+{"day":"2025-08-05","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279837.14/warc/CC-MAIN-20250805001900-20250805031900-00136.warc.gz#offset=888084842&length=85237"},
+{"day":"2025-10-17","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648665010.99/warc/CC-MAIN-20251017032409-20251017062409-00058.warc.gz#offset=982800213&length=84641"},
+{"day":"2025-11-19","new":269996,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657679.99/warc/CC-MAIN-20251119093413-20251119123413-00136.warc.gz#offset=862098033&length=86009"},
+{"day":"2026-01-14","new":299995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469122.50/warc/CC-MAIN-20260114153623-20260114183623-00058.warc.gz#offset=845641651&length=84710"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"canon-eos-r50-v","market":"au","currency":"AUD","points":[
+{"day":"2025-09-13","new":104995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533670.32/warc/CC-MAIN-20250913222048-20250914012048-00621.warc.gz#offset=878540323&length=82072"},
+{"day":"2026-01-15","new":114995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00621.warc.gz#offset=878522058&length=82032"}
+]}

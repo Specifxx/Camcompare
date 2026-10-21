@@ -1,0 +1,4 @@
+{"slug":"panasonic-lumix-lx10","market":"au","currency":"AUD","points":[
+{"day":"2025-09-12","new":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00609.warc.gz#offset=872437443&length=80752"},
+{"day":"2026-01-16","new":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00609.warc.gz#offset=906664561&length=80518"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"sony-fe-40mm-f2-5-g","market":"us","currency":"USD","points":[
+{"day":"2024-05-27","new":54800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059039.52/warc/CC-MAIN-20240527083011-20240527113011-00633.warc.gz#offset=649608822&length=144097"},
+{"day":"2024-07-23","new":59800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518029.87/warc/CC-MAIN-20240723102757-20240723132757-00106.warc.gz#offset=665678931&length=143877"},
+{"day":"2024-10-11","new":54800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253776.45/warc/CC-MAIN-20241011134210-20241011164210-00289.warc.gz#offset=648934677&length=143393"}
+]}

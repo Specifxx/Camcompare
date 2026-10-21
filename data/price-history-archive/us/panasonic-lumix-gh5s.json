@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-gh5s","market":"us","currency":"USD","points":[
+{"day":"2024-04-12","new":209799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816024.45/warc/CC-MAIN-20240412132154-20240412162154-00135.warc.gz#offset=682620062&length=254290"},
+{"day":"2024-10-14","new":209799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255435.42/warc/CC-MAIN-20241014132752-20241014162752-00405.warc.gz#offset=675800725&length=149913"},
+{"day":"2025-05-15","new":209799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412452.68/warc/CC-MAIN-20250514225643-20250515015643-00805.warc.gz#offset=652322467&length=160312"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"pentax-kf","market":"us","currency":"USD","points":[
+{"day":"2024-04-24","new":89900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819668.74/warc/CC-MAIN-20240424143432-20240424173432-00818.warc.gz#offset=714158200&length=262460"},
+{"day":"2024-09-11","new":89900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651387.63/warc/CC-MAIN-20240911120037-20240911150037-00518.warc.gz#offset=716849417&length=146902"}
+]}

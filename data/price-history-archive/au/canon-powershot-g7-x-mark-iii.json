@@ -1,0 +1,9 @@
+{"slug":"canon-powershot-g7-x-mark-iii","market":"au","currency":"AUD","points":[
+{"day":"2025-07-12","new":124995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00190.warc.gz#offset=946382476&length=85695"},
+{"day":"2025-07-13","new":124995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934009.3/warc/CC-MAIN-20250713223153-20250714013153-00161.warc.gz#offset=882330173&length=83374"},
+{"day":"2025-09-13","new":124995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533670.32/warc/CC-MAIN-20250913222048-20250914012048-00419.warc.gz#offset=895759809&length=84513"},
+{"day":"2025-10-17","new":124995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00190.warc.gz#offset=986838148&length=86747"},
+{"day":"2025-11-19","new":124995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657349.95/warc/CC-MAIN-20251119032929-20251119062929-00161.warc.gz#offset=873145174&length=84093"},
+{"day":"2026-01-16","new":134995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00419.warc.gz#offset=925621352&length=83924"},
+{"day":"2026-02-11","new":144990,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506125.22/warc/CC-MAIN-20260210231502-20260211021502-00846.warc.gz#offset=832959283&length=82066"}
+]}

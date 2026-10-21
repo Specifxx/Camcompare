@@ -1,0 +1,4 @@
+{"slug":"sony-a6700","market":"au","currency":"AUD","points":[
+{"day":"2025-07-16","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00660.warc.gz#offset=872620689&length=82209"},
+{"day":"2025-11-10","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342882.0/warc/CC-MAIN-20251110154150-20251110184150-00660.warc.gz#offset=841415199&length=82343"}
+]}

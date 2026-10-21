@@ -1,0 +1,9 @@
+{"slug":"fujifilm-x-t4","market":"us","currency":"USD","points":[
+{"day":"2024-10-07","new":169900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253447.49/warc/CC-MAIN-20241007004935-20241007034935-00459.warc.gz#offset=691617975&length=131499"},
+{"day":"2024-11-12","new":169900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00572.warc.gz#offset=731566619&length=131137"},
+{"day":"2024-12-05","new":169900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066339283.61/warc/CC-MAIN-20241205054354-20241205084354-00719.warc.gz#offset=682891392&length=131378"},
+{"day":"2024-12-09","new":169900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066046617.9/warc/CC-MAIN-20241209120910-20241209150910-00839.warc.gz#offset=678636415&length=131294"},
+{"day":"2025-03-17","new":169900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433031.79/warc/CC-MAIN-20250317164600-20250317194600-00342.warc.gz#offset=771359498&length=227405"},
+{"day":"2025-06-24","new":169900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709779183.68/warc/CC-MAIN-20250624091149-20250624121149-00319.warc.gz#offset=615670465&length=216809"},
+{"day":"2025-07-18","new":169900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934611.62/warc/CC-MAIN-20250718031256-20250718061256-00739.warc.gz#offset=649485040&length=217293"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"sigma-50mm-f1-4-dg-hsm-art","market":"au","currency":"AUD","points":[
+{"day":"2025-08-07","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279938.13/warc/CC-MAIN-20250807054540-20250807084540-00984.warc.gz#offset=910679284&length=80740"},
+{"day":"2025-11-18","new":93496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439649042.63/warc/CC-MAIN-20251118000149-20251118030149-00984.warc.gz#offset=875974713&length=81244"}
+]}

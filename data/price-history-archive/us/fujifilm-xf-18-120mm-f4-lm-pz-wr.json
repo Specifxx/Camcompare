@@ -1,0 +1,6 @@
+{"slug":"fujifilm-xf-18-120mm-f4-lm-pz-wr","market":"us","currency":"USD","points":[
+{"day":"2024-04-19","new":89900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817398.21/warc/CC-MAIN-20240419110125-20240419140125-00295.warc.gz#offset=716665996&length=240443"},
+{"day":"2024-10-09","new":89900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253654.26/warc/CC-MAIN-20241009211335-20241010001335-00295.warc.gz#offset=690085919&length=137284"},
+{"day":"2024-12-04","new":89999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066156662.62/warc/CC-MAIN-20241204080324-20241204110324-00735.warc.gz#offset=702970433&length=144693"},
+{"day":"2025-03-27","new":89900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004755993.69/warc/CC-MAIN-20250327022503-20250327052503-00595.warc.gz#offset=689088875&length=146448"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-23mm-f2-r-wr","market":"us","currency":"USD","points":[
+{"day":"2024-11-14","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028657.76/warc/CC-MAIN-20241114130448-20241114160448-00712.warc.gz#offset=711917436&length=155157"},
+{"day":"2025-02-19","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262974.94/warc/CC-MAIN-20250219003812-20250219033812-00473.warc.gz#offset=672118836&length=133378"},
+{"day":"2025-06-19","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481507.16/warc/CC-MAIN-20250619082745-20250619112745-00912.warc.gz#offset=606696106&length=167681"}
+]}

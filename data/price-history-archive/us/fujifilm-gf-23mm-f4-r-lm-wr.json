@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gf-23mm-f4-r-lm-wr","market":"us","currency":"USD","points":[
+{"day":"2024-10-14","new":259900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255505.76/warc/CC-MAIN-20241014194408-20241014224408-00798.warc.gz#offset=643677675&length=140982"},
+{"day":"2024-11-14","new":259900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028657.76/warc/CC-MAIN-20241114130448-20241114160448-00082.warc.gz#offset=692880608&length=139396"},
+{"day":"2025-03-20","new":259900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433107.70/warc/CC-MAIN-20250320003322-20250320033322-00098.warc.gz#offset=736483802&length=189176"}
+]}

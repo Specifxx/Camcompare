@@ -1,0 +1,10 @@
+{"slug":"sigma-18-50mm-f2-8-dc-dn-contemporary","market":"au","currency":"AUD","points":[
+{"day":"2025-07-09","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933736.1/warc/CC-MAIN-20250709210325-20250710000325-00803.warc.gz#offset=938905762&length=79612"},
+{"day":"2025-07-16","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00876.warc.gz#offset=903068243&length=78019"},
+{"day":"2025-07-17","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934401.16/warc/CC-MAIN-20250717020215-20250717050215-00241.warc.gz#offset=902158661&length=77954"},
+{"day":"2025-09-16","new":64995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00883.warc.gz#offset=918130730&length=79148"},
+{"day":"2025-10-07","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358264.45/warc/CC-MAIN-20251007013002-20251007043002-00803.warc.gz#offset=1046399003&length=80673"},
+{"day":"2025-11-12","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439343096.76/warc/CC-MAIN-20251112010046-20251112040046-00241.warc.gz#offset=815643942&length=78518"},
+{"day":"2026-02-09","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505946.14/warc/CC-MAIN-20260209041804-20260209071804-00803.warc.gz#offset=822609704&length=80381"},
+{"day":"2026-02-15","new":69995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506531.51/warc/CC-MAIN-20260215095839-20260215125839-00883.warc.gz#offset=792475866&length=78717"}
+]}

@@ -1,0 +1,6 @@
+{"slug":"sony-a9-ii","market":"us","currency":"USD","points":[
+{"day":"2024-07-15","new":449800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514659.22/warc/CC-MAIN-20240715040934-20240715070934-00124.warc.gz#offset=672839534&length=127502"},
+{"day":"2024-11-09","new":449800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028115.85/warc/CC-MAIN-20241109022607-20241109052607-00700.warc.gz#offset=708995756&length=126020"},
+{"day":"2025-02-10","new":449800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951672.0/warc/CC-MAIN-20250210182410-20250210212410-00124.warc.gz#offset=711425113&length=128510"},
+{"day":"2025-04-21","new":449800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135788.26/warc/CC-MAIN-20250421194220-20250421224220-00359.warc.gz#offset=756104395&length=157471"}
+]}

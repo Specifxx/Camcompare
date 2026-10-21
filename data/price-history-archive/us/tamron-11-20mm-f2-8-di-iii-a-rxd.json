@@ -1,0 +1,9 @@
+{"slug":"tamron-11-20mm-f2-8-di-iii-a-rxd","market":"us","currency":"USD","points":[
+{"day":"2024-04-18","new":69900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817206.54/warc/CC-MAIN-20240418124808-20240418154808-00805.warc.gz#offset=711126757&length=114673"},
+{"day":"2024-09-20","new":82900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725701419169.94/warc/CC-MAIN-20240920154713-20240920184713-00744.warc.gz#offset=690988321&length=130403"},
+{"day":"2024-11-14","new":69900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00672.warc.gz#offset=694416162&length=136999"},
+{"day":"2025-03-27","new":65900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004755993.69/warc/CC-MAIN-20250327022503-20250327052503-00844.warc.gz#offset=752793232&length=221647"},
+{"day":"2025-04-24","new":89900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135882.44/warc/CC-MAIN-20250424085107-20250424115107-00120.warc.gz#offset=794101628&length=155028"},
+{"day":"2025-04-29","new":67900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889459188.91/warc/CC-MAIN-20250429001142-20250429031142-00109.warc.gz#offset=739026502&length=152117"},
+{"day":"2025-10-05","new":65900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648357851.76/warc/CC-MAIN-20251005114239-20251005144239-00177.warc.gz#offset=253199636&length=108831"}
+]}

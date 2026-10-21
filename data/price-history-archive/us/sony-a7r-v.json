@@ -1,0 +1,7 @@
+{"slug":"sony-a7r-v","market":"us","currency":"USD","points":[
+{"day":"2024-10-10","new":349800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253660.66/warc/CC-MAIN-20241010032709-20241010062709-00394.warc.gz#offset=658102682&length=150856"},
+{"day":"2024-10-15","new":349800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255885.83/warc/CC-MAIN-20241015143046-20241015173046-00797.warc.gz#offset=677504105&length=150897"},
+{"day":"2025-01-21","new":619800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363113.38/warc/CC-MAIN-20250121070313-20250121100313-00650.warc.gz#offset=800399031&length=151680"},
+{"day":"2025-05-19","new":389800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00761.warc.gz#offset=690652594&length=157309"},
+{"day":"2025-06-15","new":389800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481366.62/warc/CC-MAIN-20250615170437-20250615200437-00307.warc.gz#offset=634819357&length=156577"}
+]}

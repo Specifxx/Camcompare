@@ -1,0 +1,6 @@
+{"slug":"sigma-28-70mm-f2-8-dg-dn-contemporary","market":"au","currency":"AUD","points":[
+{"day":"2025-09-07","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00343.warc.gz#offset=896331979&length=80523"},
+{"day":"2025-09-12","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533302.34/warc/CC-MAIN-20250912211844-20250913001844-00348.warc.gz#offset=863284658&length=80867"},
+{"day":"2025-09-13","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00584.warc.gz#offset=874714698&length=79057"},
+{"day":"2026-01-16","new":119995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469278.7/warc/CC-MAIN-20260116081156-20260116111156-00343.warc.gz#offset=869366316&length=80412"}
+]}

@@ -397,7 +397,10 @@ async function commonCrawlStore(r: Retailer, crawls: string[]) {
         listings = [];
       }
       store("snap", key, listings);
-      if (fetched % 100 === 0) log(`commoncrawl ${r.key}: ${fetched} read`);
+      if (fetched % 100 === 0) {
+        log(`commoncrawl ${r.key}: ${fetched} read`);
+        flush();
+      }
     }
     points += record(r, tsDay(x.ts), `${CC}/${x.filename}#offset=${x.offset}&length=${x.length}`, listings);
   }
@@ -411,6 +414,27 @@ function backfillable(r: Retailer): boolean {
   if (r.shopify?.disabled) return false;
   if (r.structured?.slugless) return false; // URLs that don't name the product: nothing to pick by
   return Boolean(r.shopify || r.structured);
+}
+
+/**
+ * Merges what has been found so far into data/price-history-archive and
+ * forgets it: called after every store, so an interrupted run keeps its work
+ * (and a rerun reads the rest from the cache).
+ */
+let written = 0;
+function flush() {
+  const incoming = new Map<string, ArchivePoint[]>();
+  for (const f of found.splice(0))
+    for (const [slug, p] of f.prices) {
+      const k = `${f.market}|${slug}`;
+      (incoming.get(k) ?? incoming.set(k, []).get(k)!).push({ day: f.day, ...(p.new ? { new: p.new } : {}), ...(p.used ? { used: p.used } : {}), store: f.store, source: "archive", snapshotUrl: f.snapshotUrl });
+    }
+  for (const [k, pts] of incoming) {
+    const [m, slug] = k.split("|") as [MarketCode, string];
+    const points = mergePoints(readArchiveFile(m, slug)?.points ?? [], pts);
+    if (!DRY) writeArchiveFile({ slug, market: m, currency: MARKETS[m].currency, points });
+    written++;
+  }
 }
 
 async function main() {
@@ -439,24 +463,10 @@ async function main() {
         log(`commoncrawl ${r.key}: ${(e as Error).message}`);
       }
     }
+    flush();
   }
 
-  // Merge into data/price-history-archive/<market>/<slug>.json.
-  const incoming = new Map<string, ArchivePoint[]>();
-  for (const f of found)
-    for (const [slug, p] of f.prices) {
-      const k = `${f.market}|${slug}`;
-      (incoming.get(k) ?? incoming.set(k, []).get(k)!).push({ day: f.day, ...(p.new ? { new: p.new } : {}), ...(p.used ? { used: p.used } : {}), store: f.store, source: "archive", snapshotUrl: f.snapshotUrl });
-    }
-  let files = 0;
-  for (const [k, pts] of incoming) {
-    const [m, slug] = k.split("|") as [MarketCode, string];
-    const prev = readArchiveFile(m, slug);
-    const points = mergePoints(prev?.points ?? [], pts);
-    if (!DRY) writeArchiveFile({ slug, market: m, currency: MARKETS[m].currency, points });
-    files++;
-  }
-  log(`${DRY ? "would write" : "wrote"} ${files} files; requests: wayback ${gates.wayback.requests}, commoncrawl ${gates.cc.requests}`);
+  log(`${DRY ? "would write" : "wrote"} ${written} file updates; requests: wayback ${gates.wayback.requests}, commoncrawl ${gates.cc.requests}`);
   if (gates.wayback.blocked) log(`wayback: ${gates.wayback.blocked}`);
   if (gates.cc.blocked) log(`commoncrawl: ${gates.cc.blocked}`);
   coverage();

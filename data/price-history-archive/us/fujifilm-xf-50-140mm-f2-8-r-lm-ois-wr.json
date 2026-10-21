@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-50-140mm-f2-8-r-lm-ois-wr","market":"us","currency":"USD","points":[
+{"day":"2024-09-10","new":159900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651164.37/warc/CC-MAIN-20240909233606-20240910023606-00391.warc.gz#offset=715617865&length=130670"},
+{"day":"2025-03-17","new":159900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433031.79/warc/CC-MAIN-20250317164600-20250317194600-00591.warc.gz#offset=775787980&length=213911"},
+{"day":"2025-04-23","new":159900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135835.77/warc/CC-MAIN-20250423004424-20250423034424-00492.warc.gz#offset=775864797&length=153059"}
+]}

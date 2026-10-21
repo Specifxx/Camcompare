@@ -1,0 +1,9 @@
+{"slug":"tamron-18-300mm-f3-5-6-3-di-iii-a-vc-vxd","market":"us","currency":"USD","points":[
+{"day":"2024-10-15","new":69900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255885.83/warc/CC-MAIN-20241015143046-20241015173046-00612.warc.gz#offset=673923188&length=133298"},
+{"day":"2024-11-08","new":59900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028067.32/warc/CC-MAIN-20241108133114-20241108163114-00777.warc.gz#offset=709075454&length=138227"},
+{"day":"2024-11-09","new":59900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028125.59/warc/CC-MAIN-20241109151915-20241109181915-00636.warc.gz#offset=726117050&length=142757"},
+{"day":"2024-11-12","new":59900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00340.warc.gz#offset=700151302&length=137916"},
+{"day":"2025-03-17","new":69900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433031.79/warc/CC-MAIN-20250317164600-20250317194600-00312.warc.gz#offset=769207424&length=200455"},
+{"day":"2025-06-14","new":59900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481330.50/warc/CC-MAIN-20250614222335-20250615012335-00636.warc.gz#offset=657731797&length=151578"},
+{"day":"2025-07-11","new":59900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933789.47/warc/CC-MAIN-20250711074015-20250711104015-00777.warc.gz#offset=671051086&length=155446"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"sigma-50mm-f2-dg-dn-contemporary","market":"au","currency":"AUD","points":[
+{"day":"2026-01-13","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00520.warc.gz#offset=838713292&length=78633"},
+{"day":"2026-01-23","new":93496,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220832368.72/warc/CC-MAIN-20260123034556-20260123064556-00180.warc.gz#offset=823977785&length=80446"},
+{"day":"2026-02-15","new":109995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506531.51/warc/CC-MAIN-20260215095839-20260215125839-00175.warc.gz#offset=780316162&length=78580"}
+]}

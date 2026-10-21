@@ -1,0 +1,7 @@
+{"slug":"nikon-z-35mm-f1-8-s","market":"us","currency":"USD","points":[
+{"day":"2024-04-13","new":84695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816820.63/warc/CC-MAIN-20240413144933-20240413174933-00034.warc.gz#offset=722214018&length=237830"},
+{"day":"2024-05-27","new":69695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059039.52/warc/CC-MAIN-20240527083011-20240527113011-00684.warc.gz#offset=667250431&length=137435"},
+{"day":"2024-11-09","new":69995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028125.59/warc/CC-MAIN-20241109151915-20241109181915-00627.warc.gz#offset=723053045&length=137704"},
+{"day":"2025-03-21","new":69695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433189.12/warc/CC-MAIN-20250321190531-20250321220531-00734.warc.gz#offset=779163255&length=144689"},
+{"day":"2025-09-10","new":89695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533116.59/warc/CC-MAIN-20250910193300-20250910223300-00590.warc.gz#offset=206068310&length=105722"}
+]}

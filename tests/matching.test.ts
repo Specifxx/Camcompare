@@ -227,3 +227,47 @@ test("bundles with a named lens are kits, not body prices", () => {
   const named = matchListing({ title: "Sony a7 IV with Zeiss Batis Sonnar 85mm" }, index);
   assert.ok(named.product && named.kit);
 });
+
+// ---- kit lenses (feedback round 2026-10-22)
+import { kitLensNames, kitLensOf } from "../src/lib/matching";
+
+const KIT_LENSES = [
+  ...LENSES,
+  lensFix("canon-rf-s-18-45mm-f4-5-6-3-is-stm", "canon", ["RF-S 18-45mm F4.5-6.3 IS STM", "RF-S 18-45mm IS STM", "RF-S 18-45mm"], { mounts: ["canon-rf"], coverage: "aps-c", launchPriceUsd: 299 }, { focalMinMm: 18, focalMaxMm: 45, apertureMax: 4.5, apertureMaxTele: 6.3 }),
+  lensFix("canon-rf-24-105mm-f4l-is-usm", "canon", ["RF 24-105mm F4L IS USM", "RF 24-105mm F4 L IS USM"], { mounts: ["canon-rf"], launchPriceUsd: 1099 }, { focalMinMm: 24, focalMaxMm: 105, apertureMax: 4 }),
+  lensFix("canon-rf-24-105mm-f4-7-1-is-stm", "canon", ["RF 24-105mm F4-7.1 IS STM"], { mounts: ["canon-rf"], launchPriceUsd: 399 }, { focalMinMm: 24, focalMaxMm: 105, apertureMax: 4, apertureMaxTele: 7.1 }),
+  lensFix("sony-fe-28-70mm-f3-5-5-6-oss", "sony", ["FE 28-70mm F3.5-5.6 OSS"], { launchPriceUsd: 399 }, { focalMinMm: 28, focalMaxMm: 70, apertureMax: 3.5, apertureMaxTele: 5.6 }),
+];
+const kIndex = buildIndex(CAMERAS, KIT_LENSES);
+const kit = (title: string) => {
+  const m = matchListing({ title }, kIndex);
+  assert.ok(m.product && m.kind === "camera" && m.kit, `not a kit: ${title}`);
+  return kitLensOf(title, kIndex, KIT_LENSES, m.product);
+};
+
+test("kit lens: the catalog lens by its alias, and the name as the listing gives it", () => {
+  assert.deepEqual(kit("Canon EOS R50 with RF-S 18-45mm f/4.5-6.3 IS STM"), { kitLens: "canon-rf-s-18-45mm-f4-5-6-3-is-stm", kitLensName: "RF-S 18-45mm f/4.5-6.3 IS STM" });
+  assert.deepEqual(kit("Sony a7 IV FE 28-70mm F3.5-5.6 OSS Kit"), { kitLens: "sony-fe-28-70mm-f3-5-5-6-oss", kitLensName: "FE 28-70mm F3.5-5.6 OSS" });
+  // Shorthand: by focal range among the camera maker's lenses for its mount.
+  assert.deepEqual(kit("Canon EOS R50 w/ 18-45mm"), { kitLens: "canon-rf-s-18-45mm-f4-5-6-3-is-stm", kitLensName: "18-45mm" });
+  assert.deepEqual(kit("CANON EOS R50 WITH RF-S 18-45MM LENS"), { kitLens: "canon-rf-s-18-45mm-f4-5-6-3-is-stm", kitLensName: "RF-S 18-45MM" });
+});
+
+test("kit lens: ambiguous or twin kits keep the name and refuse the slug", () => {
+  // Two Canon RF 24-105mm lenses start at f/4: the range alone can't say which.
+  assert.deepEqual(kit("Canon EOS R5 w/ 24-105mm Kit"), { kitLens: null, kitLensName: "24-105mm" });
+  // …but the aperture can.
+  assert.equal(kit("Canon EOS R5 w/ 24-105mm f/4-7.1 Kit").kitLens, "canon-rf-24-105mm-f4-7-1-is-stm");
+  assert.deepEqual(kit("Canon EOS R50 Twin Lens Kit 18-45mm & 55-210mm"), { kitLens: null, kitLensName: "18-45mm + 55-210mm" });
+  // A kit with no focal length named: neither.
+  assert.deepEqual(kit("Sony a7 IV Single Lens Kit"), { kitLens: null, kitLensName: null });
+  // A lens for another mount is never the kit lens.
+  assert.equal(kit("Sony a7 IV with 18-45mm Kit").kitLens, null);
+  assert.deepEqual(kitLensNames("Fujifilm X-T5 Black w/ XF16-80mmF4 R OIS WR"), ["XF16-80mmF4 R OIS WR"]);
+});
+
+test("kit lens helpers change no match: the same listings match as before", () => {
+  for (const t of ["Canon EOS R50 with RF-S 18-45mm f/4.5-6.3 IS STM", "Canon EOS R50 w/ 18-45mm", "Sony a7 IV FE 28-70mm F3.5-5.6 OSS Kit"]) {
+    assert.equal(matchListing({ title: t }, index).product?.slug, matchListing({ title: t }, kIndex).product?.slug, t);
+  }
+});

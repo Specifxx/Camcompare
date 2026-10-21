@@ -1,0 +1,4 @@
+{"slug":"hasselblad-907x-cfv-100c","market":"us","currency":"USD","points":[
+{"day":"2024-07-24","new":819900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518427.68/warc/CC-MAIN-20240724171328-20240724201328-00749.warc.gz#offset=665556000&length=161753"},
+{"day":"2025-05-14","new":819900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412452.68/warc/CC-MAIN-20250514225643-20250515015643-00249.warc.gz#offset=691259966&length=162704"}
+]}

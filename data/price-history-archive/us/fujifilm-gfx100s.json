@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gfx100s","market":"us","currency":"USD","points":[
+{"day":"2024-07-15","new":439900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514659.22/warc/CC-MAIN-20240715040934-20240715070934-00151.warc.gz#offset=669472186&length=143444"},
+{"day":"2024-08-03","new":599900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640356078.1/warc/CC-MAIN-20240803025153-20240803055153-00106.warc.gz#offset=636568912&length=129208"},
+{"day":"2024-09-13","new":439900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651507.67/warc/CC-MAIN-20240913034233-20240913064233-00280.warc.gz#offset=725423705&length=141728"}
+]}

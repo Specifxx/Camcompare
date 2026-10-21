@@ -1,0 +1,5 @@
+{"slug":"canon-powershot-g7-x-mark-iii","market":"us","currency":"USD","points":[
+{"day":"2025-03-21","new":94900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433189.12/warc/CC-MAIN-20250321190531-20250321220531-00425.warc.gz#offset=771116106&length=171537"},
+{"day":"2025-04-22","new":94900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135813.73/warc/CC-MAIN-20250422114329-20250422144329-00885.warc.gz#offset=774017228&length=177306"},
+{"day":"2025-04-26","new":109900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136069.16/warc/CC-MAIN-20250426194420-20250426224420-00717.warc.gz#offset=729727553&length=172604"}
+]}

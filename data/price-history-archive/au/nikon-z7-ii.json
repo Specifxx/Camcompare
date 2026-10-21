@@ -1,0 +1,5 @@
+{"slug":"nikon-z7-ii","market":"au","currency":"AUD","points":[
+{"day":"2025-09-09","new":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533029.41/warc/CC-MAIN-20250909025155-20250909055155-00659.warc.gz#offset=890856295&length=84526"},
+{"day":"2025-09-12","new":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00268.warc.gz#offset=910395162&length=83899"},
+{"day":"2026-01-13","new":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00268.warc.gz#offset=876306697&length=83400"}
+]}

@@ -1,0 +1,7 @@
+{"slug":"sony-e-70-350mm-f4-5-6-3-g-oss","market":"us","currency":"USD","points":[
+{"day":"2024-11-05","new":89800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027881.88/warc/CC-MAIN-20241105114407-20241105144407-00632.warc.gz#offset=708496374&length=134334"},
+{"day":"2024-11-12","new":89800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.50/warc/CC-MAIN-20241112014152-20241112044152-00214.warc.gz#offset=690862128&length=138141"},
+{"day":"2024-11-14","new":89800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028526.56/warc/CC-MAIN-20241114031054-20241114061054-00142.warc.gz#offset=716896015&length=143753"},
+{"day":"2025-03-19","new":99800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.67/warc/CC-MAIN-20250319175833-20250319205833-00114.warc.gz#offset=727982562&length=195403"},
+{"day":"2025-09-13","new":109800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533316.46/warc/CC-MAIN-20250913033418-20250913063418-00505.warc.gz#offset=205593799&length=106109"}
+]}

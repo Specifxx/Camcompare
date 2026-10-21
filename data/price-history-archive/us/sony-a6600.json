@@ -1,0 +1,5 @@
+{"slug":"sony-a6600","market":"us","currency":"USD","points":[
+{"day":"2024-04-25","new":119800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712297284704.94/warc/CC-MAIN-20240425032156-20240425062156-00552.warc.gz#offset=696450531&length=251285"},
+{"day":"2025-01-16","new":119800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362307.18/warc/CC-MAIN-20250116135418-20250116165418-00429.warc.gz#offset=812205999&length=126683"},
+{"day":"2025-04-21","new":99800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135788.26/warc/CC-MAIN-20250421194220-20250421224220-00816.warc.gz#offset=817501286&length=151415"}
+]}

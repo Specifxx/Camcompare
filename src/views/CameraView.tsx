@@ -89,7 +89,7 @@ function LensesForCamera({ c, m }: { c: Camera; m: MarketCode }) {
     Number(a.lowestNew === null) - Number(b.lowestNew === null) || (a.lowestNew ?? 0) - (b.lowestNew ?? 0) || b.announced.localeCompare(a.announced);
   // Grouped by what each lens is on THIS body: an RF 14-35mm is no ultra-wide on an EOS R7.
   const sums = lenses.map((l) => ({ l, s: summarizeLens(l, m), cats: lensCategories(l, cropOn(l, c)) }));
-  const groups = LENS_GROUPS.map((g) => ({ g, list: sums.filter(({ cats }) => cats.includes(g)).sort((a, b) => rank(a.s, b.s)).slice(0, 4) })).filter((x) => x.list.length);
+  const groups = LENS_GROUPS.map((g) => ({ g, list: sums.filter(({ cats }) => cats.includes(g)).sort((a, b) => rank(a.s, b.s)).slice(0, 3) })).filter((x) => x.list.length);
   return (
     <section>
       <div className="mb-3 flex items-baseline justify-between gap-4">
@@ -100,7 +100,7 @@ function LensesForCamera({ c, m }: { c: Camera; m: MarketCode }) {
         {groups.map(({ g, list }) => (
           <div key={g}>
             <h3 className="mb-2 text-sm font-bold text-muted">{CATEGORY_LABEL[g]}</h3>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {list.map(({ l, s }) => (
                 <div key={l.slug}>
                   <ProductCard p={s} market={m} />

@@ -84,7 +84,7 @@ export default function WorldTable({ data, rates }: { data: WorldTableData; rate
             const best = rowBest(r, cur, rates);
             return (
               <tr key={r.slug} className="border-b border-line/60 last:border-0">
-                <th scope="row" className="sticky left-0 bg-surface p-2 text-left font-semibold">
+                <th scope="row" className="sticky left-0 w-32 bg-surface p-2 text-left text-xs font-semibold sm:w-auto sm:text-sm">
                   <Link href={r.path} prefetch={false} className="text-fg">
                     {r.name}
                   </Link>
@@ -112,7 +112,7 @@ export default function WorldTable({ data, rates }: { data: WorldTableData; rate
                   );
                 })}
                 <td className="price p-2 align-top">
-                  {best && best.saving !== null && best.saving > 0 ? (
+                  {best && best.saving !== null && best.pct !== null && best.pct >= 1 ? (
                     <>
                       <span className="font-bold text-win">≈ {approx(best.saving, cur)}</span>
                       <span className="block text-[11px] text-subtle">

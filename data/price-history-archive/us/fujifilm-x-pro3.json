@@ -1,0 +1,7 @@
+{"slug":"fujifilm-x-pro3","market":"us","currency":"USD","points":[
+{"day":"2024-08-04","new":189900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640404969.12/warc/CC-MAIN-20240804133418-20240804163418-00281.warc.gz#offset=625696541&length=141339"},
+{"day":"2024-09-16","new":199999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651668.29/warc/CC-MAIN-20240916012328-20240916042328-00005.warc.gz#offset=701471634&length=157970"},
+{"day":"2025-01-21","new":199900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363113.38/warc/CC-MAIN-20250121070313-20250121100313-00250.warc.gz#offset=806066104&length=162087"},
+{"day":"2025-03-20","new":199999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433107.70/warc/CC-MAIN-20250320003322-20250320033322-00205.warc.gz#offset=762099526&length=166543"},
+{"day":"2025-04-25","new":189900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135924.85/warc/CC-MAIN-20250425105842-20250425135842-00081.warc.gz#offset=742708966&length=149840"}
+]}

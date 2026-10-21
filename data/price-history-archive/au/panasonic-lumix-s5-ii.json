@@ -1,0 +1,6 @@
+{"slug":"panasonic-lumix-s5-ii","market":"au","currency":"AUD","points":[
+{"day":"2025-07-12","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933848.24/warc/CC-MAIN-20250712023552-20250712053552-00552.warc.gz#offset=918420062&length=86810"},
+{"day":"2025-09-07","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00951.warc.gz#offset=877743950&length=86141"},
+{"day":"2025-12-17","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871658363.90/warc/CC-MAIN-20251217112246-20251217142246-00552.warc.gz#offset=758679792&length=87624"},
+{"day":"2026-01-14","new":279995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469122.50/warc/CC-MAIN-20260114153623-20260114183623-00951.warc.gz#offset=873847793&length=86183"}
+]}

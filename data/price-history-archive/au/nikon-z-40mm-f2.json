@@ -1,0 +1,6 @@
+{"slug":"nikon-z-40mm-f2","market":"au","currency":"AUD","points":[
+{"day":"2025-09-15","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533971.68/warc/CC-MAIN-20250915052735-20250915082735-00018.warc.gz#offset=878300128&length=79254"},
+{"day":"2025-09-17","new":44995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00789.warc.gz#offset=847392963&length=79342"},
+{"day":"2025-12-07","new":44995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307221.56/warc/CC-MAIN-20251207023705-20251207053705-00789.warc.gz#offset=788164127&length=78855"},
+{"day":"2026-01-19","new":54995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469448.29/warc/CC-MAIN-20260119102210-20260119132210-00018.warc.gz#offset=889855918&length=79066"}
+]}

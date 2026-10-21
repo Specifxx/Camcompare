@@ -1,0 +1,4 @@
+{"slug":"canon-rf-24mm-f1-4l-vcm","market":"au","currency":"AUD","points":[
+{"day":"2025-09-07","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00580.warc.gz#offset=928349751&length=78935"},
+{"day":"2026-01-14","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469122.50/warc/CC-MAIN-20260114153623-20260114183623-00580.warc.gz#offset=897291862&length=78640"}
+]}

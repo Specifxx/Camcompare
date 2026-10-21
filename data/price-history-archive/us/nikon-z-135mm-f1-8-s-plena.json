@@ -1,0 +1,5 @@
+{"slug":"nikon-z-135mm-f1-8-s-plena","market":"us","currency":"USD","points":[
+{"day":"2024-04-19","new":249695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817398.21/warc/CC-MAIN-20240419110125-20240419140125-00568.warc.gz#offset=696771310&length=238642"},
+{"day":"2025-01-23","new":249695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363538.76/warc/CC-MAIN-20250123155252-20250123185252-00568.warc.gz#offset=791013380&length=133565"},
+{"day":"2025-02-07","new":249695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00002.warc.gz#offset=763105498&length=134294"}
+]}

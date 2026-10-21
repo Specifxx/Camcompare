@@ -1,0 +1,7 @@
+{"slug":"pentax-k-3-mark-iii","market":"us","currency":"USD","points":[
+{"day":"2024-04-24","new":199695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296819668.74/warc/CC-MAIN-20240424143432-20240424173432-00582.warc.gz#offset=696388001&length=264380"},
+{"day":"2024-05-26","new":189695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058868.12/warc/CC-MAIN-20240526043700-20240526073700-00110.warc.gz#offset=665486024&length=140275"},
+{"day":"2024-11-05","new":229900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027881.88/warc/CC-MAIN-20241105114407-20241105144407-00747.warc.gz#offset=694459323&length=143196"},
+{"day":"2025-02-15","new":169695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951994.86/warc/CC-MAIN-20250215214935-20250216004935-00110.warc.gz#offset=702736692&length=149131"},
+{"day":"2025-08-04","new":229900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279789.28/warc/CC-MAIN-20250804114251-20250804144251-00947.warc.gz#offset=672392733&length=158615"}
+]}

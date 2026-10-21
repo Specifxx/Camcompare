@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gfx100rf","market":"au","currency":"AUD","points":[
+{"day":"2025-09-17","new":849995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826733.97/warc/CC-MAIN-20250917194202-20250917224202-00946.warc.gz#offset=907125889&length=82253"},
+{"day":"2026-01-13","new":879995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00522.warc.gz#offset=827282770&length=81863"},
+{"day":"2026-02-07","new":849995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505791.29/warc/CC-MAIN-20260207093355-20260207123355-00946.warc.gz#offset=822752918&length=81952"}
+]}

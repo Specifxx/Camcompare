@@ -104,6 +104,13 @@ function schemaCondition(v: unknown): Condition | null | "refuse" {
 }
 const inStockOf = (v: unknown) => /instock|limitedavailability|onlineonly|instoreonly/i.test(str(v) ?? "");
 
+/** The optional fields, only those the page states. */
+const extras = (wasPrice: number | null, availability: Availability | null, description?: string) => ({
+  ...(wasPrice ? { wasPrice } : {}),
+  ...(availability ? { availability } : {}),
+  ...(description ? { description: decode(description) } : {}),
+});
+
 /** Every priced Product on a page: JSON-LD first, then OpenGraph product:price. Exported for tests. */
 export function pageListings(html: string): PageListing[] {
   const nodes: Record<string, unknown>[] = [];
@@ -157,7 +164,7 @@ export function pageListings(html: string): PageListing[] {
       const was = typeof wasRaw === "number" ? Math.round(wasRaw * 100) : str(wasRaw) ? toMinor(str(wasRaw)!) : 0;
       const sameCurrency = !struck?.priceCurrency || str(struck.priceCurrency)?.toUpperCase() === currency;
       const availability = schemaAvailability(str(o.availability));
-      out.push({ title, gtin, mpn: str(n.mpn), sku: str(o.sku ?? n.sku), price, currency, inStock: availability ? availableNow(availability, false) : inStockOf(o.availability), condition: cond, wasPrice: sameCurrency ? wasPriceOf(price, was) : null, availability, description: description ? decode(description) : undefined });
+      out.push({ title, gtin, mpn: str(n.mpn), sku: str(o.sku ?? n.sku), price, currency, inStock: availability ? availableNow(availability, false) : inStockOf(o.availability), condition: cond, ...extras(sameCurrency ? wasPriceOf(price, was) : null, availability, description) });
     }
   }
   if (out.length) return out;
@@ -168,7 +175,7 @@ export function pageListings(html: string): PageListing[] {
   if (amount && currency && title) {
     const av = meta("product:availability") ?? "";
     const availability = /pre-?order/i.test(av) ? "preorder" : /back ?order/i.test(av) ? "backorder" : /out ?of ?stock|oos/i.test(av) ? "out_of_stock" : /in ?stock/i.test(av) ? "in_stock" : null;
-    out.push({ title: decode(title), price: toMinor(amount), currency: currency.toUpperCase(), inStock: availability ? availableNow(availability, false) : !/out ?of ?stock|oos/i.test(av), condition: schemaCondition(meta("product:condition")) as Condition | null, availability });
+    out.push({ title: decode(title), price: toMinor(amount), currency: currency.toUpperCase(), inStock: availability ? availableNow(availability, false) : !/out ?of ?stock|oos/i.test(av), condition: schemaCondition(meta("product:condition")) as Condition | null, ...extras(null, availability) });
   }
   return out;
 }

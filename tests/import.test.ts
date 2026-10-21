@@ -155,6 +155,10 @@ test("Shopify: robots.txt is respected and conditions read from titles and tags"
   assert.equal(robotsAllows(shopify, "/cart.js"), false);
   assert.equal(robotsAllows(shopify, "/blogs/news.atom"), false);
   assert.equal(robotsAllows(shopify, "/blogs/news.atom?x=1"), true);
+  // Bare-CR line endings (Broadway HK, 2026-10-22) are still separate rules.
+  const cr = "\rUser-agent: *\rDisallow: /admin\rDisallow: /search\rSitemap: https://x/sitemap.xml";
+  assert.equal(robotsAllows(cr, "/search"), false);
+  assert.equal(robotsAllows(cr, "/products.json"), true);
   assert.equal(robotsAllows("User-agent: *\nDisallow: /*?limit=", "/products.json?limit=250"), false);
   // The longest rule wins, and consecutive User-agent lines share their rules.
   assert.equal(robotsAllows("User-agent: *\nDisallow: /products\nAllow: /products.json", "/products.json"), true);
@@ -210,7 +214,7 @@ test("feed rows need an http(s) link and their currency column must match", () =
 test("structured data: JSON-LD offers and OpenGraph prices are read, slugs become words, bot walls are seen", async () => {
   const { pageListings, slugText, blockedReason } = await import("../src/lib/sources/structured");
   const ld = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"24-70mm f/2.8 E ED AFS VR","brand":{"@type":"Brand","name":"Nikon"},"sku":"N1","offers":{"@type":"Offer","price":"1,446.95","priceCurrency":"USD","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition"}}</script>`;
-  assert.deepEqual(pageListings(ld), [{ title: "Nikon 24-70mm f/2.8 E ED AFS VR", gtin: undefined, mpn: undefined, sku: "N1", price: 144695, currency: "USD", inStock: true, condition: "new" }]);
+  assert.deepEqual(pageListings(ld), [{ title: "Nikon 24-70mm f/2.8 E ED AFS VR", gtin: undefined, mpn: undefined, sku: "N1", price: 144695, currency: "USD", inStock: true, condition: "new", availability: "in_stock" }]);
   const og = `<meta property="og:title" content="Sony a7 IV Body"><meta property="product:price:amount" content="2198.00"><meta property="product:price:currency" content="GBP">`;
   assert.equal(pageListings(og)[0].currency, "GBP");
   assert.equal(pageListings(`<script type="application/ld+json">{"@type":"Product","name":"X","offers":{"price":"10"}}</script>`).length, 0); // no currency: refused

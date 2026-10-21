@@ -1,0 +1,7 @@
+{"slug":"fujifilm-xf-50mm-f2-r-wr","market":"us","currency":"USD","points":[
+{"day":"2024-11-08","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028019.71/warc/CC-MAIN-20241108003811-20241108033811-00159.warc.gz#offset=724991245&length=141512"},
+{"day":"2025-01-16","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362307.18/warc/CC-MAIN-20250116135418-20250116165418-00711.warc.gz#offset=806366234&length=135915"},
+{"day":"2025-04-17","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00009.warc.gz#offset=802197960&length=149240"},
+{"day":"2025-05-25","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990726410.98/warc/CC-MAIN-20250525003427-20250525033427-00159.warc.gz#offset=669955453&length=190864"},
+{"day":"2025-08-08","new":49900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280029.61/warc/CC-MAIN-20250808131348-20250808161348-00511.warc.gz#offset=668622083&length=199652"}
+]}

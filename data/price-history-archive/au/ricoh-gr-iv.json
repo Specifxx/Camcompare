@@ -1,0 +1,4 @@
+{"slug":"ricoh-gr-iv","market":"au","currency":"AUD","points":[
+{"day":"2025-09-06","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532791.98/warc/CC-MAIN-20250906153317-20250906183317-00583.warc.gz#offset=874925914&length=83686"},
+{"day":"2026-01-16","new":219995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00583.warc.gz#offset=884773712&length=83663"}
+]}

@@ -1,0 +1,6 @@
+{"slug":"canon-rf-85mm-f1-2l-usm","market":"us","currency":"USD","points":[
+{"day":"2024-04-18","new":279900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817239.30/warc/CC-MAIN-20240418191007-20240418221007-00158.warc.gz#offset=698020711&length=240601"},
+{"day":"2024-12-11","new":249900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066083790.8/warc/CC-MAIN-20241211112917-20241211142917-00122.warc.gz#offset=696019307&length=143172"},
+{"day":"2025-01-24","new":259900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703692178.96/warc/CC-MAIN-20250123223358-20250124013358-00158.warc.gz#offset=778568122&length=156149"},
+{"day":"2025-09-16","new":299900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825313.84/warc/CC-MAIN-20250916215628-20250917005628-00688.warc.gz#offset=185978425&length=109228"}
+]}

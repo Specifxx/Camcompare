@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-s-24mm-f1-8","market":"us","currency":"USD","points":[
+{"day":"2024-08-03","new":79799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640361431.2/warc/CC-MAIN-20240803060126-20240803090126-00487.warc.gz#offset=597495047&length=138343"},
+{"day":"2025-01-19","new":79799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362532.35/warc/CC-MAIN-20250119214819-20250120004819-00487.warc.gz#offset=784711022&length=140677"},
+{"day":"2025-08-04","new":89799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279789.28/warc/CC-MAIN-20250804114251-20250804144251-00887.warc.gz#offset=720828387&length=188177"}
+]}

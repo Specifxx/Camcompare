@@ -56,7 +56,7 @@ export function OfferRowItem({ row, product, placement, priceNode, dense = false
     <li className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${row.tag === "best" ? "bg-buy-soft/40" : ""} ${className}`}>
       <div className="min-w-0 flex-1">
         <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
-          <span className="truncate font-semibold">{row.name}</span>
+          <span className="font-semibold">{row.name}</span>
           {row.tag && <span className={`rounded px-1.5 py-px text-[11px] font-semibold ${row.tag === "best" ? "bg-buy text-buy-fg" : "bg-buy-soft text-win"}`}>{TAG[row.tag]}</span>}
         </p>
         <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-xs text-muted">
@@ -67,7 +67,7 @@ export function OfferRowItem({ row, product, placement, priceNode, dense = false
           {row.count && row.count > 1 ? <span className="text-subtle">· ×{row.count} listings</span> : null}
         </p>
         {row.kit && row.pack && <p className="mt-0.5 text-xs font-medium text-fg">{row.pack}</p>}
-        {details && <p className="truncate text-xs text-subtle">{details}</p>}
+        {details && <p className="text-xs text-subtle">{details}</p>}
         {(row.promo || warn) && (
           <p className="mt-1 flex flex-wrap gap-1">
             {row.promo && (

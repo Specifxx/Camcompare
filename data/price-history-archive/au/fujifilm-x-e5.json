@@ -1,0 +1,7 @@
+{"slug":"fujifilm-x-e5","market":"au","currency":"AUD","points":[
+{"day":"2025-09-06","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532791.98/warc/CC-MAIN-20250906153317-20250906183317-00812.warc.gz#offset=906806421&length=81497"},
+{"day":"2025-09-17","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00961.warc.gz#offset=879562034&length=83684"},
+{"day":"2025-12-05","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307053.42/warc/CC-MAIN-20251205134355-20251205164355-00961.warc.gz#offset=859850698&length=83884"},
+{"day":"2026-01-15","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00584.warc.gz#offset=887699525&length=81357"},
+{"day":"2026-02-09","new":269995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505946.14/warc/CC-MAIN-20260209041804-20260209071804-00812.warc.gz#offset=872693634&length=81492"}
+]}

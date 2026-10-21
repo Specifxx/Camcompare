@@ -1,0 +1,5 @@
+{"slug":"dji-osmo-action-5-pro","market":"au","currency":"AUD","points":[
+{"day":"2025-07-17","new":62900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934401.16/warc/CC-MAIN-20250717020215-20250717050215-00443.warc.gz#offset=917434692&length=78168"},
+{"day":"2025-11-06","new":59995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342313.22/warc/CC-MAIN-20251106231041-20251107021041-00668.warc.gz#offset=878636187&length=78170"},
+{"day":"2025-11-19","new":62900,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439657679.99/warc/CC-MAIN-20251119093413-20251119123413-00443.warc.gz#offset=829718442&length=78468"}
+]}

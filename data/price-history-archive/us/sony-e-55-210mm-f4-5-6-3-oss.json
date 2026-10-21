@@ -1,0 +1,5 @@
+{"slug":"sony-e-55-210mm-f4-5-6-3-oss","market":"us","currency":"USD","points":[
+{"day":"2025-01-16","new":34800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362307.18/warc/CC-MAIN-20250116135418-20250116165418-00615.warc.gz#offset=798656303&length=143890"},
+{"day":"2025-02-18","new":34800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262922.73/warc/CC-MAIN-20250218212209-20250219002209-00033.warc.gz#offset=659194703&length=153364"},
+{"day":"2025-06-19","new":29800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481507.16/warc/CC-MAIN-20250619082745-20250619112745-00545.warc.gz#offset=648008416&length=150138"}
+]}

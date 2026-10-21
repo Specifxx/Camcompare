@@ -1,0 +1,4 @@
+{"slug":"sigma-135mm-f1-8-dg-hsm-art","market":"au","currency":"AUD","points":[
+{"day":"2025-09-17","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825571.93/warc/CC-MAIN-20250917071651-20250917101651-00634.warc.gz#offset=866492337&length=80618"},
+{"day":"2026-02-07","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395505791.29/warc/CC-MAIN-20260207093355-20260207123355-00634.warc.gz#offset=767463473&length=80365"}
+]}

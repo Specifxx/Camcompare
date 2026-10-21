@@ -28,14 +28,22 @@ flag; the email is never returned publicly), `community_login_tokens`
 (SHA-256 of each magic link, 15 minutes, single use) and `community_sessions`
 (hashed session tokens; cookies signed with `AUTH_SECRET`), private; and
 `community_comments`, `community_votes`, `community_reviews`,
-`community_threads`, public through the API; plus `community_reports` and
-`community_notices` (daily owner-email counts), private. They are read **at
+`community_threads`, `community_posts` (member stories, `/stories`) and
+`community_requests` (the feature and gear request board, `/requests`, with
+an owner status), public through the API; plus `community_reports`,
+`community_notices` (daily owner-email counts) and `community_collection`
+(each member's My gear list, `/collection`, one JSONB row read only by its
+owner, never public, never on `/admin`), private. They are read **at
 request time by client fetches only** (and by the owner's `/admin`), after the static page renders, through
 `/api/community/*` GETs the CDN caches for 30 s (`s-maxage=30,
 stale-while-revalidate=60`) so a busy page costs one query a minute. No page
 reads them at build time or server-side, pages stay static, and thread and
-member pages are static shells (`/community/t`, `/u`, via rewrites). Don't
-add server reads, ISR or prewarming for them.
+member, thread and story pages are static shells (`/community/t`, `/u`,
+`/stories/p`, via rewrites). A story is noindex (added by the page's script)
+and shows no cover image until the owner features it on `/admin`
+(DECISIONS.md "Member stories and My gear"). Don't add server reads, ISR or
+prewarming for them. My gear's values are static too: `public/values/`,
+written at build by `scripts/build-values.ts` from price history.
 
 Everything else public is JSON in `data/`, committed:
 
@@ -46,8 +54,18 @@ Everything else public is JSON in `data/`, committed:
   `npm run import:prices`
 - `data/price-history/<market>/YYYY-MM-DD.json`: each day's lowest new and used
   price per product
+- `data/price-history-archive/<market>/<slug>.json`: price history from
+  before we recorded it, read from archived copies of our retailers' own
+  pages (Internet Archive, Common Crawl) by `scripts/backfill-history.ts`
+  through the live matching; always labelled as archived where shown
+  (DECISIONS.md "Price history backfill from archived store pages"). The
+  product chart reads both through `public/history/<market>/<slug>.json`,
+  written at build by `scripts/build-history-data.ts`.
 - `data/image-credits/<slug>.json`: thumbnail credits
   (`public/products/<slug>.webp`)
+- `data/viral.json`: the owner's "Viral cameras right now" list (slug + one
+  line why), shown at `/viral-cameras`; `/digicams` is every `compact` camera
+  in the catalog (`src/lib/curated.ts`)
 - `data/amazon-asins.json`: Amazon ASINs found per marketplace. Amazon's
   *prices* are never committed: its licence allows a price to be kept for 24
   hours, so each build fetches them into the git-ignored `data/offers-amazon/`
@@ -79,11 +97,16 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
 `src/views/`, which take a `market`.
 
 - **Prices stay in their own currency.** Never convert one currency into
-  another for display. A feed priced in another currency is refused. One
-  exception: the "Price around the world" panel on product pages
+  another for display. A feed priced in another currency is refused. Two
+  exceptions: the "Price around the world" panel on product pages
   (`src/components/WorldPrices.tsx`) shows each market's price in its own
   currency with an approximate conversion beside it, labelled "≈ at today's
-  exchange rate" (`src/lib/fx.ts`, `data/fx.json` from `scripts/fetch-fx.ts`).
+  exchange rate" (`src/lib/fx.ts`, `data/fx.json` from `scripts/fetch-fx.ts`),
+  and the global price comparison at `/world`, `/world/<brand>` and
+  `/world/<brand>/<line>` (`src/lib/world.ts`, `src/components/WorldTable.tsx`),
+  which converts every market's lowest new price into one currency the
+  visitor picks, each figure marked ≈ with the store's own price under it
+  (DECISIONS.md "Global price comparison page").
   Nowhere else: not cards, rows, deals, metadata or structured data.
 - **Market product pages are noindex until priced.** A product page outside
   the US is noindex, out of the sitemap and out of hreflang until that market

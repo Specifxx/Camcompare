@@ -1,0 +1,6 @@
+{"slug":"laowa-10mm-f2-8-zero-d-ff","market":"au","currency":"AUD","points":[
+{"day":"2025-09-07","new":144995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00579.warc.gz#offset=939906850&length=75144"},
+{"day":"2025-09-09","new":144995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533029.41/warc/CC-MAIN-20250909025155-20250909055155-00816.warc.gz#offset=897296645&length=75204"},
+{"day":"2026-01-15","new":144995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00579.warc.gz#offset=912031199&length=75061"},
+{"day":"2026-01-16","new":144995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469271.12/warc/CC-MAIN-20260116015924-20260116045924-00816.warc.gz#offset=927243098&length=75113"}
+]}

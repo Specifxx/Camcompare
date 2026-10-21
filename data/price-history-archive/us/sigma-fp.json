@@ -1,0 +1,7 @@
+{"slug":"sigma-fp","market":"us","currency":"USD","points":[
+{"day":"2024-04-24","new":189900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296818999.68/warc/CC-MAIN-20240424014618-20240424044618-00273.warc.gz#offset=686131142&length=246476"},
+{"day":"2024-10-11","new":199999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253776.45/warc/CC-MAIN-20241011134210-20241011164210-00251.warc.gz#offset=672204220&length=144993"},
+{"day":"2024-10-15","new":189900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255885.83/warc/CC-MAIN-20241015143046-20241015173046-00273.warc.gz#offset=652404554&length=137518"},
+{"day":"2025-02-17","new":189900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00716.warc.gz#offset=698263538&length=140170"},
+{"day":"2025-04-25","new":189900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135924.85/warc/CC-MAIN-20250425105842-20250425135842-00073.warc.gz#offset=789963977&length=197615"}
+]}

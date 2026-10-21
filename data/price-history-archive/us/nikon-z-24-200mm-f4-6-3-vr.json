@@ -1,0 +1,5 @@
+{"slug":"nikon-z-24-200mm-f4-6-3-vr","market":"us","currency":"USD","points":[
+{"day":"2024-11-08","new":89695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028067.32/warc/CC-MAIN-20241108133114-20241108163114-00423.warc.gz#offset=713885129&length=149976"},
+{"day":"2025-03-20","new":79695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433136.71/warc/CC-MAIN-20250320165433-20250320195433-00923.warc.gz#offset=743527066&length=145615"},
+{"day":"2025-09-11","new":94695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533123.89/warc/CC-MAIN-20250911014741-20250911044741-00006.warc.gz#offset=203555450&length=107190"}
+]}

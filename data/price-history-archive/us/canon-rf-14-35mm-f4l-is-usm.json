@@ -1,0 +1,5 @@
+{"slug":"canon-rf-14-35mm-f4l-is-usm","market":"us","currency":"USD","points":[
+{"day":"2024-04-16","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817106.73/warc/CC-MAIN-20240416191221-20240416221221-00314.warc.gz#offset=705733284&length=240329"},
+{"day":"2025-03-20","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433107.70/warc/CC-MAIN-20250320003322-20250320033322-00914.warc.gz#offset=738965427&length=196247"},
+{"day":"2025-09-14","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533679.76/warc/CC-MAIN-20250914043507-20250914073507-00002.warc.gz#offset=222695722&length=107362"}
+]}

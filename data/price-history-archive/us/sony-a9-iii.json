@@ -1,0 +1,5 @@
+{"slug":"sony-a9-iii","market":"us","currency":"USD","points":[
+{"day":"2025-01-24","new":599800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703692178.96/warc/CC-MAIN-20250123223358-20250124013358-00339.warc.gz#offset=803810776&length=133565"},
+{"day":"2025-03-18","new":599800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433039.83/warc/CC-MAIN-20250317231956-20250318021956-00133.warc.gz#offset=815551128&length=242365"},
+{"day":"2025-08-04","new":639800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279830.39/warc/CC-MAIN-20250804210957-20250805000957-00439.warc.gz#offset=670585546&length=153124"}
+]}

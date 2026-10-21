@@ -1,0 +1,5 @@
+{"slug":"sigma-135mm-f1-8-dg-hsm-art","market":"us","currency":"USD","points":[
+{"day":"2025-02-08","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951543.48/warc/CC-MAIN-20250208114257-20250208144257-00622.warc.gz#offset=727399134&length=145619"},
+{"day":"2025-02-17","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00498.warc.gz#offset=713779962&length=155203"},
+{"day":"2025-04-17","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00664.warc.gz#offset=778956818&length=145924"}
+]}

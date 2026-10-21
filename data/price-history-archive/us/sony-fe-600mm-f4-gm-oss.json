@@ -1,0 +1,5 @@
+{"slug":"sony-fe-600mm-f4-gm-oss","market":"us","currency":"USD","points":[
+{"day":"2024-10-14","new":1299800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255435.42/warc/CC-MAIN-20241014132752-20241014162752-00177.warc.gz#offset=681941590&length=131962"},
+{"day":"2024-11-14","new":1299800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028657.76/warc/CC-MAIN-20241114130448-20241114160448-00451.warc.gz#offset=717074064&length=131326"},
+{"day":"2025-02-14","new":1299800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951898.89/warc/CC-MAIN-20250214195609-20250214225609-00848.warc.gz#offset=713039836&length=127695"}
+]}

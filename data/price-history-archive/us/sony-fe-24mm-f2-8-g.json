@@ -1,0 +1,5 @@
+{"slug":"sony-fe-24mm-f2-8-g","market":"us","currency":"USD","points":[
+{"day":"2024-05-27","new":54800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059039.52/warc/CC-MAIN-20240527083011-20240527113011-00699.warc.gz#offset=647645345&length=145026"},
+{"day":"2025-02-09","new":59800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00695.warc.gz#offset=734486888&length=152711"},
+{"day":"2025-07-09","new":79800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933687.71/warc/CC-MAIN-20250708225839-20250709015839-00996.warc.gz#offset=678368879&length=153431"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"fujifilm-x-t50","market":"us","currency":"USD","points":[
+{"day":"2024-08-09","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640741453.47/warc/CC-MAIN-20240808222119-20240809012119-00128.warc.gz#offset=604811733&length=148824"},
+{"day":"2025-03-20","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433136.71/warc/CC-MAIN-20250320165433-20250320195433-00628.warc.gz#offset=737918581&length=159326"},
+{"day":"2025-05-14","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412443.21/warc/CC-MAIN-20250514163508-20250514193508-00010.warc.gz#offset=652687224&length=151593"}
+]}

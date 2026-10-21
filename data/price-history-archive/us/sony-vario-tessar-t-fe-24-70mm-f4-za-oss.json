@@ -1,0 +1,5 @@
+{"slug":"sony-vario-tessar-t-fe-24-70mm-f4-za-oss","market":"us","currency":"USD","points":[
+{"day":"2024-05-19","new":69800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057922.86/warc/CC-MAIN-20240519193629-20240519223629-00813.warc.gz#offset=675399282&length=139885"},
+{"day":"2024-11-12","new":69800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028290.49/warc/CC-MAIN-20241112212600-20241113002600-00813.warc.gz#offset=708348442&length=139290"},
+{"day":"2024-11-14","new":74800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028526.56/warc/CC-MAIN-20241114031054-20241114061054-00823.warc.gz#offset=714766077&length=140393"}
+]}

@@ -1,0 +1,8 @@
+{"slug":"sony-zv-e1","market":"au","currency":"AUD","points":[
+{"day":"2025-07-16","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934234.44/warc/CC-MAIN-20250716005150-20250716035150-00230.warc.gz#offset=890955472&length=85482"},
+{"day":"2025-08-15","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00541.warc.gz#offset=842841301&length=84894"},
+{"day":"2025-09-07","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532942.33/warc/CC-MAIN-20250907225423-20250908015423-00940.warc.gz#offset=917946506&length=85413"},
+{"day":"2025-09-12","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533244.92/warc/CC-MAIN-20250912084616-20250912114616-00954.warc.gz#offset=855065044&length=85287"},
+{"day":"2025-12-14","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871308241.81/warc/CC-MAIN-20251214184959-20251214214959-00954.warc.gz#offset=773135246&length=84878"},
+{"day":"2026-01-21","new":289995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469644.9/warc/CC-MAIN-20260121053530-20260121083530-00940.warc.gz#offset=836094145&length=85347"}
+]}

@@ -55,7 +55,9 @@ export const ID_RE = /^[1-9][0-9]{0,17}$/;
 /** Deal keys one GET /api/community/deals may ask for. */
 export const DEAL_KEYS_MAX = 100;
 
-export type Target = { kind: "product"; slug: string } | { kind: "deal"; key: string } | { kind: "thread"; id: string } | { kind: "post"; id: string } | { kind: "request"; id: string };
+export type Target = { kind: "product"; slug: string } | { kind: "deal"; key: string } | { kind: "thread"; id: string } | { kind: "post"; id: string } | { kind: "request"; id: string } | { kind: "release"; id: string };
+/** A release card on /releases (lib/releases/core.ts releaseId): "r" and 12 hex digits. */
+export const RELEASE_ID_RE = /^r[0-9a-f]{12}$/;
 
 /** "product:<slug>", "deal:<dealKey>", "thread:<id>", "post:<id>" (a story) or "request:<id>"; anything else is null. */
 export function parseTarget(raw: unknown): Target | null {
@@ -68,6 +70,7 @@ export function parseTarget(raw: unknown): Target | null {
   if (kind === "deal" && DEAL_KEY_RE.test(rest)) return { kind, key: rest };
   if (kind === "thread" && ID_RE.test(rest)) return { kind, id: rest };
   if ((kind === "post" || kind === "request") && ID_RE.test(rest)) return { kind, id: rest };
+  if (kind === "release" && RELEASE_ID_RE.test(rest)) return { kind, id: rest };
   return null;
 }
 

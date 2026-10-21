@@ -1,0 +1,5 @@
+{"slug":"canon-eos-r7","market":"us","currency":"USD","points":[
+{"day":"2024-11-14","new":129900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00151.warc.gz#offset=712753133&length=141951"},
+{"day":"2024-12-06","new":129900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066384744.74/warc/CC-MAIN-20241206063209-20241206093209-00517.warc.gz#offset=703874880&length=153077"},
+{"day":"2025-03-21","new":139900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433189.12/warc/CC-MAIN-20250321190531-20250321220531-00751.warc.gz#offset=739938350&length=151680"}
+]}

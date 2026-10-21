@@ -1,0 +1,7 @@
+{"slug":"gopro-hero9-black","market":"us","currency":"USD","points":[
+{"day":"2024-05-27","new":39900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059045.34/warc/CC-MAIN-20240527205559-20240527235559-00100.warc.gz#offset=650642882&length=154304"},
+{"day":"2024-10-15","new":39900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255885.83/warc/CC-MAIN-20241015143046-20241015173046-00825.warc.gz#offset=679495217&length=152374"},
+{"day":"2024-11-14","new":39900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00880.warc.gz#offset=728764638&length=144685"},
+{"day":"2025-03-27","new":39900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004755993.69/warc/CC-MAIN-20250327022503-20250327052503-00525.warc.gz#offset=706907224&length=153946"},
+{"day":"2025-05-15","new":39900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412452.68/warc/CC-MAIN-20250514225643-20250515015643-00300.warc.gz#offset=685360566&length=156024"}
+]}

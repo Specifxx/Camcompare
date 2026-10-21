@@ -1,0 +1,5 @@
+{"slug":"canon-rf-28-70mm-f2l-usm","market":"us","currency":"USD","points":[
+{"day":"2024-09-11","new":279900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651387.63/warc/CC-MAIN-20240911120037-20240911150037-00643.warc.gz#offset=724040261&length=135975"},
+{"day":"2025-03-24","new":289900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433351.85/warc/CC-MAIN-20250324114919-20250324144919-00043.warc.gz#offset=728571644&length=145164"},
+{"day":"2025-08-13","new":289999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151281020.56/warc/CC-MAIN-20250813024931-20250813054931-00442.warc.gz#offset=645484584&length=153050"}
+]}

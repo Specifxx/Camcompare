@@ -1,0 +1,5 @@
+{"slug":"canon-rf-24-105mm-f2-8l-is-usm-z","market":"us","currency":"USD","points":[
+{"day":"2024-04-13","new":299900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816734.69/warc/CC-MAIN-20240413114018-20240413144018-00084.warc.gz#offset=720127166&length=242361"},
+{"day":"2024-10-11","new":299900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253749.74/warc/CC-MAIN-20241011011611-20241011041611-00444.warc.gz#offset=677034573&length=139058"},
+{"day":"2025-03-20","new":299900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433107.70/warc/CC-MAIN-20250320003322-20250320033322-00884.warc.gz#offset=760537108&length=147202"}
+]}

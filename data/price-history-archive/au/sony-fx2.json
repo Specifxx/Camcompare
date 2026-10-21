@@ -1,0 +1,4 @@
+{"slug":"sony-fx2","market":"au","currency":"AUD","points":[
+{"day":"2025-09-17","new":469995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826472.99/warc/CC-MAIN-20250917163600-20250917193600-00886.warc.gz#offset=886030235&length=82536"},
+{"day":"2026-01-18","new":499995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469410.3/warc/CC-MAIN-20260118124654-20260118154654-00886.warc.gz#offset=888984896&length=82229"}
+]}

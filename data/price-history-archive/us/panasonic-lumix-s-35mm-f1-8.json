@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-s-35mm-f1-8","market":"us","currency":"USD","points":[
+{"day":"2024-08-03","new":69999,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640368581.4/warc/CC-MAIN-20240803121937-20240803151937-00108.warc.gz#offset=604415566&length=139466"},
+{"day":"2025-03-20","new":59799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433136.71/warc/CC-MAIN-20250320165433-20250320195433-00908.warc.gz#offset=741644648&length=144358"},
+{"day":"2025-09-17","new":69799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047825313.84/warc/CC-MAIN-20250916215628-20250917005628-00989.warc.gz#offset=197654310&length=102876"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"nikon-z9","market":"au","currency":"AUD","points":[
+{"day":"2025-08-05","new":899995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279837.14/warc/CC-MAIN-20250805001900-20250805031900-00630.warc.gz#offset=907730677&length=89156"},
+{"day":"2025-12-13","new":899995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307743.66/warc/CC-MAIN-20251213090347-20251213120347-00258.warc.gz#offset=805587709&length=89441"},
+{"day":"2026-01-13","new":899995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468947.64/warc/CC-MAIN-20260113141813-20260113171813-00630.warc.gz#offset=859650060&length=89570"}
+]}

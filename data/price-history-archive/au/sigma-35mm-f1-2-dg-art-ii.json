@@ -1,0 +1,5 @@
+{"slug":"sigma-35mm-f1-2-dg-art-ii","market":"au","currency":"AUD","points":[
+{"day":"2025-10-16","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648661376.98/warc/CC-MAIN-20251016021312-20251016051312-00477.warc.gz#offset=981968780&length=74898"},
+{"day":"2025-10-17","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00343.warc.gz#offset=957413663&length=76542"},
+{"day":"2026-02-15","new":259995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506681.61/warc/CC-MAIN-20260215221156-20260216011156-00362.warc.gz#offset=790100641&length=74598"}
+]}

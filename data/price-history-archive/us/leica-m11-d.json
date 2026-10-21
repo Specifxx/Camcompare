@@ -1,0 +1,4 @@
+{"slug":"leica-m11-d","market":"us","currency":"USD","points":[
+{"day":"2024-12-06","new":939500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066400558.71/warc/CC-MAIN-20241206093646-20241206123646-00374.warc.gz#offset=722637976&length=144891"},
+{"day":"2025-07-18","new":939500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934598.56/warc/CC-MAIN-20250718000345-20250718030345-00674.warc.gz#offset=683145317&length=188808"}
+]}

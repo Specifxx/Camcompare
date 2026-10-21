@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gf-110mm-f5-6-t-s-macro","market":"us","currency":"USD","points":[
+{"day":"2024-10-10","new":349995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253682.6/warc/CC-MAIN-20241010124812-20241010154812-00493.warc.gz#offset=670016609&length=134509"},
+{"day":"2025-02-09","new":349995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00348.warc.gz#offset=724878965&length=142652"},
+{"day":"2025-04-24","new":349900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135882.44/warc/CC-MAIN-20250424085107-20250424115107-00648.warc.gz#offset=755385724&length=145658"}
+]}

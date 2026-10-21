@@ -55,6 +55,8 @@ export function leadOffer(h: Headline): { offer: Offer; what: "new" | "used" | "
 // ------------------------------------------------------------ kit labels
 
 // "RF-S18-45mm", "18-45mm", "XF 16-50mm", "NIKKOR Z DX 16-50mm", "FE 28-60mm"
+const PREFIXES = ["RF-S", "RF", "EF-S", "EF-M", "EF", "XF", "XC", "FE", "DX", "Z DX", "NIKKOR Z", "M.Zuiko", "Lumix G", "G Vario"];
+const canonPrefix = (p: string) => PREFIXES.find((x) => x.toLowerCase() === p.toLowerCase()) ?? p;
 const FOCAL_RE = /(?:\b(RF-S|RF|EF-S|EF-M|EF|XF|XC|FE|DX|Z DX|NIKKOR Z|M\.Zuiko|Lumix G|G Vario)\s?)?(?<![\d.,])(\d{1,3}(?:\s?-\s?\d{1,3})?)\s?mm\b/gi;
 
 /** The lenses a kit listing's title names, e.g. ["RF-S 18-45mm", "55-210mm"]. Never more than three. */
@@ -65,7 +67,7 @@ export function lensesInTitle(title: string): string[] {
     const focal = m[2].replace(/\s/g, "");
     if (seen.has(focal)) continue;
     seen.add(focal);
-    out.push(m[1] ? `${m[1]} ${focal}mm` : `${focal}mm`);
+    out.push(m[1] ? `${canonPrefix(m[1])} ${focal}mm` : `${focal}mm`);
     if (out.length === 3) break;
   }
   return out;
