@@ -1,7 +1,13 @@
-# Every six hours (owner, 2026-10-17: live prices): import prices for every
-# market, commit data/offers, data/price-history, data/deal-log, data/accessories, data/accessory-history and data/amazon-asins.json
-# to main. Each commit is a production build (Vercel builds main), so prices
-# are at most about six hours old and there are four data builds a day.
+# Every three hours: import prices for every market and commit data/offers,
+# data/price-history, data/deal-log, data/accessories, data/accessory-history,
+# data/store-photos.json, data/releases.json and data/amazon-asins.json to main.
+# Each commit is a production build (Vercel builds main).
+#
+# The markets import as parallel jobs (one runner each, its own time limit):
+# one sequential import of all five passed the 120-minute job limit once the
+# slow structured-data stores (Ted's, Camera House, JB Hi-Fi) were added, and
+# a cancelled job commits nothing. The commit job then gathers whichever
+# markets finished, so one slow or failing market never holds up the rest.
 # Fails — and GitHub emails the owner — when a configured source breaks.
 name: refresh-prices
 on:
@@ -17,20 +23,28 @@ permissions:
   contents: write
 jobs:
   import:
+    strategy:
+      fail-fast: false
+      matrix:
+        market: [us, uk, eu, au, sg]
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 170
     steps:
       - uses: actions/checkout@v4
+        if: inputs.markets == '' || inputs.markets == null || contains(inputs.markets, matrix.market)
         with:
           ref: main
       - uses: actions/setup-node@v4
+        if: inputs.markets == '' || inputs.markets == null || contains(inputs.markets, matrix.market)
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+        if: inputs.markets == '' || inputs.markets == null || contains(inputs.markets, matrix.market)
       - name: Import prices
+        if: inputs.markets == '' || inputs.markets == null || contains(inputs.markets, matrix.market)
         env:
-          IMPORT_MARKETS: ${{ inputs.markets }}
+          IMPORT_MARKETS: ${{ matrix.market }}
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
           EBAY_AFFILIATE_CAMPAIGN: ${{ secrets.EBAY_AFFILIATE_CAMPAIGN }}
@@ -81,14 +95,50 @@ jobs:
       - name: Deal log
         # The home page's deal feed memory (src/lib/deal-log.ts): new deals,
         # price drops, and deals that sold or expired since the last import.
-        env:
-          IMPORT_MARKETS: ${{ inputs.markets }}
-        run: npx tsx scripts/update-deal-log.ts
+        if: inputs.markets == '' || inputs.markets == null || contains(inputs.markets, matrix.market)
+        run: npx tsx scripts/update-deal-log.ts ${{ matrix.market }}
+      - uses: actions/upload-artifact@v4
+        if: inputs.markets == '' || inputs.markets == null || contains(inputs.markets, matrix.market)
+        with:
+          name: market-${{ matrix.market }}
+          retention-days: 2
+          if-no-files-found: ignore
+          path: |
+            data/offers/${{ matrix.market }}.json
+            data/price-history/${{ matrix.market }}/
+            data/deal-log/${{ matrix.market }}.json
+            data/accessories/${{ matrix.market }}.json
+            data/accessory-history/${{ matrix.market }}/
+            data/amazon-asins.json
+  commit:
+    needs: import
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: market-*
+          path: incoming
+      - name: Gather markets
+        run: npx tsx scripts/merge-market-artifacts.ts incoming && rm -rf incoming
+      - name: Store photos
+        # Products without a licensed thumbnail get a store's photo
+        # (src/lib/store-photos.ts), from every market's offers.
+        run: npx tsx scripts/write-store-photos.ts
       - name: Exchange rates
-        # For the "Price around the world" panel only. Never fails the job:
-        # on any error the script keeps the last data/fx.json.
+        # For the "Price around the world" panel and /world only. Never fails
+        # the job: on any error the script keeps the last data/fx.json.
         continue-on-error: true
-        run: npx tsx scripts/fetch-fx.ts && git add data/fx.json
+        run: npx tsx scripts/fetch-fx.ts
       - name: Just announced
         # Makers' launch videos and press releases -> data/releases.json
         # (scripts/fetch-releases.ts). Rides the price commit: no extra build.
@@ -102,7 +152,7 @@ jobs:
         run: |
           git config user.name "camcompare-bot"
           git config user.email "camcompare-bot@users.noreply.github.com"
-          git add data/offers data/price-history data/deal-log data/accessories data/accessory-history data/releases.json data/amazon-asins.json 2>/dev/null || git add data/offers data/price-history data/deal-log data/accessories data/accessory-history data/releases.json
+          for f in data/offers data/price-history data/deal-log data/accessories data/accessory-history data/store-photos.json data/releases.json data/amazon-asins.json data/fx.json; do [ -e "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: prices $(date -u +%FT%H:%MZ)" && git pull --rebase origin main && git push; fi
       - name: Price alerts
         # Emails confirmed price alerts (scripts/check-alerts.ts). Skips cleanly
