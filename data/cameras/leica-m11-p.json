@@ -26,7 +26,8 @@
     "leica-m11-d",
     "leica-m11-monochrom",
     "leica-m10-p",
-    "leica-q3"
+    "leica-q3",
+    "leica-m-ev1"
   ],
   "mount": "leica-m",
   "fixedLens": null,

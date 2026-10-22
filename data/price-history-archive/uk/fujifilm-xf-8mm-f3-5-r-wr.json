@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-8mm-f3-5-r-wr","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-13","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00156.warc.gz#offset=251842727&length=64049"},
+{"day":"2025-03-17","new":79899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433031.79/warc/CC-MAIN-20250317164600-20250317194600-00856.warc.gz#offset=279601495&length=64619"},
+{"day":"2025-09-12","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533199.65/warc/CC-MAIN-20250911232519-20250912022519-00856.warc.gz#offset=241640617&length=76738"}
+]}

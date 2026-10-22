@@ -8,7 +8,7 @@
   {"slug": "fujifilm-x", "name": "Fujifilm X", "brand": "fujifilm", "flangeMm": 17.7, "formats": ["aps-c"], "introduced": 2012, "status": "current"},
   {"slug": "fujifilm-g", "name": "Fujifilm G", "brand": "fujifilm", "flangeMm": 26.7, "formats": ["medium-format"], "introduced": 2016, "status": "current"},
   {"slug": "l-mount", "name": "L-Mount", "brand": null, "flangeMm": 20, "formats": ["full-frame", "aps-c"], "introduced": 2014, "status": "current"},
-  {"slug": "micro-four-thirds", "name": "Micro Four Thirds", "brand": null, "flangeMm": 19.25, "formats": ["micro-four-thirds"], "introduced": 2008, "status": "current"},
+  {"slug": "micro-four-thirds", "name": "Micro Four Thirds", "brand": null, "flangeMm": 19.25, "formats": ["micro-four-thirds", "1-inch"], "introduced": 2008, "status": "current"},
   {"slug": "pentax-k", "name": "Pentax K", "brand": "ricoh", "flangeMm": 45.46, "formats": ["full-frame", "aps-c"], "introduced": 1975, "status": "current"},
   {"slug": "pentax-645", "name": "Pentax 645", "brand": "ricoh", "flangeMm": 70.87, "formats": ["medium-format"], "introduced": 1984, "status": "legacy"},
   {"slug": "leica-m", "name": "Leica M", "brand": "leica", "flangeMm": 27.8, "formats": ["full-frame"], "introduced": 1954, "status": "current"},

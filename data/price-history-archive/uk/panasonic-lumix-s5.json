@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-s5","market":"uk","currency":"GBP","points":[
+{"day":"2025-01-14","new":144900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362199.73/warc/CC-MAIN-20250114082024-20250114112024-00657.warc.gz#offset=302135699&length=66856"},
+{"day":"2025-05-12","new":144900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412241.67/warc/CC-MAIN-20250512073613-20250512103613-00257.warc.gz#offset=268467889&length=77433"},
+{"day":"2025-09-05","new":144900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532706.12/warc/CC-MAIN-20250905204343-20250905234343-00257.warc.gz#offset=243273348&length=78886"}
+]}

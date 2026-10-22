@@ -15,7 +15,7 @@
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
-  "successor": null,
+  "successor": "om-system-pen",
   "rivals": [
     "fujifilm-x-e4",
     "nikon-zfc",

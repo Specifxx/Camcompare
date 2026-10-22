@@ -297,3 +297,58 @@ test("a short model code is no proof of brand (QED SS20 is not Panasonic's S-S20
   assert.equal(s("Panasonic LUMIX S 20mm F2.5 S-S20"), "panasonic-lumix-s-20mm-f2-5");
   assert.equal(slug("FE 24-70mm GM II SEL2470GM2"), "sony-fe-24-70mm-f2-8-gm-ii");
 });
+
+test("2025-26 launches match the real catalog without stealing older models' listings", async () => {
+  const { readCameraFiles, readLensFiles } = await import("../src/lib/catalog/load");
+  const real = buildIndex(readCameraFiles().cameras, readLensFiles().lenses);
+  const s = (title: string) => matchListing({ title }, real).product?.slug ?? null;
+  // Canon EOS R6 V against the R6 Mark III, II and the original R6.
+  assert.equal(s("Canon EOS R6 V Body"), "canon-eos-r6-v");
+  assert.equal(s("Canon EOS R6V Full-Frame Mirrorless Camera"), "canon-eos-r6-v");
+  assert.equal(s("Canon EOS R6 Mark III Body"), "canon-eos-r6-mark-iii");
+  assert.equal(s("Canon EOS R6 Mark II Mirrorless Camera Body"), "canon-eos-r6-mark-ii");
+  assert.equal(s("Canon EOS R6 Mirrorless Camera Body"), "canon-eos-r6");
+  assert.equal(s("Canon EOS R8 Mark II Body"), "canon-eos-r8-mark-ii");
+  assert.equal(s("Canon EOS R8 Mirrorless Camera Body"), "canon-eos-r8");
+  // DJI: the dual-camera Pocket 4P, the Pocket 4 and the Pocket 3 stay apart.
+  assert.equal(s("DJI Osmo Pocket 4P"), "dji-osmo-pocket-4p");
+  assert.equal(s("DJI Osmo Pocket 4P Standard Combo Pearl White"), "dji-osmo-pocket-4p");
+  assert.equal(s("DJI Osmo Pocket 4 Creator Combo"), "dji-osmo-pocket-4");
+  assert.equal(s("Osmo Pocket 3"), null); // no brand
+  assert.equal(s("DJI Osmo Pocket 3 Creator Combo"), "dji-osmo-pocket-3");
+  assert.equal(s("DJI Osmo 360 II Standard Combo"), "dji-osmo-360-ii");
+  assert.equal(s("DJI Osmo 360 Standard Combo"), "dji-osmo-360");
+  assert.equal(s("DJI Osmo Action 6 Standard Combo"), "dji-osmo-action-6");
+  assert.equal(s("DJI Osmo Action 5 Pro Standard Combo"), "dji-osmo-action-5-pro");
+  // Sony, Nikon.
+  assert.equal(s("Sony Alpha 7R VI Mirrorless Camera Body ILCE-7RM6"), "sony-a7r-vi");
+  assert.equal(s("Sony a7R V Mirrorless Camera Body"), "sony-a7r-v");
+  assert.equal(s("Sony Cyber-shot RX10 V"), "sony-rx10-v");
+  assert.equal(s("Sony Cyber-shot DSC-RX10 IV"), "sony-rx10-iv");
+  assert.equal(s("Nikon Z5IIC Mirrorless Camera Body"), "nikon-z5iic");
+  assert.equal(s("Nikon Z5II Mirrorless Camera Body"), "nikon-z5-ii");
+  // Insta360, GoPro.
+  assert.equal(s("Insta360 X6 Standard Bundle"), "insta360-x6");
+  assert.equal(s("Insta360 X5 360 Camera"), "insta360-x5");
+  assert.equal(s("Insta360 Luna Ultra Creator Bundle"), "insta360-luna-ultra");
+  assert.equal(s("Insta360 Luna Pro Standard Bundle"), "insta360-luna-pro");
+  assert.equal(s("GoPro MISSION 1 PRO ILS"), "gopro-mission-1-pro-ils");
+  assert.equal(s("GoPro MISSION 1 PRO 8K Compact Cinema Camera"), "gopro-mission-1-pro");
+  assert.equal(s("GoPro MISSION 1"), "gopro-mission-1");
+  assert.equal(s("GoPro MAX 360 Action Camera"), "gopro-max");
+  assert.equal(s("GoPro MAX2 360 Camera"), "gopro-max2");
+  // Ricoh, Leica, Panasonic, OM System.
+  assert.equal(s("Ricoh GR IV Monochrome"), "ricoh-gr-iv-monochrome");
+  assert.equal(s("Ricoh GR IV Digital Camera"), "ricoh-gr-iv");
+  assert.equal(s("Leica SL3-P Body"), "leica-sl3-p");
+  assert.equal(s("Leica SL3 Mirrorless Camera"), "leica-sl3");
+  assert.equal(s("Leica M EV1"), "leica-m-ev1");
+  assert.equal(s("Panasonic Lumix L10 Black"), "panasonic-lumix-l10");
+  assert.equal(s("Panasonic Lumix DMC-L10 Digital SLR with 14-50mm"), null); // the 2007 DSLR
+  assert.equal(s("Panasonic Lumix DMC-GX7 Body"), "panasonic-lumix-gx7");
+  assert.equal(s("Panasonic Lumix TZ300"), "panasonic-lumix-zs300");
+  assert.equal(s("Panasonic Lumix TZ200"), "panasonic-lumix-zs200");
+  assert.equal(s("OM SYSTEM PEN Mirrorless Camera Body Silver"), "om-system-pen");
+  assert.equal(s("Olympus PEN E-PL7 Mirrorless Camera"), null); // not the 2026 PEN
+  assert.equal(s("Olympus PEN E-P7 Body"), "olympus-pen-e-p7");
+});

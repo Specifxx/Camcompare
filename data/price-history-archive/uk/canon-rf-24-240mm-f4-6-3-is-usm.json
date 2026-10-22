@@ -1,0 +1,5 @@
+{"slug":"canon-rf-24-240mm-f4-6-3-is-usm","market":"uk","currency":"GBP","points":[
+{"day":"2024-11-07","new":90900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028017.48/warc/CC-MAIN-20241107212632-20241108002632-00109.warc.gz#offset=273328469&length=61908"},
+{"day":"2024-12-14","new":84900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066125982.36/warc/CC-MAIN-20241214181735-20241214211735-00109.warc.gz#offset=255468333&length=63726"},
+{"day":"2025-08-12","new":96900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280906.43/warc/CC-MAIN-20250812014435-20250812044435-00809.warc.gz#offset=255613282&length=74788"}
+]}

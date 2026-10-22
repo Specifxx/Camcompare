@@ -1,0 +1,74 @@
+{
+  "slug": "gopro-mission-1",
+  "brand": "gopro",
+  "name": "GoPro MISSION 1",
+  "shortName": "MISSION 1",
+  "aliases": [
+    "MISSION 1",
+    "Mission1",
+    "GoPro MISSION 1"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "action",
+  "announced": "2026-04-14",
+  "launchPriceUsd": 599.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "gopro-mission-1-pro",
+    "dji-osmo-action-6",
+    "gopro-hero13-black"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      15,
+      27
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 50,
+    "isoMin": 100,
+    "isoMax": 3200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.59,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 207,
+    "dimensionsMm": [
+      80.1,
+      52.1,
+      44.3
+    ],
+    "weatherSealed": true,
+    "waterproofM": 20,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

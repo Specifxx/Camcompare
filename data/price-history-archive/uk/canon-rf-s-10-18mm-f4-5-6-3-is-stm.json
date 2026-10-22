@@ -1,0 +1,5 @@
+{"slug":"canon-rf-s-10-18mm-f4-5-6-3-is-stm","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-13","new":37900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00298.warc.gz#offset=254220283&length=63686"},
+{"day":"2025-04-26","new":37900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135976.34/warc/CC-MAIN-20250426032300-20250426062300-00098.warc.gz#offset=292755349&length=74505"},
+{"day":"2025-09-14","new":37900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533679.76/warc/CC-MAIN-20250914043507-20250914073507-00098.warc.gz#offset=223571565&length=76979"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-27mm-f2-8-r-wr","market":"uk","currency":"GBP","points":[
+{"day":"2025-01-20","new":39900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362562.63/warc/CC-MAIN-20250120042513-20250120072513-00138.warc.gz#offset=285773049&length=64760"},
+{"day":"2025-02-13","new":39900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00138.warc.gz#offset=261391296&length=64105"},
+{"day":"2025-09-11","new":39900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533126.22/warc/CC-MAIN-20250911045142-20250911075142-00838.warc.gz#offset=242596602&length=76399"}
+]}

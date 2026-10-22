@@ -22,6 +22,7 @@ export const SENSOR_FORMATS = [
   "micro-four-thirds",
   "1.4-inch",
   "1-inch",
+  "1/1.1-inch",
   "2/3-inch",
   "1/1.28-inch",
   "1/1.3-inch",

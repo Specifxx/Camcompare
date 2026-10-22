@@ -1,0 +1,75 @@
+{
+  "slug": "dji-osmo-360-ii",
+  "brand": "dji",
+  "name": "DJI Osmo 360 II",
+  "shortName": "Osmo 360 II",
+  "aliases": [
+    "Osmo 360 II",
+    "Osmo 360 2",
+    "Osmo360 II"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "360",
+  "announced": "2026-08-13",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "EUR": 589
+  },
+  "status": "current",
+  "predecessor": "dji-osmo-360",
+  "successor": null,
+  "rivals": [
+    "insta360-x6",
+    "insta360-x5",
+    "gopro-max2",
+    "dji-osmo-360"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/1.9"
+  },
+  "specs": {
+    "sensorFormat": "1/1.1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 120,
+    "isoMin": 100,
+    "isoMax": 51200,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 183,
+    "dimensionsMm": [
+      61,
+      81,
+      36.3
+    ],
+    "weatherSealed": true,
+    "waterproofM": 10,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

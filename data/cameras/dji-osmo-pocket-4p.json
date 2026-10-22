@@ -1,0 +1,77 @@
+{
+  "slug": "dji-osmo-pocket-4p",
+  "brand": "dji",
+  "name": "DJI Osmo Pocket 4P",
+  "shortName": "Osmo Pocket 4P",
+  "aliases": [
+    "Osmo Pocket 4P",
+    "Pocket 4P"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2026-05-14",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "GBP": 529,
+    "EUR": 599
+  },
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "dji-osmo-pocket-4",
+    "insta360-luna-ultra",
+    "dji-osmo-pocket-3"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      20,
+      60
+    ],
+    "aperture": "f/2-1.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 37,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 240,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 230,
+    "dimensionsMm": [
+      63.3,
+      159.5,
+      33.5
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

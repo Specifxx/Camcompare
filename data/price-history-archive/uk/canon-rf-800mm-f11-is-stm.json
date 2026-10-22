@@ -1,0 +1,5 @@
+{"slug":"canon-rf-800mm-f11-is-stm","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-10","new":94900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066057523.33/warc/CC-MAIN-20241210071103-20241210101103-00672.warc.gz#offset=277825247&length=62691"},
+{"day":"2025-02-15","used":50000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951994.86/warc/CC-MAIN-20250215214935-20250216004935-00315.warc.gz#offset=253280575&length=60322"},
+{"day":"2025-05-12","new":109900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412298.37/warc/CC-MAIN-20250512135455-20250512165455-00172.warc.gz#offset=240819395&length=73196"}
+]}

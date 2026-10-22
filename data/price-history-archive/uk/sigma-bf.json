@@ -1,0 +1,5 @@
+{"slug":"sigma-bf","market":"uk","currency":"GBP","points":[
+{"day":"2025-04-17","new":196900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135610.12/warc/CC-MAIN-20250417135010-20250417165010-00847.warc.gz#offset=311842729&length=78932"},
+{"day":"2025-07-08","new":196900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933638.52/warc/CC-MAIN-20250708071141-20250708101141-00512.warc.gz#offset=265610918&length=77354"},
+{"day":"2025-07-20","new":196900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237204.95/warc/CC-MAIN-20250720113954-20250720143954-00483.warc.gz#offset=253333147&length=79284"}
+]}

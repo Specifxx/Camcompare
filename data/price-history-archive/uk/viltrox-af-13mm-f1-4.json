@@ -1,0 +1,7 @@
+{"slug":"viltrox-af-13mm-f1-4","market":"uk","currency":"GBP","points":[
+{"day":"2025-04-25","new":39900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135909.46/warc/CC-MAIN-20250425010839-20250425040839-00923.warc.gz#offset=300302670&length=73479"},
+{"day":"2025-04-26","new":39900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136091.64/warc/CC-MAIN-20250426230106-20250427020106-00242.warc.gz#offset=283661643&length=73586"},
+{"day":"2025-05-21","new":44000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413138.27/warc/CC-MAIN-20250521163545-20250521193545-00252.warc.gz#offset=240920793&length=74494"},
+{"day":"2025-09-06","new":44000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532789.0/warc/CC-MAIN-20250906122508-20250906152508-00242.warc.gz#offset=303653042&length=75586"},
+{"day":"2025-10-16","new":44000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648663100.57/warc/CC-MAIN-20251016052200-20251016082200-00923.warc.gz#offset=276852610&length=76704"}
+]}

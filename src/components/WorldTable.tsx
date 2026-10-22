@@ -89,7 +89,7 @@ export default function WorldTable({ data, rates }: { data: WorldTableData; rate
                     {r.name}
                   </Link>
                 </th>
-                <td className="price p-2 align-top">{r.listUsd ? <span>≈ {approx(convertAt(r.listUsd * 100, "USD", cur, rates), cur)}</span> : <span className="text-subtle">—</span>}
+                <td className="price p-2 align-top">{r.listUsd ? <span>{cur === "USD" ? money(r.listUsd, "USD") : `≈ ${approx(convertAt(r.listUsd * 100, "USD", cur, rates), cur)}`}</span> : <span className="text-subtle">—</span>}
                   {r.listUsd && cur !== "USD" ? <span className="block text-[11px] text-subtle">{money(r.listUsd, "USD")}</span> : null}
                 </td>
                 {cols.map((c) => {

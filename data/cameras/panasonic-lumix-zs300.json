@@ -1,0 +1,95 @@
+{
+  "slug": "panasonic-lumix-zs300",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix ZS300",
+  "shortName": "Lumix ZS300",
+  "aliases": [
+    "Lumix ZS300",
+    "Lumix DC-ZS300",
+    "Panasonic ZS300",
+    "Panasonic Lumix ZS300",
+    "ZS300",
+    "Lumix TZ300",
+    "Lumix DC-TZ300",
+    "Panasonic TZ300",
+    "Panasonic Lumix TZ300",
+    "TZ300"
+  ],
+  "modelCodes": [
+    "DC-TX3"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2026-03-25",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "GBP": 869,
+    "AUD": 1599
+  },
+  "regionalNames": {
+    "uk": "Panasonic Lumix TZ300",
+    "eu": "Panasonic Lumix TZ300",
+    "au": "Panasonic Lumix TZ300"
+  },
+  "status": "current",
+  "predecessor": "panasonic-lumix-zs200",
+  "successor": null,
+  "rivals": [
+    "canon-powershot-g7-x-mark-iii",
+    "sony-rx100-vii",
+    "panasonic-lumix-zs99",
+    "sony-zv-1-ii"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      360
+    ],
+    "aperture": "f/3.3-6.4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20.1,
+    "isoMin": 125,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 10,
+    "burstElecFps": 10,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 49,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 337,
+    "dimensionsMm": [
+      111.2,
+      66.4,
+      45.2
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 360,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": true,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

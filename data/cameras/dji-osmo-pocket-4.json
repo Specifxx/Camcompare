@@ -1,0 +1,76 @@
+{
+  "slug": "dji-osmo-pocket-4",
+  "brand": "dji",
+  "name": "DJI Osmo Pocket 4",
+  "shortName": "Osmo Pocket 4",
+  "aliases": [
+    "Osmo Pocket 4",
+    "Pocket 4"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2026-04-16",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "GBP": 445,
+    "EUR": 499
+  },
+  "status": "current",
+  "predecessor": "dji-osmo-pocket-3",
+  "successor": null,
+  "rivals": [
+    "dji-osmo-pocket-4p",
+    "insta360-luna-pro",
+    "dji-osmo-pocket-3"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      20
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 37,
+    "isoMin": 50,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 240,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 190.5,
+    "dimensionsMm": [
+      44.4,
+      144.2,
+      33.5
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

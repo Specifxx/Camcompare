@@ -13,11 +13,13 @@
   "launchPriceUsd": 549.99,
   "status": "current",
   "predecessor": "insta360-x4",
-  "successor": null,
+  "successor": "insta360-x6",
   "rivals": [
     "dji-osmo-360",
     "gopro-max2",
-    "insta360-x4"
+    "insta360-x4",
+    "dji-osmo-360-ii",
+    "insta360-x6"
   ],
   "mount": null,
   "fixedLens": {

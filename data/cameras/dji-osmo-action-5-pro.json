@@ -15,12 +15,13 @@
   "launchPriceUsd": 349,
   "status": "current",
   "predecessor": "dji-osmo-action-4",
-  "successor": null,
+  "successor": "dji-osmo-action-6",
   "rivals": [
     "gopro-hero13-black",
     "insta360-ace-pro-2",
     "gopro-hero12-black",
-    "insta360-ace-pro"
+    "insta360-ace-pro",
+    "dji-osmo-action-6"
   ],
   "mount": null,
   "fixedLens": {

@@ -1187,3 +1187,28 @@ store's own listing photo", above).
 - **Data.** Sources keep a new offer's photo only for products without a
   licensed thumbnail, so the offer files grow only there. Second-hand offers
   keep theirs always.
+
+## 2026-10-22: 2025-26 launches, and the matcher rules they needed
+
+Friends reported "r6v camera is missing": the catalog had no camera announced
+after December 2025. Added 22 bodies announced October 2025 – October 2026
+(EOS R6 V, R8 Mark II, α7R VI, RX10 V, FX5, Z5IIC, Lumix L10 and ZS300, OM
+SYSTEM PEN, GR IV Monochrome, SL3-P, M EV1, Osmo Pocket 4 and 4P, Osmo 360 II,
+Osmo Action 6, Insta360 X6, Luna Pro and Ultra, GoPro MISSION 1, 1 PRO and 1
+PRO ILS), specs from the makers' spec pages and manuals.
+
+- **`1/1.1-inch` is a sensor format.** DJI's and Insta360's square sensors
+  (Osmo Action 6, Osmo 360 II, X6) are 1/1.1-type; filing them as 1-inch
+  would have been a wrong number. Area 106 mm² for ranking only.
+- **Micro Four Thirds takes 1-inch bodies.** The MISSION 1 PRO ILS puts a 1"
+  sensor behind an MFT mount, so `mounts.json` lists the format and MFT-lens
+  coverage includes it.
+- **A model that is an everyday word keeps its brand** (`WORD_MODELS` in
+  `lib/matching.ts`: "pen", "max"). With the brand stripped, "OM SYSTEM PEN"
+  would have matched every Olympus PEN E-PL listing. "GoPro MAX" now needs
+  "GoPro" right before "MAX"; its "MAX 360" alias is unchanged.
+- **Panasonic DMC- is the old naming.** A title naming "DMC-<model>" is
+  refused for a product with no DMC- part number, so a 2007 Lumix DMC-L10
+  DSLR is never priced as the 2026 Lumix L10.
+- **Commons "test shot(s)", "test" and "P mode" file names are sample photos**
+  (`SAMPLE_SHOT`): every GR IV Monochrome file on Commons was one.

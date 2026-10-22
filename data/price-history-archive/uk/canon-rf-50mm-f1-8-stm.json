@@ -1,0 +1,6 @@
+{"slug":"canon-rf-50mm-f1-8-stm","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-01","new":17900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066036672.6/warc/CC-MAIN-20241201192453-20241201222453-00116.warc.gz#offset=273532361&length=62325"},
+{"day":"2025-01-22","new":21900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363462.25/warc/CC-MAIN-20250122195159-20250122225159-00116.warc.gz#offset=288444788&length=62627"},
+{"day":"2025-05-12","new":20900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412241.67/warc/CC-MAIN-20250512073613-20250512103613-00816.warc.gz#offset=265072796&length=70815"},
+{"day":"2025-10-08","new":20900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00816.warc.gz#offset=268868984&length=72832"}
+]}

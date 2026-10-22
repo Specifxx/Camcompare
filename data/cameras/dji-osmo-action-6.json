@@ -1,0 +1,74 @@
+{
+  "slug": "dji-osmo-action-6",
+  "brand": "dji",
+  "name": "DJI Osmo Action 6",
+  "shortName": "Osmo Action 6",
+  "aliases": [
+    "Osmo Action 6",
+    "Action 6"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "action",
+  "announced": "2025-11-18",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "EUR": 379
+  },
+  "status": "current",
+  "predecessor": "dji-osmo-action-5-pro",
+  "successor": null,
+  "rivals": [
+    "gopro-hero13-black",
+    "insta360-ace-pro-2",
+    "dji-osmo-action-5-pro",
+    "gopro-mission-1"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/2-4"
+  },
+  "specs": {
+    "sensorFormat": "1/1.1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 38,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.5,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 149,
+    "dimensionsMm": [
+      72.8,
+      47.2,
+      33.1
+    ],
+    "weatherSealed": true,
+    "waterproofM": 20,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

@@ -1,0 +1,5 @@
+{"slug":"canon-rf-24-50mm-f4-5-6-3-is-stm","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-02","new":32900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066127559.51/warc/CC-MAIN-20241202125001-20241202155001-00673.warc.gz#offset=260212964&length=63361"},
+{"day":"2025-03-27","new":32699,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004757836.96/warc/CC-MAIN-20250327184853-20250327214853-00073.warc.gz#offset=277812515&length=72535"},
+{"day":"2025-08-12","new":36400,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280906.43/warc/CC-MAIN-20250812014435-20250812044435-00073.warc.gz#offset=260087134&length=74004"}
+]}

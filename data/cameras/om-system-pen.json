@@ -1,0 +1,71 @@
+{
+  "slug": "om-system-pen",
+  "brand": "om-system",
+  "name": "OM System PEN",
+  "shortName": "PEN",
+  "aliases": [
+    "OM System PEN",
+    "OM-System PEN"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2026-09-09",
+  "launchPriceUsd": 999.99,
+  "status": "current",
+  "predecessor": "olympus-pen-e-p7",
+  "successor": null,
+  "rivals": [
+    "fujifilm-x-e5",
+    "nikon-zfc",
+    "om-system-om-5-mark-ii",
+    "fujifilm-x-m5"
+  ],
+  "mount": "micro-four-thirds",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "Live MOS",
+    "megapixels": 20.4,
+    "isoMin": 200,
+    "isoMax": 25600,
+    "ibis": true,
+    "ibisStops": 5.5,
+    "burstMechFps": null,
+    "burstElecFps": 30,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": 121,
+    "afSubjects": [
+      "human",
+      "animal"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": null,
+    "rawVideoInternal": false,
+    "evfDotsM": 2.36,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.04,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 393,
+    "dimensionsMm": [
+      125.8,
+      74.5,
+      43.3
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-I",
+    "batteryShotsCipa": 410,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

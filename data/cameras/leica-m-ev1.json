@@ -1,0 +1,73 @@
+{
+  "slug": "leica-m-ev1",
+  "brand": "leica",
+  "name": "Leica M EV1",
+  "shortName": "M EV1",
+  "aliases": [
+    "Leica M EV1",
+    "M EV1",
+    "M-EV1",
+    "MEV1"
+  ],
+  "modelCodes": [
+    "20229",
+    "20233",
+    "20234"
+  ],
+  "gtins": [],
+  "type": "rangefinder",
+  "announced": "2025-10-23",
+  "launchPriceUsd": 8995,
+  "launchPrices": {
+    "GBP": 6840,
+    "EUR": 7950
+  },
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "leica-m11",
+    "leica-m11-p",
+    "leica-q3"
+  ],
+  "mount": "leica-m",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 60.3,
+    "isoMin": 64,
+    "isoMax": 50000,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 4.5,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": null,
+    "video4kMaxFps": null,
+    "video10bit": null,
+    "rawVideoInternal": null,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 2.95,
+    "screenDotsM": 2.33,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": null,
+    "dimensionsMm": null,
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II + 64GB internal",
+    "batteryShotsCipa": 244,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

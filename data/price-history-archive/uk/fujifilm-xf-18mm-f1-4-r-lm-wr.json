@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-18mm-f1-4-r-lm-wr","market":"uk","currency":"GBP","points":[
+{"day":"2024-10-05","new":84900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253371.47/warc/CC-MAIN-20241005143707-20241005173707-00332.warc.gz#offset=709526232&length=49390"},
+{"day":"2025-02-07","new":84900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00634.warc.gz#offset=273115063&length=63825"},
+{"day":"2025-09-05","new":84900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532641.17/warc/CC-MAIN-20250905112101-20250905142101-00634.warc.gz#offset=239672363&length=75633"}
+]}

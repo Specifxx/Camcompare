@@ -1,0 +1,5 @@
+{"slug":"canon-rf-15-35mm-f2-8l-is-usm","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-02","new":209500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066127559.51/warc/CC-MAIN-20241202125001-20241202155001-00878.warc.gz#offset=269406026&length=63323"},
+{"day":"2025-02-06","new":239900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951463.20/warc/CC-MAIN-20250206212213-20250207002213-00878.warc.gz#offset=277472376&length=62419"},
+{"day":"2025-08-06","new":213500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279908.86/warc/CC-MAIN-20250806105403-20250806135403-00778.warc.gz#offset=243591279&length=72685"}
+]}

@@ -1,0 +1,70 @@
+{
+  "slug": "insta360-x6",
+  "brand": "insta360",
+  "name": "Insta360 X6",
+  "shortName": "X6",
+  "aliases": [
+    "X6",
+    "Insta360 X6"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "360",
+  "announced": "2026-08-12",
+  "launchPriceUsd": 699.99,
+  "status": "current",
+  "predecessor": "insta360-x5",
+  "successor": null,
+  "rivals": [
+    "dji-osmo-360-ii",
+    "gopro-max2",
+    "insta360-x5"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "1/1.1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 120,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2.32,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 196,
+    "dimensionsMm": [
+      50,
+      100,
+      40
+    ],
+    "weatherSealed": true,
+    "waterproofM": 20,
+    "cardSlots": 1,
+    "cardTypes": "microSD + 64GB internal",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

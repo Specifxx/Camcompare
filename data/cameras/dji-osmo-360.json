@@ -13,12 +13,13 @@
   "launchPriceUsd": null,
   "status": "current",
   "predecessor": null,
-  "successor": null,
+  "successor": "dji-osmo-360-ii",
   "rivals": [
     "insta360-x5",
     "insta360-x4",
     "gopro-max2",
-    "gopro-max"
+    "gopro-max",
+    "dji-osmo-360-ii"
   ],
   "mount": null,
   "fixedLens": {

@@ -1,0 +1,5 @@
+{"slug":"canon-rf-24mm-f1-4l-vcm","market":"uk","currency":"GBP","points":[
+{"day":"2024-11-07","new":167900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028017.48/warc/CC-MAIN-20241107212632-20241108002632-00397.warc.gz#offset=270939247&length=63659"},
+{"day":"2025-02-09","new":167900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951584.32/warc/CC-MAIN-20250209003139-20250209033139-00397.warc.gz#offset=255284054&length=64773"},
+{"day":"2025-09-11","new":167900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533126.22/warc/CC-MAIN-20250911045142-20250911075142-00497.warc.gz#offset=258774201&length=78259"}
+]}

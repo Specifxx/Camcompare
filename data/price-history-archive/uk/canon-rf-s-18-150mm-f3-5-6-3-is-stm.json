@@ -1,0 +1,5 @@
+{"slug":"canon-rf-s-18-150mm-f3-5-6-3-is-stm","market":"uk","currency":"GBP","points":[
+{"day":"2025-01-14","new":49900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362199.73/warc/CC-MAIN-20250114082024-20250114112024-00447.warc.gz#offset=308535858&length=63014"},
+{"day":"2025-07-13","used":34000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933967.50/warc/CC-MAIN-20250713065620-20250713095620-00860.warc.gz#offset=256805735&length=70512"},
+{"day":"2025-10-16","new":54900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648663100.57/warc/CC-MAIN-20251016052200-20251016082200-00847.warc.gz#offset=242295233&length=73512"}
+]}

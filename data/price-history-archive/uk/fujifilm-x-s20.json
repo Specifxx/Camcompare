@@ -1,0 +1,5 @@
+{"slug":"fujifilm-x-s20","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-06","new":114900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951463.20/warc/CC-MAIN-20250206212213-20250207002213-00859.warc.gz#offset=264404309&length=69331"},
+{"day":"2025-02-16","used":90000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951994.86/warc/CC-MAIN-20250215214935-20250216004935-00315.warc.gz#offset=253341876&length=60530"},
+{"day":"2025-09-09","new":124900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533069.61/warc/CC-MAIN-20250909182837-20250909212837-00259.warc.gz#offset=227157544&length=86799"}
+]}

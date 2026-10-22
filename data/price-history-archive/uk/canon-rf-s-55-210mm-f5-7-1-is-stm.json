@@ -1,0 +1,5 @@
+{"slug":"canon-rf-s-55-210mm-f5-7-1-is-stm","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-14","new":37900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066125982.36/warc/CC-MAIN-20241214181735-20241214211735-00540.warc.gz#offset=262057200&length=64763"},
+{"day":"2025-07-08","new":36900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933638.52/warc/CC-MAIN-20250708071141-20250708101141-00940.warc.gz#offset=259113611&length=76912"},
+{"day":"2025-10-07","new":42900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358268.1/warc/CC-MAIN-20251007043747-20251007073747-00940.warc.gz#offset=290840269&length=77431"}
+]}

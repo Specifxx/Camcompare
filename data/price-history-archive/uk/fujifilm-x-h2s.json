@@ -1,0 +1,5 @@
+{"slug":"fujifilm-x-h2s","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-07","new":249900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00426.warc.gz#offset=264648671&length=67541"},
+{"day":"2025-03-15","new":249899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432896.84/warc/CC-MAIN-20250315125812-20250315155812-00326.warc.gz#offset=307342288&length=67628"},
+{"day":"2025-07-13","used":165000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933967.50/warc/CC-MAIN-20250713065620-20250713095620-00752.warc.gz#offset=250380712&length=71021"}
+]}

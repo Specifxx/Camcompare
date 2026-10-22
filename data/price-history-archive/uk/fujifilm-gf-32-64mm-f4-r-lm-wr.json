@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gf-32-64mm-f4-r-lm-wr","market":"uk","currency":"GBP","points":[
+{"day":"2024-04-12","new":204900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816045.47/warc/CC-MAIN-20240412163227-20240412193227-00651.warc.gz#offset=734679217&length=46583"},
+{"day":"2024-09-09","new":214900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651133.92/warc/CC-MAIN-20240909170505-20240909200505-00651.warc.gz#offset=764502276&length=47355"},
+{"day":"2025-07-10","new":213900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933770.40/warc/CC-MAIN-20250710155520-20250710185520-00660.warc.gz#offset=267316026&length=69343"}
+]}

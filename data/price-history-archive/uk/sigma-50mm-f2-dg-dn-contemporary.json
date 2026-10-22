@@ -1,0 +1,5 @@
+{"slug":"sigma-50mm-f2-dg-dn-contemporary","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-07","new":58900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00258.warc.gz#offset=274500822&length=64901"},
+{"day":"2025-02-09","new":54900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951584.32/warc/CC-MAIN-20250209003139-20250209033139-00409.warc.gz#offset=261549088&length=64711"},
+{"day":"2025-08-03","new":57900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279735.55/warc/CC-MAIN-20250803200137-20250803230137-00409.warc.gz#offset=239836774&length=76468"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"canon-eos-r1","market":"uk","currency":"GBP","points":[
+{"day":"2025-01-23","new":699900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363498.48/warc/CC-MAIN-20250123091035-20250123121035-00655.warc.gz#offset=286114637&length=73962"},
+{"day":"2025-02-07","new":699900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00655.warc.gz#offset=275738834&length=73069"},
+{"day":"2025-08-06","new":679900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279908.86/warc/CC-MAIN-20250806105403-20250806135403-00355.warc.gz#offset=251160719&length=85451"}
+]}

@@ -1,0 +1,6 @@
+{"slug":"sony-fe-24-105mm-f4-g-oss","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-13","used":60000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00781.warc.gz#offset=254197922&length=60867"},
+{"day":"2025-03-21","new":99899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433189.48/warc/CC-MAIN-20250321222042-20250322012042-00735.warc.gz#offset=280064076&length=77629"},
+{"day":"2025-09-05","used":60000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532641.17/warc/CC-MAIN-20250905112101-20250905142101-00481.warc.gz#offset=248537578&length=73102"},
+{"day":"2025-10-07","new":92900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358268.1/warc/CC-MAIN-20251007043747-20251007073747-00735.warc.gz#offset=289137136&length=80234"}
+]}

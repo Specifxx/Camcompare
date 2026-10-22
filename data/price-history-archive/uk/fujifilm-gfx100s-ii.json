@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gfx100s-ii","market":"uk","currency":"GBP","points":[
+{"day":"2024-10-09","new":459900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253603.68/warc/CC-MAIN-20241009084655-20241009114655-00869.warc.gz#offset=697173611&length=51904"},
+{"day":"2024-12-08","new":439900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066446918.92/warc/CC-MAIN-20241208141630-20241208171630-00716.warc.gz#offset=263026396&length=66750"},
+{"day":"2025-04-20","new":499900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135750.25/warc/CC-MAIN-20250420115406-20250420145406-00016.warc.gz#offset=281392170&length=77887"}
+]}

@@ -129,7 +129,7 @@ const COVERS: Record<LensCoverage, SensorFormat[]> = {
   "medium-format": ["medium-format", "full-frame", "aps-h", "super-35", "aps-c", "micro-four-thirds"],
   "full-frame": ["full-frame", "aps-h", "super-35", "aps-c", "micro-four-thirds"],
   "aps-c": ["aps-c", "super-35", "micro-four-thirds"],
-  "micro-four-thirds": ["micro-four-thirds"],
+  "micro-four-thirds": ["micro-four-thirds", "1-inch"], // GoPro MISSION 1 PRO ILS: a 1" sensor behind an MFT mount
 };
 
 /** Native lenses for a body: same mount, image circle big enough. (Adapters are a different page.) */

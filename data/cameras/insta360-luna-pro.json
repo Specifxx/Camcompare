@@ -1,0 +1,72 @@
+{
+  "slug": "insta360-luna-pro",
+  "brand": "insta360",
+  "name": "Insta360 Luna Pro",
+  "shortName": "Luna Pro",
+  "aliases": [
+    "Luna Pro",
+    "Insta360 Luna Pro"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2026-09-10",
+  "launchPriceUsd": 599.99,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "dji-osmo-pocket-4",
+    "insta360-luna-ultra",
+    "dji-osmo-pocket-3"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      20
+    ],
+    "aperture": "f/1.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 50,
+    "isoMin": 100,
+    "isoMax": 6400,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": 8000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 2,
+    "screenDotsM": null,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 215,
+    "dimensionsMm": [
+      52.78,
+      155.7,
+      38.47
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD + 47GB internal",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

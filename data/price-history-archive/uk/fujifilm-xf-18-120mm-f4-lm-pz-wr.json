@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-18-120mm-f4-lm-pz-wr","market":"uk","currency":"GBP","points":[
+{"day":"2025-04-25","new":69900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135909.46/warc/CC-MAIN-20250425010839-20250425040839-00956.warc.gz#offset=281091190&length=75161"},
+{"day":"2025-05-12","new":77900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412298.37/warc/CC-MAIN-20250512135455-20250512165455-00956.warc.gz#offset=249719844&length=75301"},
+{"day":"2025-10-07","new":77900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358268.1/warc/CC-MAIN-20251007043747-20251007073747-00956.warc.gz#offset=276941348&length=77490"}
+]}

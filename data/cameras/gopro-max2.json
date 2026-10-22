@@ -23,7 +23,9 @@
     "gopro-max",
     "insta360-x5",
     "insta360-x4",
-    "dji-osmo-360"
+    "dji-osmo-360",
+    "dji-osmo-360-ii",
+    "insta360-x6"
   ],
   "mount": null,
   "fixedLens": {

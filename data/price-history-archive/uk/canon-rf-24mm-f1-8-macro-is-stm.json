@@ -1,0 +1,5 @@
+{"slug":"canon-rf-24mm-f1-8-macro-is-stm","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-03","new":71900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066137897.45/warc/CC-MAIN-20241203102227-20241203132227-00707.warc.gz#offset=259040344&length=62255"},
+{"day":"2025-02-07","new":65400,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951532.18/warc/CC-MAIN-20250207225929-20250208015929-00707.warc.gz#offset=270519460&length=62911"},
+{"day":"2025-08-12","new":65400,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280906.43/warc/CC-MAIN-20250812014435-20250812044435-00107.warc.gz#offset=255567570&length=74098"}
+]}

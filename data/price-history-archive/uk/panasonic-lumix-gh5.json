@@ -1,0 +1,4 @@
+{"slug":"panasonic-lumix-gh5","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-13","used":53500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00530.warc.gz#offset=260123088&length=60366"},
+{"day":"2025-07-13","used":55000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933967.50/warc/CC-MAIN-20250713065620-20250713095620-00632.warc.gz#offset=252434061&length=69908"}
+]}

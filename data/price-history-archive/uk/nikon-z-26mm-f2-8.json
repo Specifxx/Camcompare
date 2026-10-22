@@ -1,0 +1,6 @@
+{"slug":"nikon-z-26mm-f2-8","market":"uk","currency":"GBP","points":[
+{"day":"2024-06-22","new":42700,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862410.56/warc/CC-MAIN-20240622175245-20240622205245-00200.warc.gz#offset=688545620&length=48449"},
+{"day":"2025-01-18","new":41500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362448.47/warc/CC-MAIN-20250118223403-20250119013403-00016.warc.gz#offset=301872642&length=64039"},
+{"day":"2025-04-26","new":49900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135976.34/warc/CC-MAIN-20250426032300-20250426062300-00016.warc.gz#offset=254779573&length=72855"},
+{"day":"2025-10-08","new":49900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00016.warc.gz#offset=291944463&length=75475"}
+]}

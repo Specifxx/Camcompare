@@ -1,0 +1,5 @@
+{"slug":"canon-rf-24-70mm-f2-8l-is-usm","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-13","new":214900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066116798.44/warc/CC-MAIN-20241213105147-20241213135147-00311.warc.gz#offset=247913068&length=63172"},
+{"day":"2025-01-23","new":251900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363498.48/warc/CC-MAIN-20250123091035-20250123121035-00311.warc.gz#offset=280575599&length=63972"},
+{"day":"2025-09-12","new":251900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533199.65/warc/CC-MAIN-20250911232519-20250912022519-00711.warc.gz#offset=237562776&length=75994"}
+]}

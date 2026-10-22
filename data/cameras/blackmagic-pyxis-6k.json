@@ -21,7 +21,8 @@
     "blackmagic-cinema-camera-6k",
     "red-komodo-6k",
     "panasonic-lumix-bs1h",
-    "sony-fx3"
+    "sony-fx3",
+    "sony-fx5"
   ],
   "mount": "l-mount",
   "fixedLens": null,

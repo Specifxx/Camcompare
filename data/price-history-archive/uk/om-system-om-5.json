@@ -1,0 +1,9 @@
+{"slug":"om-system-om-5","market":"uk","currency":"GBP","points":[
+{"day":"2024-11-07","new":114900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028017.48/warc/CC-MAIN-20241107212632-20241108002632-00689.warc.gz#offset=262909784&length=71119"},
+{"day":"2024-11-14","new":114900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028516.72/warc/CC-MAIN-20241113235151-20241114025151-00766.warc.gz#offset=266986816&length=71325"},
+{"day":"2025-03-19","new":129899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.33/warc/CC-MAIN-20250319144207-20250319174207-00621.warc.gz#offset=260615185&length=80061"},
+{"day":"2025-03-22","new":129899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433189.48/warc/CC-MAIN-20250321222042-20250322012042-00316.warc.gz#offset=272679736&length=91830"},
+{"day":"2025-05-21","new":109900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413138.27/warc/CC-MAIN-20250521163545-20250521193545-00989.warc.gz#offset=239956999&length=92547"},
+{"day":"2025-08-08","new":110900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280031.27/warc/CC-MAIN-20250808162011-20250808192011-00621.warc.gz#offset=234302017&length=92789"},
+{"day":"2025-09-11","new":110900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533126.22/warc/CC-MAIN-20250911045142-20250911075142-00316.warc.gz#offset=234804451&length=93790"}
+]}

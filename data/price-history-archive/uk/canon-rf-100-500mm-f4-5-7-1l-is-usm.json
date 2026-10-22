@@ -1,0 +1,5 @@
+{"slug":"canon-rf-100-500mm-f4-5-7-1l-is-usm","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-02","new":269900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066127559.51/warc/CC-MAIN-20241202125001-20241202155001-00789.warc.gz#offset=249105893&length=65645"},
+{"day":"2025-05-12","new":285900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412241.67/warc/CC-MAIN-20250512073613-20250512103613-00189.warc.gz#offset=253313052&length=77368"},
+{"day":"2025-10-12","new":279900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358734.56/warc/CC-MAIN-20251012004438-20251012034438-00189.warc.gz#offset=251450674&length=79311"}
+]}

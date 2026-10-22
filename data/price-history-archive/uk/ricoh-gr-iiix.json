@@ -1,0 +1,4 @@
+{"slug":"ricoh-gr-iiix","market":"uk","currency":"GBP","points":[
+{"day":"2025-07-20","new":99900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237204.95/warc/CC-MAIN-20250720113954-20250720143954-00723.warc.gz#offset=251138567&length=75430"},
+{"day":"2026-07-20","new":109900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783664238402.89/warc/CC-MAIN-20260720151718-20260720181718-00905.warc.gz#offset=241192453&length=96749"}
+]}

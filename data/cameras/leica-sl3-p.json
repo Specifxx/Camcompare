@@ -1,0 +1,78 @@
+{
+  "slug": "leica-sl3-p",
+  "brand": "leica",
+  "name": "Leica SL3-P",
+  "shortName": "SL3-P",
+  "aliases": [
+    "Leica SL3-P",
+    "SL3-P",
+    "SL3P"
+  ],
+  "modelCodes": [
+    "10664",
+    "10665",
+    "10666"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2026-06-25",
+  "launchPriceUsd": 6690,
+  "launchPrices": {
+    "GBP": 5150,
+    "EUR": 5990,
+    "AUD": 10500
+  },
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "leica-sl3",
+    "panasonic-lumix-s1r-ii",
+    "sony-a7r-vi",
+    "nikon-z8"
+  ],
+  "mount": "l-mount",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "BSI CMOS",
+    "megapixels": 44.9,
+    "isoMin": 50,
+    "isoMax": 200000,
+    "ibis": true,
+    "ibisStops": 5,
+    "burstMechFps": null,
+    "burstElecFps": 40,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 16000,
+    "afPoints": 819,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle"
+    ],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": null,
+    "video10bit": true,
+    "rawVideoInternal": null,
+    "evfDotsM": 5.76,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.33,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 852,
+    "dimensionsMm": null,
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress B + SD UHS-II",
+    "batteryShotsCipa": 383,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

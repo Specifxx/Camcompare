@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gf-80mm-f1-7-r-wr","market":"uk","currency":"GBP","points":[
+{"day":"2025-04-18","new":209900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135666.23/warc/CC-MAIN-20250418090125-20250418120125-00240.warc.gz#offset=281932796&length=70446"},
+{"day":"2025-07-20","used":135000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237692.99/warc/CC-MAIN-20250720175629-20250720205629-00885.warc.gz#offset=236719625&length=70704"},
+{"day":"2025-08-03","new":209900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279541.7/warc/CC-MAIN-20250803011606-20250803041606-00240.warc.gz#offset=254090778&length=71088"}
+]}

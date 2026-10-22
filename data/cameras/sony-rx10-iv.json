@@ -20,12 +20,13 @@
   "launchPriceUsd": 1699,
   "status": "discontinued",
   "predecessor": "sony-rx10-iii",
-  "successor": null,
+  "successor": "sony-rx10-v",
   "rivals": [
     "panasonic-lumix-fz1000-ii",
     "panasonic-lumix-fz2500",
     "nikon-coolpix-p1000",
-    "sony-rx10-iii"
+    "sony-rx10-iii",
+    "sony-rx10-v"
   ],
   "mount": null,
   "fixedLens": {

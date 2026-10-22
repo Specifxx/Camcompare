@@ -1,0 +1,5 @@
+{"slug":"canon-rf-600mm-f4l-is-usm","market":"uk","currency":"GBP","points":[
+{"day":"2024-11-07","new":1417900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028017.48/warc/CC-MAIN-20241107212632-20241108002632-00331.warc.gz#offset=261513108&length=62514"},
+{"day":"2025-04-20","new":1417900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135750.25/warc/CC-MAIN-20250420115406-20250420145406-00731.warc.gz#offset=282470818&length=74372"},
+{"day":"2025-07-11","used":1000000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933788.53/warc/CC-MAIN-20250711043050-20250711073050-00523.warc.gz#offset=274549690&length=66508"}
+]}

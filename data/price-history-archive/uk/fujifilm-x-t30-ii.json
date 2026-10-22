@@ -1,0 +1,6 @@
+{"slug":"fujifilm-x-t30-ii","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-13","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951830.78/warc/CC-MAIN-20250213211008-20250214001008-00661.warc.gz#offset=259770386&length=71960"},
+{"day":"2025-02-16","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951994.86/warc/CC-MAIN-20250215214935-20250216004935-00072.warc.gz#offset=261481189&length=71885"},
+{"day":"2025-07-10","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933770.40/warc/CC-MAIN-20250710155520-20250710185520-00061.warc.gz#offset=249793469&length=86673"},
+{"day":"2025-07-18","used":70000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231606.97/warc/CC-MAIN-20250718215916-20250719005916-00489.warc.gz#offset=238078491&length=70559"}
+]}

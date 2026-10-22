@@ -33,6 +33,7 @@ const SENSOR_LABEL: Record<Specs["sensorFormat"], string> = {
   "micro-four-thirds": "Micro Four Thirds",
   "1.4-inch": '1.4"',
   "1-inch": '1"',
+  "1/1.1-inch": '1/1.1"',
   "2/3-inch": '2/3"',
   "1/1.28-inch": '1/1.28"',
   "1/1.3-inch": '1/1.3"',
@@ -53,6 +54,7 @@ const SENSOR_AREA: Record<Specs["sensorFormat"], number> = {
   "micro-four-thirds": 225,
   "1.4-inch": 226, // Canon's 1.4-type: ~18.4 x 12.3 mm, a hair over Four Thirds by area
   "1-inch": 116,
+  "1/1.1-inch": 106, // DJI's and Insta360's square sensors: ~10.3 x 10.3 mm
   "2/3-inch": 58,
   "1/1.28-inch": 73,
   "1/1.3-inch": 69,

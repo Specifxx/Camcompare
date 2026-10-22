@@ -1,0 +1,6 @@
+{"slug":"canon-powershot-v10","market":"uk","currency":"GBP","points":[
+{"day":"2024-11-12","new":42900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.50/warc/CC-MAIN-20241112014152-20241112044152-00524.warc.gz#offset=260000610&length=62056"},
+{"day":"2024-12-10","new":25900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066057523.33/warc/CC-MAIN-20241210071103-20241210101103-00524.warc.gz#offset=261919881&length=63492"},
+{"day":"2025-03-28","new":42899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004758970.91/warc/CC-MAIN-20250328143237-20250328173237-00224.warc.gz#offset=282601552&length=75079"},
+{"day":"2025-08-06","new":42900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279908.86/warc/CC-MAIN-20250806105403-20250806135403-00224.warc.gz#offset=246424743&length=75418"}
+]}

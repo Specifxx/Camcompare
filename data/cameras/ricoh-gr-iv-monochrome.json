@@ -1,0 +1,75 @@
+{
+  "slug": "ricoh-gr-iv-monochrome",
+  "brand": "ricoh",
+  "name": "Ricoh GR IV Monochrome",
+  "shortName": "GR IV Monochrome",
+  "aliases": [
+    "GR IV Monochrome",
+    "GRIV Monochrome",
+    "GR 4 Monochrome",
+    "GR4 Monochrome",
+    "GR IV Mono"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2026-01-15",
+  "launchPriceUsd": 2199,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "ricoh-gr-iv",
+    "leica-q2-monochrom",
+    "fujifilm-x100vi"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "aps-c",
+    "sensorType": "Monochrome CMOS",
+    "megapixels": 25.74,
+    "isoMin": 160,
+    "isoMax": 409600,
+    "ibis": true,
+    "ibisStops": 6,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": 4000,
+    "shutterMaxElec": 16000,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "1080p",
+    "video4kMaxFps": null,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.037,
+    "screenType": "fixed",
+    "touchscreen": true,
+    "weightG": 262,
+    "dimensionsMm": [
+      109.4,
+      61.1,
+      32.7
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD UHS-I + 53GB internal",
+    "batteryShotsCipa": 250,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

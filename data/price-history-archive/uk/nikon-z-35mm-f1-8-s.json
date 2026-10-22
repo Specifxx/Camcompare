@@ -1,0 +1,5 @@
+{"slug":"nikon-z-35mm-f1-8-s","market":"uk","currency":"GBP","points":[
+{"day":"2024-07-24","used":53500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518427.68/warc/CC-MAIN-20240724171328-20240724201328-00887.warc.gz#offset=688443326&length=45864"},
+{"day":"2025-02-07","used":52500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00097.warc.gz#offset=263764633&length=57091"},
+{"day":"2025-03-15","new":69899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432896.84/warc/CC-MAIN-20250315125812-20250315155812-00816.warc.gz#offset=287600740&length=63623"}
+]}

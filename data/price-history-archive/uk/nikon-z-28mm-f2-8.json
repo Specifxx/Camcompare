@@ -1,0 +1,6 @@
+{"slug":"nikon-z-28mm-f2-8","market":"uk","currency":"GBP","points":[
+{"day":"2025-01-21","new":21400,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363112.21/warc/CC-MAIN-20250121034213-20250121064213-00727.warc.gz#offset=289742944&length=64467"},
+{"day":"2025-02-14","new":24900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951840.44/warc/CC-MAIN-20250214034103-20250214064103-00727.warc.gz#offset=256741071&length=63358"},
+{"day":"2025-05-14","new":23900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412418.53/warc/CC-MAIN-20250514101506-20250514131506-00232.warc.gz#offset=242606874&length=73959"},
+{"day":"2025-10-07","new":24900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358268.1/warc/CC-MAIN-20251007043747-20251007073747-00527.warc.gz#offset=304667120&length=77694"}
+]}

@@ -14,12 +14,14 @@
   "launchPriceUsd": 519,
   "status": "current",
   "predecessor": "dji-pocket-2",
-  "successor": null,
+  "successor": "dji-osmo-pocket-4",
   "rivals": [
     "sony-zv-1f",
     "sony-zv-1-ii",
     "canon-powershot-v10",
-    "gopro-hero12-black"
+    "gopro-hero12-black",
+    "dji-osmo-pocket-4",
+    "dji-osmo-pocket-4p"
   ],
   "mount": null,
   "fixedLens": {

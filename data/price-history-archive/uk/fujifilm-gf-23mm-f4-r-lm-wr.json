@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gf-23mm-f4-r-lm-wr","market":"uk","currency":"GBP","points":[
+{"day":"2024-05-24","new":224900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058684.66/warc/CC-MAIN-20240524060414-20240524090414-00011.warc.gz#offset=692548163&length=47127"},
+{"day":"2024-10-05","new":224900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253384.19/warc/CC-MAIN-20241005204934-20241005234934-00011.warc.gz#offset=721680455&length=47107"},
+{"day":"2025-02-16","new":194497,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951994.86/warc/CC-MAIN-20250215214935-20250216004935-00262.warc.gz#offset=258068592&length=61118"}
+]}

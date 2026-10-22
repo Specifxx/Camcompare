@@ -1,0 +1,8 @@
+{"slug":"canon-rf-28mm-f2-8-stm","market":"uk","currency":"GBP","points":[
+{"day":"2024-05-20","new":32900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058278.91/warc/CC-MAIN-20240520111411-20240520141411-00603.warc.gz#offset=700440184&length=48677"},
+{"day":"2024-09-17","new":32900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651722.42/warc/CC-MAIN-20240917004428-20240917034428-00603.warc.gz#offset=757178238&length=48718"},
+{"day":"2025-03-28","new":30899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004758970.91/warc/CC-MAIN-20250328143237-20250328173237-00329.warc.gz#offset=255190267&length=72263"},
+{"day":"2025-08-06","new":29500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279908.86/warc/CC-MAIN-20250806105403-20250806135403-00329.warc.gz#offset=227085920&length=72417"},
+{"day":"2025-09-07","new":30500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00329.warc.gz#offset=247117281&length=74119"},
+{"day":"2026-08-09","new":33900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385205.8/warc/CC-MAIN-20260809063011-20260809093011-00329.warc.gz#offset=236941291&length=92436"}
+]}

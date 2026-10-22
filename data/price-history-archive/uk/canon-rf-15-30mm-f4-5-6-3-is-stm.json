@@ -1,0 +1,5 @@
+{"slug":"canon-rf-15-30mm-f4-5-6-3-is-stm","market":"uk","currency":"GBP","points":[
+{"day":"2024-11-07","new":61900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028017.48/warc/CC-MAIN-20241107212632-20241108002632-00857.warc.gz#offset=265151464&length=61186"},
+{"day":"2025-01-21","new":61900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363112.21/warc/CC-MAIN-20250121034213-20250121064213-00857.warc.gz#offset=285497780&length=63109"},
+{"day":"2025-10-16","new":58900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00757.warc.gz#offset=262373955&length=73273"}
+]}

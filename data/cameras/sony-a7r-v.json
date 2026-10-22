@@ -21,12 +21,13 @@
   "launchPriceUsd": 3899,
   "status": "current",
   "predecessor": "sony-a7r-iv",
-  "successor": null,
+  "successor": "sony-a7r-vi",
   "rivals": [
     "canon-eos-r5-mark-ii",
     "nikon-z8",
     "panasonic-lumix-s1r-ii",
-    "fujifilm-gfx100s-ii"
+    "fujifilm-gfx100s-ii",
+    "sony-a7r-vi"
   ],
   "mount": "sony-e",
   "fixedLens": null,

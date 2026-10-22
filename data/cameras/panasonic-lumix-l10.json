@@ -1,0 +1,84 @@
+{
+  "slug": "panasonic-lumix-l10",
+  "brand": "panasonic",
+  "name": "Panasonic Lumix L10",
+  "shortName": "Lumix L10",
+  "aliases": [
+    "Lumix L10",
+    "Lumix DC-L10",
+    "Panasonic L10",
+    "Panasonic Lumix L10"
+  ],
+  "modelCodes": [
+    "DC-L10"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2026-05-12",
+  "launchPriceUsd": 1499,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "leica-d-lux-8",
+    "panasonic-lumix-lx100-ii",
+    "fujifilm-x100vi",
+    "ricoh-gr-iv"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      75
+    ],
+    "aperture": "f/1.7-2.8"
+  },
+  "specs": {
+    "sensorFormat": "micro-four-thirds",
+    "sensorType": "BSI CMOS",
+    "megapixels": 20.4,
+    "isoMin": 100,
+    "isoMax": 25600,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": 11,
+    "burstElecFps": 30,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 32000,
+    "afPoints": 779,
+    "afSubjects": [
+      "human",
+      "animal",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": null,
+    "video4kMaxFps": null,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": null,
+    "screenType": "fully-articulating",
+    "touchscreen": true,
+    "weightG": 508,
+    "dimensionsMm": [
+      127.1,
+      73.9,
+      66.9
+    ],
+    "weatherSealed": false,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 420,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

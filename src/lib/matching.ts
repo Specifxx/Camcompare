@@ -168,6 +168,12 @@ export type CatalogIndex = {
 
 const MAX_ALIAS_TOKENS = 12;
 
+// Model names that are an everyday word once the brand is dropped ("OM
+// SYSTEM PEN" → "pen", "GoPro MAX" → "max"). Stripped, the key would match
+// every Olympus PEN E-PL or "Pen" in a title; kept whole, it needs the brand
+// right before it.
+const WORD_MODELS = new Set(["pen", "max"]);
+
 /**
  * The keys a product's names are matched under: each alias, model code and
  * short name as joined title words, minus any leading brand words. Used by
@@ -177,8 +183,13 @@ export function aliasKeys(p: Pick<Matchable, "brand" | "aliases" | "modelCodes" 
   const brandTokens = (BRAND_WORDS[p.brand] ?? [p.brand]).map(tokens);
   const keys = new Set<string>();
   for (const name of [...p.aliases, ...p.modelCodes, p.shortName]) {
-    let t = tokens(name);
+    const whole = tokens(name);
+    let t = whole;
     for (let b = brandTokens.find((bt) => bt.length < t.length && bt.every((w, i) => t[i] === w)); b; b = brandTokens.find((bt) => bt.length < t.length && bt.every((w, i) => t[i] === w))) t = t.slice(b.length);
+    if (t.length === 1 && WORD_MODELS.has(t[0])) {
+      if (t === whole) continue; // the bare word (a shortName "PEN") is no evidence at all
+      t = whole;
+    }
     const key = t.join("");
     if (key.length >= 2) keys.add(key);
   }
@@ -305,6 +316,9 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
   }
   if (pick.length > 1) return { product: null, reason: `ambiguous: ${pick.map((h) => h.p.slug).join(", ")}` };
   const p = pick[0].p;
+  // Panasonic named bodies DMC-… until 2016 and DC-… since: "Lumix DMC-L10"
+  // (2007) is not the Lumix L10 (2026).
+  if (p.brand === "panasonic" && words[pick[0].from - 1] === "dmc" && !p.modelCodes.some((m) => compact(m).startsWith("dmc"))) return { product: null, reason: "DMC- model: an older Panasonic" };
   const next = words[pick[0].to + 1] ?? "";
   if (GENERATION.test(next) || (p.kind === "camera" && BODY_VARIANT.test(next) && words[pick[0].to + 2] !== "mount")) return { product: null, reason: `"${next}" after the name: a model we don't list` };
   const r = finish(p, "title");
