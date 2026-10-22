@@ -1,3 +1,5 @@
 {"slug":"pentax-k-1-mark-ii","market":"uk","currency":"GBP","points":[
+{"day":"2025-01-23","new":146900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363498.48/warc/CC-MAIN-20250123091035-20250123121035-00877.warc.gz#offset=293368367&length=67043"},
+{"day":"2025-02-09","new":146900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951584.32/warc/CC-MAIN-20250209003139-20250209033139-00877.warc.gz#offset=260444000&length=66361"},
 {"day":"2025-09-05","new":189900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532706.12/warc/CC-MAIN-20250905204343-20250905234343-00177.warc.gz#offset=243952194&length=80179"}
 ]}

@@ -1,0 +1,6 @@
+{"slug":"sigma-85mm-f1-4-dg-hsm-art","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-07","new":92900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00145.warc.gz#offset=276839710&length=63152"},
+{"day":"2025-04-17","new":99899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135610.12/warc/CC-MAIN-20250417135010-20250417165010-00554.warc.gz#offset=265967123&length=72871"},
+{"day":"2025-04-18","new":92900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135690.27/warc/CC-MAIN-20250418214300-20250419004300-00745.warc.gz#offset=301398143&length=72722"},
+{"day":"2025-10-12","new":99900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358734.56/warc/CC-MAIN-20251012004438-20251012034438-00554.warc.gz#offset=241294054&length=75368"}
+]}
