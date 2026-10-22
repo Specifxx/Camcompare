@@ -1,0 +1,5 @@
+{"slug":"nikon-z-24-70mm-f4-s","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-08","new":104900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951532.18/warc/CC-MAIN-20250207225929-20250208015929-00580.warc.gz#offset=267400403&length=63999"},
+{"day":"2025-03-21","new":84899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433189.48/warc/CC-MAIN-20250321222042-20250322012042-00580.warc.gz#offset=284164664&length=76634"},
+{"day":"2025-07-18","used":35000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231606.97/warc/CC-MAIN-20250718215916-20250719005916-00466.warc.gz#offset=240579907&length=70640"}
+]}

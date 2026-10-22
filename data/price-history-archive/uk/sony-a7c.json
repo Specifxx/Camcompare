@@ -1,0 +1,8 @@
+{"slug":"sony-a7c","market":"uk","currency":"GBP","points":[
+{"day":"2024-09-20","new":134900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725701419169.94/warc/CC-MAIN-20240920154713-20240920184713-00827.warc.gz#offset=714897956&length=49344"},
+{"day":"2025-01-22","new":129900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363462.25/warc/CC-MAIN-20250122195159-20250122225159-00403.warc.gz#offset=293710551&length=65880"},
+{"day":"2025-02-13","new":134900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00075.warc.gz#offset=258650282&length=63218"},
+{"day":"2025-04-26","new":134900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135976.34/warc/CC-MAIN-20250426032300-20250426062300-00875.warc.gz#offset=290346733&length=74351"},
+{"day":"2025-08-03","new":159899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279735.55/warc/CC-MAIN-20250803200137-20250803230137-00503.warc.gz#offset=236118764&length=76142"},
+{"day":"2025-10-16","new":120900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648663100.57/warc/CC-MAIN-20251016052200-20251016082200-00875.warc.gz#offset=290480033&length=77238"}
+]}

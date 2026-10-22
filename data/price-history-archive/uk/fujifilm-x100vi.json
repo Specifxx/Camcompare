@@ -1,0 +1,7 @@
+{"slug":"fujifilm-x100vi","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-09","new":159900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951584.32/warc/CC-MAIN-20250209003139-20250209033139-00894.warc.gz#offset=269489226&length=68935"},
+{"day":"2025-03-17","new":159899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433031.79/warc/CC-MAIN-20250317164600-20250317194600-00894.warc.gz#offset=277605956&length=69669"},
+{"day":"2025-07-20","new":159900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237204.95/warc/CC-MAIN-20250720113954-20250720143954-00851.warc.gz#offset=223195937&length=84836"},
+{"day":"2025-08-06","new":159900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279919.59/warc/CC-MAIN-20250806171101-20250806201101-00851.warc.gz#offset=232889433&length=84816"},
+{"day":"2025-08-12","new":159900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280906.43/warc/CC-MAIN-20250812014435-20250812044435-00894.warc.gz#offset=234537778&length=85445"}
+]}

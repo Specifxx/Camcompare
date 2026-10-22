@@ -1,0 +1,9 @@
+{"slug":"sigma-23mm-f1-4-dc-dn-contemporary","market":"uk","currency":"GBP","points":[
+{"day":"2024-06-20","new":46900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861883.41/warc/CC-MAIN-20240620043158-20240620073158-00430.warc.gz#offset=704714439&length=48589"},
+{"day":"2025-02-09","new":44900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951584.32/warc/CC-MAIN-20250209003139-20250209033139-00012.warc.gz#offset=255503801&length=63695"},
+{"day":"2025-02-13","new":47900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00137.warc.gz#offset=262767345&length=64342"},
+{"day":"2025-04-26","new":47900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135976.34/warc/CC-MAIN-20250426032300-20250426062300-00612.warc.gz#offset=291530296&length=74803"},
+{"day":"2025-08-06","new":47900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279908.86/warc/CC-MAIN-20250806105403-20250806135403-00937.warc.gz#offset=260606590&length=75899"},
+{"day":"2025-08-09","new":47900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280114.71/warc/CC-MAIN-20250809172211-20250809202211-00625.warc.gz#offset=232197831&length=75368"},
+{"day":"2025-10-16","new":47900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648663100.57/warc/CC-MAIN-20251016052200-20251016082200-00612.warc.gz#offset=272648184&length=77016"}
+]}

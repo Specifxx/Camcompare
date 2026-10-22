@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-g9-ii","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-08","new":159900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951532.18/warc/CC-MAIN-20250207225929-20250208015929-00512.warc.gz#offset=284805883&length=65736"},
+{"day":"2025-03-23","new":159900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433259.88/warc/CC-MAIN-20250323063523-20250323093523-00012.warc.gz#offset=282022197&length=78171"},
+{"day":"2025-09-07","new":159900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00012.warc.gz#offset=258680197&length=79559"}
+]}
