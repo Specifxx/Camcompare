@@ -150,3 +150,14 @@ test("Shopify product .js: served as text/javascript, parsed as JSON, anything e
   assert.equal(parseProductJs("<html>Not found</html>"), null);
   assert.equal(parseProductJs('{"error":"x"}'), null);
 });
+
+test("second-hand offers keep the listing's own photo; new offers carry none", () => {
+  const mk = (title: string) =>
+    fromProductJs({ id: 1, title, handle: "x", images: ["//cdn.shopify.com/s/files/1/0588/9464/7339/files/a7iv-used.jpg?v=1"], variants: [{ id: 2, title: "Default Title", price: 189900, available: true }] });
+  const ctx = { base: "https://www.teds.com.au", retailer: retailer("teds")!, index, lenses: LENSES, now: NOW, currency: "AUD" as const };
+  assert.equal(productOffers(mk("Sony a7 IV | Secondhand"), ctx).offers[0].image, "~1/0588/9464/7339/files/a7iv-used.jpg");
+  assert.equal("image" in productOffers(mk("Sony a7 IV Body"), ctx).offers[0], false);
+  // Feeds: image_link on a used row.
+  const [used] = rowsToOffers("mpb", [{ title: "Sony a7 IV Mirrorless Camera Body", link: "https://www.mpb.com/en-us/product/sony-a7-iv", price: "1699.00 USD", condition: "used", image: "https://static.mpb.com/a7iv.jpg?w=800" }], { index, now: NOW, market: "us" });
+  assert.equal(used.image, "static.mpb.com/a7iv.jpg");
+});

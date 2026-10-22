@@ -22,6 +22,8 @@ const PATHS: Record<string, string> = {
   recording: "M4 6h16v12H4zM12 9.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5",
   // a microphone
   audio: "M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM6 11a6 6 0 0 0 12 0M12 17v4",
+  // a camera: a second-hand offer whose photo failed
+  camera: "M4 8h3l2-2h6l2 2h3v11H4zM12 10.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6",
   // a box
   other: "M4 8l8-4 8 4v8l-8 4-8-4zM4 8l8 4 8-4M12 12v8",
 };
@@ -34,19 +36,22 @@ export function CategoryIcon({ group, className = "" }: { group: string; classNa
   );
 }
 
-export default function AccessoryThumb({ src, alt, group, store, size = 56 }: { src: string | null; alt: string; group: string; store: string; size?: number }) {
+// Fixed sizes (smaller on phones, so the title keeps its room), never the image's own.
+const SIZE = { md: "h-12 w-12 sm:h-14 sm:w-14", sm: "h-11 w-11 sm:h-12 sm:w-12" } as const;
+
+export default function AccessoryThumb({ src, alt, group, store, size = "md" }: { src: string | null; alt: string; group: string; store: string; size?: keyof typeof SIZE }) {
   const [failed, setFailed] = useState(false);
-  const box = "flex shrink-0 items-center justify-center overflow-hidden rounded-md border border-line bg-white";
+  const box = `flex shrink-0 items-center justify-center overflow-hidden rounded-md border border-line bg-white ${SIZE[size]}`;
   if (!src || failed)
     return (
-      <span className={`${box} text-subtle`} style={{ width: size, height: size }} aria-hidden>
+      <span className={`${box} text-subtle`} aria-hidden>
         <CategoryIcon group={group} className="h-1/2 w-1/2" />
       </span>
     );
   return (
-    <span className={box} style={{ width: size, height: size }} title={`Image: ${store}`}>
+    <span className={box} title={`Image: ${store}`}>
       {/* eslint-disable-next-line @next/next/no-img-element -- hotlinked from the store's CDN on purpose, never through Vercel's optimiser */}
-      <img src={src} alt={alt} width={size} height={size} loading="lazy" decoding="async" referrerPolicy="no-referrer" className="h-full w-full object-contain" onError={() => setFailed(true)} />
+      <img src={src} alt={alt} width={56} height={56} loading="lazy" decoding="async" referrerPolicy="no-referrer" className="h-full w-full object-contain" onError={() => setFailed(true)} />
     </span>
   );
 }

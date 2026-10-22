@@ -10,6 +10,7 @@
 // Amazon's price is a row only on the product page, live with its time
 // (`withAmazon`); a public file never carries it (its licence: 24 hours).
 // Server-only: links are wrapped with this build's affiliate ids.
+import { accessoryImageUrl } from "./accessory-format";
 import { affiliateUrl, isPaid, subId } from "./affiliate";
 import { asinFor } from "./amazon-asins";
 import { brandName, displayName, historyFor, launchPrice, offersGeneratedAt, offersFor, type AnyProduct } from "./catalog";
@@ -60,6 +61,8 @@ export function toRow(o: Offer, ctx: RowContext): OfferRow {
   const was = o.wasPrice && percentOff(o.price, o.wasPrice) !== null ? o.wasPrice : null;
   const avail = o.inStock && o.availability && o.availability !== "in_stock" && o.availability !== "out_of_stock" ? o.availability : null;
   const tag = ctx.tags?.get(o);
+  // Second-hand units differ, so their row shows the listing's own photo.
+  const image = o.condition !== "new" ? accessoryImageUrl(o.image) : null;
   return {
     id: `${o.retailer}-${o.sourceId ?? o.url}`,
     retailer: o.retailer,
@@ -81,6 +84,7 @@ export function toRow(o: Offer, ctx: RowContext): OfferRow {
     ...(avail ? { avail } : {}),
     ...(o.promo ? { promo: o.promo } : {}),
     ...(o.detail ? { detail: o.detail } : {}),
+    ...(image ? { image } : {}),
     ...(kitLens ? { kitLens } : {}),
     ...(tag ? { tag } : {}),
     ...(amazon ? { amazon: true, seenAt: o.seenAt } : {}),
@@ -95,7 +99,7 @@ export function toRow(o: Offer, ctx: RowContext): OfferRow {
  * the first. Different prices or details stay apart.
  */
 export function mergeKey(o: Offer, pack: PackKind): string {
-  return [o.retailer, o.condition, o.price, o.inStock, o.kit, o.kit ? kitLensLabel(o, pack) ?? "" : "", o.seller ?? "", o.mount ?? "", o.detail ?? "", o.promo ?? "", o.wasPrice ?? ""].join("|");
+  return [o.retailer, o.condition, o.price, o.inStock, o.kit, o.kit ? kitLensLabel(o, pack) ?? "" : "", o.seller ?? "", o.mount ?? "", o.detail ?? "", o.promo ?? "", o.wasPrice ?? "", o.condition !== "new" ? o.image ?? "" : ""].join("|");
 }
 
 function mergeRows(sorted: Offer[], ctx: RowContext): OfferRow[] {

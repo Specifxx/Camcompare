@@ -40,12 +40,14 @@ export default function CameraAccessories({ slug, market: m }: { slug: string; m
                 ) : null}
               </p>
             </div>
-            <p className="price shrink-0 font-bold">{price(row.price, row.currency)}</p>
-            <div className="w-20 shrink-0 text-right">
-              <OutboundLink href={row.href} retailer={row.retailer} product={slug} placement="camera-accessories" className={`${row.paid ? "btn-buy" : "btn-ghost"} w-full px-2`}>
-                View<span className="sr-only"> at {row.retailerName}</span>
-              </OutboundLink>
-              {row.paid && <p className="mt-0.5 text-[10px] leading-none text-subtle">Paid link</p>}
+            <div className="flex shrink-0 flex-col items-end gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+              <p className="price font-bold">{price(row.price, row.currency)}</p>
+              <div className="w-20 text-right">
+                <OutboundLink href={row.href} retailer={row.retailer} product={slug} placement="camera-accessories" className={`${row.paid ? "btn-buy" : "btn-ghost"} w-full px-2`}>
+                  View<span className="sr-only"> at {row.retailerName}</span>
+                </OutboundLink>
+                {row.paid && <p className="mt-0.5 text-[10px] leading-none text-subtle">Paid link</p>}
+              </div>
             </div>
           </li>
         ))}

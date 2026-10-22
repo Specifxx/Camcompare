@@ -63,6 +63,9 @@ export const offerSchema = z
     kitLensName: z.string().nullable().optional(), // "RF-S 18-45mm F4.5-6.3 IS STM", as the listing names it
     promo: z.string().max(200).nullable().optional(), // "Bonus RF 35mm F1.4 + adapter", "$250 trade-in bonus"
     detail: z.string().max(120).nullable().optional(), // variant, branch or grade: "Parramatta store", "Grade 8/10"
+    // The listing's own photo, second-hand offers only (each unit differs):
+    // compact like accessory photos (accessory-format.ts compactImage), hotlinked.
+    image: z.string().max(400).nullable().optional(),
   })
   .strict();
 export type Offer = z.infer<typeof offerSchema>;

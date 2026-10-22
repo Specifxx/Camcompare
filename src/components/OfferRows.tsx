@@ -7,6 +7,7 @@ import type { CheckLink, OfferRow } from "@/lib/quickview";
 import { retailer } from "@/lib/retailers";
 import { rowWarning } from "@/lib/rrp";
 import OutboundLink from "./OutboundLink";
+import AccessoryThumb from "./AccessoryThumb";
 
 /** Filled button for a link that earns (Amazon and eBay in their own colours), outlined for the rest. */
 export function retailerButtonClass(key: string, paid: boolean): string {
@@ -54,6 +55,7 @@ export function OfferRowItem({ row, product, placement, priceNode, dense = false
   const off = pctOff(row.price, row.was);
   return (
     <li className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${row.tag === "best" ? "bg-buy-soft/40" : ""} ${className}`}>
+      {row.image && <AccessoryThumb src={row.image} alt={`${row.condition} listing at ${row.name}`} group="camera" store={row.name} size="sm" />}
       <div className="min-w-0 flex-1">
         <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
           <span className="font-semibold">{row.name}</span>

@@ -6,6 +6,7 @@
 // `country=` asks Shopify Markets for the market's own price, and the
 // store's currency (/meta.json) must be the market's.
 import { accessoryOffer, classifyAccessory, type AccessoryOffer } from "../accessories";
+import { compactImage } from "../accessory-format";
 import type { Lens } from "../catalog/schema";
 import { kitLensOf, matchListing, plausiblePrice, type CatalogIndex } from "../matching";
 import { MARKETS, type Currency } from "../markets";
@@ -35,6 +36,12 @@ export async function politeGet(url: string, headers: Record<string, string>, wa
 
 type Variant = { id: number; title: string; price: string; available: boolean; sku?: string | null; compare_at_price?: string | null; inventory_quantity?: number | null; featured_image?: { src?: string } | null };
 export type ShopifyProduct = { id: number; title: string; handle: string; vendor?: string; product_type?: string; tags?: string[] | string; body_html?: string | null; images?: { src: string; variant_ids?: number[] }[]; variants: Variant[] };
+
+/** A second-hand offer's own photo (each unit differs); new offers carry none, to keep the files small. */
+export const secondHandImage = (cond: Condition, url: string | null | undefined): { image?: string } => {
+  const image = cond === "new" ? undefined : compactImage(url);
+  return image ? { image } : {};
+};
 
 /** The variant's own photo, else the product image tied to it, else the product's first. */
 export function variantImage(p: Pick<ShopifyProduct, "images">, v: Pick<Variant, "id" | "featured_image">): string | null {
@@ -143,6 +150,7 @@ export function productOffers(p: ShopifyProduct, ctx: { base: string; retailer: 
       kitLensName: kit?.kitLensName ?? null,
       promo,
       detail: detailOf({ variant: v.title, title, text: cond === "new" ? null : p.body_html, used: cond !== "new" }),
+      ...secondHandImage(cond, variantImage(p, v)),
     });
   }
   return { offers, accessories, variants: p.variants.length };

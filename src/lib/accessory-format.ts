@@ -14,7 +14,31 @@ export const ACCESSORY_IMAGES = true;
 export const ACCESSORY_IMAGE_PX = 160;
 
 /**
- * A stored image (accessories.ts compactImage) as the URL to load: Shopify's
+ * A listing's image URL as stored (accessory rows and second-hand offers): Shopify's CDN path after
+ * "cdn.shopify.com/s/files/" with "~" in front ("~1/0603/4083/0375/files/x.jpg"),
+ * any other https image as host and path. The query string goes when the path
+ * is plainly an image file (it is only a cache-buster or a size); otherwise
+ * it stays, since it may be what names the image. Not an http(s) URL, or
+ * over 400 characters: none.
+ */
+export function compactImage(u: string | null | undefined): string | undefined {
+  let raw = u?.trim();
+  if (!raw) return undefined;
+  if (raw.startsWith("//")) raw = `https:${raw}`;
+  let url: URL;
+  try {
+    url = new URL(raw);
+  } catch {
+    return undefined;
+  }
+  if (url.protocol !== "https:" && url.protocol !== "http:") return undefined;
+  if (url.hostname === "cdn.shopify.com" && url.pathname.startsWith("/s/files/")) return `~${url.pathname.slice("/s/files/".length)}`;
+  const out = /\.(jpe?g|png|webp|gif|avif)$/i.test(url.pathname) ? `${url.host}${url.pathname}` : `${url.host}${url.pathname}${url.search}`;
+  return out.length <= 400 ? out : undefined;
+}
+
+/**
+ * A stored image (compactImage) as the URL to load: Shopify's
  * CDN at a small width (`?width=`, which cdn.shopify.com and a shop's own
  * /cdn/shop/ path resize to), anything else as the store gave it.
  */

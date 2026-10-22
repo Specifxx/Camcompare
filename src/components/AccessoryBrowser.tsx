@@ -237,15 +237,18 @@ export default function AccessoryBrowser({
                     </p>
                   )}
                 </div>
-                <div className="shrink-0 text-right">
-                  <p className={`price font-bold ${r.inStock ? "" : "text-muted"}`}>{price(r.price, r.currency)}</p>
-                  {r.perGB !== null && <p className="text-[11px] text-subtle">{perGbText(r.perGB, r.currency)}</p>}
-                </div>
-                <div className="w-20 shrink-0 text-right">
-                  <OutboundLink href={r.href} retailer={r.retailer} product={`acc-${r.category}`} placement="accessory-list" className={`${r.paid ? "btn-buy" : "btn-ghost"} w-full px-2`}>
-                    View<span className="sr-only"> at {r.retailerName}</span>
-                  </OutboundLink>
-                  {r.paid && <p className="mt-0.5 text-[10px] leading-none text-subtle">Paid link</p>}
+                {/* Phones: price above the button, so the title keeps its width. */}
+                <div className="flex shrink-0 flex-col items-end gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+                  <div className="text-right">
+                    <p className={`price font-bold ${r.inStock ? "" : "text-muted"}`}>{price(r.price, r.currency)}</p>
+                    {r.perGB !== null && <p className="text-[11px] text-subtle">{perGbText(r.perGB, r.currency)}</p>}
+                  </div>
+                  <div className="w-20 text-right">
+                    <OutboundLink href={r.href} retailer={r.retailer} product={`acc-${r.category}`} placement="accessory-list" className={`${r.paid ? "btn-buy" : "btn-ghost"} w-full px-2`}>
+                      View<span className="sr-only"> at {r.retailerName}</span>
+                    </OutboundLink>
+                    {r.paid && <p className="mt-0.5 text-[10px] leading-none text-subtle">Paid link</p>}
+                  </div>
                 </div>
               </li>
             ))}

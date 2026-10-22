@@ -318,3 +318,18 @@ test("photos: an accessory offer keeps the listing's image, compact", () => {
   const none = accessoryOffer({ title: "SmallRig Cage for Sony a7 IV 3667", price: 9900, currency: "AUD", url: "https://www.georges.com.au/products/cage", inStock: true, condition: "new", sourceId: "1" }, index, "georges", NOW);
   assert.equal(none && "image" in none, false);
 });
+
+test("photos: the file stores each Shopify shop's image base once and reads it back", async () => {
+  const { packImages, readAccessoriesFile, writeAccessoriesFile } = await import("../src/lib/accessory-data");
+  const fs = await import("node:fs");
+  const os = await import("node:os");
+  const path = await import("node:path");
+  const row = (retailer: string, image?: string): AccessoryOffer => ({ title: "SmallRig Cage", category: "cages", brand: "smallrig", cameras: [], cameraBrands: [], specs: {}, retailer, condition: "new", price: 9900, currency: "AUD", url: `https://x.com/${retailer}/${image ?? "none"}`, inStock: true, seenAt: NOW, sourceId: null, ...(image ? { image } : {}) });
+  const rows = [row("georges", "~1/0603/4083/0375/files/a.jpg"), row("georges", "~1/0603/4083/0375/files/b.jpg"), row("ce", "www.ce.com.au/a.png"), row("dd")];
+  const packed = packImages(rows);
+  assert.deepEqual(packed.bases, { georges: "1/0603/4083/0375/" });
+  assert.equal(packed.rows[0].image, "~/files/a.jpg");
+  const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "acc-")), "au.json");
+  writeAccessoriesFile({ generatedAt: NOW, market: "au", currency: "AUD", accessories: rows }, file);
+  assert.deepEqual(readAccessoriesFile("au", file).accessories, rows);
+});

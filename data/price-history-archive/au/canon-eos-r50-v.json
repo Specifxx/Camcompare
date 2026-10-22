@@ -1,6 +1,8 @@
 {"slug":"canon-eos-r50-v","market":"au","currency":"AUD","points":[
 {"day":"2025-04-22","new":114995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135796.50/warc/CC-MAIN-20250422020618-20250422050618-00621.warc.gz#offset=1017459389&length=82995"},
+{"day":"2025-04-27","new":116900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136160.5/warc/CC-MAIN-20250427021853-20250427051853-00514.warc.gz#offset=838219227&length=79671"},
 {"day":"2025-09-13","new":104995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533670.32/warc/CC-MAIN-20250913222048-20250914012048-00621.warc.gz#offset=878540323&length=82072"},
+{"day":"2025-11-14","new":116900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439343929.34/warc/CC-MAIN-20251114074159-20251114104159-00514.warc.gz#offset=682445190&length=91494"},
 {"day":"2026-01-15","new":114995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469235.32/warc/CC-MAIN-20260115102600-20260115132600-00621.warc.gz#offset=878522058&length=82032"},
 {"day":"2026-01-21","new":97941,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469698.67/warc/CC-MAIN-20260121114447-20260121144447-00319.warc.gz#offset=570364414&length=161593"}
 ]}

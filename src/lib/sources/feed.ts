@@ -16,6 +16,7 @@ import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
 import { retailer as getRetailer, type Condition } from "../retailers";
 import { availableNow, detailOf, feedAvailability, promoOf, wasPriceOf } from "./detail";
+import { secondHandImage } from "./shopify";
 import { toMinor, type PriceSource, type SourceContext } from "./types";
 
 // Header spellings across Google Shopping, Impact, CJ and Awin feeds.
@@ -30,6 +31,7 @@ const FIELDS: Record<string, string[]> = {
   gtin: ["gtin", "upc", "ean", "product_gtin", "upc or ean"],
   mpn: ["mpn", "manufacturer part number", "model_number", "mfr part number"],
   currency: ["currency", "currency_code", "currencycode", "price currency"],
+  image: ["image_link", "image link", "image url", "image_url", "aw_image_url", "merchant_image_url", "imageurl", "large_image"],
 };
 
 export type FeedRow = Partial<Record<keyof typeof FIELDS, string>>;
@@ -233,6 +235,7 @@ function rowToOffer(key: string, r: FeedRow, { index, now, market, lenses = [] }
     kitLensName: kit?.kitLensName ?? null,
     promo: promoOf({ title: r.title }),
     detail: cond === "new" ? null : detailOf({ title: r.title, used: true }),
+    ...secondHandImage(cond, r.image),
   };
 }
 

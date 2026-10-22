@@ -42,18 +42,51 @@ export function readAccessoriesFile(m: MarketCode, file = accessoriesFile(m)): A
     return emptyAccessories(m);
   }
   const rows = Array.isArray(raw.accessories) ? raw.accessories : [];
+  const bases = (raw as { imageBases?: unknown }).imageBases;
   const accessories = rows.flatMap((r) => {
-    const ok = accessoryOfferSchema.safeParse(r);
+    const ok = accessoryOfferSchema.safeParse(unpackImage(r, bases));
     return ok.success ? [ok.data] : [];
   });
   return { ...emptyAccessories(m), generatedAt: typeof raw.generatedAt === "string" ? raw.generatedAt : null, accessories };
 }
 
+// Shopify image paths start with the shop's own id ("~1/0603/4083/0375/files/x.jpg"),
+// the same on every row of a retailer: the file stores it once per retailer
+// (`imageBases`) and the rows as "~/files/x.jpg". Read expands it back, so
+// nothing else sees the difference.
+const SHOP_BASE = /^~(\d+\/\d{4}\/\d{4}\/\d{4}\/)/;
+
+/** Rows with their retailer's Shopify image base taken out, and the bases. Exported for tests. */
+export function packImages(rows: AccessoryOffer[]): { rows: AccessoryOffer[]; bases: Record<string, string> } {
+  const seen = new Map<string, Set<string>>();
+  for (const a of rows) {
+    const m = a.image?.match(SHOP_BASE);
+    if (m) (seen.get(a.retailer) ?? seen.set(a.retailer, new Set()).get(a.retailer)!).add(m[1]);
+  }
+  const bases: Record<string, string> = {};
+  for (const [r, set] of seen) if (set.size === 1) bases[r] = [...set][0];
+  return { rows: rows.map((a) => (a.image && bases[a.retailer] && a.image.startsWith(`~${bases[a.retailer]}`) ? { ...a, image: `~/${a.image.slice(1 + bases[a.retailer].length)}` } : a)), bases };
+}
+
+function unpackImage(r: unknown, bases: unknown): unknown {
+  if (!r || typeof r !== "object") return r;
+  const row = r as { image?: unknown; retailer?: unknown };
+  if (typeof row.image !== "string" || !row.image.startsWith("~/")) return r;
+  const base = bases && typeof bases === "object" && typeof row.retailer === "string" ? (bases as Record<string, unknown>)[row.retailer] : undefined;
+  if (typeof base !== "string") {
+    const { image: _drop, ...rest } = row; // a base gone missing: no photo, never a wrong one
+    return rest;
+  }
+  return { ...row, image: `~${base}${row.image.slice(2)}` };
+}
+
 /** One listing per line: a readable diff, a file a fraction of the indented size. */
 export function writeAccessoriesFile(f: AccessoriesFile, file = accessoriesFile(f.market)) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  const rows = f.accessories.map((a) => " " + JSON.stringify(a)).join(",\n");
-  fs.writeFileSync(file, `{"generatedAt":${JSON.stringify(f.generatedAt)},"market":"${f.market}","currency":"${f.currency}","accessories":[\n${rows}\n]}\n`);
+  const packed = packImages(f.accessories);
+  const rows = packed.rows.map((a) => " " + JSON.stringify(a)).join(",\n");
+  const bases = Object.keys(packed.bases).length ? `,"imageBases":${JSON.stringify(packed.bases)}` : "";
+  fs.writeFileSync(file, `{"generatedAt":${JSON.stringify(f.generatedAt)},"market":"${f.market}","currency":"${f.currency}"${bases},"accessories":[\n${rows}\n]}\n`);
 }
 
 export function writeAccessoryHistory(m: MarketCode, day: string, rows: PerGbRow[], dir = accessoryHistoryDir(m)) {

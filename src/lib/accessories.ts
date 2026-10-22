@@ -16,6 +16,7 @@
 import { z } from "zod";
 import { BRAND_WORDS, compact, launchIn, tokens, type CatalogIndex, type Matchable } from "./matching";
 import { CURRENCIES, refRate, type Currency } from "./markets";
+import { compactImage } from "./accessory-format";
 import { CONDITIONS, type Condition } from "./retailers";
 
 // ---------------------------------------------------------------- categories
@@ -762,29 +763,7 @@ export const accessoryOfferSchema = z
   .strict();
 export type AccessoryOffer = z.infer<typeof accessoryOfferSchema>;
 
-/**
- * A listing's image URL as stored: Shopify's CDN path after
- * "cdn.shopify.com/s/files/" with "~" in front ("~1/0603/4083/0375/files/x.jpg"),
- * any other https image as host and path. The query string goes when the path
- * is plainly an image file (it is only a cache-buster or a size); otherwise
- * it stays, since it may be what names the image. Not an http(s) URL, or
- * over 400 characters: none.
- */
-export function compactImage(u: string | null | undefined): string | undefined {
-  let raw = u?.trim();
-  if (!raw) return undefined;
-  if (raw.startsWith("//")) raw = `https:${raw}`;
-  let url: URL;
-  try {
-    url = new URL(raw);
-  } catch {
-    return undefined;
-  }
-  if (url.protocol !== "https:" && url.protocol !== "http:") return undefined;
-  if (url.hostname === "cdn.shopify.com" && url.pathname.startsWith("/s/files/")) return `~${url.pathname.slice("/s/files/".length)}`;
-  const out = /\.(jpe?g|png|webp|gif|avif)$/i.test(url.pathname) ? `${url.host}${url.pathname}` : `${url.host}${url.pathname}${url.search}`;
-  return out.length <= 400 ? out : undefined;
-}
+export { compactImage } from "./accessory-format";
 
 /**
  * A source's listing as an accessory offer, or null. Refuse-only price
