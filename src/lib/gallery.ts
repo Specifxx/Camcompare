@@ -8,17 +8,19 @@
 import fs from "node:fs";
 import path from "node:path";
 import { z } from "zod";
-import { credit } from "./catalog";
+import { credit, storePhoto } from "./catalog";
 import { imageCreditSchema, type ImageCredit } from "./images";
 import { thumbSrc } from "./thumb";
 
-export type GalleryImage = { src: string; alt: string; credit: ImageCredit | null };
+/** `store`: the photo is that store's own listing photo (no licensed one yet), credited "Image: <store>". */
+export type GalleryImage = { src: string; alt: string; credit: ImageCredit | null; store?: string };
 
 const extraSchema = z.array(imageCreditSchema.extend({ src: z.string().regex(/^\/products\/gallery\/[a-z0-9-]+\.(webp|jpg|png)$/), alt: z.string().min(2) }).strict()).max(12);
 const DIR = path.join(process.cwd(), "data", "gallery");
 
 export function galleryFor(slug: string, alt: string): GalleryImage[] {
-  const out: GalleryImage[] = [{ src: thumbSrc(slug), alt, credit: credit(slug) }];
+  const sp = credit(slug) ? null : storePhoto(slug);
+  const out: GalleryImage[] = [{ src: thumbSrc(slug), alt, credit: credit(slug), ...(sp ? { store: sp.store } : {}) }];
   const f = path.join(DIR, `${slug}.json`);
   if (!fs.existsSync(f)) return out;
   for (const x of extraSchema.parse(JSON.parse(fs.readFileSync(f, "utf8")))) {

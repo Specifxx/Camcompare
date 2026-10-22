@@ -14,7 +14,7 @@ export default function GalleryViewer({ images }: { images: GalleryImage[] }) {
       <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-line bg-white">
         <Image src={cur.src} alt={cur.alt} fill unoptimized priority={i === 0} sizes="(max-width: 768px) 100vw, 360px" className="object-contain p-2" />
       </div>
-      <PhotoCredit credit={cur.credit} />
+      <PhotoCredit credit={cur.credit} store={cur.store} />
       <ul className="mt-2 flex gap-2 overflow-x-auto" aria-label="Photos">
         {images.map((im, k) => (
           <li key={im.src} className="shrink-0">

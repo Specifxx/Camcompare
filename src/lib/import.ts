@@ -8,7 +8,9 @@ import { mergeAccessories, perGbHistory, type AccessoryRun } from "./accessories
 import { readAccessoriesFile, writeAccessoriesFile, writeAccessoryHistory } from "./accessory-data";
 import type { Camera, Lens } from "./catalog/schema";
 import { MARKETS, type MarketCode } from "./markets";
+import { hasLicensedThumb } from "./images";
 import { buildIndex } from "./matching";
+import { writeStorePhotos } from "./store-photos";
 import { AMAZON_MAX_AGE_H, historyDir, isAmazonOffer, lowest, OFFER_MAX_AGE_H, offersFile, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
 import { retailer } from "./retailers";
 import { sourcesFor } from "./sources";
@@ -115,4 +117,6 @@ export async function runImport(markets: MarketCode[], cameras: Camera[], lenses
     const sources = sourcesFor(m).filter((s) => !only || only.includes(s.retailer));
     await runMarket(m, cameras, lenses, sources, log);
   }
+  // Store photos for products without a licensed one, from every market's offers.
+  log(`${writeStorePhotos(hasLicensedThumb)} store photos for products without a licensed thumbnail`);
 }

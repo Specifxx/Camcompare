@@ -1,9 +1,12 @@
 // Everything a page needs from the catalog, parsed once per build.
-// Pages only ever see PUBLISHED products: valid data, a thumbnail and a credit.
+// Pages only ever see PUBLISHED products: valid data and a photo, either a
+// licensed thumbnail with its credit or, with none, a store's own listing
+// photo of it (lib/store-photos.ts; owner, 2026-10-22).
 import fs from "node:fs";
 import { readBrands, readCameraFiles, readLensFiles, readMounts } from "./load";
 import type { Brand, Camera, Lens, LensCoverage, Mount, ProductKind, SensorFormat } from "./schema";
 import { readCredits, THUMBS_DIR, type ImageCredit } from "../images";
+import { readStorePhotos, type StorePhoto } from "../store-photos";
 import { MARKETS, type Currency, type MarketCode } from "../markets";
 import { readAmazonOffers, readHistory, readOffersFile, sortOffers, type HistoryPoint, type Offer } from "../offers";
 
@@ -18,6 +21,8 @@ type Catalog = {
   brands: Brand[];
   mounts: Mount[];
   credits: Record<string, ImageCredit>;
+  /** Store listing photos, only for products without a licensed one. */
+  storePhotos: Record<string, StorePhoto>;
   // Parsed per market on first use: price history grows every day, and a
   // page reads one market's (a compare page none).
   offers: Partial<Record<MarketCode, MarketOffers>>;
@@ -35,14 +40,17 @@ function load(): Catalog {
   // the thumbnails out of every function): there the credits decide, which
   // tests/catalog.test.ts holds to the files.
   const thumbs = fs.existsSync(THUMBS_DIR) ? new Set(fs.readdirSync(THUMBS_DIR)) : null;
-  const published = (slug: string) => Boolean(credits[slug]) && (!thumbs || thumbs.has(`${slug}.webp`));
+  const licensed = (slug: string) => Boolean(credits[slug]) && (!thumbs || thumbs.has(`${slug}.webp`));
+  // A licensed photo always wins; a store photo only stands in where there is none.
+  const storePhotos = Object.fromEntries(Object.entries(readStorePhotos()).filter(([slug]) => !licensed(slug)));
+  const published = (slug: string) => licensed(slug) || Boolean(storePhotos[slug]);
   const cameras = readCameraFiles().cameras.filter((c) => published(c.slug)).sort(newestFirst);
   const lenses = readLensFiles().lenses.filter((l) => published(l.slug)).sort(newestFirst);
   const bySlug = new Map<string, AnyProduct>([
     ...cameras.map((c) => [c.slug, { kind: "camera", item: c }] as const),
     ...lenses.map((l) => [l.slug, { kind: "lens", item: l }] as const),
   ]);
-  memo = { cameras, lenses, bySlug, brands: readBrands(), mounts: readMounts(), credits, offers: {}, history: {} };
+  memo = { cameras, lenses, bySlug, brands: readBrands(), mounts: readMounts(), credits, storePhotos, offers: {}, history: {} };
   return memo;
 }
 
@@ -81,6 +89,8 @@ export const brandName = (slug: string) => brand(slug)?.name ?? slug;
 export const mounts = () => load().mounts;
 export const mount = (slug: string) => load().mounts.find((m) => m.slug === slug) ?? null;
 export const credit = (slug: string) => load().credits[slug] ?? null;
+/** The store photo standing in for a product with no licensed thumbnail, or null. */
+export const storePhoto = (slug: string): StorePhoto | null => load().storePhotos[slug] ?? null;
 export const offersFor = (slug: string, m: MarketCode) => marketOffers(m).offers.get(slug) ?? [];
 export const historyFor = (slug: string, m: MarketCode) => marketHistory(m).get(slug) ?? [];
 export const offersGeneratedAt = (m: MarketCode) => marketOffers(m).generatedAt;

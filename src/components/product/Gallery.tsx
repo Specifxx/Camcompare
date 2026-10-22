@@ -13,7 +13,7 @@ export default function Gallery({ slug, images }: { slug: string; images: Galler
   return (
     <figure>
       <ProductThumb slug={slug} alt={images[0]?.alt ?? ""} priority className="border border-line" />
-      <PhotoCredit credit={images[0]?.credit ?? null} />
+      <PhotoCredit credit={images[0]?.credit ?? null} store={images[0]?.store} />
     </figure>
   );
 }

@@ -1157,3 +1157,33 @@ now shows a small square photo.
 - Rows written before this have no image until the next price import, every
   three hours. A backfill would mean re-reading every Shopify store's
   products.json and every structured-data page, which is a price import.
+
+## 2026-10-22: Unofficial images are fine: a store's photo until a licensed one
+
+Owner, 2026-10-22: "unofficial images are fine". Half the catalog (513 of
+995 products) had no licensed thumbnail and so no page. Now a product with no
+licensed thumbnail shows a store's own listing photo of it, the same way
+accessory and second-hand rows show theirs ("Accessory photos are the
+store's own listing photo", above).
+
+- **Which photo.** From a new, body-only, in-stock, non-Amazon offer: a
+  maker's own store first (Canon Store, Sony Store, Shop Panasonic…), then an
+  authorized dealer, then any store, ties by retailer and listing id
+  (`pickStorePhotos`). Never a second-hand listing: that photo is one unit,
+  with its marks, not the product. Never a kit.
+- **How it reaches pages.** The import writes `data/store-photos.json` (slug
+  → photo URL, store) after each run. `next.config.js` turns each entry into
+  a redirect from `/products/<slug>.webp` to the store's CDN at 640 px, so
+  cards, the quick view, the picker, OG and JSON-LD images pick it up with no
+  change and nothing is copied. A map shipped to the browser would have meant
+  changing every thumbnail call. The product page credits it "Image:
+  <store>".
+- **Licensed photos always win**, checked at every build: no redirect when
+  `public/products/<slug>.webp` exists (redirects run before files), and the
+  catalog ignores a store photo for a product with a credit.
+- **Publishing.** `lib/catalog/index.ts`: published = licensed thumbnail, or a
+  store photo. Neither: unpublished, as before. `ACCESSORY_IMAGES` turns
+  store photos off with the rest.
+- **Data.** Sources keep a new offer's photo only for products without a
+  licensed thumbnail, so the offer files grow only there. Second-hand offers
+  keep theirs always.

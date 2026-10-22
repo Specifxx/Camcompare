@@ -78,3 +78,19 @@ export function addReject(slug: string, file: string) {
 export const THUMBS_DIR = path.join(process.cwd(), "public", "products");
 export const thumbPath = (slug: string) => path.join(THUMBS_DIR, `${slug}.webp`);
 export { thumbSrc } from "./thumb";
+
+let licensed: Set<string> | null = null;
+/**
+ * A product with a licensed thumbnail: its credit and its file. Licensed
+ * photos always win over a store's listing photo (store-photos.ts). Where
+ * public/ isn't on disk (a server function) the credit decides, as in
+ * lib/catalog.
+ */
+export function hasLicensedThumb(slug: string): boolean {
+  if (!licensed) {
+    const credits = readCredits();
+    const files = fs.existsSync(THUMBS_DIR) ? new Set(fs.readdirSync(THUMBS_DIR)) : null;
+    licensed = new Set(Object.keys(credits).filter((s) => !files || files.has(`${s}.webp`)));
+  }
+  return licensed.has(slug);
+}

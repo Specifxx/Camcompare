@@ -119,9 +119,12 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
 - **Specs are facts from the maker's spec sheet. Use `null` rather than a
   guess.** A wrong number on a comparison page is worse than a dash.
 - Products announced before `CATALOG_FLOOR_YEAR` (2012) need a `keepReason`.
-- **Every published product has a thumbnail and a credit.** A product without
-  them is unpublished, not shown with a placeholder (`docs/images.md`). A photo
-  found by search is checked by eye before it ships (`npm run thumbs:sheet`,
+- **Every published product has a photo.** A licensed thumbnail with a credit
+  always wins. With none, a store's own listing photo of it (new, body-only,
+  in stock, never second-hand) stands in, hotlinked and credited "Image:
+  <store>" (`src/lib/store-photos.ts`; owner, 2026-10-22). A product with
+  neither is unpublished, not shown with a placeholder (`docs/images.md`). A
+  photo found by search is checked by eye before it ships (`npm run thumbs:sheet`,
   `npm run thumbs:reject`).
 - `rivals` decides which `/compare/<a>-vs-<b>` pages exist. Only list products
   buyers really cross-shop. A pair is indexed only when both products name

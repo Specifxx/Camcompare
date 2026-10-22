@@ -1,8 +1,28 @@
 # Product images
 
-Rule (owner, 2026-10-17): **every listed product has a thumbnail.** A camera
+Rule (owner, 2026-10-17): **every listed product has a photo.** A camera
 or lens without one is not published: it gets no page and appears in no
 listing, search result or sitemap (`src/lib/catalog/index.ts`).
+
+Since 2026-10-22 (owner: "unofficial images are fine") the photo is either:
+
+1. **a licensed thumbnail**, below, which always wins; or
+2. with none, **a store's own listing photo** of the product
+   (`src/lib/store-photos.ts`, `data/store-photos.json`). It comes from a new,
+   body-only, in-stock offer, a maker's own store first, then an authorized
+   dealer; never a second-hand listing (one unit, not the product), a kit or
+   Amazon. It is hotlinked from the store's CDN at 640 px:
+   `next.config.js` redirects `/products/<slug>.webp` to it, so nothing is
+   copied into the repo or through Vercel's image optimiser. The product page
+   credits it "Image: <store>". Every build re-checks: once a licensed
+   thumbnail exists, the redirect and the store photo go.
+   `ACCESSORY_IMAGES` (`src/lib/accessory-format.ts`) turns store photos
+   off, and a product with neither photo is unpublished again.
+
+A product with neither stays unpublished. The import writes
+`data/store-photos.json` after each run from the offers' `image` field. The
+sources keep a new offer's photo only for products without a licensed
+thumbnail.
 
 Each published product has two files:
 

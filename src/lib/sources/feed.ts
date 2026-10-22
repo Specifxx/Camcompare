@@ -16,7 +16,7 @@ import { MARKETS } from "../markets";
 import type { Offer } from "../offers";
 import { retailer as getRetailer, type Condition } from "../retailers";
 import { availableNow, detailOf, feedAvailability, promoOf, wasPriceOf } from "./detail";
-import { secondHandImage } from "./shopify";
+import { offerImage } from "./shopify";
 import { toMinor, type PriceSource, type SourceContext } from "./types";
 
 // Header spellings across Google Shopping, Impact, CJ and Awin feeds.
@@ -235,7 +235,7 @@ function rowToOffer(key: string, r: FeedRow, { index, now, market, lenses = [] }
     kitLensName: kit?.kitLensName ?? null,
     promo: promoOf({ title: r.title }),
     detail: cond === "new" ? null : detailOf({ title: r.title, used: true }),
-    ...secondHandImage(cond, r.image),
+    ...offerImage({ condition: cond, kit: m.kit, product: m.product.slug }, r.image),
   };
 }
 

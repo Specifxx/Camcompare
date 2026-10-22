@@ -1,4 +1,5 @@
 {"slug":"sony-fe-20-70mm-f4-g","market":"au","currency":"AUD","points":[
+{"day":"2024-04-19","new":154900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817455.17/warc/CC-MAIN-20240419203449-20240419233449-00237.warc.gz#offset=752383743&length=122338"},
 {"day":"2024-11-07","new":159995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00048.warc.gz#offset=943987333&length=80675"},
 {"day":"2024-11-09","new":174900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028142.18/warc/CC-MAIN-20241109182954-20241109212954-00404.warc.gz#offset=681507996&length=140644"},
 {"day":"2025-02-09","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951623.52/warc/CC-MAIN-20250209163549-20250209193549-00048.warc.gz#offset=954092646&length=80089"},

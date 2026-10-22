@@ -1,3 +1,25 @@
+const fs = require("node:fs");
+const path = require("node:path");
+
+// Products with no licensed thumbnail show a store's own listing photo
+// (src/lib/store-photos.ts, data/store-photos.json): /products/<slug>.webp
+// redirects to it on the store's CDN, so every place that uses the thumbnail
+// path gets it and nothing is copied. Re-checked at every build: a product
+// whose licensed file exists keeps it (redirects run before files).
+function storePhotoRedirects() {
+  const file = path.join(__dirname, "data", "store-photos.json");
+  if (!fs.existsSync(file)) return [];
+  let photos = {};
+  try {
+    photos = JSON.parse(fs.readFileSync(file, "utf8")).photos || {};
+  } catch {
+    return [];
+  }
+  return Object.entries(photos)
+    .filter(([slug, p]) => /^[a-z0-9-]+$/.test(slug) && p && /^https:\/\//.test(p.src) && !fs.existsSync(path.join(__dirname, "public", "products", `${slug}.webp`)))
+    .map(([slug, p]) => ({ source: `/products/${slug}.webp`, destination: p.src, permanent: false }));
+}
+
 /** @type {import('next').NextConfig} */
 module.exports = {
   // Pages read data/ at build time; make sure the files ship with any
@@ -7,7 +29,7 @@ module.exports = {
   experimental: { outputFileTracingIncludes: { "/**": ["./data/**/*.json"] }, outputFileTracingExcludes: { "/**": ["./public/**"] } },
   // The old deployment address sends people and crawlers to the domain.
   async redirects() {
-    return [{ source: "/:path*", has: [{ type: "host", value: "camcompare.vercel.app" }], destination: "https://www.camcompare.app/:path*", permanent: true }];
+    return [{ source: "/:path*", has: [{ type: "host", value: "camcompare.vercel.app" }], destination: "https://www.camcompare.app/:path*", permanent: true }, ...storePhotoRedirects()];
   },
   // Community threads and member pages are client-rendered over one static
   // shell each, so a new thread or member costs no build, ISR write or server

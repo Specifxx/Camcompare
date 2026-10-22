@@ -1,6 +1,8 @@
 import type { ImageCredit } from "@/lib/images";
 
-export default function PhotoCredit({ credit }: { credit: ImageCredit | null }) {
+export default function PhotoCredit({ credit, store }: { credit: ImageCredit | null; store?: string }) {
+  // A store's own listing photo, standing in until a licensed one exists (lib/store-photos.ts).
+  if (!credit && store) return <figcaption className="mt-1 text-[11px] text-subtle">Image: {store}</figcaption>;
   if (!credit) return null;
   return (
     <figcaption className="mt-1 text-[11px] text-subtle">

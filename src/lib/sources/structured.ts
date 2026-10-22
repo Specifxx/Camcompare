@@ -14,7 +14,7 @@ import type { Availability, Offer } from "../offers";
 import type { Condition } from "../retailers";
 import { availableNow, detailOf, promoOf, schemaAvailability, wasPriceOf } from "./detail";
 import { cheapestPerProduct } from "./feed";
-import { robotsAllows, secondHandImage, shopifyCondition } from "./shopify";
+import { offerImage, robotsAllows, shopifyCondition } from "./shopify";
 import { sleep, toMinor, type PriceSource } from "./types";
 
 const UA = "Mozilla/5.0 (compatible; CamCompareBot/0.1; +https://github.com/Specifxx/Camcompare)";
@@ -315,7 +315,7 @@ export const structuredSource = (retailerKey: string): PriceSource => ({
           kitLensName: kit?.kitLensName ?? null,
           promo: promoOf({ title: l.title, body: l.description }),
           detail: detailOf({ branch: branch ? decode(branch) : null, title: l.title, text: cond === "new" ? null : l.description, used: cond !== "new" }),
-          ...secondHandImage(cond, absolute(l.image, u)),
+          ...offerImage({ condition: cond, kit: m.kit, product: m.product.slug }, absolute(l.image, u)),
         });
       }
     }

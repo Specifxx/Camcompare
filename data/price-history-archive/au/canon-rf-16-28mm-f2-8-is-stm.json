@@ -1,8 +1,10 @@
 {"slug":"canon-rf-16-28mm-f2-8-is-stm","market":"au","currency":"AUD","points":[
+{"day":"2025-03-28","new":187900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004758455.97/warc/CC-MAIN-20250328012454-20250328042454-00550.warc.gz#offset=735879479&length=77911"},
 {"day":"2025-05-18","new":184900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412609.63/warc/CC-MAIN-20250518121532-20250518151532-00511.warc.gz#offset=634498172&length=124562"},
 {"day":"2025-05-20","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412798.22/warc/CC-MAIN-20250520084021-20250520114021-00092.warc.gz#offset=919358444&length=78604"},
 {"day":"2025-08-15","new":179900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578279.64/warc/CC-MAIN-20250815081150-20250815111150-00078.warc.gz#offset=586672253&length=168046"},
 {"day":"2025-09-07","new":169995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532931.18/warc/CC-MAIN-20250907194546-20250907224546-00092.warc.gz#offset=869317414&length=79824"},
+{"day":"2025-09-14","new":169100,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533962.79/warc/CC-MAIN-20250914231514-20250915021514-00550.warc.gz#offset=687007091&length=84825"},
 {"day":"2026-02-14","new":179995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506469.31/warc/CC-MAIN-20260214123803-20260214153803-00092.warc.gz#offset=801696406&length=79404"},
 {"day":"2026-06-17","new":152900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687861791.76/warc/CC-MAIN-20260617030125-20260617060125-00511.warc.gz#offset=602211309&length=159360"}
 ]}

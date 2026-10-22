@@ -1,4 +1,5 @@
 {"slug":"sony-a7cr","market":"au","currency":"AUD","points":[
+{"day":"2024-08-05","new":449800,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640417235.15/warc/CC-MAIN-20240804230158-20240805020158-00429.warc.gz#offset=681954877&length=126869"},
 {"day":"2024-10-03","new":459900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253146.59/warc/CC-MAIN-20241003094020-20241003124020-00664.warc.gz#offset=669128040&length=89646"},
 {"day":"2024-11-01","new":399995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027552.27/warc/CC-MAIN-20241101184224-20241101214224-00071.warc.gz#offset=933015378&length=82512"},
 {"day":"2025-02-15","new":449995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951942.61/warc/CC-MAIN-20250215022347-20250215052347-00071.warc.gz#offset=919250619&length=81672"},
