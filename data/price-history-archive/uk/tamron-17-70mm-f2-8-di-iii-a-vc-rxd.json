@@ -1,0 +1,8 @@
+{"slug":"tamron-17-70mm-f2-8-di-iii-a-vc-rxd","market":"uk","currency":"GBP","points":[
+{"day":"2024-07-24","new":57900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518427.68/warc/CC-MAIN-20240724171328-20240724201328-00073.warc.gz#offset=684605992&length=48512"},
+{"day":"2024-12-07","new":57900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066422909.99/warc/CC-MAIN-20241207010938-20241207040938-00647.warc.gz#offset=258236537&length=63175"},
+{"day":"2025-04-27","new":54900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136091.64/warc/CC-MAIN-20250426230106-20250427020106-00867.warc.gz#offset=260359633&length=82889"},
+{"day":"2025-07-13","used":44000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933967.50/warc/CC-MAIN-20250713065620-20250713095620-00750.warc.gz#offset=253922304&length=66742"},
+{"day":"2025-08-03","new":59900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279735.55/warc/CC-MAIN-20250803200137-20250803230137-00947.warc.gz#offset=246081220&length=74224"},
+{"day":"2025-09-06","new":59900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532789.0/warc/CC-MAIN-20250906122508-20250906152508-00867.warc.gz#offset=242932895&length=84288"}
+]}

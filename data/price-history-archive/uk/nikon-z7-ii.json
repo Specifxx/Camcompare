@@ -1,0 +1,5 @@
+{"slug":"nikon-z7-ii","market":"uk","currency":"GBP","points":[
+{"day":"2024-05-22","new":237900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058534.8/warc/CC-MAIN-20240522070747-20240522100747-00245.warc.gz#offset=703279452&length=48135"},
+{"day":"2024-09-17","new":229900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651722.42/warc/CC-MAIN-20240917004428-20240917034428-00245.warc.gz#offset=752919264&length=48121"},
+{"day":"2025-05-18","used":158500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412608.14/warc/CC-MAIN-20250518090654-20250518120654-00944.warc.gz#offset=210606434&length=69646"}
+]}

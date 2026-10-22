@@ -1,0 +1,5 @@
+{"slug":"sony-zv-1f","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-06","new":49900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951463.20/warc/CC-MAIN-20250206212213-20250207002213-00366.warc.gz#offset=271117100&length=64563"},
+{"day":"2025-03-19","new":54899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.33/warc/CC-MAIN-20250319144207-20250319174207-00366.warc.gz#offset=270757962&length=68867"},
+{"day":"2025-08-15","new":54900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578279.64/warc/CC-MAIN-20250815081150-20250815111150-00366.warc.gz#offset=237205210&length=77123"}
+]}

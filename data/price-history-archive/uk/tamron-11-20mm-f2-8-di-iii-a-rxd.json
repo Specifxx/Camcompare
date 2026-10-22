@@ -1,0 +1,5 @@
+{"slug":"tamron-11-20mm-f2-8-di-iii-a-rxd","market":"uk","currency":"GBP","points":[
+{"day":"2025-05-21","new":67900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413138.27/warc/CC-MAIN-20250521163545-20250521193545-00280.warc.gz#offset=253791872&length=77227"},
+{"day":"2025-08-09","new":64900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280114.71/warc/CC-MAIN-20250809172211-20250809202211-00738.warc.gz#offset=285995681&length=80628"},
+{"day":"2025-10-08","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00280.warc.gz#offset=302087098&length=79261"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"canon-powershot-g7-x-mark-iii","market":"uk","currency":"GBP","points":[
+{"day":"2025-08-15","new":81900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578279.64/warc/CC-MAIN-20250815081150-20250815111150-00663.warc.gz#offset=258877286&length=75170"},
+{"day":"2025-09-07","new":82900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00653.warc.gz#offset=233601569&length=74912"},
+{"day":"2025-10-06","new":91900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358248.49/warc/CC-MAIN-20251006125215-20251006155215-00052.warc.gz#offset=284150789&length=76742"}
+]}

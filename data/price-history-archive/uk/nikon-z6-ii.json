@@ -1,0 +1,5 @@
+{"slug":"nikon-z6-ii","market":"uk","currency":"GBP","points":[
+{"day":"2024-06-16","new":154900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861665.97/warc/CC-MAIN-20240616141113-20240616171113-00279.warc.gz#offset=727189871&length=49575"},
+{"day":"2025-05-18","used":100000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412608.14/warc/CC-MAIN-20250518090654-20250518120654-00748.warc.gz#offset=253779127&length=66199"},
+{"day":"2025-10-12","new":139900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358734.56/warc/CC-MAIN-20251012004438-20251012034438-00498.warc.gz#offset=282809608&length=78397"}
+]}

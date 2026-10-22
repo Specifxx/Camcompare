@@ -1,0 +1,7 @@
+{"slug":"nikon-d7500","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-07","used":60000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00542.warc.gz#offset=271611850&length=61969"},
+{"day":"2025-02-12","used":60000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951751.22/warc/CC-MAIN-20250212060941-20250212090941-00013.warc.gz#offset=270308145&length=62045"},
+{"day":"2025-02-13","used":60000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951830.78/warc/CC-MAIN-20250213211008-20250214001008-00692.warc.gz#offset=250776557&length=61964"},
+{"day":"2025-04-26","used":49500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889136091.64/warc/CC-MAIN-20250426230106-20250427020106-00444.warc.gz#offset=295231403&length=70654"},
+{"day":"2025-07-18","used":52500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231606.97/warc/CC-MAIN-20250718215916-20250719005916-00872.warc.gz#offset=222923884&length=71429"}
+]}
