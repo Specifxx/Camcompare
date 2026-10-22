@@ -400,6 +400,11 @@
    "store": "Abt",
    "retailer": "abt"
   },
+  "gopro-mission-1-pro-ils": {
+   "src": "https://cdn.shopify.com/s/files/1/0750/1017/files/gopro-mission-1-pro-ils-camera-front-left-product-view-showing-the-lens-mount-and-front-status-screen.jpg?width=640",
+   "store": "Pictureline",
+   "retailer": "pictureline"
+  },
   "hasselblad-907x-50c": {
    "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/files/SH-BGE7-SH_626a1a78-5b85-438f-aac5-cbebc109e8dc.jpg?width=640",
    "store": "Georges Cameras",
@@ -1036,9 +1041,9 @@
    "retailer": "beach-camera"
   },
   "panasonic-leica-dg-elmarit-200mm-f2-8-power-o-i-s": {
-   "src": "https://cdn.shopify.com/s/files/1/0622/3219/9216/files/2682646.jpg?width=640",
-   "store": "Focus Camera",
-   "retailer": "focus-camera"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/a/2/a20303449.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "panasonic-leica-dg-nocticron-42-5mm-f1-2-asph-power-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/qrogdi8zjvqiav47iot8.jpg?width=640",
@@ -1099,6 +1104,11 @@
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/bs1h_front.jpg?width=640",
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
+  },
+  "panasonic-lumix-g-20mm-f1-7-ii-asph": {
+   "src": "https://cdn11.bigcommerce.com/s-fc1fc/images/stencil/1280x1280/products/7179/19848/H_H020_slant_400__32585.1627945173.jpg",
+   "store": "Precision Camera",
+   "retailer": "precision-camera"
   },
   "panasonic-lumix-g-42-5mm-f1-7-asph-power-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/mjzlp4ogyr7exxu10m0k.jpg?width=640",
@@ -1226,9 +1236,9 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-s-pro-50mm-f1-4": {
-   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/50mm3_1.jpg?width=640",
-   "store": "Ted's Cameras",
-   "retailer": "teds"
+   "src": "https://cdn11.bigcommerce.com/s-fc1fc/images/stencil/1280x1280/products/33405/111145/1_1_S-X50_k_frontslant__13511.1624483413.jpg",
+   "store": "Precision Camera",
+   "retailer": "precision-camera"
   },
   "panasonic-lumix-s-pro-70-200mm-f2-8-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/files/S-E70200.jpg?width=640",
@@ -1321,9 +1331,9 @@
    "retailer": "camera-electronic"
   },
   "sigma-105mm-f1-4-dg-hsm-art": {
-   "src": "https://cdn.shopify.com/s/files/1/0868/0890/products/1551202064000_IMG_1050222.jpg?width=640",
-   "store": "Helix Camera",
-   "retailer": "helix-camera"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/4/2/4259955_main_11.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-12mm-f1-4-dc-contemporary": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/sigma-camera-lens-416965-right-side.jpg",
@@ -1336,14 +1346,14 @@
    "retailer": "camera-electronic"
   },
   "sigma-135mm-f1-8-dg-hsm-art": {
-   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/sigma-135mm-2_2.jpg?width=640",
-   "store": "Ted's Cameras",
-   "retailer": "teds"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/9/0/90809821.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-14-24mm-f2-8-dg-hsm-art": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/41002z6n3kL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/9/2/92943.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-150-600mm-f5-6-3-dg-os-hsm-contemporary": {
    "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/81o6z3YrNZL.jpg?width=640",
@@ -1386,9 +1396,9 @@
    "retailer": "camera-wholesalers"
   },
   "sigma-24-70mm-f2-8-dg-dn-art": {
-   "src": "https://cdn.shopify.com/s/files/1/0727/9348/9673/files/578969.jpg?width=640",
-   "store": "Harrison Cameras",
-   "retailer": "harrison-cameras"
+   "src": "https://cdn11.bigcommerce.com/s-fc1fc/images/stencil/1280x1280/products/38442/132778/1573004770_1516476__08231.1624483294.jpg",
+   "store": "Precision Camera",
+   "retailer": "precision-camera"
   },
   "sigma-24-70mm-f2-8-dg-os-hsm-art": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/4576956_0_3.jpg?width=640",
