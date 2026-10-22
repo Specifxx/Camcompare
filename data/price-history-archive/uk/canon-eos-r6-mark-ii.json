@@ -1,0 +1,5 @@
+{"slug":"canon-eos-r6-mark-ii","market":"uk","currency":"GBP","points":[
+{"day":"2024-12-01","new":259900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066036672.6/warc/CC-MAIN-20241201192453-20241201222453-00751.warc.gz#offset=267190292&length=72377"},
+{"day":"2025-05-12","new":219900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412241.67/warc/CC-MAIN-20250512073613-20250512103613-00151.warc.gz#offset=248659013&length=93247"},
+{"day":"2025-09-06","new":219900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532789.0/warc/CC-MAIN-20250906122508-20250906152508-00151.warc.gz#offset=254450115&length=95989"}
+]}

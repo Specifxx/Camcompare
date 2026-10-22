@@ -1,0 +1,5 @@
+{"slug":"sony-a7c-ii","market":"uk","currency":"GBP","points":[
+{"day":"2025-01-14","new":172500,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362199.73/warc/CC-MAIN-20250114082024-20250114112024-00744.warc.gz#offset=288473931&length=69084"},
+{"day":"2025-05-15","new":199900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412458.2/warc/CC-MAIN-20250515020826-20250515050826-00315.warc.gz#offset=234999555&length=84328"},
+{"day":"2025-10-16","new":195900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00315.warc.gz#offset=278492157&length=86092"}
+]}

@@ -1,0 +1,6 @@
+{"slug":"dji-osmo-action-3","market":"au","currency":"AUD","points":[
+{"day":"2024-04-14","new":41500,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816879.72/warc/CC-MAIN-20240414130604-20240414160604-00469.warc.gz#offset=760470316&length=123615"},
+{"day":"2024-05-28","new":26900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059078.15/warc/CC-MAIN-20240528061449-20240528091449-00006.warc.gz#offset=721399003&length=127127"},
+{"day":"2024-11-08","new":48900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028025.14/warc/CC-MAIN-20241108035242-20241108065242-00469.warc.gz#offset=785130564&length=81292"},
+{"day":"2024-11-11","new":26900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028216.19/warc/CC-MAIN-20241111024756-20241111054756-00006.warc.gz#offset=776819408&length=80787"}
+]}

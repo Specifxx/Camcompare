@@ -1,3 +1,6 @@
 {"slug":"gopro-max","market":"au","currency":"AUD","points":[
-{"day":"2026-03-10","new":59900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687277888.98/warc/CC-MAIN-20260310180006-20260310210006-00054.warc.gz#offset=568855726&length=186960"}
+{"day":"2025-05-19","new":59900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412711.16/warc/CC-MAIN-20250519102016-20250519132016-00506.warc.gz#offset=766153209&length=84285"},
+{"day":"2025-11-07","new":59900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342364.55/warc/CC-MAIN-20251107051552-20251107081552-00506.warc.gz#offset=748842881&length=92689"},
+{"day":"2026-03-10","new":59900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687277888.98/warc/CC-MAIN-20260310180006-20260310210006-00054.warc.gz#offset=568855726&length=186960"},
+{"day":"2026-05-14","new":59900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-21/segments/1778213377650.51/warc/CC-MAIN-20260514123400-20260514153400-00506.warc.gz#offset=696705348&length=136680"}
 ]}

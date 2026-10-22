@@ -1,0 +1,5 @@
+{"slug":"canon-eos-r7","market":"uk","currency":"GBP","points":[
+{"day":"2024-11-12","new":144900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.50/warc/CC-MAIN-20241112014152-20241112044152-00544.warc.gz#offset=258137459&length=65438"},
+{"day":"2025-04-20","new":134900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135750.25/warc/CC-MAIN-20250420115406-20250420145406-00644.warc.gz#offset=280109291&length=79444"},
+{"day":"2025-09-07","new":134900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532829.3/warc/CC-MAIN-20250907005711-20250907035711-00644.warc.gz#offset=260086078&length=81769"}
+]}

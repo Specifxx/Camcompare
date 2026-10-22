@@ -1,5 +1,9 @@
 {"slug":"panasonic-lumix-fz2500","market":"au","currency":"AUD","points":[
 {"day":"2024-04-15","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817033.56/warc/CC-MAIN-20240415205332-20240415235332-00461.warc.gz#offset=960029195&length=83506"},
+{"day":"2024-08-03","new":129900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640361431.2/warc/CC-MAIN-20240803060126-20240803090126-00436.warc.gz#offset=644641284&length=127609"},
 {"day":"2024-08-10","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640805409.58/warc/CC-MAIN-20240810093040-20240810123040-00461.warc.gz#offset=777583933&length=85171"},
-{"day":"2024-11-05","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00461.warc.gz#offset=947318791&length=82834"}
+{"day":"2024-11-05","new":149995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00461.warc.gz#offset=947318791&length=82834"},
+{"day":"2025-01-15","new":149900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362247.15/warc/CC-MAIN-20250115074640-20250115104640-00436.warc.gz#offset=858886478&length=85937"},
+{"day":"2025-04-18","new":149900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135662.68/warc/CC-MAIN-20250418054940-20250418084940-00336.warc.gz#offset=806940834&length=83069"},
+{"day":"2025-09-15","new":149900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533982.4/warc/CC-MAIN-20250915114013-20250915144013-00336.warc.gz#offset=698528445&length=89598"}
 ]}

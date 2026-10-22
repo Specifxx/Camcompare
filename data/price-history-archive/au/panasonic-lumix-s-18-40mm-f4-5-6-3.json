@@ -1,3 +1,6 @@
 {"slug":"panasonic-lumix-s-18-40mm-f4-5-6-3","market":"au","currency":"AUD","points":[
-{"day":"2025-03-19","new":89900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433085.26/warc/CC-MAIN-20250319044953-20250319074953-00893.warc.gz#offset=622141246&length=165090"}
+{"day":"2025-01-20","new":89900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363070.68/warc/CC-MAIN-20250120142408-20250120172408-00510.warc.gz#offset=856760522&length=82215"},
+{"day":"2025-03-19","new":89900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433085.26/warc/CC-MAIN-20250319044953-20250319074953-00893.warc.gz#offset=622141246&length=165090"},
+{"day":"2025-05-24","new":89900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990724172.77/warc/CC-MAIN-20250524083454-20250524113454-00810.warc.gz#offset=729893332&length=79830"},
+{"day":"2026-03-16","new":89900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-12/segments/1772687556992.89/warc/CC-MAIN-20260316200809-20260316230809-00810.warc.gz#offset=578588718&length=126897"}
 ]}

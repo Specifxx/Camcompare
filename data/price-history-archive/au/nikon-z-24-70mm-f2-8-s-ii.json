@@ -1,4 +1,5 @@
 {"slug":"nikon-z-24-70mm-f2-8-s-ii","market":"au","currency":"AUD","points":[
+{"day":"2025-09-10","new":459900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533094.90/warc/CC-MAIN-20250910100758-20250910130758-00464.warc.gz#offset=708735002&length=85992"},
 {"day":"2025-09-16","new":459900,"store":"digidirect","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00300.warc.gz#offset=620013282&length=129878"},
 {"day":"2025-09-17","new":459995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826733.97/warc/CC-MAIN-20250917194202-20250917224202-00615.warc.gz#offset=869126488&length=79149"},
 {"day":"2026-01-13","new":459995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220468912.16/warc/CC-MAIN-20260113044442-20260113074442-00615.warc.gz#offset=872356839&length=78976"},

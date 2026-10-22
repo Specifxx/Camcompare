@@ -1,0 +1,91 @@
+{
+  "slug": "sony-rx10-v",
+  "brand": "sony",
+  "name": "Sony RX10 V",
+  "shortName": "RX10 V",
+  "aliases": [
+    "RX10 V",
+    "RX10V",
+    "RX10 Mark V",
+    "RX10 M5",
+    "RX10M5",
+    "RX10 5"
+  ],
+  "modelCodes": [
+    "DSC-RX10M5"
+  ],
+  "gtins": [],
+  "type": "compact",
+  "announced": "2026-07-09",
+  "launchPriceUsd": 2299.99,
+  "launchPrices": {
+    "GBP": 2200,
+    "EUR": 2500
+  },
+  "status": "current",
+  "predecessor": "sony-rx10-iv",
+  "successor": null,
+  "rivals": [
+    "sony-rx10-iv",
+    "panasonic-lumix-fz1000-ii",
+    "panasonic-lumix-fz2500"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24,
+      600
+    ],
+    "aperture": "f/2.4-4"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 20.1,
+    "isoMin": 100,
+    "isoMax": 12800,
+    "ibis": false,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": 30,
+    "shutterMaxMech": 2000,
+    "shutterMaxElec": 16000,
+    "afPoints": 575,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 3.69,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3,
+    "screenDotsM": 1.62,
+    "screenType": "tilting",
+    "touchscreen": true,
+    "weightG": 1111,
+    "dimensionsMm": [
+      136.4,
+      94.5,
+      151.3
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "SD UHS-II",
+    "batteryShotsCipa": 630,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

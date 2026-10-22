@@ -1,3 +1,6 @@
 {"slug":"gopro-max2","market":"au","currency":"AUD","points":[
-{"day":"2025-10-17","new":84995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00530.warc.gz#offset=1004808527&length=83600"}
+{"day":"2025-10-13","new":84900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00654.warc.gz#offset=842440146&length=95654"},
+{"day":"2025-10-17","new":84995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00530.warc.gz#offset=1004808527&length=83600"},
+{"day":"2026-08-11","new":92900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385413.38/warc/CC-MAIN-20260811042123-20260811072123-00110.warc.gz#offset=715873971&length=123874"},
+{"day":"2026-08-13","new":84900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091385553.12/warc/CC-MAIN-20260813050936-20260813080936-00654.warc.gz#offset=697590953&length=123853"}
 ]}

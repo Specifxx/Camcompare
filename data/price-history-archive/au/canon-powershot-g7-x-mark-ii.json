@@ -6,5 +6,6 @@
 {"day":"2024-11-07","new":99900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027957.23/warc/CC-MAIN-20241107052447-20241107082447-00198.warc.gz#offset=642177647&length=107743"},
 {"day":"2024-11-09","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028116.30/warc/CC-MAIN-20241109053958-20241109083958-00880.warc.gz#offset=933768042&length=85418"},
 {"day":"2025-02-17","new":89900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832259438.98/warc/CC-MAIN-20250217191831-20250217221831-00198.warc.gz#offset=624910867&length=108051"},
-{"day":"2025-04-24","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135882.44/warc/CC-MAIN-20250424085107-20250424115107-00480.warc.gz#offset=1014923547&length=86075"}
+{"day":"2025-04-24","new":99995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135882.44/warc/CC-MAIN-20250424085107-20250424115107-00480.warc.gz#offset=1014923547&length=86075"},
+{"day":"2025-04-28","new":106900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889456347.84/warc/CC-MAIN-20250428141617-20250428171617-00024.warc.gz#offset=828281956&length=81268"}
 ]}

@@ -126,9 +126,10 @@ test("things to know: spec facts only, nulls skipped, good-for and not-for name 
   assert.ok(t.notFor.some((f) => f.label === "Rain and dust" && f.why === "not weather sealed"));
   assert.ok(t.notFor.some((f) => f.why === "one card slot"));
   assert.ok(t.goodFor.some((f) => f.label === "Low light" && f.why === "full-frame sensor"));
-  // Same line from the names: the α7 IV and the first α7; never an unpublished product (the EOS R50 V has no photo yet).
+  // Same line from the names: the α7 IV and the first α7; never an unpublished product.
+  // (Not tied to one product: since store photos, what is published follows the data.)
   assert.ok(lineSiblings(camera("sony-a7-iv")!, "camera").some((s) => s.slug === "sony-a7"));
-  assert.ok(!lineSiblings(camera("canon-eos-r50")!, "camera").some((s) => s.slug === "canon-eos-r50-v"));
+  assert.ok(lineSiblings(camera("canon-eos-r50")!, "camera").every((s) => camera(s.slug) !== null));
 });
 
 test("videos and discussions link to each site's own search, in the right subreddit", () => {

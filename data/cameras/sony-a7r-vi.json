@@ -1,0 +1,83 @@
+{
+  "slug": "sony-a7r-vi",
+  "brand": "sony",
+  "name": "Sony α7R VI",
+  "shortName": "α7R VI",
+  "aliases": [
+    "a7R VI",
+    "a7RVI",
+    "a7R 6",
+    "Alpha 7R VI",
+    "Alpha a7R VI",
+    "A7RM6",
+    "α7R VI"
+  ],
+  "modelCodes": [
+    "ILCE-7RM6"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2026-05-13",
+  "launchPriceUsd": 4499.99,
+  "status": "current",
+  "predecessor": "sony-a7r-v",
+  "successor": null,
+  "rivals": [
+    "canon-eos-r5-mark-ii",
+    "nikon-z8",
+    "panasonic-lumix-s1r-ii",
+    "sony-a7r-v"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 66.8,
+    "isoMin": 100,
+    "isoMax": 32000,
+    "ibis": true,
+    "ibisStops": 8.5,
+    "burstMechFps": 10,
+    "burstElecFps": 30,
+    "shutterMaxMech": 8000,
+    "shutterMaxElec": 8000,
+    "afPoints": 759,
+    "afSubjects": [
+      "human",
+      "animal",
+      "bird",
+      "insect",
+      "vehicle",
+      "train",
+      "aircraft"
+    ],
+    "videoMaxRes": "8K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": 9.44,
+    "viewfinderType": "electronic",
+    "screenSizeIn": 3.2,
+    "screenDotsM": 2.1,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 713,
+    "dimensionsMm": [
+      132.7,
+      96.9,
+      82.9
+    ],
+    "weatherSealed": true,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": 710,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

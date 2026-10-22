@@ -1,0 +1,77 @@
+{
+  "slug": "sony-fx5",
+  "brand": "sony",
+  "name": "Sony FX5",
+  "shortName": "FX5",
+  "aliases": [
+    "Sony FX5",
+    "FX5"
+  ],
+  "modelCodes": [
+    "ILME-FX5",
+    "ILME-FX5B"
+  ],
+  "gtins": [],
+  "type": "mirrorless",
+  "announced": "2026-07-22",
+  "launchPriceUsd": 4899.99,
+  "launchPrices": {
+    "GBP": 4700,
+    "EUR": 5400
+  },
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "sony-fx3",
+    "canon-eos-r6-v",
+    "nikon-zr",
+    "blackmagic-pyxis-6k"
+  ],
+  "mount": "sony-e",
+  "fixedLens": null,
+  "specs": {
+    "sensorFormat": "full-frame",
+    "sensorType": "Stacked CMOS",
+    "megapixels": 16.6,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": true,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": [
+      "human"
+    ],
+    "videoMaxRes": "5K",
+    "video4kMaxFps": 120,
+    "video10bit": null,
+    "rawVideoInternal": true,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": 3.5,
+    "screenDotsM": 2.76,
+    "screenType": "multi-angle",
+    "touchscreen": true,
+    "weightG": 734,
+    "dimensionsMm": [
+      132.2,
+      79,
+      87
+    ],
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 2,
+    "cardTypes": "CFexpress A / SD UHS-II + CFexpress A / SD UHS-II",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": true,
+    "headphoneJack": true,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true
+  }
+}

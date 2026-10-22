@@ -1,0 +1,6 @@
+{"slug":"fujifilm-x-m5","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-09","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951584.32/warc/CC-MAIN-20250209003139-20250209033139-00889.warc.gz#offset=276967113&length=66985"},
+{"day":"2025-04-25","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135909.46/warc/CC-MAIN-20250425010839-20250425040839-00334.warc.gz#offset=270465296&length=80835"},
+{"day":"2025-08-06","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279908.86/warc/CC-MAIN-20250806105403-20250806135403-00989.warc.gz#offset=240153749&length=81194"},
+{"day":"2025-10-08","new":79900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00334.warc.gz#offset=276925984&length=82966"}
+]}

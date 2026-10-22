@@ -1,5 +1,6 @@
 {"slug":"canon-powershot-sx70-hs","market":"au","currency":"AUD","points":[
 {"day":"2024-08-06","new":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640461318.24/warc/CC-MAIN-20240806001923-20240806031923-00281.warc.gz#offset=800470390&length=86687"},
+{"day":"2024-08-08","new":94900,"store":"jbhifi","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640719674.40/warc/CC-MAIN-20240808031539-20240808061539-00453.warc.gz#offset=641904784&length=125136"},
 {"day":"2024-08-13","new":89900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641082193.83/warc/CC-MAIN-20240813172835-20240813202835-00592.warc.gz#offset=538433685&length=114568"},
 {"day":"2024-11-05","new":89995,"store":"teds","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027871.46/warc/CC-MAIN-20241105052136-20241105082136-00281.warc.gz#offset=970727192&length=84115"},
 {"day":"2024-11-09","new":89900,"store":"camera-electronic","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028116.75/warc/CC-MAIN-20241109085148-20241109115148-00592.warc.gz#offset=646693097&length=112219"},

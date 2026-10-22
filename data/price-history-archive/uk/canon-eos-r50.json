@@ -1,0 +1,4 @@
+{"slug":"canon-eos-r50","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-14","new":74900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951840.44/warc/CC-MAIN-20250214034103-20250214064103-00873.warc.gz#offset=267246862&length=64667"},
+{"day":"2025-10-12","new":74900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358734.56/warc/CC-MAIN-20251012004438-20251012034438-00873.warc.gz#offset=268817167&length=78431"}
+]}

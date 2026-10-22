@@ -1,0 +1,4 @@
+{"slug":"canon-eos-r8","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-13","new":162900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00763.warc.gz#offset=263452050&length=66088"},
+{"day":"2025-08-03","new":119900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279735.55/warc/CC-MAIN-20250803200137-20250803230137-00263.warc.gz#offset=226124677&length=80526"}
+]}

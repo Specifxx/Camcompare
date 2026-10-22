@@ -1,0 +1,7 @@
+{"slug":"fujifilm-x-t5","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-07","new":159900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951464.35/warc/CC-MAIN-20250207034826-20250207064826-00294.warc.gz#offset=275935374&length=69838"},
+{"day":"2025-03-15","new":159899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432896.84/warc/CC-MAIN-20250315125812-20250315155812-00201.warc.gz#offset=285807245&length=69925"},
+{"day":"2025-04-17","new":144900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135610.12/warc/CC-MAIN-20250417135010-20250417165010-00201.warc.gz#offset=265509271&length=82356"},
+{"day":"2025-04-18","new":144900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135690.27/warc/CC-MAIN-20250418214300-20250419004300-00894.warc.gz#offset=286582190&length=82373"},
+{"day":"2025-10-08","new":169900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00894.warc.gz#offset=274733432&length=85342"}
+]}
