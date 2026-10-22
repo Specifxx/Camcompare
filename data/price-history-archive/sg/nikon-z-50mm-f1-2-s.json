@@ -1,0 +1,5 @@
+{"slug":"nikon-z-50mm-f1-2-s","market":"sg","currency":"SGD","points":[
+{"day":"2025-04-28","new":297600,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00151.warc.gz#offset=570169940&length=81213"},
+{"day":"2025-08-06","new":283500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279919.59/warc/CC-MAIN-20250806171101-20250806201101-00151.warc.gz#offset=539232860&length=84852"},
+{"day":"2025-12-12","new":283500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307640.68/warc/CC-MAIN-20251212022224-20251212052224-00151.warc.gz#offset=457070065&length=83536"}
+]}

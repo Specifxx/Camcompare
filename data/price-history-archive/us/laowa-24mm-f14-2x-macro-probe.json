@@ -1,0 +1,9 @@
+{"slug":"laowa-24mm-f14-2x-macro-probe","market":"us","currency":"USD","points":[
+{"day":"2024-07-23","new":95000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518029.81/warc/CC-MAIN-20240723072353-20240723102353-00132.warc.gz#offset=135422903&length=77309"},
+{"day":"2024-11-10","new":95000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.60/warc/CC-MAIN-20241110134821-20241110164821-00688.warc.gz#offset=135331360&length=95478"},
+{"day":"2024-12-13","new":95000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066119643.21/warc/CC-MAIN-20241213171153-20241213201153-00132.warc.gz#offset=132807100&length=94433"},
+{"day":"2025-04-30","new":95000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889462783.86/warc/CC-MAIN-20250430090213-20250430120213-00532.warc.gz#offset=148712849&length=110548"},
+{"day":"2025-05-22","new":95000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413598.1/warc/CC-MAIN-20250522083553-20250522113553-00330.warc.gz#offset=124558187&length=110185"},
+{"day":"2025-06-22","new":95000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481733.2/warc/CC-MAIN-20250622073143-20250622103143-00188.warc.gz#offset=113366760&length=100980"},
+{"day":"2025-08-07","new":95000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279936.52/warc/CC-MAIN-20250807023708-20250807053708-00532.warc.gz#offset=107289372&length=95619"}
+]}

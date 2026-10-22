@@ -1,0 +1,40 @@
+# Monthly price-history backfill from archived copies of our retailers' own
+# pages (Internet Archive, Common Crawl) via scripts/backfill-history.ts.
+# Commits only data/price-history-archive/, once, so at most one build a month.
+name: backfill-history
+on:
+  schedule:
+    - cron: "41 3 7 * *"
+  workflow_dispatch:
+concurrency: backfill-history
+permissions:
+  contents: write
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      BACKFILL_CACHE: ${{ github.workspace }}/.backfill-cache
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/cache@v4
+        with:
+          path: .backfill-cache
+          key: backfill-${{ github.run_id }}
+          restore-keys: backfill-
+      - name: Backfill
+        continue-on-error: true
+        run: npx tsx scripts/backfill-history.ts --top 0 --max-fetch 1500
+      - name: Commit archive
+        run: |
+          git config user.name "camcompare-bot"
+          git config user.email "camcompare-bot@users.noreply.github.com"
+          git add data/price-history-archive
+          if git diff --cached --quiet; then echo "no new archived prices"; else git commit -m "data: archived price history $(date -u +%F)" && git pull --rebase origin main && git push; fi

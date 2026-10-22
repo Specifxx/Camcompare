@@ -1,0 +1,8 @@
+{"slug":"gopro-hero13-black","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-08","new":59000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00418.warc.gz#offset=510070069&length=55302"},
+{"day":"2025-02-09","new":49000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951598.46/warc/CC-MAIN-20250209070017-20250209100017-00418.warc.gz#offset=551685398&length=75095"},
+{"day":"2025-05-19","new":59000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00318.warc.gz#offset=549155947&length=79317"},
+{"day":"2025-08-03","new":89000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279541.7/warc/CC-MAIN-20250803011606-20250803041606-00042.warc.gz#offset=527857582&length=86697"},
+{"day":"2025-08-06","new":89000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279919.59/warc/CC-MAIN-20250806171101-20250806201101-00579.warc.gz#offset=493936141&length=87555"},
+{"day":"2025-09-08","new":75000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532949.5/warc/CC-MAIN-20250908015740-20250908045740-00318.warc.gz#offset=500983931&length=83310"}
+]}

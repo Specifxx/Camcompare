@@ -1,4 +1,7 @@
 {"slug":"canon-rf-200-800mm-f6-3-9-is-usm","market":"us","currency":"USD","points":[
 {"day":"2024-06-24","new":189900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198865074.62/warc/CC-MAIN-20240624052615-20240624082615-00612.warc.gz#offset=675736431&length=139230"},
+{"day":"2025-02-09","new":189900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951584.32/warc/CC-MAIN-20250209003139-20250209033139-00523.warc.gz#offset=136325686&length=109221"},
+{"day":"2025-05-14","new":189900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412450.3/warc/CC-MAIN-20250514194630-20250514224630-00180.warc.gz#offset=105673324&length=104969"},
+{"day":"2025-08-08","new":209900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280022.18/warc/CC-MAIN-20250808100457-20250808130457-00023.warc.gz#offset=119207285&length=96951"},
 {"day":"2025-09-13","new":209900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533316.46/warc/CC-MAIN-20250913033418-20250913063418-00861.warc.gz#offset=214221827&length=102000"}
 ]}

@@ -1,0 +1,9 @@
+{"slug":"fujifilm-gfx100rf","market":"us","currency":"USD","points":[
+{"day":"2025-08-14","new":539900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151577992.76/warc/CC-MAIN-20250814224625-20250815014625-00143.warc.gz#offset=760191409&length=110645"},
+{"day":"2025-09-07","new":559995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532837.60/warc/CC-MAIN-20250907040429-20250907070429-00132.warc.gz#offset=132120954&length=119113"},
+{"day":"2025-09-13","new":559900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533316.46/warc/CC-MAIN-20250913033418-20250913063418-00493.warc.gz#offset=828020436&length=112318"},
+{"day":"2025-09-15","new":559995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533967.57/warc/CC-MAIN-20250915022230-20250915052230-00311.warc.gz#offset=104477769&length=126372"},
+{"day":"2025-10-12","new":559995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358780.8/warc/CC-MAIN-20251012131417-20251012161417-00934.warc.gz#offset=136661935&length=128899"},
+{"day":"2026-01-18","new":559995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469396.8/warc/CC-MAIN-20260118032915-20260118062915-00934.warc.gz#offset=113436758&length=138499"},
+{"day":"2026-06-07","new":559995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-25/segments/1780687572269.32/warc/CC-MAIN-20260607010616-20260607040616-00132.warc.gz#offset=107685027&length=173730"}
+]}

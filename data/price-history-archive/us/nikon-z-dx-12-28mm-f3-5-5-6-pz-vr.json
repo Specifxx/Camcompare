@@ -1,4 +1,6 @@
 {"slug":"nikon-z-dx-12-28mm-f3-5-5-6-pz-vr","market":"us","currency":"USD","points":[
 {"day":"2024-11-14","new":35695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028526.56/warc/CC-MAIN-20241114031054-20241114061054-00116.warc.gz#offset=692289946&length=136173"},
-{"day":"2025-05-14","new":29695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412413.62/warc/CC-MAIN-20250514035409-20250514065409-00016.warc.gz#offset=684881287&length=147646"}
+{"day":"2025-01-16","new":35695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362308.55/warc/CC-MAIN-20250116203526-20250116233526-00541.warc.gz#offset=987602873&length=93352"},
+{"day":"2025-05-14","new":29695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412413.62/warc/CC-MAIN-20250514035409-20250514065409-00016.warc.gz#offset=684881287&length=147646"},
+{"day":"2025-10-12","new":36695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358887.44/warc/CC-MAIN-20251012224033-20251013014033-00341.warc.gz#offset=939885513&length=96412"}
 ]}

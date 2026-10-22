@@ -1,0 +1,5 @@
+{"slug":"canon-eos-r50-v","market":"sg","currency":"SGD","points":[
+{"day":"2025-05-12","new":89900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412205.50/warc/CC-MAIN-20250512011722-20250512041722-00027.warc.gz#offset=522272869&length=117093"},
+{"day":"2025-05-17","new":89900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412574.42/warc/CC-MAIN-20250517203149-20250517233149-00520.warc.gz#offset=445325662&length=63020"},
+{"day":"2025-07-18","new":84900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231287.86/warc/CC-MAIN-20250718154642-20250718184642-00865.warc.gz#offset=527457569&length=87906"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"fujifilm-x100f","market":"uk","currency":"GBP","points":[
+{"day":"2025-07-18","used":100000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231606.97/warc/CC-MAIN-20250718215916-20250719005916-00430.warc.gz#offset=239896627&length=71394"},
+{"day":"2025-07-20","used":100000,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237692.99/warc/CC-MAIN-20250720175629-20250720205629-00009.warc.gz#offset=257199591&length=70491"}
+]}

@@ -75,7 +75,7 @@ export default function PriceAlert({
   const showCondition = mode !== "preorder";
   return (
     <>
-      <button
+      <button id="track-price"
         type="button"
         aria-expanded={open}
         aria-controls={`${id}-panel`}

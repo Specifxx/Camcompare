@@ -1,3 +1,8 @@
 {"slug":"fujifilm-gf-80mm-f1-7-r-wr","market":"us","currency":"USD","points":[
+{"day":"2024-06-23","new":229995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198864850.31/warc/CC-MAIN-20240623194302-20240623224302-00776.warc.gz#offset=138869428&length=78844"},
+{"day":"2024-10-14","new":229995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255272.58/warc/CC-MAIN-20241013214910-20241014004910-00776.warc.gz#offset=124771449&length=86315"},
+{"day":"2024-11-10","new":229995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.60/warc/CC-MAIN-20241110134821-20241110164821-00364.warc.gz#offset=132767518&length=97342"},
+{"day":"2025-02-17","new":179995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832259595.82/warc/CC-MAIN-20250217223329-20250218013329-00364.warc.gz#offset=128144374&length=106986"},
+{"day":"2025-03-19","new":179995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433077.27/warc/CC-MAIN-20250319013430-20250319043430-00876.warc.gz#offset=145989258&length=108096"},
 {"day":"2025-04-21","new":229900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135788.26/warc/CC-MAIN-20250421194220-20250421224220-00656.warc.gz#offset=774251945&length=204099"}
 ]}

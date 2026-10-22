@@ -1,0 +1,8 @@
+{"slug":"nikon-z8","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-10","new":599900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253661.71/warc/CC-MAIN-20241010063356-20241010093356-00410.warc.gz#offset=496700424&length=54608"},
+{"day":"2025-01-20","new":471400,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363073.65/warc/CC-MAIN-20250120174304-20250120204304-00410.warc.gz#offset=604014846&length=77025"},
+{"day":"2025-04-17","new":471400,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00110.warc.gz#offset=599601083&length=79035"},
+{"day":"2025-06-15","new":457600,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481330.50/warc/CC-MAIN-20250614222335-20250615012335-00572.warc.gz#offset=465978197&length=120228"},
+{"day":"2025-10-09","new":471400,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358447.5/warc/CC-MAIN-20251009131730-20251009161730-00092.warc.gz#offset=567996090&length=129652"},
+{"day":"2025-10-12","new":471400,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358738.39/warc/CC-MAIN-20251012035210-20251012065210-00110.warc.gz#offset=553854534&length=84737"}
+]}

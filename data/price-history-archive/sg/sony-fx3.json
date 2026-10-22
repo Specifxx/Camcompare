@@ -1,0 +1,9 @@
+{"slug":"sony-fx3","market":"sg","currency":"SGD","points":[
+{"day":"2024-08-07","new":520900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640682181.33/warc/CC-MAIN-20240807045851-20240807075851-00108.warc.gz#offset=441685083&length=81185"},
+{"day":"2024-08-12","new":520900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641023489.70/warc/CC-MAIN-20240811235403-20240812025403-00538.warc.gz#offset=426847399&length=81484"},
+{"day":"2024-12-08","new":510900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066444677.95/warc/CC-MAIN-20241208080334-20241208110334-00538.warc.gz#offset=488660681&length=128529"},
+{"day":"2025-03-21","new":520900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433188.22/warc/CC-MAIN-20250321155009-20250321185009-00365.warc.gz#offset=558471375&length=111147"},
+{"day":"2025-04-22","new":520900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135818.37/warc/CC-MAIN-20250422145809-20250422175809-00038.warc.gz#offset=563083453&length=112388"},
+{"day":"2025-08-03","new":506900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279541.7/warc/CC-MAIN-20250803011606-20250803041606-00068.warc.gz#offset=520875101&length=83547"},
+{"day":"2025-11-17","new":506900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439644414.56/warc/CC-MAIN-20251117114635-20251117144635-00068.warc.gz#offset=464383113&length=82364"}
+]}

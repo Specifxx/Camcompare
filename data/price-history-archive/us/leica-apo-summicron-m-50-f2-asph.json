@@ -1,0 +1,8 @@
+{"slug":"leica-apo-summicron-m-50-f2-asph","market":"us","currency":"USD","points":[
+{"day":"2025-01-16","new":679500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.70/warc/CC-MAIN-20250116071218-20250116101218-00347.warc.gz#offset=137445677&length=93780"},
+{"day":"2025-04-23","new":589500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135865.54/warc/CC-MAIN-20250423200043-20250423230043-00244.warc.gz#offset=148689462&length=105620"},
+{"day":"2025-07-11","new":679500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933831.10/warc/CC-MAIN-20250711232641-20250712022641-00199.warc.gz#offset=131079494&length=102442"},
+{"day":"2025-07-12","new":589500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933869.7/warc/CC-MAIN-20250712085331-20250712115331-00562.warc.gz#offset=124235503&length=102406"},
+{"day":"2025-07-16","new":589500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00050.warc.gz#offset=130890996&length=102742"},
+{"day":"2025-10-16","new":589500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648663798.77/warc/CC-MAIN-20251016113935-20251016143935-00386.warc.gz#offset=146466853&length=119096"}
+]}

@@ -1,0 +1,6 @@
+{"slug":"ricoh-gr-iii","market":"sg","currency":"SGD","points":[
+{"day":"2025-02-07","new":151900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951469.57/warc/CC-MAIN-20250207065812-20250207095812-00094.warc.gz#offset=550743037&length=74527"},
+{"day":"2025-04-28","new":159900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00684.warc.gz#offset=584868913&length=78496"},
+{"day":"2025-06-14","new":138800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481330.50/warc/CC-MAIN-20250614222335-20250615012335-00994.warc.gz#offset=469030017&length=82745"},
+{"day":"2025-08-15","new":159900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00684.warc.gz#offset=509649748&length=82384"}
+]}

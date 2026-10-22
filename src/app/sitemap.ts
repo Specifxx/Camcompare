@@ -1,3 +1,4 @@
+import { WORLD_LINES, worldTable } from "@/lib/world";
 import type { MetadataRoute } from "next";
 import { indexedPairs, offersFor, pairSlug, publishedCameras, publishedLenses } from "@/lib/catalog";
 import { MARKET_CODES, marketPath } from "@/lib/markets";
@@ -32,6 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const [a, b] of indexedPairs()) out.push({ url: abs(`/compare/${pairSlug(a.item, b.item)}`) });
   out.push({ url: abs("/guides") }, ...guides().map((g) => ({ url: abs(`/guides/${g.slug}`), lastModified: g.updated || undefined })));
   out.push({ url: abs("/about") });
+  // Only /world tables with something priced (the rest are noindex).
+  const pricedLines = WORLD_LINES.filter((l) => worldTable(l).priced > 0);
+  out.push({ url: abs("/world") }, ...[...new Set(pricedLines.map((l) => l.brand))].map((b) => ({ url: abs(`/world/${b}`) })), ...pricedLines.map((l) => ({ url: abs(`/world/${l.brand}/${l.slug}`) })));
   out.push({ url: abs("/community") }, ...BOARDS.map((b) => ({ url: abs(`/community/${b.slug}`) })));
   out.push({ url: abs("/stories") }, { url: abs("/requests") }, { url: abs("/collection") });
   return out;

@@ -1,0 +1,6 @@
+{"slug":"ricoh-gr-iiix","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-06","new":179900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253411.60/warc/CC-MAIN-20241006060922-20241006090922-00782.warc.gz#offset=505805653&length=78380"},
+{"day":"2025-02-09","new":164900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951598.46/warc/CC-MAIN-20250209070017-20250209100017-00539.warc.gz#offset=532166891&length=74107"},
+{"day":"2025-04-29","new":179900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889460581.80/warc/CC-MAIN-20250429100507-20250429130507-00182.warc.gz#offset=576164963&length=78200"},
+{"day":"2025-05-20","new":159900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412858.34/warc/CC-MAIN-20250520150557-20250520180557-00441.warc.gz#offset=497516667&length=87136"}
+]}

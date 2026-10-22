@@ -1,0 +1,9 @@
+{"slug":"laowa-10mm-f2-8-zero-d-ff","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":113900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253969.67/warc/CC-MAIN-20241012112926-20241012142926-00637.warc.gz#offset=508361786&length=54555"},
+{"day":"2025-02-07","new":113900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951469.57/warc/CC-MAIN-20250207065812-20250207095812-00637.warc.gz#offset=537288756&length=73307"},
+{"day":"2025-02-09","new":113900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951598.46/warc/CC-MAIN-20250209070017-20250209100017-00462.warc.gz#offset=551175298&length=81357"},
+{"day":"2025-03-18","new":113900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433058.39/warc/CC-MAIN-20250318091242-20250318121242-00937.warc.gz#offset=565455007&length=74224"},
+{"day":"2025-07-10","new":113900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933772.38/warc/CC-MAIN-20250710221400-20250711011400-00937.warc.gz#offset=521707295&length=80991"},
+{"day":"2025-10-09","new":113900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358447.5/warc/CC-MAIN-20251009131730-20251009161730-00062.warc.gz#offset=568942868&length=92682"},
+{"day":"2025-12-12","new":113900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307640.68/warc/CC-MAIN-20251212022224-20251212052224-00588.warc.gz#offset=436064915&length=113754"}
+]}

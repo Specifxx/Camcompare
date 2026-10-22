@@ -1,5 +1,7 @@
 {"slug":"tamron-70-180mm-f2-8-di-iii-vxd","market":"us","currency":"USD","points":[
 {"day":"2024-04-18","new":119900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817206.54/warc/CC-MAIN-20240418124808-20240418154808-00066.warc.gz#offset=693749077&length=115700"},
 {"day":"2024-06-22","new":109900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862249.29/warc/CC-MAIN-20240622014659-20240622044659-00241.warc.gz#offset=685820541&length=138193"},
-{"day":"2024-08-03","new":109900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640361431.2/warc/CC-MAIN-20240803060126-20240803090126-00502.warc.gz#offset=598001451&length=136743"}
+{"day":"2024-08-03","new":109900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640361431.2/warc/CC-MAIN-20240803060126-20240803090126-00502.warc.gz#offset=598001451&length=136743"},
+{"day":"2024-11-08","new":99900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028070.17/warc/CC-MAIN-20241108164844-20241108194844-00094.warc.gz#offset=620981970&length=133765"},
+{"day":"2025-08-03","new":99900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279735.55/warc/CC-MAIN-20250803200137-20250803230137-00281.warc.gz#offset=607447819&length=104025"}
 ]}

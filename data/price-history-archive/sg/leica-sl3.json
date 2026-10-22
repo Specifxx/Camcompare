@@ -1,0 +1,6 @@
+{"slug":"leica-sl3","market":"sg","currency":"SGD","points":[
+{"day":"2024-11-09","new":1040000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028125.59/warc/CC-MAIN-20241109151915-20241109181915-00359.warc.gz#offset=330739300&length=49512"},
+{"day":"2025-02-18","new":1040000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832260918.88/warc/CC-MAIN-20250218081924-20250218111924-00837.warc.gz#offset=325471931&length=50975"},
+{"day":"2025-05-21","new":1040000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412938.4/warc/CC-MAIN-20250521003946-20250521033946-00537.warc.gz#offset=329322840&length=53774"},
+{"day":"2025-09-13","new":1040000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533477.96/warc/CC-MAIN-20250913125640-20250913155640-00537.warc.gz#offset=284112444&length=54386"}
+]}

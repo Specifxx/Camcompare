@@ -1,0 +1,5 @@
+{"slug":"nikon-z-24mm-f1-8-s","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-06","new":155900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253411.60/warc/CC-MAIN-20241006060922-20241006090922-00016.warc.gz#offset=505856310&length=80184"},
+{"day":"2025-02-07","new":155900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951469.57/warc/CC-MAIN-20250207065812-20250207095812-00016.warc.gz#offset=548125629&length=75911"},
+{"day":"2025-04-28","new":143100,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00916.warc.gz#offset=519418638&length=79408"}
+]}

@@ -1,3 +1,7 @@
 {"slug":"nikon-z-50mm-f1-4","market":"us","currency":"USD","points":[
-{"day":"2024-10-05","new":49699,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253384.19/warc/CC-MAIN-20241005204934-20241005234934-00583.warc.gz#offset=592602381&length=110826"}
+{"day":"2024-10-05","new":49699,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253384.19/warc/CC-MAIN-20241005204934-20241005234934-00583.warc.gz#offset=592602381&length=110826"},
+{"day":"2024-11-07","new":49995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027942.54/warc/CC-MAIN-20241106230027-20241107020027-00764.warc.gz#offset=134610248&length=98961"},
+{"day":"2025-04-30","new":49995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889462783.86/warc/CC-MAIN-20250430090213-20250430120213-00064.warc.gz#offset=137974596&length=112286"},
+{"day":"2025-10-16","new":59995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648661376.98/warc/CC-MAIN-20251016021312-20251016051312-00064.warc.gz#offset=143140065&length=124865"},
+{"day":"2026-08-19","new":54695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-34/segments/1786091680785.94/warc/CC-MAIN-20260819104324-20260819134324-00412.warc.gz#offset=197456701&length=245475"}
 ]}

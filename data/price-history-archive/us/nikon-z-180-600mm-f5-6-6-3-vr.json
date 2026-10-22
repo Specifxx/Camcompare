@@ -1,3 +1,6 @@
 {"slug":"nikon-z-180-600mm-f5-6-6-3-vr","market":"us","currency":"USD","points":[
+{"day":"2024-07-19","new":169995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514908.1/warc/CC-MAIN-20240719135636-20240719165636-00491.warc.gz#offset=132180819&length=80261"},
+{"day":"2024-11-06","new":189995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027942.47/warc/CC-MAIN-20241106194801-20241106224801-00256.warc.gz#offset=134204786&length=98320"},
+{"day":"2024-12-03","new":189995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066137897.45/warc/CC-MAIN-20241203102227-20241203132227-00491.warc.gz#offset=137834135&length=97260"},
 {"day":"2025-01-19","new":189695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362532.35/warc/CC-MAIN-20250119214819-20250120004819-00475.warc.gz#offset=817869607&length=147947"}
 ]}

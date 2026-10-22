@@ -1,0 +1,5 @@
+{"slug":"fujifilm-gf-250mm-f4-r-lm-ois-wr","market":"uk","currency":"GBP","points":[
+{"day":"2024-07-13","new":279900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514512.50/warc/CC-MAIN-20240713181918-20240713211918-00510.warc.gz#offset=726699554&length=48254"},
+{"day":"2025-02-13","new":279900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951768.65/warc/CC-MAIN-20250213014327-20250213044327-00043.warc.gz#offset=249361107&length=62411"},
+{"day":"2025-04-21","new":279900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135758.58/warc/CC-MAIN-20250421003729-20250421033729-00243.warc.gz#offset=269164360&length=70086"}
+]}

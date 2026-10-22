@@ -1,0 +1,6 @@
+{"slug":"fujifilm-xc-35mm-f2","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-10","new":30900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253661.71/warc/CC-MAIN-20241010063356-20241010093356-00168.warc.gz#offset=486697090&length=52084"},
+{"day":"2025-02-07","new":30900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951469.57/warc/CC-MAIN-20250207065812-20250207095812-00168.warc.gz#offset=534333203&length=71858"},
+{"day":"2025-06-14","new":29500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481330.50/warc/CC-MAIN-20250614222335-20250615012335-00868.warc.gz#offset=471982639&length=79919"},
+{"day":"2025-09-15","new":29500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533992.1/warc/CC-MAIN-20250915175310-20250915205310-00868.warc.gz#offset=466515676&length=79898"}
+]}

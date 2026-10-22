@@ -1,4 +1,5 @@
 {"slug":"nikon-d780","market":"us","currency":"USD","points":[
+{"day":"2024-06-14","new":229500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861567.95/warc/CC-MAIN-20240614141929-20240614171929-00241.warc.gz#offset=130953765&length=87916"},
 {"day":"2024-07-21","new":209695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517544.48/warc/CC-MAIN-20240720235600-20240721025600-00469.warc.gz#offset=585080829&length=122181"},
 {"day":"2024-08-03","new":219695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640361431.2/warc/CC-MAIN-20240803060126-20240803090126-00725.warc.gz#offset=618047496&length=139865"},
 {"day":"2024-08-05","new":234900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640454712.22/warc/CC-MAIN-20240805180114-20240805210114-00486.warc.gz#offset=513092621&length=121174"},

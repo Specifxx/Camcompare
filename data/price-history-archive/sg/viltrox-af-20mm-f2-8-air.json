@@ -1,0 +1,6 @@
+{"slug":"viltrox-af-20mm-f2-8-air","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":20900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253969.67/warc/CC-MAIN-20241012112926-20241012142926-00611.warc.gz#offset=479079137&length=56399"},
+{"day":"2025-01-22","new":20500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363373.23/warc/CC-MAIN-20250122031110-20250122061110-00611.warc.gz#offset=593243193&length=76893"},
+{"day":"2025-04-17","new":20900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00011.warc.gz#offset=595782728&length=79260"},
+{"day":"2025-08-06","new":20900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279919.59/warc/CC-MAIN-20250806171101-20250806201101-00011.warc.gz#offset=500648488&length=83352"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"leica-m10-p","market":"us","currency":"USD","points":[
+{"day":"2024-07-15","new":549500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514707.52/warc/CC-MAIN-20240715132531-20240715162531-00590.warc.gz#offset=137394891&length=76712"},
+{"day":"2025-08-05","new":519500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279881.31/warc/CC-MAIN-20250805191422-20250805221422-00911.warc.gz#offset=105315908&length=94430"}
+]}

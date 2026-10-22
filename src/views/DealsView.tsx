@@ -13,6 +13,7 @@ import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { lowest } from "@/lib/offers";
 import { retailer } from "@/lib/retailers";
 import { pageMeta } from "@/lib/seo";
+import PriceTraps from "@/components/PriceTraps";
 import { usedValue } from "@/lib/value";
 
 /**
@@ -195,6 +196,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
           </ul>
         </section>
       )}
+      <PriceTraps market={m} />
       {!empty && <AdSlot slot={AD_SLOTS.listing} />}
       {!empty && <QuickViewHost />}
     </div>

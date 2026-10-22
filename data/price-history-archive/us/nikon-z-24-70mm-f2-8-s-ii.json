@@ -1,3 +1,4 @@
 {"slug":"nikon-z-24-70mm-f2-8-s-ii","market":"us","currency":"USD","points":[
-{"day":"2025-09-06","new":279695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532709.6/warc/CC-MAIN-20250905235037-20250906025037-00539.warc.gz#offset=216515581&length=109950"}
+{"day":"2025-09-06","new":279695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532709.6/warc/CC-MAIN-20250905235037-20250906025037-00539.warc.gz#offset=216515581&length=109950"},
+{"day":"2025-10-16","new":279995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648663798.77/warc/CC-MAIN-20251016113935-20251016143935-00835.warc.gz#offset=122819855&length=125698"}
 ]}

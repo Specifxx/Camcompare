@@ -1,0 +1,8 @@
+{"slug":"fujifilm-xf-35mm-f2-r-wr","market":"us","currency":"USD","points":[
+{"day":"2024-04-17","new":39995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817146.37/warc/CC-MAIN-20240417075330-20240417105330-00503.warc.gz#offset=847822263&length=82181"},
+{"day":"2024-07-25","new":39995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518532.61/warc/CC-MAIN-20240724232540-20240725022540-00167.warc.gz#offset=792758348&length=84756"},
+{"day":"2025-01-25","new":39995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703699506.85/warc/CC-MAIN-20250125111848-20250125141848-00021.warc.gz#offset=937618020&length=88190"},
+{"day":"2025-01-26","new":39995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703361941.29/warc/CC-MAIN-20250126135402-20250126165402-00503.warc.gz#offset=950493307&length=87098"},
+{"day":"2025-02-17","new":39995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831953161.11/warc/CC-MAIN-20250217025937-20250217055937-00167.warc.gz#offset=842883805&length=87193"},
+{"day":"2025-05-19","new":39995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00267.warc.gz#offset=865861546&length=88344"}
+]}

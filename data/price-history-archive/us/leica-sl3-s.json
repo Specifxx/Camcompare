@@ -1,0 +1,6 @@
+{"slug":"leica-sl3-s","market":"us","currency":"USD","points":[
+{"day":"2025-02-07","new":529500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951491.30/warc/CC-MAIN-20250207101002-20250207131002-00886.warc.gz#offset=130488155&length=112949"},
+{"day":"2025-04-17","new":529500,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00243.warc.gz#offset=964231161&length=106805"},
+{"day":"2025-04-20","new":529500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135728.67/warc/CC-MAIN-20250419230935-20250420020935-00286.warc.gz#offset=152494293&length=108729"},
+{"day":"2025-09-07","new":566500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532837.60/warc/CC-MAIN-20250907040429-20250907070429-00286.warc.gz#offset=118298608&length=120900"}
+]}

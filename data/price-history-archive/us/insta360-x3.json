@@ -1,0 +1,5 @@
+{"slug":"insta360-x3","market":"us","currency":"USD","points":[
+{"day":"2024-07-21","new":39999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517544.48/warc/CC-MAIN-20240720235600-20240721025600-00247.warc.gz#offset=594082107&length=89828"},
+{"day":"2024-12-13","new":38999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066119651.31/warc/CC-MAIN-20241213202611-20241213232611-00641.warc.gz#offset=598258056&length=95838"},
+{"day":"2025-01-23","new":35999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363512.78/warc/CC-MAIN-20250123123137-20250123153137-00672.warc.gz#offset=674523990&length=96154"}
+]}

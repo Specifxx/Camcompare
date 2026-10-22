@@ -1,3 +1,5 @@
 {"slug":"panasonic-lumix-s-26mm-f8","market":"us","currency":"USD","points":[
-{"day":"2025-03-20","new":19799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433122.11/warc/CC-MAIN-20250320070413-20250320100413-00685.warc.gz#offset=733592415&length=181911"}
+{"day":"2024-11-13","new":19999,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028342.51/warc/CC-MAIN-20241113071746-20241113101746-00829.warc.gz#offset=129792092&length=96958"},
+{"day":"2025-03-20","new":19799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433122.11/warc/CC-MAIN-20250320070413-20250320100413-00685.warc.gz#offset=733592415&length=181911"},
+{"day":"2025-06-19","new":16999,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481517.0/warc/CC-MAIN-20250619113518-20250619143518-00329.warc.gz#offset=106380649&length=100619"}
 ]}

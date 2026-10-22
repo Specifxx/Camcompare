@@ -1,3 +1,6 @@
 {"slug":"nikon-z5-ii","market":"us","currency":"USD","points":[
-{"day":"2025-04-25","new":169695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135924.85/warc/CC-MAIN-20250425105842-20250425135842-00134.warc.gz#offset=638538370&length=115951"}
+{"day":"2025-04-17","new":169995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00480.warc.gz#offset=881854790&length=104055"},
+{"day":"2025-04-19","new":169995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135697.3/warc/CC-MAIN-20250419040408-20250419070408-00988.warc.gz#offset=148376415&length=113579"},
+{"day":"2025-04-25","new":169695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135924.85/warc/CC-MAIN-20250425105842-20250425135842-00134.warc.gz#offset=638538370&length=115951"},
+{"day":"2025-08-06","new":169995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279890.42/warc/CC-MAIN-20250806043623-20250806073623-00480.warc.gz#offset=832427227&length=104060"}
 ]}

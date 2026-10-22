@@ -1,0 +1,4 @@
+{"slug":"sony-rx1r-iii","market":"sg","currency":"SGD","points":[
+{"day":"2025-08-03","new":619900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279541.7/warc/CC-MAIN-20250803011606-20250803041606-00870.warc.gz#offset=530542328&length=83443"},
+{"day":"2025-08-09","new":619900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280090.92/warc/CC-MAIN-20250809075926-20250809105926-00797.warc.gz#offset=461220237&length=79843"}
+]}

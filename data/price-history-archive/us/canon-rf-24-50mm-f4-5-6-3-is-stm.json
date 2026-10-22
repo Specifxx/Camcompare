@@ -1,0 +1,6 @@
+{"slug":"canon-rf-24-50mm-f4-5-6-3-is-stm","market":"us","currency":"USD","points":[
+{"day":"2024-05-25","new":29999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058834.56/warc/CC-MAIN-20240525192227-20240525222227-00401.warc.gz#offset=819405273&length=88328"},
+{"day":"2024-08-12","new":29999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641048885.76/warc/CC-MAIN-20240812190307-20240812220307-00453.warc.gz#offset=726033869&length=89489"},
+{"day":"2025-03-19","new":29999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.33/warc/CC-MAIN-20250319144207-20250319174207-00353.warc.gz#offset=938955902&length=94343"},
+{"day":"2025-07-15","new":32999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934148.82/warc/CC-MAIN-20250715121552-20250715151552-00353.warc.gz#offset=804021112&length=97357"}
+]}

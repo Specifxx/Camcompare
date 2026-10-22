@@ -174,3 +174,10 @@ test("a JSON-LD block the strict parser rejects still gives its Offer price", ()
   assert.equal(l[0].price, 349900);
   assert.equal(l[0].title, "Canon EOS R6 Mark II Body");
 });
+
+test("archived outliers are left out of what is shown", async () => {
+  const { dropArchiveOutliers } = await import("../src/lib/offers");
+  const p = (day: string, n: number) => ({ day, new: n, store: "s", source: "archive" as const, snapshotUrl: "https://e.example/x" });
+  const out = dropArchiveOutliers([p("2024-01-01", 1000), p("2024-01-02", 1010), p("2024-01-03", 990), p("2024-01-04", 2500), p("2024-01-05", 400)]);
+  assert.deepEqual(out.map((x) => x.new), [1000, 1010, 990]);
+});

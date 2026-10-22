@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-30mm-f2-8-r-lm-wr-macro","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":98900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944254995.79/warc/CC-MAIN-20241012205209-20241012235209-00313.warc.gz#offset=487353249&length=55304"},
+{"day":"2025-02-07","new":98900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951469.57/warc/CC-MAIN-20250207065812-20250207095812-00313.warc.gz#offset=564518725&length=73992"},
+{"day":"2025-04-29","new":98900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889460581.80/warc/CC-MAIN-20250429100507-20250429130507-00713.warc.gz#offset=544812710&length=78121"}
+]}

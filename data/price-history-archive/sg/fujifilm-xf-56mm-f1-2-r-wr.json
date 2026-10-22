@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-56mm-f1-2-r-wr","market":"sg","currency":"SGD","points":[
+{"day":"2025-01-20","new":162900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363073.65/warc/CC-MAIN-20250120174304-20250120204304-00759.warc.gz#offset=589679758&length=76811"},
+{"day":"2025-05-19","new":152900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00659.warc.gz#offset=500721735&length=80262"},
+{"day":"2025-08-15","new":157900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00659.warc.gz#offset=502007493&length=83440"}
+]}

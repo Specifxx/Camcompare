@@ -1,0 +1,6 @@
+{"slug":"sony-a1","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":916900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253969.67/warc/CC-MAIN-20241012112926-20241012142926-00896.warc.gz#offset=507874495&length=54243"},
+{"day":"2025-02-11","new":916900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951699.28/warc/CC-MAIN-20250211072351-20250211102351-00896.warc.gz#offset=547119941&length=73404"},
+{"day":"2025-04-29","new":916900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889460581.80/warc/CC-MAIN-20250429100507-20250429130507-00296.warc.gz#offset=600531121&length=77704"},
+{"day":"2025-09-13","new":916900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533524.62/warc/CC-MAIN-20250913160351-20250913190351-00296.warc.gz#offset=483262070&length=82223"}
+]}

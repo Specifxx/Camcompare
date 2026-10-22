@@ -1,0 +1,7 @@
+{"slug":"nikon-z-dx-50-250mm-f4-5-6-3-vr","market":"us","currency":"USD","points":[
+{"day":"2024-04-21","new":37695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817765.59/warc/CC-MAIN-20240421101951-20240421131951-00609.warc.gz#offset=834908079&length=81223"},
+{"day":"2024-10-15","new":37695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255568.89/warc/CC-MAIN-20241015015910-20241015045910-00762.warc.gz#offset=820505263&length=87878"},
+{"day":"2024-11-10","new":37695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028186.38/warc/CC-MAIN-20241110103354-20241110133354-00609.warc.gz#offset=858604036&length=87814"},
+{"day":"2025-03-19","new":37695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.33/warc/CC-MAIN-20250319144207-20250319174207-00262.warc.gz#offset=915804662&length=89298"},
+{"day":"2025-07-13","new":40695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933991.28/warc/CC-MAIN-20250713131312-20250713161312-00262.warc.gz#offset=817826855&length=90591"}
+]}

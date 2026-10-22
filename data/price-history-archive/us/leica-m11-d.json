@@ -1,4 +1,8 @@
 {"slug":"leica-m11-d","market":"us","currency":"USD","points":[
+{"day":"2024-10-12","new":939500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944254157.41/warc/CC-MAIN-20241012143722-20241012173722-00739.warc.gz#offset=128831492&length=89831"},
 {"day":"2024-12-06","new":939500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066400558.71/warc/CC-MAIN-20241206093646-20241206123646-00374.warc.gz#offset=722637976&length=144891"},
-{"day":"2025-07-18","new":939500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934598.56/warc/CC-MAIN-20250718000345-20250718030345-00674.warc.gz#offset=683145317&length=188808"}
+{"day":"2025-02-07","new":939500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951491.30/warc/CC-MAIN-20250207101002-20250207131002-00285.warc.gz#offset=139710620&length=113860"},
+{"day":"2025-03-28","new":939500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004758676.99/warc/CC-MAIN-20250328075943-20250328105943-00239.warc.gz#offset=133167583&length=109080"},
+{"day":"2025-07-18","new":939500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934598.56/warc/CC-MAIN-20250718000345-20250718030345-00674.warc.gz#offset=683145317&length=188808"},
+{"day":"2025-08-10","new":1005500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280136.79/warc/CC-MAIN-20250810085940-20250810115940-00239.warc.gz#offset=114955458&length=99415"}
 ]}

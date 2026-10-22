@@ -1,0 +1,9 @@
+{"slug":"tamron-sp-150-600mm-f5-6-3-di-vc-usd-g2","market":"us","currency":"USD","points":[
+{"day":"2024-05-22","new":139900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058542.48/warc/CC-MAIN-20240522101617-20240522131617-00212.warc.gz#offset=582181255&length=95686"},
+{"day":"2024-05-26","new":139900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058858.81/warc/CC-MAIN-20240525222734-20240526012734-00362.warc.gz#offset=569119740&length=94183"},
+{"day":"2024-05-29","new":139900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059246.67/warc/CC-MAIN-20240529134803-20240529164803-00377.warc.gz#offset=575271412&length=95235"},
+{"day":"2024-05-30","new":139900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971667627.93/warc/CC-MAIN-20240530114606-20240530144606-00360.warc.gz#offset=555077457&length=96010"},
+{"day":"2024-07-13","new":139900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514459.28/warc/CC-MAIN-20240712224556-20240713014556-00581.warc.gz#offset=561797993&length=96912"},
+{"day":"2024-08-08","new":139900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640726723.42/warc/CC-MAIN-20240808093647-20240808123647-00580.warc.gz#offset=511660667&length=109673"},
+{"day":"2024-09-12","new":129900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651422.16/warc/CC-MAIN-20240912043139-20240912073139-00700.warc.gz#offset=632132375&length=111545"}
+]}

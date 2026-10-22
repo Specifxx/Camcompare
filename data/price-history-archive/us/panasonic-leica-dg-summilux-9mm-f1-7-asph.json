@@ -1,4 +1,7 @@
 {"slug":"panasonic-leica-dg-summilux-9mm-f1-7-asph","market":"us","currency":"USD","points":[
 {"day":"2024-06-12","new":44799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861261.53/warc/CC-MAIN-20240612203157-20240612233157-00230.warc.gz#offset=724300181&length=138060"},
+{"day":"2024-10-09","new":49799,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253603.68/warc/CC-MAIN-20241009084655-20241009114655-00264.warc.gz#offset=573105624&length=104291"},
+{"day":"2024-11-12","new":44799,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.58/warc/CC-MAIN-20241112045844-20241112075844-00193.warc.gz#offset=604334317&length=96842"},
+{"day":"2024-12-13","new":44799,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066119651.31/warc/CC-MAIN-20241213202611-20241213232611-00228.warc.gz#offset=592522521&length=93640"},
 {"day":"2025-02-14","new":44799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951898.89/warc/CC-MAIN-20250214195609-20250214225609-00230.warc.gz#offset=710319813&length=144650"}
 ]}

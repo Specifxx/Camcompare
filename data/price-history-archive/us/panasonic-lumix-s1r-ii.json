@@ -1,3 +1,7 @@
 {"slug":"panasonic-lumix-s1r-ii","market":"us","currency":"USD","points":[
-{"day":"2025-04-25","new":329799,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135925.48/warc/CC-MAIN-20250425141546-20250425171546-00652.warc.gz#offset=656429495&length=88984"}
+{"day":"2025-03-23","new":329999,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433246.41/warc/CC-MAIN-20250323000442-20250323030442-00740.warc.gz#offset=132398837&length=110218"},
+{"day":"2025-03-24","new":329799,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433406.62/warc/CC-MAIN-20250324182340-20250324212340-00880.warc.gz#offset=847427395&length=109364"},
+{"day":"2025-04-25","new":329799,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135925.48/warc/CC-MAIN-20250425141546-20250425171546-00652.warc.gz#offset=656429495&length=88984"},
+{"day":"2025-07-10","new":329799,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933747.45/warc/CC-MAIN-20250710032304-20250710062304-00880.warc.gz#offset=819169395&length=106197"},
+{"day":"2025-08-08","new":329999,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280022.18/warc/CC-MAIN-20250808100457-20250808130457-00740.warc.gz#offset=112154978&length=101714"}
 ]}

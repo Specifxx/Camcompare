@@ -1,0 +1,6 @@
+{"slug":"sony-a7s-iii","market":"sg","currency":"SGD","points":[
+{"day":"2024-05-18","new":494500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057327.58/warc/CC-MAIN-20240518054725-20240518084725-00538.warc.gz#offset=938620712&length=14770"},
+{"day":"2024-10-12","new":468900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944254995.79/warc/CC-MAIN-20241012205209-20241012235209-00707.warc.gz#offset=523448965&length=54746"},
+{"day":"2025-02-11","new":467800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951699.28/warc/CC-MAIN-20250211072351-20250211102351-00707.warc.gz#offset=537832455&length=73545"},
+{"day":"2025-05-19","new":417900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00507.warc.gz#offset=509004955&length=78140"}
+]}

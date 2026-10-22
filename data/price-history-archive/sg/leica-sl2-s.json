@@ -1,0 +1,10 @@
+{"slug":"leica-sl2-s","market":"sg","currency":"SGD","points":[
+{"day":"2024-06-22","new":751000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862410.56/warc/CC-MAIN-20240622175245-20240622205245-00236.warc.gz#offset=306477388&length=50276"},
+{"day":"2024-08-10","new":765000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640822309.61/warc/CC-MAIN-20240810190707-20240810220707-00418.warc.gz#offset=292365576&length=51417"},
+{"day":"2025-01-19","new":559900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362484.27/warc/CC-MAIN-20250119051228-20250119081228-00678.warc.gz#offset=606320682&length=76941"},
+{"day":"2025-04-17","new":559900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00528.warc.gz#offset=599433442&length=83625"},
+{"day":"2025-05-19","new":708800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00478.warc.gz#offset=484746477&length=80470"},
+{"day":"2025-07-18","new":559900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231287.86/warc/CC-MAIN-20250718154642-20250718184642-00528.warc.gz#offset=508886321&length=87314"},
+{"day":"2025-09-08","new":708800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532949.5/warc/CC-MAIN-20250908015740-20250908045740-00478.warc.gz#offset=519034211&length=83546"},
+{"day":"2025-10-07","new":518800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358268.1/warc/CC-MAIN-20251007043747-20251007073747-00842.warc.gz#offset=587771075&length=134284"}
+]}

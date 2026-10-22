@@ -1,3 +1,5 @@
 {"slug":"sony-fe-50-150mm-f2-gm","market":"us","currency":"USD","points":[
-{"day":"2025-06-15","new":389800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481366.62/warc/CC-MAIN-20250615170437-20250615200437-00840.warc.gz#offset=631904100&length=186469"}
+{"day":"2025-05-18","new":389800,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412651.78/warc/CC-MAIN-20250518214302-20250519004302-00869.warc.gz#offset=817696323&length=110106"},
+{"day":"2025-06-15","new":389800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481366.62/warc/CC-MAIN-20250615170437-20250615200437-00840.warc.gz#offset=631904100&length=186469"},
+{"day":"2025-09-10","new":389800,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00869.warc.gz#offset=806033744&length=110020"}
 ]}

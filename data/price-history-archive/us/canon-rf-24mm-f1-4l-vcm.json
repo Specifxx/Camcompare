@@ -1,3 +1,8 @@
 {"slug":"canon-rf-24mm-f1-4l-vcm","market":"us","currency":"USD","points":[
+{"day":"2024-11-14","new":149900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00769.warc.gz#offset=873247719&length=102337"},
+{"day":"2025-01-16","new":149900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362293.70/warc/CC-MAIN-20250116071218-20250116101218-00523.warc.gz#offset=153772372&length=96193"},
+{"day":"2025-02-17","new":149900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832255090.68/warc/CC-MAIN-20250217124634-20250217154634-00769.warc.gz#offset=846112683&length=99247"},
+{"day":"2025-06-15","new":149900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481343.22/warc/CC-MAIN-20250615074242-20250615104242-00069.warc.gz#offset=785023294&length=101630"},
+{"day":"2025-07-11","new":159900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933819.2/warc/CC-MAIN-20250711201717-20250711231717-00323.warc.gz#offset=133053404&length=104716"},
 {"day":"2025-10-09","new":154900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358353.67/warc/CC-MAIN-20251009004034-20251009034034-00473.warc.gz#offset=234102389&length=111596"}
 ]}

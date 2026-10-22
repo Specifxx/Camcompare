@@ -1,3 +1,9 @@
 {"slug":"nikon-z50-ii","market":"us","currency":"USD","points":[
-{"day":"2025-01-15","new":90695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362284.61/warc/CC-MAIN-20250115210945-20250116000945-00757.warc.gz#offset=810488761&length=130409"}
+{"day":"2024-12-08","new":90995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066441563.87/warc/CC-MAIN-20241208045820-20241208075820-00374.warc.gz#offset=131935529&length=104677"},
+{"day":"2024-12-12","new":90695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066097081.29/warc/CC-MAIN-20241212000506-20241212030506-00069.warc.gz#offset=846105703&length=102171"},
+{"day":"2025-01-15","new":90695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362284.61/warc/CC-MAIN-20250115210945-20250116000945-00757.warc.gz#offset=810488761&length=130409"},
+{"day":"2025-03-16","new":90695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00669.warc.gz#offset=910538052&length=103389"},
+{"day":"2025-06-22","new":90995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481733.2/warc/CC-MAIN-20250622073143-20250622103143-00774.warc.gz#offset=121928770&length=107900"},
+{"day":"2025-08-13","new":90695,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151281008.23/warc/CC-MAIN-20250812234112-20250813024112-00669.warc.gz#offset=798075600&length=105922"},
+{"day":"2025-10-17","new":100995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00774.warc.gz#offset=132736722&length=127847"}
 ]}

@@ -1,0 +1,5 @@
+{"slug":"nikon-z5-ii","market":"sg","currency":"SGD","points":[
+{"day":"2025-06-14","new":252600,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481330.50/warc/CC-MAIN-20250614222335-20250615012335-00314.warc.gz#offset=464215125&length=124591"},
+{"day":"2025-07-10","new":214500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933772.38/warc/CC-MAIN-20250710221400-20250711011400-00080.warc.gz#offset=494487507&length=87421"},
+{"day":"2025-12-12","new":210600,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307640.68/warc/CC-MAIN-20251212022224-20251212052224-00080.warc.gz#offset=459404707&length=86797"}
+]}

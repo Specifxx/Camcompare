@@ -1,3 +1,6 @@
 {"slug":"canon-rf-135mm-f1-8l-is-usm","market":"us","currency":"USD","points":[
+{"day":"2024-07-22","new":209900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517890.5/warc/CC-MAIN-20240722160043-20240722190043-00734.warc.gz#offset=124281706&length=80056"},
+{"day":"2025-03-20","new":209900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433132.75/warc/CC-MAIN-20250320101927-20250320131927-00672.warc.gz#offset=144541235&length=104106"},
+{"day":"2025-07-10","new":229900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933757.20/warc/CC-MAIN-20250710094101-20250710124101-00234.warc.gz#offset=117558011&length=101428"},
 {"day":"2025-08-10","new":209900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00250.warc.gz#offset=642234869&length=151194"}
 ]}

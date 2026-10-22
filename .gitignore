@@ -14,3 +14,4 @@ data/offers-amazon/
 public/offers/
 public/history/
 public/values/
+.backfill-cache/

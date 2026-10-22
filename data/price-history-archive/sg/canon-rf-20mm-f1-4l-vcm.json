@@ -1,0 +1,7 @@
+{"slug":"canon-rf-20mm-f1-4l-vcm","market":"sg","currency":"SGD","points":[
+{"day":"2025-06-23","new":262900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709774685.89/warc/CC-MAIN-20250623082149-20250623112149-00480.warc.gz#offset=406678018&length=57522"},
+{"day":"2025-08-11","new":199900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280903.0/warc/CC-MAIN-20250811192912-20250811222912-00015.warc.gz#offset=428931427&length=58607"},
+{"day":"2025-09-11","new":199900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533192.48/warc/CC-MAIN-20250911201805-20250911231805-00480.warc.gz#offset=416922550&length=59635"},
+{"day":"2025-11-10","new":199900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342799.42/warc/CC-MAIN-20251110062646-20251110092646-00305.warc.gz#offset=433707978&length=60692"},
+{"day":"2025-12-08","new":199900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307273.59/warc/CC-MAIN-20251208031112-20251208061112-00480.warc.gz#offset=419711247&length=60249"}
+]}

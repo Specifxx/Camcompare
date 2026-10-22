@@ -1,0 +1,6 @@
+{"slug":"fujifilm-xf-33mm-f1-4-r-lm-wr","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-06","new":122900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253411.60/warc/CC-MAIN-20241006060922-20241006090922-00702.warc.gz#offset=490035810&length=78650"},
+{"day":"2025-01-20","new":122900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363073.65/warc/CC-MAIN-20250120174304-20250120204304-00702.warc.gz#offset=587485855&length=74621"},
+{"day":"2025-05-20","new":112900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412858.34/warc/CC-MAIN-20250520150557-20250520180557-00602.warc.gz#offset=507350032&length=80844"},
+{"day":"2025-10-12","new":118400,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358738.39/warc/CC-MAIN-20251012035210-20251012065210-00602.warc.gz#offset=554404680&length=82124"}
+]}

@@ -1,0 +1,4 @@
+{"slug":"canon-eos-90d","market":"sg","currency":"SGD","points":[
+{"day":"2024-04-13","new":160900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816586.79/warc/CC-MAIN-20240413051941-20240413081941-00781.warc.gz#offset=510512422&length=60358"},
+{"day":"2024-04-15","new":160900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817033.56/warc/CC-MAIN-20240415205332-20240415235332-00835.warc.gz#offset=478788248&length=42887"}
+]}

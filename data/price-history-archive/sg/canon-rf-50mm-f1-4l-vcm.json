@@ -1,0 +1,5 @@
+{"slug":"canon-rf-50mm-f1-4l-vcm","market":"sg","currency":"SGD","points":[
+{"day":"2025-08-11","new":169900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280903.0/warc/CC-MAIN-20250811192912-20250811222912-00988.warc.gz#offset=483475482&length=57820"},
+{"day":"2025-11-07","new":166900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342479.6/warc/CC-MAIN-20251107142324-20251107172324-00630.warc.gz#offset=411195586&length=59515"},
+{"day":"2025-11-08","new":166900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342593.9/warc/CC-MAIN-20251108114106-20251108144106-00453.warc.gz#offset=430652876&length=59268"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"canon-rf-24-240mm-f4-6-3-is-usm","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-08","new":143900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00304.warc.gz#offset=498421477&length=54270"},
+{"day":"2025-05-12","new":112200,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412205.50/warc/CC-MAIN-20250512011722-20250512041722-00290.warc.gz#offset=534334823&length=111060"},
+{"day":"2025-05-19","new":112200,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00004.warc.gz#offset=504525315&length=77741"}
+]}

@@ -1,0 +1,9 @@
+{"slug":"sony-zv-1-ii","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-08","new":115900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00563.warc.gz#offset=504653048&length=55960"},
+{"day":"2024-11-06","new":115900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027909.44/warc/CC-MAIN-20241106034659-20241106064659-00686.warc.gz#offset=544850021&length=75636"},
+{"day":"2025-01-22","new":107100,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363373.23/warc/CC-MAIN-20250122031110-20250122061110-00686.warc.gz#offset=591552294&length=79146"},
+{"day":"2025-04-28","new":107200,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00686.warc.gz#offset=526819949&length=81150"},
+{"day":"2025-05-12","new":97900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412205.50/warc/CC-MAIN-20250512011722-20250512041722-00710.warc.gz#offset=525428476&length=124964"},
+{"day":"2025-06-14","new":97900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481330.50/warc/CC-MAIN-20250614222335-20250615012335-00686.warc.gz#offset=481645928&length=85330"},
+{"day":"2025-09-13","new":95500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533524.62/warc/CC-MAIN-20250913160351-20250913190351-00686.warc.gz#offset=491766767&length=86082"}
+]}

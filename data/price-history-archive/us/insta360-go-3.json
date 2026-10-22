@@ -1,0 +1,5 @@
+{"slug":"insta360-go-3","market":"us","currency":"USD","points":[
+{"day":"2024-07-12","new":37999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514459.28/warc/CC-MAIN-20240712224556-20240713014556-00096.warc.gz#offset=563950698&length=94199"},
+{"day":"2024-07-24","new":41999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518304.14/warc/CC-MAIN-20240724140819-20240724170819-00504.warc.gz#offset=612628025&length=95983"},
+{"day":"2024-11-06","new":31999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027910.12/warc/CC-MAIN-20241106065928-20241106095928-00096.warc.gz#offset=632211137&length=103696"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"pentax-kf","market":"uk","currency":"GBP","points":[
+{"day":"2025-02-06","new":59900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951463.20/warc/CC-MAIN-20250206212213-20250207002213-00101.warc.gz#offset=274092139&length=69270"},
+{"day":"2025-05-18","new":84900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412608.14/warc/CC-MAIN-20250518090654-20250518120654-00401.warc.gz#offset=251744140&length=87759"},
+{"day":"2025-10-06","new":84900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358248.49/warc/CC-MAIN-20251006125215-20251006155215-00401.warc.gz#offset=297746609&length=89750"}
+]}

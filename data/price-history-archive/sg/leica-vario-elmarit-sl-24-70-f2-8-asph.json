@@ -1,0 +1,8 @@
+{"slug":"leica-vario-elmarit-sl-24-70-f2-8-asph","market":"sg","currency":"SGD","points":[
+{"day":"2024-05-28","new":414000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059078.15/warc/CC-MAIN-20240528061449-20240528091449-00268.warc.gz#offset=303462459&length=44198"},
+{"day":"2024-09-17","new":435000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651722.42/warc/CC-MAIN-20240917004428-20240917034428-00268.warc.gz#offset=317702360&length=47425"},
+{"day":"2024-12-08","new":261000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066446918.92/warc/CC-MAIN-20241208141630-20241208171630-00534.warc.gz#offset=330231592&length=48515"},
+{"day":"2025-01-26","new":435000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703700051.83/warc/CC-MAIN-20250126035549-20250126065549-00268.warc.gz#offset=346573551&length=48411"},
+{"day":"2025-06-18","new":435000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481484.66/warc/CC-MAIN-20250618073049-20250618103049-00768.warc.gz#offset=263999372&length=49908"},
+{"day":"2025-10-10","new":435000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358510.42/warc/CC-MAIN-20251010014622-20251010044622-00768.warc.gz#offset=351058560&length=51498"}
+]}

@@ -1,5 +1,9 @@
 {"slug":"canon-eos-r100","market":"us","currency":"USD","points":[
 {"day":"2024-05-27","new":47900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059045.34/warc/CC-MAIN-20240527205559-20240527235559-00142.warc.gz#offset=656953371&length=144533"},
+{"day":"2024-05-29","new":37900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059239.72/warc/CC-MAIN-20240529103929-20240529133929-00091.warc.gz#offset=811351938&length=90331"},
+{"day":"2024-11-04","new":29900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027812.67/warc/CC-MAIN-20241104034319-20241104064319-00091.warc.gz#offset=896984831&length=107261"},
 {"day":"2025-01-24","new":47900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703692178.96/warc/CC-MAIN-20250123223358-20250124013358-00142.warc.gz#offset=785839335&length=159369"},
+{"day":"2025-03-15","new":47900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004432933.81/warc/CC-MAIN-20250315223831-20250316013831-00591.warc.gz#offset=949122349&length=107005"},
+{"day":"2025-06-23","new":52999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709776744.78/warc/CC-MAIN-20250623204803-20250623234803-00591.warc.gz#offset=745654249&length=109702"},
 {"day":"2025-10-09","new":55900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358509.4/warc/CC-MAIN-20251009224006-20251010014006-00291.warc.gz#offset=625823831&length=118530"}
 ]}

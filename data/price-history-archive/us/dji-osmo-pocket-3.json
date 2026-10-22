@@ -1,5 +1,9 @@
 {"slug":"dji-osmo-pocket-3","market":"us","currency":"USD","points":[
+{"day":"2024-11-08","new":66900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028025.14/warc/CC-MAIN-20241108035242-20241108065242-00111.warc.gz#offset=887249470&length=114123"},
 {"day":"2024-12-06","new":53900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066400558.71/warc/CC-MAIN-20241206093646-20241206123646-00332.warc.gz#offset=691698367&length=144832"},
+{"day":"2024-12-11","new":51900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066094915.14/warc/CC-MAIN-20241211205528-20241211235528-00535.warc.gz#offset=847765670&length=109484"},
 {"day":"2025-02-08","new":62800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951543.48/warc/CC-MAIN-20250208114257-20250208144257-00633.warc.gz#offset=725447137&length=147125"},
-{"day":"2025-07-18","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934611.62/warc/CC-MAIN-20250718031256-20250718061256-00633.warc.gz#offset=675837088&length=152801"}
+{"day":"2025-03-19","new":51900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.33/warc/CC-MAIN-20250319144207-20250319174207-00535.warc.gz#offset=943366715&length=111668"},
+{"day":"2025-07-18","new":79900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934611.62/warc/CC-MAIN-20250718031256-20250718061256-00633.warc.gz#offset=675837088&length=152801"},
+{"day":"2025-10-13","new":79900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358910.32/warc/CC-MAIN-20251013014802-20251013044802-00535.warc.gz#offset=880864625&length=112146"}
 ]}

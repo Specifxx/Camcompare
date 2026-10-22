@@ -1,0 +1,5 @@
+{"slug":"fujifilm-xf-10-24mm-f4-r-ois-wr","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-06","new":132900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253411.60/warc/CC-MAIN-20241006060922-20241006090922-00800.warc.gz#offset=507381531&length=78275"},
+{"day":"2025-04-29","new":152900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889460581.80/warc/CC-MAIN-20250429100507-20250429130507-00200.warc.gz#offset=570241678&length=76583"},
+{"day":"2025-08-06","new":148000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279919.59/warc/CC-MAIN-20250806171101-20250806201101-00200.warc.gz#offset=506995078&length=80684"}
+]}

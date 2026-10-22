@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FollowLink } from "@/components/ComparePrices";
 import CompareTable from "@/components/CompareTable";
+import PairPriceHistory from "@/components/PairPriceHistory";
 import LowLight from "@/components/LowLight";
 import SizeCompare from "@/components/SizeCompare";
 import { brandName, isIndexedPair, pairSlug, parsePairSlug } from "@/lib/catalog";
@@ -51,6 +52,10 @@ export default function PairView({ pair }: { pair: string }) {
         </section>
       )}
       <CompareTable items={[a, b]} market="us" followVisitorMarket />
+      <section>
+        <h2 className="h-section mb-3">Price history: is the newer one cheaper?</h2>
+        <PairPriceHistory a={{ slug: a.item.slug, name: a.item.shortName, announced: a.item.announced }} b={{ slug: b.item.slug, name: b.item.shortName, announced: b.item.announced }} />
+      </section>
       {a.kind === "camera" && (
         <section>
           <h2 className="h-section mb-3">Low light & noise</h2>

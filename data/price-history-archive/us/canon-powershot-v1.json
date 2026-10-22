@@ -1,0 +1,5 @@
+{"slug":"canon-powershot-v1","market":"us","currency":"USD","points":[
+{"day":"2025-04-17","new":89999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00638.warc.gz#offset=968643383&length=113095"},
+{"day":"2025-07-15","new":89900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934097.18/warc/CC-MAIN-20250715055718-20250715085718-00391.warc.gz#offset=152244954&length=107301"},
+{"day":"2025-09-16","new":92999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047819359.72/warc/CC-MAIN-20250916062356-20250916092356-00638.warc.gz#offset=805196918&length=109480"}
+]}

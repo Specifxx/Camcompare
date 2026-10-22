@@ -1,4 +1,6 @@
 {"slug":"panasonic-lumix-s-24-105mm-f4-macro-o-i-s","market":"us","currency":"USD","points":[
+{"day":"2024-05-22","new":99799,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058531.78/warc/CC-MAIN-20240522040032-20240522070032-00492.warc.gz#offset=587016948&length=93393"},
+{"day":"2024-06-24","new":129799,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198865348.3/warc/CC-MAIN-20240624084108-20240624114108-00111.warc.gz#offset=581009811&length=98302"},
 {"day":"2025-01-21","new":119799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363113.38/warc/CC-MAIN-20250121070313-20250121100313-00270.warc.gz#offset=806027676&length=153860"},
 {"day":"2025-07-10","new":109799,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933771.26/warc/CC-MAIN-20250710190434-20250710220434-00070.warc.gz#offset=676228744&length=148207"}
 ]}

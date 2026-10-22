@@ -1,0 +1,7 @@
+{"slug":"canon-rf-24-105mm-f4-7-1-is-stm","market":"us","currency":"USD","points":[
+{"day":"2024-11-02","new":39900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027729.26/warc/CC-MAIN-20241102165015-20241102195015-00319.warc.gz#offset=891565784&length=88913"},
+{"day":"2025-02-14","new":39900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951926.54/warc/CC-MAIN-20250214231004-20250215021004-00319.warc.gz#offset=873469967&length=90368"},
+{"day":"2025-04-24","new":39900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135897.82/warc/CC-MAIN-20250424215144-20250425005144-00638.warc.gz#offset=930498594&length=92940"},
+{"day":"2025-06-20","new":39900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481590.25/warc/CC-MAIN-20250620183243-20250620213243-00319.warc.gz#offset=755274931&length=91571"},
+{"day":"2025-06-23","new":42999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709776744.78/warc/CC-MAIN-20250623204803-20250623234803-00927.warc.gz#offset=731844372&length=91816"}
+]}

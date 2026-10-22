@@ -1,0 +1,7 @@
+{"slug":"fujifilm-x-t50","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":229900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253969.67/warc/CC-MAIN-20241012112926-20241012142926-00864.warc.gz#offset=512068770&length=56384"},
+{"day":"2025-01-18","new":229900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362356.3/warc/CC-MAIN-20250118023608-20250118053608-00864.warc.gz#offset=606414259&length=80652"},
+{"day":"2025-05-20","new":229900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412858.34/warc/CC-MAIN-20250520150557-20250520180557-00264.warc.gz#offset=492741044&length=87042"},
+{"day":"2025-09-15","new":222900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533992.1/warc/CC-MAIN-20250915175310-20250915205310-00264.warc.gz#offset=468028079&length=86608"},
+{"day":"2025-10-07","new":222900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358268.1/warc/CC-MAIN-20251007043747-20251007073747-00170.warc.gz#offset=558815864&length=133894"}
+]}

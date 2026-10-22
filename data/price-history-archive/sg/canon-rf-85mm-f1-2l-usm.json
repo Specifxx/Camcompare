@@ -1,0 +1,5 @@
+{"slug":"canon-rf-85mm-f1-2l-usm","market":"sg","currency":"SGD","points":[
+{"day":"2024-09-07","new":399900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700650826.4/warc/CC-MAIN-20240907095856-20240907125856-00286.warc.gz#offset=504229035&length=57988"},
+{"day":"2024-10-11","new":399900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253776.45/warc/CC-MAIN-20241011134210-20241011164210-00489.warc.gz#offset=448362056&length=58051"},
+{"day":"2024-11-12","new":399900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028249.89/warc/CC-MAIN-20241112081532-20241112111532-00375.warc.gz#offset=475243098&length=57169"}
+]}

@@ -104,6 +104,9 @@ const LENS_ACCESSORY = /\b(hood|cap|caps|filter|case|pouch|collar|tripod foot|ad
 // …or after the lens ("Canon EF 24-70mm f/2.8L II USM Lens Hood EW-88C"),
 // unless something before it says it comes with the lens ("w/ hood & caps").
 const LENS_PART = /\b(lens hood|hood only|(lens|front|rear) caps?|tripod (mount )?ring|tripod (collar|foot))\b/;
+// An accessory named first, then the product it fits after a dash or colon:
+// "NiSi JetMag Pro … Magnetic Filter Kit - Sony FE 14mm f/1.8 GM".
+const ACCESSORY_BEFORE_DASH = /^[^-–—:|]*\b(filters?|filter (kit|holder|system)|nd|cpl|polari[sz]er|holder|hood|lens caps?|case|pouch|step[- ]up|cage|grip|battery|charger|strap|protector)\b[^-–—:|]*\s[-–—:|]\s/;
 const INCLUDED = /\bwith\b|\bw\/|\bincl|\band\b|[+&]/;
 // Film bodies share names with digital ones (Olympus OM-1, Canon EOS 5).
 const FILM = /\b(film|35mm slr|slr film|half[- ]frame)\b/;
@@ -267,6 +270,7 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
   if (FILM.test(lower)) return { product: null, reason: "film camera" };
 
   const finish = (p: Matchable, via: MatchVia): MatchResult => {
+    if (ACCESSORY_BEFORE_DASH.test(lower)) return { product: null, reason: "accessory named before the product" };
     if (want && p.kind !== want) return { product: null, reason: `is a ${p.kind}` };
     if (p.kind === "camera") {
       if (CAMERA_ACCESSORY.test(lower)) return { product: null, reason: "accessory/part" };

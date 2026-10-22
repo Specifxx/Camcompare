@@ -1,0 +1,6 @@
+{"slug":"tamron-sp-24-70mm-f2-8-di-vc-usd-g2","market":"us","currency":"USD","points":[
+{"day":"2024-05-19","new":119900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057774.18/warc/CC-MAIN-20240519070539-20240519100539-00217.warc.gz#offset=596793571&length=89886"},
+{"day":"2024-05-26","new":119900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058861.60/warc/CC-MAIN-20240526013241-20240526043241-00392.warc.gz#offset=584219045&length=89279"},
+{"day":"2024-05-29","new":114900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059239.72/warc/CC-MAIN-20240529103929-20240529133929-00116.warc.gz#offset=559823101&length=85209"},
+{"day":"2024-05-30","new":119900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971668873.95/warc/CC-MAIN-20240530145337-20240530175337-00117.warc.gz#offset=577515976&length=85736"}
+]}

@@ -1,5 +1,10 @@
 {"slug":"sony-fe-85mm-f1-4-gm-ii","market":"us","currency":"USD","points":[
+{"day":"2024-09-15","new":179800,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651616.56/warc/CC-MAIN-20240915052902-20240915082902-00406.warc.gz#offset=852033794&length=92253"},
 {"day":"2024-09-18","new":179800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651895.12/warc/CC-MAIN-20240918100941-20240918130941-00786.warc.gz#offset=716385107&length=138049"},
+{"day":"2024-11-10","new":179999,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028187.60/warc/CC-MAIN-20241110134821-20241110164821-00351.warc.gz#offset=135672854&length=99540"},
+{"day":"2025-01-20","new":179800,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363076.72/warc/CC-MAIN-20250120210159-20250121000159-00406.warc.gz#offset=995343586&length=96529"},
 {"day":"2025-04-25","new":179800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135924.85/warc/CC-MAIN-20250425105842-20250425135842-00786.warc.gz#offset=732806180&length=148909"},
+{"day":"2025-05-16","new":179800,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412530.66/warc/CC-MAIN-20250516130253-20250516160253-00606.warc.gz#offset=842188399&length=97496"},
+{"day":"2025-08-06","new":194800,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279890.42/warc/CC-MAIN-20250806043623-20250806073623-00606.warc.gz#offset=812906290&length=99392"},
 {"day":"2025-10-15","new":204800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359311.64/warc/CC-MAIN-20251015005817-20251015035817-00948.warc.gz#offset=257298885&length=114524"}
 ]}

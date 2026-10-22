@@ -1,0 +1,5 @@
+{"slug":"panasonic-lumix-zs99","market":"us","currency":"USD","points":[
+{"day":"2025-03-24","new":49799,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433406.62/warc/CC-MAIN-20250324182340-20250324212340-00099.warc.gz#offset=870043829&length=105662"},
+{"day":"2025-08-03","new":69799,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279735.55/warc/CC-MAIN-20250803200137-20250803230137-00099.warc.gz#offset=847662768&length=104007"},
+{"day":"2025-08-11","new":69999,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280504.46/warc/CC-MAIN-20250811162052-20250811192052-00076.warc.gz#offset=135408250&length=104478"}
+]}

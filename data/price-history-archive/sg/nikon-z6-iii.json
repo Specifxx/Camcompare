@@ -1,0 +1,6 @@
+{"slug":"nikon-z6-iii","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":303900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944254995.79/warc/CC-MAIN-20241012205209-20241012235209-00392.warc.gz#offset=502836360&length=56775"},
+{"day":"2025-02-09","new":279700,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951598.46/warc/CC-MAIN-20250209070017-20250209100017-00392.warc.gz#offset=551994401&length=76086"},
+{"day":"2025-09-15","new":279800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533992.1/warc/CC-MAIN-20250915175310-20250915205310-00192.warc.gz#offset=480378301&length=85150"},
+{"day":"2025-10-07","new":279800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358268.1/warc/CC-MAIN-20251007043747-20251007073747-00966.warc.gz#offset=578874225&length=130689"}
+]}

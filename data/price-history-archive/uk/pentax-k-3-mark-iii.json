@@ -1,0 +1,5 @@
+{"slug":"pentax-k-3-mark-iii","market":"uk","currency":"GBP","points":[
+{"day":"2024-11-12","new":219900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028242.50/warc/CC-MAIN-20241112014152-20241112044152-00231.warc.gz#offset=265558229&length=67794"},
+{"day":"2025-03-27","new":189899,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004757836.96/warc/CC-MAIN-20250327184853-20250327214853-00141.warc.gz#offset=289117212&length=79432"},
+{"day":"2025-10-12","new":194900,"store":"harrison-cameras","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358741.91/warc/CC-MAIN-20251012065838-20251012095838-00331.warc.gz#offset=282233816&length=85733"}
+]}

@@ -1,0 +1,7 @@
+{"slug":"fujifilm-x-half","market":"us","currency":"USD","points":[
+{"day":"2025-07-10","new":84995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933737.43/warc/CC-MAIN-20250710001239-20250710031239-00426.warc.gz#offset=126248729&length=108828"},
+{"day":"2025-07-15","new":84995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934097.18/warc/CC-MAIN-20250715055718-20250715085718-00456.warc.gz#offset=120827310&length=109797"},
+{"day":"2025-08-11","new":84995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280504.46/warc/CC-MAIN-20250811162052-20250811192052-00630.warc.gz#offset=110144630&length=109057"},
+{"day":"2025-11-10","new":84995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342799.42/warc/CC-MAIN-20251110062646-20251110092646-00444.warc.gz#offset=117159017&length=134951"},
+{"day":"2026-01-18","new":84995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469396.8/warc/CC-MAIN-20260118032915-20260118062915-00426.warc.gz#offset=120456368&length=137967"}
+]}

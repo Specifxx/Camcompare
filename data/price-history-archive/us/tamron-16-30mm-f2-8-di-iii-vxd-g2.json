@@ -1,3 +1,5 @@
 {"slug":"tamron-16-30mm-f2-8-di-iii-vxd-g2","market":"us","currency":"USD","points":[
+{"day":"2025-07-10","new":92900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933759.4/warc/CC-MAIN-20250710124949-20250710154949-00973.warc.gz#offset=811357746&length=108079"},
+{"day":"2025-07-17","new":92900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934401.16/warc/CC-MAIN-20250717020215-20250717050215-00742.warc.gz#offset=809069584&length=105866"},
 {"day":"2025-09-07","new":92900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532848.20/warc/CC-MAIN-20250907071249-20250907101249-00274.warc.gz#offset=587683404&length=101047"}
 ]}

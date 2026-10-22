@@ -1,0 +1,5 @@
+{"slug":"sigma-17-40mm-f1-8-dc-art","market":"sg","currency":"SGD","points":[
+{"day":"2025-07-18","new":128800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231287.86/warc/CC-MAIN-20250718154642-20250718184642-00862.warc.gz#offset=476078287&length=81863"},
+{"day":"2025-08-03","new":128800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279541.7/warc/CC-MAIN-20250803011606-20250803041606-00756.warc.gz#offset=510549655&length=81097"},
+{"day":"2025-09-08","new":128800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532949.5/warc/CC-MAIN-20250908015740-20250908045740-00756.warc.gz#offset=510558156&length=81260"}
+]}

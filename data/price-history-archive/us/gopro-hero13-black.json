@@ -1,0 +1,8 @@
+{"slug":"gopro-hero13-black","market":"us","currency":"USD","points":[
+{"day":"2024-11-14","new":39999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028545.2/warc/CC-MAIN-20241114062951-20241114092951-00896.warc.gz#offset=858066784&length=108096"},
+{"day":"2025-02-10","new":59999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951650.66/warc/CC-MAIN-20250210052847-20250210082847-00896.warc.gz#offset=878949738&length=105408"},
+{"day":"2025-04-28","new":39999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889455370.95/warc/CC-MAIN-20250428105807-20250428135807-00942.warc.gz#offset=894076234&length=105297"},
+{"day":"2025-05-18","new":59999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412609.63/warc/CC-MAIN-20250518121532-20250518151532-00496.warc.gz#offset=840187393&length=107890"},
+{"day":"2025-09-10","new":35999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533082.91/warc/CC-MAIN-20250910070020-20250910100020-00942.warc.gz#offset=842162558&length=108898"},
+{"day":"2025-10-17","new":54999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00496.warc.gz#offset=892155268&length=109805"}
+]}

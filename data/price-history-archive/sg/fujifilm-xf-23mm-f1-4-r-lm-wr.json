@@ -1,0 +1,7 @@
+{"slug":"fujifilm-xf-23mm-f1-4-r-lm-wr","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-08","new":142900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00305.warc.gz#offset=506670247&length=53695"},
+{"day":"2025-01-20","new":142900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363073.65/warc/CC-MAIN-20250120174304-20250120204304-00305.warc.gz#offset=591431002&length=73951"},
+{"day":"2025-04-28","new":142900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00905.warc.gz#offset=591289076&length=76537"},
+{"day":"2025-08-06","new":138200,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279919.59/warc/CC-MAIN-20250806171101-20250806201101-00905.warc.gz#offset=533234319&length=80102"},
+{"day":"2025-12-12","new":128400,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307640.68/warc/CC-MAIN-20251212022224-20251212052224-00012.warc.gz#offset=416490699&length=112950"}
+]}

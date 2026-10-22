@@ -1,0 +1,7 @@
+{"slug":"laowa-10mm-f2-8-zero-d-ff","market":"us","currency":"USD","points":[
+{"day":"2024-05-19","new":79900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971057819.74/warc/CC-MAIN-20240519162917-20240519192917-00335.warc.gz#offset=837987744&length=87176"},
+{"day":"2024-11-02","new":79900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027729.26/warc/CC-MAIN-20241102165015-20241102195015-00752.warc.gz#offset=911127012&length=93868"},
+{"day":"2024-11-04","new":79900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027812.67/warc/CC-MAIN-20241104034319-20241104064319-00335.warc.gz#offset=864236864&length=91941"},
+{"day":"2025-02-15","new":79900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951926.54/warc/CC-MAIN-20250214231004-20250215021004-00752.warc.gz#offset=860703123&length=91237"},
+{"day":"2025-06-17","new":79900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481446.47/warc/CC-MAIN-20250617093636-20250617123636-00552.warc.gz#offset=765409402&length=93748"}
+]}

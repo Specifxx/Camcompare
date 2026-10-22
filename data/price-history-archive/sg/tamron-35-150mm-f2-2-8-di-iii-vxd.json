@@ -1,0 +1,5 @@
+{"slug":"tamron-35-150mm-f2-2-8-di-iii-vxd","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-10","new":288100,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253661.71/warc/CC-MAIN-20241010063356-20241010093356-00123.warc.gz#offset=495679013&length=57526"},
+{"day":"2025-01-22","new":288100,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363373.23/warc/CC-MAIN-20250122031110-20250122061110-00123.warc.gz#offset=605283753&length=80777"},
+{"day":"2025-04-17","new":288100,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00923.warc.gz#offset=589058816&length=83308"}
+]}

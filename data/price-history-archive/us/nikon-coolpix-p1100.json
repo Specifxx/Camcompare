@@ -1,4 +1,7 @@
 {"slug":"nikon-coolpix-p1100","market":"us","currency":"USD","points":[
 {"day":"2025-03-24","new":134999,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433505.60/warc/CC-MAIN-20250324214107-20250325004107-00325.warc.gz#offset=621978666&length=100722"},
-{"day":"2025-04-28","new":129695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00685.warc.gz#offset=629183990&length=100320"}
+{"day":"2025-03-24","new":109995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433406.62/warc/CC-MAIN-20250324182340-20250324212340-00078.warc.gz#offset=898765361&length=105665"},
+{"day":"2025-04-28","new":129695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00685.warc.gz#offset=629183990&length=100320"},
+{"day":"2025-07-13","new":109995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933991.28/warc/CC-MAIN-20250713131312-20250713161312-00078.warc.gz#offset=828193425&length=107024"},
+{"day":"2025-07-15","new":109995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934097.18/warc/CC-MAIN-20250715055718-20250715085718-00720.warc.gz#offset=105022811&length=107428"}
 ]}

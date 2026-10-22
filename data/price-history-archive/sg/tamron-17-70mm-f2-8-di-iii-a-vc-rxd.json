@@ -1,0 +1,5 @@
+{"slug":"tamron-17-70mm-f2-8-di-iii-a-vc-rxd","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-08","new":128700,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00351.warc.gz#offset=502666144&length=57520"},
+{"day":"2025-07-18","new":128700,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231287.86/warc/CC-MAIN-20250718154642-20250718184642-00951.warc.gz#offset=516948418&length=84556"},
+{"day":"2025-10-12","new":128700,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358738.39/warc/CC-MAIN-20251012035210-20251012065210-00951.warc.gz#offset=542542525&length=85826"}
+]}

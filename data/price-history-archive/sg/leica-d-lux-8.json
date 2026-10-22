@@ -1,0 +1,8 @@
+{"slug":"leica-d-lux-8","market":"sg","currency":"SGD","points":[
+{"day":"2025-01-14","new":245000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362203.87/warc/CC-MAIN-20250114114216-20250114144216-00858.warc.gz#offset=369200095&length=49236"},
+{"day":"2025-01-19","new":245000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362484.27/warc/CC-MAIN-20250119051228-20250119081228-00822.warc.gz#offset=600268379&length=77367"},
+{"day":"2025-05-20","new":245000,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412858.34/warc/CC-MAIN-20250520150557-20250520180557-00222.warc.gz#offset=502082182&length=83971"},
+{"day":"2025-05-22","new":245000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413578.26/warc/CC-MAIN-20250522052309-20250522082309-00004.warc.gz#offset=300380332&length=51121"},
+{"day":"2025-07-08","new":245000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933638.52/warc/CC-MAIN-20250708071141-20250708101141-00158.warc.gz#offset=311037426&length=50786"},
+{"day":"2025-07-20","new":285000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237204.95/warc/CC-MAIN-20250720113954-20250720143954-00434.warc.gz#offset=285328916&length=52643"}
+]}

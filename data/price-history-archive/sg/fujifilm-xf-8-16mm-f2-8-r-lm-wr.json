@@ -1,0 +1,6 @@
+{"slug":"fujifilm-xf-8-16mm-f2-8-r-lm-wr","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-08","new":285900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00289.warc.gz#offset=498422908&length=53941"},
+{"day":"2025-01-22","new":305900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363373.23/warc/CC-MAIN-20250122031110-20250122061110-00289.warc.gz#offset=603948967&length=74264"},
+{"day":"2025-04-17","new":305900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00389.warc.gz#offset=573323794&length=76409"},
+{"day":"2025-09-15","new":296300,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533992.1/warc/CC-MAIN-20250915175310-20250915205310-00389.warc.gz#offset=530270917&length=80775"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"canon-rf-16-28mm-f2-8-is-stm","market":"sg","currency":"SGD","points":[
+{"day":"2025-11-07","new":139900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342479.6/warc/CC-MAIN-20251107142324-20251107172324-00771.warc.gz#offset=456630143&length=55439"},
+{"day":"2025-11-10","new":139900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439342799.42/warc/CC-MAIN-20251110062646-20251110092646-00204.warc.gz#offset=446742961&length=55702"},
+{"day":"2026-02-12","new":139900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506241.21/warc/CC-MAIN-20260212210112-20260213000112-00204.warc.gz#offset=385865823&length=57166"}
+]}

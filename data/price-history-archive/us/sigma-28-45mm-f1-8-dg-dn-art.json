@@ -1,0 +1,9 @@
+{"slug":"sigma-28-45mm-f1-8-dg-dn-art","market":"us","currency":"USD","points":[
+{"day":"2024-06-21","new":134900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862036.35/warc/CC-MAIN-20240621031127-20240621061127-00196.warc.gz#offset=824198574&length=90296"},
+{"day":"2024-12-03","new":134900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066131052.34/warc/CC-MAIN-20241203010947-20241203040947-00419.warc.gz#offset=869765635&length=96899"},
+{"day":"2024-12-11","new":134900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066092235.13/warc/CC-MAIN-20241211174540-20241211204540-00196.warc.gz#offset=862560101&length=96997"},
+{"day":"2025-03-28","new":134900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004758970.91/warc/CC-MAIN-20250328143237-20250328173237-00996.warc.gz#offset=876772758&length=99685"},
+{"day":"2025-07-15","new":134900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934168.55/warc/CC-MAIN-20250715183257-20250715213257-00996.warc.gz#offset=808680325&length=97664"},
+{"day":"2025-10-17","new":134900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648664854.97/warc/CC-MAIN-20251017001519-20251017031519-00019.warc.gz#offset=909101046&length=100159"},
+{"day":"2026-07-19","new":141400,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663952069.24/warc/CC-MAIN-20260719053429-20260719083429-00996.warc.gz#offset=835196269&length=120571"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"leica-apo-summicron-m-35-f2-asph","market":"sg","currency":"SGD","points":[
+{"day":"2025-02-18","new":1265000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832260918.88/warc/CC-MAIN-20250218081924-20250218111924-00525.warc.gz#offset=316757889&length=47836"},
+{"day":"2025-05-22","new":1265000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413578.26/warc/CC-MAIN-20250522052309-20250522082309-00318.warc.gz#offset=298865009&length=50765"},
+{"day":"2025-06-18","new":1265000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481484.66/warc/CC-MAIN-20250618073049-20250618103049-00625.warc.gz#offset=293053734&length=50387"}
+]}

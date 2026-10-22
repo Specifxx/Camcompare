@@ -1,0 +1,6 @@
+{"slug":"viltrox-af-56mm-f1-7-air","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":20900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253969.67/warc/CC-MAIN-20241012112926-20241012142926-00801.warc.gz#offset=503322761&length=53704"},
+{"day":"2025-02-07","new":20500,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951469.57/warc/CC-MAIN-20250207065812-20250207095812-00801.warc.gz#offset=541102694&length=73646"},
+{"day":"2025-05-20","new":20900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412858.34/warc/CC-MAIN-20250520150557-20250520180557-00901.warc.gz#offset=490226377&length=81764"},
+{"day":"2025-09-08","new":20900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532949.5/warc/CC-MAIN-20250908015740-20250908045740-00901.warc.gz#offset=541345061&length=81605"}
+]}

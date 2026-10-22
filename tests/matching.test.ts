@@ -146,6 +146,9 @@ test("a kit lens with its prefix glued on, or added with '+' to a body, is still
 
 test("lens generations and series never collide", () => {
   assert.equal(slug("Sony FE 24-70mm f/2.8 GM II Lens"), "sony-fe-24-70mm-f2-8-gm-ii");
+  // An accessory named first, then the lens it fits after a dash (Focus Camera, 2026-10-22).
+  assert.equal(slug("NiSi JetMag Pro Landscape ND MAXMAG Magnetic Filter Kit - Sony FE 24-70mm F2.8 GM II"), null);
+  assert.equal(slug("Sony FE 24-70mm f/2.8 GM II Lens - Black"), "sony-fe-24-70mm-f2-8-gm-ii");
   assert.equal(slug("Sony FE 24-70mm F2.8 G Master Lens SEL2470GM"), "sony-fe-24-70mm-f2-8-gm");
   assert.equal(slug("Sony 24-70mm F2.8 GM"), "sony-fe-24-70mm-f2-8-gm");
 });

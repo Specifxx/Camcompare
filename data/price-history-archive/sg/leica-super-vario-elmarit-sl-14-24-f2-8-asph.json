@@ -1,0 +1,9 @@
+{"slug":"leica-super-vario-elmarit-sl-14-24-f2-8-asph","market":"sg","currency":"SGD","points":[
+{"day":"2024-05-28","new":377000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059078.15/warc/CC-MAIN-20240528061449-20240528091449-00564.warc.gz#offset=311811477&length=46434"},
+{"day":"2024-07-20","new":399000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763515164.46/warc/CC-MAIN-20240720113754-20240720143754-00789.warc.gz#offset=310557338&length=46990"},
+{"day":"2024-11-09","new":399000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028125.59/warc/CC-MAIN-20241109151915-20241109181915-00789.warc.gz#offset=320425019&length=50650"},
+{"day":"2025-02-18","new":399000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832260918.88/warc/CC-MAIN-20250218081924-20250218111924-00789.warc.gz#offset=313603778&length=49446"},
+{"day":"2025-06-18","new":399000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481484.66/warc/CC-MAIN-20250618073049-20250618103049-00289.warc.gz#offset=284109529&length=52008"},
+{"day":"2025-07-20","new":399000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237204.95/warc/CC-MAIN-20250720113954-20250720143954-00964.warc.gz#offset=296824634&length=52214"},
+{"day":"2025-10-15","new":399000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359352.54/warc/CC-MAIN-20251015071824-20251015101824-00289.warc.gz#offset=354787192&length=53841"}
+]}

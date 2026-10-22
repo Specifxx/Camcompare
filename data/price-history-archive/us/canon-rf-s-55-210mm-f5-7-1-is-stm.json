@@ -1,0 +1,5 @@
+{"slug":"canon-rf-s-55-210mm-f5-7-1-is-stm","market":"us","currency":"USD","points":[
+{"day":"2024-11-04","new":34900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027838.15/warc/CC-MAIN-20241104163253-20241104193253-00831.warc.gz#offset=888183859&length=91721"},
+{"day":"2025-03-19","new":34900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433099.33/warc/CC-MAIN-20250319144207-20250319174207-00931.warc.gz#offset=932190973&length=96541"},
+{"day":"2025-07-13","new":37999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933991.28/warc/CC-MAIN-20250713131312-20250713161312-00931.warc.gz#offset=836354113&length=97134"}
+]}

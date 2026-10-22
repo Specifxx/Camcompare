@@ -1,0 +1,8 @@
+{"slug":"canon-rf-135mm-f1-8l-is-usm","market":"sg","currency":"SGD","points":[
+{"day":"2024-04-17","new":239900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817171.53/warc/CC-MAIN-20240417173445-20240417203445-00693.warc.gz#offset=477576279&length=39058"},
+{"day":"2024-10-08","new":342900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00619.warc.gz#offset=512496759&length=55345"},
+{"day":"2025-01-20","new":278700,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363073.65/warc/CC-MAIN-20250120174304-20250120204304-00619.warc.gz#offset=582937188&length=76448"},
+{"day":"2025-04-29","new":267200,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889460581.80/warc/CC-MAIN-20250429100507-20250429130507-00519.warc.gz#offset=606263217&length=79050"},
+{"day":"2025-05-12","new":267200,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412205.50/warc/CC-MAIN-20250512011722-20250512041722-00117.warc.gz#offset=542509455&length=113111"},
+{"day":"2025-08-15","new":288300,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151578188.87/warc/CC-MAIN-20250815015443-20250815045443-00519.warc.gz#offset=509469497&length=82852"}
+]}

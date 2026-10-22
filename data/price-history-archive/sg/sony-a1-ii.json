@@ -1,0 +1,4 @@
+{"slug":"sony-a1-ii","market":"sg","currency":"SGD","points":[
+{"day":"2025-04-22","new":899900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135818.37/warc/CC-MAIN-20250422145809-20250422175809-00253.warc.gz#offset=589990039&length=98985"},
+{"day":"2025-08-03","new":899900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279709.51/warc/CC-MAIN-20250803134256-20250803164256-00482.warc.gz#offset=489570132&length=99639"}
+]}

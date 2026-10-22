@@ -1,0 +1,6 @@
+{"slug":"canon-rf-15-30mm-f4-5-6-3-is-stm","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-08","new":87900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00007.warc.gz#offset=505687119&length=54326"},
+{"day":"2025-01-18","new":87900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362356.3/warc/CC-MAIN-20250118023608-20250118053608-00007.warc.gz#offset=598465477&length=75130"},
+{"day":"2025-10-13","new":87900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358911.18/warc/CC-MAIN-20251013080524-20251013110524-00697.warc.gz#offset=507826949&length=56645"},
+{"day":"2026-01-17","new":87900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-04/segments/1768220469321.37/warc/CC-MAIN-20260116234127-20260117024127-00460.warc.gz#offset=401871851&length=58770"}
+]}

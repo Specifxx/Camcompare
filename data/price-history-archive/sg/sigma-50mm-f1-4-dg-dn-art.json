@@ -1,0 +1,6 @@
+{"slug":"sigma-50mm-f1-4-dg-dn-art","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-10","new":113800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253661.71/warc/CC-MAIN-20241010063356-20241010093356-00041.warc.gz#offset=501429784&length=57536"},
+{"day":"2025-01-22","new":113800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363373.23/warc/CC-MAIN-20250122031110-20250122061110-00041.warc.gz#offset=585806757&length=79667"},
+{"day":"2025-04-28","new":113800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889457968.76/warc/CC-MAIN-20250428205407-20250428235407-00241.warc.gz#offset=557267375&length=82651"},
+{"day":"2025-09-08","new":113800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532949.5/warc/CC-MAIN-20250908015740-20250908045740-00241.warc.gz#offset=467238084&length=86449"}
+]}

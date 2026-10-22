@@ -1,3 +1,8 @@
 {"slug":"fujifilm-xf-90mm-f2-r-lm-wr","market":"us","currency":"USD","points":[
-{"day":"2025-04-19","new":94900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135697.3/warc/CC-MAIN-20250419040408-20250419070408-00660.warc.gz#offset=766051467&length=180454"}
+{"day":"2025-02-17","new":59500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831953161.11/warc/CC-MAIN-20250217025937-20250217055937-00023.warc.gz#offset=122472063&length=109146"},
+{"day":"2025-03-19","new":59500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433077.27/warc/CC-MAIN-20250319013430-20250319043430-00823.warc.gz#offset=144581876&length=103975"},
+{"day":"2025-04-19","new":94900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135697.3/warc/CC-MAIN-20250419040408-20250419070408-00660.warc.gz#offset=766051467&length=180454"},
+{"day":"2025-05-22","new":69500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413598.1/warc/CC-MAIN-20250522083553-20250522113553-00634.warc.gz#offset=114416792&length=109894"},
+{"day":"2025-07-10","new":69500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933737.43/warc/CC-MAIN-20250710001239-20250710031239-00667.warc.gz#offset=102300727&length=101394"},
+{"day":"2025-08-10","new":59500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280136.79/warc/CC-MAIN-20250810085940-20250810115940-00823.warc.gz#offset=100865753&length=99968"}
 ]}

@@ -1,0 +1,6 @@
+{"slug":"canon-eos-r3","market":"sg","currency":"SGD","points":[
+{"day":"2025-12-05","new":784900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871306891.33/warc/CC-MAIN-20251205012533-20251205042533-00594.warc.gz#offset=404069823&length=65983"},
+{"day":"2025-12-08","new":784900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307273.59/warc/CC-MAIN-20251208031112-20251208061112-00671.warc.gz#offset=400441085&length=65373"},
+{"day":"2026-02-10","new":784900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506119.32/warc/CC-MAIN-20260210200815-20260210230815-00288.warc.gz#offset=406868704&length=67113"},
+{"day":"2026-02-13","new":784900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506337.27/warc/CC-MAIN-20260213182424-20260213212424-00432.warc.gz#offset=396283088&length=67220"}
+]}

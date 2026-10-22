@@ -1,3 +1,6 @@
 {"slug":"leica-d-lux-8","market":"us","currency":"USD","points":[
-{"day":"2024-07-13","new":159500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514517.94/warc/CC-MAIN-20240713212202-20240714002202-00497.warc.gz#offset=703850060&length=135376"}
+{"day":"2024-06-21","new":159500,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862036.35/warc/CC-MAIN-20240621031127-20240621061127-00709.warc.gz#offset=825437868&length=82420"},
+{"day":"2024-07-13","new":159500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514517.94/warc/CC-MAIN-20240713212202-20240714002202-00497.warc.gz#offset=703850060&length=135376"},
+{"day":"2024-11-07","new":159500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027942.54/warc/CC-MAIN-20241106230027-20241107020027-00695.warc.gz#offset=136703856&length=101805"},
+{"day":"2024-12-11","new":159500,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066094915.14/warc/CC-MAIN-20241211205528-20241211235528-00709.warc.gz#offset=862179772&length=86798"}
 ]}

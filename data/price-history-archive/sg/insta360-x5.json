@@ -1,0 +1,5 @@
+{"slug":"insta360-x5","market":"sg","currency":"SGD","points":[
+{"day":"2025-07-10","new":76900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933772.38/warc/CC-MAIN-20250710221400-20250711011400-00712.warc.gz#offset=524525061&length=85168"},
+{"day":"2025-10-12","new":76900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358738.39/warc/CC-MAIN-20251012035210-20251012065210-00712.warc.gz#offset=579361371&length=87010"},
+{"day":"2025-11-17","new":65900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439644414.56/warc/CC-MAIN-20251117114635-20251117144635-00525.warc.gz#offset=453979830&length=90592"}
+]}

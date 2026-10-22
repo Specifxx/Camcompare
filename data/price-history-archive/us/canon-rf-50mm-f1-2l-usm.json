@@ -1,3 +1,6 @@
 {"slug":"canon-rf-50mm-f1-2l-usm","market":"us","currency":"USD","points":[
-{"day":"2024-05-30","new":229900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059632.19/warc/CC-MAIN-20240530083640-20240530113640-00350.warc.gz#offset=653987944&length=155242"}
+{"day":"2024-05-30","new":229900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971059632.19/warc/CC-MAIN-20240530083640-20240530113640-00350.warc.gz#offset=653987944&length=155242"},
+{"day":"2024-07-15","new":229900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514655.27/warc/CC-MAIN-20240715010519-20240715040519-00595.warc.gz#offset=126333550&length=79605"},
+{"day":"2024-11-06","new":209900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027942.47/warc/CC-MAIN-20241106194801-20241106224801-00481.warc.gz#offset=134535315&length=97845"},
+{"day":"2024-11-11","new":209900,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028230.68/warc/CC-MAIN-20241111123424-20241111153424-00595.warc.gz#offset=136342894&length=97801"}
 ]}

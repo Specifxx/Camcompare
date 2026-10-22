@@ -1,6 +1,9 @@
 {"slug":"fujifilm-xf-23mm-f2-r-wr","market":"us","currency":"USD","points":[
+{"day":"2024-04-18","new":44995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817222.1/warc/CC-MAIN-20240418160034-20240418190034-00568.warc.gz#offset=853496326&length=82759"},
 {"day":"2024-06-23","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862474.84/warc/CC-MAIN-20240623131446-20240623161446-00473.warc.gz#offset=675356010&length=130960"},
+{"day":"2024-08-15","new":44995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722641291968.96/warc/CC-MAIN-20240815110654-20240815140654-00568.warc.gz#offset=695893748&length=88145"},
 {"day":"2024-11-14","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028657.76/warc/CC-MAIN-20241114130448-20241114160448-00712.warc.gz#offset=711917436&length=155157"},
 {"day":"2025-02-19","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832262974.94/warc/CC-MAIN-20250219003812-20250219033812-00473.warc.gz#offset=672118836&length=133378"},
-{"day":"2025-06-19","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481507.16/warc/CC-MAIN-20250619082745-20250619112745-00912.warc.gz#offset=606696106&length=167681"}
+{"day":"2025-06-19","new":44900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481507.16/warc/CC-MAIN-20250619082745-20250619112745-00912.warc.gz#offset=606696106&length=167681"},
+{"day":"2025-07-12","new":32500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933831.10/warc/CC-MAIN-20250711232641-20250712022641-00767.warc.gz#offset=133676492&length=102032"}
 ]}

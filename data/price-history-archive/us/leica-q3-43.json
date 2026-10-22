@@ -1,3 +1,7 @@
 {"slug":"leica-q3-43","market":"us","currency":"USD","points":[
-{"day":"2024-12-06","new":689500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066400558.71/warc/CC-MAIN-20241206093646-20241206123646-00480.warc.gz#offset=696662734&length=146932"}
+{"day":"2024-11-01","new":689500,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027599.25/warc/CC-MAIN-20241101215119-20241102005119-00557.warc.gz#offset=860354312&length=105373"},
+{"day":"2024-12-06","new":689500,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066400558.71/warc/CC-MAIN-20241206093646-20241206123646-00480.warc.gz#offset=696662734&length=146932"},
+{"day":"2025-02-17","new":689500,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832250530.81/warc/CC-MAIN-20250217061435-20250217091435-00557.warc.gz#offset=837995462&length=105397"},
+{"day":"2025-07-16","new":738000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905934282.12/warc/CC-MAIN-20250716070935-20250716100935-00544.warc.gz#offset=122997286&length=111085"},
+{"day":"2025-07-19","new":738000,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906232374.90/warc/CC-MAIN-20250719041454-20250719071454-00257.warc.gz#offset=792747712&length=105561"}
 ]}

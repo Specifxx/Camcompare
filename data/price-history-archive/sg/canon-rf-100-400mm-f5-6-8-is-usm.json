@@ -1,0 +1,9 @@
+{"slug":"canon-rf-100-400mm-f5-6-8-is-usm","market":"sg","currency":"SGD","points":[
+{"day":"2024-06-18","new":100900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861747.70/warc/CC-MAIN-20240618073942-20240618103942-00585.warc.gz#offset=462740353&length=37810"},
+{"day":"2024-10-10","new":100900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253660.66/warc/CC-MAIN-20241010032709-20241010062709-00585.warc.gz#offset=451188468&length=55746"},
+{"day":"2024-10-12","new":100900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944254995.79/warc/CC-MAIN-20241012205209-20241012235209-00214.warc.gz#offset=508498424&length=56452"},
+{"day":"2025-01-20","new":100900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703363073.65/warc/CC-MAIN-20250120174304-20250120204304-00214.warc.gz#offset=588740376&length=78052"},
+{"day":"2025-05-20","new":78600,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412858.34/warc/CC-MAIN-20250520150557-20250520180557-00814.warc.gz#offset=461464667&length=82926"},
+{"day":"2025-10-09","new":84900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358447.5/warc/CC-MAIN-20251009131730-20251009161730-00814.warc.gz#offset=570574922&length=83751"},
+{"day":"2025-12-08","new":100900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-51/segments/1764871307273.59/warc/CC-MAIN-20251208031112-20251208061112-00352.warc.gz#offset=425818164&length=57805"}
+]}

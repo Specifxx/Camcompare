@@ -1,0 +1,6 @@
+{"slug":"canon-rf-s-18-45mm-f4-5-6-3-is-stm","market":"us","currency":"USD","points":[
+{"day":"2024-05-20","new":29900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-22/segments/1715971058313.71/warc/CC-MAIN-20240520204005-20240520234005-00424.warc.gz#offset=823155912&length=83672"},
+{"day":"2024-11-04","new":29900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027812.67/warc/CC-MAIN-20241104034319-20241104064319-00424.warc.gz#offset=859722867&length=88777"},
+{"day":"2025-02-17","new":29900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832256162.71/warc/CC-MAIN-20250217160322-20250217190322-00424.warc.gz#offset=842457461&length=90102"},
+{"day":"2025-06-14","new":29900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481326.8/warc/CC-MAIN-20250614191526-20250614221526-00224.warc.gz#offset=790633316&length=92550"}
+]}

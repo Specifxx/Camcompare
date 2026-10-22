@@ -1,4 +1,5 @@
 {"slug":"fujifilm-gfx100-ii","market":"us","currency":"USD","points":[
+{"day":"2024-06-23","new":749995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198864850.31/warc/CC-MAIN-20240623194302-20240623224302-00710.warc.gz#offset=125601754&length=158220"},
 {"day":"2024-08-04","new":749900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640404969.12/warc/CC-MAIN-20240804133418-20240804163418-00500.warc.gz#offset=633875811&length=138794"},
 {"day":"2025-03-18","new":749900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433039.83/warc/CC-MAIN-20250317231956-20250318021956-00100.warc.gz#offset=784445740&length=147443"}
 ]}

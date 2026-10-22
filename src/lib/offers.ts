@@ -138,9 +138,27 @@ export function readHistory(m: MarketCode, dir = historyDir(m), days = HISTORY_D
  */
 export type ChartDay = { day: string; new?: number; used?: number; newAt?: string; usedAt?: string; archived: boolean };
 
-/** A product's archived points in a market (empty when it has none). */
+/**
+ * A product's archived points in a market (empty when it has none), minus
+ * outliers: with four or more archived prices of a condition, one under 55%
+ * or over 170% of their median is dropped (an archived page can be a kit
+ * or bundle the title didn't say, a deposit, or a mispriced listing; about
+ * 0.5% of points). The file keeps them; only what is shown is filtered.
+ */
 export function readArchivedHistory(m: MarketCode, slug: string, dir = ARCHIVE_DIR): ArchivePoint[] {
-  return readArchiveFile(m, slug, dir)?.points ?? [];
+  return dropArchiveOutliers(readArchiveFile(m, slug, dir)?.points ?? []);
+}
+
+export function dropArchiveOutliers(points: ArchivePoint[]): ArchivePoint[] {
+  const mid = (k: "new" | "used") => {
+    const v = points.map((p) => p[k]).filter((x): x is number => x !== undefined).sort((a, b) => a - b);
+    return v.length >= 4 ? v[Math.floor(v.length / 2)] : null;
+  };
+  const med = { new: mid("new"), used: mid("used") };
+  const ok = (k: "new" | "used", v?: number) => v === undefined || med[k] === null || (v >= med[k]! * 0.55 && v <= med[k]! * 1.7);
+  return points
+    .map((p) => ({ ...p, ...(ok("new", p.new) ? {} : { new: undefined }), ...(ok("used", p.used) ? {} : { used: undefined }) }))
+    .filter((p) => p.new !== undefined || p.used !== undefined);
 }
 
 /**

@@ -1,0 +1,6 @@
+{"slug":"canon-rf-s-55-210mm-f5-7-1-is-stm","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-10","new":46400,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253661.71/warc/CC-MAIN-20241010063356-20241010093356-00202.warc.gz#offset=495927279&length=53555"},
+{"day":"2025-05-12","new":46400,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412205.50/warc/CC-MAIN-20250512011722-20250512041722-00180.warc.gz#offset=518070262&length=112090"},
+{"day":"2025-07-18","new":45300,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231287.86/warc/CC-MAIN-20250718154642-20250718184642-00102.warc.gz#offset=498620184&length=81520"},
+{"day":"2025-10-10","new":45300,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358549.68/warc/CC-MAIN-20251010111432-20251010141432-00102.warc.gz#offset=525145102&length=82858"}
+]}

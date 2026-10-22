@@ -1,0 +1,10 @@
+{"slug":"om-system-om-3","market":"sg","currency":"SGD","points":[
+{"day":"2025-03-18","new":296900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433058.39/warc/CC-MAIN-20250318091242-20250318121242-00780.warc.gz#offset=576671413&length=78887"},
+{"day":"2025-04-17","new":296900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889135621.75/warc/CC-MAIN-20250417201932-20250417231932-00780.warc.gz#offset=593872913&length=81778"},
+{"day":"2025-05-12","new":296900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412205.50/warc/CC-MAIN-20250512011722-20250512041722-00780.warc.gz#offset=550125009&length=82105"},
+{"day":"2025-06-14","new":296900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481330.50/warc/CC-MAIN-20250614222335-20250615012335-00780.warc.gz#offset=466393162&length=86145"},
+{"day":"2025-08-03","new":296900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279541.7/warc/CC-MAIN-20250803011606-20250803041606-00780.warc.gz#offset=536739733&length=86046"},
+{"day":"2025-09-08","new":296900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532949.5/warc/CC-MAIN-20250908015740-20250908045740-00780.warc.gz#offset=506405179&length=86184"},
+{"day":"2025-10-07","new":296900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358268.1/warc/CC-MAIN-20251007043747-20251007073747-00780.warc.gz#offset=586198714&length=88329"},
+{"day":"2025-11-17","new":296900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-47/segments/1762439644414.56/warc/CC-MAIN-20251117114635-20251117144635-00780.warc.gz#offset=450549194&length=85132"}
+]}

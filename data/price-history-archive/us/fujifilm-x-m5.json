@@ -1,4 +1,6 @@
 {"slug":"fujifilm-x-m5","market":"us","currency":"USD","points":[
+{"day":"2024-11-01","new":79995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027599.25/warc/CC-MAIN-20241101215119-20241102005119-00345.warc.gz#offset=871368931&length=107179"},
 {"day":"2025-02-10","new":79995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951669.40/warc/CC-MAIN-20250210151118-20250210181118-00786.warc.gz#offset=695346423&length=149893"},
-{"day":"2025-02-16","new":79995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831952410.39/warc/CC-MAIN-20250216041522-20250216071522-00528.warc.gz#offset=706930796&length=149389"}
+{"day":"2025-02-16","new":79995,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831952410.39/warc/CC-MAIN-20250216041522-20250216071522-00528.warc.gz#offset=706930796&length=149389"},
+{"day":"2025-03-27","new":79995,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004757836.96/warc/CC-MAIN-20250327184853-20250327214853-00645.warc.gz#offset=908273528&length=110190"}
 ]}

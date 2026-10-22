@@ -1,5 +1,8 @@
 {"slug":"sony-fx2","market":"us","currency":"USD","points":[
 {"day":"2025-06-15","new":269800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481366.62/warc/CC-MAIN-20250615170437-20250615200437-00700.warc.gz#offset=576888041&length=152349"},
+{"day":"2025-07-10","new":269800,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933759.4/warc/CC-MAIN-20250710124949-20250710154949-00348.warc.gz#offset=826674465&length=114019"},
 {"day":"2025-10-09","new":299800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358353.67/warc/CC-MAIN-20251009004034-20251009034034-00645.warc.gz#offset=239532668&length=115378"},
-{"day":"2025-10-15","new":299800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359311.64/warc/CC-MAIN-20251015005817-20251015035817-00920.warc.gz#offset=246686581&length=115466"}
+{"day":"2025-10-15","new":299800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359311.64/warc/CC-MAIN-20251015005817-20251015035817-00920.warc.gz#offset=246686581&length=115466"},
+{"day":"2026-04-10","new":269800,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-17/segments/1775805908305.14/warc/CC-MAIN-20260410081153-20260410111153-00348.warc.gz#offset=860026966&length=123892"},
+{"day":"2026-07-18","new":249800,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-30/segments/1783663952023.7/warc/CC-MAIN-20260718171728-20260718201728-00920.warc.gz#offset=203732511&length=214234"}
 ]}

@@ -1050,7 +1050,7 @@ commits and deploys nothing. At 30 minutes: free Actions minutes (public
 repo), one Neon SELECT a run, zero Vercel builds. Its workflow and the
 premium plan are in docs/premium-plan.md.
 
-## 2026-10-21: Price history backfill from archived store pages; the price chart; global price comparison page
+## 2026-10-21: Price history backfill from archived store pages, a camelcamelcamel-style chart, and the Global price comparison page
 
 Friends: "The price history is flat for all the cams." "Is it not able to back
 search? Like camelcamelcamel." A camera bought at $1k dropped $300 a week
@@ -1078,6 +1078,24 @@ ever drops below $900". We had five days of our own history.
   in stock: counted (it was the advertised price). HTML entities, hex ones
   included, are decoded first (Ted's JSON-LD names read
   "Sony&#x20;A7&#x20;Mark&#x20;V"; the live `pageListings` has the same gap).
+  Older themes put the price elsewhere, read in order when JSON-LD gives
+  none: a JSON-LD Offer the strict parser rejects (by pattern), schema.org
+  microdata, Shopify's `og:price:*`, Magento's final-price box; the currency
+  must be on the page. In the chart, an archived price under 55% or over
+  170% of the product's archived median (four or more points) is left out
+  (`dropArchiveOutliers`, about 0.5%: unlabelled bundles, deposits); the
+  file keeps it.
+- **First run (2026-10-21/22), Common Crawl only.** web.archive.org was
+  unreachable from the session that ran it (every connection reset; the
+  availability API on archive.org answered), so the Wayback half is written
+  and tested but has not run: it should run from GitHub Actions. Common
+  Crawl, 30 crawls since October 2023, 21 stores: 507 products with at
+  least five archived days in at least one market (AU 446, US 265, SG 169,
+  UK 21), about 13,000 points. Stores whose pages Common Crawl hardly has,
+  or that block it (Challenger), stay thin; Camera Wholesalers, Helix,
+  Shop Panasonic, Leica Store Miami and the structured US stores were still
+  to do when the run was stopped, and a rerun picks them up (per-store done
+  markers in the cache).
 - **Stored apart and always labelled.** `data/price-history-archive/<market>/<slug>.json`,
   committed, one point per day and store: `{day, new?, used?, store,
   source: "archive", snapshotUrl}`, the URL being where anyone can check it

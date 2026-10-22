@@ -1,0 +1,5 @@
+{"slug":"sony-fe-24-70mm-f2-8-gm","market":"sg","currency":"SGD","points":[
+{"day":"2024-07-15","new":255900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514713.2/warc/CC-MAIN-20240715163240-20240715193240-00597.warc.gz#offset=481904432&length=59896"},
+{"day":"2024-07-21","new":255900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517648.65/warc/CC-MAIN-20240721060614-20240721090614-00432.warc.gz#offset=463931985&length=59855"},
+{"day":"2024-07-25","new":255900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763518532.66/warc/CC-MAIN-20240725023035-20240725053035-00708.warc.gz#offset=477131429&length=59363"}
+]}

@@ -1,0 +1,8 @@
+{"slug":"leica-apo-summicron-sl-28-f2-asph","market":"sg","currency":"SGD","points":[
+{"day":"2024-04-13","new":760000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296816587.89/warc/CC-MAIN-20240413083102-20240413113102-00782.warc.gz#offset=355817684&length=43926"},
+{"day":"2024-07-20","new":775000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763515164.46/warc/CC-MAIN-20240720113754-20240720143754-00782.warc.gz#offset=303379324&length=45437"},
+{"day":"2024-11-09","new":775000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028125.59/warc/CC-MAIN-20241109151915-20241109181915-00782.warc.gz#offset=332327584&length=49095"},
+{"day":"2025-02-15","new":775000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951994.86/warc/CC-MAIN-20250215214935-20250216004935-00782.warc.gz#offset=334046561&length=47844"},
+{"day":"2025-07-20","new":775000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906237204.95/warc/CC-MAIN-20250720113954-20250720143954-00882.warc.gz#offset=318969965&length=50477"},
+{"day":"2025-10-15","new":775000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359352.54/warc/CC-MAIN-20251015071824-20251015101824-00667.warc.gz#offset=351371987&length=52441"}
+]}

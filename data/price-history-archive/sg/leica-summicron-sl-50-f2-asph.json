@@ -1,0 +1,9 @@
+{"slug":"leica-summicron-sl-50-f2-asph","market":"sg","currency":"SGD","points":[
+{"day":"2024-06-22","new":294000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862410.56/warc/CC-MAIN-20240622175245-20240622205245-00617.warc.gz#offset=305870183&length=44208"},
+{"day":"2024-10-15","new":305000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944255580.90/warc/CC-MAIN-20241015050619-20241015080619-00617.warc.gz#offset=314868339&length=49335"},
+{"day":"2024-11-09","new":305000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028125.59/warc/CC-MAIN-20241109151915-20241109181915-00823.warc.gz#offset=328111879&length=48220"},
+{"day":"2024-12-08","new":213500,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066446918.92/warc/CC-MAIN-20241208141630-20241208171630-00087.warc.gz#offset=319458482&length=47529"},
+{"day":"2025-01-26","new":305000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703700051.83/warc/CC-MAIN-20250126035549-20250126065549-00617.warc.gz#offset=362648996&length=47895"},
+{"day":"2025-05-21","new":305000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412938.4/warc/CC-MAIN-20250521003946-20250521033946-00717.warc.gz#offset=304116121&length=49982"},
+{"day":"2025-08-04","new":305000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279830.39/warc/CC-MAIN-20250804210957-20250805000957-00717.warc.gz#offset=309857683&length=50121"}
+]}

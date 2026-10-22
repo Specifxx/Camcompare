@@ -1,0 +1,5 @@
+{"slug":"sigma-16-28mm-f2-8-dg-dn-contemporary","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":128800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253969.67/warc/CC-MAIN-20241012112926-20241012142926-00340.warc.gz#offset=502217026&length=58780"},
+{"day":"2025-03-18","new":128800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433058.39/warc/CC-MAIN-20250318091242-20250318121242-00340.warc.gz#offset=540802443&length=80126"},
+{"day":"2025-09-08","new":128800,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047532949.5/warc/CC-MAIN-20250908015740-20250908045740-00340.warc.gz#offset=563038690&length=87432"}
+]}

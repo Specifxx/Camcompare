@@ -1,0 +1,8 @@
+{"slug":"canon-eos-r1","market":"sg","currency":"SGD","points":[
+{"day":"2025-01-15","new":959900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362214.22/warc/CC-MAIN-20250115010435-20250115040435-00399.warc.gz#offset=556230474&length=64648"},
+{"day":"2025-03-18","new":969900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433058.39/warc/CC-MAIN-20250318091242-20250318121242-00000.warc.gz#offset=540021893&length=78218"},
+{"day":"2025-03-20","new":879900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433116.35/warc/CC-MAIN-20250320034950-20250320064950-00093.warc.gz#offset=487641067&length=64699"},
+{"day":"2025-05-12","new":969900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412205.50/warc/CC-MAIN-20250512011722-20250512041722-00394.warc.gz#offset=539891923&length=115989"},
+{"day":"2025-07-13","new":879900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933958.9/warc/CC-MAIN-20250713003830-20250713033830-00832.warc.gz#offset=444249714&length=65777"},
+{"day":"2026-02-13","new":879900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2026-08/segments/1770395506310.20/warc/CC-MAIN-20260213152050-20260213182050-00502.warc.gz#offset=356082794&length=69432"}
+]}

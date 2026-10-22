@@ -1,0 +1,8 @@
+{"slug":"canon-rf-24mm-f1-4l-vcm","market":"sg","currency":"SGD","points":[
+{"day":"2025-02-09","new":229900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951598.46/warc/CC-MAIN-20250209070017-20250209100017-00860.warc.gz#offset=530962931&length=76180"},
+{"day":"2025-07-18","new":229900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751906231287.86/warc/CC-MAIN-20250718154642-20250718184642-00660.warc.gz#offset=482665908&length=84927"},
+{"day":"2025-08-11","new":179900,"store":"canon-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280903.0/warc/CC-MAIN-20250811192912-20250811222912-00827.warc.gz#offset=430910799&length=58109"},
+{"day":"2025-10-09","new":229900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358447.5/warc/CC-MAIN-20251009131730-20251009161730-00730.warc.gz#offset=537080944&length=131408"},
+{"day":"2025-10-12","new":229900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648358738.39/warc/CC-MAIN-20251012035210-20251012065210-00660.warc.gz#offset=554753707&length=86887"},
+{"day":"2025-10-14","new":229900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359172.0/warc/CC-MAIN-20251014091238-20251014121238-00045.warc.gz#offset=560095481&length=101290"}
+]}

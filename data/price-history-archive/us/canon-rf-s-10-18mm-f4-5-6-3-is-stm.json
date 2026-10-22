@@ -1,0 +1,7 @@
+{"slug":"canon-rf-s-10-18mm-f4-5-6-3-is-stm","market":"us","currency":"USD","points":[
+{"day":"2024-04-21","new":32900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-18/segments/1712296817699.6/warc/CC-MAIN-20240421005612-20240421035612-00881.warc.gz#offset=873419771&length=88920"},
+{"day":"2024-11-04","new":32900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027829.31/warc/CC-MAIN-20241104131715-20241104161715-00881.warc.gz#offset=864041017&length=93105"},
+{"day":"2025-02-11","new":32900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951706.87/warc/CC-MAIN-20250211103744-20250211133744-00881.warc.gz#offset=861713097&length=92833"},
+{"day":"2025-07-09","new":25999,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-30/segments/1751905933702.70/warc/CC-MAIN-20250709082701-20250709112701-00581.warc.gz#offset=818039940&length=96822"},
+{"day":"2025-09-13","new":34999,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533524.62/warc/CC-MAIN-20250913160351-20250913190351-00455.warc.gz#offset=122501937&length=122907"}
+]}

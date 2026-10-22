@@ -1,0 +1,7 @@
+{"slug":"leica-summilux-m-28-f1-4-asph","market":"sg","currency":"SGD","points":[
+{"day":"2024-06-22","new":1052000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198862410.56/warc/CC-MAIN-20240622175245-20240622205245-00002.warc.gz#offset=295151720&length=46010"},
+{"day":"2024-09-18","new":1090000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651886.88/warc/CC-MAIN-20240918064858-20240918094858-00002.warc.gz#offset=326763633&length=49417"},
+{"day":"2025-02-18","new":1090000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832260918.88/warc/CC-MAIN-20250218081924-20250218111924-00002.warc.gz#offset=314642298&length=48997"},
+{"day":"2025-05-22","new":1090000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990413578.26/warc/CC-MAIN-20250522052309-20250522082309-00802.warc.gz#offset=299975603&length=51800"},
+{"day":"2025-08-04","new":1090000,"store":"leica-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279830.39/warc/CC-MAIN-20250804210957-20250805000957-00802.warc.gz#offset=311619053&length=51950"}
+]}

@@ -1,4 +1,5 @@
 {"slug":"nikon-z-50mm-f1-2-s","market":"us","currency":"USD","points":[
+{"day":"2024-06-14","new":189995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-26/segments/1718198861567.95/warc/CC-MAIN-20240614141929-20240614171929-00868.warc.gz#offset=132527077&length=78734"},
 {"day":"2025-02-08","new":192900,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951543.48/warc/CC-MAIN-20250208114257-20250208144257-00750.warc.gz#offset=735301538&length=148436"},
 {"day":"2025-06-16","new":189695,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481424.74/warc/CC-MAIN-20250616175757-20250616205757-00782.warc.gz#offset=548146170&length=101491"},
 {"day":"2025-08-03","new":194900,"store":"beach-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279735.55/warc/CC-MAIN-20250803200137-20250803230137-00767.warc.gz#offset=567822155&length=102852"}

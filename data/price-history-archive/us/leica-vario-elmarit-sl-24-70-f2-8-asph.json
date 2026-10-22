@@ -1,0 +1,7 @@
+{"slug":"leica-vario-elmarit-sl-24-70-f2-8-asph","market":"us","currency":"USD","points":[
+{"day":"2024-08-06","new":299500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-33/segments/1722640492117.28/warc/CC-MAIN-20240806130705-20240806160705-00384.warc.gz#offset=128715516&length=78451"},
+{"day":"2024-12-02","new":299500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066127559.51/warc/CC-MAIN-20241202125001-20241202155001-00384.warc.gz#offset=138699441&length=96295"},
+{"day":"2024-12-08","new":205000,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066441563.87/warc/CC-MAIN-20241208045820-20241208075820-00548.warc.gz#offset=128904929&length=93616"},
+{"day":"2025-06-19","new":320500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-26/segments/1749709481517.0/warc/CC-MAIN-20250619113518-20250619143518-00884.warc.gz#offset=107526008&length=100864"},
+{"day":"2025-10-15","new":219500,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648359352.54/warc/CC-MAIN-20251015071824-20251015101824-00516.warc.gz#offset=131421971&length=119123"}
+]}

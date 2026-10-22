@@ -1,3 +1,7 @@
 {"slug":"nikon-z-24-120mm-f4-s","market":"us","currency":"USD","points":[
-{"day":"2025-08-10","new":104695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00518.warc.gz#offset=681849401&length=147738"}
+{"day":"2024-11-07","new":109995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027942.54/warc/CC-MAIN-20241106230027-20241107020027-00490.warc.gz#offset=135474066&length=97402"},
+{"day":"2024-11-08","new":109995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028067.32/warc/CC-MAIN-20241108133114-20241108163114-00873.warc.gz#offset=131634375&length=97427"},
+{"day":"2025-04-30","new":109995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-18/segments/1744889462783.86/warc/CC-MAIN-20250430090213-20250430120213-00573.warc.gz#offset=132988984&length=113654"},
+{"day":"2025-08-10","new":104695,"store":"focus-camera","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151280209.41/warc/CC-MAIN-20250810213209-20250811003209-00518.warc.gz#offset=681849401&length=147738"},
+{"day":"2025-10-16","new":114995,"store":"camera-west","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-43/segments/1759648661376.98/warc/CC-MAIN-20251016021312-20251016051312-00090.warc.gz#offset=126896041&length=131464"}
 ]}

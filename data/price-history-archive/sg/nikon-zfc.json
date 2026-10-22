@@ -1,0 +1,5 @@
+{"slug":"nikon-zfc","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-08","new":154900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253554.39/warc/CC-MAIN-20241008140711-20241008170711-00246.warc.gz#offset=496099564&length=56503"},
+{"day":"2025-02-07","new":124100,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951469.57/warc/CC-MAIN-20250207065812-20250207095812-00246.warc.gz#offset=567065139&length=76319"},
+{"day":"2025-09-13","new":124100,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047533524.62/warc/CC-MAIN-20250913160351-20250913190351-00446.warc.gz#offset=481644269&length=84257"}
+]}

@@ -1,0 +1,5 @@
+{"slug":"dji-osmo-action-5-pro","market":"sg","currency":"SGD","points":[
+{"day":"2024-10-12","new":48900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944254995.79/warc/CC-MAIN-20241012205209-20241012235209-00864.warc.gz#offset=497582967&length=57363"},
+{"day":"2025-02-07","new":62900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951469.57/warc/CC-MAIN-20250207065812-20250207095812-00864.warc.gz#offset=547994333&length=77708"},
+{"day":"2025-08-03","new":48900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-33/segments/1754151279541.7/warc/CC-MAIN-20250803011606-20250803041606-00434.warc.gz#offset=555877124&length=98322"}
+]}

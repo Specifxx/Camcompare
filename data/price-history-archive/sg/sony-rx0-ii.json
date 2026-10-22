@@ -1,0 +1,7 @@
+{"slug":"sony-rx0-ii","market":"sg","currency":"SGD","points":[
+{"day":"2024-07-18","new":86900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514831.13/warc/CC-MAIN-20240718130417-20240718160417-00343.warc.gz#offset=472218009&length=83600"},
+{"day":"2024-09-16","new":86900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-38/segments/1725700651682.69/warc/CC-MAIN-20240916080220-20240916110220-00361.warc.gz#offset=482248396&length=81571"},
+{"day":"2024-11-06","new":86900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027942.47/warc/CC-MAIN-20241106194801-20241106224801-00074.warc.gz#offset=512306179&length=81825"},
+{"day":"2024-12-06","new":86900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066421345.75/warc/CC-MAIN-20241206220301-20241207010301-00343.warc.gz#offset=492014876&length=83313"},
+{"day":"2025-01-14","new":86900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362184.5/warc/CC-MAIN-20250114014030-20250114044030-00529.warc.gz#offset=590641580&length=81440"}
+]}

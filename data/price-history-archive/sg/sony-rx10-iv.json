@@ -1,0 +1,10 @@
+{"slug":"sony-rx10-iv","market":"sg","currency":"SGD","points":[
+{"day":"2024-07-13","new":209900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763514484.89/warc/CC-MAIN-20240713020211-20240713050211-00752.warc.gz#offset=447754102&length=94838"},
+{"day":"2024-07-22","new":209900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-30/segments/1720763517833.34/warc/CC-MAIN-20240722064532-20240722094532-00872.warc.gz#offset=476650756&length=89641"},
+{"day":"2024-10-06","new":209900,"store":"tk-foto","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-42/segments/1727944253411.60/warc/CC-MAIN-20241006060922-20241006090922-00535.warc.gz#offset=517372340&length=80686"},
+{"day":"2024-11-06","new":209900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027909.44/warc/CC-MAIN-20241106034659-20241106064659-00551.warc.gz#offset=511835171&length=88404"},
+{"day":"2024-11-08","new":209900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477028067.32/warc/CC-MAIN-20241108133114-20241108163114-00701.warc.gz#offset=515861161&length=94231"},
+{"day":"2024-12-01","new":209900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-51/segments/1733066036672.6/warc/CC-MAIN-20241201192453-20241201222453-00872.warc.gz#offset=514461198&length=91955"},
+{"day":"2025-01-20","new":209900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-05/segments/1736703362541.8/warc/CC-MAIN-20250120010617-20250120040617-00572.warc.gz#offset=551754285&length=93064"},
+{"day":"2025-02-18","new":209900,"store":"sony-store-sg","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738832260918.88/warc/CC-MAIN-20250218081924-20250218111924-00003.warc.gz#offset=491460315&length=90748"}
+]}

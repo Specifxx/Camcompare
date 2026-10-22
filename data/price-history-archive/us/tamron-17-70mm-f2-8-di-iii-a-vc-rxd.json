@@ -1,0 +1,7 @@
+{"slug":"tamron-17-70mm-f2-8-di-iii-a-vc-rxd","market":"us","currency":"USD","points":[
+{"day":"2024-11-01","new":69900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2024-46/segments/1730477027599.25/warc/CC-MAIN-20241101215119-20241102005119-00799.warc.gz#offset=872351972&length=94710"},
+{"day":"2025-02-06","new":69900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-08/segments/1738831951463.20/warc/CC-MAIN-20250206212213-20250207002213-00799.warc.gz#offset=878715636&length=91565"},
+{"day":"2025-03-24","new":64900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-13/segments/1742004433406.62/warc/CC-MAIN-20250324182340-20250324212340-00634.warc.gz#offset=912272425&length=98039","used":62500},
+{"day":"2025-05-19","new":79900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-21/segments/1746990412666.28/warc/CC-MAIN-20250519040050-20250519070050-00999.warc.gz#offset=842322339&length=96597"},
+{"day":"2025-09-18","new":69900,"store":"pictureline","source":"archive","snapshotUrl":"https://data.commoncrawl.org/crawl-data/CC-MAIN-2025-38/segments/1757047826792.88/warc/CC-MAIN-20250917224621-20250918014621-00999.warc.gz#offset=834785731&length=93750"}
+]}
