@@ -126,9 +126,9 @@
    "retailer": "camera-electronic"
   },
   "dji-osmo-action-4": {
-   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/927307_1_9135f740-7e5f-45e4-a7c5-4fe69592819e.jpg?width=640",
-   "store": "Beach Camera",
-   "retailer": "beach-camera"
+   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/OsmoAction4StandardCombo.jpg?width=640",
+   "store": "Camera Electronic",
+   "retailer": "camera-electronic"
   },
   "dji-osmo-action-6": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/dji-action-camera-CP-OS-00000505-02-accessories.jpg",
@@ -611,7 +611,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-d-lux-7": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/D-Lux-7_StreetKit_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_D-Lux7_front_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -681,7 +681,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-q2-monochrom": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Q2_Reporter_front_LoRes_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Q2_Monochrom_FRONT_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -701,9 +701,9 @@
    "retailer": "leica-store-miami"
   },
   "leica-sl2-s": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/image_bccca7fc-7fa2-4371-9743-d290cf5c5260.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/SL2-S_Body_FRONT_SENSOR_RGB.jpg?width=640",
+   "store": "Leica Store Miami",
+   "retailer": "leica-store-miami"
   },
   "leica-sl3-p": {
    "src": "https://cdn.shopify.com/s/files/1/0278/3651/4404/files/SL3-P214.jpg?width=640",
@@ -751,9 +751,9 @@
    "retailer": "leica-store-miami"
   },
   "leica-summilux-sl-50-f1-4-asph": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/leica-camera-lens-11195-angular.png",
-   "store": "Abt",
-   "retailer": "abt"
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/11180_Leica_SL_Summilux-SL_50_ASPH_front_RGB.jpg?width=640",
+   "store": "Leica Store Miami",
+   "retailer": "leica-store-miami"
   },
   "leica-super-vario-elmar-sl-16-35-f3-5-4-5-asph": {
    "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/11177_Super-Vario-Elmar-SL_16-35_FRONTAL_RGB.jpg?width=640",
@@ -1371,9 +1371,9 @@
    "retailer": "abt"
   },
   "sigma-18-35mm-f1-8-dc-hsm-art": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/412VoGgk8GL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/0/3/03249jrekp.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-20-200mm-f3-5-6-3-dg-contemporary": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/sigma-lens-796965.jpg",
@@ -1391,14 +1391,14 @@
    "retailer": "abt"
   },
   "sigma-24-105mm-f4-dg-os-hsm-art": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/41cScIJk0HL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/9/2/921389jasd.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-24-70mm-f2-8-dg-dn-art": {
-   "src": "https://cdn11.bigcommerce.com/s-fc1fc/images/stencil/1280x1280/products/38442/132778/1573004770_1516476__08231.1624483294.jpg",
-   "store": "Precision Camera",
-   "retailer": "precision-camera"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/4/5/4578969_main_1.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-24-70mm-f2-8-dg-os-hsm-art": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/4576956_0_3.jpg?width=640",
@@ -1411,9 +1411,9 @@
    "retailer": "abt"
   },
   "sigma-35mm-f1-2-dg-dn-art": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/41sz9-uAQnL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/4/3/4341965_main_image.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-35mm-f1-4-dg-art-ii": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/Sigma-lens-304965-no-hood.jpg",
@@ -1421,14 +1421,14 @@
    "retailer": "abt"
   },
   "sigma-35mm-f1-4-dg-hsm-art": {
-   "src": "https://doddcamera.com/media/catalog/product/cache/247c45a58ca593a31e941c9930dbd355/3/5/35mm-f1-4-dg-hsm-a-340-17e_1.jpg",
-   "store": "Dodd Camera",
-   "retailer": "dodd-camera"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/0/2/0200394.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-50-100mm-f1-8-dc-hsm-art": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/41N_4UE6SAL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/0/1/01293843.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-50-120mm-f2-8-dc-os-contemporary": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/sigma_694972_50_120mm_f_2_8_dc_os_1791427588_2005236.jpg?width=640",
@@ -1441,9 +1441,9 @@
    "retailer": "camera-electronic"
   },
   "sigma-70-200mm-f2-8-dg-os-hsm-sports": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/files/31rhwNR_XVL_b4de8b92-143e-483c-ad32-d7c6a35a1265.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/4/5/4590954_main_1.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sigma-85mm-f1-2-dg-art": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/sigma-lense-323965-front.jpg",
@@ -1451,9 +1451,9 @@
    "retailer": "abt"
   },
   "sigma-85mm-f1-4-dg-hsm-art": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/31temnDoMEL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/0/3/03259890dhuiehq43235.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sirui-aurora-85mm-f1-4": {
    "src": "https://cdn.shopify.com/s/files/1/0622/3219/9216/files/3542339.jpg?width=640",
@@ -1486,9 +1486,9 @@
    "retailer": "camera-electronic"
   },
   "sony-e-18-200mm-f3-5-6-3-oss-le": {
-   "src": "https://cdn.shopify.com/s/files/1/0727/9348/9673/files/SEL18200LE_4bf64b12-2d6a-4aef-a832-934b4137591e.jpg?width=640",
-   "store": "Harrison Cameras",
-   "retailer": "harrison-cameras"
+   "src": "https://cdn11.bigcommerce.com/s-fc1fc/images/stencil/1280x1280/products/6435/17643/sony_sel18200_lens__20192.1636824667.jpg",
+   "store": "Precision Camera",
+   "retailer": "precision-camera"
   },
   "sony-e-20mm-f2-8": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/sel20f28_0_3.jpg?width=640",
@@ -1541,9 +1541,9 @@
    "retailer": "camera-electronic"
   },
   "sony-fe-12-24mm-f4-g": {
-   "src": "https://cdn.shopify.com/s/files/1/0709/3256/2235/files/189690-00.jpg?width=640",
-   "store": "Camera West",
-   "retailer": "camera-west"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/s/e/sel1224g.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sony-fe-16-25mm-f2-8-g": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/sel1625g-01.jpg?width=640",
@@ -1601,9 +1601,9 @@
    "retailer": "camera-electronic"
   },
   "sony-fe-600mm-f4-gm-oss": {
-   "src": "https://cdn.shopify.com/s/files/1/0750/1017/products/SEL600F40GM_A-Large.jpg?width=640",
-   "store": "Pictureline",
-   "retailer": "pictureline"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/6/0/600mm.png",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "sony-fe-600mm-f6-3-gm-oss": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/1789465525_2000025.jpg?width=640",
@@ -1634,6 +1634,11 @@
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/DSCRX1RM3_front-Large.jpg?width=640",
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
+  },
+  "tamron-100-400mm-f4-5-6-3-di-vc-usd": {
+   "src": "https://cdn11.bigcommerce.com/s-fc1fc/images/stencil/1280x1280/products/27568/87524/Tamron_100-400mm_f4.5-6.3_Di_VC_USD_Lens_CanonEF-b__99953.1624483408.jpg",
+   "store": "Precision Camera",
+   "retailer": "precision-camera"
   },
   "tamron-12-20mm-f2-8": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/tamron-lens-A084S700-side-angled.jpg",
