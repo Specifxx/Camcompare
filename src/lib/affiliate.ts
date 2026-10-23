@@ -27,7 +27,11 @@ export function amazonTag(retailerKey: string): string {
   if (!r?.amazon) return "";
   return env(r.amazon.tagEnv) || (r.market === "us" ? env("AMAZON_ASSOCIATE_TAG") : "");
 }
-export const ebayCampaign = () => env("EBAY_AFFILIATE_CAMPAIGN");
+// The owner's eBay Partner Network campaign (owner, 2026-10-23), hard-coded so
+// every eBay link earns without a deploy variable; EBAY_AFFILIATE_CAMPAIGN
+// still overrides it (e.g. a separate campaign for testing).
+export const EBAY_CAMPAIGN_ID = "5339155912";
+export const ebayCampaign = () => env("EBAY_AFFILIATE_CAMPAIGN") || EBAY_CAMPAIGN_ID;
 
 /** "cc-<page>-<placement>", alphanumerics and dashes, at most 60 characters. */
 export function subId(page: string, placement: string): string {

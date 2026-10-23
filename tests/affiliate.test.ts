@@ -80,9 +80,11 @@ test("append-style programmes add their parameters to the retailer's own URL", (
 
 test("a link tagged when it was stored is paid, whatever this build's environment holds", () => {
   withEnv({ EBAY_AFFILIATE_CAMPAIGN: "", AMAZON_TAG_US: "", AMAZON_ASSOCIATE_TAG: "", AFFILIATE_DEEPLINK_ADORAMA: "" }, () => {
-    assert.equal(isPaid("ebay"), false);
+    // The owner's EPN campaign is hard-coded (lib/affiliate.ts), so eBay always earns.
+    assert.equal(isPaid("ebay"), true);
     assert.equal(isPaid("ebay", "https://www.ebay.com/itm/1?mkcid=1&campid=5338000000&toolid=10001"), true);
-    assert.equal(isPaid("ebay", "https://www.ebay.com/itm/1"), false);
+    // affiliateUrl tags any eBay link with the hard-coded campaign, so it earns too.
+    assert.equal(isPaid("ebay", "https://www.ebay.com/itm/1"), true);
     assert.equal(isPaid("amazon", "https://www.amazon.com/dp/B000000000?tag=cc-20"), true);
     assert.equal(isPaid("adorama", "https://www.anrdoezrs.net/click-1-2?url=x"), true);
     assert.equal(isPaid("adorama", "https://www.adorama.com/isca7m4.html"), false);
@@ -93,4 +95,16 @@ test("a link tagged when it was stored is paid, whatever this build's environmen
 test("sub-ids are short and safe", () => {
   assert.equal(subId("cam-sony-a7-iv", "offers"), "cc-cam-sony-a7-iv-offers");
   assert.ok(subId("x".repeat(100), "y").length <= 60);
+});
+
+test("eBay links carry the owner's EPN campaign with no environment variable", () => {
+  withEnv({ EBAY_AFFILIATE_CAMPAIGN: "" }, () => {
+    const u = new URL(affiliateUrl("ebay", "https://www.ebay.com/sch/i.html?_nkw=sony+a7+iv", "cc-test"));
+    assert.equal(u.searchParams.get("campid"), "5339155912");
+    assert.equal(u.searchParams.get("mkrid"), "711-53200-19255-0");
+    assert.equal(u.searchParams.get("customid"), "cc-test");
+    const au = new URL(affiliateUrl("ebay-au", "https://www.ebay.com.au/sch/i.html?_nkw=x", "cc-test"));
+    assert.equal(au.searchParams.get("campid"), "5339155912");
+    assert.equal(au.searchParams.get("mkrid"), "705-53470-19255-0");
+  });
 });
