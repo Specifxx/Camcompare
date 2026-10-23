@@ -11,6 +11,9 @@ import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { retailer } from "@/lib/retailers";
 import { pageMeta } from "@/lib/seo";
 import { summarizeCamera } from "@/lib/summary";
+import EbayText from "@/components/ebay/EbayText";
+import { ebayLink } from "@/lib/ebay-links";
+import { retailerQuery } from "@/lib/offer-rows";
 
 const cams = () => viralCameras().map((v) => v.camera);
 
@@ -41,6 +44,9 @@ export default function ViralView({ market: m }: { market: MarketCode }) {
       <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {list.map(({ camera: c, why }, i) => {
           const a = availabilityOf(offersFor(c.slug, m), (id) => retailer(id)?.name ?? id);
+          const scarce = a.backorder.length > 0 || a.preorder.length > 0 || !a.inStock;
+          // Hard to buy new is what this page is about: eBay's sellers often have one, new or used.
+          const e = ebayLink(m, { query: retailerQuery({ kind: "camera", item: c }, m) }, `viral-${m}`, "viral-ebay", scarce ? "Hard to find new? Try eBay" : "Also on eBay, new and used");
           return (
             <li key={c.slug} className="flex flex-col gap-2">
               <p className="text-sm">
@@ -50,9 +56,14 @@ export default function ViralView({ market: m }: { market: MarketCode }) {
               <div className="flex-1">
                 <ProductCard p={summarizeCamera(c, m)} market={m} />
               </div>
-              <p className={`text-xs ${a.backorder.length || a.preorder.length || !a.inStock ? "font-semibold text-warn" : "text-win"}`}>
+              <p className={`text-xs ${scarce ? "font-semibold text-warn" : "text-win"}`}>
                 {a.note ?? `In stock at ${a.inStock} store${a.inStock === 1 ? "" : "s"}`}
               </p>
+              {e && (
+                <p className="text-xs">
+                  <EbayText link={e} product={c.slug} placement="viral-ebay">{e.label}</EbayText>
+                </p>
+              )}
             </li>
           );
         })}

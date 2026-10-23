@@ -9,6 +9,7 @@ import JustAnnounced from "@/components/releases/JustAnnounced";
 import Freshness from "@/components/home/Freshness";
 import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
+import EbayStrip from "@/components/home/EbayStrip";
 import { brandName, brands, displayName, displayShortName, historyFor, indexedPairs, mounts, offersFor, offersGeneratedAt, pairSlug, product, publishedCameras, publishedLenses, type AnyProduct } from "@/lib/catalog";
 import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
 import { dealInputs } from "@/lib/deal-inputs";
@@ -308,6 +309,8 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
           </div>
         )}
       </section>
+
+      <EbayStrip market={m} />
 
       <section aria-label="Tell us" className="border-t border-line pt-6">
         <p className="font-semibold">Something missing or wrong?</p>

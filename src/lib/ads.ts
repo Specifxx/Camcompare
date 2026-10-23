@@ -6,3 +6,6 @@ export const AD_SLOTS = {
   listing: process.env.NEXT_PUBLIC_ADSENSE_SLOT_LISTING,
   article: process.env.NEXT_PUBLIC_ADSENSE_SLOT_ARTICLE,
 };
+
+/** True when AdSense will fill this slot: its client id and the slot id are both set. */
+export const adsenseOn = (slot: string | undefined) => Boolean((process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "").trim() && slot);

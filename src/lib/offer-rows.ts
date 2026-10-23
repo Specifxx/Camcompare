@@ -21,6 +21,7 @@ import { usedValue } from "./value";
 import { headline, kitLensLabel, kitText, leadOffer, lowestKit, percentOff } from "./price-rules";
 import type { CheckLink, OfferRow, QuickViewData, RowCond } from "./quickview";
 import { CONDITION_LABEL, ebayFor, retailer, retailersFor } from "./retailers";
+import { productEbayLinks } from "./ebay-links";
 import { summarizeCamera, summarizeLens } from "./summary";
 
 const MOUNT_SHORT: Record<string, string> = {
@@ -140,7 +141,7 @@ export function ebayRows(offers: Offer[], m: MarketCode, ctx: RowContext, max = 
     .map((o) => toRow(o, c));
 }
 
-export type CheckInput = { product: string; query: string; offers: Offer[]; market: MarketCode; page: string; amazonAsin?: string; placement: string; amazonShown: boolean };
+export type CheckInput = { product: string; query: string; offers: Offer[]; market: MarketCode; page: string; amazonAsin?: string; placement: string; amazonShown: boolean; /** false where the "On eBay" card has its own searches (product page, quick view). */ ebay?: boolean };
 
 /** The eBay search of this market's site, tagged. */
 export function ebaySearch(query: string, m: MarketCode, page: string, placement: string, listings: OfferRow[] = []): CheckLink | null {
@@ -172,7 +173,7 @@ export function alsoCheckLinks(x: CheckInput): CheckLink[] {
     out.push({ retailer: amazon.key, name: amazon.name, href, paid: isPaid(amazon.key, href), note: "Amazon's price shows on Amazon", cta: "See it on Amazon" });
   }
   const r = ebayFor(x.market);
-  if (r && !x.offers.some((o) => o.retailer === r.key && o.inStock)) {
+  if (r && x.ebay !== false && !x.offers.some((o) => o.retailer === r.key && o.inStock)) {
     const link = ebaySearch(x.query, x.market, x.page, x.placement);
     if (link) out.push(link);
   }
@@ -207,6 +208,7 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
   const tags = rowTags(offers, false);
   const listings = ebayRows(offers, m, { page, placement: "quickview-ebay", pack, tags });
   const eb = ebayFor(m);
+  const ebLinks = productEbayLinks(query, displayName(p.item, m).replace(/α/g, "a"), m, page, "qv");
   return {
     slug,
     kind: p.kind,
@@ -218,8 +220,9 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
     href: marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`),
     highlights: p.kind === "camera" ? cameraHighlights(p.item) : lensHighlights(p.item),
     rows: offerRows(offers, { page, placement: "quickview", pack, withAmazon: false, tags }),
-    ebay: eb && listings.length ? { name: eb.name, listings, all: ebaySearch(query, m, page, "quickview-ebay-search", listings) } : null,
-    alsoCheck: alsoCheckLinks({ product: slug, query, offers, market: m, page, amazonAsin: p.item.amazonAsin, placement: "quickview-check", amazonShown: false }),
+    // Always where eBay has a programme: live listings when there are some, and the used and sold searches.
+    ebay: eb && ebLinks ? { name: eb.name, listings, all: listings.length ? ebaySearch(query, m, page, "qv-ebay-all", listings) : null, used: ebLinks.used, sold: ebLinks.sold } : null,
+    alsoCheck: alsoCheckLinks({ product: slug, query, offers, market: m, page, amazonAsin: p.item.amazonAsin, placement: "quickview-check", amazonShown: false, ebay: false }),
     updated,
     mounts: p.kind === "lens" ? p.item.mounts.length : 1,
     rrp: rrpMinor(p, m),

@@ -85,7 +85,13 @@ test("the quick view file never carries an Amazon price, only a link; no dealer 
   const d = quickViewData({ kind: "camera", item: c }, "us", offers, null);
   assert.deepEqual(d.rows.map((r) => r.retailer), ["bh"]);
   assert.ok(!JSON.stringify(d).includes("199900") && !JSON.stringify(d).includes("1,999"));
-  assert.deepEqual(d.alsoCheck.map((l) => l.retailer), ["amazon", "ebay"]);
+  // eBay has its own block with used and sold searches, so it is not in "Also check".
+  assert.deepEqual(d.alsoCheck.map((l) => l.retailer), ["amazon"]);
+  assert.ok(d.ebay && d.ebay.listings.length === 0 && d.ebay.all === null);
+  assert.match(d.ebay!.used!.href, /LH_ItemCondition=3000/);
+  assert.match(d.ebay!.sold!.href, /LH_Sold=1&LH_Complete=1/);
+  assert.equal(new URL(d.ebay!.sold!.href).searchParams.get("customid"), `cc-qv-us-${c.slug}-qv-ebay-sold`);
+  assert.deepEqual(alsoCheckLinks({ product: c.slug, query: "Sony a7 IV", offers, market: "us", page: "p", placement: "check", amazonShown: false }).map((l) => l.retailer), ["amazon", "ebay"]);
   // Live eBay listings replace the eBay search link; Amazon shown live drops its link.
   const links = alsoCheckLinks({ product: c.slug, query: "Sony a7 IV", offers: [offer("ebay", 150000)], market: "us", page: "p", placement: "check", amazonShown: true });
   assert.deepEqual(links, []);

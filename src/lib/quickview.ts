@@ -45,6 +45,9 @@ export type OfferRow = {
   tag?: "best" | "used" | "kit";
 };
 
+/** A tagged eBay search (lib/ebay-links.ts): a link, never a price. */
+export type EbaySearchLink = { retailer: string; name: string; href: string; paid: boolean; label: string };
+
 export type RowCond = "new" | "used" | "refurb";
 
 /** A store whose price we can't show yet (Amazon before its API, eBay before its keys): a tagged link. */
@@ -68,7 +71,8 @@ export type QuickViewData = {
   href: string; // the product page in this market
   highlights: Highlight[];
   rows: OfferRow[]; // every store's offer except Amazon's and eBay's, cheapest first
-  ebay: { name: string; listings: OfferRow[]; all: CheckLink | null } | null; // live eBay listings, when there are any
+  /** eBay in this market (none in Singapore): live listings when there are any, and tagged used and recently-sold searches. */
+  ebay: { name: string; listings: OfferRow[]; all: CheckLink | null; used?: EbaySearchLink; sold?: EbaySearchLink } | null;
   alsoCheck: CheckLink[];
   updated: string | null; // when this market's offers were imported
   mounts: number; // a lens made in several mount versions

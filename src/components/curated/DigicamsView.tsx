@@ -10,6 +10,9 @@ import { price } from "@/lib/format";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
 import { summarizeCamera } from "@/lib/summary";
+import EbayText from "@/components/ebay/EbayText";
+import { ebayLink } from "@/lib/ebay-links";
+import { retailerQuery } from "@/lib/offer-rows";
 
 export function digicamsMetadata(m: MarketCode): Metadata {
   return pageMeta({
@@ -51,16 +54,22 @@ export default function DigicamsView({ market: m }: { market: MarketCode }) {
           </h2>
           <p className="mt-1 max-w-3xl text-sm text-muted">Compacts from before {DIGICAM_OLD_BEFORE} with a used listing today, cheapest first: the way into the digicam look without paying for a new one.</p>
           <ul className="mt-3 divide-y divide-line border-y border-line text-sm">
-            {older.map(({ camera: c, used }) => (
-              <li key={c.slug} className="flex items-baseline justify-between gap-3 py-2">
-                <Link href={marketPath(m, `/cameras/${c.slug}`)} prefetch={false}>
-                  {c.name}
-                </Link>
-                <span className="shrink-0 text-xs text-subtle">
-                  {c.announced.slice(0, 4)} · used from <span className="price text-sm font-semibold text-fg">{price(used, cur)}</span>
-                </span>
-              </li>
-            ))}
+            {older.map(({ camera: c, used }) => {
+              const e = ebayLink(m, { query: retailerQuery({ kind: "camera", item: c }, m), condition: "used" }, `digicams-${m}`, "digicams-ebay-used", "Used on eBay");
+              return (
+                <li key={c.slug} className="flex items-baseline justify-between gap-3 py-2">
+                  <Link href={marketPath(m, `/cameras/${c.slug}`)} prefetch={false}>
+                    {c.name}
+                  </Link>
+                  <span className="flex shrink-0 flex-col items-end gap-0.5 text-xs text-subtle sm:flex-row sm:items-baseline sm:gap-3">
+                    <span>
+                      {c.announced.slice(0, 4)} · used from <span className="price text-sm font-semibold text-fg">{price(used, cur)}</span>
+                    </span>
+                    {e && <EbayText link={e} product={c.slug} placement="digicams-ebay-used">{e.label}</EbayText>}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}

@@ -33,9 +33,17 @@ export function amazonTag(retailerKey: string): string {
 export const EBAY_CAMPAIGN_ID = "5339155912";
 export const ebayCampaign = () => env("EBAY_AFFILIATE_CAMPAIGN") || EBAY_CAMPAIGN_ID;
 
-/** "cc-<page>-<placement>", alphanumerics and dashes, at most 60 characters. */
+const slugPart = (s: string) => s.toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+
+/**
+ * "cc-<page>-<placement>", alphanumerics and dashes, at most 60 characters.
+ * A long page is cut, never the placement: EPN's customid report groups
+ * clicks by placement (product-ebay-used, acc-ebay…), so it must survive.
+ */
 export function subId(page: string, placement: string): string {
-  return `cc-${page}-${placement}`.toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/-+/g, "-").slice(0, 60);
+  const pl = slugPart(placement).slice(0, 40);
+  const pg = slugPart(page).slice(0, Math.max(0, 60 - 4 - pl.length)).replace(/-+$/, "");
+  return `cc-${pg ? `${pg}-` : ""}${pl}`.replace(/-+/g, "-").replace(/-$/, "");
 }
 
 const bareHost = (h: string) => h.replace(/^www\./, "");

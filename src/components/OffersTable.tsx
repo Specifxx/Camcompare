@@ -6,6 +6,9 @@ import { price } from "@/lib/format";
 import type { OfferRow } from "@/lib/quickview";
 import { usedValue } from "@/lib/value";
 import EbayPanel from "./EbayPanel";
+import EbayText from "./ebay/EbayText";
+import { ebayLink } from "@/lib/ebay-links";
+import { ebayFor } from "@/lib/retailers";
 import { OFFER_TABS, rowInTab, tabHideClass, type OfferTab } from "@/lib/offer-tabs";
 import OfferTabs from "./MoreOffers";
 import { AlsoCheck, OfferRowItem } from "./OfferRows";
@@ -17,7 +20,9 @@ import TimedPrice from "./TimedPrice";
  * every priced offer except eBay's, identical listings merged ("×2 listings"),
  * body-only first (in stock cheapest first, then out of stock), then kits,
  * each labelled with its lens and never counted as the body price. Never
- * ordered by commission. eBay's live listings sit beside them (EbayPanel);
+ * ordered by commission. eBay sits beside them (EbayPanel: live listings
+ * when there are some, and tagged used, new and sold searches), and the
+ * Used filter ends with a tagged "More used … on eBay" search;
  * stores we may not price yet are tagged links in "Also check", never rows.
  *
  * Payload: each row is rendered once and the filters only hide rows (CSS on
@@ -33,8 +38,10 @@ export default function OffersTable({ product, query, offers, market, page, amaz
   const pack = p ? packKind(p) : "lens";
   const rows = offerRows(offers, { page, placement: "offers", pack, withAmazon: true });
   const listings = ebayRows(offers, market, { page, placement: "ebay", pack });
-  const checks = alsoCheckLinks({ product, query, offers, market, page, amazonAsin, placement: "check", amazonShown: rows.some((r) => r.amazon) });
-  const side = listings.length > 0 || checks.length > 0;
+  // eBay has its own card (EbayPanel) with used, new and sold searches, so it is not in "Also check".
+  const checks = alsoCheckLinks({ product, query, offers, market, page, amazonAsin, placement: "check", amazonShown: rows.some((r) => r.amazon), ebay: false });
+  const ebayUsed = ebayLink(market, { query, condition: "used" }, page, "product-ebay-tab-used", `More used ${query} on eBay`);
+  const side = listings.length > 0 || checks.length > 0 || Boolean(ebayFor(market));
   // Warnings on rows above this market's RRP or the typical used price (OfferRows).
   const launch = p ? launchPrice(p.item, market) : null;
   const rrp = launch && launch.currency === MARKETS[market].currency ? Math.round(launch.amount * 100) : null;
@@ -88,6 +95,14 @@ export default function OffersTable({ product, query, offers, market, page, amaz
             rrp={rrp}
             usedTypical={usedTypical}
             kitWord={kitWord}
+            footer={
+              ebayUsed && (
+                <p className={`text-sm ${tabHideClass(OFFER_TABS.filter((t) => t.key !== "used").map((t) => t.key))}`}>
+                  <EbayText link={ebayUsed} product={product} placement="product-ebay-tab-used">{ebayUsed.label}</EbayText>
+                  <span className="block text-xs text-subtle">Single sellers, auctions included: check the listing&apos;s condition and returns.</span>
+                </p>
+              )
+            }
             body={body.length > 0 && <ul className={`card divide-y divide-line overflow-hidden ${noBody}`}>{body.map(item)}</ul>}
             kits={
               kits.length > 0 && (
@@ -117,7 +132,7 @@ export default function OffersTable({ product, query, offers, market, page, amaz
       </div>
       {side && (
         <div className="flex flex-col gap-4">
-          <EbayPanel product={product} query={query} offers={offers} market={market} page={page} />
+          <EbayPanel product={product} query={query} name={query} offers={offers} market={market} page={page} />
           <AlsoCheck links={checks} product={product} placement="check" />
         </div>
       )}

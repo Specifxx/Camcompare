@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import AdSlot from "@/components/AdSlot";
+import AdOrPromo from "@/components/ebay/AdOrPromo";
 import CameraAccessories from "@/components/CameraAccessories";
 import { AD_SLOTS } from "@/lib/ads";
+import { ebayRelatedLinks } from "@/lib/ebay-links";
 import OffersTable from "@/components/OffersTable";
 import LowLight from "@/components/LowLight";
 import PeerRanks from "@/components/PeerRanks";
@@ -241,7 +242,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
 
       <CameraAccessories slug={c.slug} market={m} />
 
-      <AdSlot slot={AD_SLOTS.product} />
+      <AdOrPromo slot={AD_SLOTS.product} market={m} page={page} placement="promo-product" title="More used gear on eBay" links={ebayRelatedLinks(m, page, "promo-product", { brand, mountName: mt?.name ?? null, kind: "camera" })} />
     </article>
   );
 }

@@ -25,6 +25,7 @@ export default function OfferTabs({
   kitWord,
   body,
   kits,
+  footer,
 }: {
   tabs: Tab[];
   initial: OfferTab;
@@ -38,6 +39,8 @@ export default function OfferTabs({
   /** The server-rendered body-only rows and kit rows (with its heading). */
   body: React.ReactNode;
   kits: React.ReactNode;
+  /** Server-rendered, after the rows: the Used filter's eBay search (hidden under the other filters by CSS). */
+  footer?: React.ReactNode;
 }) {
   const [tab, setTab] = useState<OfferTab>(initial);
   const [extra, setExtra] = useState<OfferRow[] | null>(null);
@@ -86,6 +89,7 @@ export default function OfferTabs({
             <ul className="card divide-y divide-line overflow-hidden">{moreKits.map(row)}</ul>
           </div>
         )}
+        {footer}
       </div>
       {!extra && cur && cur.more > 0 && (
         <button type="button" onClick={loadMore} disabled={state === "loading"} className="mt-3 text-sm font-semibold text-accent hover:underline disabled:opacity-60">

@@ -10,6 +10,9 @@ import type { AccessoryRow } from "@/lib/accessory-rows";
 import { price } from "@/lib/format";
 import AccessoryThumb from "./AccessoryThumb";
 import OutboundLink from "./OutboundLink";
+import EbayText from "./ebay/EbayText";
+import { fillEbay, type EbayTemplate } from "@/lib/ebay-template";
+import type { EbaySearchLink } from "@/lib/quickview";
 
 type Filters = { brand: string; cb: string; camera: string; format: string; cap: string; speed: string; sort: string };
 const EMPTY: Filters = { brand: "", cb: "", camera: "", format: "", cap: "", speed: "", sort: "" };
@@ -22,6 +25,7 @@ export default function AccessoryBrowser({
   cameraBrands,
   perGb,
   system,
+  ebay = null,
 }: {
   rows: AccessoryRow[];
   cams: Record<string, { name: string; brand: string }>;
@@ -30,6 +34,11 @@ export default function AccessoryBrowser({
   perGb: boolean;
   /** Flashes and triggers: the camera-brand filter reads "System". */
   system: boolean;
+  /**
+   * eBay (none in Singapore): the category's tagged search, and a template
+   * the filter's brand and camera fill ("SmallRig cage for Sony a7 IV").
+   */
+  ebay?: { all: EbaySearchLink; template: EbayTemplate; one: string; category: string } | null;
 }) {
   const [f, setF] = useState<Filters>(EMPTY);
   const [shown, setShown] = useState(PAGE);
@@ -92,6 +101,15 @@ export default function AccessoryBrowser({
   }, [list]);
 
   const cur = rows[0]?.currency ?? "USD";
+  // One eBay search under the filter: the category, or what the filter has narrowed it to.
+  const ebayNow = (() => {
+    if (!ebay) return null;
+    const brandName = f.brand ? brands.find(([k]) => k === f.brand)?.[1] ?? "" : "";
+    const fits = f.camera && cams[f.camera] ? cams[f.camera].name : f.cb ? cameraBrands[f.cb] ?? "" : "";
+    if (!brandName && !fits) return { link: ebay.all, label: ebay.all.label, placement: "acc-ebay" };
+    const words = [brandName, ebay.one, fits ? `for ${fits}` : ""].filter(Boolean).join(" ");
+    return { link: { ...ebay.template, href: fillEbay(ebay.template.href, words) }, label: `${words.charAt(0).toUpperCase()}${words.slice(1)} on eBay`, placement: "acc-ebay-camera" };
+  })();
   const sel = "rounded-md border border-line bg-surface px-2 py-1.5 text-sm";
   return (
     <div className="flex flex-col gap-6">
@@ -174,6 +192,11 @@ export default function AccessoryBrowser({
         </label>
         <p className="ml-auto text-xs text-subtle">{list.length} of {rows.length} listings</p>
       </div>
+      {ebayNow && (
+        <p className="-mt-3 text-sm">
+          <EbayText link={ebayNow.link} product={`acc-${ebay!.category}`} placement={ebayNow.placement}>{ebayNow.label}</EbayText>
+        </p>
+      )}
 
       {byBrand.length > 1 && (
         <section>

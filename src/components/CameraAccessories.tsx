@@ -4,17 +4,22 @@
 // and triggers by the camera maker's system. Nothing when there is none.
 import Link from "next/link";
 import { accessoriesForCamera } from "@/lib/accessory-rows";
-import { camera, displayShortName } from "@/lib/catalog";
+import { brandName, camera, displayShortName } from "@/lib/catalog";
+import { EBAY_CAMERAS_PHOTO, EBAY_US_CATEGORY, ebayLink } from "@/lib/ebay-links";
 import { price } from "@/lib/format";
 import { marketPath, type MarketCode } from "@/lib/markets";
 import AccessoryThumb from "./AccessoryThumb";
 import OutboundLink from "./OutboundLink";
+import EbayText from "./ebay/EbayText";
 
 export default function CameraAccessories({ slug, market: m }: { slug: string; market: MarketCode }) {
   const c = camera(slug);
   const items = accessoriesForCamera(slug, m);
   if (!c || !items.length) return null;
   const short = displayShortName(c, m);
+  const name = `${brandName(c.brand)} ${short}`;
+  // Camera & Photo Accessories on eBay US; Cameras & Photo elsewhere (lib/ebay-links.ts).
+  const ebay = ebayLink(m, { query: `${name} accessories`, category: m === "us" ? EBAY_US_CATEGORY.accessories : EBAY_CAMERAS_PHOTO }, `cam-${m}-${slug}`, "camera-acc-ebay", `More accessories for the ${short} on eBay`);
   return (
     <section>
       <div className="mb-3 flex items-baseline justify-between gap-4">
@@ -52,6 +57,11 @@ export default function CameraAccessories({ slug, market: m }: { slug: string; m
           </li>
         ))}
       </ul>
+      {ebay && (
+        <p className="mt-2 text-sm">
+          <EbayText link={ebay} product={slug} placement="camera-acc-ebay">{ebay.label}</EbayText>
+        </p>
+      )}
     </section>
   );
 }

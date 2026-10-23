@@ -1,7 +1,7 @@
 import DealVotes from "@/components/community/DealVotes";
 import type { Metadata } from "next";
 import Link from "next/link";
-import AdSlot from "@/components/AdSlot";
+import AdOrPromo from "@/components/ebay/AdOrPromo";
 import { AD_SLOTS } from "@/lib/ads";
 import ProductThumb from "@/components/ProductThumb";
 import QuickViewHost from "@/components/QuickView";
@@ -12,6 +12,9 @@ import { priceDrops, storeGaps, topBargains, usedSaving, type Bargain } from "@/
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { lowest } from "@/lib/offers";
 import { retailer } from "@/lib/retailers";
+import EbayText from "@/components/ebay/EbayText";
+import { ebayLink } from "@/lib/ebay-links";
+import { retailerQuery } from "@/lib/offer-rows";
 import { pageMeta } from "@/lib/seo";
 import PriceTraps from "@/components/PriceTraps";
 import { usedValue } from "@/lib/value";
@@ -90,18 +93,32 @@ export function BargainCard({ b, m }: { b: Bargain; m: MarketCode }) {
 
 // Every deal row and card has votes, in every market (DealVotes keys are
 // "<market>:<slug>:<list>", shared with the home page's lists of the same kind).
-function Row({ slug, m, vote, right }: { slug: string; m: MarketCode; vote: string; right: React.ReactNode }) {
+function Row({ slug, m, vote, right, ebay }: { slug: string; m: MarketCode; vote: string; right: React.ReactNode; ebay?: string }) {
   const p = product(slug)!;
+  const link = ebay ? usedOnEbay(slug, m, ebay) : null;
   return (
-    <li className="flex items-center gap-2">
+    <li className="flex flex-col gap-1">
+      <div className="flex items-center gap-2">
       <DealVotes dealKey={`${m}:${slug}:${vote}`} layout="column" className="shrink-0" />
       <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`)} prefetch={false} {...quickViewAttrs(slug, m, displayName(p.item, m))} className="card flex min-w-0 flex-1 items-center gap-3 p-3 text-fg no-underline hover:no-underline">
         <ProductThumb slug={slug} alt="" className="w-20 shrink-0" />
         <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
         <span className="shrink-0 text-right text-sm">{right}</span>
       </Link>
+      </div>
+      {link && (
+        <p className="self-end text-xs">
+          <EbayText link={link} product={slug} placement={ebay!}>{link.label}</EbayText>
+        </p>
+      )}
     </li>
   );
+}
+
+/** "Used on eBay" for a deal: a tagged used search, placement "deals-ebay-used" (none in Singapore). */
+export function usedOnEbay(slug: string, m: MarketCode, placement = "deals-ebay-used") {
+  const p = product(slug);
+  return p ? ebayLink(m, { query: retailerQuery(p, m), condition: "used" }, `deals-${m}`, placement, "Used on eBay") : null;
 }
 
 export default function DealsView({ market: m }: { market: MarketCode }) {
@@ -145,12 +162,18 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
             <>
               <h3 className="mb-2 mt-5 text-sm font-bold text-muted">Used, furthest under the typical used price</h3>
               <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                {usedBargains.map((b) => (
-                  <li key={b.slug} className="flex flex-col gap-1">
-                    <BargainCard b={b} m={m} />
-                    <DealVotes dealKey={`${m}:${b.slug}:bargain-used`} className="self-start pl-1" />
-                  </li>
-                ))}
+                {usedBargains.map((b) => {
+                  const e = usedOnEbay(b.slug, m);
+                  return (
+                    <li key={b.slug} className="flex flex-col gap-1">
+                      <BargainCard b={b} m={m} />
+                      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 pl-1">
+                        <DealVotes dealKey={`${m}:${b.slug}:bargain-used`} />
+                        {e && <EbayText link={e} product={b.slug} placement="deals-ebay-used" className="text-xs">{e.label}</EbayText>}
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </>
           )}
@@ -171,7 +194,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
           <h2 className="h-section mb-3">Used: biggest drops this week</h2>
           <ul className="grid gap-3 md:grid-cols-2">
             {usedDrops.map((d) => (
-              <Row key={d.slug} slug={d.slug} m={m} vote="used-drop" right={<><span className="price font-bold">{price(d.to, cur)}</span><br /><span className="text-xs text-win">−{d.pct}% from {price(d.from, cur)}</span></>} />
+              <Row key={d.slug} slug={d.slug} m={m} vote="used-drop" ebay="deals-ebay-used" right={<><span className="price font-bold">{price(d.to, cur)}</span><br /><span className="text-xs text-win">−{d.pct}% from {price(d.from, cur)}</span></>} />
             ))}
           </ul>
         </section>
@@ -181,7 +204,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
           <h2 className="h-section mb-3">Where buying used saves the most</h2>
           <ul className="grid gap-3 md:grid-cols-2">
             {savings.map((x) => (
-              <Row key={x.slug} slug={x.slug} m={m} vote="used-vs-new" right={<><span className="price font-bold">{price(x.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span><br /><span className="text-xs text-win">{x.pct}% under {price(x.n!.price, cur)} new</span></>} />
+              <Row key={x.slug} slug={x.slug} m={m} vote="used-vs-new" ebay="deals-ebay-used" right={<><span className="price font-bold">{price(x.u!.price, cur)}</span> <span className="text-xs text-subtle">used</span><br /><span className="text-xs text-win">{x.pct}% under {price(x.n!.price, cur)} new</span></>} />
             ))}
           </ul>
         </section>
@@ -197,7 +220,7 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
         </section>
       )}
       <PriceTraps market={m} />
-      {!empty && <AdSlot slot={AD_SLOTS.listing} />}
+      {!empty && <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`deals-${m}`} placement="promo-deals" />}
       {!empty && <QuickViewHost />}
     </div>
   );

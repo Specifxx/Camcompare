@@ -10,6 +10,9 @@ import { accessoryCategory, CATEGORIES, formatLabel, GROUP_LABEL, GROUP_ORDER, P
 import { accessoriesIn, marketAccessories, readAccessoryHistory } from "@/lib/accessory-data";
 import { accessoriesIndexable, accessoryRows, cameraNames, categoryIndexable, categorySummaries } from "@/lib/accessory-rows";
 import { AD_SLOTS } from "@/lib/ads";
+import AdOrPromo from "@/components/ebay/AdOrPromo";
+import EbayText from "@/components/ebay/EbayText";
+import { accessoryEbayCategory, ebayLink, ebayTemplate } from "@/lib/ebay-links";
 import { price } from "@/lib/format";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
@@ -74,7 +77,7 @@ export default function AccessoriesView({ market: m }: { market: MarketCode }) {
           </section>
         );
       })}
-      {listed && <AdSlot slot={AD_SLOTS.listing} />}
+      {listed && <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`acc-${m}`} placement="promo-acc" links="accessories" />}
     </div>
   );
 }
@@ -101,6 +104,11 @@ export function AccessoryCategoryView({ category, market: m }: { category: strin
   const { cams, brands } = cameraNames(rows, m);
   const perGb = PER_GB_CATEGORIES.has(category);
   const history = perGb ? readAccessoryHistory(m) : [];
+  // eBay: the category, and (filled in by the browser) the brand and camera picked in the filter.
+  const ebayCat = accessoryEbayCategory(category, m);
+  const page = `acc-${m}-${category}`;
+  const ebayAll = ebayLink(m, { query: c.one, category: ebayCat }, page, "acc-ebay", `Find ${c.label.toLowerCase()} on eBay`);
+  const ebayFiltered = ebayTemplate(m, { category: ebayCat }, page, "acc-ebay-camera");
   return (
     <div className="flex flex-col gap-8">
       <div>
@@ -116,7 +124,21 @@ export function AccessoryCategoryView({ category, market: m }: { category: strin
         </p>
       </div>
       {perGb && <PerGbTrend history={history} category={category} currency={MARKETS[m].currency} formatName={(f) => formatLabel(category, f) ?? f} />}
-      {rows.length > 0 && <AccessoryBrowser rows={rows} cams={cams} cameraBrands={brands} perGb={perGb} system={SYSTEM_CATEGORIES.has(category)} />}
+      {rows.length > 0 && (
+        <AccessoryBrowser
+          rows={rows}
+          cams={cams}
+          cameraBrands={brands}
+          perGb={perGb}
+          system={SYSTEM_CATEGORIES.has(category)}
+          ebay={ebayAll && ebayFiltered ? { all: ebayAll, template: ebayFiltered, one: c.one, category: c.slug } : null}
+        />
+      )}
+      {!rows.length && ebayAll && (
+        <p className="text-sm">
+          <EbayText link={ebayAll} product={`acc-${category}`} placement="acc-ebay">{ebayAll.label}</EbayText>
+        </p>
+      )}
       <p className="text-sm">
         <Link href={marketPath(m, "/accessories")}>All accessory categories →</Link>
       </p>

@@ -6,6 +6,7 @@
 // product. Quota: 5,000 Browse calls a day shared by every eBay market, so
 // each market gets an equal share and walks the catalog in a daily rotation;
 // products it skips keep their earlier offers (`covered`).
+import { ebayCampaign } from "../affiliate";
 import { launchIn, matchListing, plausiblePrice, type Matchable } from "../matching";
 import { MARKETS, refRate, type Currency } from "../markets";
 import type { Offer } from "../offers";
@@ -89,7 +90,8 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
     const id = process.env.EBAY_CLIENT_ID || "";
     const secret = process.env.EBAY_CLIENT_SECRET || "";
     if (!id || !secret || !r.ebay) return { status: "skipped", note: "EBAY_CLIENT_ID / EBAY_CLIENT_SECRET not set" };
-    const campaign = process.env.EBAY_AFFILIATE_CAMPAIGN || "";
+    // The owner's hard-coded EPN campaign (lib/affiliate.ts), so live listings come back tagged.
+    const campaign = ebayCampaign();
     const currency = MARKETS[market].currency;
     const ebayMarkets = RETAILERS.filter((x) => x.ebay).length;
     const budget = Math.floor(Number(process.env.EBAY_MAX_CALLS || 4600) / ebayMarkets);

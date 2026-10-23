@@ -1230,3 +1230,48 @@ PRO ILS), specs from the makers' spec pages and manuals.
   DSLR is never priced as the 2026 Lumix L10.
 - **Commons "test shot(s)", "test" and "P mode" file names are sample photos**
   (`SAMPLE_SHOT`): every GR IV Monochrome file on Commons was one.
+
+## 2026-10-23: eBay across the site, tagged searches until the Browse API
+
+The owner's EPN campaign (5339155912) is hard-coded, and the owner asked for
+"everything eBay-wise on the site, so I actually get some affiliates". With
+no Browse API keys we have no eBay prices, so every placement is a tagged
+search, never a price (`src/lib/ebay-links.ts`).
+
+- **Product pages: an "On eBay" card beside Where to buy**, never inside the
+  price-sorted rows: search used (`LH_ItemCondition=3000`), search new
+  (`1000`) and recently sold (`LH_Sold=1&LH_Complete=1`, the "what should it
+  be worth" check), in Cameras & Photo (625). Live listings, when the keys
+  arrive, sit on top as before. eBay left "Also check" on the product page
+  and in the quick view: the card replaces it. The Used filter ends with
+  "More used … on eBay"; the quick view has the used and sold searches.
+- **Elsewhere, at most one eBay block per section:** accessories (the
+  category, then the brand and camera the filter picks, filled in the
+  browser from a server-tagged template, `lib/ebay-template.ts`, so the
+  page doesn't carry a link per camera); the camera page's accessories;
+  "Used on eBay" on used deal rows and used bargains and on older digicams;
+  "Hard to find new? Try eBay" on viral cameras; "What it sells for on
+  eBay" per My gear item; one "Shop used cameras on eBay" strip on the home
+  page. Digicam cards and new-price deal rows get none: it would be a link
+  on every card.
+- **No EPN banners or scripts.** EPN doesn't reliably offer banners to new
+  publishers, and a third-party script is weight and a privacy cost. Each ad
+  position (`AdOrPromo`) shows the AdSense slot when one is configured, else
+  `EbayPromo`, our own "Shop on eBay" box labelled "Paid link · eBay Partner
+  Network". Same positions, so the ad rules hold (never beside a buy button
+  or above the price). The guide pages keep the bare AdSlot: they have no
+  market, and a US eBay link would be wrong for most readers.
+- **Categories.** eBay US ids from eBay's own Cameras & Photo category list
+  (tripods 30090, drones 179697, batteries 162045…). Other eBay sites number
+  some leaves differently, so outside the US a search narrows to 625 only;
+  drives and audio recorders get no category.
+- **Tracking.** Each placement has its own customid (`product-ebay-used`,
+  `product-ebay-sold`, `qv-ebay-used`, `acc-ebay`, `acc-ebay-camera`,
+  `camera-acc-ebay`, `deals-ebay-used`, `digicams-ebay-used`, `viral-ebay`,
+  `gear-ebay-sold`, `home-ebay`, `promo-<where>`). `subId` now cuts a long
+  page name instead of the placement, which a 60-character cut used to lose.
+- **Disclosure.** "Paid link" beside every eBay link, `rel="sponsored
+  nofollow"` through `OutboundLink`, an EPN paragraph on `/disclosure`, and
+  the footer line "We earn from qualifying purchases through affiliate
+  links, including eBay Partner Network" linking to it. Commission still
+  never orders offers. Singapore shows no eBay at all (no EPN programme).

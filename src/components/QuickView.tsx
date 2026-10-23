@@ -14,6 +14,7 @@ import { marketFromPath } from "@/lib/market-client";
 import { isMarket, MARKETS, type MarketCode } from "@/lib/markets";
 import { quickViewFile, viewParam, withView, type QuickViewData } from "@/lib/quickview";
 import { AlsoCheck, EbayListings, OfferRowItem } from "./OfferRows";
+import EbayText from "./ebay/EbayText";
 import ProductThumb from "./ProductThumb";
 import SpecHighlights from "./SpecHighlights";
 import OutboundLink from "./OutboundLink";
@@ -182,7 +183,7 @@ function Dialog({ target }: { target: Target }) {
   const name = data?.name ?? target.name ?? "";
   // The same headline as the product page (lib/price-rules.ts): body-only new, else used, else a kit, labelled.
   const from = data?.from ?? null;
-  const stores = new Set(data?.rows.map((r) => r.retailer)).size + (data?.ebay ? 1 : 0);
+  const stores = new Set(data?.rows.map((r) => r.retailer)).size + (data?.ebay?.listings.length ? 1 : 0);
   const goFull = (e: React.MouseEvent) => {
     if (!href || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
@@ -303,10 +304,16 @@ function Dialog({ target }: { target: Target }) {
               {data.ebay && (
                 <section aria-label={`On ${data.ebay.name}`} className="flex flex-col gap-2">
                   <h3 className="font-bold">On {data.ebay.name}</h3>
-                  <EbayListings listings={data.ebay.listings} product={data.slug} placement="quickview-ebay" />
+                  {data.ebay.listings.length > 0 && <EbayListings listings={data.ebay.listings} product={data.slug} placement="quickview-ebay" />}
+                  {(data.ebay.used || data.ebay.sold) && (
+                    <p className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                      {data.ebay.used && <EbayText link={data.ebay.used} product={data.slug} placement="qv-ebay-used">{data.ebay.used.label}</EbayText>}
+                      {data.ebay.sold && <EbayText link={data.ebay.sold} product={data.slug} placement="qv-ebay-sold">{data.ebay.sold.label}</EbayText>}
+                    </p>
+                  )}
                   {data.ebay.all && (
                     <div className="text-right">
-                      <OutboundLink href={data.ebay.all.href} retailer={data.ebay.all.retailer} product={data.slug} placement="quickview-ebay-search" className={data.ebay.all.paid ? "btn-ebay" : "btn-ghost"}>
+                      <OutboundLink href={data.ebay.all.href} retailer={data.ebay.all.retailer} product={data.slug} placement="qv-ebay-all" className={data.ebay.all.paid ? "btn-ebay" : "btn-ghost"}>
                         {data.ebay.all.cta}
                       </OutboundLink>
                       {data.ebay.all.paid && <p className="mt-0.5 text-[10px] text-subtle">Paid link</p>}

@@ -15,7 +15,7 @@ price" row on every product page where we have no price from it.
 | Source | What it needs | Where it runs |
 |---|---|---|
 | Amazon Creators API | Associates account per marketplace plus Creators API credentials. Amazon opens the API only after 10 qualifying sales in 30 days. Until then Amazon gets "Check price on Amazon" rows, because its prices may only be shown from its API. The daily import finds ASINs; each build fetches the prices, which are never committed (Amazon allows keeping them 24 hours). | daily import (ASINs) and every build (prices) |
-| eBay Browse API | eBay developer keys (`EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`). Until then the eBay panel is a tagged search link, which already earns. | daily import |
+| eBay Browse API | eBay developer keys (`EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`), for live eBay listings and prices. Until then the "On eBay" card shows tagged used, new and recently-sold searches, which already earn. | daily import |
 | Best Buy Products API | free key from developer.bestbuy.com (`BESTBUY_API_KEY`) | daily import |
 | Affiliate-network product feeds | approval in the retailer's programme, then the feed URL as GitHub secret `FEED_URL_<KEY>` | daily import |
 | Shopify products.json | nothing: public, read only where robots.txt allows (RiftCompare's method) | daily import |
@@ -29,8 +29,13 @@ Links are set on Vercel (they are read when pages are built):
 - **Amazon:** `AMAZON_TAG_US`, `AMAZON_TAG_UK`, `AMAZON_TAG_DE`,
   `AMAZON_TAG_AU`, `AMAZON_TAG_SG`. Each is a separate Associates account
   per store.
-- **eBay:** `EBAY_AFFILIATE_CAMPAIGN`, one EPN campaign. The code adds each
-  site's rotation id.
+- **eBay:** the owner's EPN campaign 5339155912 is hard-coded
+  (`src/lib/affiliate.ts`; `EBAY_AFFILIATE_CAMPAIGN` only overrides it). The
+  code adds each site's rotation id and a `customid` naming the placement
+  (`cc-<page>-<placement>`, e.g. `product-ebay-used`, `acc-ebay`,
+  `home-ebay`, `promo-product`), so EPN's reports show which placement earns.
+  Every eBay link is built in `src/lib/ebay-links.ts`. No eBay in Singapore
+  (no EPN programme).
 - **Everyone else:** `AFFILIATE_DEEPLINK_<KEY>`. Use the network's deep-link
   template with `{url}` (and optionally `{subid}`):
 
@@ -109,7 +114,7 @@ priced in another currency is refused.
 | Dodd Camera | US | Structured data on its product pages (no setup) | none known | — |
 | MPB ★ | US | Product feed `FEED_URL_MPB` | Partnerize | `AFFILIATE_DEEPLINK_MPB` |
 | KEH | US | Product feed `FEED_URL_KEH` | Awin | `AFFILIATE_DEEPLINK_KEH` |
-| eBay.com | US | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | `EBAY_AFFILIATE_CAMPAIGN` |
+| eBay.com | US | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | EPN campaign 5339155912 (in the code) |
 
 ### 🇬🇧 United Kingdom (GBP)
 
@@ -126,7 +131,7 @@ priced in another currency is refused.
 | MPB ★ | GB | Product feed `FEED_URL_MPB_UK` | Partnerize | `AFFILIATE_DEEPLINK_MPB_UK` |
 | Harrison Cameras | GB | Shopify products.json (no setup) | none known | — |
 | Cash Converters | GB | Structured data on its product pages (no setup) | none known | — |
-| eBay.co.uk | GB | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | `EBAY_AFFILIATE_CAMPAIGN` |
+| eBay.co.uk | GB | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | EPN campaign 5339155912 (in the code) |
 
 ### 🇪🇺 Europe (EUR)
 
@@ -139,7 +144,7 @@ priced in another currency is refused.
 | MediaMarkt | DE | Product feed `FEED_URL_MEDIAMARKT_DE` | Retailer's own programme | `AFFILIATE_DEEPLINK_MEDIAMARKT_DE` |
 | Coolblue | NL | Product feed `FEED_URL_COOLBLUE` | Awin | `AFFILIATE_DEEPLINK_COOLBLUE` |
 | MPB ★ | DE | Product feed `FEED_URL_MPB_EU` | Partnerize | `AFFILIATE_DEEPLINK_MPB_EU` |
-| eBay.de | DE | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | `EBAY_AFFILIATE_CAMPAIGN` |
+| eBay.de | DE | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | EPN campaign 5339155912 (in the code) |
 
 ### 🇦🇺 Australia (AUD)
 
@@ -158,7 +163,7 @@ priced in another currency is refused.
 | BIG W | AU | Product feed `FEED_URL_BIGW` only (own pages refused: drops plain requests (no answer, even to robots.txt)) | Impact | `AFFILIATE_DEEPLINK_BIGW` |
 | Bunnings | AU | Product feed `FEED_URL_BUNNINGS` only (own pages refused: Cloudflare challenge on every page, robots.txt included) | none known | — |
 | Cash Converters | AU | Structured data on its product pages (no setup) | none known | — |
-| eBay.com.au | AU | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | `EBAY_AFFILIATE_CAMPAIGN` |
+| eBay.com.au | AU | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | EPN campaign 5339155912 (in the code) |
 
 ### 🇸🇬 Singapore (SGD)
 

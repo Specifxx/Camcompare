@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AdSlot from "@/components/AdSlot";
+import AdOrPromo from "@/components/ebay/AdOrPromo";
 import { AD_SLOTS } from "@/lib/ads";
 import Browser from "@/components/Browser";
 import { brands, mounts, publishedCameras, publishedLenses } from "@/lib/catalog";
@@ -33,7 +33,7 @@ export default function BrowseView({ kind, market: m }: { kind: "camera" | "lens
       ) : (
         <Browser kind="lens" items={publishedLenses().map((l) => summarizeLens(l, m))} brands={brandOpts} mounts={mountOpts} market={m} />
       )}
-      <AdSlot slot={AD_SLOTS.listing} />
+      <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`browse-${m}-${kind}`} placement="promo-browse" />
     </div>
   );
 }

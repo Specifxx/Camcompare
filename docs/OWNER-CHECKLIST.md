@@ -29,10 +29,15 @@ with the link can see the page, so don't share it. Any other key is a 404.
      Singapore). `AMAZON_TAG_US` … `AMAZON_TAG_SG`. Until the Creators API
      opens (10 sales in 30 days), Amazon rows show a tagged "Check price"
      button with no price; Amazon allows a price only from its API.
-   - **eBay Partner Network**: a new CamCompare campaign in your existing
-     account (`EBAY_AFFILIATE_CAMPAIGN`). Until the eBay developer keys exist
-     (`EBAY_CLIENT_ID`, `EBAY_CLIENT_SECRET`), the eBay panel beside the price
-     table is a tagged "Search eBay" link.
+   - **eBay Partner Network: done.** The CamCompare campaign (5339155912) is
+     hard-coded in `src/lib/affiliate.ts`, so every eBay link earns with no
+     variable: the "On eBay" card on product pages (used, new, recently sold),
+     the Used filter, quick view, accessories, deals, digicams, viral cameras,
+     My gear, the home page strip, and the "Shop on eBay" box in each ad
+     position until AdSense is set. Each placement has its own `customid`
+     (EPN → Reports, group by Custom ID). Still to do: the eBay developer
+     keys `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` (GitHub secrets, Browse
+     API), which add live eBay listings and prices beside the searches.
    - **Camera retailers** in five markets, through Impact, Awin, Partnerize,
      Rakuten, Webgains, CJ, Commission Factory and their own programmes: the
      full list with each variable is in [`retailers.md`](retailers.md). For
@@ -46,8 +51,9 @@ with the link can see the page, so don't share it. Any other key is a 404.
    (`GOOGLE_SITE_VERIFICATION`, `BING_SITE_VERIFICATION`) and submit
    `/sitemap.xml`.
 6. **Ads, later.** Apply to AdSense once the site has traffic and the guides.
-   Slots render nothing until `NEXT_PUBLIC_ADSENSE_CLIENT` and slot ids are
-   set.
+   Until `NEXT_PUBLIC_ADSENSE_CLIENT` and a slot id are set, each slot shows
+   our own "Shop on eBay" box (tagged eBay searches, labelled "Paid link ·
+   eBay Partner Network") instead; a configured slot replaces it.
 7. **Spec spot-checks.** `npm run wikidata:crosscheck` flags specs that
    disagree with Wikidata. Check the flagged ones against the maker's spec
    sheet; recent bodies matter most.

@@ -35,6 +35,8 @@ import { api, inputClass, linkButton, useMe } from "../community/client";
 import { SignInBox } from "../community/bits";
 import ProductPicker, { productHref, useCatalogIndex } from "../ProductPicker";
 import GearChart from "./GearChart";
+import EbayText from "../ebay/EbayText";
+import { fillEbay, type EbayTemplate } from "@/lib/ebay-template";
 
 type Sync = "local" | "loading" | "saving" | "saved" | "error";
 
@@ -116,7 +118,7 @@ function ItemForm({ row, market, initial, onSave, onCancel }: { row: SearchRow |
   );
 }
 
-export default function MyGear() {
+export default function MyGear({ ebaySold = {} }: { /** Per market, a tagged sold-listings search to fill with the item's name (none in Singapore). */ ebaySold?: Partial<Record<MarketCode, EbayTemplate>> }) {
   const { user, loaded } = useMe();
   const visitor = useMarket(usePathname() ?? "/collection");
   const [market, setMarket] = useState<MarketCode | null>(null);
@@ -290,6 +292,7 @@ export default function MyGear() {
             const e = estimate(it, values[it.market]);
             const g = gainOf(it.paid, e.value);
             const hint = sellHint(it, e);
+            const sold = ebaySold[it.market];
             return (
               <li key={it.id} className="border-b border-line py-3">
                 <div className="flex gap-3">
@@ -319,6 +322,11 @@ export default function MyGear() {
                   <button type="button" className={linkButton} onClick={() => confirm(`Remove ${row?.n ?? it.slug} from your gear?`) && commit(items.filter((x) => x.id !== it.id))}>
                     remove
                   </button>
+                  {sold && row && (
+                    <EbayText link={{ ...sold, href: fillEbay(sold.href, row.n) }} product={it.slug} placement="gear-ebay-sold" className="ml-auto text-xs">
+                      What it sells for on eBay
+                    </EbayText>
+                  )}
                 </div>
                 {editing === it.id && (
                   <ItemForm

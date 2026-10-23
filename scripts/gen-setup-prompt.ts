@@ -98,7 +98,7 @@ PART 2: Vercel (the camcompare project)
      RESEND_API_KEY (price alert emails; see Part 2B)
      AUTH_SECRET (community sign-in; see Part 2C)
      AMAZON_TAG_US, AMAZON_TAG_UK, AMAZON_TAG_DE, AMAZON_TAG_AU, AMAZON_TAG_SG
-     EBAY_AFFILIATE_CAMPAIGN
+     (No eBay variable: the CamCompare EPN campaign 5339155912 is built into the code. If Vercel has an EBAY_AFFILIATE_CAMPAIGN, it must be 5339155912 or deleted.)
 ${deeplinkVars}
      GOOGLE_SITE_VERIFICATION, BING_SITE_VERIFICATION, IMPACT_SITE_VERIFICATION (site-ownership codes; see Parts 3 and 5)
      Later, once Amazon opens the Creators API (Part 3A): AMAZON_CREATORS_NA_CLIENT_ID, AMAZON_CREATORS_NA_CLIENT_SECRET, AMAZON_CREATORS_EU_CLIENT_ID, AMAZON_CREATORS_EU_CLIENT_SECRET, AMAZON_CREATORS_FE_CLIENT_ID, AMAZON_CREATORS_FE_CLIENT_SECRET
@@ -127,7 +127,7 @@ Members sign in with an emailed link (sent through Resend, Part 2B). Sessions ar
 3. Redeploy production. Then put on my manual list: "Open https://www.camcompare.app/community/signin, sign in with your email and pick a username, to check sign-in works."
 
 PART 3: Affiliate programmes
-For each programme: check whether I already have an account (I do for Amazon Associates US, eBay Partner Network and Impact). If not, start the publisher sign-up, fill in what you can, and leave the legal, tax, payment and personal-details parts for my manual list. Use https://www.camcompare.app as the website. Describe the site as: "CamCompare compares camera and lens specs side by side and lists new and used prices from retailers, sorted by price, with links to buy. Free to use, earning from affiliate links."
+For each programme: check whether I already have an account (I do for Amazon Associates US, eBay Partner Network and Impact; eBay is already set up, see B). If not, start the publisher sign-up, fill in what you can, and leave the legal, tax, payment and personal-details parts for my manual list. Use https://www.camcompare.app as the website. Describe the site as: "CamCompare compares camera and lens specs side by side and lists new and used prices from retailers, sorted by price, with links to buy. Free to use, earning from affiliate links."
 A. Amazon Associates: a separate account for each of five stores.
    - US (affiliate-program.amazon.com): my RiftCompare account exists. Add the CamCompare domain to its website list (Account Settings → Edit Your Website and Mobile App List), then Manage Tracking IDs → add one such as camcompare-20 → AMAZON_TAG_US.
    - UK (affiliate-program.amazon.co.uk) → AMAZON_TAG_UK
@@ -136,7 +136,7 @@ A. Amazon Associates: a separate account for each of five stores.
    - Singapore (affiliate-program.amazon.sg) → AMAZON_TAG_SG
    Put each tag in Vercel AND as a GitHub secret with the same name.
    The Creators API (Associates Central → Tools → Creators API), which lets the site show Amazon's price, only opens after 10 qualifying sales in 30 days. Until then the site shows a tagged "Check price" button in the Amazon row. If it isn't open yet, skip it and put it on my manual list as a later step. When it opens, create credentials and add them in BOTH Vercel (each build fetches Amazon's prices fresh, because Amazon doesn't allow storing them) and GitHub secrets (the daily job finds each product's Amazon listing): AMAZON_CREATORS_NA_CLIENT_ID and AMAZON_CREATORS_NA_CLIENT_SECRET (US), AMAZON_CREATORS_EU_CLIENT_ID and AMAZON_CREATORS_EU_CLIENT_SECRET (UK and Germany), AMAZON_CREATORS_FE_CLIENT_ID and AMAZON_CREATORS_FE_CLIENT_SECRET (Australia and Singapore). Then redeploy.
-B. eBay Partner Network (partnernetwork.ebay.com): in my existing account create a NEW campaign named "CamCompare", so its earnings are separate from RiftCompare's. Copy its campaign ID (10 digits) → Vercel EBAY_AFFILIATE_CAMPAIGN AND GitHub secret EBAY_AFFILIATE_CAMPAIGN. The eBay developer API keys come later. When I have them, add GitHub secrets EBAY_CLIENT_ID and EBAY_CLIENT_SECRET. In the eBay developer portal (developer.ebay.com → Application access), also request access to the Marketplace Insights API (sold-listing prices; eBay approves it case by case): it is what lets the site show what cameras and lenses actually sold for on eBay. Put the request on my manual list if it needs a business description or agreement. Until then the site shows a tagged "Search eBay" link beside the prices, which already earns.
+B. eBay Partner Network: DONE, nothing to create. The CamCompare campaign (ID 5339155912) exists and is hard-coded in the code, so every eBay link on the site already earns (each placement has its own Custom ID in EPN reports). Only check, in partnernetwork.ebay.com → Campaigns, that campaign 5339155912 is active and named CamCompare; if it isn't, put that on my manual list. What remains is the eBay developer API keys, which add live eBay listings and prices beside the tagged searches: when I have them (developer.ebay.com → Application keys, Production), add GitHub secrets EBAY_CLIENT_ID and EBAY_CLIENT_SECRET. In the eBay developer portal (developer.ebay.com → Application access), also request access to the Marketplace Insights API (sold-listing prices; eBay approves it case by case): it is what would let the site show what cameras and lenses actually sold for on eBay, beside today's "Recently sold on eBay" search link. Put the request on my manual list if it needs a business description or agreement.
 C. Impact (app.impact.com): in my existing account add CamCompare as a new property/website. Copy its site-verification code (only the code, not the whole meta tag) → Vercel IMPACT_SITE_VERIFICATION, redeploy, then click Verify in Impact.
 D. Retailer programmes, grouped by network. Do MPB (Partnerize: US, UK and EU) and KEH (Awin) FIRST: used prices are what buyers come for, and both sites block automated reading, so their product feeds are the only way their used prices reach the site. Then apply to every other one. Most take days to approve: for any not approved yet, put "when approved, add its deep link (and feed)" on my manual list with the exact variable names. When one approves us, build its deep-link template: the network's deep link with the product URL replaced by {url}, and the click reference replaced by {subid} where the network has one. If the network offers that retailer's product feed, copy the feed URL (CSV, TSV or Google Shopping XML; .gz is fine).
 ${byNetwork}
@@ -153,7 +153,7 @@ E. Best Buy developer API (developer.bestbuy.com): register for a free API key �
 
 PART 4: GitHub secrets (repo → Settings → Secrets and variables → Actions → New repository secret)
 1. Add each of these as it becomes available:
-     EBAY_AFFILIATE_CAMPAIGN, EBAY_CLIENT_ID, EBAY_CLIENT_SECRET
+     EBAY_CLIENT_ID, EBAY_CLIENT_SECRET (eBay Browse API: live listings; the EPN campaign needs no secret)
      AMAZON_TAG_US, AMAZON_TAG_UK, AMAZON_TAG_DE, AMAZON_TAG_AU, AMAZON_TAG_SG
      AMAZON_CREATORS_NA_CLIENT_ID, AMAZON_CREATORS_NA_CLIENT_SECRET, AMAZON_CREATORS_EU_CLIENT_ID, AMAZON_CREATORS_EU_CLIENT_SECRET, AMAZON_CREATORS_FE_CLIENT_ID, AMAZON_CREATORS_FE_CLIENT_SECRET
      BESTBUY_API_KEY

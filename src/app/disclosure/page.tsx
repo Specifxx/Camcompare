@@ -11,10 +11,23 @@ export default function Disclosure() {
         {SITE_NAME} is free and reader-supported. When you click a retailer link and buy something, we may earn a commission from that retailer at no
         extra cost to you. Links that can earn us money are marked &ldquo;Paid link&rdquo; next to the link.
       </p>
+      <section className="card space-y-2 p-4" aria-labelledby="epn">
+        <h2 id="epn" className="font-semibold">eBay Partner Network</h2>
+        <p>
+          {SITE_NAME} is a member of the eBay Partner Network, eBay&apos;s affiliate programme. When you follow one of our links to eBay (eBay.com,
+          eBay.co.uk, eBay.de or eBay.com.au) and buy something there, we earn a commission from eBay. It costs you nothing extra: the price on eBay is
+          the same whether you arrive through our link or not.
+        </p>
+        <p>
+          Our eBay links are searches (used, new, and recently sold listings) and, where eBay&apos;s data allows, individual listings. Each is marked
+          &ldquo;Paid link&rdquo;. eBay sellers are individuals and businesses, not us: check a listing&apos;s condition, seller rating and returns
+          before you buy.
+        </p>
+      </section>
       <p>As an Amazon Associate we earn from qualifying purchases (Amazon.com, Amazon.co.uk, Amazon.de, Amazon.com.au and Amazon.sg).</p>
       <p>
-        We are a member of the eBay Partner Network, and of retailer programmes run through affiliate networks such as Impact, Awin, CJ, Rakuten and
-        Involve Asia. We may also show display advertising.
+        We are also a member of retailer programmes run through affiliate networks such as Impact, Awin, CJ, Rakuten and Involve Asia. We may show
+        display advertising; where no ad is set up, that space shows our own &ldquo;Shop on eBay&rdquo; links, labelled as paid.
       </p>
       <p>Commissions and ads never affect which offers we show or their order. Offers are always sorted by price, and nobody can pay to appear first.</p>
     </div>
