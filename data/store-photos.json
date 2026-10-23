@@ -10,6 +10,11 @@
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
   },
+  "blackmagic-pocket-cinema-camera-6k-pro": {
+   "src": "https://www.camerahouse.com.au/media/catalog/product/c/i/cinecampochdef06p_main_ch111.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
+  },
   "canon-ef-24-70mm-f4l-is-usm": {
    "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/MFRED_cb978202-70b1-4ba9-b513-f08b7f32eaca.jpg?width=640",
    "store": "Camera Wholesalers",
@@ -24,6 +29,11 @@
    "src": "https://doddcamera.com/media/catalog/product/cache/247c45a58ca593a31e941c9930dbd355/c/3/c300markiii_slant1_675x450.png",
    "store": "Dodd Camera",
    "retailer": "dodd-camera"
+  },
+  "canon-eos-c500-mark-ii": {
+   "src": "https://www.camerahouse.com.au/media/catalog/product/c/a/canon_c500_mark_ii_body_wcf_express_card_reader_cinema_eos_camera_kit-3.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "canon-eos-r50-v": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/canon-mirrorless-camera-6895C002.jpg",
@@ -1461,9 +1471,9 @@
    "retailer": "focus-camera"
   },
   "sony-a1-ii": {
-   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1152984_1.jpg?width=640",
-   "store": "Beach Camera",
-   "retailer": "beach-camera"
+   "src": "https://content.abt.com/media/images/products/BDP_Images/sony-camera-ILCE-1M2-front-view.jpg",
+   "store": "Abt",
+   "retailer": "abt"
   },
   "sony-a6100": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/big-ILCE6100B.jpg",
@@ -1696,9 +1706,9 @@
    "retailer": "camera-electronic"
   },
   "tamron-sp-15-30mm-f2-8-di-vc-usd-g2": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/61AGLx3sZaL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/t/a/tamron_sp_15-30mm_f2.8_di_vc_usd_g2.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "tamron-sp-150-600mm-f5-6-3-di-vc-usd-g2": {
    "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/514--vDkFhL.jpg?width=640",
@@ -1711,9 +1721,9 @@
    "retailer": "camera-wholesalers"
   },
   "tamron-sp-24-70mm-f2-8-di-vc-usd-g2": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/41n9-DV8wLL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/0/1/01294u90u42.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "tamron-sp-35mm-f1-4-di-usd": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/tm-f045e_0_4.jpg?width=640",
@@ -1726,9 +1736,9 @@
    "retailer": "camera-wholesalers"
   },
   "tamron-sp-45mm-f1-8-di-vc-usd": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/81_2BefzOcB0L.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/0/9/09889.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "tamron-sp-70-200mm-f2-8-di-vc-usd-g2": {
    "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/71bbKdKvjYL_a7fb74c5-6203-49e8-8936-cb1e9025e2d9.jpg?width=640",
@@ -1746,9 +1756,9 @@
    "retailer": "camera-electronic"
   },
   "tokina-atx-m-23mm-f1-4": {
-   "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/products/12b0589x01.jpg?width=640",
-   "store": "Georges Cameras",
-   "retailer": "georges"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/1/2/12b0589_main_ch1_1.png",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "tokina-atx-m-33mm-f1-4": {
    "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/products/12B0689_1.jpg?width=640",
@@ -1789,6 +1799,11 @@
    "src": "https://cdn.shopify.com/s/files/1/0753/8897/7337/files/viltrox_af_50mm_f1.4_pro_full-frame_lens_-_sony_e-mount.png?width=640",
    "store": "Digidirect",
    "retailer": "digidirect"
+  },
+  "viltrox-af-50mm-f2-0-air": {
+   "src": "https://cdn11.bigcommerce.com/s-fc1fc/images/stencil/1280x1280/products/68394/260810/1743605130_1883306__42613.1761688946.jpg",
+   "store": "Precision Camera",
+   "retailer": "precision-camera"
   },
   "viltrox-af-56mm-f1-7-air": {
    "src": "https://cdn.shopify.com/s/files/1/0753/8897/7337/files/1723638043_1842773.jpg?width=640",
