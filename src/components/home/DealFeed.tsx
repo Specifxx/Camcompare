@@ -151,7 +151,7 @@ function FeedItem({ r, m, currency, now, i }: { r: FeedRow; m: MarketCode; curre
             </span>
           </Link>
         </h3>
-        <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted">
+        <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted">
           <DealVotes dealKey={voteKey(m, r.key)} />
           <span>{r.store}</span>
           <span aria-hidden>·</span>
@@ -167,7 +167,7 @@ function FeedItem({ r, m, currency, now, i }: { r: FeedRow; m: MarketCode; curre
             </span>
           )}
           {r.low90 && !gone && <span className={TAG}>Lowest in 90 days</span>}
-        </p>
+        </div>
         <p className="mt-1 flex items-center gap-2 text-xs">
           {r.spark.length >= 2 && <Spark pts={r.spark} />}
           <Link href={`${r.href}#history`} prefetch={false} className="text-muted hover:text-fg">

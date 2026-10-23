@@ -165,7 +165,11 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
 
 `AdSlot` renders nothing until `NEXT_PUBLIC_ADSENSE_CLIENT` and a slot id are
 set. Never place a slot beside a buy button or above a product's price, and
-never add interstitials.
+never add interstitials. Until a slot is set, `AdOrPromo` fills the same
+positions with an `EbayPromo` box ("Paid link · eBay Partner Network"), under
+the same placement rules. The EPN campaign (5339155912) is hard-coded in
+`src/lib/affiliate.ts`; every eBay link goes through `src/lib/ebay-links.ts`
+and is covered by the eBay section of `/disclosure`.
 
 ## Checks
 
