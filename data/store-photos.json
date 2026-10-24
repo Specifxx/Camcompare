@@ -616,12 +616,12 @@
    "retailer": "leica-store-miami"
   },
   "leica-cl": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/CL_silver_Deckel_FRONT_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/CL_BAUHAUS_Elmarit-TL_18mm_FRONT_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
   "leica-d-lux-7": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_D-Lux7_front_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/D-Lux-7_StreetKit_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -635,13 +635,8 @@
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
-  "leica-m-typ-240": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/M240_black_1.jpg?width=640",
-   "store": "Leica Store Miami",
-   "retailer": "leica-store-miami"
-  },
   "leica-m10": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/M10-D_Deckel_FRONT_RGB_copy.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/20000_Leica_M10_black_APO-Summicron_50_front_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -691,7 +686,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-q2-monochrom": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Q2_Monochrom_FRONT_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Q2_Reporter_front_LoRes_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -700,18 +695,13 @@
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
-  "leica-sl-typ-601": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/TBPhotography-7330.jpg?width=640",
-   "store": "Leica Store Miami",
-   "retailer": "leica-store-miami"
-  },
   "leica-sl2": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/SL2_Body_FRONT_SENSOR_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/files/10896_Leica_SL2_silver_front_cap.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
   "leica-sl2-s": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/SL2-S_Body_FRONT_SENSOR_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/10891_Leica_SL2-S_Reporter_front_cap_HiRes_RGBcopy.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -726,7 +716,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-summicron-m-28-f2-asph": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Summicron-M_2_28_ASPH_front.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/summicron-m28_f2_safari_front_shadow_300_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -746,7 +736,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-summilux-m-28-f1-4-asph": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Summilux-M_1_4_28_ASPH_silver_FRONTAL_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Summilux-M__1_4-28_ASPH_front.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -761,9 +751,9 @@
    "retailer": "leica-store-miami"
   },
   "leica-summilux-sl-50-f1-4-asph": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/11180_Leica_SL_Summilux-SL_50_ASPH_front_RGB.jpg?width=640",
-   "store": "Leica Store Miami",
-   "retailer": "leica-store-miami"
+   "src": "https://content.abt.com/media/images/products/BDP_Images/leica-camera-lens-11195-angular.png",
+   "store": "Abt",
+   "retailer": "abt"
   },
   "leica-super-vario-elmar-sl-16-35-f3-5-4-5-asph": {
    "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/11177_Super-Vario-Elmar-SL_16-35_FRONTAL_RGB.jpg?width=640",
