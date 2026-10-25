@@ -1275,3 +1275,101 @@ search, never a price (`src/lib/ebay-links.ts`).
   the footer line "We earn from qualifying purchases through affiliate
   links, including eBay Partner Network" linking to it. Commission still
   never orders offers. Singapore shows no eBay at all (no EPN programme).
+
+## 2026-10-25: Indexing: canonicals, hreflang and internal links
+
+Search Console (owner, 2026-10-25): 1.58K indexed; 851 "Excluded by
+noindex", mostly `/compare?c=…` and regional copies; 112 "Discovered, not
+indexed"; 57 "Crawled, not indexed"; 77 "Duplicate without user-selected
+canonical". The sitemap has about 3,460 URLs. A local build crawled with
+the sitemap and every server-rendered link found:
+
+- Every sitemap URL returned 200, was indexable and was its own canonical,
+  and every regional product page's hreflang was reciprocal with x-default
+  on the US page. No noindex URL was in the sitemap.
+- The noindex pages Google keeps finding are the ones we link: about 2,960
+  `/compare?c=` builder links on indexed pages ("Compare side by side" on
+  every More options card), 870 `/stories/new?product=` links, and about
+  1,900 links from regional lists to that market's page of a product it
+  doesn't list (noindex, rendered on demand). Each is a crawl spent on a
+  page that won't be indexed, and the regional ones a server render too.
+- The only server-rendered pages without a canonical were noindex ones
+  (saved lists, the story editor, alerts, sign-in) and the client-rendered
+  shells (`/community/t`, `/u`, `/stories/p`).
+- `/world` and its 25 brand and line tables were linked only from the
+  JavaScript More menu: no server-rendered link reached them.
+- `/cameras` and `/lenses` render their first 240 cards (newest first), so
+  about 130 cameras and 400 lenses had no link from their hub, only from
+  brand and mount pages, three clicks from the home page.
+
+**Regional pages keep hreflang with self-canonicals; they do not canonical
+to the US page.** A UK page is a different page for a different buyer: its
+prices are in pounds, from UK stores, and its overview, offers, deals and
+price history are the UK's. A cross-market canonical would tell Google to
+drop the UK page and show UK searchers the US page in dollars, and Google
+ignores hreflang between pages that canonical elsewhere. The duplication
+risk is handled where it already was: a market's product page is indexed,
+in the sitemap and in hreflang only once that market lists the product
+(`marketIndexable`), and global pages (pairs, guides, `/world`, the
+community) exist once with no hreflang. Unchanged; now tested
+(`tests/seo.test.ts`: every sitemap URL resolves to indexable metadata
+whose canonical is itself and whose hreflang targets are all in the
+sitemap).
+
+**`/compare?c=` stays noindex, follow.** Any combination a visitor builds
+is not a page to rank; the curated rival pairs at `/compare/<a>-vs-<b>`
+are. Links to the builder now carry `rel="nofollow"` (More options,
+"Compare with …" when the pair isn't indexed, the pair page's "Add a
+third"), as do "Write a story" links, the footer's Saved link, and every
+link to a market's page of a product that market doesn't list
+(`ProductCard`, the related lists, the A-Z index, the overview; the summary
+carries `indexed`, the same rule as the noindex). nofollow is a hint to
+spend crawls elsewhere, not a block: the pages stay crawlable, so Google
+still sees their noindex, and robots.txt still doesn't disallow them.
+
+**Every product is linked from its hub and from its neighbours.**
+
+- `/cameras` and `/lenses` end with an A-Z index: every published product,
+  by brand, as plain links in the server HTML (`CatalogIndex`). One
+  complete list instead of paginated `/cameras/page/2` URLs: no thin
+  listing pages to index, and every product two clicks from the home page.
+- Product pages add "Alternatives to the …" (`lib/related.ts`): cards for
+  similar products of any brand (same class and sensor, or same coverage,
+  zoom-or-prime and focal range; close in megapixels or aperture, launch
+  price and year), then plain lists of more from the same maker and more
+  for the same mount, each ending in a link to the brand or mount page. No
+  product appears twice on a page (More options is excluded). The picks
+  use catalog facts only, not today's offers, so they are the same on
+  every market's page and don't reshuffle with each import.
+- The footer links All cameras, All lenses, Brands and Prices around the
+  world.
+- Breadcrumbs (Cameras / brand / product, with BreadcrumbList JSON-LD)
+  were already on every product page.
+
+**An overview in sentences on every product page** (`lib/overview.ts`):
+what it is (format, sensor or focal range, mount, maker, date, successor),
+who it suits (the Things to know fits), today's price in this market (the
+range across stores with it in stock, used from, the 90-day usual range
+from our history, the launch price), or where else it is listed when this
+market has none, and three products to compare it with. Generated from the
+catalog, offers and history, never written by hand, in the market's own
+currency only. It is what separates a UK page from the US one in words,
+and what an unpriced page has besides its spec table.
+
+**Duplicates.** Query variants (`?mount=`, `?camera=`, `?ref=`) canonical
+to the page without the query, `/cameras/` redirects to `/cameras`, and
+`/us/…` is a 404. Now also: the bare `camcompare.app` host redirects to
+www in `next.config.js` (as `camcompare.vercel.app` already did), in case
+Vercel's domain settings ever serve it instead; the JSON the pages fetch
+(`/history`, `/offers`, `/prices`, `/values`, `/search-index.json`) is
+sent with `X-Robots-Tag: noindex`; and the noindex pages that had no
+canonical got one. A member story stays client-rendered with its noindex
+or canonical set by its script (2026-10-21, "Member stories, My gear…"),
+so a featured story can still be indexed.
+
+Not fixable here: the live site answered every request from our container,
+robots.txt included, with Vercel's bot challenge (429,
+`x-vercel-mitigated: challenge`). Vercel lets verified crawlers through,
+but if Attack Challenge Mode or a firewall rule covers Googlebot, crawling
+slows and pages queue as "Discovered". The owner should check that in the
+Vercel Firewall and with Search Console's live URL test.

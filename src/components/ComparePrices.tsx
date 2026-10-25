@@ -53,7 +53,7 @@ export default function ComparePrices({ slugs, market, initial, follow }: { slug
 export function FollowLink({ path, children, className }: { path: string; children: React.ReactNode; className?: string }) {
   const m = useVisitorMarket() ?? "us";
   return (
-    <Link href={marketPath(m, path)} prefetch={false} className={className}>
+    <Link href={marketPath(m, path)} prefetch={false} rel={path.startsWith("/compare?") ? "nofollow" : undefined} className={className}>
       {children}
     </Link>
   );

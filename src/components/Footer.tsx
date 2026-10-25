@@ -40,13 +40,17 @@ export default function Footer() {
           <Link href={marketPath(here, "/viral-cameras")} prefetch={false}>Viral cameras</Link>
           <Link href={marketPath(here, "/digicams")} prefetch={false}>Digicams</Link>
           <Link href="/requests" prefetch={false}>Feedback &amp; requests</Link>
+          <Link href={marketPath(here, "/cameras")} prefetch={false}>All cameras</Link>
+          <Link href={marketPath(here, "/lenses")} prefetch={false}>All lenses</Link>
+          <Link href={marketPath(here, "/brands")} prefetch={false}>Brands</Link>
           <Link href={marketPath(here, "/mounts")} prefetch={false}>Camera systems</Link>
+          <Link href="/world" prefetch={false}>Prices around the world</Link>
           <Link href="/about" prefetch={false}>How we price &amp; check specs</Link>
           <Link href="/disclosure" prefetch={false}>Affiliate disclosure</Link>
           <Link href="/feedback" prefetch={false}>Send feedback</Link>
           <Link href="/privacy" prefetch={false}>Privacy</Link>
           <Link href="/credits" prefetch={false}>Photo credits</Link>
-          <Link href={marketPath(here, "/saved")} prefetch={false}>Saved</Link>
+          <Link href={marketPath(here, "/saved")} prefetch={false} rel="nofollow">Saved</Link>
           <Link href={marketPath(here, "/board")} prefetch={false}>Deals board (plain HTML)</Link>
         </nav>
         <div className="text-xs leading-relaxed">

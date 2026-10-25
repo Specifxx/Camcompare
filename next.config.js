@@ -29,7 +29,12 @@ module.exports = {
   experimental: { outputFileTracingIncludes: { "/**": ["./data/**/*.json"] }, outputFileTracingExcludes: { "/**": ["./public/**"] } },
   // The old deployment address sends people and crawlers to the domain.
   async redirects() {
-    return [{ source: "/:path*", has: [{ type: "host", value: "camcompare.vercel.app" }], destination: "https://www.camcompare.app/:path*", permanent: true }, ...storePhotoRedirects()];
+    // So does the bare domain, in case Vercel's domain settings ever serve it
+    // instead of redirecting: one host, or every page has a duplicate.
+    return [
+      ...["camcompare.vercel.app", "camcompare.app"].map((host) => ({ source: "/:path*", has: [{ type: "host", value: host }], destination: "https://www.camcompare.app/:path*", permanent: true })),
+      ...storePhotoRedirects(),
+    ];
   },
   // Community threads and member pages are client-rendered over one static
   // shell each, so a new thread or member costs no build, ISR write or server
@@ -43,6 +48,13 @@ module.exports = {
     ];
   },
   async headers() {
-    return [{ source: "/products/:file*.webp", headers: [{ key: "Cache-Control", value: "public, max-age=604800" }] }];
+    // The JSON the pages fetch (quick views, price history, My gear values,
+    // search): data, never a search result. Pages link none of it, but
+    // crawlers find it through the scripts.
+    const noindex = [{ key: "X-Robots-Tag", value: "noindex" }];
+    return [
+      { source: "/products/:file*.webp", headers: [{ key: "Cache-Control", value: "public, max-age=604800" }] },
+      ...["/history/:path*", "/offers/:path*", "/prices/:path*", "/values/:path*", "/search-index.json"].map((source) => ({ source, headers: noindex })),
+    ];
   },
 };

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Sign in",
   robots: { index: false, follow: false },
   referrer: "no-referrer",
+  alternates: { canonical: "/community/signin" },
 };
 
 export default function SignInPage() {

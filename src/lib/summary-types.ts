@@ -19,6 +19,8 @@ export type Base = {
   /** Only when neither is set: the cheapest in-stock kit (lib/price-rules.ts), shown as "Kit from", never as the body price. */
   kitFrom?: number;
   stores: number; // retailers with an in-stock offer in this market (Amazon not counted)
+  /** Whether this market's page of it is indexed: always in the US, elsewhere once the market lists it. */
+  indexed: boolean;
   thumb: string;
   weightG: number | null;
   sealed: boolean | null;

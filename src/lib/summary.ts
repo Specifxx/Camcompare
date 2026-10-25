@@ -31,6 +31,8 @@ function base(p: Camera | Lens, m: MarketCode): Base {
     // Stores with it in stock today. Amazon's price is never in a summary
     // (they are embedded in static pages), so neither is its count.
     stores: new Set(offers.filter((o) => o.inStock && !isAmazonOffer(o)).map((o) => o.retailer)).size,
+    // The same rule as the product page's noindex (marketIndexable).
+    indexed: m === "us" || offers.length > 0,
     thumb: thumbSrc(p.slug),
     weightG: p.specs.weightG,
     sealed: p.specs.weatherSealed,

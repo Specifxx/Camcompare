@@ -5,6 +5,8 @@ import StoryEditor from "@/components/community/StoryEditor";
 export const metadata: Metadata = {
   title: "Write a member story",
   robots: { index: false, follow: true },
+  // One URL for the editor, whatever ?product= or ?edit= it opened with.
+  alternates: { canonical: "/stories/new" },
 };
 
 export default function NewStoryPage() {

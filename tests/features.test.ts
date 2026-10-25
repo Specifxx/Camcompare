@@ -134,7 +134,7 @@ test("price drops compare today with a week earlier", () => {
 
 const cam = (o: Partial<CameraSummary>): CameraSummary => ({
   kind: "camera", slug: "x", name: "X", shortName: "X", brand: "sony", brandName: "Sony", announced: "2023-01-01", status: "current", currency: "USD",
-  launch: 1000, lowestNew: null, lowestUsed: null, stores: 0, thumb: "", weightG: 500, sealed: false, type: "mirrorless", sensor: "full-frame", mount: "sony-e",
+  launch: 1000, lowestNew: null, lowestUsed: null, stores: 0, indexed: true, thumb: "", weightG: 500, sealed: false, type: "mirrorless", sensor: "full-frame", mount: "sony-e",
   megapixels: 24, ibis: false, videoMaxRes: "4K", video4kMaxFps: 30, burstFps: 10, evf: true, articulating: false, micJack: false, dims: null,
   subjects: null, waterproofM: null, fixedZoom: false, ...o,
 });

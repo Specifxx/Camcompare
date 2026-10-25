@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AdOrPromo from "@/components/ebay/AdOrPromo";
 import { AD_SLOTS } from "@/lib/ads";
 import Browser from "@/components/Browser";
+import CatalogIndex from "@/components/CatalogIndex";
 import { brands, mounts, publishedCameras, publishedLenses } from "@/lib/catalog";
 import { itemListLd, ldJson } from "@/lib/jsonld";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
@@ -33,6 +34,7 @@ export default function BrowseView({ kind, market: m }: { kind: "camera" | "lens
       ) : (
         <Browser kind="lens" items={publishedLenses().map((l) => summarizeLens(l, m))} brands={brandOpts} mounts={mountOpts} market={m} />
       )}
+      <CatalogIndex kind={kind} market={m} />
       <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`browse-${m}-${kind}`} placement="promo-browse" />
     </div>
   );

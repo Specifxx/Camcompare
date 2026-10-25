@@ -111,6 +111,11 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
 - **Market product pages are noindex until priced.** A product page outside
   the US is noindex, out of the sitemap and out of hreflang until that market
   has an offer (`marketIndexable`). Keep that rule wherever a page is added.
+- **Regional pages are hreflang alternates, each its own canonical**, never
+  canonical to the US page (DECISIONS.md "Indexing: canonicals, hreflang and
+  internal links"). Links to a page that is noindex (the `/compare?c=`
+  builder, a market's page of a product it doesn't list, story and saved
+  pages) carry `rel="nofollow"`; `tests/seo.test.ts` checks the sitemap.
 - **Compare pairs are global.** `/compare/<a>-vs-<b>` pages exist once for
   every market; their price row follows the visitor's market client-side.
 

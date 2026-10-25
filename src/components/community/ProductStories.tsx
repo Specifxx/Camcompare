@@ -28,7 +28,7 @@ export default function ProductStories({ slug, name }: { slug: string; /** The p
         <h2 id="member-stories-h" className="h-section">
           Member stories{name ? <span className="text-muted"> · {name}</span> : null}
         </h2>
-        <a href={write} className="text-sm">
+        <a href={write} rel="nofollow" className="text-sm">
           Write one
         </a>
       </div>
@@ -36,7 +36,7 @@ export default function ProductStories({ slug, name }: { slug: string; /** The p
         <p className="text-sm text-muted">Loading stories…</p>
       ) : !items.length ? (
         <p className="text-sm text-muted">
-          No member stories yet. Own one? <a href={write}>Write a hands-on review</a>: what you shoot with it, what you like and what you&apos;d change.
+          No member stories yet. Own one? <a href={write} rel="nofollow">Write a hands-on review</a>: what you shoot with it, what you like and what you&apos;d change.
         </p>
       ) : (
         <ul>

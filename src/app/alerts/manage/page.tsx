@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   title: "Your alerts",
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
   referrer: "no-referrer",
+  alternates: { canonical: "/alerts/manage" },
 };
 
 const NOTICE: Record<string, string> = {

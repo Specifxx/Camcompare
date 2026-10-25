@@ -1,11 +1,9 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
-import { isIndexedPair, pairSlug, product, rivalsOf, type AnyProduct } from "@/lib/catalog";
+import { isIndexedPair, pairSlug, type AnyProduct } from "@/lib/catalog";
 import { marketPath, type MarketCode } from "@/lib/markets";
+import { moreOptions } from "@/lib/related";
 import { summarizeCamera, summarizeLens } from "@/lib/summary";
-import { lineSiblings } from "@/lib/things-to-know";
-
-type Choice = { p: AnyProduct; why: string };
 
 /**
  * "More options": the successor and predecessor, same-line siblings and the
@@ -14,19 +12,8 @@ type Choice = { p: AnyProduct; why: string };
  */
 export default function MoreOptions({ self, m, max = 6 }: { self: AnyProduct; m: MarketCode; max?: number }) {
   const it = self.item;
-  const seen = new Set<string>([it.slug]);
-  const picks: Choice[] = [];
-  const add = (p: AnyProduct | null, why: string) => {
-    if (!p || seen.has(p.item.slug) || p.kind !== self.kind) return;
-    seen.add(p.item.slug);
-    picks.push({ p, why });
-  };
-  add(it.successor ? product(it.successor) : null, "Newer model");
-  for (const s of lineSiblings(it, self.kind)) add(product(s.slug), s.announced > it.announced ? "Newer model" : "Same line");
-  add(it.predecessor ? product(it.predecessor) : null, "Older model");
-  for (const r of rivalsOf(self)) add(r, "Rival");
-  if (!picks.length) return null;
-  const list = picks.slice(0, max);
+  const list = moreOptions(self, max);
+  if (!list.length) return null;
   return (
     <section id="more-options" className="scroll-mt-28" aria-labelledby="more-h">
       <h2 id="more-h" className="h-section mb-3">
@@ -37,7 +24,8 @@ export default function MoreOptions({ self, m, max = 6 }: { self: AnyProduct; m:
           const s = p.kind === "camera" ? summarizeCamera(p.item, m) : summarizeLens(p.item, m);
           const rrp = s.launch ? s.launch * 100 : null;
           const under = rrp && s.lowestNew !== null && s.lowestNew < rrp ? Math.round(((rrp - s.lowestNew) / rrp) * 100) : 0;
-          const vs = isIndexedPair(self, p) ? `/compare/${pairSlug(it, p.item)}` : marketPath(m, `/compare?c=${it.slug},${p.item.slug}`);
+          const indexed = isIndexedPair(self, p);
+          const vs = indexed ? `/compare/${pairSlug(it, p.item)}` : marketPath(m, `/compare?c=${it.slug},${p.item.slug}`);
           return (
             <li key={p.item.slug} className="flex w-[160px] shrink-0 snap-start flex-col gap-1.5 sm:w-auto">
               <p className="flex min-h-[1.25rem] flex-wrap gap-1">
@@ -47,7 +35,8 @@ export default function MoreOptions({ self, m, max = 6 }: { self: AnyProduct; m:
               <div className="flex-1">
                 <ProductCard p={s} market={m} />
               </div>
-              <Link href={vs} prefetch={false} className="text-xs">
+              {/* The builder (/compare?c=) is noindex: nofollow keeps crawlers on the pages that are indexed. */}
+              <Link href={vs} prefetch={false} rel={indexed ? undefined : "nofollow"} className="text-xs">
                 Compare side by side →
               </Link>
             </li>

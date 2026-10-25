@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import SavedList from "@/components/SavedList";
 
-export const metadata: Metadata = { title: "Saved", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Saved", robots: { index: false, follow: false }, alternates: { canonical: "/saved" } };
 export default function Page() {
   return (
     <div>

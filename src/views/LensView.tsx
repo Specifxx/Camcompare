@@ -17,6 +17,10 @@ import SpecSheet from "@/components/SpecSheet";
 import Gallery from "@/components/product/Gallery";
 import MoreOptions from "@/components/product/MoreOptions";
 import PageNav from "@/components/product/PageNav";
+import ProductOverview from "@/components/product/ProductOverview";
+import RelatedProducts from "@/components/product/RelatedProducts";
+import { overview } from "@/lib/overview";
+import { relatedFor } from "@/lib/related";
 import ProductDiscussions from "@/components/product/ProductDiscussions";
 import ProductReviews from "@/components/product/ProductReviews";
 import ProductStories from "@/components/community/ProductStories";
@@ -87,6 +91,8 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
   const used = usedValue(history);
   const brand = brandName(l.brand);
   const things = lensThings(l, { offers, currency: cur, market: m, marketName: MARKETS[m].name, used, todayUsed: h.used?.price ?? null });
+  const related = relatedFor(self);
+  const over = overview({ self, m, name, goodFor: things.goodFor, notFor: things.notFor, history, launch: launchPrice(l, m), alternatives: [...rivals, ...related.alternatives].filter((p, i, a) => a.findIndex((q) => q.item.slug === p.item.slug) === i) });
   const rival = rivals[0] ? { item: rivals[0].item, brandName: brandName(rivals[0].item.brand) } : null;
   const compareHref = rivals[0] ? (isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(l, rivals[0].item)}` : marketPath(m, `/compare?c=${l.slug},${rivals[0].item.slug}`)) : null;
   const mountNames = l.mounts.map((x) => mount(x)).filter((x): x is NonNullable<typeof x> => x !== null);
@@ -127,7 +133,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
             <div className="flex flex-wrap gap-2">
               <PriceAlert slug={l.slug} kind="lens" market={m} newPrice={h.new?.price ?? null} usedPrice={h.used?.price ?? null} />
               {compareHref && rivals[0] && (
-                <Link href={compareHref} className="btn-ghost">
+                <Link href={compareHref} rel={compareHref.startsWith("/compare/") ? undefined : "nofollow"} className="btn-ghost">
                   Compare with {displayShortName(rivals[0].item, m)}
                 </Link>
               )}
@@ -138,8 +144,11 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
         <SpecHighlights items={lensHighlights(l)} />
       </div>
 
+      <ProductOverview o={over} name={short} />
+
       <PageNav
         items={[
+          { id: "overview", label: "Overview" },
           { id: "prices", label: "Prices" },
           { id: "reviews", label: "Reviews" },
           { id: "things-to-know", label: "Things to know" },
@@ -147,6 +156,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
           { id: "videos", label: "Videos" },
           { id: "discussions", label: "Discussions" },
           { id: "more-options", label: "More options" },
+          { id: "related", label: "Alternatives" },
           { id: "specs", label: "Specs" },
         ]}
       />
@@ -182,6 +192,8 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
       <ProductDiscussions links={discussionLinks(l, "lens", brand)} slug={l.slug} name={short} />
 
       <MoreOptions self={self} m={m} />
+
+      <RelatedProducts self={self} m={m} related={related} name={short} />
 
       <section id="specs" className="scroll-mt-28">
         <h2 className="h-section mb-3">{short} specifications</h2>

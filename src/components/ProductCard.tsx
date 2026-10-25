@@ -23,6 +23,9 @@ export default function ProductCard({ p, market }: { p: ProductSummary; market: 
       <Link
         href={marketPath(market, `/${p.kind === "camera" ? "cameras" : "lenses"}/${p.slug}`)}
         prefetch={false}
+        // A market's page of a product it doesn't list is noindex and rendered
+        // on demand: nofollow keeps crawlers from spending visits on it.
+        rel={p.indexed ? undefined : "nofollow"}
         {...quickViewAttrs(p.slug, market, p.name)}
         className="card group flex h-full flex-col gap-2 p-3 text-fg no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
       >

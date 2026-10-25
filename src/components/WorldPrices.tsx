@@ -51,7 +51,7 @@ export default function WorldPrices({ slug, path, market: here, name }: { slug: 
               return (
                 <tr key={r.market} className={`border-b border-line/60 last:border-0 ${r.market === here ? "bg-raised/60" : ""}`}>
                   <th scope="row" className="py-2 pr-3 text-left font-semibold">
-                    <Link href={marketPath(r.market, path)} prefetch={false} className="text-fg">
+                    <Link href={marketPath(r.market, path)} prefetch={false} rel={r.market === "us" || byMarket[r.market].length ? undefined : "nofollow"} className="text-fg">
                       <span aria-hidden>{MARKETS[r.market].flag} </span>
                       {MARKETS[r.market].name}
                     </Link>

@@ -4,7 +4,7 @@ import { marketParam } from "../market";
 
 export const dynamicParams = false; // see ../page.tsx
 
-export const metadata: Metadata = { title: "Saved", robots: { index: false, follow: false } };
+export const generateMetadata = ({ params }: { params: { market: string } }): Metadata => ({ title: "Saved", robots: { index: false, follow: false }, alternates: { canonical: `/${marketParam(params)}/saved` } });
 export default function Page({ params }: { params: { market: string } }) {
   return (
     <div>
