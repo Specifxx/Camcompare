@@ -29,10 +29,11 @@ module.exports = {
   experimental: { outputFileTracingIncludes: { "/**": ["./data/**/*.json"] }, outputFileTracingExcludes: { "/**": ["./public/**"] } },
   // The old deployment address sends people and crawlers to the domain.
   async redirects() {
-    // So does the bare domain, in case Vercel's domain settings ever serve it
-    // instead of redirecting: one host, or every page has a duplicate.
+    // The bare domain is NOT redirected here (2026-10-26 outage): www lost its
+    // DNS record and this rule sent every visitor to a host that did not
+    // resolve. Vercel's domain settings decide; restore once www is valid.
     return [
-      ...["camcompare.vercel.app", "camcompare.app"].map((host) => ({ source: "/:path*", has: [{ type: "host", value: host }], destination: "https://www.camcompare.app/:path*", permanent: true })),
+      ...["camcompare.vercel.app"].map((host) => ({ source: "/:path*", has: [{ type: "host", value: host }], destination: "https://www.camcompare.app/:path*", permanent: true })),
       ...storePhotoRedirects(),
     ];
   },
