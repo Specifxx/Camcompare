@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: { default: `${SITE_NAME}: ${SITE_TAGLINE}`, template: `%s | ${SITE_NAME}` },
   description: "Compare camera and lens specs side by side and find the lowest new and used price at retailers in the US, UK, Europe, Australia and Singapore.",
   openGraph: { siteName: SITE_NAME, type: "website" },
+  // Large image previews and full snippets in Google (Search, Discover, Images), as RiftCompare does.
+  // A page that sets its own `robots` (noindex) replaces this whole object.
+  robots: { googleBot: { "max-image-preview": "large", "max-snippet": -1 } },
   verification: {
     ...(VERIFY.google ? { google: VERIFY.google } : {}),
     other: {
