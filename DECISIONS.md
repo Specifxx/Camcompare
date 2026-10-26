@@ -1373,3 +1373,21 @@ robots.txt included, with Vercel's bot challenge (429,
 but if Attack Challenge Mode or a firewall rule covers Googlebot, crawling
 slows and pages queue as "Discovered". The owner should check that in the
 Vercel Firewall and with Search Console's live URL test.
+
+## 2026-10-26: IndexNow, like the sister sites
+
+CamCompare was the only site in the family that never told Bing about new
+or changed pages; it waited for Bing to find the sitemap on its own. Bing's
+index also feeds DuckDuckGo, Yahoo and Ecosia, and IndexNow reaches Yandex,
+Seznam and Naver in the same request, so it is the cheapest search traffic
+there is. The code is MTG Compare's, unchanged in behaviour:
+`/indexnow.txt` serves the key (`src/lib/indexnow.ts`, CamCompare's own,
+`INDEXNOW_KEY` overrides it), and `indexnow-submit.yml` sends every URL in
+the live sitemap once a day at 07:41 UTC. The job reads the key from the
+live file, so it needs no secret, and fails red when a batch is refused or
+the key file is not live.
+
+Once a day, not after every three-hourly price commit: the URL list is the
+whole sitemap, and resubmitting it eight times a day would read as spam to
+IndexNow. If the Vercel bot challenge noted on 2026-10-25 blocks the engines'
+fetch of `/indexnow.txt`, the job fails with a 403 and the owner sees it.
