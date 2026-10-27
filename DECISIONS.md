@@ -1414,3 +1414,28 @@ every page body never read as a link network.
 `FAMILY_SITES` in `src/lib/site.ts`, drawn as one row under the footer's
 columns (`tests/family-sites.test.ts`). Not retailer links, so they do not go
 through `affiliateUrl` or carry "Paid link".
+
+## Used price guide — 2026-10-27
+
+The owner took the affiliate-channels review's recommendations ("let's
+implement all of this"). Its idea #3 was a used camera price guide. eBay is the
+largest used camera market, so a used sale there pays like dozens of card sales
+on the card sites. Most of it was already built: every product page has "Used:
+what it should be worth" (`usedValue`, 2026-10-17), and the deals page has used
+bargains. What was missing was one page that answers "what are used cameras
+worth" for every model.
+
+`/used` (and `/uk/used`, `/eu/used`, `/au/used`, `/sg/used`), `src/views/UsedView.tsx`.
+It lists every camera and lens with a week or more of used asking prices in
+that market, most-listed first. Each row shows the typical used price (90-day
+median), the usual range (10th to 90th percentile), today's cheapest used offer
+and its store, and a tagged eBay used search (`used-<market>` / `used-ebay`,
+with the Paid link note). It is static, built from the committed history like
+every other page. It is labelled as asking prices, not sales, because eBay's
+sold data still needs Marketplace Insights approval.
+
+A market's guide is noindex and out of the sitemap until it has ten products
+(`USED_MIN_ROWS`, `tests/used-guide.test.ts`). On 2026-10-27 that meant 324 in
+the US, 225 in the UK and 221 in Australia, but 10 in Singapore and none in the
+EU. It is linked from the header's More menu. The US page is about 1.3 MB of
+HTML, in line with /cameras and /lenses.
