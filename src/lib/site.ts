@@ -28,3 +28,19 @@ export const VERIFY = {
 // pages are plain static files: no ISR writes, no database, nothing to
 // refresh between deploys. (RiftCompare paid ~$10/day in ISR writes and a
 // Neon project every few days for freshness this design gets from one build.)
+
+// The owner's other price-comparison sites, the Compare Empire family, linked
+// from the footer (owner, 2026-10-27: every site links the whole family; see
+// DECISIONS.md "Compare Empire family links"). Our own sites, not retailers:
+// plain followed links, no affiliateUrl, no rel="sponsored". `anchor` is the
+// link text, the words a searcher types.
+export const FAMILY_SITES = [
+  { name: "Compare Empire", url: "https://www.compareempire.com", anchor: "Australian tech prices" },
+  { name: "RiftCompare", url: "https://riftcompare.com", anchor: "Riftbound card prices" },
+  { name: "OP Compare", url: "https://opcompare.app", anchor: "One Piece card prices" },
+  { name: "DexCompare", url: "https://www.dexcompare.app", anchor: "Pokémon sealed prices" },
+  { name: "MTG Compare", url: "https://mtgcompare.app", anchor: "Magic: The Gathering sealed prices" },
+  { name: "Gundam Compare", url: "https://gundamcompare.com", anchor: "Gundam Card Game prices" },
+  { name: "Lorcana Compare", url: "https://lorcanacompare.com", anchor: "Disney Lorcana card prices" },
+  { name: "YGO Compare", url: "https://ygocompare.com", anchor: "Yu-Gi-Oh! card prices" },
+] as const;
