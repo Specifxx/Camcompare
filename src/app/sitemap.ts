@@ -10,6 +10,7 @@ import { releasesIndexable } from "@/components/releases/ReleasesView";
 import { categorySummaries } from "@/lib/accessory-rows";
 import { liveBrands } from "@/views/BrandView";
 import { dealsIndexable } from "@/views/DealsView";
+import { usedIndexable } from "@/views/UsedView";
 import { liveMounts } from "@/views/MountView";
 
 // Only pages that are indexed: every US product page, and a market's product
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const m of MARKET_CODES) {
     for (const p of ["/", "/cameras", "/lenses", "/finder", "/brands", "/mounts"]) out.push({ url: abs(marketPath(m, p)) });
     if (dealsIndexable(m)) out.push({ url: abs(marketPath(m, "/deals")) });
+    if (usedIndexable(m)) out.push({ url: abs(marketPath(m, "/used")) });
     if (releasesIndexable(m)) out.push({ url: abs(marketPath(m, "/releases")) });
     if (pricedIn(digicams(), m)) out.push({ url: abs(marketPath(m, "/digicams")) });
     if (pricedIn(viralCameras().map((v) => v.camera), m)) out.push({ url: abs(marketPath(m, "/viral-cameras")) });
