@@ -46,12 +46,11 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${sans.variable} ${mono.variable}`}>
-      {VERIFY.impact && (
-        <head>
-          {/* Impact reads the non-standard `value` attribute. */}
-          <meta {...({ name: "impact-site-verification", value: VERIFY.impact } as object)} />
-        </head>
-      )}
+      <head>
+        <link rel="alternate" type="application/rss+xml" title="CamCompare guides" href="/feed.xml" />
+        {/* Impact reads the non-standard `value` attribute. */}
+        {VERIFY.impact && <meta {...({ name: "impact-site-verification", value: VERIFY.impact } as object)} />}
+      </head>
       <body className="flex min-h-screen flex-col">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-surface focus:px-3 focus:py-2">
           Skip to content
