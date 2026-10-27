@@ -410,6 +410,11 @@
    "store": "Abt",
    "retailer": "abt"
   },
+  "gopro-mission-1-pro-ils": {
+   "src": "https://cdn.shopify.com/s/files/1/0750/1017/files/gopro-mission-1-pro-ils-camera-front-left-product-view-showing-the-lens-mount-and-front-status-screen.jpg?width=640",
+   "store": "Pictureline",
+   "retailer": "pictureline"
+  },
   "hasselblad-907x-50c": {
    "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/files/SH-BGE7-SH_626a1a78-5b85-438f-aac5-cbebc109e8dc.jpg?width=640",
    "store": "Georges Cameras",
@@ -1061,9 +1066,9 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-leica-dg-summilux-9mm-f1-7-asph": {
-   "src": "https://www.camerahouse.com.au/media/catalog/product/h/x/hx09_main_big_image1.jpg",
-   "store": "Camera House",
-   "retailer": "camera-house"
+   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/tzyq5lso4alpj7babg1w.jpg?width=640",
+   "store": "Shop Panasonic",
+   "retailer": "panasonic-store-us"
   },
   "panasonic-leica-dg-vario-elmar-100-400mm-f4-0-6-3-asph-power-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/ql9hlokang9ykvjxhd3p.jpg?width=640",
@@ -1305,20 +1310,10 @@
    "store": "Camera Wholesalers",
    "retailer": "camera-wholesalers"
   },
-  "samyang-af-14mm-f2-8-fe": {
-   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-14mm-f2-8-2.jpg?width=640",
-   "store": "Ted's Cameras",
-   "retailer": "teds"
-  },
   "samyang-af-18mm-f2-8-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200675_0_3.jpg?width=640",
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
-  },
-  "samyang-af-24mm-f2-8-fe": {
-   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-24mm-f2-8.jpg?width=640",
-   "store": "Ted's Cameras",
-   "retailer": "teds"
   },
   "samyang-af-50mm-f1-4-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200684_0_3.jpg?width=640",
