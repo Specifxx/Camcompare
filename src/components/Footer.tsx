@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MARKET_CODES, MARKETS, marketPath } from "@/lib/markets";
 import { useMarket } from "@/lib/market-client";
-import { SITE_NAME } from "@/lib/site";
+import { FAMILY_SITES, SITE_NAME } from "@/lib/site";
 import Logo from "./brand/Logo";
 
 export default function Footer() {
@@ -63,6 +63,19 @@ export default function Footer() {
           <p className="mt-2">Commission never changes the order of offers, which are always sorted by price.</p>
         </div>
       </div>
+      <nav aria-label="The Compare Empire family" className="mx-auto max-w-6xl border-t border-line px-4 py-6 text-xs text-subtle">
+        <p className="eyebrow mb-2">More price comparison · the Compare Empire family</p>
+        <ul className="flex flex-wrap gap-x-5 gap-y-1">
+          {FAMILY_SITES.map((s) => (
+            <li key={s.url}>
+              <a href={s.url} target="_blank" rel="noopener" className="font-semibold text-muted">
+                {s.anchor}
+              </a>{" "}
+              on {s.name}
+            </li>
+          ))}
+        </ul>
+      </nav>
     </footer>
   );
 }
