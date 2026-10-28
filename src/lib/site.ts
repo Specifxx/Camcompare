@@ -43,4 +43,6 @@ export const FAMILY_SITES = [
   { name: "Gundam Compare", url: "https://gundamcompare.com", anchor: "Gundam Card Game prices" },
   { name: "Lorcana Compare", url: "https://lorcanacompare.com", anchor: "Disney Lorcana card prices" },
   { name: "YGO Compare", url: "https://ygocompare.com", anchor: "Yu-Gi-Oh! card prices" },
+  { name: "WargameCompare", url: "https://wargamecompare.com", anchor: "Miniature wargame prices" },
+  { name: "FigureCompare", url: "https://figurecompare.com", anchor: "Anime figure prices" },
 ] as const;
