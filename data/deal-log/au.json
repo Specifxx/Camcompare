@@ -1,6 +1,6 @@
-{"market":"au","currency":"AUD","updatedAt":"2026-10-28T20:16:57.550Z",
+{"market":"au","currency":"AUD","updatedAt":"2026-10-29T00:58:08.501Z",
   "deals": [
-    {"key":"panasonic-lumix-zs300|new|digidirect","slug":"panasonic-lumix-zs300","kind":"camera","condition":"new","retailer":"digidirect","price":109995,"rrp":159900,"save":49905,"pct":31,"firstSeen":"2026-10-22T05:32:24.596Z","lastSeen":"2026-10-28T20:16:57.550Z","status":"live"},
-    {"key":"panasonic-lumix-zs300|used|teds","slug":"panasonic-lumix-zs300","kind":"camera","condition":"used","retailer":"teds","price":119995,"rrp":159900,"save":39905,"pct":25,"firstSeen":"2026-10-27T15:22:32.704Z","lastSeen":"2026-10-28T20:16:57.550Z","status":"live"}
+    {"key":"panasonic-lumix-zs300|new|digidirect","slug":"panasonic-lumix-zs300","kind":"camera","condition":"new","retailer":"digidirect","price":109995,"rrp":159900,"save":49905,"pct":31,"firstSeen":"2026-10-22T05:32:24.596Z","lastSeen":"2026-10-29T00:58:08.501Z","status":"live"},
+    {"key":"panasonic-lumix-zs300|used|teds","slug":"panasonic-lumix-zs300","kind":"camera","condition":"used","retailer":"teds","price":119995,"rrp":159900,"save":39905,"pct":25,"firstSeen":"2026-10-27T15:22:32.704Z","lastSeen":"2026-10-29T00:58:08.501Z","status":"live"}
   ]
 }
