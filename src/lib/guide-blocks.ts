@@ -113,3 +113,14 @@ export function inline(md: string): string {
       return o ? price(o.price, MARKETS[HOME].currency) : kind === "price" ? "not priced new in the US today" : "no used price in the US today";
     });
 }
+
+/** The products a post is about, in order: its hero, then every pick, spec row and top-list entry. */
+export function postSlugs(g: { hero?: string; body: string }): string[] {
+  const out: string[] = g.hero ? [g.hero] : [];
+  for (const s of segments(g.body)) {
+    if (!("block" in s)) continue;
+    if (s.block === "picks" || s.block === "specs") out.push(...s.arg.split("|")[0].split(",").map((x) => x.trim()));
+    if (s.block === "top") out.push(...topSlugs(s.arg));
+  }
+  return [...new Set(out)].filter((x) => anyCamera(x));
+}

@@ -13,9 +13,13 @@ function List({ list }: { list: Guide[] }) {
     <ul className="flex flex-col gap-3">
       {list.map((g) => (
         <li key={g.slug}>
-          <Link href={`/guides/${g.slug}`} className="card block p-4 text-fg no-underline hover:border-accent hover:no-underline">
-            <span className="block font-semibold">{g.title}</span>
-            <span className="text-sm text-muted">{g.description}</span>
+          <Link href={`/guides/${g.slug}`} className="card group flex items-center gap-4 p-3 text-fg no-underline hover:border-accent hover:no-underline">
+            {/* eslint-disable-next-line @next/next/no-img-element -- the post's static share image */}
+            <img src={`/guides/${g.slug}/opengraph-image`} alt="" width={1200} height={630} loading="lazy" className="aspect-[1200/630] w-32 shrink-0 rounded-md object-cover sm:w-44" />
+            <span className="min-w-0">
+              <span className="block font-semibold group-hover:text-accent">{g.title}</span>
+              <span className="line-clamp-2 text-sm text-muted">{g.description}</span>
+            </span>
           </Link>
         </li>
       ))}
