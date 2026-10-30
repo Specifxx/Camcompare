@@ -1,0 +1,70 @@
+{
+  "slug": "dji-air-3",
+  "brand": "dji",
+  "name": "DJI Air 3",
+  "shortName": "Air 3",
+  "aliases": [
+    "Air 3"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "drone",
+  "announced": "2023-07-25",
+  "launchPriceUsd": 1099,
+  "status": "current",
+  "predecessor": null,
+  "successor": "dji-air-3s",
+  "rivals": [
+    "dji-air-3s",
+    "dji-mini-4-pro",
+    "dji-mavic-3-pro"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24
+    ],
+    "aperture": "f/1.7"
+  },
+  "specs": {
+    "sensorFormat": "1/1.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 48,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 100,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": null,
+    "weightG": 720,
+    "dimensionsMm": null,
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true,
+    "flightTimeMin": 46,
+    "rangeKm": 20,
+    "obstacleSensing": "omnidirectional"
+  }
+}

@@ -15,7 +15,8 @@ function groupsFor(items: AnyProduct[]): { id: string; title: string; rows: Comp
     return LENS_SPEC_GROUPS.map((g) => ({ id: g.id, title: g.title, rows: compareRows(lenses, g) as CompareRow<Camera | Lens>[] }));
   }
   const cams = items.map((p) => p.item as Camera);
-  return SPEC_GROUPS.map((g) => ({ id: g.id, title: g.title, rows: compareRows(cams, g) as CompareRow<Camera | Lens>[] }));
+  // A group of optional rows none of these cameras has (drone flight specs on a camera page) is left out.
+  return SPEC_GROUPS.map((g) => ({ id: g.id, title: g.title, rows: compareRows(cams, g) as CompareRow<Camera | Lens>[] })).filter((g) => g.rows.some((r) => !r.def.optional || r.cells.some((c) => c.text !== null)));
 }
 
 export default function CompareTable({ items, market, followVisitorMarket = false }: { items: AnyProduct[]; market: MarketCode; followVisitorMarket?: boolean }) {

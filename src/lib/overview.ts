@@ -45,9 +45,11 @@ const CAMERA_NOUN: Record<Camera["type"], string> = {
   action: "action camera",
   "360": "360° camera",
   cinema: "cinema camera",
+  drone: "camera drone",
+  "smart-glasses": "pair of camera glasses",
 };
 const sensorWord = (f: Camera["specs"]["sensorFormat"]) =>
-  f === "full-frame" ? "full-frame" : f === "medium-format" ? "medium-format" : sensorLabel(f).replace(/^(\d[\d./]*)"$/, "$1-inch");
+  f === null ? "" : f === "full-frame" ? "full-frame" : f === "medium-format" ? "medium-format" : sensorLabel(f).replace(/^(\d[\d./]*)"$/, "$1-inch");
 const coverageWord = (c: Lens["coverage"]) => (c === "full-frame" ? "full-frame" : c === "medium-format" ? "medium-format" : coverageLabel(c));
 
 const productHref = (p: AnyProduct, m: MarketCode) => marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${p.item.slug}`);
@@ -63,7 +65,7 @@ function whatItIs(self: AnyProduct, m: MarketCode, name: string): Seg[] {
   const when = ` in ${longMonthYear(self.item.announced)}.`;
   if (self.kind === "camera") {
     const c = self.item;
-    const what = `${c.specs.megapixels} MP ${sensorWord(c.specs.sensorFormat)} ${CAMERA_NOUN[c.type]}`;
+    const what = `${c.specs.megapixels} MP ${sensorWord(c.specs.sensorFormat)} ${CAMERA_NOUN[c.type]}`.replace(/\s+/g, " ");
     const mt = c.mount ? mount(c.mount) : null;
     const out: Seg[] = [`The ${name} is ${an(String(c.specs.megapixels))} ${what}`];
     if (mt) out.push(" for ", { text: mt.name, href: marketPath(m, `/mounts/${mt.slug}`) });

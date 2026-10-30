@@ -55,6 +55,7 @@ export const BRAND_WORDS: Record<string, string[]> = {
   leica: ["leica"],
   ricoh: ["ricoh", "pentax"],
   sigma: ["sigma"],
+  meta: ["meta"],
   hasselblad: ["hasselblad"],
   gopro: ["gopro"],
   dji: ["dji"],
@@ -98,7 +99,7 @@ const PARTS =
 // Accessories sold "for" a camera: batteries, grips, cages… (camera listings only).
 const CAMERA_ACCESSORY =
   /\b(battery|batteries|charger|grip|cage|strap|case|bag|protector|skin|decal|cover|eyecup|eye cup|body cap|remote|cable|bracket|plate|hot ?shoe|microphone|gimbal|tripod|speedlite|flash unit|memory card|sd card|cfexpress card|motherboard|lcd screen|eyepiece|top handle|handle unit|(lens|media|light|display|filter) mods?|sensor cleaning|lens only|teleconverter|extension tube|viewfinder only|evf only|housing|mount adapter)\b/;
-const FOR_PHRASE = /\b(for|fits|compatible with)\s+(the\s+)?(sony|canon|nikon|fuji|fujifilm|panasonic|lumix|olympus|om system|leica|ricoh|pentax|sigma|hasselblad|gopro|dji|insta360|blackmagic)\b/;
+const FOR_PHRASE = /\b(for|fits|compatible with)\s+(the\s+)?(sony|canon|nikon|fuji|fujifilm|panasonic|lumix|olympus|om system|leica|ricoh|pentax|sigma|hasselblad|gopro|dji|insta360|blackmagic|ray-?ban|oakley|meta)\b/;
 // Lens accessories name the lens after "for": "Lens hood for Sony FE 24-70mm GM II".
 const LENS_ACCESSORY = /\b(hood|cap|caps|filter|case|pouch|collar|tripod foot|adapter|cover|protector|skin|wrap|bag|ring|teleconverter|extender|extension tube)\b[^,()]*\b(for|fits|compatible with)\b/;
 // …or after the lens ("Canon EF 24-70mm f/2.8L II USM Lens Hood EW-88C"),
@@ -117,6 +118,35 @@ const BODY_ONLY = /\bbody( only)?\b/;
 // "Body" cancels KIT ("body only, fits 24-70mm"), but not a lens added with "+".
 const KIT_PLUS = /\+\s*(\w+\s+)?[a-z-]*\d{2,3}(-\d{2,3})?\s*mm/;
 
+// ---- drones and camera glasses (DECISIONS.md, "Drones and smart glasses")
+// Their titles carry what comes in the box ("with DJI RC-N3 Remote", "Fly
+// More Combo (3 batteries)", "with Charging Case"), so the accessory rules
+// read only the title's HEAD, before "with", "+", "(", a comma, " - " or
+// "combo", as /accessories does: "DJI Mini 4 Pro Intelligent Flight Battery"
+// is a battery, "DJI Mini 4 Pro with RC 2" is the drone.
+const GADGET_HEAD_END = /\s(?:with|w\/|incl\.?|including|plus)\s|\s?[+(（,]|\s[-–—|]\s|\b(?:fly more |creator |smart )?combo\b/;
+const gadgetHead = (lower: string) => {
+  const at = lower.search(GADGET_HEAD_END);
+  return at >= 0 ? lower.slice(0, at) : lower;
+};
+// A drone's parts, services and add-ons named in the head.
+const DRONE_PART =
+  /\b(propellers?|props|batter(y|ies)|charg(er|ers|ing)|filters?|nd ?\d+|cases?|bags?|backpacks?|guards?|landing (gear|pad)|lanyard|stickers?|skins?|covers?|caps?|spare|parts?|motors?|shells?|holders?|mounts?|adapters?|cables?|controllers?|remotes?|rc-n\d|goggles|care|refresh|insurance|plan|protection|screen protector|straps?|transceiver|lens(es)?|fly more kit|accessor(y|ies)|class|course|training|cinessd|ssd|monitor|crystalsky|reader|hub|module|arms?|gimbal (cover|lock|protector|clamp)|decals?|collection|sets?|polarpro|freewell|pgytech|sunnylife|startrc|skyreat)\b/;
+// What makes a drone listing more than the base pack: a combo or a bundle,
+// the pro screen remote, or extras added after the head. The base pack is
+// the drone with its standard remote (RC-N, RC 2) or the drone alone.
+const DRONE_BUNDLE = /\b(fly more|combo|creator|bundle|kit|rc pro)\b/;
+const DRONE_EXTRAS = /\b(case|bag|backpack|(micro)?sd(xc)?|memory|\d+ ?gb|batter(y|ies)|charg\w*|filters?|nd|care|plan|protection|landing pad|lens|propellers?|guards?|hub|light|insurance|accessor\w*)\b/;
+const DRONE_VARIANT = /^(?:cine|classic|enterprise|thermal|multispectral|t|e|m)$/;
+const STANDARD_PACK = /\bstandard (bundle|package|pack)\b/;
+// Camera glasses' parts and add-ons named in the head.
+const GLASSES_PART = /\b(case|cases|charger|charging|cable|prescription|nose ?pads?|straps?|cords?|cleaning|cloth|protectors?|covers?|holders?|stand|clip-?on|chains?|skins?|stickers?|lens(es)? (only|replacement|inserts?)|temple|arms?)\b/;
+/** The generation a title names ("Gen 2", "(Gen 2)", "2nd Gen", "Gen2"), or null. */
+export function titleGeneration(lower: string): number | null {
+  const m = /\bgen(?:eration)?\.?\s*(\d)\b|\b(\d)(?:st|nd|rd|th)[- ]?gen(?:eration)?\b/.exec(lower);
+  return m ? Number(m[1] ?? m[2]) : null;
+}
+
 /** What the matcher needs from a camera or a lens. */
 export type Matchable = {
   kind: ProductKind;
@@ -132,6 +162,15 @@ export type Matchable = {
   interchangeable: boolean;
   /** Lenses: the mounts it is made for. */
   mounts: string[];
+  /** Cameras: the catalog type (drones and camera glasses have their own rules). */
+  type?: Camera["type"];
+  /**
+   * Camera glasses sold in generations under one name (Ray-Ban Meta, Gen 1
+   * and Gen 2): this one's number, and its siblings' slugs. A listing must
+   * name its generation, and names the sibling it is.
+   */
+  generation?: number;
+  siblings?: string[];
 };
 
 export const cameraMatchable = (c: Camera): Matchable => ({
@@ -146,6 +185,10 @@ export const cameraMatchable = (c: Camera): Matchable => ({
   launchPrices: c.launchPrices,
   interchangeable: c.mount !== null,
   mounts: c.mount ? [c.mount] : [],
+  type: c.type,
+  ...(c.type === "smart-glasses" && (c.predecessor || c.successor)
+    ? { generation: Number(/\bGen (\d)\b/i.exec(c.name)?.[1] ?? 1), siblings: [c.predecessor, c.successor].filter((x): x is string => x !== null) }
+    : {}),
 });
 
 export const lensMatchable = (l: Lens): Matchable => ({
@@ -175,7 +218,7 @@ const MAX_ALIAS_TOKENS = 12;
 // SYSTEM PEN" → "pen", "GoPro MAX" → "max"). Stripped, the key would match
 // every Olympus PEN E-PL or "Pen" in a title; kept whole, it needs the brand
 // right before it.
-const WORD_MODELS = new Set(["pen", "max"]);
+const WORD_MODELS = new Set(["pen", "max", "flip", "neo"]); // "DJI Flip", "DJI Neo": a bare "flip" or "neo" is in other titles
 
 /**
  * The keys a product's names are matched under: each alias, model code and
@@ -272,6 +315,17 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
   const finish = (p: Matchable, via: MatchVia): MatchResult => {
     if (ACCESSORY_BEFORE_DASH.test(lower)) return { product: null, reason: "accessory named before the product" };
     if (want && p.kind !== want) return { product: null, reason: `is a ${p.kind}` };
+    if (p.kind === "camera" && (p.type === "drone" || p.type === "smart-glasses")) {
+      const head = gadgetHead(lower);
+      if (FOR_PHRASE.test(lower) || CAMERA_ACCESSORY.test(head)) return { product: null, reason: "accessory/part" };
+      if (p.type === "drone") {
+        if (DRONE_PART.test(head)) return { product: null, reason: "drone part or add-on" };
+        const bundle = !STANDARD_PACK.test(lower) && (DRONE_BUNDLE.test(lower) || DRONE_EXTRAS.test(lower.slice(head.length)));
+        return { product: p, kind: "camera", via, kit: bundle, mount: null };
+      }
+      if (GLASSES_PART.test(head)) return { product: null, reason: "glasses part or add-on" };
+      return { product: p, kind: "camera", via, kit: false, mount: null };
+    }
     if (p.kind === "camera") {
       if (CAMERA_ACCESSORY.test(lower)) return { product: null, reason: "accessory/part" };
       if (FOR_PHRASE.test(lower)) return { product: null, reason: "accessory phrasing" };
@@ -319,11 +373,23 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
     pick = cams.length ? cams : lenses;
   }
   if (pick.length > 1) return { product: null, reason: `ambiguous: ${pick.map((h) => h.p.slug).join(", ")}` };
-  const p = pick[0].p;
+  let p = pick[0].p;
+  if (p.generation !== undefined) {
+    // Gen 1 and Gen 2 share a name and frame styles: only the title's own "Gen N" tells them apart.
+    const g = titleGeneration(lower);
+    if (g === null) return { product: null, reason: "generation not named" };
+    if (g !== p.generation) {
+      const sib = (p.siblings ?? []).map((x) => index.bySlug.get(x)).find((x) => x?.generation === g);
+      if (!sib) return { product: null, reason: `generation ${g}: a model we don't list` };
+      p = sib;
+    }
+  }
   // Panasonic named bodies DMC-… until 2016 and DC-… since: "Lumix DMC-L10"
   // (2007) is not the Lumix L10 (2026).
   if (p.brand === "panasonic" && words[pick[0].from - 1] === "dmc" && !p.modelCodes.some((m) => compact(m).startsWith("dmc"))) return { product: null, reason: "DMC- model: an older Panasonic" };
   const next = words[pick[0].to + 1] ?? "";
+  // "Mavic 3 Pro Cine", "Mavic 3 Classic", "Mavic 3 Enterprise": other drones, priced far apart.
+  if (p.type === "drone" && DRONE_VARIANT.test(next)) return { product: null, reason: `"${next}" after the name: a model we don't list` };
   if (GENERATION.test(next) || (p.kind === "camera" && BODY_VARIANT.test(next) && words[pick[0].to + 2] !== "mount")) return { product: null, reason: `"${next}" after the name: a model we don't list` };
   const r = finish(p, "title");
   if (r.product && r.kind === "camera" && lenses.length) return { ...r, kit: true };

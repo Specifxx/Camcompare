@@ -135,16 +135,17 @@ const COVERS: Record<LensCoverage, SensorFormat[]> = {
 /** Native lenses for a body: same mount, image circle big enough. (Adapters are a different page.) */
 export function lensesFor(c: Camera): Lens[] {
   if (!c.mount) return [];
-  return publishedLenses().filter((l) => l.mounts.includes(c.mount!) && COVERS[l.coverage].includes(c.specs.sensorFormat));
+  const f = c.specs.sensorFormat;
+  return f ? publishedLenses().filter((l) => l.mounts.includes(c.mount!) && COVERS[l.coverage].includes(f)) : [];
 }
 
 /** Bodies a lens fits natively, newest first. */
 export function camerasFor(l: Lens): Camera[] {
-  return publishedCameras().filter((c) => c.mount !== null && l.mounts.includes(c.mount) && COVERS[l.coverage].includes(c.specs.sensorFormat));
+  return publishedCameras().filter((c) => c.mount !== null && c.specs.sensorFormat !== null && l.mounts.includes(c.mount) && COVERS[l.coverage].includes(c.specs.sensorFormat));
 }
 
 /** A lens made for a smaller sensor than the body: works only in crop mode. */
-export const lensCropsOn = (l: Lens, c: Camera) => l.coverage === "aps-c" && ["full-frame", "aps-h"].includes(c.specs.sensorFormat);
+export const lensCropsOn = (l: Lens, c: Camera) => l.coverage === "aps-c" && ["full-frame", "aps-h"].includes(c.specs.sensorFormat ?? "");
 
 // ------------------------------------------------------------ comparisons
 

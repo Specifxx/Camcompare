@@ -31,7 +31,7 @@ const dash = (s: string) => s.replace(/-/g, "–");
 
 export function cameraHighlights(c: Camera): Highlight[] {
   const s = c.specs;
-  const out: Highlight[] = [{ key: "sensor", icon: "sensor", value: `${num(s.megapixels)} MP`, label: `${sensorLabel(s.sensorFormat)} sensor`, detail: s.sensorType ?? undefined }];
+  const out: Highlight[] = [{ key: "sensor", icon: "sensor", value: `${num(s.megapixels)} MP`, label: s.sensorFormat ? `${sensorLabel(s.sensorFormat)} sensor` : "Resolution", detail: s.sensorType ?? undefined }];
 
   if (c.fixedLens) {
     const f = c.fixedLens.focalMm;
@@ -119,7 +119,7 @@ export function lensHighlights(l: Lens): Highlight[] {
 
 /** The line under a card's name: "Full frame · 33 MP · 2021", "24–70mm f/2.8 · 2022". */
 export function cardSubline(p: ProductSummary): string {
-  if (p.kind === "camera") return `${sensorLabel(p.sensor)} · ${num(p.megapixels)} MP · ${year(p.announced)}`;
+  if (p.kind === "camera") return `${p.sensor ? `${sensorLabel(p.sensor)} · ` : ""}${num(p.megapixels)} MP · ${year(p.announced)}`;
   const focal = p.focalMin === p.focalMax ? `${p.focalMin}mm` : `${p.focalMin}–${p.focalMax}mm`;
   return `${focal} ${p.apertureTele ? `f/${p.aperture}–${p.apertureTele}` : `f/${p.aperture}`} · ${year(p.announced)}`;
 }

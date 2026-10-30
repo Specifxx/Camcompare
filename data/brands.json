@@ -10,6 +10,7 @@
   {"slug": "laowa", "name": "Laowa", "country": "China", "site": "https://www.venuslens.net/"},
   {"slug": "leica", "name": "Leica", "country": "Germany", "site": "https://leica-camera.com/", "search": "https://leica-camera.com/en-US/search?search={q}"},
   {"slug": "meike", "name": "Meike", "country": "China", "site": "https://www.meikeglobal.com/", "search": "https://www.meikeglobal.com/search?q={q}"},
+  {"slug": "meta", "name": "Meta", "country": "United States", "site": "https://www.meta.com/ai-glasses/", "sublines": ["Ray-Ban Meta", "Oakley Meta"]},
   {"slug": "nikon", "name": "Nikon", "country": "Japan", "site": "https://www.nikonusa.com/"},
   {"slug": "om-system", "name": "OM System", "country": "Japan", "site": "https://explore.omsystem.com/", "sublines": ["Olympus"]},
   {"slug": "panasonic", "name": "Panasonic", "country": "Japan", "site": "https://shop.panasonic.com/collections/cameras", "search": "https://shop.panasonic.com/search?q={q}", "sublines": ["Lumix"]},

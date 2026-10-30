@@ -44,8 +44,8 @@ export default function BrandView({ slug, market: m }: { slug: string; market: M
   const lenses = publishedLenses().filter((l) => l.brand === b.slug);
   const camGroups = [
     ...mounts().map((mt) => ({ title: mt.name, list: cams.filter((c) => c.mount === mt.slug) })),
-    ...(["compact", "action", "360"] as const).map((t) => ({ title: `${typeLabel(t)}s`, list: cams.filter((c) => !c.mount && c.type === t) })),
-    { title: "Other fixed-lens cameras", list: cams.filter((c) => !c.mount && !["compact", "action", "360"].includes(c.type)) },
+    ...(["compact", "action", "360", "drone", "smart-glasses"] as const).map((t) => ({ title: t === "smart-glasses" ? typeLabel(t) : `${typeLabel(t)}s`, list: cams.filter((c) => !c.mount && c.type === t) })),
+    { title: "Other fixed-lens cameras", list: cams.filter((c) => !c.mount && !["compact", "action", "360", "drone", "smart-glasses"].includes(c.type)) },
   ].filter((g) => g.list.length);
   const lensGroups = mounts().map((mt) => ({ title: `Lenses for ${mt.name}`, list: lenses.filter((l) => l.mounts.includes(mt.slug)) })).filter((g) => g.list.length);
   return (

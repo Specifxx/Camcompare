@@ -1,0 +1,73 @@
+{
+  "slug": "dji-mavic-4-pro",
+  "brand": "dji",
+  "name": "DJI Mavic 4 Pro",
+  "shortName": "Mavic 4 Pro",
+  "aliases": [
+    "Mavic 4 Pro"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "drone",
+  "announced": "2025-05-13",
+  "launchPriceUsd": null,
+  "launchPrices": {
+    "GBP": 1879,
+    "EUR": 2099
+  },
+  "status": "current",
+  "predecessor": "dji-mavic-3-pro",
+  "successor": null,
+  "rivals": [
+    "dji-mavic-3-pro",
+    "dji-air-3s"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      28
+    ],
+    "aperture": "f/2"
+  },
+  "specs": {
+    "sensorFormat": "four-thirds",
+    "sensorType": "CMOS",
+    "megapixels": 100,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "6K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": null,
+    "weightG": null,
+    "dimensionsMm": null,
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true,
+    "flightTimeMin": 51,
+    "rangeKm": 30,
+    "obstacleSensing": "omnidirectional"
+  }
+}

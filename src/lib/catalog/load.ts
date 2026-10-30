@@ -97,7 +97,7 @@ export function crossCheck(cameras: Camera[], brands: Brand[], mounts: Mount[], 
     if (c.mount) {
       const m = mountBySlug.get(c.mount);
       if (!m) issues.push({ file, message: `unknown mount "${c.mount}"` });
-      else if (!m.formats.includes(c.specs.sensorFormat)) issues.push({ file, message: `${c.mount} has no ${c.specs.sensorFormat} bodies` });
+      else if (!c.specs.sensorFormat || !m.formats.includes(c.specs.sensorFormat)) issues.push({ file, message: `${c.mount} has no ${c.specs.sensorFormat} bodies` });
     }
     for (const ref of [c.predecessor, c.successor, ...c.rivals]) {
       if (ref && !cameraSlugs.has(ref)) issues.push({ file, message: `references "${ref}", which is not in the catalog` });

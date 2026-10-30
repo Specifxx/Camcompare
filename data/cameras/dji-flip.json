@@ -1,0 +1,71 @@
+{
+  "slug": "dji-flip",
+  "brand": "dji",
+  "name": "DJI Flip",
+  "shortName": "Flip",
+  "aliases": [
+    "DJI Flip"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "drone",
+  "announced": "2025-01-14",
+  "launchPriceUsd": 439,
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "dji-mini-4-pro",
+    "dji-neo",
+    "dji-mini-4k",
+    "dji-mini-5-pro"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24
+    ],
+    "aperture": "f/1.7"
+  },
+  "specs": {
+    "sensorFormat": "1/1.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 48,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 100,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": null,
+    "weightG": 249,
+    "dimensionsMm": null,
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true,
+    "flightTimeMin": 31,
+    "rangeKm": 13,
+    "obstacleSensing": "forward"
+  }
+}

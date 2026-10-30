@@ -1,6 +1,6 @@
 // Derived facts shown on product pages. Everything here is arithmetic over
 // the catalog and our own price history — no opinions, no scores.
-import type { Camera } from "./catalog/schema";
+import { isGadget, type Camera } from "./catalog/schema";
 import { publishedCameras } from "./catalog";
 import { convert, type Fx } from "./fx";
 import { MARKET_CODES, MARKETS, type Currency, type MarketCode } from "./markets";
@@ -29,7 +29,7 @@ export type PeerRank = { label: string; phrase: string; value: string; pct: numb
  */
 export function peerRanks(c: Camera, minPeers = 8): PeerRank[] {
   const peers = publishedCameras().filter((p) => p.slug !== c.slug && p.type === c.type && p.specs.sensorFormat === c.specs.sensorFormat);
-  const group = `${sensorLabel(c.specs.sensorFormat).toLowerCase()} ${typeLabel(c.type).toLowerCase()} cameras`;
+  const group = c.specs.sensorFormat ? `${sensorLabel(c.specs.sensorFormat).toLowerCase()} ${typeLabel(c.type).toLowerCase()}${isGadget(c.type) ? "s" : " cameras"}` : `${typeLabel(c.type).toLowerCase()}`;
   const out: PeerRank[] = [];
   for (const m of METRICS) {
     const v = m.get(c);
