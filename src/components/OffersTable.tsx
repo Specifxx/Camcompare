@@ -134,7 +134,7 @@ export default function OffersTable({ product, query, offers, market, page, amaz
         )}
         {rows.length > 0 && (
           <p className="mt-2 text-[11px] text-subtle">
-            Sorted by price, body only first, cheapest in stock first. Kits are listed apart and never counted as the body price. Some links earn us a commission; it never changes the order.
+            Sorted by price, body only first, cheapest in stock first. Kits are listed apart and never counted as the body price. Some links earn us a commission. The Amazon and eBay rows above are ads; the store rows keep their price order.
           </p>
         )}
         {rows.some((r) => r.amazon) && (

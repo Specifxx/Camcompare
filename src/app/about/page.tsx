@@ -51,7 +51,7 @@ export default function About() {
         example &ldquo;lowest in 90 days&rdquo;) and need two weeks of history before they appear.
       </p>
       <p>
-        Some links earn us a commission. That never changes the order: offers are always sorted by price. See the{" "}
+        Some links earn us a commission. Store offers are always sorted by price; the one exception is the Amazon and eBay rows above them on product pages, which are labelled &ldquo;Ad&rdquo; and never counted as the best price. See the{" "}
         <Link href="/disclosure">affiliate disclosure</Link> and <Link href="/privacy">privacy</Link> pages.
       </p>
     </div>

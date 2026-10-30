@@ -62,7 +62,7 @@ export default function Footer() {
             </Link>
             , at no cost to you. As an Amazon Associate we earn from qualifying purchases.
           </p>
-          <p className="mt-2">Commission never changes the order of offers, which are always sorted by price.</p>
+          <p className="mt-2">Store offers are always sorted by price. The one exception: Amazon and eBay rows sit above them on product pages, labelled &ldquo;Ad&rdquo;, and are never counted as the best price.</p>
         </div>
       </div>
       <nav aria-label="The Compare Empire family" className="mx-auto max-w-6xl border-t border-line px-4 py-6 text-xs text-subtle">

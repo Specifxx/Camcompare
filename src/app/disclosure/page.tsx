@@ -29,7 +29,7 @@ export default function Disclosure() {
         We are also a member of retailer programmes run through affiliate networks such as Impact, Awin, CJ, Rakuten and Involve Asia. We may show
         display advertising; where no ad is set up, that space shows our own &ldquo;Shop on eBay&rdquo; links, labelled as paid.
       </p>
-      <p>Commissions and ads never affect which offers we show or their order. Offers are always sorted by price, and nobody can pay to appear first.</p>
+      <p>Commissions never affect which store offers we show or their order: store offers are always sorted by price, and no store can pay to move up. The one exception is that Amazon and eBay rows sit above the store offers on product pages and in quick views. They are labelled &ldquo;Ad&rdquo;, are paid links, and are never counted as a store or the best price.</p>
     </div>
   );
 }
