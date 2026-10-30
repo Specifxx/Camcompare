@@ -17,7 +17,7 @@ import { readDealLog, type DealEntry } from "@/lib/deal-log";
 import { isAmazonOffer } from "@/lib/offers";
 import { packKind } from "@/lib/offer-rows";
 import { price } from "@/lib/format";
-import { guides } from "@/lib/guides";
+import { latestGuides } from "@/lib/guides";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { quickViewAttrs } from "@/lib/quickview";
 import { CONDITION_LABEL, retailer } from "@/lib/retailers";
@@ -122,7 +122,10 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   const brandTiles = live.map((b) => ({ ...b, n: all.filter((p) => p.brand === b.slug).length })).sort((a, b) => b.n - a.n);
   const systems = mounts().filter((mt) => mt.status === "current" && cameras.some((c) => c.mount === mt.slug));
   // Every guide, newest first: the articles are what search and ad crawlers read.
-  const guideList = [...guides()].sort((a, b) => b.updated.localeCompare(a.updated) || a.title.localeCompare(b.title));
+  // The three newest blog posts get cards right under the hero (owner, 2026-10-30:
+  // "featured somewhere on the homepage"); every other post and guide stays a list lower down.
+  const featured = latestGuides().filter((g) => g.kind === "blog").slice(0, 3);
+  const guideList = latestGuides().filter((g) => !featured.includes(g));
 
   return (
     <div className="flex flex-col gap-14 sm:gap-16">
@@ -147,8 +150,27 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         </div>
       </section>
 
+      {featured.length > 0 && (
+        <section aria-labelledby="blog-title" className="-mt-6 sm:-mt-8">
+          <SectionHeading id="blog-title" eyebrow="From the blog" title="Best of 2026, with today's prices" href="/guides" link="All posts and guides" />
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((g) => (
+              <li key={g.slug}>
+                <Link href={`/guides/${g.slug}`} prefetch={false} className="card group flex h-full gap-3 p-3 text-fg no-underline hover:border-accent hover:no-underline">
+                  {g.hero && product(g.hero) && <ProductThumb slug={g.hero} alt="" className="w-20 shrink-0 self-start" />}
+                  <span className="min-w-0">
+                    <span className="block font-display font-semibold leading-snug group-hover:text-accent">{g.title}</span>
+                    <span className="mt-1 line-clamp-2 block text-sm text-muted">{g.description}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {/* ---- best deals */}
-      <section aria-labelledby="deals-title" className="-mt-6 sm:-mt-8">
+      <section aria-labelledby="deals-title">
         <div className="grid gap-6">
           <div className="order-1">
             <p className="text-xs font-medium uppercase tracking-wide text-subtle">Best deals in {PLACE[m]}</p>
@@ -273,7 +295,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
 
       {guideList.length > 0 && (
         <section aria-labelledby="guides-title">
-          <SectionHeading id="guides-title" eyebrow="Read before you buy" title="Buying guides, minus the fluff" href="/guides" link="All guides" />
+          <SectionHeading id="guides-title" eyebrow="Read before you buy" title="Buying guides, minus the fluff" href="/guides" link="Blog and guides" />
           <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
             {guideList.map((g) => (
               <li key={g.slug} className="border-b border-dashed border-line py-2">
