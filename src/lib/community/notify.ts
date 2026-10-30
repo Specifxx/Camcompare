@@ -11,7 +11,9 @@ import { logSafe } from "../feedback";
 import { abs, CONTACT_EMAIL } from "../site";
 import { bumpNotice } from "./db";
 
-export const NOTICE_CAPS = { report: 20, post: 10, signup: 5 } as const;
+// feedback: the /feedback form (owner, 2026-10-30: "any feedback feeds into the
+// respective emails"), Reply-To the visitor when they left an address.
+export const NOTICE_CAPS = { report: 20, post: 10, signup: 5, feedback: 25 } as const;
 export type NoticeKind = keyof typeof NOTICE_CAPS;
 
 export const ownerEmail = () => CONTACT_EMAIL;
@@ -22,7 +24,7 @@ export function noticeVerdict(kind: NoticeKind, nth: number): "send" | "send-las
   return nth < cap ? "send" : nth === cap ? "send-last" : "skip";
 }
 
-export async function notifyOwnerBounded(kind: NoticeKind, subject: string, lines: string[]): Promise<void> {
+export async function notifyOwnerBounded(kind: NoticeKind, subject: string, lines: string[], replyTo?: string | null): Promise<void> {
   const to = ownerEmail();
   if (!to || !emailConfigured()) return;
   try {
@@ -33,7 +35,7 @@ export async function notifyOwnerBounded(kind: NoticeKind, subject: string, line
       button: { label: "Open the admin page", url: abs("/admin#community") },
       footer: [`Sent to ${CONTACT_EMAIL}, CamCompare's contact address. The admin page needs your admin link once per browser.`],
     });
-    await sendEmail({ to, subject: `[CamCompare] ${subject}`, ...body });
+    await sendEmail({ to, subject: `[CamCompare] ${subject}`, ...body, ...(replyTo ? { replyTo } : {}) });
   } catch (e) {
     console.error(`community: owner notice failed (${kind}): ${logSafe(e)}`);
   }
