@@ -221,7 +221,7 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
     highlights: p.kind === "camera" ? cameraHighlights(p.item) : lensHighlights(p.item),
     rows: offerRows(offers, { page, placement: "quickview", pack, withAmazon: false, tags }),
     // Always where eBay has a programme: live listings when there are some, and the used and sold searches.
-    ebay: eb && ebLinks ? { name: eb.name, listings, all: listings.length ? ebaySearch(query, m, page, "qv-ebay-all", listings) : null, used: ebLinks.used, sold: ebLinks.sold } : null,
+    ebay: eb && ebLinks ? { name: eb.name, listings, all: listings.length ? ebaySearch(query, m, page, "qv-ebay-all", listings) : null, search: listings.length ? null : ebaySearch(query, m, page, "qv-ebay-pinned"), used: ebLinks.used, sold: ebLinks.sold } : null,
     alsoCheck: alsoCheckLinks({ product: slug, query, offers, market: m, page, amazonAsin: p.item.amazonAsin, placement: "quickview-check", amazonShown: false, ebay: false }),
     updated,
     mounts: p.kind === "lens" ? p.item.mounts.length : 1,

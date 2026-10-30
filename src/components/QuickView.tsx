@@ -13,12 +13,20 @@ import { price } from "@/lib/format";
 import { marketFromPath } from "@/lib/market-client";
 import { isMarket, MARKETS, type MarketCode } from "@/lib/markets";
 import { quickViewFile, viewParam, withView, type QuickViewData } from "@/lib/quickview";
-import { AlsoCheck, EbayListings, OfferRowItem } from "./OfferRows";
+import { AlsoCheck, EbayListings, OfferRowItem, PinnedMarkets, ebayPin, type PinnedLink } from "./OfferRows";
+import { retailer } from "@/lib/retailers";
 import EbayText from "./ebay/EbayText";
 import ProductThumb from "./ProductThumb";
 import SpecHighlights from "./SpecHighlights";
 import OutboundLink from "./OutboundLink";
 import PriceAlert from "./PriceAlert";
+
+/** Amazon (its tagged link: a public file never holds its price) and eBay, pinned above the rows. */
+const qvPins = (d: QuickViewData): PinnedLink[] => {
+  const amazon = d.alsoCheck.find((l) => retailer(l.retailer)?.amazon);
+  const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null) : null;
+  return [amazon && { ...amazon, note: "New, sold by Amazon and its sellers: the price shows on Amazon", cta: "Check price" }, ebay].filter(Boolean) as PinnedLink[];
+};
 
 /** The cheapest in-stock, body-only row, new or not: the price the alert check reads (Amazon and eBay are not in rows). */
 const lowRow = (rows: QuickViewData["rows"], isNew: boolean) => rows.filter((r) => r.inStock && !r.kit && !r.amazon && (r.condition === "New") === isNew).reduce<number | null>((b, r) => (b === null || r.price < b ? r.price : b), null);
@@ -284,6 +292,7 @@ function Dialog({ target }: { target: Target }) {
                   </h3>
                   {data.updated && <span className="text-[11px] text-subtle">Checked {new Date(data.updated).toUTCString().slice(5, 16)}</span>}
                 </div>
+                <PinnedMarkets links={qvPins(data)} product={data.slug} placement="qv-pinned" dense className="mb-2" />
                 {data.rows.length ? (
                   <ul className="card divide-y divide-line">
                     {data.rows.map((r) => (
@@ -321,8 +330,8 @@ function Dialog({ target }: { target: Target }) {
                   )}
                 </section>
               )}
-              <AlsoCheck links={data.alsoCheck} product={data.slug} placement="quickview-check" />
-              <p className="text-[11px] text-subtle">Sorted by price, cheapest in-stock first. Some links earn us a commission; it never changes the order.</p>
+              <AlsoCheck links={data.alsoCheck.filter((l) => !retailer(l.retailer)?.amazon)} product={data.slug} placement="quickview-check" />
+              <p className="text-[11px] text-subtle">Amazon and eBay are ads, pinned first. The stores are sorted by price, cheapest in-stock first; commission never changes their order.</p>
             </>
           )}
         </div>

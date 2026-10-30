@@ -162,6 +162,10 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
   `subId` and `OutboundLink` (rel sponsored), and shows "Paid link" next to it
   when it earns.
 - **Order.** Offers are always sorted by price. Commission never decides order.
+  The one exception (owner, 2026-10-30): Amazon and eBay are pinned above the
+  sorted rows on product pages and in the quick view (`PinnedMarkets`), tinted
+  in their own colours and labelled "Ad". They are outside the sort, never
+  "Best price", and the store rows below keep their price order.
 - **New feed retailers.** After adding one, run
   `npx tsx scripts/sync-workflow-feeds.ts` so the daily workflow gets its
   `FEED_URL_*` secret.

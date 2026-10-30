@@ -72,7 +72,7 @@ export type QuickViewData = {
   highlights: Highlight[];
   rows: OfferRow[]; // every store's offer except Amazon's and eBay's, cheapest first
   /** eBay in this market (none in Singapore): live listings when there are any, and tagged used and recently-sold searches. */
-  ebay: { name: string; listings: OfferRow[]; all: CheckLink | null; used?: EbaySearchLink; sold?: EbaySearchLink } | null;
+  ebay: { name: string; listings: OfferRow[]; all: CheckLink | null; /** The pinned row's search when there is no live listing. */ search?: CheckLink | null; used?: EbaySearchLink; sold?: EbaySearchLink } | null;
   alsoCheck: CheckLink[];
   updated: string | null; // when this market's offers were imported
   mounts: number; // a lens made in several mount versions
