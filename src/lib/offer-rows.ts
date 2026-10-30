@@ -21,7 +21,7 @@ import { usedValue } from "./value";
 import { headline, kitLensLabel, kitText, leadOffer, lowestKit, percentOff } from "./price-rules";
 import type { CheckLink, OfferRow, QuickViewData, RowCond } from "./quickview";
 import { CONDITION_LABEL, ebayFor, retailer, retailersFor } from "./retailers";
-import { productEbayLinks } from "./ebay-links";
+import { productEbayCategory, productEbayLinks } from "./ebay-links";
 import { summarizeCamera, summarizeLens } from "./summary";
 
 const MOUNT_SHORT: Record<string, string> = {
@@ -208,7 +208,7 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
   const tags = rowTags(offers, false);
   const listings = ebayRows(offers, m, { page, placement: "quickview-ebay", pack, tags });
   const eb = ebayFor(m);
-  const ebLinks = productEbayLinks(query, displayName(p.item, m).replace(/α/g, "a"), m, page, "qv");
+  const ebLinks = productEbayLinks(query, displayName(p.item, m).replace(/α/g, "a"), m, page, "qv", productEbayCategory(p.kind === "camera" ? p.item.type : null));
   return {
     slug,
     kind: p.kind,

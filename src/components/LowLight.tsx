@@ -15,7 +15,7 @@ export default function LowLight({ cams }: { cams: { c: Camera; brandName: strin
               {pixelPitchUm(c).toFixed(1)} µm <span className="text-sm font-normal text-muted">pixels</span>
             </p>
             <p className="text-xs text-muted">
-              {c.specs.megapixels} MP on a {sensorLabel(c.specs.sensorFormat).toLowerCase()} sensor
+              {c.specs.megapixels} MP on a {c.specs.sensorFormat ? sensorLabel(c.specs.sensorFormat).toLowerCase() : ""} sensor
               {c.specs.isoMax ? `, ISO up to ${c.specs.isoMax.toLocaleString("en-US")}` : ""}
             </p>
           </div>

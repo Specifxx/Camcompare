@@ -19,7 +19,7 @@ export function pairMetadata(pair: string): Metadata {
   if (!p) return {};
   const [a, b] = p;
   const blurb = (x: typeof a) =>
-    x.kind === "camera" ? `${(x.item as Camera).specs.megapixels} MP ${sensorLabel((x.item as Camera).specs.sensorFormat)}` : `${focalLabel(x.item as Lens)} ${apertureLabel(x.item as Lens)}`;
+    x.kind === "camera" ? `${(x.item as Camera).specs.megapixels} MP${(x.item as Camera).specs.sensorFormat ? ` ${sensorLabel((x.item as Camera).specs.sensorFormat!)}` : ""}` : `${focalLabel(x.item as Lens)} ${apertureLabel(x.item as Lens)}`;
   return {
     title: `${a.item.name} vs ${b.item.name}: specs and prices compared`,
     description: `${a.item.name} (${blurb(a)}) against ${b.item.name} (${blurb(b)}): every spec side by side, the key differences, and today's lowest new and used prices.`,

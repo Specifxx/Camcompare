@@ -39,6 +39,8 @@ export default function Footer() {
           <Link href={marketPath(here, "/releases")} prefetch={false}>Just announced</Link>
           <Link href={marketPath(here, "/viral-cameras")} prefetch={false}>Viral cameras</Link>
           <Link href={marketPath(here, "/digicams")} prefetch={false}>Digicams</Link>
+          <Link href={marketPath(here, "/drones")} prefetch={false}>Drones</Link>
+          <Link href={marketPath(here, "/smart-glasses")} prefetch={false}>Smart glasses</Link>
           <Link href="/requests" prefetch={false}>Feedback &amp; requests</Link>
           <Link href={marketPath(here, "/cameras")} prefetch={false}>All cameras</Link>
           <Link href={marketPath(here, "/lenses")} prefetch={false}>All lenses</Link>

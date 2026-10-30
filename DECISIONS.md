@@ -1439,3 +1439,54 @@ A market's guide is noindex and out of the sitemap until it has ten products
 the US, 225 in the UK and 221 in Australia, but 10 in Singapore and none in the
 EU. It is linked from the header's More menu. The US page is about 1.3 MB of
 HTML, in line with /cameras and /lenses.
+
+## Drones and smart glasses — 2026-10-30
+
+The owner asked for drones ("really big in the industry now") and smart
+glasses. Both are cameras, so they are two new camera `type`s, `drone` and
+`smart-glasses`, not a third product kind: they reuse the camera page, offers,
+price history, alerts, compare pages, Amazon and eBay links, and the stores'
+existing listings. Drones were already arriving as unmatched listings in the
+/accessories "Drones" section (about 500 a day across the US, Australia and
+Singapore); now the models in the catalog get product pages, and the rest stay
+in /accessories.
+
+- **Catalog.** 11 DJI drones (Mini 3 Pro, Mini 4 Pro, Mini 5 Pro, Mini 4K,
+  Flip, Neo, Air 3, Air 3S, Mavic 3 Pro, Mavic 4 Pro, Avata 2) and 5 Meta
+  glasses (Ray-Ban Meta Gen 1 and Gen 2, Oakley Meta HSTN and Vanguard, Meta
+  Ray-Ban Display), with the new brand `meta`. Specs are from launch coverage
+  of the makers' figures, `null` where not confirmed. The Mini 5 Pro and
+  Mavic 4 Pro were never sold officially in the US, so they carry EUR/GBP
+  launch prices and no US one. Like every product, each publishes once a store
+  photo or licensed thumbnail exists: the first import after the merge.
+- **New specs, all optional:** `flightTimeMin`, `rangeKm` (FCC),
+  `obstacleSensing` (drones only), `batteryHours` and `ipRating` (glasses),
+  shown in a "Flight & wear" spec group that is hidden wherever it is empty.
+  `sensorFormat` is nullable, for camera glasses only (Meta doesn't publish
+  it); `four-thirds` joins the formats (Mavic 3 and 4: same size as Micro Four
+  Thirds, which is not what DJI calls it). Pixel pitch, peer ranks and the
+  stills-camera "Things to know" rules are not shown for either type; drones
+  get flight time, range, obstacle sensing and the 250 g line instead.
+- **The headline price of a drone is its base pack:** the drone with its
+  standard remote (RC-N or RC 2), or the drone alone where that is how it is
+  sold. Fly More, Creator and other combos, the RC Pro, store bundles and any
+  listing that adds cards, cases, batteries or care plans after the drone's
+  name are bundles (`kit: true`), shown under "Bundle" and never the headline.
+- **Matching** (`src/lib/matching.ts`). A drone or glasses title says what is
+  in the box ("with DJI RC-N3 Remote", "with Charging Case"), so the accessory
+  rules read only the title's head, before "with", "+", "(", a comma, " - " or
+  "combo", as /accessories already did; a part, plan, lens or accessory brand
+  in the head is refused. "Mavic 3 Pro Cine", "Classic" or "Enterprise" are
+  other drones and are refused. "DJI Flip" and "DJI Neo" need the brand right
+  before the word, like "GoPro MAX". Ray-Ban Meta Gen 1 and Gen 2 share frame
+  names, so a Ray-Ban Meta listing must name its generation ("Gen 2", "2nd
+  Gen") and is matched to that generation; one that names none is refused.
+  Checked against ~300 real drone titles from the stored accessory listings,
+  and against all 12,555 stored offers: none moved to a new product.
+- **eBay.** Drones stay in Cameras & Photo (Camera Drones is inside it).
+  Camera glasses are not in Cameras & Photo, so their eBay searches and Browse
+  calls have no category; the matcher still decides.
+- **Pages.** `/drones` and `/smart-glasses` (and each market's), from
+  `GADGET_PAGES` in `src/lib/curated.ts`, in the More menu, the footer, the
+  homepage hero line and the sitemap (once priced). `/cameras?type=drone`
+  filters too. The main nav is unchanged: its phone row is full.

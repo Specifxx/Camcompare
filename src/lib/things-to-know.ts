@@ -4,7 +4,7 @@
 // bullet, and every good-for/not-for line names the spec behind it.
 // Server-only (reads the catalog for family names).
 import { displayShortName, product, publishedCameras, publishedLenses } from "./catalog";
-import type { Camera, Lens } from "./catalog/schema";
+import { isGadget, type Camera, type Lens } from "./catalog/schema";
 import { price } from "./format";
 import type { Currency, MarketCode } from "./markets";
 import type { Offer } from "./offers";
@@ -17,7 +17,7 @@ export type Fit = { label: string; why: string };
 export type ThingsToKnow = { facts: string[]; goodFor: Fit[]; notFor: Fit[] };
 
 /** "Full frame" reads "full-frame" mid-sentence; "APS-C" and '1"' stay as they are. */
-const sensorWord = (f: Camera["specs"]["sensorFormat"]) => (f === "full-frame" ? "full-frame" : f === "medium-format" ? "medium-format" : sensorLabel(f));
+const sensorWord = (f: Camera["specs"]["sensorFormat"]) => (f === null ? "" : f === "full-frame" ? "full-frame" : f === "medium-format" ? "medium-format" : sensorLabel(f));
 const list = (xs: string[]) => (xs.length <= 1 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 const SUBJECT: Record<string, string> = { human: "people", animal: "animals", bird: "birds", vehicle: "vehicles", aircraft: "aircraft", train: "trains", insect: "insects" };
 const SCREEN: Record<Camera["specs"]["screenType"], string | null> = { "fully-articulating": "fully articulating", tilting: "tilting", "multi-angle": "multi-angle", "flip-up": "flip-up", fixed: "fixed", none: null };
@@ -83,6 +83,7 @@ function usedLine(used: UsedValue | null, todayUsed: number | null, currency: Cu
 export type KnowInput = { offers: Offer[]; currency: Currency; market: MarketCode; marketName: string; used: UsedValue | null; todayUsed: number | null };
 
 export function cameraThings(c: Camera, x: KnowInput): ThingsToKnow {
+  if (isGadget(c.type)) return gadgetThings(c, x);
   const s = c.specs;
   const facts: string[] = [];
   const ibis = s.ibis === true ? `, with in-body stabilisation${s.ibisStops ? ` rated to ${num(s.ibisStops)} stops` : ""}` : s.ibis === false ? `; no in-body stabilisation, so steadiness comes from ${c.mount ? "stabilised lenses" : "the lens"}` : "";
@@ -129,6 +130,47 @@ export function cameraThings(c: Camera, x: KnowInput): ThingsToKnow {
   if (burst !== null && burst < 8) notFor.push({ label: "Fast action", why: `${num(burst)} fps` });
   if (s.micJack && s.headphoneJack === false) notFor.push({ label: "Monitoring sound while you film", why: "no headphone jack" });
   if (s.viewfinderType === "none") notFor.push({ label: "Eye-level shooting in bright sun", why: "no viewfinder" });
+  return { facts, goodFor: goodFor.slice(0, 4), notFor: notFor.slice(0, 4) };
+}
+
+const OBSTACLE: Record<NonNullable<Camera["specs"]["obstacleSensing"]>, string> = { omnidirectional: "omnidirectional obstacle sensing", forward: "forward obstacle sensing", downward: "downward sensors only, no obstacle avoidance", none: "no obstacle sensing" };
+
+/** Drones and camera glasses: what they fly or film like, none of the stills-camera rules (viewfinder, card slots, CIPA shots). */
+function gadgetThings(c: Camera, x: KnowInput): ThingsToKnow {
+  const s = c.specs;
+  const drone = c.type === "drone";
+  const facts: string[] = [];
+  facts.push(`${num(s.megapixels)} MP ${sensorWord(s.sensorFormat)} ${s.sensorType ?? ""} ${drone ? "camera" : "camera in the frame"}.`.replace(/\s+/g, " ").replace(/^./, (ch) => ch.toUpperCase()));
+  if (s.videoMaxRes) facts.push(`Video up to ${s.videoMaxRes}${s.video4kMaxFps ? ` (4K up to ${num(s.video4kMaxFps)}p)` : ""}${s.video10bit ? ", 10-bit" : ""}.`);
+  if (drone) {
+    const flight = [s.flightTimeMin ? `up to ${num(s.flightTimeMin)} minutes a battery` : null, s.rangeKm ? `${num(s.rangeKm)} km video range (FCC, the maker's figure)` : null, s.obstacleSensing ? OBSTACLE[s.obstacleSensing] : null].filter(Boolean);
+    if (flight.length) facts.push(`${flight.join("; ")}.`.replace(/^./, (ch) => ch.toUpperCase()));
+    if (s.weightG) facts.push(s.weightG < 250 ? `${num(s.weightG)} g take-off weight: under the 250 g line many countries use for lighter rules (check yours).` : `${num(s.weightG)} g take-off weight: 250 g or more, a weight at which many countries ask you to register (check yours).`);
+  } else {
+    const wear = [s.batteryHours ? `about ${num(s.batteryHours)} hours of typical use per charge` : null, s.ipRating ? `${s.ipRating} water resistance` : null, s.weightG ? `${num(s.weightG)} g` : null].filter(Boolean);
+    if (wear.length) facts.push(`${wear.join("; ")}.`.replace(/^./, (ch) => ch.toUpperCase()));
+  }
+  facts.push(...family(c, "camera", x.market));
+  facts.push(usedLine(x.used, x.todayUsed, x.currency, x.marketName));
+
+  const goodFor: Fit[] = [];
+  const notFor: Fit[] = [];
+  if (drone) {
+    if (s.weightG && s.weightG < 250) goodFor.push({ label: "Travel and first drones", why: `${num(s.weightG)} g, under 250 g` });
+    if (s.obstacleSensing === "omnidirectional") goodFor.push({ label: "Flying near trees and buildings", why: "omnidirectional obstacle sensing" });
+    if (s.flightTimeMin && s.flightTimeMin >= 40) goodFor.push({ label: "Long flights", why: `up to ${num(s.flightTimeMin)} min a battery` });
+    if (s.video10bit) goodFor.push({ label: "Colour grading", why: "10-bit video" });
+    if (s.sensorFormat === "four-thirds" || s.sensorFormat === "1-inch") goodFor.push({ label: "Dusk and sunrise", why: `${sensorWord(s.sensorFormat)} sensor` });
+    if (s.obstacleSensing === "downward" || s.obstacleSensing === "none") notFor.push({ label: "Beginners near obstacles", why: "no obstacle avoidance" });
+    if (s.weightG && s.weightG >= 250) notFor.push({ label: "Flying without registering", why: `${num(s.weightG)} g` });
+    if (s.flightTimeMin && s.flightTimeMin < 25) notFor.push({ label: "Long shoots on one battery", why: `${num(s.flightTimeMin)} min a battery` });
+  } else {
+    goodFor.push({ label: "Hands-free point-of-view video", why: "the camera sits at eye level" });
+    if (s.ipRating && /^IP[X\d][5-8]$/.test(s.ipRating)) goodFor.push({ label: "Sport and sweat", why: s.ipRating });
+    if (s.batteryHours && s.batteryHours >= 8) goodFor.push({ label: "All-day wear", why: `about ${num(s.batteryHours)} hours` });
+    notFor.push({ label: "Zoom, low light or interchangeable lenses", why: "a small fixed wide-angle camera" });
+    if (s.ipRating === "IPX4") notFor.push({ label: "Swimming or heavy rain", why: "IPX4: splashes only" });
+  }
   return { facts, goodFor: goodFor.slice(0, 4), notFor: notFor.slice(0, 4) };
 }
 

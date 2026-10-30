@@ -1,0 +1,71 @@
+{
+  "slug": "dji-mini-4k",
+  "brand": "dji",
+  "name": "DJI Mini 4K",
+  "shortName": "Mini 4K",
+  "aliases": [
+    "Mini 4K"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "drone",
+  "announced": "2024-04-29",
+  "launchPriceUsd": 299,
+  "launchPrices": {
+    "GBP": 269
+  },
+  "status": "current",
+  "predecessor": null,
+  "successor": null,
+  "rivals": [
+    "dji-neo",
+    "dji-flip",
+    "dji-mini-4-pro"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": null,
+    "aperture": null
+  },
+  "specs": {
+    "sensorFormat": "1/2.3-inch",
+    "sensorType": "CMOS",
+    "megapixels": 12,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 30,
+    "video10bit": false,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": null,
+    "weightG": 249,
+    "dimensionsMm": null,
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true,
+    "flightTimeMin": 31,
+    "rangeKm": 10,
+    "obstacleSensing": "downward"
+  }
+}

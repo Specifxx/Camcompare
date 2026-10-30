@@ -11,7 +11,11 @@ import { z } from "zod";
 // "compact" covers every fixed-lens stills camera: premium, travel-zoom,
 // bridge and rugged. "action" = GoPro-style, "360" = dual-lens spherical,
 // "cinema" = video-first bodies without a stills focus (FX6, C70, Pocket 6K).
-export const CAMERA_TYPES = ["mirrorless", "dslr", "compact", "medium-format", "rangefinder", "action", "360", "cinema"] as const;
+// "drone" = a camera drone (DJI Mini, Air, Mavic…), priced as the maker's
+// base pack: the drone with its standard remote, or the drone alone where
+// that is how it is sold; Fly More and Creator combos are bundles.
+// "smart-glasses" = camera glasses (Ray-Ban Meta, Oakley Meta).
+export const CAMERA_TYPES = ["mirrorless", "dslr", "compact", "medium-format", "rangefinder", "action", "360", "cinema", "drone", "smart-glasses"] as const;
 
 export const SENSOR_FORMATS = [
   "medium-format",
@@ -20,6 +24,7 @@ export const SENSOR_FORMATS = [
   "super-35",
   "aps-c",
   "micro-four-thirds",
+  "four-thirds", // the same size as Micro Four Thirds; what drone makers print (Mavic 3, Mavic 4 Pro)
   "1.4-inch",
   "1-inch",
   "1/1.1-inch",
@@ -59,7 +64,7 @@ const nullableNumber = z.number().positive().nullable();
 export const specsSchema = z
   .object({
     // Sensor
-    sensorFormat: z.enum(SENSOR_FORMATS),
+    sensorFormat: z.enum(SENSOR_FORMATS).nullable(), // null only where the maker doesn't publish it (camera glasses)
     sensorType: z.string().min(2).nullable(), // "BSI CMOS", "Stacked CMOS", "X-Trans CMOS 5 HR"
     megapixels: z.number().positive(), // effective
     isoMin: nullableNumber, // native, not extended
@@ -99,6 +104,12 @@ export const specsSchema = z
     builtInFlash: z.boolean().nullable(),
     wifi: z.boolean().nullable(),
     bluetooth: z.boolean().nullable(),
+    // Drones and camera glasses only; absent on every other camera.
+    flightTimeMin: nullableNumber.optional(), // maker's maximum flight time, standard battery
+    rangeKm: nullableNumber.optional(), // maker's maximum video transmission range (FCC)
+    obstacleSensing: z.enum(["omnidirectional", "forward", "downward", "none"]).nullable().optional(), // the widest coverage the maker quotes
+    batteryHours: nullableNumber.optional(), // camera glasses: maker's typical-use battery life, glasses alone
+    ipRating: z.string().regex(/^IP[X\d]\d$/).nullable().optional(), // "IPX4", "IP67"
   })
   .strict();
 
@@ -160,6 +171,14 @@ export const cameraSchema = z
     if ((c.mount === null) !== (c.fixedLens !== null)) {
       ctx.addIssue({ code: "custom", path: ["mount"], message: "exactly one of mount / fixedLens" });
     }
+    if (c.specs.sensorFormat === null && c.type !== "smart-glasses") {
+      ctx.addIssue({ code: "custom", path: ["specs", "sensorFormat"], message: "only camera glasses may leave the sensor size unpublished" });
+    }
+    const flying = c.type === "drone";
+    for (const k of ["flightTimeMin", "rangeKm", "obstacleSensing"] as const) {
+      if (!flying && c.specs[k] !== undefined) ctx.addIssue({ code: "custom", path: ["specs", k], message: "drones only" });
+    }
+    if (c.type !== "smart-glasses" && c.specs.batteryHours !== undefined) ctx.addIssue({ code: "custom", path: ["specs", "batteryHours"], message: "camera glasses only" });
     if (c.specs.viewfinderType === "none" && c.specs.evfDotsM !== null) {
       ctx.addIssue({ code: "custom", path: ["specs", "evfDotsM"], message: "no viewfinder but EVF dots set" });
     }
@@ -169,6 +188,8 @@ export type Camera = z.infer<typeof cameraSchema>;
 export type Specs = z.infer<typeof specsSchema>;
 export type CameraType = (typeof CAMERA_TYPES)[number];
 export type SensorFormat = (typeof SENSOR_FORMATS)[number];
+/** Cameras that fly or are worn: their own pages, and none of the stills-camera guidance. */
+export const isGadget = (t: CameraType) => t === "drone" || t === "smart-glasses";
 
 // ---------------------------------------------------------------- lenses
 

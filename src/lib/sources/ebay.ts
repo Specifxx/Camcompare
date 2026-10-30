@@ -107,7 +107,8 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
     for (const { kind, item } of products) {
       const params = new URLSearchParams({
         q: searchPhrase(item),
-        category_ids: CATEGORY[kind],
+        // Camera glasses are outside Cameras & Photo on eBay: no category, the matcher decides.
+        ...(kind === "camera" && (item as { type?: string }).type === "smart-glasses" ? {} : { category_ids: CATEGORY[kind] }),
         filter: `buyingOptions:{FIXED_PRICE},itemLocationCountry:${r.country},deliveryCountry:${r.country},price:[${priceFloor(item, currency)}..],priceCurrency:${currency}`,
         sort: "price",
         limit: "100",

@@ -31,6 +31,8 @@ const TYPES: Opt[] = [
   ["action", "Action"],
   ["360", "360°"],
   ["cinema", "Cinema"],
+  ["drone", "Drone"],
+  ["smart-glasses", "Smart glasses"],
 ];
 const LENS_CATS: Opt[] = [
   ["ultra-wide", "Ultra-wide"],
@@ -60,7 +62,7 @@ const COVERAGE: Opt[] = [
   ["medium-format", "Medium format"],
 ];
 
-const sensorGroup = (s: CameraSummary["sensor"]) => (s === "super-35" ? "aps-c" : s === "aps-h" ? "full-frame" : ["medium-format", "full-frame", "aps-c", "micro-four-thirds"].includes(s) ? s : "small");
+const sensorGroup = (s: CameraSummary["sensor"]) => (s === null ? "small" : s === "four-thirds" ? "micro-four-thirds" : s === "super-35" ? "aps-c" : s === "aps-h" ? "full-frame" : ["medium-format", "full-frame", "aps-c", "micro-four-thirds"].includes(s) ? s : "small");
 
 type SortKey = "newest" | "price" | "used" | "weight" | "mp" | "aperture" | "focal";
 const SORTS: Record<SortKey, { label: string; kinds: ("camera" | "lens")[]; fn: (a: ProductSummary, b: ProductSummary) => number }> = {

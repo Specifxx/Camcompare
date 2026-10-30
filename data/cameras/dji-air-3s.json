@@ -1,0 +1,71 @@
+{
+  "slug": "dji-air-3s",
+  "brand": "dji",
+  "name": "DJI Air 3S",
+  "shortName": "Air 3S",
+  "aliases": [
+    "Air 3S"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "drone",
+  "announced": "2024-10-15",
+  "launchPriceUsd": 1099,
+  "status": "current",
+  "predecessor": "dji-air-3",
+  "successor": null,
+  "rivals": [
+    "dji-air-3",
+    "dji-mini-5-pro",
+    "dji-mavic-4-pro",
+    "dji-mavic-3-pro"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24
+    ],
+    "aperture": "f/1.8"
+  },
+  "specs": {
+    "sensorFormat": "1-inch",
+    "sensorType": "CMOS",
+    "megapixels": 50,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "4K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": null,
+    "weightG": 724,
+    "dimensionsMm": null,
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true,
+    "flightTimeMin": 45,
+    "rangeKm": 20,
+    "obstacleSensing": "omnidirectional"
+  }
+}

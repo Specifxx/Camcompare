@@ -86,7 +86,7 @@ export function digicamGroups(): { id: string; title: string; blurb: string; cam
     id: g.id,
     title: g.title,
     blurb: g.blurb,
-    cameras: all.filter((c) => (g.formats.length ? (g.formats as readonly string[]).includes(c.specs.sensorFormat) : !named.has(c.specs.sensorFormat))),
+    cameras: all.filter((c) => (g.formats.length ? (g.formats as readonly string[]).includes(c.specs.sensorFormat ?? "") : !named.has(c.specs.sensorFormat ?? ""))),
   }));
 }
 
@@ -101,3 +101,42 @@ export function olderDigicams(m: MarketCode): { camera: Camera; used: number }[]
 
 /** A curated page's market version is worth indexing once that market prices any of its cameras (the US always). */
 export const pricedIn = (cams: Camera[], m: MarketCode) => m === "us" || cams.some((c) => offersFor(c.slug, m).length > 0);
+
+// ---------------------------------------------------------------- drones and camera glasses
+
+/**
+ * /drones and /smart-glasses: every camera of that type in the catalog,
+ * grouped, with today's prices. They are cameras in the catalog (type
+ * "drone" / "smart-glasses", priced and matched like any other), and these
+ * pages are their front door.
+ */
+export const GADGET_PAGES = {
+  drone: {
+    path: "/drones",
+    label: "Drones",
+    groups: [
+      { id: "under-250", title: "Under 250 g", blurb: "Mini drones under the 250 g line that many countries use for lighter rules: DJI Mini, Flip and Neo. Check your own country's rules before you fly.", test: (c: Camera) => c.specs.weightG !== null && c.specs.weightG < 250 },
+      { id: "over-250", title: "250 g and over", blurb: "Bigger sensors, longer flights and more wind resistance: DJI Air, Mavic and FPV drones. Most countries ask you to register a drone this heavy.", test: (c: Camera) => c.specs.weightG === null || c.specs.weightG >= 250 },
+    ],
+  },
+  "smart-glasses": {
+    path: "/smart-glasses",
+    label: "Smart glasses",
+    groups: [{ id: "camera-glasses", title: "Camera glasses", blurb: "Glasses with a camera in the frame for hands-free photos and point-of-view video, plus open-ear audio and an assistant.", test: () => true }],
+  },
+} as const;
+export type GadgetType = keyof typeof GADGET_PAGES;
+
+/** The curated page a drone or camera glasses belongs to, or null for any other camera. */
+export const gadgetPage = (t: Camera["type"]) => (t === "drone" || t === "smart-glasses" ? GADGET_PAGES[t] : null);
+
+export function gadgets(t: GadgetType): Camera[] {
+  return publishedCameras()
+    .filter((c) => c.type === t)
+    .sort((a, b) => b.announced.localeCompare(a.announced) || a.name.localeCompare(b.name));
+}
+
+export function gadgetGroups(t: GadgetType): { id: string; title: string; blurb: string; cameras: Camera[] }[] {
+  const all = gadgets(t);
+  return GADGET_PAGES[t].groups.map((g) => ({ id: g.id, title: g.title, blurb: g.blurb, cameras: all.filter((c) => g.test(c)) })).filter((g) => g.cameras.length > 0);
+}

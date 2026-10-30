@@ -10,7 +10,8 @@ import { sensorArea } from "./specs/definitions";
 
 /** Approximate light-gathering area per pixel, in square micrometres. */
 export function pixelAreaUm2(c: Camera): number {
-  return (sensorArea(c.specs.sensorFormat) * 1e6) / (c.specs.megapixels * 1e6);
+  // Only ever called for a camera with a published sensor size (LowLight is not drawn for camera glasses).
+  return (sensorArea(c.specs.sensorFormat ?? "1/2.8-inch") * 1e6) / (c.specs.megapixels * 1e6);
 }
 
 /** Pixel pitch in micrometres (the side of a square pixel of that area). */

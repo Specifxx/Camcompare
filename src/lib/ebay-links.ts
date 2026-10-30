@@ -119,6 +119,13 @@ export function ebayTemplate(m: MarketCode, s: Omit<EbaySearch, "query">, page: 
   return l && { href: l.href, paid: l.paid, retailer: l.retailer, name: l.name };
 }
 
+/**
+ * The eBay category a product's searches narrow to: Cameras & Photo (the
+ * default, `undefined`) for every camera, drone and lens; none for camera
+ * glasses, which eBay files under wearables, outside Cameras & Photo.
+ */
+export const productEbayCategory = (type: string | null | undefined): null | undefined => (type === "smart-glasses" ? null : undefined);
+
 export type ProductEbayLinks = { name: string; used: EbayLink; new: EbayLink; sold: EbayLink };
 
 /**
@@ -126,10 +133,10 @@ export type ProductEbayLinks = { name: string; used: EbayLink; new: EbayLink; so
  * Cameras & Photo. `prefix` names the placement family: "product" on the
  * product page (product-ebay-used…), "qv" in the quick view.
  */
-export function productEbayLinks(query: string, name: string, m: MarketCode, page: string, prefix: string): ProductEbayLinks | null {
-  const used = ebayLink(m, { query, condition: "used" }, page, `${prefix}-ebay-used`, `Search used ${name} on eBay`);
-  const fresh = ebayLink(m, { query, condition: "new" }, page, `${prefix}-ebay-new`, `Search new ${name} on eBay`);
-  const sold = ebayLink(m, { query, sold: true }, page, `${prefix}-ebay-sold`, "Recently sold on eBay");
+export function productEbayLinks(query: string, name: string, m: MarketCode, page: string, prefix: string, category?: number | null): ProductEbayLinks | null {
+  const used = ebayLink(m, { query, condition: "used", category }, page, `${prefix}-ebay-used`, `Search used ${name} on eBay`);
+  const fresh = ebayLink(m, { query, condition: "new", category }, page, `${prefix}-ebay-new`, `Search new ${name} on eBay`);
+  const sold = ebayLink(m, { query, sold: true, category }, page, `${prefix}-ebay-sold`, "Recently sold on eBay");
   if (!used || !fresh || !sold) return null;
   return { name: used.name, used, new: fresh, sold };
 }

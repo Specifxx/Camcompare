@@ -32,6 +32,7 @@ const FORMAT_CROP: Partial<Record<SensorFormat, number>> = { "medium-format": 0.
 export function bodyCrop(c: Pick<Camera, "mount" | "specs">): number {
   const f = c.specs.sensorFormat;
   if (f === "aps-c" && c.mount?.startsWith("canon")) return 1.6;
+  if (!f) return 1; // no published sensor size: no equivalent to work out
   return FORMAT_CROP[f] ?? Math.sqrt(sensorArea("full-frame") / sensorArea(f));
 }
 

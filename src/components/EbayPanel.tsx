@@ -1,5 +1,5 @@
 import { product as getProduct } from "@/lib/catalog";
-import { productEbayLinks } from "@/lib/ebay-links";
+import { productEbayCategory, productEbayLinks } from "@/lib/ebay-links";
 import type { MarketCode } from "@/lib/markets";
 import type { Offer } from "@/lib/offers";
 import { ebayRows, ebaySearch, packKind } from "@/lib/offer-rows";
@@ -18,9 +18,9 @@ import EbayText, { PaidTag } from "./ebay/EbayText";
  */
 export default function EbayPanel({ product, query, name, offers, market, page }: { product: string; query: string; name: string; offers: Offer[]; market: MarketCode; page: string }) {
   const r = ebayFor(market);
-  const links = productEbayLinks(query, name, market, page, "product");
-  if (!r || !links) return null;
   const p = getProduct(product);
+  const links = productEbayLinks(query, name, market, page, "product", productEbayCategory(p?.kind === "camera" ? p.item.type : null));
+  if (!r || !links) return null;
   const listings = ebayRows(offers, market, { page, placement: "ebay", pack: p ? packKind(p) : "lens" });
   const all = listings.length ? ebaySearch(query, market, page, "product-ebay-all", listings) : null;
   return (

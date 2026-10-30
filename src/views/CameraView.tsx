@@ -53,7 +53,8 @@ import {
   product,
   rivalsOf,
 } from "@/lib/catalog";
-import type { Camera } from "@/lib/catalog/schema";
+import { isGadget, type Camera } from "@/lib/catalog/schema";
+import { gadgetPage } from "@/lib/curated";
 import { breadcrumb, ldJson, productLd } from "@/lib/jsonld";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
@@ -75,7 +76,7 @@ export function cameraMetadata(slug: string, m: MarketCode): Metadata {
   const priceText = priceSentence(offers, cur, c.mount ? "body" : "fixed");
   return pageMeta({
     title: `${name} price & specs`,
-    description: `${name}: ${c.specs.megapixels} MP ${sensorLabel(c.specs.sensorFormat).toLowerCase()} ${typeLabel(c.type).toLowerCase()}, announced ${c.announced.slice(0, 4)}.${priceText} Full specs, price history and side-by-side comparisons.`,
+    description: `${name}: ${c.specs.megapixels} MP ${c.specs.sensorFormat ? `${sensorLabel(c.specs.sensorFormat).toLowerCase()} ` : ""}${typeLabel(c.type).toLowerCase()}, announced ${c.announced.slice(0, 4)}.${priceText} Full specs, price history and side-by-side comparisons.`,
     path: `/cameras/${c.slug}`,
     market: m,
     image: `/products/${c.slug}.webp`,
@@ -150,7 +151,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
       />
       <div className="flex flex-col gap-5">
         <nav className="text-xs text-subtle" aria-label="Breadcrumb">
-          <Link href={marketPath(m, "/cameras")}>Cameras</Link> / <Link href={marketPath(m, `/brands/${c.brand}`)}>{brand}</Link> / <span>{short}</span>
+          {gadgetPage(c.type) ? <Link href={marketPath(m, gadgetPage(c.type)!.path)}>{gadgetPage(c.type)!.label}</Link> : <Link href={marketPath(m, "/cameras")}>Cameras</Link>} / <Link href={marketPath(m, `/brands/${c.brand}`)}>{brand}</Link> / <span>{short}</span>
         </nav>
         {/* Hero: photo, then name, stars, the best price and the actions (shopping-panel order). */}
         <header className="grid grid-cols-1 gap-5 md:grid-cols-[minmax(0,340px)_minmax(0,1fr)] md:gap-8">
@@ -159,7 +160,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
             <div>
               <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{name}</h1>
               <p className="mt-1 text-sm text-muted">
-                {typeLabel(c.type)} · {mt ? <Link href={marketPath(m, `/mounts/${mt.slug}`)}>{mt.name}</Link> : "Fixed lens"} · Announced {longMonthYear(c.announced)}
+                {typeLabel(c.type)} · {mt ? <Link href={marketPath(m, `/mounts/${mt.slug}`)}>{mt.name}</Link> : isGadget(c.type) ? null : "Fixed lens"}{isGadget(c.type) ? "" : " ·"} Announced {longMonthYear(c.announced)}
                 {c.status === "discontinued" ? " · Discontinued (new stock may be limited)" : ""}
                 {name !== c.name ? ` · Sold as ${c.name} in the US` : ""}
               </p>
@@ -238,15 +239,20 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         <SpecSheet item={c} groups={SPEC_GROUPS} />
       </section>
 
-      <section>
-        <h2 className="h-section mb-3">Low light & noise</h2>
-        <LowLight cams={[{ c, brandName: brand }]} />
-      </section>
+      {/* Pixel pitch and peer ranks are stills-camera measures: not for drones or camera glasses. */}
+      {!isGadget(c.type) && (
+        <>
+          <section>
+            <h2 className="h-section mb-3">Low light & noise</h2>
+            <LowLight cams={[{ c, brandName: brand }]} />
+          </section>
 
-      <section>
-        <h2 className="h-section mb-3">How it stacks up</h2>
-        <PeerRanks camera={c} />
-      </section>
+          <section>
+            <h2 className="h-section mb-3">How it stacks up</h2>
+            <PeerRanks camera={c} />
+          </section>
+        </>
+      )}
 
       <SuggestedKit c={c} m={m} />
 

@@ -2,7 +2,7 @@
 // page walks SPEC_GROUPS in order; a row whose values all match can be hidden
 // with "differences only", and `better` decides which column gets the win
 // marker. `better: null` means "different, not better" (a mount, a card type).
-import type { Camera, Specs } from "../catalog/schema";
+import type { Camera, SensorFormat, Specs } from "../catalog/schema";
 
 export type Better = "higher" | "lower" | null;
 
@@ -24,13 +24,14 @@ export type SpecDef<T = Camera> = {
 
 export type SpecGroup<T = Camera> = { id: string; title: string; specs: SpecDef<T>[] };
 
-const SENSOR_LABEL: Record<Specs["sensorFormat"], string> = {
+const SENSOR_LABEL: Record<SensorFormat, string> = {
   "medium-format": "Medium format",
   "full-frame": "Full frame",
   "aps-h": "APS-H",
   "super-35": "Super 35",
   "aps-c": "APS-C",
   "micro-four-thirds": "Micro Four Thirds",
+  "four-thirds": "Four Thirds",
   "1.4-inch": '1.4"',
   "1-inch": '1"',
   "1/1.1-inch": '1/1.1"',
@@ -45,13 +46,14 @@ const SENSOR_LABEL: Record<Specs["sensorFormat"], string> = {
 };
 
 // Approximate sensor area in mm², for ranking only (never displayed).
-const SENSOR_AREA: Record<Specs["sensorFormat"], number> = {
+const SENSOR_AREA: Record<SensorFormat, number> = {
   "medium-format": 1452,
   "full-frame": 864,
   "aps-h": 548,
   "super-35": 362,
   "aps-c": 370,
   "micro-four-thirds": 225,
+  "four-thirds": 225,
   "1.4-inch": 226, // Canon's 1.4-type: ~18.4 x 12.3 mm, a hair over Four Thirds by area
   "1-inch": 116,
   "1/1.1-inch": 106, // DJI's and Insta360's square sensors: ~10.3 x 10.3 mm
@@ -65,8 +67,10 @@ const SENSOR_AREA: Record<Specs["sensorFormat"], number> = {
   "1/2.8-inch": 22,
 };
 
-export const sensorLabel = (f: Specs["sensorFormat"]) => SENSOR_LABEL[f];
-export const sensorArea = (f: Specs["sensorFormat"]) => SENSOR_AREA[f];
+export const sensorLabel = (f: SensorFormat) => SENSOR_LABEL[f];
+export const sensorArea = (f: SensorFormat) => SENSOR_AREA[f];
+/** "1/1.3\" sensor", or plain "sensor" where the maker doesn't say (camera glasses). */
+export const sensorPhrase = (f: SensorFormat | null) => (f ? `${SENSOR_LABEL[f]} sensor` : "sensor");
 
 const SCREEN_LABEL: Record<Specs["screenType"], string> = {
   "fully-articulating": "Fully articulating",
@@ -86,8 +90,13 @@ const TYPE_LABEL: Record<Camera["type"], string> = {
   action: "Action camera",
   "360": "360° camera",
   cinema: "Cinema camera",
+  drone: "Camera drone",
+  "smart-glasses": "Smart glasses",
 };
 export const typeLabel = (t: Camera["type"]) => TYPE_LABEL[t];
+
+const OBSTACLE_LABEL: Record<NonNullable<Specs["obstacleSensing"]>, string> = { omnidirectional: "Omnidirectional", forward: "Forward", downward: "Downward only", none: "None" };
+const OBSTACLE_RANK: Record<NonNullable<Specs["obstacleSensing"]>, number> = { omnidirectional: 3, forward: 2, downward: 1, none: 0 };
 
 export const num = (v: number | null, unit = "", digits = 1) =>
   v === null ? null : `${Number.isInteger(v) ? v.toLocaleString("en-US") : v.toFixed(digits).replace(/\.0$/, "")}${unit}`;
@@ -127,7 +136,7 @@ export const SPEC_GROUPS: SpecGroup<Camera>[] = [
     id: "sensor",
     title: "Sensor & image",
     specs: [
-      { key: "sensorFormat", label: "Sensor size", better: "higher", rank: (c) => SENSOR_AREA[c.specs.sensorFormat], format: (c) => SENSOR_LABEL[c.specs.sensorFormat] },
+      { key: "sensorFormat", label: "Sensor size", better: "higher", rank: (c) => (c.specs.sensorFormat ? SENSOR_AREA[c.specs.sensorFormat] : null), format: (c) => (c.specs.sensorFormat ? SENSOR_LABEL[c.specs.sensorFormat] : null) },
       { key: "sensorType", label: "Sensor type", better: null, format: s("sensorType") },
       { key: "megapixels", label: "Resolution", better: "higher", rank: s("megapixels"), format: (c) => num(c.specs.megapixels, " MP") },
       { key: "isoRange", label: "Native ISO", better: "higher", rank: s("isoMax"), format: (c) => (c.specs.isoMin && c.specs.isoMax ? `${c.specs.isoMin.toLocaleString("en-US")}–${c.specs.isoMax.toLocaleString("en-US")}` : null) },
@@ -168,6 +177,19 @@ export const SPEC_GROUPS: SpecGroup<Camera>[] = [
       { key: "screen", label: "Rear screen", better: "higher", rank: s("screenDotsM"), format: (c) => (c.specs.screenType === "none" ? "None" : [c.specs.screenSizeIn ? `${c.specs.screenSizeIn}"` : null, c.specs.screenDotsM ? `${num(c.specs.screenDotsM, "M dots", 2)}` : null].filter(Boolean).join(", ") || null) },
       { key: "screenType", label: "Screen articulation", better: null, format: (c) => SCREEN_LABEL[c.specs.screenType] },
       { key: "touchscreen", label: "Touchscreen", better: "higher", rank: (c) => yesRank(c.specs.touchscreen), format: (c) => yesNo(c.specs.touchscreen) },
+    ],
+  },
+  {
+    // Drones and camera glasses only: every row is optional, so the group is
+    // hidden on a camera page (SpecSheet, CompareTable drop an empty group).
+    id: "flight",
+    title: "Flight & wear",
+    specs: [
+      { key: "flightTimeMin", label: "Flight time", optional: true, better: "higher", rank: (c) => c.specs.flightTimeMin ?? null, format: (c) => num(c.specs.flightTimeMin ?? null, " min"), help: "The maker's maximum, standard battery, in still air." },
+      { key: "rangeKm", label: "Video range", optional: true, better: "higher", rank: (c) => c.specs.rangeKm ?? null, format: (c) => num(c.specs.rangeKm ?? null, " km"), help: "The maker's maximum transmission range (FCC), unobstructed. Local rules are far shorter." },
+      { key: "obstacleSensing", label: "Obstacle sensing", optional: true, better: "higher", rank: (c) => (c.specs.obstacleSensing ? OBSTACLE_RANK[c.specs.obstacleSensing] : null), format: (c) => (c.specs.obstacleSensing ? OBSTACLE_LABEL[c.specs.obstacleSensing] : null) },
+      { key: "batteryHours", label: "Battery life", optional: true, better: "higher", rank: (c) => c.specs.batteryHours ?? null, format: (c) => num(c.specs.batteryHours ?? null, " hours (typical use)"), help: "The maker's typical-use figure for the glasses alone, without the charging case." },
+      { key: "ipRating", label: "Water resistance", optional: true, better: null, format: (c) => c.specs.ipRating ?? null },
     ],
   },
   {

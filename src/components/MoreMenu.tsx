@@ -11,6 +11,8 @@ export const MORE = [
   { path: "/releases", label: "Just announced", market: true },
   { path: "/viral-cameras", label: "Viral cameras", market: true },
   { path: "/digicams", label: "Digicams", market: true },
+  { path: "/drones", label: "Drones", market: true },
+  { path: "/smart-glasses", label: "Smart glasses", market: true },
   { path: "/stories", label: "Member stories", market: false },
   { path: "/collection", label: "My gear", market: false },
   { path: "/community", label: "Community", market: false },

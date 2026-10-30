@@ -1,0 +1,70 @@
+{
+  "slug": "dji-mavic-3-pro",
+  "brand": "dji",
+  "name": "DJI Mavic 3 Pro",
+  "shortName": "Mavic 3 Pro",
+  "aliases": [
+    "Mavic 3 Pro"
+  ],
+  "modelCodes": [],
+  "gtins": [],
+  "type": "drone",
+  "announced": "2023-04-25",
+  "launchPriceUsd": 2199,
+  "status": "current",
+  "predecessor": null,
+  "successor": "dji-mavic-4-pro",
+  "rivals": [
+    "dji-mavic-4-pro",
+    "dji-air-3s",
+    "dji-air-3"
+  ],
+  "mount": null,
+  "fixedLens": {
+    "focalMm": [
+      24
+    ],
+    "aperture": "f/2.8"
+  },
+  "specs": {
+    "sensorFormat": "four-thirds",
+    "sensorType": "CMOS",
+    "megapixels": 20,
+    "isoMin": null,
+    "isoMax": null,
+    "ibis": null,
+    "ibisStops": null,
+    "burstMechFps": null,
+    "burstElecFps": null,
+    "shutterMaxMech": null,
+    "shutterMaxElec": null,
+    "afPoints": null,
+    "afSubjects": null,
+    "videoMaxRes": "5.1K",
+    "video4kMaxFps": 120,
+    "video10bit": true,
+    "rawVideoInternal": false,
+    "evfDotsM": null,
+    "viewfinderType": "none",
+    "screenSizeIn": null,
+    "screenDotsM": null,
+    "screenType": "none",
+    "touchscreen": null,
+    "weightG": 958,
+    "dimensionsMm": null,
+    "weatherSealed": null,
+    "waterproofM": null,
+    "cardSlots": 1,
+    "cardTypes": "microSD",
+    "batteryShotsCipa": null,
+    "usbC": true,
+    "micJack": false,
+    "headphoneJack": false,
+    "builtInFlash": false,
+    "wifi": true,
+    "bluetooth": true,
+    "flightTimeMin": 43,
+    "rangeKm": 15,
+    "obstacleSensing": "omnidirectional"
+  }
+}
