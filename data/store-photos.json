@@ -130,6 +130,51 @@
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
   },
+  "dji-air-3": {
+   "src": "https://cdn.shopify.com/s/files/1/0622/3219/9216/files/3287599.jpg?width=640",
+   "store": "Focus Camera",
+   "retailer": "focus-camera"
+  },
+  "dji-air-3s": {
+   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1070373_1_330238c0-894c-4d83-9ec0-691b819eaab5.jpg?width=640",
+   "store": "Beach Camera",
+   "retailer": "beach-camera"
+  },
+  "dji-flip": {
+   "src": "https://content.abt.com/media/images/products/BDP_Images/dji-drone-CPFP0000018004.jpg",
+   "store": "Abt",
+   "retailer": "abt"
+  },
+  "dji-mavic-3-pro": {
+   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/1682412382_1761807_af424af7-09e2-4b45-91b7-0b07b3192f1b.jpg?width=640",
+   "store": "Camera Electronic",
+   "retailer": "camera-electronic"
+  },
+  "dji-mavic-4-pro": {
+   "src": "https://content.abt.com/media/images/products/BDP_Images/dji-camera-drone-CP-MA-00000849-01-front.jpg",
+   "store": "Abt",
+   "retailer": "abt"
+  },
+  "dji-mini-4-pro": {
+   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/Product_1.jpg?width=640",
+   "store": "Camera Electronic",
+   "retailer": "camera-electronic"
+  },
+  "dji-mini-4k": {
+   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/61TcjJ4qDZL._AC_SL1500.jpg?width=640",
+   "store": "Camera Electronic",
+   "retailer": "camera-electronic"
+  },
+  "dji-mini-5-pro": {
+   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/DJIMini5PRO-drone_RCN3.png?width=640",
+   "store": "Camera Electronic",
+   "retailer": "camera-electronic"
+  },
+  "dji-neo": {
+   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/DJINeo_propeller_batterydetached.jpg?width=640",
+   "store": "Camera Electronic",
+   "retailer": "camera-electronic"
+  },
   "dji-osmo-360-ii": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/SC_1.jpg?width=640",
    "store": "Camera Electronic",
@@ -790,6 +835,21 @@
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
+  "meta-oakley-meta-hstn": {
+   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-glasses-OW8002800202.jpg",
+   "store": "Abt",
+   "retailer": "abt"
+  },
+  "meta-oakley-meta-vanguard": {
+   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-smart-glasses-OOW8001800101-front-left.jpg",
+   "store": "Abt",
+   "retailer": "abt"
+  },
+  "meta-ray-ban-meta-gen-2": {
+   "src": "https://content.abt.com/media/images/products/BDP_Images/ray-ban-meta-sunglasses-RW4013-6011M50.jpg",
+   "store": "Abt",
+   "retailer": "abt"
+  },
   "nikon-af-p-dx-10-20mm-f4-5-5-6g-vr": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/jaa832da_0_3.jpg?width=640",
    "store": "Camera Electronic",
@@ -1186,7 +1246,7 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-s-20mm-f2-5": {
-   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/files/lumix-2026-s20-galleryimages-1-260827_158cd94c-1b71-435b-ac4e-def2bf34bc85.png?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/files/lumix-2026-s20-galleryimages-2-260827_40010462-9b05-4682-bb7b-468a3f14651b.png?width=640",
    "store": "Shop Panasonic",
    "retailer": "panasonic-store-us"
   },
