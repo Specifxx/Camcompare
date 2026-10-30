@@ -1,7 +1,11 @@
 // POST /api/feedback: one message from the feedback form into the private
 // feedback table (lib/feedback.ts). JSON in, JSON out. Without DATABASE_URL
-// it answers 503 and the form says feedback isn't connected yet.
+// it answers 503 and the form says feedback isn't connected yet. Once saved, it
+// is emailed to CONTACT_EMAIL (camcompareapp@gmail.com), Reply-To the visitor,
+// at most NOTICE_CAPS.feedback a day; the row is already safe if that fails.
 // Logs never carry what the visitor wrote, their email or the connection string.
+import { notifyOwnerBounded } from "@/lib/community/notify";
+import { KIND_LABEL } from "@/lib/feedback-kinds";
 import { checkSubmission, clientIp, feedbackConfigured, feedbackLimiter, logSafe, NOT_CONNECTED, saveFeedback } from "@/lib/feedback";
 
 export const dynamic = "force-dynamic";
@@ -42,5 +46,12 @@ export async function POST(req: Request) {
     console.error(`feedback: save failed (${verdict.row.kind}, ${verdict.row.message.length} chars): ${logSafe(e)}`);
     return reply(500, { ok: false, error: "We couldn't save that just now. Please try again in a minute." });
   }
+  const r = verdict.row;
+  await notifyOwnerBounded(
+    "feedback",
+    `Feedback (${KIND_LABEL[r.kind]}): ${r.message.replace(/\s+/g, " ").slice(0, 80)}`,
+    [`${KIND_LABEL[r.kind]}${r.market ? ` · ${r.market.toUpperCase()}` : ""}${r.page ? ` · ${r.page}` : ""}`, `From: ${r.email ?? "no email given"}`, "", r.message],
+    r.email,
+  );
   return reply(201, { ok: true });
 }

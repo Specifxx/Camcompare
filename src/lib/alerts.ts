@@ -177,7 +177,7 @@ export const alertsFrom = () => process.env.ALERTS_FROM_EMAIL?.trim() || "CamCom
 export const emailConfigured = () => Boolean(process.env.RESEND_API_KEY?.trim());
 export const alertsConfigured = () => Boolean(process.env.DATABASE_URL?.trim()) && emailConfigured();
 
-export type Email = { to: string; subject: string; text: string; html: string; unsubscribeUrl?: string };
+export type Email = { to: string; subject: string; text: string; html: string; unsubscribeUrl?: string; replyTo?: string };
 
 /** One email through Resend's REST API. Throws on failure (its status, never the key). */
 export async function sendEmail(e: Email): Promise<void> {
@@ -191,7 +191,7 @@ export async function sendEmail(e: Email): Promise<void> {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: alertsFrom(), reply_to: CONTACT_EMAIL, to: [e.to], subject: e.subject, text: e.text, html: e.html, headers }),
+    body: JSON.stringify({ from: alertsFrom(), reply_to: e.replyTo ?? CONTACT_EMAIL, to: [e.to], subject: e.subject, text: e.text, html: e.html, headers }),
     cache: "no-store",
     signal: AbortSignal.timeout(15_000),
   });

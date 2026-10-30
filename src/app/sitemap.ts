@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
   for (const [a, b] of indexedPairs()) out.push({ url: abs(`/compare/${pairSlug(a.item, b.item)}`) });
   out.push({ url: abs("/guides") }, ...guides().map((g) => ({ url: abs(`/guides/${g.slug}`), lastModified: g.updated || undefined })));
-  out.push({ url: abs("/about") });
+  out.push({ url: abs("/about") }, { url: abs("/contact") });
   // Only /world tables with something priced (the rest are noindex).
   const pricedLines = WORLD_LINES.filter((l) => worldTable(l).priced > 0);
   out.push({ url: abs("/world") }, ...[...new Set(pricedLines.map((l) => l.brand))].map((b) => ({ url: abs(`/world/${b}`) })), ...pricedLines.map((l) => ({ url: abs(`/world/${l.brand}/${l.slug}`) })));

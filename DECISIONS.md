@@ -1581,3 +1581,15 @@ Owner, asking for K Young's quick view on every site: eBay first and Amazon seco
 already had a quick view on every product card (`QuickView.tsx`, the same capture-phase `a[data-qv]` design K Young
 uses), so only the order of the two pinned rows changes, on product pages (`OffersTable.tsx`) and in the quick view
 alike: eBay, then Amazon, then the store rows in price order.
+
+## Contact page, footer address, feedback emailed to the inbox — 2026-10-30
+
+The owner: "make sure that contact information is really clear on all of our websites so that any feedback feeds
+into the respective emails". CamCompare had no `/contact` page, its footer showed no address, and the feedback form
+only wrote the private `feedback` table, which nobody is notified about. Now:
+
+- `/contact` gives camcompareapp@gmail.com (`CONTACT_EMAIL`) with subject-filled mailto links; it is in the sitemap.
+- The footer shows "Contact us" and the address under the logo, and links `/contact` in the About column.
+- `/api/feedback` emails each saved message to `CONTACT_EMAIL` through the community's bounded notifier
+  (`notifyOwnerBounded("feedback", …)`, at most 25 a day), with Reply-To the visitor's address when given. Without
+  `RESEND_API_KEY` it does nothing; the row is saved first either way.

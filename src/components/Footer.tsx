@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MARKET_CODES, MARKETS, marketPath } from "@/lib/markets";
 import { useMarket } from "@/lib/market-client";
-import { FAMILY_SITES, SITE_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, FAMILY_SITES, SITE_NAME } from "@/lib/site";
 import Logo from "./brand/Logo";
 
 export default function Footer() {
@@ -21,6 +21,10 @@ export default function Footer() {
           </Link>
           <p className="mt-3">Camera and lens prices from shops in five markets, specs off the makers&apos; own sheets. Built for people who&apos;d rather be out shooting than comparing tabs.</p>
           <p className="mt-3 text-xs text-subtle">Prices checked daily</p>
+          <p className="mt-3">
+            <Link href="/contact" prefetch={false} className="font-semibold">Contact us</Link>:{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </p>
         </div>
         <nav className="flex flex-col gap-1" aria-label="Markets">
           <p className="eyebrow mb-1 text-subtle">Prices for</p>
@@ -49,6 +53,7 @@ export default function Footer() {
           <Link href="/world" prefetch={false}>Prices around the world</Link>
           <Link href="/about" prefetch={false}>How we price &amp; check specs</Link>
           <Link href="/disclosure" prefetch={false}>Affiliate disclosure</Link>
+          <Link href="/contact" prefetch={false}>Contact us</Link>
           <Link href="/feedback" prefetch={false}>Send feedback</Link>
           <Link href="/privacy" prefetch={false}>Privacy</Link>
           <Link href="/credits" prefetch={false}>Photo credits</Link>
