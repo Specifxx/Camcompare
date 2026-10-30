@@ -78,6 +78,17 @@ export function priceFloor(p: Pick<Matchable, "launchPriceUsd" | "launchPrices">
 const KEEP_PER_CONDITION = 3;
 const MIN_SELLER_FEEDBACK = 98;
 
+/**
+ * The import runs every three hours, so the day's eBay calls are split across its runs and markets:
+ * EBAY_DAILY_CAP (default 2,500, CamCompare's half of a keyset shared with K Young; owner, 2026-10-30)
+ * over EBAY_RUNS_PER_DAY (8). The slot moves the rotation window on every run, not once a day.
+ */
+export function ebayRunBudget(markets: number, now: string, env: Record<string, string | undefined> = process.env) {
+  const cap = Number(env.EBAY_DAILY_CAP || 2500);
+  const runs = Math.max(1, Number(env.EBAY_RUNS_PER_DAY || 8));
+  return { perRun: Math.floor(cap / runs / Math.max(1, markets)), slot: Math.floor(Date.parse(now) / (86400_000 / runs)) };
+}
+
 export function dailyWindow<T>(items: T[], budget: number, day: number): T[] {
   if (budget >= items.length) return items;
   const start = (day * budget) % items.length;
@@ -94,8 +105,7 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
     const campaign = ebayCampaign();
     const currency = MARKETS[market].currency;
     const ebayMarkets = RETAILERS.filter((x) => x.ebay).length;
-    const budget = Math.floor(Number(process.env.EBAY_MAX_CALLS || 4600) / ebayMarkets);
-    const day = Math.floor(Date.parse(now) / 86400_000);
+    const { perRun: budget, slot: day } = ebayRunBudget(ebayMarkets, now);
     // eBay matches are title-only, and plausiblePrice trusts no title match for
     // a product without a launch price: searching those would spend quota on
     // results that are all refused.

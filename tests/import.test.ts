@@ -4,7 +4,7 @@ import { gzipSync } from "node:zlib";
 import { historyFor, mergeOffers } from "../src/lib/import";
 import { buildIndex } from "../src/lib/matching";
 import type { Offer, OffersFile } from "../src/lib/offers";
-import { dailyWindow, priceFloor } from "../src/lib/sources/ebay";
+import { dailyWindow, ebayRunBudget, priceFloor } from "../src/lib/sources/ebay";
 import { cheapestPerProduct, feedCondition, feedRows, headerMap, priceCurrency, rowsToOffers, splitDelimited, type FeedRow } from "../src/lib/sources/feed";
 import { robotsAllows, shopifyCondition, storeCondition } from "../src/lib/sources/shopify";
 import { toMinor } from "../src/lib/sources/types";
@@ -245,4 +245,12 @@ test("Shopify requests back off on 429/5xx and give up after four retries", asyn
   } finally {
     globalThis.fetch = real;
   }
+});
+
+test("eBay: the daily cap is split across the day's runs and markets", () => {
+  const now = "2026-10-30T03:17:00Z";
+  assert.equal(ebayRunBudget(4, now, {}).perRun, 78); // 2,500 / 8 runs / 4 markets
+  assert.ok(ebayRunBudget(4, now, {}).perRun * 8 * 4 <= 2500);
+  assert.equal(ebayRunBudget(4, now, { EBAY_DAILY_CAP: "4000" }).perRun, 125);
+  assert.notEqual(ebayRunBudget(4, now, {}).slot, ebayRunBudget(4, "2026-10-30T06:17:00Z", {}).slot);
 });

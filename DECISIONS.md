@@ -1510,3 +1510,12 @@ price, never a guess. `tests/guide-blocks.test.ts` checks that every product a p
 The three newest posts get cards right under the hero, above the deal feed; every other post and guide
 stays in the list further down. Posts that don't repeat a list page: "best X of 2026" is not `/drones`
 ("drone prices") or `/digicams`, and none is a head-to-head, which `/compare/<a>-vs-<b>` owns.
+
+## 2026-10-30: eBay calls are capped per day, split across the three-hourly runs
+
+The eBay source ran inside every three-hourly import with `EBAY_MAX_CALLS` (4,600) split only across
+markets, so once keys are set it would have spent that eight times a day. The owner's plan (2026-10-30) is
+a new keyset shared with K Young, 2,500 calls a day each. `ebayRunBudget` now divides `EBAY_DAILY_CAP`
+(default 2,500; a repository variable can only be set by the owner's decision) by `EBAY_RUNS_PER_DAY` (8)
+and by the eBay markets, about 78 searches per market per run, and the rotation window moves every run.
+Nothing calls eBay until `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` exist as GitHub secrets.
