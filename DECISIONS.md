@@ -1527,3 +1527,11 @@ The store rows keep their price order, the "Best price" tag and the headline; no
 as a store. This is the one exception to "commission never decides order", and only because the pinned
 rows sit outside the sort and say they are ads. Placements are `pinned-amazon` / `pinned-ebay` and
 `qv-pinned-*`, so the click log shows what the pin earns.
+## 2026-10-30: eBay calls are capped per day, split across the three-hourly runs
+
+The eBay source ran inside every three-hourly import with `EBAY_MAX_CALLS` (4,600) split only across
+markets, so once keys are set it would have spent that eight times a day. The owner's plan (2026-10-30) is
+a new keyset shared with K Young, 2,500 calls a day each. `ebayRunBudget` now divides `EBAY_DAILY_CAP`
+(default 2,500; a repository variable can only be set by the owner's decision) by `EBAY_RUNS_PER_DAY` (8)
+and by the eBay markets, about 78 searches per market per run, and the rotation window moves every run.
+Nothing calls eBay until `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` exist as GitHub secrets.
