@@ -1574,3 +1574,10 @@ borrows Compare Empire's design language:
 - Unchanged on purpose: everything is still in the server HTML, pages stay static, no new request,
   script or image weight beyond the two font files; the pinned Amazon and eBay rows keep their
   colours and "Ad" label.
+
+## 2026-10-30: eBay pinned first, Amazon second
+
+Owner, asking for K Young's quick view on every site: eBay first and Amazon second in the price rows. CamCompare
+already had a quick view on every product card (`QuickView.tsx`, the same capture-phase `a[data-qv]` design K Young
+uses), so only the order of the two pinned rows changes, on product pages (`OffersTable.tsx`) and in the quick view
+alike: eBay, then Amazon, then the store rows in price order.

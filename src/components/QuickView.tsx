@@ -21,11 +21,11 @@ import SpecHighlights from "./SpecHighlights";
 import OutboundLink from "./OutboundLink";
 import PriceAlert from "./PriceAlert";
 
-/** Amazon (its tagged link: a public file never holds its price) and eBay, pinned above the rows. */
+/** eBay first, then Amazon (its tagged link: a public file never holds its price), pinned above the rows (owner, 2026-10-30). */
 const qvPins = (d: QuickViewData): PinnedLink[] => {
   const amazon = d.alsoCheck.find((l) => retailer(l.retailer)?.amazon);
   const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null) : null;
-  return [amazon && { ...amazon, note: "New, sold by Amazon and its sellers: the price shows on Amazon", cta: "Check price" }, ebay].filter(Boolean) as PinnedLink[];
+  return [ebay, amazon && { ...amazon, note: "New, sold by Amazon and its sellers: the price shows on Amazon", cta: "Check price" }].filter(Boolean) as PinnedLink[];
 };
 
 /** The cheapest in-stock, body-only row, new or not: the price the alert check reads (Amazon and eBay are not in rows). */
