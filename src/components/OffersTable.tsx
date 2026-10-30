@@ -24,8 +24,8 @@ import TimedPrice from "./TimedPrice";
  * when there are some, and tagged used, new and sold searches), and the
  * Used filter ends with a tagged "More used … on eBay" search;
  * stores we may not price yet are tagged links in "Also check", never rows.
- * Amazon and eBay are also pinned above every filter (PinnedMarkets, owner
- * 2026-10-30): labelled ads, outside the price sort.
+ * eBay and Amazon are also pinned above every filter, eBay first (PinnedMarkets,
+ * owner 2026-10-30): labelled ads, outside the price sort.
  *
  * Payload: each row is rendered once and the filters only hide rows (CSS on
  * the wrapper's data-tab), so the HTML carries the first few rows of every
@@ -46,11 +46,12 @@ export default function OffersTable({ product, query, offers, market, page, amaz
   const amazonLink = allChecks.find((l) => retailer(l.retailer)?.amazon);
   const checks = allChecks.filter((l) => l !== amazonLink);
   const amazonRow = rows.find((r) => r.amazon && r.inStock && !r.kit) ?? rows.find((r) => r.amazon);
+  // eBay first, Amazon second (owner, 2026-10-30), as on every sister site.
   const pins = [
+    ebayPin(ebayFor(market)?.name ?? "eBay", listings[0], ebaySearch(query, market, page, "product-ebay-pinned")),
     amazonRow
       ? { retailer: amazonRow.retailer, name: amazonRow.name, href: amazonRow.href, paid: amazonRow.paid, note: [amazonRow.condition, amazonRow.kit ? amazonRow.pack : null, amazonRow.inStock ? "In stock" : "Out of stock"].filter(Boolean).join(" · "), cta: "View", price: amazonRow.seenAt ? <TimedPrice text={price(amazonRow.price, amazonRow.currency)} seenAt={amazonRow.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : price(amazonRow.price, amazonRow.currency) }
       : amazonLink && { ...amazonLink, note: "New, sold by Amazon and its sellers: the price shows on Amazon", cta: "Check price" },
-    ebayPin(ebayFor(market)?.name ?? "eBay", listings[0], ebaySearch(query, market, page, "product-ebay-pinned")),
   ].filter(Boolean) as PinnedLink[];
   const ebayUsed = ebayLink(market, { query, condition: "used" }, page, "product-ebay-tab-used", `More used ${query} on eBay`);
   const side = listings.length > 0 || checks.length > 0 || Boolean(ebayFor(market));
