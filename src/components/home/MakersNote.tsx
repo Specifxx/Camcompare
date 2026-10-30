@@ -10,7 +10,7 @@ export default function MakersNote({ board, place }: { board: boolean; place: st
       ) : (
         <>We don&apos;t have launch prices for {place} on enough of the catalog yet, so for now this page shows what the prices themselves say.</>
       )}{" "}
-      Some links earn us a small commission; that never changes the order.
+      Some links earn us a small commission; deals are still ranked by the saving alone.
     </p>
   );
 }
