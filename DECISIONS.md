@@ -1593,3 +1593,17 @@ only wrote the private `feedback` table, which nobody is notified about. Now:
 - `/api/feedback` emails each saved message to `CONTACT_EMAIL` through the community's bounded notifier
   (`notifyOwnerBounded("feedback", …)`, at most 25 a day), with Reply-To the visitor's address when given. Without
   `RESEND_API_KEY` it does nothing; the row is saved first either way.
+
+## eBay keyset live: hot products first — 2026-10-30
+
+The owner got the new eBay keyset ("API4"-named app, 5,000 Browse calls a day) and split it 2,500 to CamCompare and
+2,500 to K Young, asking that front-page, popular and recent products get eBay prices first. Each run's eBay budget
+is now `ebayQueue` (`src/lib/sources/ebay.ts`): 60% rotates through the hot list (the viral list in
+`data/viral.json`, then anything announced in the last two years, newest first), the rest rotates through
+everything else, and budget the hot list doesn't need goes to the rest. The hot list is searched several times a
+day; the whole catalogue still comes round in about two days.
+
+The 2,500 is split over the eight scheduled runs plus one spare (69 searches per market per run), so a manual
+dispatch never takes the day past the share; `EBAY_DAILY_CAP` can only lower it. The keys are GitHub Actions secrets
+only. The app's one Marketplace Account Deletion endpoint is K Young's (`kaeyoung.com/api/ebay/marketplace-deletion`):
+CamCompare stores no eBay user data and has no endpoint of its own.
