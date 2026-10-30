@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideThumb } from "@/components/GuideThumb";
 import { latestGuides, type Guide } from "@/lib/guides";
 
 export const metadata: Metadata = {
@@ -10,15 +11,14 @@ export const metadata: Metadata = {
 
 function List({ list }: { list: Guide[] }) {
   return (
-    <ul className="flex flex-col gap-3">
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {list.map((g) => (
         <li key={g.slug}>
-          <Link href={`/guides/${g.slug}`} className="card group flex items-center gap-4 p-3 text-fg no-underline hover:border-accent hover:no-underline">
-            {/* eslint-disable-next-line @next/next/no-img-element -- the post's static share image */}
-            <img src={`/guides/${g.slug}/opengraph-image`} alt="" width={1200} height={630} loading="lazy" className="aspect-[1200/630] w-32 shrink-0 rounded-md object-cover sm:w-44" />
-            <span className="min-w-0">
-              <span className="block font-semibold group-hover:text-accent">{g.title}</span>
-              <span className="line-clamp-2 text-sm text-muted">{g.description}</span>
+          <Link href={`/guides/${g.slug}`} className="card group flex h-full flex-col overflow-hidden text-fg no-underline transition hover:-translate-y-0.5 hover:border-accent hover:no-underline">
+            <GuideThumb g={g} className="aspect-[16/9]" />
+            <span className="flex flex-1 flex-col p-4">
+              <span className="block font-display text-lg font-bold leading-snug group-hover:text-accent">{g.title}</span>
+              <span className="mt-1 line-clamp-2 text-sm text-muted">{g.description}</span>
             </span>
           </Link>
         </li>
@@ -32,7 +32,7 @@ export default function GuidesIndex() {
   const posts = all.filter((g) => g.kind === "blog");
   const guides = all.filter((g) => g.kind === "guide");
   return (
-    <div className="max-w-3xl">
+    <div className="max-w-6xl">
       <h1 className="mb-2 text-2xl font-extrabold tracking-tight">Blog and buying guides</h1>
       <p className="mb-6 text-sm text-muted">Best-of lists with today&apos;s prices from the stores we check, and the background that makes the specs easier to read. Specs come from makers&apos; spec sheets.</p>
       {posts.length > 0 && (

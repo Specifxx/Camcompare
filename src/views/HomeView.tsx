@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GuideThumb } from "@/components/GuideThumb";
 import ProductThumb from "@/components/ProductThumb";
 import QuickViewHost from "@/components/QuickView";
 import SearchBox from "@/components/SearchBox";
@@ -156,12 +157,10 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((g) => (
               <li key={g.slug}>
-                <Link href={`/guides/${g.slug}`} prefetch={false} className="card group flex h-full flex-col overflow-hidden text-fg no-underline hover:border-accent hover:no-underline">
-                  {/* The post's own share image (guides/[slug]/opengraph-image), drawn at build. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element -- a static PNG; no optimiser */}
-                  <img src={`/guides/${g.slug}/opengraph-image`} alt="" width={1200} height={630} loading="lazy" className="aspect-[1200/630] w-full object-cover transition group-hover:opacity-90" />
-                  <span className="flex flex-1 flex-col p-3">
-                    <span className="block font-display font-semibold leading-snug group-hover:text-accent">{g.title}</span>
+                <Link href={`/guides/${g.slug}`} prefetch={false} className="card group flex h-full flex-col overflow-hidden text-fg no-underline transition hover:-translate-y-0.5 hover:border-accent hover:no-underline">
+                  <GuideThumb g={g} className="aspect-[16/9]" />
+                  <span className="flex flex-1 flex-col p-4">
+                    <span className="block font-display text-lg font-bold leading-snug group-hover:text-accent">{g.title}</span>
                     <span className="mt-1 line-clamp-2 block text-sm text-muted">{g.description}</span>
                   </span>
                 </Link>
