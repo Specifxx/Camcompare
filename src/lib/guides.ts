@@ -6,7 +6,9 @@ import { Marked } from "marked";
 
 const DIR = path.join(process.cwd(), "content", "guides");
 
-export type Guide = { slug: string; title: string; description: string; updated: string; html: string; words: number };
+// `date` is when a post was first published (falls back to `updated`); `kind`
+// "blog" marks a best-of list or opinion post, "guide" an evergreen explainer.
+export type Guide = { slug: string; title: string; description: string; date: string; updated: string; kind: "blog" | "guide"; /** A product slug whose photo goes on the post's home-page card. */ hero?: string; body: string; words: number };
 
 // Site-internal links only (the writers' rule). marked doesn't sanitize, so
 // the renderer enforces it: a link or image whose target isn't a path on this
@@ -33,7 +35,10 @@ function parse(slug: string, raw: string): Guide {
     if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim().replace(/^["']|["']$/g, "");
   }
   const body = m?.[2] ?? raw;
-  return { slug, title: meta.title ?? slug, description: meta.description ?? "", updated: meta.updated ?? "", html: guideHtml(body), words: body.split(/\s+/).filter(Boolean).length };
+  const updated = meta.updated ?? "";
+  // A live block (a table of picks or specs) reads like ~60 words.
+  const words = body.replace(/^\[\[[^\]]+\]\]$/gm, "").split(/\s+/).filter(Boolean).length + 60 * (body.match(/^\[\[/gm)?.length ?? 0);
+  return { slug, title: meta.title ?? slug, description: meta.description ?? "", date: meta.date ?? updated, updated, kind: meta.kind === "blog" ? "blog" : "guide", ...(meta.hero ? { hero: meta.hero } : {}), body, words };
 }
 
 let memo: Guide[] | null = null;
@@ -45,3 +50,5 @@ export function guides(): Guide[] {
   return memo;
 }
 export const guide = (slug: string) => guides().find((g) => g.slug === slug) ?? null;
+/** Newest first: publish date, then last update. What the home page and /guides lead with. */
+export const latestGuides = () => [...guides()].sort((a, b) => b.date.localeCompare(a.date) || b.updated.localeCompare(a.updated) || a.title.localeCompare(b.title));

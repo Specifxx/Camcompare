@@ -1490,3 +1490,23 @@ in /accessories.
   `GADGET_PAGES` in `src/lib/curated.ts`, in the More menu, the footer, the
   homepage hero line and the sitemap (once priced). `/cameras?type=drone`
   filters too. The main nav is unchanged: its phone row is full.
+
+## Blog posts with live prices, featured on the home page — 2026-10-30
+
+The owner asked for many more blog posts ("best drone prices", "best cameras of 2026") and for them to be
+featured on the home page so they get crawled. Posts are guides with `kind: blog` in their front matter
+(`content/guides/*.md`, same `/guides/<slug>` URLs, so nothing new splits a query); the plain explainers stay
+`kind: guide`. `/guides` lists the posts first.
+
+A post never types a price or a spec. Whole-line blocks (`src/lib/guide-blocks.ts`, drawn by
+`src/components/GuideBody.tsx`) fill in at build from the catalog and offers, so every price commit refreshes
+them: `[[picks:slug,…]]` (a card per product: specs, the cheapest in-stock body-only US new price with its
+store through `affiliateUrl` and `OutboundLink`, "Paid link" when it earns, used, then the other markets each
+in its own currency), `[[top:type=…,sensor=…,max=…,since=…]]` (the same, chosen by today's US price),
+`[[specs:slug,…|key+…]]` (a table from `SPEC_GROUPS`) and `[[deals:n=…]]` (DealsView's bargains). A product
+not yet published (the drones, until their store photo arrives) keeps its spec row with no link and no
+price, never a guess. `tests/guide-blocks.test.ts` checks that every product a post names exists.
+
+The three newest posts get cards right under the hero, above the deal feed; every other post and guide
+stays in the list further down. Posts that don't repeat a list page: "best X of 2026" is not `/drones`
+("drone prices") or `/digicams`, and none is a head-to-head, which `/compare/<a>-vs-<b>` owns.
