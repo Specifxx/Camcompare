@@ -1,137 +1,156 @@
 /* =============================================================================
-   CamCompare design system: plain and clean
+   CamCompare design system: modern and bright (owner, 2026-10-30: "make it
+   more modern, similar to Compare Empire")
    -----------------------------------------------------------------------------
-   A neutral price-comparison look: off-white page, white panels, thin 1px
-   borders, one brand blue (--c-accent, the logo's colour), brand green (--c-buy) for
-   money: buy buttons and lowest prices. No ornaments, textures or tilts;
-   hover states change colour and border only.
+   A cool off-white page, white cards with soft shadows and large radii, one
+   brand blue (--c-accent, the logo's colour) that runs into azure in the hero
+   and the logo, brand green (--c-buy) for money: buy buttons and lowest prices.
    Colours are RGB triplets (--c-*) used through Tailwind (bg-surface, text-muted,
    border-line, text-accent, bg-buy …): light by default, dark under
    prefers-color-scheme.
-   Type: Inter for everything (font-sans; font-display is the same face, kept
-   as a name), JetBrains Mono only where a component asks for font-mono.
+   Type: Inter for text (font-sans), Bricolage Grotesque for headings and big
+   figures (font-display; every h1–h3 gets it), JetBrains Mono only where a
+   component asks for font-mono.
 
    Classes other components may use:
-     .card              white panel; an <a class="card"> (or .card-hover) gets a border/shadow hover
+     .card              white panel; an <a class="card"> (or .card-hover) lifts on hover
      .btn .btn-primary  accent button                 .btn-ghost  outline (link doesn't earn)
      .btn-buy           filled buy button (link earns)  .btn-amazon / .btn-ebay  retailer colours
      .chip / .chip-link small pill / pill that is a link
      .price             tabular price figures
      .exif              small spec line ("24.2MP · FF · IBIS")
      .h-section         section heading                .eyebrow  small uppercase label
-     .glass             header surface
+     .glass             header surface                 .text-gradient  brand gradient text
+     .hero-wash         the home hero's soft blue glow
    ========================================================================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --c-bg: 248 248 247;
+  --c-bg: 246 247 251;
   --c-surface: 255 255 255;
-  --c-raised: 243 244 246;
-  --c-line: 229 231 235;
-  --c-fg: 17 24 39;
-  --c-muted: 75 85 99;
-  --c-subtle: 107 114 128;
+  --c-raised: 240 242 248;
+  --c-line: 226 229 238;
+  --c-fg: 14 18 34;
+  --c-muted: 72 79 99;
+  --c-subtle: 104 111 132;
   --c-accent: 29 71 209;
   --c-accent-2: 37 99 235;
-  --c-azure: 37 99 235;
+  --c-azure: 14 165 233;
   --c-accent-fg: 255 255 255;
-  --c-accent-soft: 232 239 255;
+  --c-accent-soft: 233 239 255;
   --c-spark: 22 163 74;
   --c-buy: 17 110 50;
   --c-buy-2: 17 110 50;
   --c-buy-fg: 255 255 255;
-  --c-buy-soft: 226 241 230;
+  --c-buy-soft: 224 244 231;
   --c-win: 17 110 50;
   --c-warn: 150 88 0;
   --c-paper: 255 255 255;
   --iris-0: #1d47d1; --iris-1: #2557e6; --iris-2: #3169f5; --iris-3: #4a82ff; --iris-4: #3a74ff; --iris-spark: #16a34a;
-  --shadow-card: none;
-  --shadow-lift: 0 4px 14px -6px rgb(17 24 39 / 0.14);
+  --shadow-card: 0 1px 2px rgb(14 18 34 / 0.04), 0 4px 16px -4px rgb(14 18 34 / 0.07);
+  --shadow-lift: 0 2px 4px rgb(14 18 34 / 0.04), 0 16px 40px -12px rgb(14 18 34 / 0.2);
   --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --font-display: var(--font-sans);
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-bg: 17 17 19;
-    --c-surface: 26 26 30;
-    --c-raised: 36 36 41;
-    --c-line: 52 52 59;
-    --c-fg: 236 236 239;
-    --c-muted: 184 184 192;
-    --c-subtle: 152 152 162;
+    --c-bg: 11 12 18;
+    --c-surface: 20 22 31;
+    --c-raised: 29 32 44;
+    --c-line: 42 46 61;
+    --c-fg: 238 240 247;
+    --c-muted: 188 192 208;
+    --c-subtle: 146 151 170;
     --c-accent: 126 164 255;
     --c-accent-2: 106 150 255;
-    --c-azure: 106 150 255;
+    --c-azure: 56 189 248;
     --c-accent-fg: 8 16 42;
-    --c-accent-soft: 22 34 70;
+    --c-accent-soft: 24 34 70;
     --c-spark: 74 222 128;
     --c-buy: 52 199 110;
     --c-buy-2: 52 199 110;
     --c-buy-fg: 6 20 12;
-    --c-buy-soft: 20 44 28;
+    --c-buy-soft: 16 44 28;
     --c-win: 74 212 128;
     --c-warn: 234 179 8;
-    --c-paper: 26 26 30;
+    --c-paper: 20 22 31;
     --iris-0: #3a6af2; --iris-1: #4a7bff; --iris-2: #5d8bff; --iris-3: #7ea4ff; --iris-4: #6a96ff; --iris-spark: #22c55e;
-    --shadow-lift: 0 4px 14px -6px rgb(0 0 0 / 0.6);
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
+    --shadow-lift: 0 16px 40px -12px rgb(0 0 0 / 0.7);
     color-scheme: dark;
   }
 }
 
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
 body {
   @apply bg-bg text-fg antialiased;
   overflow-x: clip;
+  font-feature-settings: "ss01", "cv11";
 }
 a { @apply text-accent; }
 a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 ::selection { background: rgb(var(--c-accent) / 0.2); }
-h1, h2 { letter-spacing: -0.015em; }
+h1, h2, h3 { font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.02em; }
+h1, h2 { font-weight: 700; }
 
 @layer components {
-  .card { @apply rounded-lg border border-line bg-surface; }
+  .card { @apply rounded-2xl border border-line bg-surface shadow-card; }
   :where(a.card, .card-hover) { transition: border-color 0.15s ease, box-shadow 0.15s ease; }
   :where(a.card, .card-hover):hover,
   :where(a.card):focus-visible {
-    border-color: rgb(var(--c-fg) / 0.25);
+    border-color: rgb(var(--c-accent) / 0.35);
     box-shadow: var(--shadow-lift);
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-1.5 rounded-md px-3.5 py-2 text-sm font-semibold no-underline;
+    @apply inline-flex items-center justify-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold no-underline;
     transition: background-color 0.15s ease, border-color 0.15s ease, filter 0.15s ease;
   }
   .btn:hover { text-decoration: none; }
-  .btn-primary { @apply btn; color: rgb(var(--c-accent-fg)); background: rgb(var(--c-accent)); }
-  .btn-primary:hover { filter: brightness(1.08); }
-  .btn-buy { @apply btn; color: rgb(var(--c-buy-fg)); background: rgb(var(--c-buy)); }
+  .btn-primary { @apply btn shadow-sm; color: rgb(var(--c-accent-fg)); background: rgb(var(--c-accent)); }
+  .btn-primary:hover { filter: brightness(1.1); }
+  .btn-buy { @apply btn shadow-sm; color: rgb(var(--c-buy-fg)); background: rgb(var(--c-buy)); }
   .btn-buy:hover { filter: brightness(1.1); }
   .btn-ghost { @apply btn border border-line bg-surface text-fg hover:bg-raised; }
-  .btn-ghost:hover { border-color: rgb(var(--c-fg) / 0.3); }
+  .btn-ghost:hover { border-color: rgb(var(--c-fg) / 0.25); }
   .chip { @apply inline-flex items-center rounded-full border border-line bg-raised px-2.5 py-0.5 text-xs font-medium text-muted; }
-  .chip-link { @apply chip no-underline transition-colors hover:border-accent hover:text-fg hover:no-underline; }
+  .chip-link { @apply chip bg-surface no-underline transition-colors hover:border-accent hover:bg-accent-soft hover:text-accent hover:no-underline; }
   .price { @apply tabular-nums; }
-  .h-section { @apply text-xl font-semibold tracking-tight sm:text-2xl; }
-  .eyebrow { @apply text-xs font-semibold uppercase tracking-wide text-accent; }
+  .h-section { @apply font-display text-2xl font-bold tracking-tight sm:text-[1.75rem]; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-accent; }
   .exif { @apply text-xs leading-snug text-muted; }
-  .glass { background: rgb(var(--c-surface)); }
+  .glass { background: rgb(var(--c-bg) / 0.82); -webkit-backdrop-filter: saturate(1.6) blur(16px); backdrop-filter: saturate(1.6) blur(16px); }
+  .text-gradient { background: linear-gradient(100deg, rgb(var(--c-accent)) 10%, rgb(var(--c-azure)) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 }
+
+/* The home hero's glow: two soft brand-blue blooms behind the headline. */
+.hero-wash {
+  background:
+    radial-gradient(60% 70% at 50% 0%, rgb(var(--c-accent) / 0.13) 0%, transparent 70%),
+    radial-gradient(40% 50% at 85% 30%, rgb(var(--c-azure) / 0.12) 0%, transparent 70%),
+    radial-gradient(35% 45% at 12% 40%, rgb(var(--c-spark) / 0.07) 0%, transparent 70%);
+}
+
+/* Product photos sit on a soft white tile in both themes. */
+.img-tile { background: radial-gradient(120% 90% at 50% 20%, #ffffff 0%, #f2f4f9 100%); }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
 
 /* "Differences only" on the compare table (CompareToggle.tsx). */
 [data-diff-only="true"] tr[data-same="true"] { display: none; }
 
 /* Guide articles: rendered Markdown. */
-.prose-cc { @apply text-[15px] leading-relaxed; }
-.prose-cc h2 { @apply mt-8 mb-2 text-xl font-bold tracking-tight; }
+.prose-cc { @apply text-base leading-[1.75]; }
+.prose-cc h2 { @apply mt-10 mb-2 text-2xl font-bold tracking-tight; }
 .prose-cc h3 { @apply mt-6 mb-2 text-lg font-semibold; }
 .prose-cc p { @apply my-3; }
 .prose-cc ul { @apply my-3 list-disc pl-6; }
 .prose-cc ol { @apply my-3 list-decimal pl-6; }
 .prose-cc li { @apply my-1; }
-.prose-cc table { @apply my-4 w-full border-collapse text-sm; }
+.prose-cc table { @apply my-5 w-full border-collapse overflow-hidden rounded-xl text-sm; }
 .prose-cc th, .prose-cc td { @apply border border-line px-3 py-2 text-left align-top; }
 .prose-cc th { @apply bg-raised font-semibold; }
 .prose-cc strong { @apply font-semibold; }
@@ -144,8 +163,8 @@ h1, h2 { letter-spacing: -0.015em; }
   .btn-ebay { @apply btn bg-[#0654BA] text-white hover:bg-[#054a9f]; }
 }
 
-/* ---- Header: a plain surface with a 1px rule under it. */
-.cc-header { border-bottom: 1px solid rgb(var(--c-line)); }
+/* ---- Header: frosted surface with a hairline under it. */
+.cc-header { border-bottom: 1px solid rgb(var(--c-line) / 0.8); }
 .cc-nav-link { position: relative; }
 
 /* ---- Iris (Logo.tsx). Transforms only (no CSS `d`, which Safari/iOS can't animate):
@@ -170,7 +189,7 @@ h1, h2 { letter-spacing: -0.015em; }
 .btn, .hd-seg-btn, .hd-pill { transition-property: background-color, border-color, color, filter, transform; transition-duration: 0.15s; }
 .btn:active, .hd-seg-btn:active, .hd-pill:active:not(:disabled) { transform: scale(0.96); }
 /* Nav links: the underline slides in. */
-.cc-nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: rgb(var(--c-accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.2s var(--ease-out); }
+.cc-nav-link::after { content: ""; position: absolute; left: 0.75rem; right: 0.75rem; bottom: -2px; height: 2px; background: rgb(var(--c-accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.2s var(--ease-out); }
 .cc-nav-link:hover::after, .cc-nav-link[aria-current="page"]::after { transform: scaleX(1); }
 /* Deal feed rows: tint on hover, the saving nudges, rows deal in one after another. */
 .hf-row { transition: background-color 0.15s ease; animation: cc-rise 0.45s var(--ease-out) backwards; animation-delay: calc(min(var(--i, 0), 12) * 45ms); }
@@ -208,8 +227,8 @@ h1, h2 { letter-spacing: -0.015em; }
 
 /* Home deal feed controls (components/home/DealFeed.tsx): a segmented
    new/used switch and filter pills. */
-.hd-seg { display: inline-flex; padding: 2px; gap: 2px; border: 1px solid rgb(var(--c-line)); border-radius: 6px; background: rgb(var(--c-surface)); }
-.hd-seg-btn { padding: 0.35rem 0.8rem; border-radius: 4px; font-size: 0.875rem; font-weight: 600; color: rgb(var(--c-muted)); transition: background-color 0.15s, color 0.15s; }
+.hd-seg { display: inline-flex; padding: 2px; gap: 2px; border: 1px solid rgb(var(--c-line)); border-radius: 12px; background: rgb(var(--c-surface)); box-shadow: var(--shadow-card); }
+.hd-seg-btn { padding: 0.4rem 0.9rem; border-radius: 9px; font-size: 0.875rem; font-weight: 600; color: rgb(var(--c-muted)); transition: background-color 0.15s, color 0.15s; }
 .hd-seg-btn:hover { color: rgb(var(--c-fg)); }
 .hd-seg-btn[aria-pressed="true"] { background: rgb(var(--c-accent)); color: rgb(var(--c-accent-fg)); }
 .hd-pill { display: inline-flex; align-items: center; padding: 0.25rem 0.7rem; border-radius: 999px; border: 1px solid rgb(var(--c-line)); background: rgb(var(--c-surface)); font-size: 0.8125rem; font-weight: 500; color: rgb(var(--c-muted)); transition: border-color 0.15s, color 0.15s; }

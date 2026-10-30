@@ -72,8 +72,8 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
         }}
         className={
           hero
-            ? "h-14 w-full rounded-lg border border-line bg-surface pl-12 pr-4 text-base outline-none transition-colors placeholder:text-subtle focus:border-accent"
-            : "w-full rounded-lg border border-line bg-raised/80 px-3 py-1.5 text-sm transition-colors focus:border-accent focus:bg-surface"
+            ? "h-14 w-full rounded-2xl border border-line bg-surface pl-12 pr-4 text-base shadow-lift outline-none transition-colors placeholder:text-subtle focus:border-accent focus:ring-4 focus:ring-accent/15"
+            : "h-9 w-full rounded-xl border border-line bg-surface px-3 text-sm transition-colors focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/15"
         }
       />
       {/* On a phone the box is narrow and right of centre, so the list spans the
@@ -84,8 +84,8 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
           role="listbox"
           className={
             hero
-              ? "absolute inset-x-0 top-full z-40 mt-2 overflow-hidden rounded-lg border border-line bg-surface text-left shadow-lift"
-              : "fixed inset-x-4 top-14 z-40 mt-1 overflow-hidden rounded-lg border border-line bg-surface shadow-lg md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-[22rem]"
+              ? "absolute inset-x-0 top-full z-40 mt-2 overflow-hidden rounded-2xl border border-line bg-surface text-left shadow-lift"
+              : "fixed inset-x-4 top-16 z-40 mt-1 overflow-hidden rounded-2xl border border-line bg-surface shadow-lg md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-[22rem]"
           }
         >
           {hits.map((r, i) => (

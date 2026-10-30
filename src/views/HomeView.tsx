@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GuideThumb } from "@/components/GuideThumb";
@@ -18,6 +20,7 @@ import { readDealLog, type DealEntry } from "@/lib/deal-log";
 import { isAmazonOffer } from "@/lib/offers";
 import { packKind } from "@/lib/offer-rows";
 import { price } from "@/lib/format";
+import { digicams, gadgets } from "@/lib/curated";
 import { latestGuides } from "@/lib/guides";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { quickViewAttrs } from "@/lib/quickview";
@@ -128,31 +131,77 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   const featured = latestGuides().filter((g) => g.kind === "blog").slice(0, 3);
   const guideList = latestGuides().filter((g) => !featured.includes(g));
 
+  // The hero's department tiles: a photo of a known model, how many we list and
+  // the lowest in-stock price today (new, or used for the Used tile).
+  const storeCount = new Set(all.flatMap((p) => offersFor(p.slug, m).filter((o) => !isAmazonOffer(o) && !retailer(o.retailer)?.ebay).map((o) => o.retailer))).size;
+  const lowest = (items: { slug: string }[], used: boolean) => {
+    let low: number | null = null;
+    for (const it of items)
+      for (const o of offersFor(it.slug, m))
+        if (o.inStock && !o.kit && !isAmazonOffer(o) && (used ? o.condition === "used" : o.condition === "new") && (low === null || o.price < low)) low = o.price;
+    return low;
+  };
+  // The preferred model when it is listed, else the first with a photo of our own (a store photo is a hotlink).
+  const ownPhoto = (slug: string) => existsSync(path.join(process.cwd(), "public", "products", `${slug}.webp`));
+  const pick = (items: { slug: string }[], prefer: string) => (items.some((x) => x.slug === prefer) ? prefer : (items.find((x) => ownPhoto(x.slug)) ?? items[0])?.slug ?? null);
+  const bodies = cameras.filter((c) => c.type !== "drone" && c.type !== "smart-glasses");
+  const usedItems = all.filter((p) => offersFor(p.slug, m).some((o) => o.condition === "used" && o.inStock));
+  const departments = [
+    { path: "/cameras", label: "Cameras", items: bodies, prefer: "sony-a7-iv" },
+    { path: "/lenses", label: "Lenses", items: lenses, prefer: "sony-fe-24-70mm-f2-8-gm-ii" },
+    { path: "/drones", label: "Drones", items: gadgets("drone"), prefer: "dji-mini-4-pro" },
+    { path: "/smart-glasses", label: "Smart glasses", items: gadgets("smart-glasses"), prefer: "meta-ray-ban-meta-gen-2" },
+    { path: "/digicams", label: "Digicams", items: digicams(), prefer: "canon-powershot-g7-x-mark-iii" },
+    { path: "/used", label: "Used", items: usedItems, prefer: "fujifilm-x-t5" },
+  ]
+    .filter((d) => d.items.length > 0)
+    .map((d) => ({ path: d.path, label: d.label, slug: pick(d.items, d.prefer), count: d.items.length, from: lowest(d.items, d.path === "/used") }));
+
   return (
     <div className="flex flex-col gap-14 sm:gap-16">
-      {/* ---- small hero: one line and the search box */}
-      <section aria-labelledby="hero-title" className="pt-2">
-        <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-subtle">
-            {MARKETS[m].flag} Prices for {MARKETS[m].name} · {cur}
+      {/* ---- hero: the promise, the search box and the departments, on a soft brand glow */}
+      <section aria-labelledby="hero-title" className="relative -mt-6 pb-2 pt-10 text-center sm:pt-14">
+        <div aria-hidden className="hero-wash pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2" />
+        {generatedAt && (
+          <p className="inline-block rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted shadow-card">
+            <span className="cc-live" aria-hidden />
+            {MARKETS[m].flag} {MARKETS[m].name} prices checked{" "}
+            <Freshness at={generatedAt} fallback={stamp(generatedAt)} />
           </p>
-          <h1 id="hero-title" className="mt-1 text-2xl font-semibold leading-tight sm:text-3xl">
-            Camera &amp; lens prices, compared. Best deals first.
-          </h1>
-          <div className="mt-4 max-w-2xl">
-            <SearchBox market={m} variant="hero" placeholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`} />
-          </div>
-          <p className="mt-3 text-sm text-muted">
-            or browse <Link href={marketPath(m, "/cameras")}>cameras</Link>, <Link href={marketPath(m, "/lenses")}>lenses</Link>, <Link href={marketPath(m, "/drones")}>drones</Link>, <Link href={marketPath(m, "/smart-glasses")}>smart glasses</Link>, or let us <Link href={marketPath(m, "/finder")}>help you choose</Link>
-          </p>
-          <div className="mt-3">
-            <MakersNote board={board} place={PLACE[m]} />
-          </div>
+        )}
+        <h1 id="hero-title" className="mx-auto mt-5 max-w-3xl text-[2.35rem] font-extrabold leading-[1.05] tracking-[-0.035em] sm:text-6xl">
+          Camera &amp; lens prices, compared. <span className="text-gradient">Best deals first.</span>
+        </h1>
+        <div className="mx-auto mt-4 flex max-w-xl justify-center text-[15px] sm:text-base">
+          <MakersNote board={board} place={PLACE[m]} />
         </div>
+        <p className="mt-3 text-xs text-subtle">
+          {all.length.toLocaleString("en-US")} cameras &amp; lenses · {storeCount} stores in {PLACE[m]} · prices in {cur}
+        </p>
+        <div className="mx-auto mt-6 max-w-2xl text-left">
+          <SearchBox market={m} variant="hero" placeholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`} />
+        </div>
+        <p className="mt-3 text-sm text-muted">
+          Not sure what to get? <Link href={marketPath(m, "/finder")} prefetch={false} className="font-semibold">Let us help you choose</Link>
+        </p>
+        <ul className="mt-8 flex flex-wrap justify-center gap-2.5 text-left sm:gap-3">
+          {departments.map((d) => (
+            <li key={d.path} className="w-[calc(50%-0.3125rem)] sm:w-[calc(33.333%-0.5rem)] lg:w-[calc(16.666%-0.625rem)]">
+              <Link href={marketPath(m, d.path)} prefetch={false} className="card group flex h-full flex-col overflow-hidden p-2 text-fg no-underline transition hover:-translate-y-0.5 hover:no-underline sm:p-2.5">
+                {d.slug && <ProductThumb slug={d.slug} alt="" className="img-tile rounded-xl" />}
+                <span className="mt-2 block px-0.5 font-display text-[15px] font-bold leading-tight group-hover:text-accent sm:text-base">{d.label}</span>
+                <span className="block px-0.5 pb-0.5 text-[11px] leading-snug text-subtle sm:text-xs">
+                  {d.count.toLocaleString("en-US")}
+                  {d.from !== null && <> · from {price(d.from, cur)}</>}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {featured.length > 0 && (
-        <section aria-labelledby="blog-title" className="-mt-6 sm:-mt-8">
+        <section aria-labelledby="blog-title">
           <SectionHeading id="blog-title" eyebrow="From the blog" title="Best of 2026, with today's prices" href="/guides" link="All posts and guides" />
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((g) => (
@@ -160,7 +209,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
                 <Link href={`/guides/${g.slug}`} prefetch={false} className="card group flex h-full flex-col overflow-hidden text-fg no-underline transition hover:-translate-y-0.5 hover:border-accent hover:no-underline">
                   <GuideThumb g={g} className="aspect-[16/9]" />
                   <span className="flex flex-1 flex-col p-4">
-                    <span className="block font-display text-lg font-bold leading-snug group-hover:text-accent">{g.title}</span>
+                    <span className="block font-display text-xl font-bold leading-snug tracking-tight group-hover:text-accent">{g.title}</span>
                     <span className="mt-1 line-clamp-2 block text-sm text-muted">{g.description}</span>
                   </span>
                 </Link>
@@ -174,8 +223,8 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
       <section aria-labelledby="deals-title">
         <div className="grid gap-6">
           <div className="order-1">
-            <p className="text-xs font-medium uppercase tracking-wide text-subtle">Best deals in {PLACE[m]}</p>
-            <h2 id="deals-title" className="mt-1 text-xl font-semibold leading-tight sm:text-2xl">
+            <p className="eyebrow">Best deals in {PLACE[m]}</p>
+            <h2 id="deals-title" className="h-section mt-1 leading-tight">
               {board ? <>The RRP, minus what it costs today</> : <>Today&apos;s best prices</>}
             </h2>
             <p className="mt-1.5 max-w-2xl text-sm text-muted">
@@ -275,15 +324,15 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
       {pairs.length > 0 && (
         <section aria-labelledby="pairs-title">
           <SectionHeading id="pairs-title" eyebrow="Head to head" title="Cameras people keep cross-shopping" href="/compare" link="Compare any two" />
-          <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
             {pairs.map(([a, b]) => (
               <li key={pairSlug(a.item, b.item)}>
-                <Link href={`/compare/${pairSlug(a.item, b.item)}`} prefetch={false} className="group flex items-center gap-2 border-b border-line py-2 text-sm font-semibold text-fg no-underline hover:no-underline">
-                  <ProductThumb slug={a.item.slug} alt="" className="w-14 shrink-0" />
+                <Link href={`/compare/${pairSlug(a.item, b.item)}`} prefetch={false} className="card group flex items-center gap-2 p-2.5 text-sm font-semibold text-fg no-underline hover:no-underline">
+                  <ProductThumb slug={a.item.slug} alt="" className="img-tile w-16 shrink-0 rounded-xl" />
                   <span aria-hidden className="shrink-0 text-xs text-subtle">
                     vs
                   </span>
-                  <ProductThumb slug={b.item.slug} alt="" className="w-14 shrink-0" />
+                  <ProductThumb slug={b.item.slug} alt="" className="img-tile w-16 shrink-0 rounded-xl" />
                   <span className="min-w-0 leading-tight group-hover:text-accent">
                     {displayShortName(a.item, m)} <span className="font-normal text-subtle">vs</span> {displayShortName(b.item, m)}
                   </span>
@@ -323,7 +372,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         </ul>
         {systems.length > 0 && (
           <div className="mt-4 flex flex-wrap items-center gap-2">
-            <span className="mr-1 text-xs font-medium uppercase tracking-wide text-subtle">Camera systems</span>
+            <span className="eyebrow mr-1">Camera systems</span>
             {systems.map((s) => (
               <Link key={s.slug} href={marketPath(m, `/mounts/${s.slug}`)} prefetch={false} className="chip-link px-3 py-1 text-sm">
                 {s.name}

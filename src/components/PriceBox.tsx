@@ -72,7 +72,7 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
 
   if (!lead) {
     return (
-      <div className="card flex flex-col gap-3 p-4">
+      <div className="card flex flex-col gap-3 p-4 sm:p-5">
         <p className="text-sm text-muted">
           {h.listed ? `Listed in ${mkt}, but out of stock at every store we track today.` : `No live price in ${mkt} yet.`} We show a price only when a retailer&apos;s feed or API sends it: <a href="#prices">where to look</a>.
         </p>
@@ -88,7 +88,7 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
   // With kits only: the cheapest used kit too, when the lead is a new one.
   const usedKit = lead.what === "kit" && o.condition === "new" ? lowestKit(offers, "used", true) : null;
   return (
-    <div className="card flex flex-col gap-3 p-4">
+    <div className="card flex flex-col gap-3 p-4 sm:p-5">
       {typical && lead.what === "new" && (
         <p className="text-sm">
           <span className="text-muted">Typically </span>
@@ -102,10 +102,10 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
       {lead.what !== "new" && <p className="text-sm text-muted">{lead.what === "kit" ? `No body-only price in ${mkt} today. The cheapest kit:` : `No new body-only price in ${mkt} today. The cheapest used:`}</p>}
       <div>
         <p className="flex flex-wrap items-center gap-2">
-          <span className="rounded bg-buy px-1.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-buy-fg">{tag}</span>
+          <span className="rounded-full bg-buy px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-buy-fg">{tag}</span>
           <span className="text-xs text-muted">{what} · in stock</span>
         </p>
-        <p className={`price mt-1 text-3xl font-extrabold tracking-tight ${lead.what === "new" ? "text-buy" : ""}`}>{shown(o, cur)}</p>
+        <p className={`price mt-1 font-display text-4xl font-extrabold tracking-[-0.03em] ${lead.what === "new" ? "text-buy" : ""}`}>{shown(o, cur)}</p>
         <p className="text-sm text-muted">
           at <span className="font-semibold text-fg">{storeName(o)}</span>
           {deal && <span className={`ml-2 chip ${deal.kind === "above-avg" ? "text-warn" : "text-win"}`}>{deal.text}</span>}
