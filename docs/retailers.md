@@ -30,7 +30,7 @@ Links are set on Vercel (they are read when pages are built):
   `AMAZON_TAG_AU`, `AMAZON_TAG_SG`. Each is a separate Associates account
   per store.
 - **eBay:** the owner's EPN campaign 5339155912 is hard-coded
-  (`src/lib/affiliate.ts`; `EBAY_AFFILIATE_CAMPAIGN` only overrides it). The
+  (`src/lib/affiliate.ts`; no variable overrides it). The
   code adds each site's rotation id and a `customid` naming the placement
   (`cc-<page>-<placement>`, e.g. `product-ebay-used`, `acc-ebay`,
   `home-ebay`, `promo-product`), so EPN's reports show which placement earns.

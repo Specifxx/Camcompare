@@ -47,7 +47,6 @@ jobs:
           IMPORT_MARKETS: ${{ matrix.market }}
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-          EBAY_AFFILIATE_CAMPAIGN: ${{ secrets.EBAY_AFFILIATE_CAMPAIGN }}
           EBAY_DAILY_CAP: ${{ vars.EBAY_DAILY_CAP }}
           AMAZON_CREATORS_NA_CLIENT_ID: ${{ secrets.AMAZON_CREATORS_NA_CLIENT_ID }}
           AMAZON_CREATORS_NA_CLIENT_SECRET: ${{ secrets.AMAZON_CREATORS_NA_CLIENT_SECRET }}

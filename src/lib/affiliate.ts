@@ -8,7 +8,7 @@
 //
 // Amazon: one Associates tag per marketplace (AMAZON_TAG_US/UK/DE/AU/SG;
 // AMAZON_ASSOCIATE_TAG is still read for the US). eBay: one EPN campaign
-// (EBAY_AFFILIATE_CAMPAIGN) with each site's rotation id. Every other
+// (hard-coded below) with each site's rotation id. Every other
 // retailer: AFFILIATE_DEEPLINK_<KEY> (key upper-cased, "-" → "_"), a template
 // containing {url} and optionally {subid}. That covers Impact
 // (`https://x.sjv.io/c/1/2/3?u={url}&subId1={subid}`), CJ
@@ -27,11 +27,11 @@ export function amazonTag(retailerKey: string): string {
   if (!r?.amazon) return "";
   return env(r.amazon.tagEnv) || (r.market === "us" ? env("AMAZON_ASSOCIATE_TAG") : "");
 }
-// The owner's eBay Partner Network campaign (owner, 2026-10-23), hard-coded so
-// every eBay link earns without a deploy variable; EBAY_AFFILIATE_CAMPAIGN
-// still overrides it (e.g. a separate campaign for testing).
+// The owner's eBay Partner Network campaign, one for every Compare site and
+// hard-coded (owner, 2026-10-30): no variable overrides it. The `cc-` customid
+// prefix tells CamCompare's clicks apart in EPN's report.
 export const EBAY_CAMPAIGN_ID = "5339155912";
-export const ebayCampaign = () => env("EBAY_AFFILIATE_CAMPAIGN") || EBAY_CAMPAIGN_ID;
+export const ebayCampaign = () => EBAY_CAMPAIGN_ID;
 
 const slugPart = (s: string) => s.toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
 
