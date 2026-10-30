@@ -4,7 +4,7 @@ import { gzipSync } from "node:zlib";
 import { historyFor, mergeOffers } from "../src/lib/import";
 import { buildIndex } from "../src/lib/matching";
 import type { Offer, OffersFile } from "../src/lib/offers";
-import { dailyWindow, ebayRunBudget, priceFloor } from "../src/lib/sources/ebay";
+import { dailyWindow, ebayQueue, ebayRunBudget, priceFloor } from "../src/lib/sources/ebay";
 import { cheapestPerProduct, feedCondition, feedRows, headerMap, priceCurrency, rowsToOffers, splitDelimited, type FeedRow } from "../src/lib/sources/feed";
 import { robotsAllows, shopifyCondition, storeCondition } from "../src/lib/sources/shopify";
 import { toMinor } from "../src/lib/sources/types";
@@ -130,6 +130,16 @@ test("the daily window walks the whole catalog over consecutive days", () => {
   assert.deepEqual(dailyWindow(items, 20, 5), items);
 });
 
+test("eBay queue: viral and recent products first, the rest still rotate", () => {
+  const P = (slug: string, announced: string) => ({ kind: "camera" as const, item: { slug, announced } });
+  const items = [P("old-a", "2015-01-01"), P("old-b", "2016-01-01"), P("viral-old", "2018-03-01"), P("new", "2026-05-01"), P("old-c", "2017-01-01")];
+  const q = ebayQueue(items, 3, 0, "2026-10-30T03:17:00Z", new Set(["viral-old"]));
+  assert.deepEqual(q.map((x) => x.item.slug).slice(0, 2), ["viral-old", "new"]);
+  assert.equal(q.length, 3, "unused hot share goes to the rest");
+  const seen = new Set([0, 1, 2, 3].flatMap((s) => ebayQueue(items, 3, s, "2026-10-30T03:17:00Z", new Set(["viral-old"])).map((x) => x.item.slug)));
+  assert.equal(seen.size, 5);
+});
+
 test("history keeps the lowest in-stock body-only price per condition group", () => {
   const h = historyFor("us", "2026-10-17", [
     offer({ price: 219900 }),
@@ -249,8 +259,9 @@ test("Shopify requests back off on 429/5xx and give up after four retries", asyn
 
 test("eBay: the daily cap is split across the day's runs and markets", () => {
   const now = "2026-10-30T03:17:00Z";
-  assert.equal(ebayRunBudget(4, now, {}).perRun, 78); // 2,500 / 8 runs / 4 markets
-  assert.ok(ebayRunBudget(4, now, {}).perRun * 8 * 4 <= 2500);
-  assert.equal(ebayRunBudget(4, now, { EBAY_DAILY_CAP: "4000" }).perRun, 125);
+  assert.equal(ebayRunBudget(4, now, {}).perRun, 69); // 2,500 / (8 runs + 1 spare) / 4 markets
+  assert.ok(ebayRunBudget(4, now, {}).perRun * 9 * 4 <= 2500, "a manual run still fits the day");
+  assert.equal(ebayRunBudget(4, now, { EBAY_DAILY_CAP: "4000" }).perRun, 69, "the cap can only lower the 2,500 share");
+  assert.equal(ebayRunBudget(4, now, { EBAY_DAILY_CAP: "1000" }).perRun, 27);
   assert.notEqual(ebayRunBudget(4, now, {}).slot, ebayRunBudget(4, "2026-10-30T06:17:00Z", {}).slot);
 });
