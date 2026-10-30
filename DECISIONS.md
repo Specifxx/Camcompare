@@ -1511,6 +1511,22 @@ The three newest posts get cards right under the hero, above the deal feed; ever
 stays in the list further down. Posts that don't repeat a list page: "best X of 2026" is not `/drones`
 ("drone prices") or `/digicams`, and none is a head-to-head, which `/compare/<a>-vs-<b>` owns.
 
+## Amazon and eBay pinned above the price rows
+
+2026-10-30, owner: Amazon and eBay must be "at the very, very top" of every product page and quick view,
+always shown, in a bright colour, not lost under a dozen dealers.
+
+So both open the price list (`PinnedMarkets` in `src/components/OfferRows.tsx`), above the New / Used /
+Kits filters, Amazon first and eBay second. Each is shaped like an offer row, tinted in its own colour
+(Amazon orange, eBay blue, with a stripe on the left and a coloured "Ad" label), with its own filled
+button. Amazon shows its live price with its time when the Creators API sent one (the row stays in the
+sorted list too, where its price belongs), otherwise "Check price", the tagged link that used to sit in
+"Also check". eBay shows today's cheapest live listing, otherwise a tagged search.
+
+The store rows keep their price order, the "Best price" tag and the headline; nothing pinned is counted
+as a store. This is the one exception to "commission never decides order", and only because the pinned
+rows sit outside the sort and say they are ads. Placements are `pinned-amazon` / `pinned-ebay` and
+`qv-pinned-*`, so the click log shows what the pin earns.
 ## 2026-10-30: eBay calls are capped per day, split across the three-hourly runs
 
 The eBay source ran inside every three-hourly import with `EBAY_MAX_CALLS` (4,600) split only across
