@@ -1527,6 +1527,7 @@ The store rows keep their price order, the "Best price" tag and the headline; no
 as a store. This is the one exception to "commission never decides order", and only because the pinned
 rows sit outside the sort and say they are ads. Placements are `pinned-amazon` / `pinned-ebay` and
 `qv-pinned-*`, so the click log shows what the pin earns.
+
 ## 2026-10-30: eBay calls are capped per day, split across the three-hourly runs
 
 The eBay source ran inside every three-hourly import with `EBAY_MAX_CALLS` (4,600) split only across
@@ -1535,3 +1536,13 @@ a new keyset shared with K Young, 2,500 calls a day each. `ebayRunBudget` now di
 (default 2,500; a repository variable can only be set by the owner's decision) by `EBAY_RUNS_PER_DAY` (8)
 and by the eBay markets, about 78 searches per market per run, and the rotation window moves every run.
 Nothing calls eBay until `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` exist as GitHub secrets.
+
+## One eBay campaign for every Compare site, hard-coded — 2026-10-30
+
+**Decided (owner).** Every Compare site now sends eBay clicks to ONE EPN campaign, 5339155912 (RiftCompare's,
+already set up), hard-coded in the code: no variable overrides it any more, so a forgotten secret or Vercel
+value can't split the sites again. The sites are told apart by the `customid` prefix alone, which comes first
+in every tag; this site's is `cc-<page>`. The campaign was already 5339155912 here; the override variable is gone.
+Replaced: 5339155911 (WargameCompare, FigureCompare, Compare Empire, K Young), 5339231473 (Lorcana),
+5339231474 (Gundam), 5339234013 (YGO). Old secrets/variables (`EBAY_AFFILIATE_CAMPAIGN`,
+`NEXT_PUBLIC_EBAY_CAMPAIGN_ID`, `EBAY_CAMPAIGN_ID`) are no longer read and can be deleted.

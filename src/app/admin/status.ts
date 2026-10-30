@@ -74,7 +74,6 @@ export function envStatus(): { label: string; set: number; of: number }[] {
     group("Community sign-in (AUTH_SECRET)", ["AUTH_SECRET"]),
     group("Amazon store tags", ["AMAZON_TAG_US", "AMAZON_TAG_UK", "AMAZON_TAG_DE", "AMAZON_TAG_AU", "AMAZON_TAG_SG"]),
     group("Amazon Creators API", ["AMAZON_CREATORS_NA_CLIENT_ID", "AMAZON_CREATORS_EU_CLIENT_ID", "AMAZON_CREATORS_FE_CLIENT_ID"]),
-    group("eBay campaign override (optional; EPN 5339155912 is built in)", ["EBAY_AFFILIATE_CAMPAIGN"]),
     { label: "Retailer deep links set", set: deeplinks.filter(has).length, of: retailersWithDeeplinks() },
     group("AdSense", ["NEXT_PUBLIC_ADSENSE_CLIENT"]),
     group("Search verification", ["GOOGLE_SITE_VERIFICATION", "BING_SITE_VERIFICATION"]),

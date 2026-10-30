@@ -41,7 +41,7 @@ test("the legacy AMAZON_ASSOCIATE_TAG still tags US links", () => {
 test("eBay links get the EPN parameters with each site's rotation id", () => {
   withEnv({ EBAY_AFFILIATE_CAMPAIGN: "123" }, () => {
     const us = new URL(affiliateUrl("ebay", "https://www.ebay.com/itm/1", "cc-cam"));
-    assert.equal(us.searchParams.get("campid"), "123");
+    assert.equal(us.searchParams.get("campid"), "5339155912", "the campaign is hard-coded: a variable never overrides it");
     assert.equal(us.searchParams.get("mkrid"), "711-53200-19255-0");
     assert.equal(us.searchParams.get("customid"), "cc-cam");
     const uk = new URL(affiliateUrl("ebay-gb", "https://www.ebay.co.uk/itm/1", "cc-cam"));
