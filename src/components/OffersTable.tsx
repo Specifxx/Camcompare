@@ -1,17 +1,17 @@
 import { historyFor, launchPrice, product as getProduct } from "@/lib/catalog";
 import { MARKETS, type MarketCode } from "@/lib/markets";
 import { AMAZON_MAX_AGE_H, type Offer } from "@/lib/offers";
-import { alsoCheckLinks, ebayRows, offerRows, packKind } from "@/lib/offer-rows";
+import { alsoCheckLinks, ebayRows, ebaySearch, offerRows, packKind } from "@/lib/offer-rows";
 import { price } from "@/lib/format";
 import type { OfferRow } from "@/lib/quickview";
 import { usedValue } from "@/lib/value";
 import EbayPanel from "./EbayPanel";
 import EbayText from "./ebay/EbayText";
 import { ebayLink } from "@/lib/ebay-links";
-import { ebayFor } from "@/lib/retailers";
+import { ebayFor, retailer } from "@/lib/retailers";
 import { OFFER_TABS, rowInTab, tabHideClass, type OfferTab } from "@/lib/offer-tabs";
 import OfferTabs from "./MoreOffers";
-import { AlsoCheck, OfferRowItem } from "./OfferRows";
+import { AlsoCheck, OfferRowItem, PinnedMarkets, ebayPin, type PinnedLink } from "./OfferRows";
 import TimedPrice from "./TimedPrice";
 
 /**
@@ -24,6 +24,8 @@ import TimedPrice from "./TimedPrice";
  * when there are some, and tagged used, new and sold searches), and the
  * Used filter ends with a tagged "More used … on eBay" search;
  * stores we may not price yet are tagged links in "Also check", never rows.
+ * Amazon and eBay are also pinned above every filter (PinnedMarkets, owner
+ * 2026-10-30): labelled ads, outside the price sort.
  *
  * Payload: each row is rendered once and the filters only hide rows (CSS on
  * the wrapper's data-tab), so the HTML carries the first few rows of every
@@ -39,7 +41,17 @@ export default function OffersTable({ product, query, offers, market, page, amaz
   const rows = offerRows(offers, { page, placement: "offers", pack, withAmazon: true });
   const listings = ebayRows(offers, market, { page, placement: "ebay", pack });
   // eBay has its own card (EbayPanel) with used, new and sold searches, so it is not in "Also check".
-  const checks = alsoCheckLinks({ product, query, offers, market, page, amazonAsin, placement: "check", amazonShown: rows.some((r) => r.amazon), ebay: false });
+  // Amazon is pinned above the rows instead (PinnedMarkets): with its live price when it has one.
+  const allChecks = alsoCheckLinks({ product, query, offers, market, page, amazonAsin, placement: "pinned", amazonShown: false, ebay: false });
+  const amazonLink = allChecks.find((l) => retailer(l.retailer)?.amazon);
+  const checks = allChecks.filter((l) => l !== amazonLink);
+  const amazonRow = rows.find((r) => r.amazon && r.inStock && !r.kit) ?? rows.find((r) => r.amazon);
+  const pins = [
+    amazonRow
+      ? { retailer: amazonRow.retailer, name: amazonRow.name, href: amazonRow.href, paid: amazonRow.paid, note: [amazonRow.condition, amazonRow.kit ? amazonRow.pack : null, amazonRow.inStock ? "In stock" : "Out of stock"].filter(Boolean).join(" · "), cta: "View", price: amazonRow.seenAt ? <TimedPrice text={price(amazonRow.price, amazonRow.currency)} seenAt={amazonRow.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : price(amazonRow.price, amazonRow.currency) }
+      : amazonLink && { ...amazonLink, note: "New, sold by Amazon and its sellers: the price shows on Amazon", cta: "Check price" },
+    ebayPin(ebayFor(market)?.name ?? "eBay", listings[0], ebaySearch(query, market, page, "product-ebay-pinned")),
+  ].filter(Boolean) as PinnedLink[];
   const ebayUsed = ebayLink(market, { query, condition: "used" }, page, "product-ebay-tab-used", `More used ${query} on eBay`);
   const side = listings.length > 0 || checks.length > 0 || Boolean(ebayFor(market));
   // Warnings on rows above this market's RRP or the typical used price (OfferRows).
@@ -85,6 +97,7 @@ export default function OffersTable({ product, query, offers, market, page, amaz
   return (
     <div className={`grid grid-cols-1 items-start gap-4 ${side ? "lg:grid-cols-[minmax(0,1fr)_300px]" : ""}`}>
       <div className="min-w-0">
+        <PinnedMarkets links={pins} product={product} placement="pinned" className="mb-3" />
         {rows.length ? (
           <OfferTabs
             tabs={tabs}
