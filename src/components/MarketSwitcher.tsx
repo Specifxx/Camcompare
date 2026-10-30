@@ -18,7 +18,7 @@ export default function MarketSwitcher({ current }: { current: MarketCode }) {
           // (the header and price row follow it). The query (?c=, ?mount=) stays.
           if (!isGlobalPath(pathname)) router.push(switchMarketPath(pathname, to) + window.location.search);
         }}
-        className="rounded-lg border border-line bg-surface py-1.5 pl-2 pr-1 text-sm"
+        className="h-9 rounded-xl border border-line bg-surface pl-2.5 pr-1 text-sm font-medium"
       >
         {MARKET_CODES.map((m) => (
           <option key={m} value={m}>

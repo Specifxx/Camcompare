@@ -12,7 +12,7 @@ export default function Gallery({ slug, images }: { slug: string; images: Galler
   if (images.length > 1) return <GalleryViewer images={images} />;
   return (
     <figure>
-      <ProductThumb slug={slug} alt={images[0]?.alt ?? ""} priority className="border border-line" />
+      <ProductThumb slug={slug} alt={images[0]?.alt ?? ""} priority className="img-tile rounded-2xl border border-line shadow-card" />
       <PhotoCredit credit={images[0]?.credit ?? null} store={images[0]?.store} />
     </figure>
   );

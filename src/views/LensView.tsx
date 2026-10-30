@@ -111,7 +111,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
           <Gallery slug={l.slug} images={galleryFor(l.slug, name)} />
           <div className="flex min-w-0 flex-col gap-4">
             <div>
-              <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{name}</h1>
+              <h1 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] sm:text-4xl">{name}</h1>
               <p className="mt-1 text-sm text-muted">
                 Lens for{" "}
                 {mountNames.map((mt, i) => (

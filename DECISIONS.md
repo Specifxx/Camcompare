@@ -1546,3 +1546,31 @@ in every tag; this site's is `cc-<page>`. The campaign was already 5339155912 he
 Replaced: 5339155911 (WargameCompare, FigureCompare, Compare Empire, K Young), 5339231473 (Lorcana),
 5339231474 (Gundam), 5339234013 (YGO). Old secrets/variables (`EBAY_AFFILIATE_CAMPAIGN`,
 `NEXT_PUBLIC_EBAY_CAMPAIGN_ID`, `EBAY_CAMPAIGN_ID`) are no longer read and can be deleted.
+
+## A modern look, after Compare Empire's — 2026-10-30
+
+**Decided (owner, 2026-10-30: "the cam compare theme is garbage, make it more modern, similar to
+compareempire").** Replaces "Plain and clean" (2026-10-17) as the site's look; the motion from
+2026-10-18 stays. CamCompare keeps its own identity (the iris logo, brand blue, green for money) but
+borrows Compare Empire's design language:
+
+- **Type.** Inter for text and Bricolage Grotesque for every h1–h3, `font-display` and the big
+  figures, both self-hosted from `src/app/fonts/` (OFL, the same files as Compare Empire), so a build
+  never waits on Google Fonts.
+- **Surfaces.** A cool off-white page, white cards with an 18 px radius and a soft shadow
+  (`--shadow-card`), rounder buttons, inputs and chips (the Tailwind `md`/`lg`/`xl` radii grew to
+  8/12/14 px, so every existing component followed without edits), product photos on a soft white tile
+  (`.img-tile`).
+- **Header.** Two rows: the tools (Deals, Finder, Compare, Guides, More) beside the logo, and a strip
+  of what we sell (Cameras, Lenses, Drones, Smart glasses, Digicams, Used, Accessories, Brands, Just
+  announced) under it, which scrolls sideways on a phone, with the tools leading it there. Pills, not
+  underlines, mark the current page. The More menu keeps only what the strip leaves out.
+- **Home hero.** Centred, on a soft brand-blue glow (`.hero-wash`, CSS gradients only, no image), a
+  live "prices checked" pill, the headline with its second half in the brand gradient, the store and
+  product counts, a large search box and a tile per department with a photo of a known model, how
+  many we list and today's lowest in-stock price. A department with nothing published (drones and
+  glasses before their photos arrive) shows no tile. Tile photos prefer our own thumbnails over a
+  store's hotlinked one.
+- Unchanged on purpose: everything is still in the server HTML, pages stay static, no new request,
+  script or image weight beyond the two font files; the pinned Amazon and eBay rows keep their
+  colours and "Ad" label.

@@ -30,14 +30,14 @@ export default function ProductCard({ p, market }: { p: ProductSummary; market: 
         className="card group flex h-full flex-col gap-2 p-3 text-fg no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
       >
         <div className="relative">
-          <ProductThumb slug={p.slug} alt={p.name} className="rounded-md" />
+          <ProductThumb slug={p.slug} alt={p.name} className="img-tile rounded-xl" />
           <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-1.5 mx-auto w-max rounded-full bg-fg/85 px-2.5 py-0.5 text-[11px] font-semibold text-bg opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
             {now !== null || p.kitFrom ? "Compare prices" : "Quick view"}
           </span>
         </div>
         <div className="flex-1">
           <p className="text-xs font-medium text-subtle">{p.brandName}</p>
-          <p className="text-[15px] font-semibold leading-snug group-hover:text-accent">{p.shortName}</p>
+          <p className="font-display text-base font-bold leading-snug tracking-tight group-hover:text-accent">{p.shortName}</p>
           <p className="mt-1 text-xs text-muted">{cardSubline(p)}</p>
           {/* Key specs on one line: "IBIS · 4K 60p · 658 g". */}
           {chips.length > 0 && (

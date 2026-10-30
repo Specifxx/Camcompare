@@ -8,12 +8,15 @@ import Header from "@/components/Header";
 import Reveal from "@/components/Reveal";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { JetBrains_Mono } from "next/font/google";
 
-// One clean sans for headings and body: Inter (globals.css points
-// --font-display at it, so font-display is the same face). JetBrains Mono is
-// only for the few spots that ask for font-mono.
-const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+// Inter for text, Bricolage Grotesque for headings and big figures (the same
+// pair as Compare Empire), both self-hosted (OFL, from Fontsource) so a build
+// never waits on Google Fonts. JetBrains Mono is only for the few spots that
+// ask for font-mono.
+const sans = localFont({ src: "./fonts/inter-latin-wght-normal.woff2", variable: "--font-sans", display: "swap", weight: "100 900" });
+const display = localFont({ src: "./fonts/bricolage-grotesque-latin-wght-normal.woff2", variable: "--font-display", display: "swap", weight: "200 800" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 // AdSense loads only when the owner sets NEXT_PUBLIC_ADSENSE_CLIENT (see AdSlot).
@@ -38,14 +41,14 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8f8f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#111113" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f7fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0c12" },
   ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`}>
       <head>
         <link rel="alternate" type="application/rss+xml" title="CamCompare guides" href="/feed.xml" />
         {/* Impact reads the non-standard `value` attribute. */}
