@@ -331,7 +331,7 @@ function Dialog({ target }: { target: Target }) {
                 </section>
               )}
               <AlsoCheck links={data.alsoCheck.filter((l) => !retailer(l.retailer)?.amazon)} product={data.slug} placement="quickview-check" />
-              <p className="text-[11px] text-subtle">Amazon and eBay are ads, pinned first. The stores are sorted by price, cheapest in-stock first; commission never changes their order.</p>
+              <p className="text-[11px] text-subtle">Amazon and eBay are ads. The stores are sorted by price, cheapest in-stock first; commission never changes their order.</p>
             </>
           )}
         </div>
