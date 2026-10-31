@@ -2,7 +2,8 @@
   "git": {
     "deploymentEnabled": {
       "claude/*": false,
-      "ccr-*": false
+      "ccr-*": false,
+      "reports": false
     }
   }
 }
