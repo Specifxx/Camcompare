@@ -1659,3 +1659,10 @@ POST only, 503 until the token is set) still holds.
   comment. Those issues are public, so they link to each report's file and never quote a note. It fails (and
   GitHub emails the owner) when a site has no `reports` branch, or the token stops working or expires within 14
   days (checked only when the token is also a TCGEmpire Actions secret). The ops monitor's job list watches it.
+
+## 2026-10-31 — Every product link opens the quick view
+
+Owner, 2026-10-31: "Whenever I click on any item … I want a quick view open like K Young." Cards carried `data-qv`
+(`quickViewAttrs`); the quick view now also opens for any other plain click on a link to `[/<market>]/cameras|lenses/<slug>`
+(category tables, guides, lists), with the market from the path (`marketFromPath`). Links inside the quick view and on
+the product's own page, and modified, middle and new-tab clicks, navigate as before.

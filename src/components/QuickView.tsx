@@ -85,9 +85,19 @@ export function closeQuickView() {
   }
 }
 
-function anchorOf(e: Event): HTMLAnchorElement | null {
-  const el = e.target as Element | null;
-  return (el?.closest?.("a[data-qv]") as HTMLAnchorElement | null) ?? null;
+// Every link to a product page opens it (owner, 2026-10-31: "whenever I click on any item … a quick view open like
+// K Young"): a card's data-qv attributes when it has them, else the market and slug read from the href
+// ([/uk|/eu|/au|/sg]/cameras|lenses/<slug>). Links in the quick view, and on the product's own page, navigate as usual.
+const PRODUCT_PATH = /^(?:\/(?:uk|eu|au|sg))?\/(?:cameras|lenses)\/([^/?#]+)\/?$/;
+function targetOf(e: Event): (Target & { a: HTMLAnchorElement }) | null {
+  const a = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
+  if (!a || (a.target && a.target !== "_self") || a.hasAttribute("download") || a.closest("[role=dialog]")) return null;
+  const href = a.getAttribute("href") ?? "";
+  const m = a.dataset.qvMarket;
+  if (a.dataset.qv) return m && isMarket(m) ? { a, slug: a.dataset.qv, market: m, name: a.dataset.qvName, href } : null;
+  const hit = PRODUCT_PATH.exec(href);
+  if (!hit || window.location.pathname.replace(/\/$/, "") === href.replace(/\/$/, "")) return null;
+  return { a, slug: decodeURIComponent(hit[1]), market: marketFromPath(href), href };
 }
 
 function Controller() {
@@ -95,16 +105,15 @@ function Controller() {
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      const a = anchorOf(e);
-      const m = a?.dataset.qvMarket;
-      if (!a || !a.dataset.qv || !m || !isMarket(m) || (a.target && a.target !== "_self")) return;
+      const t = targetOf(e);
+      if (!t) return;
       e.preventDefault();
-      openQuickView({ slug: a.dataset.qv, market: m, name: a.dataset.qvName, href: a.getAttribute("href") ?? undefined }, a);
+      const { a, ...target } = t;
+      openQuickView(target, a);
     };
     const warm = (e: Event) => {
-      const a = anchorOf(e);
-      const m = a?.dataset.qvMarket;
-      if (a?.dataset.qv && m && isMarket(m)) load(m, a.dataset.qv).catch(() => {});
+      const t = targetOf(e);
+      if (t) load(t.market, t.slug).catch(() => {});
     };
     // A mouse resting on a card fetches its file early, so most opens are instant (K Young).
     const hover = (e: PointerEvent) => e.pointerType === "mouse" && warm(e);
