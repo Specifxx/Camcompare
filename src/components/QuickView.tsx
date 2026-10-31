@@ -106,6 +106,8 @@ function Controller() {
       const m = a?.dataset.qvMarket;
       if (a?.dataset.qv && m && isMarket(m)) load(m, a.dataset.qv).catch(() => {});
     };
+    // A mouse resting on a card fetches its file early, so most opens are instant (K Young).
+    const hover = (e: PointerEvent) => e.pointerType === "mouse" && warm(e);
     const onPop = () => {
       const v = viewParam(window.location.search);
       if (!v && current) setCurrent(null);
@@ -114,6 +116,7 @@ function Controller() {
     window.addEventListener("click", onClick, true);
     window.addEventListener("pointerdown", warm, true);
     window.addEventListener("focusin", warm, true);
+    window.addEventListener("pointerover", hover, { passive: true });
     window.addEventListener("popstate", onPop);
     const v = viewParam(window.location.search);
     if (v && !current) setCurrent({ slug: v, market: marketFromPath(window.location.pathname) });
@@ -121,6 +124,7 @@ function Controller() {
       window.removeEventListener("click", onClick, true);
       window.removeEventListener("pointerdown", warm, true);
       window.removeEventListener("focusin", warm, true);
+      window.removeEventListener("pointerover", hover);
       window.removeEventListener("popstate", onPop);
     };
   }, []);

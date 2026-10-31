@@ -1607,3 +1607,10 @@ The 2,500 is split over the eight scheduled runs plus one spare (69 searches per
 dispatch never takes the day past the share; `EBAY_DAILY_CAP` can only lower it. The keys are GitHub Actions secrets
 only. The app's one Marketplace Account Deletion endpoint is K Young's (`kaeyoung.com/api/ebay/marketplace-deletion`):
 CamCompare stores no eBay user data and has no endpoint of its own.
+
+## 2026-10-31 — Quick view motion from K Young
+
+Owner, 2026-10-31, on K Young's quick view: "especially on mobile phone it's so smooth". CamCompare's quick view already
+had K Young's shape (a bottom sheet on phones), but its `qv-panel` / `qv-backdrop` classes had no CSS, so it appeared
+with no motion. `globals.css` now gives them K Young's 0.18 s rise and fade (none under reduced motion), and a mouse
+resting on a card preloads its file (`pointerover`), as on K Young.
