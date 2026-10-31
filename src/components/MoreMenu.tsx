@@ -62,7 +62,7 @@ export default function MoreMenu({ market, pathname, className = "", icon = fals
             const on = pathname === l.href || pathname.startsWith(`${l.href}/`);
             return (
               <li key={l.path}>
-                <Link href={l.href} prefetch={false} aria-current={on ? "page" : undefined} className={`block rounded-lg px-3 py-2 no-underline hover:bg-raised hover:no-underline ${on ? "font-semibold text-fg" : "text-muted hover:text-fg"}`}>
+                <Link href={l.href} prefetch={false} onClick={() => setOpen(false)} aria-current={on ? "page" : undefined} className={`block rounded-lg px-3 py-2 no-underline hover:bg-raised hover:no-underline ${on ? "font-semibold text-fg" : "text-muted hover:text-fg"}`}>
                   {l.label}
                 </Link>
               </li>
