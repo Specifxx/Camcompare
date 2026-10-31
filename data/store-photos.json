@@ -131,9 +131,9 @@
    "retailer": "camera-electronic"
   },
   "dji-air-3": {
-   "src": "https://cdn.shopify.com/s/files/1/0622/3219/9216/files/3287599.jpg?width=640",
-   "store": "Focus Camera",
-   "retailer": "focus-camera"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/j/i/ji_1.png",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "dji-air-3s": {
    "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1070373_1_330238c0-894c-4d83-9ec0-691b819eaab5.jpg?width=640",
@@ -656,12 +656,12 @@
    "retailer": "leica-store-miami"
   },
   "leica-cl": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/CL_BAUHAUS_Elmarit-TL_18mm_FRONT_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/CL_silver_Deckel_FRONT_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
   "leica-d-lux-7": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/D-Lux-7_StreetKit_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_D-Lux7_front_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -675,8 +675,13 @@
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
+  "leica-m-typ-240": {
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/M240_black_1.jpg?width=640",
+   "store": "Leica Store Miami",
+   "retailer": "leica-store-miami"
+  },
   "leica-m10": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/20000_Leica_M10_black_APO-Summicron_50_front_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/M10-D_Deckel_FRONT_RGB_copy.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -726,7 +731,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-q2-monochrom": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Q2_Reporter_front_LoRes_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Q2_Monochrom_FRONT_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -735,13 +740,18 @@
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
+  "leica-sl-typ-601": {
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/TBPhotography-7330.jpg?width=640",
+   "store": "Leica Store Miami",
+   "retailer": "leica-store-miami"
+  },
   "leica-sl2": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/files/10896_Leica_SL2_silver_front_cap.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/SL2_Body_FRONT_SENSOR_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
   "leica-sl2-s": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/10891_Leica_SL2-S_Reporter_front_cap_HiRes_RGBcopy.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/SL2-S_Body_FRONT_SENSOR_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -756,7 +766,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-summicron-m-28-f2-asph": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/summicron-m28_f2_safari_front_shadow_300_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Summicron-M_2_28_ASPH_front.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -776,7 +786,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-summilux-m-28-f1-4-asph": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Summilux-M__1_4-28_ASPH_front.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Summilux-M_1_4_28_ASPH_silver_FRONTAL_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -791,9 +801,9 @@
    "retailer": "leica-store-miami"
   },
   "leica-summilux-sl-50-f1-4-asph": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/leica-camera-lens-11195-angular.png",
-   "store": "Abt",
-   "retailer": "abt"
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/11180_Leica_SL_Summilux-SL_50_ASPH_front_RGB.jpg?width=640",
+   "store": "Leica Store Miami",
+   "retailer": "leica-store-miami"
   },
   "leica-super-vario-elmar-sl-16-35-f3-5-4-5-asph": {
    "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/11177_Super-Vario-Elmar-SL_16-35_FRONTAL_RGB.jpg?width=640",
@@ -839,6 +849,11 @@
    "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-smart-glasses-OOW8001800101-front-left.jpg",
    "store": "Abt",
    "retailer": "abt"
+  },
+  "meta-ray-ban-meta-gen-1": {
+   "src": "https://cdn.shopify.com/s/files/1/0024/9803/5810/files/799226-Product-0-I-638789806812389694.jpg?width=640",
+   "store": "JB Hi-Fi",
+   "retailer": "jbhifi"
   },
   "meta-ray-ban-meta-gen-2": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/ray-ban-meta-sunglasses-RW4013-6011M50.jpg",
@@ -1365,10 +1380,20 @@
    "store": "Camera Wholesalers",
    "retailer": "camera-wholesalers"
   },
+  "samyang-af-14mm-f2-8-fe": {
+   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-14mm-f2-8-2.jpg?width=640",
+   "store": "Ted's Cameras",
+   "retailer": "teds"
+  },
   "samyang-af-18mm-f2-8-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200675_0_3.jpg?width=640",
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
+  },
+  "samyang-af-24mm-f2-8-fe": {
+   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-24mm-f2-8.jpg?width=640",
+   "store": "Ted's Cameras",
+   "retailer": "teds"
   },
   "samyang-af-50mm-f1-4-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200684_0_3.jpg?width=640",

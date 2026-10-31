@@ -1,4 +1,6 @@
-{"market":"eu","currency":"EUR","updatedAt":"2026-10-30T22:21:50.445Z",
+{"market":"eu","currency":"EUR","updatedAt":"2026-10-31T00:40:56.833Z",
   "deals": [
+    {"key":"leica-sl3-s|used|ebay-de","slug":"leica-sl3-s","kind":"camera","condition":"used","retailer":"ebay-de","price":350000,"rrp":519000,"save":169000,"pct":33,"firstSeen":"2026-10-31T00:40:56.833Z","lastSeen":"2026-10-31T00:40:56.833Z","status":"live"},
+    {"key":"sony-a6300|used|ebay-de","slug":"sony-a6300","kind":"camera","condition":"used","retailer":"ebay-de","price":32000,"rrp":125000,"save":93000,"pct":74,"firstSeen":"2026-10-31T00:40:56.833Z","lastSeen":"2026-10-31T00:40:56.833Z","status":"live"}
   ]
 }
