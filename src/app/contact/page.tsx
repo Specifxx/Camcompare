@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
+import { MARKETS, MARKET_CODES } from "@/lib/markets";
+import { SuggestStore } from "@/components/ReportForms";
 
 // One page with the address on it, linked from every footer (owner, 2026-10-30:
 // contact info really clear on every site). Static like every page.
@@ -48,6 +50,12 @@ export default function ContactPage() {
       <p className="text-sm text-muted">
         Ideas other members can vote on go on the public <Link href="/requests" prefetch={false}>feedback &amp; request board</Link>.
       </p>
+      <p>
+        Seen a wrong price? Every camera and lens page has a <b>Report a wrong price</b> link under its prices: no email needed.
+      </p>
+      <h2 id="suggest" className="h-section scroll-mt-28 pt-2">Suggest a store</h2>
+      <p>A camera retailer we don&apos;t compare yet? We check every suggestion and add the store if it publishes prices we&apos;re allowed to read.</p>
+      <SuggestStore regions={MARKET_CODES.map((m) => [m.toUpperCase(), MARKETS[m].name])} what="cameras and lenses" buttonClassName="btn-primary" />
     </div>
   );
 }
