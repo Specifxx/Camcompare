@@ -1666,3 +1666,13 @@ Owner, 2026-10-31: "Whenever I click on any item … I want a quick view open li
 (`quickViewAttrs`); the quick view now also opens for any other plain click on a link to `[/<market>]/cameras|lenses/<slug>`
 (category tables, guides, lists), with the market from the path (`marketFromPath`). Links inside the quick view and on
 the product's own page, and modified, middle and new-tab clicks, navigate as before.
+
+## eBay offers carry their postage; the More menu closes on a tap (2026-10-31)
+
+A WargameCompare visitor's feedback (the owner passed it on for every sister site): eBay rows from overseas sellers,
+and prices without their postage, made "a lot of wasted clicks". CamCompare's search already asked for local sellers
+(`itemLocationCountry`). It now also sends the buyer's country and a central postcode as `contextualLocation` so eBay
+quotes real postage, drops a listing whose postage eBay does not state (`statedPostage`), and prices each eBay offer
+delivered (item + postage, "Price includes postage" / "Free postage" under the row), so it sorts honestly against the
+stores. The same feedback found WargameCompare's phone menu staying open after a tap; CamCompare's More menu closed on
+a route change but not on a tap of the page it was already on, so each link now closes it too.

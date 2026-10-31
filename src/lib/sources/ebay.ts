@@ -50,7 +50,23 @@ type Summary = {
   itemWebUrl: string;
   itemAffiliateWebUrl?: string;
   seller?: { username?: string; feedbackPercentage?: string };
+  shippingOptions?: { shippingCost?: { value?: string; currency?: string } }[];
 };
+
+/** A central postcode per eBay country: sent as the buyer's location so eBay quotes real postage there. */
+export const BUYER_ZIP: Record<string, string> = { US: "64101", GB: "B1 1AA", DE: "60311", AU: "2000" };
+
+/**
+ * The postage eBay states for a listing, in minor units (0 = free), or null when it states none ("calculated") or
+ * states it in another currency. Visitor feedback on WargameCompare (2026-10-31): a price without its postage made
+ * eBay rows "a lot of wasted clicks", so a listing with unknown postage is never an offer, and the offer's price is
+ * the delivered price (item + postage).
+ */
+export function statedPostage(it: Pick<Summary, "shippingOptions">, currency: string): number | null {
+  const c = it.shippingOptions?.[0]?.shippingCost;
+  if (!c || c.value == null || !/^\d{1,6}(\.\d{1,2})?$/.test(c.value) || (c.currency && c.currency !== currency)) return null;
+  return Math.round(Number(c.value) * 100);
+}
 
 let cachedToken: { value: string; until: number } | null = null;
 async function token(id: string, secret: string): Promise<string> {
@@ -158,7 +174,10 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
         headers: {
           Authorization: `Bearer ${bearer}`,
           "X-EBAY-C-MARKETPLACE-ID": r.ebay.marketplaceId,
-          ...(campaign ? { "X-EBAY-C-ENDUSERCTX": `affiliateCampaignId=${campaign}` } : {}),
+          "X-EBAY-C-ENDUSERCTX": [
+            ...(campaign ? [`affiliateCampaignId=${campaign}`] : []),
+            ...(BUYER_ZIP[r.country] ? [`contextualLocation=${encodeURIComponent(`country=${r.country},zip=${BUYER_ZIP[r.country]}`)}`] : []),
+          ].join(","),
         },
       });
       if (res.status === 429) {
@@ -179,8 +198,11 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
         if (Number(it.seller?.feedbackPercentage ?? 0) < MIN_SELLER_FEEDBACK) continue;
         const m = matchListing({ title: it.title }, index, kind);
         if (!m.product || m.product.slug !== item.slug || m.kit) continue;
-        const price = toMinor(it.price.value);
-        if (!plausiblePrice(m.product, cond, price / 100, currency, m.via)) continue;
+        const itemPrice = toMinor(it.price.value);
+        if (!plausiblePrice(m.product, cond, itemPrice / 100, currency, m.via)) continue;
+        const postage = statedPostage(it, currency);
+        if (postage == null) continue;
+        const price = itemPrice + postage;
         const n = kept.get(cond) ?? 0;
         if (n >= KEEP_PER_CONDITION) continue;
         kept.set(cond, n + 1);
@@ -199,6 +221,7 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
           mount: m.mount,
           seenAt: now,
           sourceId: it.itemId,
+          detail: postage ? "Price includes postage" : "Free postage",
         });
       }
       await sleep(200);
