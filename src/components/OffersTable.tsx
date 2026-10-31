@@ -13,6 +13,7 @@ import { OFFER_TABS, rowInTab, tabHideClass, type OfferTab } from "@/lib/offer-t
 import OfferTabs from "./MoreOffers";
 import { AlsoCheck, OfferRowItem, PinnedMarkets, ebayPin, type PinnedLink } from "./OfferRows";
 import TimedPrice from "./TimedPrice";
+import { ReportPrice } from "./ReportForms";
 
 /**
  * Where to buy, in one market, like a shopping panel: filters for New, Used &
@@ -143,6 +144,11 @@ export default function OffersTable({ product, query, offers, market, page, amaz
             Amazon prices and availability are accurate as of the time shown and are subject to change. The price and availability shown on Amazon at the time of purchase will apply.
           </p>
         )}
+        <ReportPrice
+          product={`${query} (${product})`}
+          region={market}
+          stores={rows.filter((r) => !r.amazon).map((r) => ({ name: `${r.name}${r.condition && r.condition !== "New" ? ` (${r.condition})` : ""}`, price: price(r.price, r.currency) }))}
+        />
       </div>
       {side && (
         <div className="flex flex-col gap-4">
