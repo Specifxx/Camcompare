@@ -1,6 +1,11 @@
-{"market":"eu","currency":"EUR","updatedAt":"2026-10-31T00:40:56.833Z",
+{"market":"eu","currency":"EUR","updatedAt":"2026-10-31T05:43:53.070Z",
   "deals": [
-    {"key":"leica-sl3-s|used|ebay-de","slug":"leica-sl3-s","kind":"camera","condition":"used","retailer":"ebay-de","price":350000,"rrp":519000,"save":169000,"pct":33,"firstSeen":"2026-10-31T00:40:56.833Z","lastSeen":"2026-10-31T00:40:56.833Z","status":"live"},
-    {"key":"sony-a6300|used|ebay-de","slug":"sony-a6300","kind":"camera","condition":"used","retailer":"ebay-de","price":32000,"rrp":125000,"save":93000,"pct":74,"firstSeen":"2026-10-31T00:40:56.833Z","lastSeen":"2026-10-31T00:40:56.833Z","status":"live"}
+    {"key":"dji-osmo-pocket-4|new|ebay-de","slug":"dji-osmo-pocket-4","kind":"camera","condition":"new","retailer":"ebay-de","price":40000,"rrp":49900,"save":9900,"pct":20,"firstSeen":"2026-10-31T05:43:53.070Z","lastSeen":"2026-10-31T05:43:53.070Z","status":"live"},
+    {"key":"dji-osmo-pocket-4|used|ebay-de","slug":"dji-osmo-pocket-4","kind":"camera","condition":"used","retailer":"ebay-de","price":38500,"rrp":49900,"save":11400,"pct":23,"firstSeen":"2026-10-31T05:43:53.070Z","lastSeen":"2026-10-31T05:43:53.070Z","status":"live"},
+    {"key":"dji-osmo-pocket-4p|used|ebay-de","slug":"dji-osmo-pocket-4p","kind":"camera","condition":"used","retailer":"ebay-de","price":52400,"rrp":59900,"save":7500,"pct":13,"firstSeen":"2026-10-31T05:43:53.070Z","lastSeen":"2026-10-31T05:43:53.070Z","status":"live"},
+    {"key":"leica-sl3-s|used|ebay-de","slug":"leica-sl3-s","kind":"camera","condition":"used","retailer":"ebay-de","price":350000,"rrp":519000,"save":169000,"pct":33,"firstSeen":"2026-10-31T00:40:56.833Z","lastSeen":"2026-10-31T05:43:53.070Z","status":"live"},
+    {"key":"leica-summilux-m-28-f1-4-asph|used|ebay-de","slug":"leica-summilux-m-28-f1-4-asph","kind":"lens","condition":"used","retailer":"ebay-de","price":420000,"rrp":550000,"save":130000,"pct":24,"firstSeen":"2026-10-31T05:43:53.070Z","lastSeen":"2026-10-31T05:43:53.070Z","status":"live"},
+    {"key":"sony-a6300|used|ebay-de","slug":"sony-a6300","kind":"camera","condition":"used","retailer":"ebay-de","price":32000,"rrp":125000,"save":93000,"pct":74,"firstSeen":"2026-10-31T00:40:56.833Z","lastSeen":"2026-10-31T05:43:53.070Z","status":"live"},
+    {"key":"sony-rx10-v|open-box|ebay-de","slug":"sony-rx10-v","kind":"camera","condition":"open-box","retailer":"ebay-de","price":224910,"rrp":250000,"save":25090,"pct":10,"firstSeen":"2026-10-31T05:43:53.070Z","lastSeen":"2026-10-31T05:43:53.070Z","status":"live"}
   ]
 }
