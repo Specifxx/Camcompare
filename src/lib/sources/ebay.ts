@@ -100,11 +100,22 @@ const MIN_SELLER_FEEDBACK = 98;
  * EBAY_DAILY_CAP (default 2,500, CamCompare's half of a keyset shared with K Young; owner, 2026-10-30)
  * over EBAY_RUNS_PER_DAY (8) plus one spare run, so a manual run never takes the day past the cap.
  * The slot moves the rotation window on every run, not once a day.
+ *
+ * The US comes first (owner, 2026-11-01: "the eBay API for all websites should prioritise the US"):
+ * it takes US_EBAY_SHARE of each run's calls and the other markets split the rest evenly, so the US
+ * edition is searched about twice as often as any other market.
  */
-export function ebayRunBudget(markets: number, now: string, env: Record<string, string | undefined> = process.env) {
+export const US_EBAY_SHARE = 0.4;
+export function ebayMarketShare(market: string, markets: readonly string[]): number {
+  if (!markets.includes(market)) return 0;
+  if (!markets.includes("us")) return 1 / markets.length;
+  if (markets.length === 1) return 1;
+  return market === "us" ? US_EBAY_SHARE : (1 - US_EBAY_SHARE) / (markets.length - 1);
+}
+export function ebayRunBudget(market: string, markets: readonly string[], now: string, env: Record<string, string | undefined> = process.env) {
   const cap = Math.min(2500, Number(env.EBAY_DAILY_CAP || 2500));
   const runs = Math.max(1, Number(env.EBAY_RUNS_PER_DAY || 8));
-  return { perRun: Math.floor(cap / (runs + 1) / Math.max(1, markets)), slot: Math.floor(Date.parse(now) / (86400_000 / runs)) };
+  return { perRun: Math.floor((cap / (runs + 1)) * ebayMarketShare(market, markets)), slot: Math.floor(Date.parse(now) / (86400_000 / runs)) };
 }
 
 export function dailyWindow<T>(items: T[], budget: number, day: number): T[] {
@@ -151,8 +162,8 @@ export const ebaySource = (retailerKey: string): PriceSource => ({
     // The owner's hard-coded EPN campaign (lib/affiliate.ts), so live listings come back tagged.
     const campaign = ebayCampaign();
     const currency = MARKETS[market].currency;
-    const ebayMarkets = RETAILERS.filter((x) => x.ebay).length;
-    const { perRun: budget, slot: day } = ebayRunBudget(ebayMarkets, now);
+    const ebayMarkets = RETAILERS.filter((x) => x.ebay).map((x) => x.market);
+    const { perRun: budget, slot: day } = ebayRunBudget(market, ebayMarkets, now);
     // eBay matches are title-only, and plausiblePrice trusts no title match for
     // a product without a launch price: searching those would spend quota on
     // results that are all refused.
