@@ -603,3 +603,6 @@ h1, h2 { font-weight: 700; }
   }
 }
 /* xmas-site:end */
+
+/* lib/region-boot.ts: while a visitor is moved to their own market's copy of the page, at most 1.5 s. */
+html[data-geo="pending"] main { visibility: hidden; }

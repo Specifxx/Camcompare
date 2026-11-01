@@ -11,6 +11,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 import { SEASON_BOOT_SCRIPT } from "@/lib/season";
+import { MARKET_BOOT_SCRIPT } from "@/lib/market-boot";
 
 // Inter for text, Bricolage Grotesque for headings and big figures (the same
 // pair as Compare Empire), both self-hosted (OFL, from Fontsource) so a build
@@ -53,6 +54,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Christmas (1 November to Boxing Day): data-season on <html> from the visitor's own date. lib/season.ts. */}
         <script dangerouslySetInnerHTML={{ __html: SEASON_BOOT_SCRIPT }} />
+        {/* The visitor's own market (owner, 2026-11-01): a person, never a crawler, on another market's page goes to theirs. lib/market-boot.ts. */}
+        <script dangerouslySetInnerHTML={{ __html: MARKET_BOOT_SCRIPT }} />
         <link rel="alternate" type="application/rss+xml" title="CamCompare guides" href="/feed.xml" />
         {/* Impact reads the non-standard `value` attribute. */}
         {VERIFY.impact && <meta {...({ name: "impact-site-verification", value: VERIFY.impact } as object)} />}

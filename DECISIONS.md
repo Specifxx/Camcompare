@@ -1700,3 +1700,15 @@ lead with "<thing> price comparison <market>: N <things>" (no "from" price: the 
 mini tripod or a spare part), and camera and lens titles carry today's lowest new price when it fits in 60 characters
 ("Tamron 16-50mm F2.8 A price from $529 & specs"), from the same headline rule as the page (`priceTitle`,
 `lib/price-rules.ts`; Amazon prices never, as everywhere in metadata). Falls back to "<name> price & specs".
+
+## 2026-11-01 — Visitors land on their own market's pages
+
+Owner, 2026-11-01: "the default region is the region that the visitor is located in. And if they can't determine it,
+then the default should be the US." The US was already the root, but a visitor who arrived on another market's page
+stayed there behind a "Shopping from …?" bar. `MARKET_BOOT_SCRIPT` (`lib/market-boot.ts` over `lib/region-boot.ts`,
+inline in the root layout, before paint) now moves a person, never a crawler, link preview or audit tool, from a market
+page to the same page in their market, through the page's own hreflang alternate (EU by its en-IE entry; a page with no
+copy there, such as a market page that is noindex until priced, stays). Their market is the one they picked
+(`cc_market`), else their time zone's (Australia/*, Europe/London, Asia/Singapore, any other Europe/* → EU), else the
+US. Global pages never move. `<main>` is hidden for at most 1.5 s. GeoSuggest stays for the rest (IP disagreeing with
+the time zone, global pages). Pages stay static and the same for everyone.
