@@ -10,6 +10,7 @@ import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
+import { SEASON_BOOT_SCRIPT } from "@/lib/season";
 
 // Inter for text, Bricolage Grotesque for headings and big figures (the same
 // pair as Compare Empire), both self-hosted (OFL, from Fontsource) so a build
@@ -48,8 +49,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`}>
+    <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
+        {/* Christmas (1 November to Boxing Day): data-season on <html> from the visitor's own date. lib/season.ts. */}
+        <script dangerouslySetInnerHTML={{ __html: SEASON_BOOT_SCRIPT }} />
         <link rel="alternate" type="application/rss+xml" title="CamCompare guides" href="/feed.xml" />
         {/* Impact reads the non-standard `value` attribute. */}
         {VERIFY.impact && <meta {...({ name: "impact-site-verification", value: VERIFY.impact } as object)} />}
