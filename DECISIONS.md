@@ -1712,3 +1712,12 @@ copy there, such as a market page that is noindex until priced, stays). Their ma
 (`cc_market`), else their time zone's (Australia/*, Europe/London, Asia/Singapore, any other Europe/* → EU), else the
 US. Global pages never move. `<main>` is hidden for at most 1.5 s. GeoSuggest stays for the rest (IP disagreeing with
 the time zone, global pages). Pages stay static and the same for everyone.
+
+## 2026-11-01: eBay and Amazon rows look like the other price rows
+
+The owner: "the ebay and amazon links should blend in and look exactly the same as the other price rows … reflect that
+change on the other sites that require it." Paid marketplace rows (eBay, Amazon, and TCGplayer where it is pinned) keep
+their place and their "Ad"/paid-link label, but lose their brand tints and brand-coloured buttons: they use the same row
+and the same button as a store. They are still never counted as a store and never re-ranked by commission. This
+reverses the 2026-10-30 "bright, catchy colour" pinned rows; eBay ad strips and panels outside the price rows keep
+their own look.

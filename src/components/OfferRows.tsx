@@ -9,13 +9,10 @@ import { rowWarning } from "@/lib/rrp";
 import OutboundLink from "./OutboundLink";
 import AccessoryThumb from "./AccessoryThumb";
 
-/** Filled button for a link that earns (Amazon and eBay in their own colours), outlined for the rest. */
-export function retailerButtonClass(key: string, paid: boolean): string {
-  if (!paid) return "btn-ghost";
-  const r = retailer(key);
-  if (r?.amazon) return "btn-amazon";
-  if (r?.ebay) return "btn-ebay";
-  return "btn-buy";
+/** Filled button for a link that earns, outlined for the rest. Amazon and eBay
+ *  wear the same button as every store (owner, 2026-11-01: "blend in"). */
+export function retailerButtonClass(_key: string, paid: boolean): string {
+  return paid ? "btn-buy" : "btn-ghost";
 }
 
 const PaidNote = ({ paid }: { paid: boolean }) => (paid ? <p className="mt-0.5 text-[10px] leading-none text-subtle">Paid link</p> : null);
@@ -159,16 +156,12 @@ export function AlsoCheck({ links, product, placement, className = "" }: { links
 /** A pinned Amazon or eBay row: a link, with a price only when we have a live one. */
 export type PinnedLink = { retailer: string; name: string; href: string; paid: boolean; note: string; cta: string; price?: React.ReactNode };
 
-const PIN_TINT = {
-  amazon: "bg-[#FFF3DC] dark:bg-[#FF9900]/15 border-l-4 border-l-[#FF9900]",
-  ebay: "bg-[#E8F1FC] dark:bg-[#0654BA]/25 border-l-4 border-l-[#0654BA]",
-};
-
 /**
  * Amazon and eBay, pinned above the price-sorted rows on the product page and
  * in the quick view (owner, 2026-10-30: "the very, very top", always shown).
- * Shaped like an offer row so the list reads as one, tinted in each one's own
- * colour and labelled "Ad". Never part of the sort, never "Best price".
+ * Drawn exactly like an offer row, no tint and the stores' own button (owner,
+ * 2026-11-01: "blend in and look exactly the same as the other price rows"),
+ * labelled "Ad". Never part of the sort, never "Best price".
  */
 export function PinnedMarkets({ links, product, placement, dense = false, className = "" }: { links: PinnedLink[]; product: string; placement: string; dense?: boolean; className?: string }) {
   if (!links.length) return null;
@@ -177,17 +170,17 @@ export function PinnedMarkets({ links, product, placement, dense = false, classN
       {links.map((l) => {
         const kind = retailer(l.retailer)?.amazon ? "amazon" : "ebay";
         return (
-          <li key={l.retailer} className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${PIN_TINT[kind]}`}>
+          <li key={l.retailer} className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"}`}>
             <div className="min-w-0 flex-1">
               <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
                 <span className="font-semibold">{l.name}</span>
-                <span className={`rounded px-1.5 py-px text-[10px] font-bold uppercase tracking-wide ${kind === "amazon" ? "bg-[#FF9900] text-[#111]" : "bg-[#0654BA] text-white"}`}>Ad</span>
+                <span className="rounded bg-buy-soft px-1.5 py-px text-[11px] font-semibold text-win">Ad</span>
               </p>
               <p className="mt-0.5 text-xs text-muted">{l.note}</p>
             </div>
             {l.price && <div className={`price shrink-0 text-right font-bold ${dense ? "text-[15px]" : "text-base"}`}>{l.price}</div>}
             <div className={`${l.price ? (dense ? "w-[4.5rem]" : "w-20 sm:w-24") : ""} shrink-0 text-right`}>
-              <OutboundLink href={l.href} retailer={l.retailer} product={product} placement={`${placement}-${kind}`} className={`${kind === "amazon" ? "btn-amazon" : "btn-ebay"} ${l.price ? "w-full" : "whitespace-nowrap"} ${dense ? "px-2" : ""}`}>
+              <OutboundLink href={l.href} retailer={l.retailer} product={product} placement={`${placement}-${kind}`} className={`btn-buy ${l.price ? "w-full" : "whitespace-nowrap"} ${dense ? "px-2" : ""}`}>
                 {l.cta}
                 <span className="sr-only"> at {l.name}</span>
               </OutboundLink>
