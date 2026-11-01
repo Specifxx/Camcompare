@@ -12,7 +12,7 @@ export function marketFromPath(pathname: string): MarketCode {
 }
 
 /** Pages that exist once for every market (no prefix): stay where you are. */
-const GLOBAL = /^\/(compare\/[^/]+|about|disclosure|credits|privacy|guides|feedback|admin|stories|requests|collection|world)(\/|$)/;
+export const GLOBAL = /^\/(compare\/[^/]+|about|disclosure|credits|privacy|guides|feedback|admin|stories|requests|collection|world)(\/|$)/;
 export const isGlobalPath = (pathname: string) => GLOBAL.test(clean(pathname));
 
 export function switchMarketPath(pathname: string, to: MarketCode): string {
