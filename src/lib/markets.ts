@@ -62,3 +62,6 @@ export function refRate(c: Currency): number {
   const env = typeof process !== "undefined" ? Number(process.env[`FX_USD_${c}`]) : NaN;
   return Number.isFinite(env) && env > 0 ? env : REF_RATES[c];
 }
+
+/** Paths that exist once for every market (never moved to a market's copy). Pure, so the server layout's boot script can read it. */
+export const GLOBAL = /^\/(compare\/[^/]+|about|disclosure|credits|privacy|guides|feedback|admin|stories|requests|collection|world)(\/|$)/;
