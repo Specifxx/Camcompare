@@ -163,8 +163,8 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
   when it earns.
 - **Order.** Offers are always sorted by price. Commission never decides order.
   The one exception (owner, 2026-10-30): eBay and Amazon (eBay first) are pinned above the
-  sorted rows on product pages and in the quick view (`PinnedMarkets`), tinted
-  in their own colours and labelled "Ad". They are outside the sort, never
+  sorted rows on product pages and in the quick view (`PinnedMarkets`), drawn
+  exactly like a store row (owner, 2026-11-01) and labelled "Ad". They are outside the sort, never
   "Best price", and the store rows below keep their price order.
 - **New feed retailers.** After adding one, run
   `npx tsx scripts/sync-workflow-feeds.ts` so the daily workflow gets its
