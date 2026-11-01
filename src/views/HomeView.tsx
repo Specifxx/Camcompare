@@ -13,6 +13,7 @@ import Freshness from "@/components/home/Freshness";
 import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
 import EbayStrip from "@/components/home/EbayStrip";
+import { ChristmasDecor } from "@/components/ChristmasDecor";
 import { brandName, brands, displayName, displayShortName, historyFor, indexedPairs, mounts, offersFor, offersGeneratedAt, pairSlug, product, publishedCameras, publishedLenses, type AnyProduct } from "@/lib/catalog";
 import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
 import { dealInputs } from "@/lib/deal-inputs";
@@ -162,6 +163,10 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
       {/* ---- hero: the promise, the search box and the departments, on a soft brand glow */}
       <section aria-labelledby="hero-title" className="relative -mt-6 pb-2 pt-10 text-center sm:pt-14">
         <div aria-hidden className="hero-wash pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2" />
+        {/* Christmas only (1 November to Boxing Day, lib/season.ts; hidden by CSS otherwise): snow, lights, trees. */}
+        <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2">
+          <ChristmasDecor />
+        </div>
         {generatedAt && (
           <p className="inline-block rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted shadow-card">
             <span className="cc-live" aria-hidden />
@@ -169,6 +174,14 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
             <Freshness at={generatedAt} fallback={stamp(generatedAt)} />
           </p>
         )}
+        {/* Christmas only: a line to the deals, for gift shoppers. */}
+        <div className="xmas-pill-row mt-4 justify-center">
+          <Link href={marketPath(m, "/deals")} prefetch={false} className="xmas-pill">
+            <span className="xmas-pill-icon" aria-hidden="true" />
+            <b>Holiday camera deals</b>
+            <span className="xmas-pill-more hidden sm:inline">· real price drops, checked every day →</span>
+          </Link>
+        </div>
         <h1 id="hero-title" className="mx-auto mt-5 max-w-3xl text-[2.35rem] font-extrabold leading-[1.05] tracking-[-0.035em] sm:text-6xl">
           Camera &amp; lens prices, compared. <span className="text-gradient">Best deals first.</span>
         </h1>

@@ -44,7 +44,11 @@ export function LogoMark({ size = 28, intro = false, className = "" }: { size?: 
 export default function Logo({ size = 28, compact = false, intro = false, className = "" }: { size?: number; compact?: boolean; intro?: boolean; className?: string }) {
   return (
     <span className={`cc-logo inline-flex items-center gap-2 ${className}`}>
-      <LogoMark size={size} intro={intro} />
+      {/* At Christmas Santa's hat sits on the iris (globals.css .xmas-logo-hat, hidden outside the season). */}
+      <span className="xmas-hat-host">
+        <LogoMark size={size} intro={intro} />
+        <span aria-hidden="true" className="xmas-logo-hat" />
+      </span>
       <span className={`font-display text-[1.2rem] font-semibold leading-none tracking-[-0.02em] text-fg ${compact ? "hidden sm:inline" : ""}`}>
         Cam<span className="font-normal text-accent">Compare</span>
         <span className="sr-only"> ({SITE_NAME})</span>
