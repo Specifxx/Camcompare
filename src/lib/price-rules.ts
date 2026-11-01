@@ -152,3 +152,16 @@ export function priceSentence(offers: Offer[], currency: Currency, pack: "body" 
   if (h.kit) return ` ${pack === "body" ? "Kits with a lens" : "Bundles"} from ${price(h.kit.price, currency)}.`;
   return "";
 }
+
+/**
+ * A product page's title with today's lowest new price when it fits ("Leica M11 price from $8,995 & specs").
+ * Search Console 2026-11-01: product pages sit at positions 8–15 for "<model> price" with no clicks; a real
+ * price in the title is what the result can say that the shops' own titles don't. `room` is what is left once
+ * the market suffix and " | CamCompare" are added.
+ */
+export function priceTitle(name: string, offers: Offer[], currency: Currency, room: number): string {
+  const n = headline(offers).new;
+  const p = n ? price(n.price, currency) : null;
+  const ladder = p ? [`${name} price from ${p} & specs`, `${name} price from ${p}`] : [];
+  return [...ladder, `${name} price & specs`].find((t) => t.length <= room) ?? `${name} price & specs`;
+}

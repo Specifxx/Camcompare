@@ -17,6 +17,9 @@ export function alternates(path: string, indexable: (m: MarketCode) => boolean =
 /** Title suffix with the market for non-US pages: "… | UK prices". */
 export const marketTitle = (title: string, m: MarketCode) => (m === "us" ? title : `${title} (${MARKETS[m].short} prices)`);
 
+/** Characters a page title can use before marketTitle's "(SG prices)" and the layout's " | CamCompare" push it past ~60. */
+export const titleRoom = (m: MarketCode) => 60 - " | CamCompare".length - (m === "us" ? 0 : ` (${MARKETS[m].short} prices)`.length);
+
 export function pageMeta(opts: {
   title: string;
   description: string;
@@ -25,10 +28,12 @@ export function pageMeta(opts: {
   image?: string;
   index?: boolean;
   indexable?: (m: MarketCode) => boolean;
+  /** The title already names the market ("Tripod price comparison Singapore"): no "(SG prices)" suffix. */
+  titleNamesMarket?: boolean;
 }): Metadata {
   const url = marketPath(opts.market, opts.path);
   return {
-    title: marketTitle(opts.title, opts.market),
+    title: opts.titleNamesMarket ? opts.title : marketTitle(opts.title, opts.market),
     description: opts.description,
     alternates: { canonical: url, ...alternates(opts.path, opts.indexable) },
     openGraph: { title: opts.title, description: opts.description, url, siteName: SITE_NAME, type: "website", locale: MARKETS[opts.market].locale.replace("-", "_"), images: [opts.image ?? "/opengraph-image"] },

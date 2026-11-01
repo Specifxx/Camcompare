@@ -33,7 +33,7 @@ import ReviewStars from "@/components/product/ReviewStars";
 import ThingsToKnow from "@/components/product/ThingsToKnow";
 import { galleryFor } from "@/lib/gallery";
 import { discussionLinks, videoLinks } from "@/lib/media-links";
-import { headline, priceSentence } from "@/lib/price-rules";
+import { headline, priceSentence, priceTitle } from "@/lib/price-rules";
 import { cameraThings } from "@/lib/things-to-know";
 import { usedValue } from "@/lib/value";
 import { cameraHighlights } from "@/lib/highlights";
@@ -57,7 +57,7 @@ import { isGadget, type Camera } from "@/lib/catalog/schema";
 import { gadgetPage } from "@/lib/curated";
 import { breadcrumb, ldJson, productLd } from "@/lib/jsonld";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, titleRoom } from "@/lib/seo";
 import { SPEC_GROUPS, lensLabel, sensorLabel, typeLabel } from "@/lib/specs/definitions";
 import { CATEGORY_LABEL, cropOn, lensCategories, type LensCategory } from "@/lib/specs/lens";
 import { summarizeLens } from "@/lib/summary";
@@ -75,7 +75,7 @@ export function cameraMetadata(slug: string, m: MarketCode): Metadata {
   // The same headline rule as the page (lib/price-rules.ts): body only, else a kit, labelled.
   const priceText = priceSentence(offers, cur, c.mount ? "body" : "fixed");
   return pageMeta({
-    title: `${name} price & specs`,
+    title: priceTitle(name, offers, cur, titleRoom(m)),
     description: `${name}: ${c.specs.megapixels} MP ${c.specs.sensorFormat ? `${sensorLabel(c.specs.sensorFormat).toLowerCase()} ` : ""}${typeLabel(c.type).toLowerCase()}, announced ${c.announced.slice(0, 4)}.${priceText} Full specs, price history and side-by-side comparisons.`,
     path: `/cameras/${c.slug}`,
     market: m,

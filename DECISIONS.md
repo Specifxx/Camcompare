@@ -1690,3 +1690,13 @@ adds no request, no script beyond the boot line and no database or data read. Th
 `xmas-common:start` and `xmas-common:end` in `globals.css` (identical on every sister site); this site's colours sit in
 the `xmas-site` block after it. Art is eight small SVGs in `public/xmas/`. To end it early, move the `to` date; after
 Boxing Day it switches itself off.
+
+## 2026-11-01 — Titles say "price comparison" and today's price
+
+Search Console (90 days to 29 Oct): accessory pages rank on page one for "tripod price comparison" (6.1), "tripod price",
+"gimbal deals", "memory card price" (SG and UK pages, positions 6–15) with no clicks, under titles like "Tripods: compare
+prices and brands (SG prices)". Product pages sit at 8–15 for "<model> price" with no clicks. Accessory category titles now
+lead with "<thing> price comparison <market>: N <things>" (no "from" price: the cheapest listing in a category is often a
+mini tripod or a spare part), and camera and lens titles carry today's lowest new price when it fits in 60 characters
+("Tamron 16-50mm F2.8 A price from $529 & specs"), from the same headline rule as the page (`priceTitle`,
+`lib/price-rules.ts`; Amazon prices never, as everywhere in metadata). Falls back to "<name> price & specs".

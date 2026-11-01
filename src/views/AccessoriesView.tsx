@@ -87,9 +87,18 @@ export const accessoryCategoryParams = () => CATEGORIES.map((c) => ({ category: 
 export function accessoryCategoryMetadata(category: string, m: MarketCode): Metadata {
   const c = accessoryCategory(category);
   if (!c) return {};
-  const n = accessoriesIn(m, category).length;
+  const all = accessoriesIn(m, category);
+  const n = all.length;
+  // Search Console 2026-11-01: "tripod price comparison" (position 6), "tripod price", "gimbal deals", "memory card
+  // price" land here with no clicks under "Tripods: compare prices and brands". Lead with the words people type and
+  // the market. No "from" price: the cheapest listing in a category is often a mini tripod or a spare part.
+  const one = c.one.charAt(0).toUpperCase() + c.one.slice(1);
+  const place = m === "us" ? "" : ` ${MARKETS[m].name}`;
+  const room = 60 - " | CamCompare".length;
+  const title = [`${one} price comparison${place}: ${n} ${c.label.toLowerCase()}`, `${one} price comparison${place}`].find((t) => t.length <= room) ?? `${one} price comparison${place}`;
   return pageMeta({
-    title: `${c.label}: compare prices and brands`,
+    title,
+    titleNamesMarket: true,
     description: `${n ? `${n} ` : ""}${c.label.toLowerCase()} listings at camera shops in ${MARKETS[m].name}, cheapest first${PER_GB_CATEGORIES.has(category) ? ", with price per GB" : ""}. Filter by brand${SYSTEM_CATEGORIES.has(category) ? " and camera system" : " and the camera it fits"}.`,
     path: `/accessories/${category}`,
     market: m,
