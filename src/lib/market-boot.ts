@@ -1,7 +1,6 @@
 // The visitor's own market by default (owner, 2026-11-01: "the default region is the region that the visitor is located
 // in. And if they can't determine it, then the default should be the US"). See lib/region-boot.ts.
-import { GLOBAL } from "./market-client";
-import { MARKET_CODES, PREFIXED_MARKETS } from "./markets";
+import { GLOBAL, MARKET_CODES, PREFIXED_MARKETS } from "./markets";
 import { regionBootScript } from "./region-boot";
 
 /**
