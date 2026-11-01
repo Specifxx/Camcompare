@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-01T06:07:16.107Z",
+ "generatedAt": "2026-11-01T13:26:53.101Z",
  "market": "eu",
  "currency": "EUR",
  "sources": {
@@ -7,49 +7,49 @@
    "status": "skipped",
    "offers": 0,
    "note": "Creators API EU credentials or AMAZON_TAG_DE not set",
-   "at": "2026-11-01T06:07:16.107Z"
+   "at": "2026-11-01T13:26:53.101Z"
   },
   "calumet-de": {
    "status": "skipped",
    "offers": 0,
    "note": "FEED_URL_CALUMET_DE not set",
-   "at": "2026-11-01T06:07:16.107Z"
+   "at": "2026-11-01T13:26:53.101Z"
   },
   "foto-erhardt": {
    "status": "skipped",
    "offers": 0,
    "note": "FEED_URL_FOTO_ERHARDT not set",
-   "at": "2026-11-01T06:07:16.107Z"
+   "at": "2026-11-01T13:26:53.101Z"
   },
   "cyberport": {
    "status": "skipped",
    "offers": 0,
    "note": "FEED_URL_CYBERPORT not set",
-   "at": "2026-11-01T06:07:16.107Z"
+   "at": "2026-11-01T13:26:53.101Z"
   },
   "mediamarkt-de": {
    "status": "skipped",
    "offers": 0,
    "note": "FEED_URL_MEDIAMARKT_DE not set",
-   "at": "2026-11-01T06:07:16.107Z"
+   "at": "2026-11-01T13:26:53.101Z"
   },
   "coolblue": {
    "status": "skipped",
    "offers": 0,
    "note": "FEED_URL_COOLBLUE not set",
-   "at": "2026-11-01T06:07:16.107Z"
+   "at": "2026-11-01T13:26:53.101Z"
   },
   "mpb-eu": {
    "status": "skipped",
    "offers": 0,
    "note": "FEED_URL_MPB_EU not set",
-   "at": "2026-11-01T06:07:16.107Z"
+   "at": "2026-11-01T13:26:53.101Z"
   },
   "ebay-de": {
    "status": "ok",
-   "offers": 188,
-   "note": "69/1033 products searched",
-   "at": "2026-11-01T06:07:16.107Z"
+   "offers": 170,
+   "note": "55/1033 products searched",
+   "at": "2026-11-01T13:26:53.101Z"
   }
  },
  "offers": [
@@ -677,7 +677,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|336867737940|0",
    "detail": "Price includes postage"
   },
@@ -694,7 +694,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|880011130155|0",
    "detail": "Price includes postage"
   },
@@ -711,7 +711,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094109109|0",
    "detail": "Price includes postage"
   },
@@ -728,7 +728,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|256120055901|0",
    "detail": "Free postage"
   },
@@ -962,7 +962,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094302241|0",
    "detail": "Price includes postage"
   },
@@ -979,7 +979,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|336867209294|0",
    "detail": "Free postage"
   },
@@ -996,7 +996,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|128152346922|0",
    "detail": "Price includes postage"
   },
@@ -1013,8 +1013,25 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860030775333|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "canon-eos-r8",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "open-box",
+   "price": 115769,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/128168106253?_skw=canon+EOS+R8&hash=item1dd76a190d%3Ag%3ARjQAAeSw071q5yeK&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon EOS R8 Body Spiegellose Systemkamera nur 20 Auslösungen",
+   "seller": "neo2k_de",
+   "inStock": true,
+   "kit": false,
+   "mount": "canon-rf",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|128168106253|0",
    "detail": "Price includes postage"
   },
   {
@@ -1030,7 +1047,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|267787246712|0",
    "detail": "Price includes postage"
   },
@@ -1047,7 +1064,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|167819296194|0",
    "detail": "Free postage"
   },
@@ -1064,7 +1081,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|365943222016|0",
    "detail": "Free postage"
   },
@@ -1209,7 +1226,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|227587663880|0",
    "detail": "Price includes postage"
   },
@@ -1226,7 +1243,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|398450946025|0",
    "detail": "Price includes postage"
   },
@@ -1243,7 +1260,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|117481568874|0",
    "detail": "Free postage"
   },
@@ -1260,7 +1277,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860076010407|0",
    "detail": "Price includes postage"
   },
@@ -1277,7 +1294,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|820143009812|0",
    "detail": "Price includes postage"
   },
@@ -1294,7 +1311,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|820234831685|0",
    "detail": "Price includes postage"
   },
@@ -1311,7 +1328,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|398416185024|0",
    "detail": "Price includes postage"
   },
@@ -1328,7 +1345,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|147639531998|0",
    "detail": "Price includes postage"
   },
@@ -1345,7 +1362,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|397674239452|0",
    "detail": "Price includes postage"
   },
@@ -1492,6 +1509,159 @@
    "mount": null,
    "seenAt": "2026-10-31T19:19:16.796Z",
    "sourceId": "v1|177592822495|0"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "new",
+   "price": 20399,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/407026408105?_skw=canon+PowerShot+V10&hash=item5ec4aa1aa9%3Ag%3A8kkAAeSw-%7EtqNB66&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon PowerShot V10 Vlog Kamera",
+   "seller": "bringin2020",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|407026408105|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 22590,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/358921671112?_skw=canon+PowerShot+V10&hash=item53916611c8%3Ag%3ASNUAAeSwV3lqzglG&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "CANON PowerShot V10 Vlogging-Kit Camcorder 20 MP 4K UHD Bluetooth USB-C B-WARE",
+   "seller": "favorio",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|358921671112|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "open-box",
+   "price": 22699,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/407011150571?_skw=canon+PowerShot+V10&hash=item5ec3c14aeb%3Ag%3A8kkAAeSw-%7EtqNB66&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon PowerShot V10 Vlog Kamera",
+   "seller": "bringin2020",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|407011150571|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 24650,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/307204717075?_skw=canon+PowerShot+V10&hash=item4786d3fa13%3Ag%3Aj2AAAeSw%7EWxpumKJ&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon PowerShot V10 Videokamera",
+   "seller": "analog-digital-depot",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|307204717075|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 25590,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/267795883042?_skw=canon+PowerShot+V10&hash=item3e59e0e422%3Ag%3Agf4AAeSwVBZqtv9D&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon PowerShot V10 Vlogging Kit (Neu!) FOTO JESCHNER An & Verkauf KASSEL",
+   "seller": "fotojeschner",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|267795883042|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "open-box",
+   "price": 28524,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/880052041299?_skw=canon+PowerShot+V10&hash=itemcce7307653%3Ag%3ABLQAAeSwFthq3tVw&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon PowerShot V10 Vlogging Digitalkamera 15.2 Megapixel Schwarz - Wie Neu",
+   "seller": "second-circle",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|880052041299|0",
+   "detail": "Free postage"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "open-box",
+   "price": 29900,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/227486699109?_skw=canon+PowerShot+V10&hash=item34f7438e65%3Ag%3AZ2EAAeSwwS5qiWTR&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon PowerShot V10 Vlogging-Kit Kompaktkamera Silber NEU & OVP Videokamera",
+   "seller": "bestseller97",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|227486699109|0",
+   "detail": "Free postage"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "new",
+   "price": 32000,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/236820042639?_skw=canon+PowerShot+V10&hash=item372393138f%3Ag%3ATZkAAeSwA7pqCIfZ&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon PowerShot V10 Silber Advanced Vlogging Kit Videokamera 15.2 MP WLAN",
+   "seller": "sirasg-0",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|236820042639|0",
+   "detail": "Free postage"
+  },
+  {
+   "product": "canon-powershot-v10",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "new",
+   "price": 33900,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/227150362722?_skw=canon+PowerShot+V10&hash=item34e3377862%3Ag%3ATbgAAeSwzLRpUX5g&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Canon PowerShot V10 Silber Advanced Vlogging Kit Videokamera 15.2 MP WLAN",
+   "seller": "allmedia-dinslaken",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|227150362722|0",
+   "detail": "Free postage"
   },
   {
    "product": "canon-rf-10-20mm-f4l-is-stm",
@@ -1659,7 +1829,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|128112382244|0",
    "detail": "Price includes postage"
   },
@@ -1676,7 +1846,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|820287398311|0",
    "detail": "Free postage"
   },
@@ -1693,7 +1863,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|128029665566|0",
    "detail": "Free postage"
   },
@@ -1710,7 +1880,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|147624019022|0",
    "detail": "Free postage"
   },
@@ -1727,7 +1897,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|236591288531|0",
    "detail": "Price includes postage"
   },
@@ -1744,7 +1914,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|158223507661|0",
    "detail": "Free postage"
   },
@@ -2014,7 +2184,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|318628620133|0",
    "detail": "Free postage"
   },
@@ -2031,7 +2201,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|206636085744|0",
    "detail": "Price includes postage"
   },
@@ -2048,7 +2218,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|318738021033|0",
    "detail": "Price includes postage"
   },
@@ -2065,7 +2235,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|366689201674|0",
    "detail": "Free postage"
   },
@@ -2082,7 +2252,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|407290948982|0",
    "detail": "Price includes postage"
   },
@@ -2099,7 +2269,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|257816626749|0",
    "detail": "Price includes postage"
   },
@@ -2116,7 +2286,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|158334692792|0",
    "detail": "Free postage"
   },
@@ -2133,7 +2303,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|840058420397|0",
    "detail": "Price includes postage"
   },
@@ -2150,9 +2320,60 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|318186336112|0",
    "detail": "Price includes postage"
+  },
+  {
+   "product": "dji-mavic-3-pro",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 105000,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/800786280243?_skw=dji+Mavic+3+Pro&hash=itemba7294ef33%3Ag%3AogoAAeSwSytqskF7&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "6) DJI Mavic 3 Pro Drohne einzeln mit Prop. - 19% MwSt. mit Rechnung - wie NEU",
+   "seller": "b-waretrade",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|800786280243|0",
+   "detail": "Free postage"
+  },
+  {
+   "product": "dji-mavic-3-pro",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 114999,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/267757104683?_skw=dji+Mavic+3+Pro&hash=item3e57912e2b%3Ag%3AyI8AAeSw3lhqfzXN&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "DJI Mavic 3 Pro inkl. DJI RC Drohne Gebraucht Top Zustand",
+   "seller": "missonline1978",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|267757104683|0",
+   "detail": "Free postage"
+  },
+  {
+   "product": "dji-mavic-3-pro",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 119999,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/267710095117?_skw=dji+Mavic+3+Pro&hash=item3e54c3df0d%3Ag%3A3aAAAeSwkxpopFzR&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "DJI Mavic 3 Pro inkl. DJI RC Drohne WIE NEU / AUSSTELLER DJI Konto gebunden !!!",
+   "seller": "missonline1978",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|267710095117|0",
+   "detail": "Free postage"
   },
   {
    "product": "dji-mavic-4-pro",
@@ -2653,7 +2874,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|206619652998|0",
    "detail": "Price includes postage"
   },
@@ -3107,7 +3328,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|227488482159|0",
    "detail": "Free postage"
   },
@@ -3124,7 +3345,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|178019292217|0",
    "detail": "Free postage"
   },
@@ -3141,7 +3362,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|358751620959|0",
    "detail": "Free postage"
   },
@@ -3158,7 +3379,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|127501658325|0",
    "detail": "Free postage"
   },
@@ -3209,6 +3430,74 @@
    "mount": "fujifilm-x",
    "seenAt": "2026-10-31T00:40:56.833Z",
    "sourceId": "v1|147648600319|0"
+  },
+  {
+   "product": "fujifilm-x-s20",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 93119,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/206510783578?_skw=fujifilm+X-S20&hash=item3015007c5a%3Ag%3AmB4AAeSwiOxqita7&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Fujifilm X-S20 26,1MP Fuji Kamera",
+   "seller": "voxst",
+   "inStock": true,
+   "kit": false,
+   "mount": "fujifilm-x",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|206510783578|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "fujifilm-x-s20",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 94900,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/880064339047?_skw=fujifilm+X-S20&hash=itemcce7ec1c67%3Ag%3AUJQAAeSw6j1q5Gop&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Fujifilm X-S20 schwarz Digitalkamera Gehäuse Fuji + 64GB SD - Händler",
+   "seller": "shop-steinert",
+   "inStock": true,
+   "kit": false,
+   "mount": "fujifilm-x",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|880064339047|0",
+   "detail": "Free postage"
+  },
+  {
+   "product": "fujifilm-x-s20",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 96395,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/860094109288?_skw=fujifilm+X-S20&hash=itemc8419a9668%3Ag%3ASF8AAeSwirxq4xOV&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Fujifilm X-S20 (schwarz) ca. 5.700 Ausl. Kamera",
+   "seller": "calumet-photo-video",
+   "inStock": true,
+   "kit": false,
+   "mount": "fujifilm-x",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|860094109288|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "fujifilm-x-s20",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "new",
+   "price": 106000,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/257825064551?_skw=fujifilm+X-S20&hash=item3c07924667%3Ag%3AiSQAAeSwgYVqf2kl&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Fujifilm X-S20 in OVP nagelneu mit Garantie",
+   "seller": "freud-und-wonne",
+   "inStock": true,
+   "kit": false,
+   "mount": "fujifilm-x",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|257825064551|0",
+   "detail": "Price includes postage"
   },
   {
    "product": "fujifilm-x-t10",
@@ -3352,7 +3641,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|117494833388|0",
    "detail": "Price includes postage"
   },
@@ -3369,7 +3658,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|168822941162|0",
    "detail": "Price includes postage"
   },
@@ -3386,7 +3675,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094109710|0",
    "detail": "Price includes postage"
   },
@@ -3403,7 +3692,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|398120320194|0",
    "detail": "Price includes postage"
   },
@@ -3420,7 +3709,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|800126665709|0",
    "detail": "Price includes postage"
   },
@@ -3428,17 +3717,17 @@
    "product": "fujifilm-x100vi",
    "kind": "camera",
    "retailer": "ebay-de",
-   "condition": "used",
-   "price": 160619,
+   "condition": "open-box",
+   "price": 171100,
    "currency": "EUR",
-   "url": "https://www.ebay.de/itm/900014653122?_skw=fujifilm+X100VI&hash=itemd18d0dbec2%3Ag%3A51AAAeSwMaJq0JoP&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "Fujifilm X100VI inklusive Zubehörpaket",
-   "seller": "mpassin",
+   "url": "https://www.ebay.de/itm/137891858738?_skw=fujifilm+X100VI&hash=item201afec932%3Ag%3A0rIAAeSw3E1q5wYp&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "3 Monate alte, neuwertige Fujifilm X100VI Silber ",
+   "seller": "malenko0408",
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
-   "sourceId": "v1|900014653122|0",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|137891858738|0",
    "detail": "Price includes postage"
   },
   {
@@ -3446,16 +3735,16 @@
    "kind": "camera",
    "retailer": "ebay-de",
    "condition": "used",
-   "price": 171000,
+   "price": 171395,
    "currency": "EUR",
-   "url": "https://www.ebay.de/itm/257822134031?_skw=fujifilm+X100VI&hash=item3c07658f0f%3Ag%3APwwAAeSwv8pq4ilF&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "Fujifilm X100VI – Top-Zustand | Rechnung | Garantie bis 07/2028 | Zubehörpaket",
-   "seller": "iverdoh",
+   "url": "https://www.ebay.de/itm/860075504269?_skw=fujifilm+X100VI&hash=itemc8407eb28d%3Ag%3ANh4AAeSwAvNq2zqf&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Fujifilm X100VI (silber) Kamera",
+   "seller": "calumet-photo-video",
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
-   "sourceId": "v1|257822134031|0",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|860075504269|0",
    "detail": "Price includes postage"
   },
   {
@@ -3471,7 +3760,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|336844643577|0",
    "detail": "Free postage"
   },
@@ -3488,7 +3777,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|206660817840|0",
    "detail": "Price includes postage"
   },
@@ -3496,17 +3785,17 @@
    "product": "fujifilm-x100vi",
    "kind": "camera",
    "retailer": "ebay-de",
-   "condition": "open-box",
-   "price": 180599,
+   "condition": "used",
+   "price": 180769,
    "currency": "EUR",
-   "url": "https://www.ebay.de/itm/198752125928?_skw=fujifilm+X100VI&hash=item2e468cc3e8%3Ag%3AvusAAeSw2CpqCzRK&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "FUJIFILM X100VI Silber / X100M6 Silver / 5 Testauslöser  wie NEU v. Fachhändler",
-   "seller": "fotoehlertwesel",
+   "url": "https://www.ebay.de/itm/377561825281?_skw=fujifilm+X100VI&hash=item57e8704001%3Ag%3A8FAAAeSw4dRqwmQE&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Fujifilm X100VI schwarz – Komplettes Creator-Set",
+   "seller": "andygnarhol",
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
-   "sourceId": "v1|198752125928|0",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|377561825281|0",
    "detail": "Price includes postage"
   },
   {
@@ -3522,7 +3811,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|257779600369|0",
    "detail": "Free postage"
   },
@@ -3539,7 +3828,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|405397528093|0",
    "detail": "Free postage"
   },
@@ -3958,6 +4247,23 @@
    "mount": "fujifilm-x",
    "seenAt": "2026-10-31T00:40:56.833Z",
    "sourceId": "v1|206620272164|0"
+  },
+  {
+   "product": "fujifilm-xf-8mm-f3-5-r-wr",
+   "kind": "lens",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 50199,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/257816842891?_skw=fujifilm+XF+8mm+F3.5+R+WR&hash=item3c0714d28b%3Ag%3AiIcAAeSwcuJq3elI&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "FUJIFILM XF 8mm F3.5 R WR  Fujinon / F/3,5 Ultraweitwinkelobjektiv",
+   "seller": "delphi201313",
+   "inStock": true,
+   "kit": false,
+   "mount": "fujifilm-x",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|257816842891|0",
+   "detail": "Price includes postage"
   },
   {
    "product": "fujifilm-xf-90mm-f2-r-lm-wr",
@@ -4538,7 +4844,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|298727108624|0",
    "detail": "Free postage"
   },
@@ -4555,7 +4861,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|800261006251|657379374554",
    "detail": "Free postage"
   },
@@ -4572,7 +4878,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|800470242808|0",
    "detail": "Price includes postage"
   },
@@ -4589,7 +4895,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|800271838151|657384547462",
    "detail": "Free postage"
   },
@@ -4606,7 +4912,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|800235427799|0",
    "detail": "Free postage"
   },
@@ -4623,7 +4929,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|800245990304|657371790948",
    "detail": "Free postage"
   },
@@ -4640,7 +4946,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|376216752576|0",
    "detail": "Free postage"
   },
@@ -4657,7 +4963,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|266897383243|0",
    "detail": "Free postage"
   },
@@ -4668,13 +4974,13 @@
    "condition": "new",
    "price": 29999,
    "currency": "EUR",
-   "url": "https://www.ebay.de/itm/880018414246?_skw=insta360+GO+3S&hash=itemcce52f5aa6%3Ag%3AkL4AAeSwuM5q4xD2&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "Insta360 INSTA360 Go 3S 128GB black Action Kamera (Mini) #36986844",
+   "url": "https://www.ebay.de/itm/880018414246?_skw=insta360+GO+3S&hash=itemcce52f5aa6%3Ag%3Ad-8AAeSwZKtq5wTW&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Insta360 INSTA360 Go 3S 128GB black Action Kamera (Mini) #18323570",
    "seller": "expert_ecommerce",
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|880018414246|0",
    "detail": "Free postage"
   },
@@ -4787,9 +5093,26 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|287592019884|0",
    "detail": "Free postage"
+  },
+  {
+   "product": "insta360-x5",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 33399,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/206667650095?_skw=insta360+X5&hash=item301e5a142f%3Ag%3AHPwAAeSwHrxq5yGe&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Insta360 X5 8K 360° Action Cam mit Garantie",
+   "seller": "ni-con",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|206667650095|0",
+   "detail": "Price includes postage"
   },
   {
    "product": "insta360-x5",
@@ -4804,25 +5127,8 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|960057099202|0",
-   "detail": "Price includes postage"
-  },
-  {
-   "product": "insta360-x5",
-   "kind": "camera",
-   "retailer": "ebay-de",
-   "condition": "used",
-   "price": 38619,
-   "currency": "EUR",
-   "url": "https://www.ebay.de/itm/327426436769?_skw=insta360+X5&hash=item4c3c22eea1%3Ag%3Azi4AAeSw495q4NDR&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "Insta360 X5 8K 360 Action Cam Touchscreen Schwarz inkl. Viel Zubehör",
-   "seller": "stadler-manuel-2012",
-   "inStock": true,
-   "kit": false,
-   "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
-   "sourceId": "v1|327426436769|0",
    "detail": "Price includes postage"
   },
   {
@@ -4838,7 +5144,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|287665007714|0",
    "detail": "Free postage"
   },
@@ -4855,7 +5161,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|327428019934|0",
    "detail": "Free postage"
   },
@@ -4872,7 +5178,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|358854714019|0",
    "detail": "Price includes postage"
   },
@@ -4889,7 +5195,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|358918006399|0",
    "detail": "Price includes postage"
   },
@@ -4906,8 +5212,25 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094300466|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "insta360-x5",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "open-box",
+   "price": 51619,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/128129131014?_skw=insta360+X5&hash=item1dd5176206%3Ag%3AdgkAAeSwfNpqy8e%7E&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Insta360 X5 Kamera  – kratzerfreie Linsen & Display, OVP 2 Akkus Zubehörpaket",
+   "seller": "marlonsch",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|128129131014|0",
    "detail": "Price includes postage"
   },
   {
@@ -5207,7 +5530,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094109896|0",
    "detail": "Price includes postage"
   },
@@ -5224,7 +5547,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094304482|0",
    "detail": "Price includes postage"
   },
@@ -5233,7 +5556,7 @@
    "kind": "camera",
    "retailer": "ebay-de",
    "condition": "used",
-   "price": 779900,
+   "price": 776900,
    "currency": "EUR",
    "url": "https://www.ebay.de/itm/267800109682?_skw=leica+Leica+M11+Monochrom&hash=item3e5a216272%3Ag%3AxzsAAeSwIYZqv4Cu&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
    "title": "Leica M11 Monochrom Typ 20208 nur ca. 3.700 Shots OVP Sehr Gut Garantie Rechnung",
@@ -5241,7 +5564,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|267800109682|0",
    "detail": "Free postage"
   },
@@ -5422,7 +5745,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|327306714062|0",
    "detail": "Free postage"
   },
@@ -5439,7 +5762,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094304206|0",
    "detail": "Price includes postage"
   },
@@ -5456,7 +5779,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|398451120360|0",
    "detail": "Free postage"
   },
@@ -5473,7 +5796,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094107985|0",
    "detail": "Price includes postage"
   },
@@ -5541,7 +5864,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|287363309134|0",
    "detail": "Price includes postage"
   },
@@ -5558,7 +5881,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|137515795622|0",
    "detail": "Free postage"
   },
@@ -5575,9 +5898,26 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|366543845495|0",
    "detail": "Free postage"
+  },
+  {
+   "product": "leica-summicron-sl-50-f2-asph",
+   "kind": "lens",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 125769,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/940057259133?_skw=leica+Summicron-SL+50+f%2F2+ASPH.&hash=itemdadfc76c7d%3Ag%3A8IwAAeSwXolq5zTQ&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Leica Summicron-SL 50 f/2 ASPH. – wie neu, Garantie bis 2028",
+   "seller": "patrick-johannes_wolf",
+   "inStock": true,
+   "kit": false,
+   "mount": "l-mount",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|940057259133|0",
+   "detail": "Price includes postage"
   },
   {
    "product": "leica-summicron-sl-50-f2-asph",
@@ -5592,7 +5932,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|365733047692|0",
    "detail": "Free postage"
   },
@@ -5657,7 +5997,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|178145299962|0",
    "detail": "Free postage"
   },
@@ -5674,7 +6014,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|178167274145|0",
    "detail": "Free postage"
   },
@@ -5691,7 +6031,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|326923883781|0",
    "detail": "Price includes postage"
   },
@@ -5708,7 +6048,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|327257128475|0",
    "detail": "Price includes postage"
   },
@@ -5725,7 +6065,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|327343056214|0",
    "detail": "Price includes postage"
   },
@@ -5742,7 +6082,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|327257176330|0",
    "detail": "Price includes postage"
   },
@@ -5759,7 +6099,7 @@
    "inStock": true,
    "kit": false,
    "mount": "leica-m",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|327343056213|0",
    "detail": "Price includes postage"
   },
@@ -5939,7 +6279,7 @@
    "inStock": true,
    "kit": false,
    "mount": "fujifilm-x",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|267740548166|0",
    "detail": "Price includes postage"
   },
@@ -5956,7 +6296,7 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|198719823242|0",
    "detail": "Price includes postage"
   },
@@ -5973,7 +6313,7 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|267324857323|0",
    "detail": "Free postage"
   },
@@ -6649,7 +6989,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|137879417765|0",
    "detail": "Price includes postage"
   },
@@ -6666,7 +7006,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094303101|0",
    "detail": "Price includes postage"
   },
@@ -6683,7 +7023,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|227502768677|0",
    "detail": "Price includes postage"
   },
@@ -6700,26 +7040,9 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|336797325615|0",
    "detail": "Free postage"
-  },
-  {
-   "product": "nikon-coolpix-p1100",
-   "kind": "camera",
-   "retailer": "ebay-de",
-   "condition": "used",
-   "price": 100769,
-   "currency": "EUR",
-   "url": "https://www.ebay.de/itm/168819585600?_skw=nikon+COOLPIX+P1100&hash=item274e6e7240%3Ag%3AuH8AAeSwoVlq4G1D&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "Nikon COOLPIX P1100 neuwertig mit Zubehörpaket von privat  Deutschland",
-   "seller": "kipi11",
-   "inStock": true,
-   "kit": false,
-   "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
-   "sourceId": "v1|168819585600|0",
-   "detail": "Price includes postage"
   },
   {
    "product": "nikon-coolpix-p1100",
@@ -6734,7 +7057,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|178174320765|0",
    "detail": "Free postage"
   },
@@ -6751,7 +7074,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|358188398242|0",
    "detail": "Free postage"
   },
@@ -7105,8 +7428,9 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-10-31T19:19:16.796Z",
-   "sourceId": "v1|336790865648|0"
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|336790865648|0",
+   "detail": "Free postage"
   },
   {
    "product": "nikon-z-28-135mm-f4-pz",
@@ -7121,15 +7445,16 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-10-31T19:19:16.796Z",
-   "sourceId": "v1|137822339745|0"
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|137822339745|0",
+   "detail": "Free postage"
   },
   {
    "product": "nikon-z-28-135mm-f4-pz",
    "kind": "lens",
    "retailer": "ebay-de",
    "condition": "new",
-   "price": 244999,
+   "price": 245949,
    "currency": "EUR",
    "url": "https://www.ebay.de/itm/358763104280?_skw=nikon+NIKKOR+Z+28-135mm+f%2F4+PZ&hash=item5387f28818%3Ag%3AI8YAAeSwq%7EtqHGsv&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
    "title": "Nikon Nikkor Z 28-135mm F4 PZ Objektiv",
@@ -7137,8 +7462,9 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-10-31T19:19:16.796Z",
-   "sourceId": "v1|358763104280|0"
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|358763104280|0",
+   "detail": "Price includes postage"
   },
   {
    "product": "nikon-z-35mm-f1-2-s",
@@ -7153,7 +7479,7 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|177394487794|0",
    "detail": "Free postage"
   },
@@ -7285,7 +7611,7 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|198631992220|0",
    "detail": "Free postage"
   },
@@ -7431,7 +7757,7 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|327430623747|0",
    "detail": "Free postage"
   },
@@ -7448,7 +7774,7 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|287693695924|0",
    "detail": "Price includes postage"
   },
@@ -7599,6 +7925,91 @@
    "sourceId": "v1|318748867109|0"
   },
   {
+   "product": "nikon-z8",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 298395,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/860094109540?_skw=nikon+Z8&hash=itemc8419a9764%3Ag%3AhNMAAeSwjBdq4xOY&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Nikon Z8 ca. 71.000 Ausl. Kamera",
+   "seller": "calumet-photo-video",
+   "inStock": true,
+   "kit": false,
+   "mount": "nikon-z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|860094109540|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "nikon-z8",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 299900,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/178116271976?_skw=nikon+Z8&hash=item29788e9f68%3Ag%3A54sAAeSw2Cpp%7Ebf7&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Nikon Z8 - nur  15.115 Auslösungen - 45,7MP Digital Kamera Gehäuse - Händler",
+   "seller": "shop-steinert",
+   "inStock": true,
+   "kit": false,
+   "mount": "nikon-z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|178116271976|0",
+   "detail": "Free postage"
+  },
+  {
+   "product": "nikon-z8",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 310395,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/860094110163?_skw=nikon+Z8&hash=itemc8419a99d3%3Ag%3AqIUAAeSwM2tq4xNv&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Nikon Z8 Kamera",
+   "seller": "calumet-photo-video",
+   "inStock": true,
+   "kit": false,
+   "mount": "nikon-z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|860094110163|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "nikon-z8",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "new",
+   "price": 310614,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/820045264402?_skw=nikon+Z8&hash=itembeee81b612%3Ag%3A5bIAAeSw8MZqSOuN&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Nikon Z8 Body VOA100AE Neu",
+   "seller": "janneskrause712",
+   "inStock": true,
+   "kit": false,
+   "mount": "nikon-z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|820045264402|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "nikon-z8",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "open-box",
+   "price": 329999,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/327405773102?_skw=nikon+Z8&hash=item4c3ae7a12e%3Ag%3ANKkAAeSw6Ltq41s-&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Nikon Z8 Gehäuse Retoure, wie neu, nur 80 Auslösungen #50689**",
+   "seller": "foto-mundus",
+   "inStock": true,
+   "kit": false,
+   "mount": "nikon-z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|327405773102|0",
+   "detail": "Free postage"
+  },
+  {
    "product": "nikon-zf",
    "kind": "camera",
    "retailer": "ebay-de",
@@ -7712,8 +8123,9 @@
    "inStock": true,
    "kit": false,
    "mount": "micro-four-thirds",
-   "seenAt": "2026-10-31T19:19:16.796Z",
-   "sourceId": "v1|920023543516|0"
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|920023543516|0",
+   "detail": "Free postage"
   },
   {
    "product": "om-system-m-zuiko-digital-ed-75-300mm-f4-8-6-7-ii",
@@ -7736,23 +8148,6 @@
    "kind": "camera",
    "retailer": "ebay-de",
    "condition": "used",
-   "price": 121400,
-   "currency": "EUR",
-   "url": "https://www.ebay.de/itm/168797698968?_skw=OM+System+OM-3&hash=item274d207b98%3Ag%3AC6QAAeSwG4xqxkAp&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "Olympus OM System OM-3",
-   "seller": "rykw_90",
-   "inStock": true,
-   "kit": false,
-   "mount": "micro-four-thirds",
-   "seenAt": "2026-11-01T06:07:16.107Z",
-   "sourceId": "v1|168797698968|0",
-   "detail": "Price includes postage"
-  },
-  {
-   "product": "om-system-om-3",
-   "kind": "camera",
-   "retailer": "ebay-de",
-   "condition": "used",
    "price": 143395,
    "currency": "EUR",
    "url": "https://www.ebay.de/itm/860094300825?_skw=OM+System+OM-3&hash=itemc8419d8299%3Ag%3ApLYAAeSwfP1q4xNp&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
@@ -7761,7 +8156,7 @@
    "inStock": true,
    "kit": false,
    "mount": "micro-four-thirds",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860094300825|0",
    "detail": "Price includes postage"
   },
@@ -7778,8 +8173,25 @@
    "inStock": true,
    "kit": false,
    "mount": "micro-four-thirds",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|920041333580|0",
+   "detail": "Free postage"
+  },
+  {
+   "product": "om-system-om-3",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
+   "price": 147999,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/336867151874?_skw=OM+System+OM-3&hash=item4e6ed8d002%3Ag%3AipYAAeSwAUBq4vn2&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "OM SYSTEM OM-3 Gehäuse silber wie neu, im Originalkarton #50899**",
+   "seller": "foto-mundus",
+   "inStock": true,
+   "kit": false,
+   "mount": "micro-four-thirds",
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|336867151874|0",
    "detail": "Free postage"
   },
   {
@@ -7795,7 +8207,7 @@
    "inStock": true,
    "kit": false,
    "mount": "micro-four-thirds",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|206628987718|0",
    "detail": "Price includes postage"
   },
@@ -7812,7 +8224,7 @@
    "inStock": true,
    "kit": false,
    "mount": "micro-four-thirds",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|397616757702|0",
    "detail": "Free postage"
   },
@@ -8545,6 +8957,23 @@
    "kind": "camera",
    "retailer": "ebay-de",
    "condition": "used",
+   "price": 56599,
+   "currency": "EUR",
+   "url": "https://www.ebay.de/itm/287696337889?_skw=ricoh+GR+III&hash=item42fc09bbe1%3Ag%3AhWMAAeSw0A1q5wEn&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
+   "title": "Ricoh GR III Kompaktkamera Schwarz OVP inkl. Zubehörpaket",
+   "seller": "stevie1183",
+   "inStock": true,
+   "kit": false,
+   "mount": null,
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|287696337889|0",
+   "detail": "Price includes postage"
+  },
+  {
+   "product": "ricoh-gr-iii",
+   "kind": "camera",
+   "retailer": "ebay-de",
+   "condition": "used",
    "price": 88519,
    "currency": "EUR",
    "url": "https://www.ebay.de/itm/206662279877?_skw=ricoh+GR+III&hash=item301e0822c5%3Ag%3AbfYAAeSwDCdq47zs&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
@@ -8553,7 +8982,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|206662279877|0",
    "detail": "Price includes postage"
   },
@@ -8570,7 +8999,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|128155621954|0",
    "detail": "Price includes postage"
   },
@@ -8587,25 +9016,8 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|820187721597|0",
-   "detail": "Price includes postage"
-  },
-  {
-   "product": "ricoh-gr-iiix",
-   "kind": "camera",
-   "retailer": "ebay-de",
-   "condition": "open-box",
-   "price": 90619,
-   "currency": "EUR",
-   "url": "https://www.ebay.de/itm/960137157523?_skw=ricoh+GR+IIIx&hash=itemdf8ca25b93%3Ag%3AjxsAAeSwT-hqhDy8&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "Ricoh Gr IIIx schwarz wenige Auslösungen - inkl. OVP und Restgarantie!",
-   "seller": "bjig",
-   "inStock": true,
-   "kit": false,
-   "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
-   "sourceId": "v1|960137157523|0",
    "detail": "Price includes postage"
   },
   {
@@ -8616,12 +9028,12 @@
    "price": 91200,
    "currency": "EUR",
    "url": "https://www.ebay.de/itm/840074951321?_skw=ricoh+GR+IIIx&hash=itemc3985e7a99%3Ag%3Am6UAAeSwAUBq5JHO&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
-   "title": "RICOH GR IIIx, nahezu neu aus Juni 2026, 84 Auslösungen",
+   "title": "RICOH GR IIIx, aus Juni 2026, nur 84 Auslösungen",
    "seller": "m_4_911",
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|840074951321|0",
    "detail": "Price includes postage"
   },
@@ -8638,7 +9050,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|178567721500|0",
    "detail": "Price includes postage"
   },
@@ -8786,7 +9198,7 @@
    "inStock": true,
    "kit": false,
    "mount": "fujifilm-x",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|128137672437|0",
    "detail": "Price includes postage"
   },
@@ -8803,7 +9215,7 @@
    "inStock": true,
    "kit": false,
    "mount": "canon-rf",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|327427552448|0",
    "detail": "Free postage"
   },
@@ -9149,7 +9561,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|860041496415|0",
    "detail": "Price includes postage"
   },
@@ -9166,7 +9578,7 @@
    "inStock": true,
    "kit": false,
    "mount": "l-mount",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|318431872788|0",
    "detail": "Free postage"
   },
@@ -9351,7 +9763,7 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|398305024109|0",
    "detail": "Free postage"
   },
@@ -9368,7 +9780,7 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|206640512079|0",
    "detail": "Free postage"
   },
@@ -9385,7 +9797,7 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|127904388273|0",
    "detail": "Free postage"
   },
@@ -10509,7 +10921,7 @@
    "kind": "lens",
    "retailer": "ebay-de",
    "condition": "used",
-   "price": 199900,
+   "price": 200519,
    "currency": "EUR",
    "url": "https://www.ebay.de/itm/147602811845?_skw=sony+FE+400-800mm+F6.3-8+G+OSS&hash=item225dd02bc5%3Ag%3AE7QAAeSw%7EUZquSDu&mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5339155912&customid=&toolid=10049",
    "title": "Sony SEL400800G Sony FE 400-800mm f6.3-8 G OSS in OVP wie neu mit Gewährleistung",
@@ -10517,8 +10929,9 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-10-31T19:19:16.796Z",
-   "sourceId": "v1|147602811845|0"
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|147602811845|0",
+   "detail": "Price includes postage"
   },
   {
    "product": "sony-fe-400-800mm-f6-3-8-g-oss",
@@ -10533,8 +10946,9 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-10-31T19:19:16.796Z",
-   "sourceId": "v1|267800817628|0"
+   "seenAt": "2026-11-01T13:26:53.101Z",
+   "sourceId": "v1|267800817628|0",
+   "detail": "Free postage"
   },
   {
    "product": "sony-fe-50mm-f1-4-gm",
@@ -10549,7 +10963,7 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|147604530014|0",
    "detail": "Free postage"
   },
@@ -10566,7 +10980,7 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|206665694659|0",
    "detail": "Free postage"
   },
@@ -10583,7 +10997,7 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|336777247388|0",
    "detail": "Free postage"
   },
@@ -10600,7 +11014,7 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|820297462674|0",
    "detail": "Free postage"
   },
@@ -11225,7 +11639,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|800686354036|0",
    "detail": "Price includes postage"
   },
@@ -11242,7 +11656,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|800854891391|0",
    "detail": "Price includes postage"
   },
@@ -11259,7 +11673,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|820291678382|0",
    "detail": "Free postage"
   },
@@ -11276,7 +11690,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|128108453535|0",
    "detail": "Free postage"
   },
@@ -11293,7 +11707,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|189008025961|0",
    "detail": "Free postage"
   },
@@ -11310,7 +11724,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|336685822835|0",
    "detail": "Free postage"
   },
@@ -11327,7 +11741,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|137634777938|0",
    "detail": "Free postage"
   },
@@ -11344,7 +11758,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|128087626567|0",
    "detail": "Free postage"
   },
@@ -11361,7 +11775,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|128043802810|0",
    "detail": "Free postage"
   },
@@ -11378,7 +11792,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|188491557690|0",
    "detail": "Free postage"
   },
@@ -11395,7 +11809,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|257600203956|0",
    "detail": "Free postage"
   },
@@ -11412,7 +11826,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|157912519509|0",
    "detail": "Free postage"
   },
@@ -11429,7 +11843,7 @@
    "inStock": true,
    "kit": false,
    "mount": null,
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|267681125657|0",
    "detail": "Free postage"
   },
@@ -11849,7 +12263,7 @@
    "inStock": true,
    "kit": false,
    "mount": "fujifilm-x",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|377562406751|0",
    "detail": "Price includes postage"
   },
@@ -11866,7 +12280,7 @@
    "inStock": true,
    "kit": false,
    "mount": "sony-e",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|156760940549|0",
    "detail": "Free postage"
   },
@@ -11883,7 +12297,7 @@
    "inStock": true,
    "kit": false,
    "mount": "nikon-z",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|156695401375|0",
    "detail": "Free postage"
   },
@@ -11900,7 +12314,7 @@
    "inStock": true,
    "kit": false,
    "mount": "fujifilm-x",
-   "seenAt": "2026-11-01T06:07:16.107Z",
+   "seenAt": "2026-11-01T13:26:53.101Z",
    "sourceId": "v1|156742036912|0",
    "detail": "Free postage"
   },
