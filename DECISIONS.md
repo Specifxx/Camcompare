@@ -1603,7 +1603,7 @@ is now `ebayQueue` (`src/lib/sources/ebay.ts`): 60% rotates through the hot list
 everything else, and budget the hot list doesn't need goes to the rest. The hot list is searched several times a
 day; the whole catalogue still comes round in about two days.
 
-The 2,500 is split over the eight scheduled runs plus one spare (69 searches per market per run), so a manual
+The 2,500 is split over the eight scheduled runs plus one spare (69 searches per market per run then; since 2026-11-01 the US takes 40%, see "The US comes first in the eBay budget"), so a manual
 dispatch never takes the day past the share; `EBAY_DAILY_CAP` can only lower it. The keys are GitHub Actions secrets
 only. The app's one Marketplace Account Deletion endpoint is K Young's (`kaeyoung.com/api/ebay/marketplace-deletion`):
 CamCompare stores no eBay user data and has no endpoint of its own.
@@ -1721,3 +1721,11 @@ their place and their "Ad"/paid-link label, but lose their brand tints and brand
 and the same button as a store. They are still never counted as a store and never re-ranked by commission. This
 reverses the 2026-10-30 "bright, catchy colour" pinned rows; eBay ad strips and panels outside the price rows keep
 their own look.
+
+## 2026-11-01 — The US comes first in the eBay budget
+
+Owner, 2026-11-01: "the eBay API for all websites should also prioritise the US." Each three-hourly run used to give
+every eBay market the same calls (69 a market). `ebayRunBudget` now gives the US `US_EBAY_SHARE` (40%, 111 a run) and
+splits the rest evenly between the UK, EU and Australia (55 each), so a US product's eBay price is refreshed about twice
+as often as elsewhere. The day's total is unchanged (2,500, `EBAY_DAILY_CAP` can only lower it) and a manual run still
+fits. Inside each market the hot-first rotation (`ebayQueue`) is unchanged.

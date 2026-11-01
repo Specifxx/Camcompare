@@ -259,9 +259,14 @@ test("Shopify requests back off on 429/5xx and give up after four retries", asyn
 
 test("eBay: the daily cap is split across the day's runs and markets", () => {
   const now = "2026-10-30T03:17:00Z";
-  assert.equal(ebayRunBudget(4, now, {}).perRun, 69); // 2,500 / (8 runs + 1 spare) / 4 markets
-  assert.ok(ebayRunBudget(4, now, {}).perRun * 9 * 4 <= 2500, "a manual run still fits the day");
-  assert.equal(ebayRunBudget(4, now, { EBAY_DAILY_CAP: "4000" }).perRun, 69, "the cap can only lower the 2,500 share");
-  assert.equal(ebayRunBudget(4, now, { EBAY_DAILY_CAP: "1000" }).perRun, 27);
-  assert.notEqual(ebayRunBudget(4, now, {}).slot, ebayRunBudget(4, "2026-10-30T06:17:00Z", {}).slot);
+  const M = ["us", "uk", "eu", "au"];
+  // 2,500 / (8 runs + 1 spare) = 277 a run: the US 40% (111), the other three 20% each (55).
+  assert.equal(ebayRunBudget("us", M, now, {}).perRun, 111);
+  assert.equal(ebayRunBudget("uk", M, now, {}).perRun, 55);
+  assert.ok(M.every((m) => ebayRunBudget("us", M, now, {}).perRun >= ebayRunBudget(m, M, now, {}).perRun), "the US gets the most");
+  assert.ok(M.reduce((a, m) => a + ebayRunBudget(m, M, now, {}).perRun, 0) * 9 <= 2500, "a manual run still fits the day");
+  assert.equal(ebayRunBudget("us", M, now, { EBAY_DAILY_CAP: "4000" }).perRun, 111, "the cap can only lower the 2,500 share");
+  assert.equal(ebayRunBudget("us", M, now, { EBAY_DAILY_CAP: "1000" }).perRun, 44);
+  assert.equal(ebayRunBudget("sg", M, now, {}).perRun, 0, "no eBay retailer, no calls");
+  assert.notEqual(ebayRunBudget("us", M, now, {}).slot, ebayRunBudget("us", M, "2026-10-30T06:17:00Z", {}).slot);
 });
