@@ -1753,3 +1753,14 @@ for lenses, how many stores sell new, the median gap between the cheapest and de
 cheapest used or refurbished price saves under the cheapest new one. It is the citable asset the daily outreach offers
 camera writers (passive-growth plan, owner 2026-11-02), with a quote line. Pure numbers in `src/lib/price-report.ts`
 (tested); bodies and lenses only, never kits or Amazon, like every "lowest" on the site.
+
+## 2026-11-02 — Seasonal sale pages
+
+`/boxing-day`, `/january-sales` and `/lunar-new-year` (and `/<market>/…`; owner-approved growth plan,
+2026-11-02): one URL per market, kept every year like `/black-friday`, built weeks ahead so they are indexed
+before the day. They are the market's deals page under that event's heading (`DealsView` with `sale`), as
+`/black-friday` is, static like every page, noindex where the deals page is. The intro states where the day
+is a sale day as a fact, never as the page's market. Dates, the year a page is about (it rolls over a week
+after the event) and the intro are pure in `src/lib/sale-seasons.ts` (`tests/sale-seasons.test.ts`); Lunar
+New Year is a published-date table to 2040 (6 February 2027). Footer and sitemap. Never a "was" price, a
+countdown or an invented sale.

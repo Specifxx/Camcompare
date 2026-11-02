@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = [];
   for (const m of MARKET_CODES) {
     for (const p of ["/", "/cameras", "/lenses", "/finder", "/brands", "/mounts"]) out.push({ url: abs(marketPath(m, p)) });
-    if (dealsIndexable(m)) out.push({ url: abs(marketPath(m, "/deals")) }, { url: abs(marketPath(m, "/black-friday")) });
+    if (dealsIndexable(m)) out.push({ url: abs(marketPath(m, "/deals")) }, { url: abs(marketPath(m, "/black-friday")) }, ...["/boxing-day", "/january-sales", "/lunar-new-year"].map((p) => ({ url: abs(marketPath(m, p)) })));
     if (usedIndexable(m)) out.push({ url: abs(marketPath(m, "/used")) });
     if (releasesIndexable(m)) out.push({ url: abs(marketPath(m, "/releases")) });
     if (pricedIn(digicams(), m)) out.push({ url: abs(marketPath(m, "/digicams")) });
