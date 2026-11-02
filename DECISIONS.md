@@ -1737,3 +1737,11 @@ with the year's dates, at one URL kept every year so links and rankings carry ov
 the day (27 November 2026), so it ships now. Same index rule as `/deals` (`dealsIndexable`), linked from the footer and
 the sitemap. Never a "was" price of our own, a countdown, "ends soon" or an invented sale. Dates are pure
 (`src/lib/black-friday.ts`, tested). Part of the passive-growth plan (owner, 2026-11-02: no daily Reddit posts).
+
+## 2026-11-02 — Free link badges
+
+`/widgets` gives reviewers, photo clubs and stores plain-HTML link badges (a camera, every camera or lens, "our prices
+are compared here") that the daily outreach offers instead of asking for a link (passive-growth plan, owner
+2026-11-02). No live price iframe like the card sites': it would be a request-time read of public data, which this site
+doesn't do. Each badge is one `<a>` with inline CSS (`src/lib/link-badges.ts`, tested). US paths; the page says how to
+point one at another market.
