@@ -3,6 +3,7 @@
 // "Saved" are per-market pages, so they follow the page's market. No link
 // prefetches: the footer is on every page and /credits alone is the size of
 // the catalog.
+import { Flag } from "@/components/Flag";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MARKET_CODES, MARKETS, marketPath } from "@/lib/markets";
@@ -31,7 +32,7 @@ export default function Footer() {
           <p className="eyebrow mb-1 text-subtle">Prices for</p>
           {MARKET_CODES.map((m) => (
             <Link key={m} href={MARKETS[m].prefix || "/"} prefetch={false}>
-              {MARKETS[m].flag} {MARKETS[m].name}
+              <Flag code={m} /> {MARKETS[m].name}
             </Link>
           ))}
         </nav>

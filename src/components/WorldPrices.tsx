@@ -1,3 +1,4 @@
+import { Flag } from "@/components/Flag";
 import Link from "next/link";
 import { offersFor, product } from "@/lib/catalog";
 import { price } from "@/lib/format";
@@ -52,7 +53,7 @@ export default function WorldPrices({ slug, path, market: here, name }: { slug: 
                 <tr key={r.market} className={`border-b border-line/60 last:border-0 ${r.market === here ? "bg-raised/60" : ""}`}>
                   <th scope="row" className="py-2 pr-3 text-left font-semibold">
                     <Link href={marketPath(r.market, path)} prefetch={false} rel={r.market === "us" || byMarket[r.market].length ? undefined : "nofollow"} className="text-fg">
-                      <span aria-hidden>{MARKETS[r.market].flag} </span>
+                      <Flag code={r.market} />{" "}
                       {MARKETS[r.market].name}
                     </Link>
                     {r.market === here && <span className="ml-1 text-[11px] font-normal text-subtle">(you)</span>}

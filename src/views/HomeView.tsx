@@ -29,6 +29,8 @@ import { CONDITION_LABEL, retailer } from "@/lib/retailers";
 import { pageMeta } from "@/lib/seo";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import { deals } from "@/views/DealsView";
+import { Flag } from "@/components/Flag";
+import MarketChips from "@/components/MarketChips";
 
 export function homeMetadata(m: MarketCode): Metadata {
   return pageMeta({
@@ -170,7 +172,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         {generatedAt && (
           <p className="inline-block rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted shadow-card">
             <span className="cc-live" aria-hidden />
-            {MARKETS[m].flag} {MARKETS[m].name} prices checked{" "}
+            <Flag code={m} /> {MARKETS[m].name} prices checked{" "}
             <Freshness at={generatedAt} fallback={stamp(generatedAt)} />
           </p>
         )}
@@ -191,7 +193,10 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         <p className="mt-3 text-xs text-subtle">
           {all.length.toLocaleString("en-US")} cameras &amp; lenses · {storeCount} stores in {PLACE[m]} · prices in {cur}
         </p>
-        <div className="mx-auto mt-6 max-w-2xl text-left">
+        <div className="mt-5">
+          <MarketChips current={m} />
+        </div>
+        <div className="mx-auto mt-5 max-w-2xl text-left">
           <SearchBox market={m} variant="hero" placeholder={`Search ${all.length.toLocaleString("en-US")} cameras & lenses`} />
         </div>
         <p className="mt-3 text-sm text-muted">
