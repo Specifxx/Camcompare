@@ -11,7 +11,7 @@
 // (`withAmazon`); a public file never carries it (its licence: 24 hours).
 // Server-only: links are wrapped with this build's affiliate ids.
 import { accessoryImageUrl } from "./accessory-format";
-import { affiliateUrl, isPaid, subId } from "./affiliate";
+import { affiliateUrl, amazonTag, isPaid, subId } from "./affiliate";
 import { asinFor } from "./amazon-asins";
 import { brandName, displayName, historyFor, launchPrice, offersGeneratedAt, offersFor, type AnyProduct } from "./catalog";
 import { cameraHighlights, cardSubline, lensHighlights } from "./highlights";
@@ -167,7 +167,8 @@ export function ebaySearch(query: string, m: MarketCode, page: string, placement
 export function alsoCheckLinks(x: CheckInput): CheckLink[] {
   const out: CheckLink[] = [];
   const amazon = retailersFor(x.market).find((r) => r.amazon && r.searchUrl);
-  if (amazon && !x.amazonShown) {
+  // An untagged Amazon link earns nothing and only takes the click away: no row until the market has a tag.
+  if (amazon && !x.amazonShown && amazonTag(amazon.key)) {
     const asin = asinFor(x.product, amazon.amazon!.marketplace, x.amazonAsin);
     const href = affiliateUrl(amazon.key, asin ? `https://${amazon.amazon!.marketplace}/dp/${asin}` : amazon.searchUrl!(x.query), subId(x.page, x.placement));
     out.push({ retailer: amazon.key, name: amazon.name, href, paid: isPaid(amazon.key, href), note: "Amazon's price shows on Amazon", cta: "See it on Amazon" });
