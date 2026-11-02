@@ -20,6 +20,7 @@ import ProductThumb from "./ProductThumb";
 import SpecHighlights from "./SpecHighlights";
 import OutboundLink from "./OutboundLink";
 import PriceAlert from "./PriceAlert";
+import ShareButton from "./ShareButton";
 
 /** eBay first, then Amazon (its tagged link: a public file never holds its price), pinned above the rows (owner, 2026-10-30). */
 const qvPins = (d: QuickViewData): PinnedLink[] => {
@@ -245,6 +246,7 @@ function Dialog({ target }: { target: Target }) {
                 {name || <span className="inline-block h-5 w-40 animate-pulse rounded bg-raised" />}
               </h2>
               {data && <p className="mt-1 text-xs text-muted">{data.subline}</p>}
+              {data && <ShareButton title={data.name} path={data.href} text={data.share} className="mt-2" />}
               {data && (
                 <p className="mt-2 text-sm">
                   {from ? (

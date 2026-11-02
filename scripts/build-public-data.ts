@@ -12,6 +12,7 @@ import { brandName, offersFor, product, publishedCameras, publishedLenses } from
 import { quickViewData } from "../src/lib/offer-rows";
 import { MARKET_CODES, MARKETS } from "../src/lib/markets";
 import { lowest } from "../src/lib/offers";
+import { retailer } from "../src/lib/retailers";
 import type { SearchRow } from "../src/lib/search";
 
 const pub = path.join(process.cwd(), "public");
@@ -29,13 +30,20 @@ fs.writeFileSync(path.join(pub, "search-index.json"), JSON.stringify(rows));
 fs.mkdirSync(path.join(pub, "prices"), { recursive: true });
 for (const m of MARKET_CODES) {
   const p: Record<string, [number | null, number | null]> = {};
+  // The store with the cheapest new price, for the saved list and a shared one (2026-11-02): [new store, used store].
+  const s: Record<string, [string | null, string | null]> = {};
   for (const { p: x } of products) {
     const o = offersFor(x.slug, m);
-    const n = lowest(o, "new")?.price ?? null;
-    const u = lowest(o, "used")?.price ?? null;
-    if (n !== null || u !== null) p[x.slug] = [n, u];
+    const ln = lowest(o, "new");
+    const lu = lowest(o, "used");
+    const n = ln?.price ?? null;
+    const u = lu?.price ?? null;
+    if (n !== null || u !== null) {
+      p[x.slug] = [n, u];
+      s[x.slug] = [ln ? (retailer(ln.retailer)?.name ?? ln.retailer) : null, lu ? (retailer(lu.retailer)?.name ?? lu.retailer) : null];
+    }
   }
-  fs.writeFileSync(path.join(pub, "prices", `${m}.json`), JSON.stringify({ currency: MARKETS[m].currency, p }));
+  fs.writeFileSync(path.join(pub, "prices", `${m}.json`), JSON.stringify({ currency: MARKETS[m].currency, p, s }));
 }
 const qvDir = path.join(pub, "offers");
 fs.rmSync(qvDir, { recursive: true, force: true });

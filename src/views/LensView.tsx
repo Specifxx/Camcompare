@@ -11,6 +11,8 @@ import PriceHistory from "@/components/PriceHistory";
 import UsedValue from "@/components/UsedValue";
 import ProductCard from "@/components/ProductCard";
 import SaveButton from "@/components/SaveButton";
+import ShareButton from "@/components/ShareButton";
+import { productShareText } from "@/lib/share-texts";
 import PriceAlert from "@/components/PriceAlert";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
@@ -138,6 +140,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
                 </Link>
               )}
               <SaveButton slug={l.slug} kind="lens" market={m} seen={(h.new ?? h.used)?.price ?? null} cond={h.new ? "new" : "used"} />
+              <ShareButton title={name} path={marketPath(m, `/lenses/${l.slug}`)} text={productShareText(name, offers)} />
             </div>
           </div>
         </header>
