@@ -1,5 +1,11 @@
 # Working in this repo
 
+**One production build per 12 hours, and production only (owner, 2026-11-02: Vercel spend capped at $5–6 a
+day).** `scripts/vercel-ignore-build.sh` skips a `[deploy]` commit within 12 hours of the last production
+deployment (it rides the next release); `[urgent]` in the subject overrides that, only when the owner says
+so. `vercel.json` disables every branch except production (`"**": false`), so no preview is ever built.
+Never dispatch a manual release just to ship a merge. DECISIONS.md, 2026-11-02.
+
 CamCompare: camera and lens specs side by side, and new, used and refurbished
 prices at retailers in five markets (US, UK, EU, Australia, Singapore). Free,
 paid by affiliate links and (later) ads. A sister site of RiftCompare
@@ -79,15 +85,17 @@ Everything else public is JSON in `data/`, committed:
   per GB per card/drive format and capacity. Both written by the import.
 
 Pages read these at build time and are static. **No page sets `revalidate`.**
-Data changes only through commits, and each commit is a build. Don't add a
+Data changes only through commits, and each release (a gated `[deploy]` commit) is a build. Don't add a
 database for public data, an ISR interval or a request-time fetch for public data without an
 entry in DECISIONS.md: RiftCompare's Neon egress and ISR-write bills are the
 reason.
 
 Builds:
 
-- `refresh-prices.yml` commits prices to `main` every three hours. Each commit
-  is a production build.
+- `refresh-prices.yml` commits prices to `main` every three hours with `[deploy]`
+  in the subject; the build gate turns that into at most one production build
+  every 12 hours (owner, 2026-11-02), which keeps Amazon prices under their
+  24-hour limit.
 - `claude/*` and `ccr-*` branches don't deploy (`vercel.json`).
 
 ## Markets
