@@ -57,6 +57,7 @@ export default function Footer() {
           <Link href="/disclosure" prefetch={false}>Affiliate disclosure</Link>
           <Link href="/contact" prefetch={false}>Contact us</Link>
           <Link href="/contact#suggest" prefetch={false}>Suggest a store</Link>
+          <Link href="/how-we-pick-stores" prefetch={false}>How we pick stores</Link>
           <Link href="/feedback" prefetch={false}>Send feedback</Link>
           <Link href="/privacy" prefetch={false}>Privacy</Link>
           <Link href="/credits" prefetch={false}>Photo credits</Link>
