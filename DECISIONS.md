@@ -1850,3 +1850,14 @@ the clicks came from long-tail pairs ("nikon z50ii vs canon r10"). The pair page
   a guess, and no price: the page's prices follow the visitor's market and this text does not.
 - Each pair page links every other indexed comparison of either product ("More comparisons"), so the vs pages
   reach one another, not only through the sitemap. One-sided pairs stay noindex and unlinked from there.
+
+
+## 2026-11-02: Nobody is moved to another region on a guess
+
+Since 2026-11-01 `lib/region-boot.ts` moved every visitor on another region's page to their time zone's copy in the
+browser. Crawlers were excluded, but Search Console then read regional copies as duplicates on Compare Empire, which has
+the same script, and Google's guidance is not to redirect automatically on a guessed location. Now only a visitor who
+PICKED a region (any `[data-region-pick]` link, kept in localStorage) is moved; everyone else stays on the URL they opened
+and gets one line at the top, "This page shows <X> prices. Switch to <Y> prices · Stay", linking the page's own hreflang
+alternate ("Stay" remembers the page's region). Crawlers never see the line. The script is byte-identical on MTG Compare,
+DexCompare, WargameCompare and CamCompare.
