@@ -54,11 +54,6 @@ jobs:
           AMAZON_CREATORS_EU_CLIENT_SECRET: ${{ secrets.AMAZON_CREATORS_EU_CLIENT_SECRET }}
           AMAZON_CREATORS_FE_CLIENT_ID: ${{ secrets.AMAZON_CREATORS_FE_CLIENT_ID }}
           AMAZON_CREATORS_FE_CLIENT_SECRET: ${{ secrets.AMAZON_CREATORS_FE_CLIENT_SECRET }}
-          AMAZON_TAG_US: ${{ secrets.AMAZON_TAG_US }}
-          AMAZON_TAG_UK: ${{ secrets.AMAZON_TAG_UK }}
-          AMAZON_TAG_DE: ${{ secrets.AMAZON_TAG_DE }}
-          AMAZON_TAG_AU: ${{ secrets.AMAZON_TAG_AU }}
-          AMAZON_TAG_SG: ${{ secrets.AMAZON_TAG_SG }}
           BESTBUY_API_KEY: ${{ secrets.BESTBUY_API_KEY }}
           # Feed URLs: one secret per feed retailer, FEED_URL_<KEY> (docs/retailers.md).
           # tests/workflows.test.ts fails if a feed retailer is missing here.

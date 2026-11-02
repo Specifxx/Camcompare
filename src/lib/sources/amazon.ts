@@ -52,8 +52,8 @@ async function client(r: Retailer, market: MarketCode): Promise<{ call: Call; ma
   const region = REGION[marketplace];
   const id = process.env[`AMAZON_CREATORS_${region?.env}_CLIENT_ID`] || (region?.env === "NA" ? process.env.AMAZON_CREATORS_CLIENT_ID : "") || "";
   const secret = process.env[`AMAZON_CREATORS_${region?.env}_CLIENT_SECRET`] || (region?.env === "NA" ? process.env.AMAZON_CREATORS_CLIENT_SECRET : "") || "";
-  const tag = (r.amazon && process.env[r.amazon.tagEnv]) || (market === "us" ? process.env.AMAZON_ASSOCIATE_TAG : "") || "";
-  if (!region || !id || !secret || !tag) return { skip: `Creators API ${region?.env ?? "?"} credentials or ${r.amazon?.tagEnv} not set` };
+  const tag = r.amazon?.tag ?? "";
+  if (!region || !id || !secret || !tag) return { skip: `Creators API ${region?.env ?? "?"} credentials or ${marketplace} Associates tag not set` };
   const tok = await fetch(region.token, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

@@ -26,9 +26,9 @@ price" row on every product page where we have no price from it.
 
 Links are set on Vercel (they are read when pages are built):
 
-- **Amazon:** `AMAZON_TAG_US`, `AMAZON_TAG_UK`, `AMAZON_TAG_DE`,
-  `AMAZON_TAG_AU`, `AMAZON_TAG_SG`. Each is a separate Associates account
-  per store.
+- **Amazon:** hard-coded per store in `src/lib/retailers.ts` (owner,
+  2026-11-02): riftcompare-20, compareempi03-21 (UK), compareempire-21 (DE),
+  compareempire-22 (AU); none for Singapore.
 - **eBay:** the owner's EPN campaign 5339155912 is hard-coded
   (`src/lib/affiliate.ts`; no variable overrides it). The
   code adds each site's rotation id and a `customid` naming the placement
@@ -95,7 +95,7 @@ priced in another currency is refused.
 
 | Retailer | Ships from | Prices from | Affiliate programme | Link variable |
 |---|---|---|---|---|
-| Amazon.com ★ | US | Creators API (after the account's first sales) | Amazon Associates | `AMAZON_TAG_US` |
+| Amazon.com ★ | US | Creators API (after the account's first sales) | Amazon Associates | tag `riftcompare-20` (hard-coded) |
 | B&H Photo ★ | US | Product feed `FEED_URL_BH` | Retailer's own programme | `AFFILIATE_DEEPLINK_BH` |
 | Adorama ★ | US | Product feed `FEED_URL_ADORAMA` | Impact | `AFFILIATE_DEEPLINK_ADORAMA` |
 | Best Buy | US | Products API (`BESTBUY_API_KEY`) | Impact | `AFFILIATE_DEEPLINK_BESTBUY` |
@@ -120,7 +120,7 @@ priced in another currency is refused.
 
 | Retailer | Ships from | Prices from | Affiliate programme | Link variable |
 |---|---|---|---|---|
-| Amazon.co.uk ★ | GB | Creators API (after the account's first sales) | Amazon Associates | `AMAZON_TAG_UK` |
+| Amazon.co.uk ★ | GB | Creators API (after the account's first sales) | Amazon Associates | tag `compareempi03-21` (hard-coded) |
 | Wex Photo Video | GB | Product feed `FEED_URL_WEX` | Impact | `AFFILIATE_DEEPLINK_WEX` |
 | Park Cameras | GB | Product feed `FEED_URL_PARK_CAMERAS` | Rakuten Advertising | `AFFILIATE_DEEPLINK_PARK_CAMERAS` |
 | Jessops ★ | GB | Product feed `FEED_URL_JESSOPS` | Partnerize | `AFFILIATE_DEEPLINK_JESSOPS` |
@@ -137,7 +137,7 @@ priced in another currency is refused.
 
 | Retailer | Ships from | Prices from | Affiliate programme | Link variable |
 |---|---|---|---|---|
-| Amazon.de ★ | DE | Creators API (after the account's first sales) | Amazon Associates | `AMAZON_TAG_DE` |
+| Amazon.de ★ | DE | Creators API (after the account's first sales) | Amazon Associates | tag `compareempire-21` (hard-coded) |
 | Calumet ★ | DE | Product feed `FEED_URL_CALUMET_DE` | Awin | `AFFILIATE_DEEPLINK_CALUMET_DE` |
 | Foto Erhardt | DE | Product feed `FEED_URL_FOTO_ERHARDT` | Webgains | `AFFILIATE_DEEPLINK_FOTO_ERHARDT` |
 | Cyberport | DE | Product feed `FEED_URL_CYBERPORT` | Retailer's own programme | `AFFILIATE_DEEPLINK_CYBERPORT` |
@@ -150,7 +150,7 @@ priced in another currency is refused.
 
 | Retailer | Ships from | Prices from | Affiliate programme | Link variable |
 |---|---|---|---|---|
-| Amazon.com.au ★ | AU | Creators API (after the account's first sales) | Amazon Associates | `AMAZON_TAG_AU` |
+| Amazon.com.au ★ | AU | Creators API (after the account's first sales) | Amazon Associates | tag `compareempire-22` (hard-coded) |
 | Ted's Cameras | AU | Shopify sitemaps and product .js (no setup) | none known | — |
 | Digidirect | AU | Shopify products.json (no setup) | none known | — |
 | Georges Cameras | AU | Shopify products.json (no setup) | none known | — |
@@ -169,7 +169,7 @@ priced in another currency is refused.
 
 | Retailer | Ships from | Prices from | Affiliate programme | Link variable |
 |---|---|---|---|---|
-| Amazon.sg ★ | SG | Creators API (after the account's first sales) | Amazon Associates | `AMAZON_TAG_SG` |
+| Amazon.sg ★ | SG | Creators API (after the account's first sales) | Amazon Associates | no Associates programme |
 | Lazada ★ | SG | Link only | Lazada Affiliate | `AFFILIATE_DEEPLINK_LAZADA_SG` |
 | Shopee ★ | SG | Link only | Shopee Affiliate | `AFFILIATE_DEEPLINK_SHOPEE_SG` |
 | Challenger | SG | Shopify products.json (no setup) | none known | — |

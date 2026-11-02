@@ -60,7 +60,8 @@ export type Retailer = {
    * dealers. A row earns only once its affiliate link is configured.
    */
   checkRow?: boolean;
-  amazon?: { marketplace: string; tagEnv: string };
+  /** The marketplace and its Associates tag, hard-coded (owner, 2026-11-02); "" where we have no account (Singapore). */
+  amazon?: { marketplace: string; tag: string };
   ebay?: { marketplaceId: string; rotationId: string; siteId: string };
   /** Public Shopify catalogue; `collections` limits the crawl to camera/lens collections. */
   /**
@@ -82,7 +83,7 @@ export type Retailer = {
 };
 
 const enc = encodeURIComponent;
-const amazon = (market: MarketCode, country: string, host: string, tagEnv: string): Retailer => ({
+const amazon = (market: MarketCode, country: string, host: string, tag: string): Retailer => ({
   key: market === "us" ? "amazon" : `amazon-${country.toLowerCase()}`,
   name: host.replace(/^www\./, "").replace(/^amazon/, "Amazon"),
   market,
@@ -93,7 +94,7 @@ const amazon = (market: MarketCode, country: string, host: string, tagEnv: strin
   authorized: null,
   network: "amazon",
   searchUrl: (q) => `https://${host}/s?k=${enc(q)}`,
-  amazon: { marketplace: host, tagEnv },
+  amazon: { marketplace: host, tag },
 });
 // eBay rotation ids per site (EPN), as RiftCompare's affiliate.ts uses them.
 const ebay = (market: MarketCode, country: string, host: string, marketplaceId: string, rotationId: string, siteId: string): Retailer => ({
@@ -135,7 +136,7 @@ const CASH_CONVERTERS_BRANCH = /class="[^"]*\bstore-name\b[^"]*"[^>]*>\s*(?:<i[^
 // Sources and programmes from the 2026-10-17 retailer research (docs/retailers.md).
 export const RETAILERS: Retailer[] = [
   // ---- United States
-  { ...amazon("us", "US", "www.amazon.com", "AMAZON_TAG_US"), checkRow: true },
+  { ...amazon("us", "US", "www.amazon.com", "riftcompare-20"), checkRow: true },
   dealer({ key: "bh", name: "B&H Photo", market: "us", country: "US", site: "https://www.bhphotovideo.com", network: "direct", conditions: ["new", "used", "open-box", "refurbished"], checkRow: true, searchUrl: (q) => `https://www.bhphotovideo.com/c/search?q=${enc(q)}` }),
   dealer({ key: "adorama", name: "Adorama", market: "us", country: "US", site: "https://www.adorama.com", network: "impact", conditions: ["new", "used", "open-box", "refurbished"], checkRow: true, searchUrl: (q) => `https://www.adorama.com/l/?searchinfo=${enc(q)}` }),
   dealer({ key: "bestbuy", name: "Best Buy", market: "us", country: "US", site: "https://www.bestbuy.com", network: "impact", source: "bestbuy-api", conditions: ["new", "open-box", "refurbished"], searchUrl: (q) => `https://www.bestbuy.com/site/searchpage.jsp?st=${enc(q)}` }),
@@ -159,7 +160,7 @@ export const RETAILERS: Retailer[] = [
   ebay("us", "US", "www.ebay.com", "EBAY_US", "711-53200-19255-0", "0"),
 
   // ---- United Kingdom
-  { ...amazon("uk", "GB", "www.amazon.co.uk", "AMAZON_TAG_UK"), checkRow: true },
+  { ...amazon("uk", "GB", "www.amazon.co.uk", "compareempi03-21"), checkRow: true },
   dealer({ key: "wex", name: "Wex Photo Video", market: "uk", country: "GB", site: "https://www.wexphotovideo.com", network: "impact", conditions: ["new", "used", "open-box"] }),
   dealer({ key: "park-cameras", name: "Park Cameras", market: "uk", country: "GB", site: "https://www.parkcameras.com", network: "rakuten", conditions: ["new", "used"] }),
   dealer({ key: "jessops", name: "Jessops", market: "uk", country: "GB", site: "https://www.jessops.com", network: "partnerize", checkRow: true, conditions: ["new", "used"], searchUrl: (q) => `https://www.jessops.com/search?q=${enc(q)}` }),
@@ -174,7 +175,7 @@ export const RETAILERS: Retailer[] = [
   ebay("uk", "GB", "www.ebay.co.uk", "EBAY_GB", "710-53481-19255-0", "3"),
 
   // ---- Europe (euro)
-  { ...amazon("eu", "DE", "www.amazon.de", "AMAZON_TAG_DE"), checkRow: true },
+  { ...amazon("eu", "DE", "www.amazon.de", "compareempire-21"), checkRow: true },
   dealer({ key: "calumet-de", name: "Calumet", market: "eu", country: "DE", site: "https://www.calumet.de", network: "awin", checkRow: true, searchUrl: (q) => `https://www.calumet.de/search?search=${enc(q)}` }),
   dealer({ key: "foto-erhardt", name: "Foto Erhardt", market: "eu", country: "DE", site: "https://www.foto-erhardt.de", network: "webgains", searchUrl: (q) => `https://www.foto-erhardt.de/advanced_search_result.php?keywords=${enc(q)}` }),
   dealer({ key: "cyberport", name: "Cyberport", market: "eu", country: "DE", site: "https://www.cyberport.de", network: "direct", searchUrl: (q) => `https://www.cyberport.de/tools/search?query=${enc(q)}` }),
@@ -184,7 +185,7 @@ export const RETAILERS: Retailer[] = [
   ebay("eu", "DE", "www.ebay.de", "EBAY_DE", "707-53477-19255-0", "77"),
 
   // ---- Australia
-  { ...amazon("au", "AU", "www.amazon.com.au", "AMAZON_TAG_AU"), checkRow: true },
+  { ...amazon("au", "AU", "www.amazon.com.au", "compareempire-22"), checkRow: true },
   // Ted's robots.txt has `Disallow: /*?limit=` (products.json?limit=250 is out)
   // but allows its sitemaps and /products/<handle>.js (checked 2026-10-22),
   // so it is read through those. Its second-hand stock ("…-secondhand"
@@ -216,7 +217,7 @@ export const RETAILERS: Retailer[] = [
   ebay("au", "AU", "www.ebay.com.au", "EBAY_AU", "705-53470-19255-0", "15"),
 
   // ---- Singapore (eBay Partner Network has no ebay.com.sg programme)
-  { ...amazon("sg", "SG", "www.amazon.sg", "AMAZON_TAG_SG"), checkRow: true },
+  { ...amazon("sg", "SG", "www.amazon.sg", ""), checkRow: true },
   { key: "lazada-sg", name: "Lazada", market: "sg", country: "SG", site: "https://www.lazada.sg", source: "link-only", conditions: ["new"], authorized: null, network: "lazada", checkRow: true, searchUrl: (q) => `https://www.lazada.sg/catalog/?q=${enc(q)}` },
   { key: "shopee-sg", name: "Shopee", market: "sg", country: "SG", site: "https://shopee.sg", source: "link-only", conditions: ["new"], authorized: null, network: "shopee", checkRow: true, searchUrl: (q) => `https://shopee.sg/search?keyword=${enc(q)}` },
   dealer({ key: "challenger-sg", name: "Challenger", market: "sg", country: "SG", site: "https://online.challenger.sg", network: null, ...shop("https://online.challenger.sg", { currency: "SGD" }), searchUrl: (q) => `https://online.challenger.sg/search?q=${enc(q)}` }),
