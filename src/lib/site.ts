@@ -35,7 +35,7 @@ export const VERIFY = {
 // plain followed links, no affiliateUrl, no rel="sponsored". `anchor` is the
 // link text, the words a searcher types.
 export const FAMILY_SITES = [
-  { name: "Compare Empire", url: "https://compareempire.com", anchor: "Australian tech prices" },
+  { name: "Compare Empire", url: "https://compareempire.com", anchor: "Tech and appliance prices" },
   { name: "RiftCompare", url: "https://riftcompare.com", anchor: "Riftbound card prices" },
   { name: "OP Compare", url: "https://opcompare.app", anchor: "One Piece card prices" },
   { name: "DexCompare", url: "https://dexcompare.app", anchor: "Pokémon sealed prices" },
@@ -43,6 +43,7 @@ export const FAMILY_SITES = [
   { name: "Gundam Compare", url: "https://gundamcompare.com", anchor: "Gundam Card Game prices" },
   { name: "Lorcana Compare", url: "https://lorcanacompare.com", anchor: "Disney Lorcana card prices" },
   { name: "YGO Compare", url: "https://ygocompare.com", anchor: "Yu-Gi-Oh! card prices" },
+  { name: "Cyberpunk Compare", url: "https://cyberpunkcompare.com", anchor: "Cyberpunk TCG prices" },
   { name: "WargameCompare", url: "https://wargamecompare.com", anchor: "Miniature wargame prices" },
   { name: "FigureCompare", url: "https://figurecompare.com", anchor: "Anime figure prices" },
 ] as const;
