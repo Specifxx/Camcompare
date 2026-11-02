@@ -23,6 +23,7 @@ import type { CheckLink, OfferRow, QuickViewData, RowCond } from "./quickview";
 import { CONDITION_LABEL, ebayFor, retailer, retailersFor } from "./retailers";
 import { productEbayCategory, productEbayLinks } from "./ebay-links";
 import { summarizeCamera, summarizeLens } from "./summary";
+import { productShareText } from "./share-texts";
 
 const MOUNT_SHORT: Record<string, string> = {
   "sony-e": "Sony E", "canon-rf": "Canon RF", "canon-ef": "Canon EF", "canon-ef-m": "Canon EF-M", "nikon-z": "Nikon Z", "nikon-f": "Nikon F",
@@ -219,6 +220,8 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
     brandName: brandName(p.item.brand),
     subline: cardSubline(p.kind === "camera" ? summarizeCamera(p.item, m) : summarizeLens(p.item, m)),
     href: marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`),
+    // The share message (lib/share-texts.ts, 2026-11-02): the real gap between this market's cheapest and dearest new price.
+    share: productShareText(displayName(p.item, m), offers),
     highlights: p.kind === "camera" ? cameraHighlights(p.item) : lensHighlights(p.item),
     rows: offerRows(offers, { page, placement: "quickview", pack, withAmazon: false, tags }),
     // Always where eBay has a programme: live listings when there are some, and the used and sold searches.

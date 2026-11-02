@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { ShareArrival } from "@/components/ShareArrival";
 import FeedbackButton from "@/components/FeedbackButton";
 import Footer from "@/components/Footer";
 import GeoSuggest from "@/components/GeoSuggest";
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FeedbackButton />
         <Reveal />
         <Analytics />
+        <ShareArrival />
         {ADSENSE && <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE}`} crossOrigin="anonymous" strategy="lazyOnload" />}
       </body>
     </html>

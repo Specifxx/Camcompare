@@ -1764,3 +1764,16 @@ is a sale day as a fact, never as the page's market. Dates, the year a page is a
 after the event) and the intro are pure in `src/lib/sale-seasons.ts` (`tests/sale-seasons.test.ts`); Lunar
 New Year is a published-date table to 2040 (6 February 2027). Footer and sitemap. Never a "was" price, a
 countdown or an invented sale.
+
+## 2026-11-02 — Share buttons and shared saved lists
+
+Word of mouth (owner, 2026-11-02). Every camera and lens page and the quick view have a Share button: the phone's
+own share sheet (Web Share API), else copy the link. No pop-up, no reward. The message names the real gap in the
+visitor's market (cheapest and dearest new, in-stock, body-only price from two different stores, never Amazon or a
+kit, never converted), built at build time (`src/lib/share-texts.ts`); the button only picks the market's line. The
+saved list can be shared too: `/saved?i=c:<slug>.l:<slug>` carries up to 50 items in the link, nothing is stored,
+the shared view is read-only with each item's cheapest store, noindex, and "Keep this list" copies it into the
+visitor's own. Every shared link carries `utm_source=share&utm_medium=<product|list|page>` (`src/lib/share-link.ts`,
+client-safe, tested); the button sends a Vercel `share` event and `ShareArrival` one `share_visit` per tab, which
+RiftCompare's weekly growth report counts. No new function and no per-product share image: pages stay static, the
+product photo stays the preview.
