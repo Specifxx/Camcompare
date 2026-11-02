@@ -18,6 +18,7 @@ import { retailerQuery } from "@/lib/offer-rows";
 import { pageMeta } from "@/lib/seo";
 import PriceTraps from "@/components/PriceTraps";
 import { usedValue } from "@/lib/value";
+import { blackFriday, cyberMonday, longDate, seasonYear } from "@/lib/black-friday";
 
 /**
  * Today's top bargains in a market: new under its launch RRP, used under the
@@ -121,14 +122,27 @@ export function usedOnEbay(slug: string, m: MarketCode, placement = "deals-ebay-
   return p ? ebayLink(m, { query: retailerQuery(p, m), condition: "used" }, `deals-${m}`, placement, "Used on eBay") : null;
 }
 
-export default function DealsView({ market: m }: { market: MarketCode }) {
+/** The Black Friday page (DECISIONS.md, "Black Friday page", 2026-11-02): the same deals under a Black Friday heading. */
+export function blackFridayMetadata(m: MarketCode): Metadata {
+  const y = seasonYear(new Date().toISOString().slice(0, 10));
+  return pageMeta({
+    title: `Black Friday camera and lens deals ${y}`,
+    description: `Black Friday and Cyber Monday ${y} camera and lens deals in ${MARKETS[m].name}: today's prices furthest under launch RRP, used under the typical used price, and this week's price drops, checked every day.`,
+    path: "/black-friday",
+    market: m,
+    index: dealsIndexable(m),
+    indexable: dealsIndexable,
+  });
+}
+
+export default function DealsView({ market: m, blackFriday: bfPage = false }: { market: MarketCode; blackFriday?: boolean }) {
   const cur = MARKETS[m].currency;
   const { newDrops, usedDrops, savings, gaps, newBargains, usedBargains, empty } = deals(m);
   const updated = offersGeneratedAt(m);
   return (
     <div className="flex flex-col gap-10">
       <div>
-        <h1 className="text-2xl font-extrabold tracking-tight">Camera deals in {MARKETS[m].name}</h1>
+        {bfPage ? <BlackFridayHead m={m} /> : <h1 className="text-2xl font-extrabold tracking-tight">Camera deals in {MARKETS[m].name}</h1>}
         <p className="mt-1 max-w-2xl text-sm text-muted">
           From our own record of the lowest in-stock price at each retailer: today against the launch RRP, the typical used price and a week ago. No sponsored placements.
           {updated ? ` Prices checked ${new Date(updated).toUTCString().slice(5, 16)}.` : ""}
@@ -223,5 +237,21 @@ export default function DealsView({ market: m }: { market: MarketCode }) {
       {!empty && <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`deals-${m}`} placement="promo-deals" />}
       {!empty && <QuickViewHost />}
     </div>
+  );
+}
+
+function BlackFridayHead({ m }: { m: MarketCode }) {
+  const today = new Date().toISOString().slice(0, 10);
+  const y = seasonYear(today);
+  const bf = blackFriday(y);
+  return (
+    <>
+      <h1 className="text-2xl font-extrabold tracking-tight">Black Friday camera deals in {MARKETS[m].name}, {y}</h1>
+      <p className="mt-1 max-w-2xl text-sm text-muted">
+        Black Friday is {longDate(bf)} and Cyber Monday is {longDate(cyberMonday(y))} {y}.{today < bf ? " Many retailers start their sales earlier." : ""} This page
+        updates with every price check through the sales. We only see what a retailer asks when we read its prices, so check the price on its page before you buy.{" "}
+        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link>
+      </p>
+    </>
   );
 }

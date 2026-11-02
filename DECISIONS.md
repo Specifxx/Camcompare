@@ -1729,3 +1729,11 @@ every eBay market the same calls (69 a market). `ebayRunBudget` now gives the US
 splits the rest evenly between the UK, EU and Australia (55 each), so a US product's eBay price is refreshed about twice
 as often as elsewhere. The day's total is unchanged (2,500, `EBAY_DAILY_CAP` can only lower it) and a manual run still
 fits. Inside each market the hot-first rotation (`ebayQueue`) is unchanged.
+
+## 2026-11-02 — Black Friday page
+
+`/black-friday` and `/<market>/black-friday` show the market's deals page (`DealsView`) under a Black Friday heading
+with the year's dates, at one URL kept every year so links and rankings carry over. It has to be indexed weeks before
+the day (27 November 2026), so it ships now. Same index rule as `/deals` (`dealsIndexable`), linked from the footer and
+the sitemap. Never a "was" price of our own, a countdown, "ends soon" or an invented sale. Dates are pure
+(`src/lib/black-friday.ts`, tested). Part of the passive-growth plan (owner, 2026-11-02: no daily Reddit posts).
