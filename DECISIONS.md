@@ -1840,3 +1840,13 @@ header's switcher shows the market's flag and code with the native select laid i
   static-site rule). The footer, the geo suggestion, the releases view and the world prices panel draw it
   too; `MARKETS[].flag` stays for plain-text uses (select options, admin). The same file is in every
   Compare Empire repo that has a region switcher; keep the copies identical.
+
+## 2026-11-02 — Comparison pages answer "which should you buy?"
+
+Search Console (25–31 Oct): 23.9K impressions at position 27 for broad brand queries ("nikon", "fujifilm"), while
+the clicks came from long-tail pairs ("nikon z50ii vs canon r10"). The pair pages were a table under a title.
+
+- `src/lib/pair-verdict.ts` writes a short verdict from the spec rows one side clearly wins (compareRows), never
+  a guess, and no price: the page's prices follow the visitor's market and this text does not.
+- Each pair page links every other indexed comparison of either product ("More comparisons"), so the vs pages
+  reach one another, not only through the sitemap. One-sided pairs stay noindex and unlinked from there.

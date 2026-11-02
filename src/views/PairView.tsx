@@ -4,7 +4,9 @@ import CompareTable from "@/components/CompareTable";
 import PairPriceHistory from "@/components/PairPriceHistory";
 import LowLight from "@/components/LowLight";
 import SizeCompare from "@/components/SizeCompare";
-import { brandName, isIndexedPair, pairSlug, parsePairSlug } from "@/lib/catalog";
+import Link from "next/link";
+import { brandName, isIndexedPair, pairSlug, parsePairSlug, rivalsOf } from "@/lib/catalog";
+import { pairVerdict } from "@/lib/pair-verdict";
 import type { Camera, Lens } from "@/lib/catalog/schema";
 import { breadcrumb, ldJson } from "@/lib/jsonld";
 import { SPEC_GROUPS, keyDifferences, sensorLabel } from "@/lib/specs/definitions";
@@ -22,7 +24,7 @@ export function pairMetadata(pair: string): Metadata {
     x.kind === "camera" ? `${(x.item as Camera).specs.megapixels} MP${(x.item as Camera).specs.sensorFormat ? ` ${sensorLabel((x.item as Camera).specs.sensorFormat!)}` : ""}` : `${focalLabel(x.item as Lens)} ${apertureLabel(x.item as Lens)}`;
   return {
     title: `${a.item.name} vs ${b.item.name}: specs and prices compared`,
-    description: `${a.item.name} (${blurb(a)}) against ${b.item.name} (${blurb(b)}): every spec side by side, the key differences, and today's lowest new and used prices.`,
+    description: `${a.item.name} (${blurb(a)}) or ${b.item.name} (${blurb(b)})? Which to buy, the key differences, every spec side by side and today's lowest new and used prices.`,
     alternates: { canonical: `/compare/${pairSlug(a.item, b.item)}` },
     ...(isIndexedPair(a, b) ? {} : { robots: { index: false, follow: true } }),
   };
@@ -32,6 +34,13 @@ export default function PairView({ pair }: { pair: string }) {
   const [a, b] = parsePairSlug(pair)!;
   const diffs =
     a.kind === "camera" ? keyDifferences(a.item as Camera, b.item as Camera, SPEC_GROUPS) : keyDifferences(a.item as Lens, b.item as Lens, LENS_SPEC_GROUPS);
+  const verdict =
+    a.kind === "camera" ? pairVerdict(a.item as Camera, b.item as Camera, SPEC_GROUPS) : pairVerdict(a.item as Lens, b.item as Lens, LENS_SPEC_GROUPS);
+  // Every other indexed comparison of either product: the vs pages link to each other, so Google reaches them
+  // from one another and not only from the sitemap.
+  const others = [a, b]
+    .flatMap((p) => rivalsOf(p).filter((r) => isIndexedPair(p, r) && r.item.slug !== a.item.slug && r.item.slug !== b.item.slug).map((r) => [p, r] as const))
+    .slice(0, 10);
   return (
     <div className="flex flex-col gap-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(breadcrumb([{ name: "Compare", path: "/compare" }, { name: `${a.item.shortName} vs ${b.item.shortName}`, path: `/compare/${pair}` }]))} />
@@ -51,6 +60,16 @@ export default function PairView({ pair }: { pair: string }) {
           </ul>
         </section>
       )}
+      <section className="card p-4">
+        <h2 className="mb-2 text-sm font-bold uppercase tracking-wide text-subtle">
+          {a.item.shortName} or {b.item.shortName}: which should you buy?
+        </h2>
+        <div className="space-y-2 text-sm leading-relaxed">
+          {verdict.lines.map((l) => (
+            <p key={l}>{l}</p>
+          ))}
+        </div>
+      </section>
       <CompareTable items={[a, b]} market="us" followVisitorMarket />
       <section>
         <h2 className="h-section mb-3">Price history: is the newer one cheaper?</h2>
@@ -66,6 +85,20 @@ export default function PairView({ pair }: { pair: string }) {
         <section>
           <h2 className="h-section mb-3">Size, to scale</h2>
           <SizeCompare cameras={[a.item as Camera, b.item as Camera]} />
+        </section>
+      )}
+      {others.length > 0 && (
+        <section>
+          <h2 className="h-section mb-3">More comparisons</h2>
+          <ul className="grid gap-2 text-sm sm:grid-cols-2">
+            {others.map(([p, r]) => (
+              <li key={`${p.item.slug}-${r.item.slug}`}>
+                <Link href={`/compare/${pairSlug(p.item, r.item)}`} prefetch={false} className="text-accent hover:underline">
+                  {p.item.shortName} vs {r.item.shortName}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
       <p className="text-sm">
