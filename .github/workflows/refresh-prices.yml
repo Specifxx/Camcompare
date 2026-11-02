@@ -148,11 +148,16 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           RELEASES_YOUTUBE_RSS: ${{ vars.RELEASES_YOUTUBE_RSS }}
         run: npx tsx scripts/fetch-releases.ts
+      - name: Family feed
+        # The Compare Empire network (scripts/family-sync.ts): our best deals and camera pages for Compare
+        # Empire, and its feed for our deals pages and hand-offs. Never fails the job.
+        continue-on-error: true
+        run: npx tsx scripts/family-sync.ts
       - name: Commit data
         run: |
           git config user.name "camcompare-bot"
           git config user.email "camcompare-bot@users.noreply.github.com"
-          for f in data/offers data/price-history data/deal-log data/accessories data/accessory-history data/store-photos.json data/releases.json data/amazon-asins.json data/fx.json; do [ -e "$f" ] && git add "$f"; done
+          for f in data/family data/offers data/price-history data/deal-log data/accessories data/accessory-history data/store-photos.json data/releases.json data/amazon-asins.json data/fx.json; do [ -e "$f" ] && git add "$f"; done
           if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: prices $(date -u +%FT%H:%MZ)" && git pull --rebase origin main && git push; fi
       - name: Price alerts
         # Emails confirmed price alerts (scripts/check-alerts.ts). Skips cleanly

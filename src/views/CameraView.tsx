@@ -64,6 +64,7 @@ import { SPEC_GROUPS, lensLabel, sensorLabel, typeLabel } from "@/lib/specs/defi
 import { CATEGORY_LABEL, cropOn, lensCategories, type LensCategory } from "@/lib/specs/lens";
 import { summarizeLens } from "@/lib/summary";
 import { longMonthYear } from "@/lib/format";
+import { compareEmpireFor } from "@/lib/family";
 
 /** A product page outside the US is worth indexing only once that market has prices. */
 export const marketIndexable = (slug: string) => (m: MarketCode) => m === "us" || offersFor(slug, m).length > 0;
@@ -135,6 +136,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
   const name = displayName(c, m);
   const short = displayShortName(c, m);
   const page = `cam-${m}-${c.slug}`;
+  const ce = compareEmpireFor(c.name, c.aliases);
   const cur = MARKETS[m].currency;
   const history = historyFor(c.slug, m);
   const used = usedValue(history);
@@ -207,6 +209,12 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
       <section id="prices" className="scroll-mt-28">
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
         <OffersTable product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} amazonAsin={c.amazonAsin} />
+        {ce && (
+          // Hand-off to the broad sister (DECISIONS.md "Sites that grow each other"): the same model only (sameProduct).
+          <p className="mt-3 text-sm text-muted">
+            Also compare the {short} on <a href={ce.url} rel="noopener" className="font-semibold">Compare Empire</a>, which checks more general electronics retailers.
+          </p>
+        )}
       </section>
 
       <ProductReviews p={c} kind="camera" name={short} />
