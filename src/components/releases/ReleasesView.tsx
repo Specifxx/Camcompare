@@ -3,6 +3,7 @@
 // newest first, each with the stores in this market that take orders for
 // what it names. Static: built from committed files, no revalidate, no server
 // reads; comments and alerts are client fetches after the page loads.
+import { Flag } from "@/components/Flag";
 import type { Metadata } from "next";
 import Link from "next/link";
 import OutboundLink from "@/components/OutboundLink";
@@ -166,7 +167,7 @@ export default function ReleasesView({ market: m }: { market: MarketCode }) {
     <div className="flex flex-col gap-6">
       <header>
         <p className="text-xs font-medium uppercase tracking-wide text-subtle">
-          {MARKETS[m].flag} Stores in {MARKETS[m].name}
+          <Flag code={m} /> Stores in {MARKETS[m].name}
         </p>
         <h1 className="mt-1 text-2xl font-semibold leading-tight sm:text-3xl">Just announced</h1>
         <p className="mt-1.5 max-w-2xl text-sm text-muted">

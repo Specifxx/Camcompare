@@ -1827,3 +1827,16 @@ The rules we keep, on every Compare Empire site:
 - Every link tagged, rel="sponsored nofollow"; no incentive (cashback, discount) for buying through it.
 - Here: the quick view pins only eBay; `.btn-amazon` is the site's own buy colour, not Amazon's orange;
   the footer carries the trademark line. Amazon prices already stayed out of history, alerts and deals.
+
+## 2026-11-02 — The market chooser in the home hero, with drawn flags
+
+Owner: "the region switcher must be more prevalent on all sites, on the main home page hero etc … and have
+the flags as well". Every market's home has a "Prices for" row of flag chips above its search
+(`MarketChips`: plain links to each market's home, the pick remembered with `rememberMarket`), and the
+header's switcher shows the market's flag and code with the native select laid invisibly over them.
+
+- **Flags are inline SVG (`src/components/Flag.tsx`), not the `MARKETS[].flag` emoji and not image files.**
+  Windows draws a flag emoji as two letters ("AU"); image files would be new requests and hosting (the
+  static-site rule). The footer, the geo suggestion, the releases view and the world prices panel draw it
+  too; `MARKETS[].flag` stays for plain-text uses (select options, admin). The same file is in every
+  Compare Empire repo that has a region switcher; keep the copies identical.

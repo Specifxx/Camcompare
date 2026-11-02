@@ -2,6 +2,7 @@
 // "Looks like you're in the UK — see UK prices?" One small request to
 // /api/geo (Vercel's IP country header), shown once, never a redirect:
 // search engines and travellers see the page they asked for.
+import { Flag } from "@/components/Flag";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MARKETS, type MarketCode } from "@/lib/markets";
@@ -43,7 +44,7 @@ export default function GeoSuggest() {
     <div className="border-b border-line bg-accent-soft">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2 text-sm">
         <span>
-          {MARKETS[suggest].flag} Shopping from {MARKETS[suggest].name}? See prices in {MARKETS[suggest].currency} from local retailers.
+          <Flag code={suggest} /> Shopping from {MARKETS[suggest].name}? See prices in {MARKETS[suggest].currency} from local retailers.
         </span>
         <button
           className="font-semibold text-accent"
