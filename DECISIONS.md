@@ -1745,3 +1745,11 @@ are compared here") that the daily outreach offers instead of asking for a link 
 2026-11-02). No live price iframe like the card sites': it would be a request-time read of public data, which this site
 doesn't do. Each badge is one `<a>` with inline CSS (`src/lib/link-badges.ts`, tested). US paths; the page says how to
 point one at another market.
+
+## 2026-11-02 — Self-updating price report
+
+`/price-report` is one static page, kept at one URL and rebuilt with every price commit: per market, for cameras and
+for lenses, how many stores sell new, the median gap between the cheapest and dearest new price, and how much the
+cheapest used or refurbished price saves under the cheapest new one. It is the citable asset the daily outreach offers
+camera writers (passive-growth plan, owner 2026-11-02), with a quote line. Pure numbers in `src/lib/price-report.ts`
+(tested); bodies and lenses only, never kits or Amazon, like every "lowest" on the site.

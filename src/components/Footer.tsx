@@ -61,6 +61,7 @@ export default function Footer() {
           <Link href={marketPath(here, "/saved")} prefetch={false} rel="nofollow">Saved</Link>
           <Link href={marketPath(here, "/board")} prefetch={false}>Deals board (plain HTML)</Link>
           <Link href={marketPath(here, "/black-friday")} prefetch={false}>Black Friday deals</Link>
+          <Link href="/price-report" prefetch={false}>Monthly price report</Link>
           <Link href="/widgets" prefetch={false}>Free price links</Link>
         </nav>
         <div className="text-xs leading-relaxed">
