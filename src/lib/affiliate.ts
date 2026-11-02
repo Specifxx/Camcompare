@@ -22,10 +22,16 @@ export const OUTBOUND_REL = "sponsored nofollow noopener noreferrer";
 const env = (k: string) => (process.env[k] || "").trim();
 const deeplinkEnv = (key: string) => `AFFILIATE_DEEPLINK_${key.toUpperCase().replace(/-/g, "_")}`;
 
+// The owner's family-wide Associates tags, used until CamCompare's own are set: riftcompare-20 is
+// the US account's (amazon.com), compareempire-22 the Australian account's (amazon.com.au). A tag
+// earns only on its own Amazon, so the UK, Germany and Singapore have no default: their Amazon
+// links stay untagged (and their "Also check" row hidden) until AMAZON_TAG_<market> is set.
+const FAMILY_AMAZON_TAG: Partial<Record<string, string>> = { us: "riftcompare-20", au: "compareempire-22" };
+
 export function amazonTag(retailerKey: string): string {
   const r = retailer(retailerKey);
   if (!r?.amazon) return "";
-  return env(r.amazon.tagEnv) || (r.market === "us" ? env("AMAZON_ASSOCIATE_TAG") : "");
+  return env(r.amazon.tagEnv) || (r.market === "us" ? env("AMAZON_ASSOCIATE_TAG") : "") || FAMILY_AMAZON_TAG[r.market] || "";
 }
 // The owner's eBay Partner Network campaign, one for every Compare site and
 // hard-coded (owner, 2026-10-30): no variable overrides it. The `cc-` customid

@@ -13,10 +13,18 @@ const withEnv = (vars: Record<string, string>, fn: () => void) => {
 };
 
 test("unconfigured programmes leave links untouched and unmarked", () => {
-  withEnv({ AMAZON_TAG_US: "", AMAZON_ASSOCIATE_TAG: "", EBAY_AFFILIATE_CAMPAIGN: "", AFFILIATE_DEEPLINK_BH: "" }, () => {
-    assert.equal(affiliateUrl("amazon", "https://www.amazon.com/dp/B000000000", "x"), "https://www.amazon.com/dp/B000000000");
+  withEnv({ AMAZON_TAG_UK: "", EBAY_AFFILIATE_CAMPAIGN: "", AFFILIATE_DEEPLINK_BH: "" }, () => {
+    assert.equal(affiliateUrl("amazon-gb", "https://www.amazon.co.uk/dp/B000000000", "x"), "https://www.amazon.co.uk/dp/B000000000");
     assert.equal(affiliateUrl("bh", "https://www.bhphotovideo.com/c/product/1", "x"), "https://www.bhphotovideo.com/c/product/1");
-    assert.equal(isPaid("amazon"), false);
+    assert.equal(isPaid("amazon-gb"), false);
+  });
+});
+
+test("Amazon US and AU fall back to the owner's family tags, each on its own store", () => {
+  withEnv({ AMAZON_TAG_US: "", AMAZON_ASSOCIATE_TAG: "", AMAZON_TAG_AU: "" }, () => {
+    assert.equal(new URL(affiliateUrl("amazon", "https://www.amazon.com/dp/B000000000", "x")).searchParams.get("tag"), "riftcompare-20");
+    assert.equal(new URL(affiliateUrl("amazon-au", "https://www.amazon.com.au/dp/B000000000", "x")).searchParams.get("tag"), "compareempire-22");
+    assert.equal(isPaid("amazon"), true);
   });
 });
 
