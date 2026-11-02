@@ -61,6 +61,8 @@ export type CheckLink = {
 };
 
 export type QuickViewData = {
+  /** the share message (lib/share-texts.ts) */
+  share?: string;
   slug: string;
   kind: "camera" | "lens";
   market: MarketCode;

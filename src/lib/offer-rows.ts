@@ -11,7 +11,7 @@
 // (`withAmazon`); a public file never carries it (its licence: 24 hours).
 // Server-only: links are wrapped with this build's affiliate ids.
 import { accessoryImageUrl } from "./accessory-format";
-import { affiliateUrl, isPaid, subId } from "./affiliate";
+import { affiliateUrl, amazonTag, isPaid, subId } from "./affiliate";
 import { asinFor } from "./amazon-asins";
 import { brandName, displayName, historyFor, launchPrice, offersGeneratedAt, offersFor, type AnyProduct } from "./catalog";
 import { cameraHighlights, cardSubline, lensHighlights } from "./highlights";
@@ -23,6 +23,7 @@ import type { CheckLink, OfferRow, QuickViewData, RowCond } from "./quickview";
 import { CONDITION_LABEL, ebayFor, retailer, retailersFor } from "./retailers";
 import { productEbayCategory, productEbayLinks } from "./ebay-links";
 import { summarizeCamera, summarizeLens } from "./summary";
+import { productShareText } from "./share-texts";
 
 const MOUNT_SHORT: Record<string, string> = {
   "sony-e": "Sony E", "canon-rf": "Canon RF", "canon-ef": "Canon EF", "canon-ef-m": "Canon EF-M", "nikon-z": "Nikon Z", "nikon-f": "Nikon F",
@@ -167,7 +168,8 @@ export function ebaySearch(query: string, m: MarketCode, page: string, placement
 export function alsoCheckLinks(x: CheckInput): CheckLink[] {
   const out: CheckLink[] = [];
   const amazon = retailersFor(x.market).find((r) => r.amazon && r.searchUrl);
-  if (amazon && !x.amazonShown) {
+  // An untagged Amazon link earns nothing and only takes the click away: no row until the market has a tag.
+  if (amazon && !x.amazonShown && amazonTag(amazon.key)) {
     const asin = asinFor(x.product, amazon.amazon!.marketplace, x.amazonAsin);
     const href = affiliateUrl(amazon.key, asin ? `https://${amazon.amazon!.marketplace}/dp/${asin}` : amazon.searchUrl!(x.query), subId(x.page, x.placement));
     out.push({ retailer: amazon.key, name: amazon.name, href, paid: isPaid(amazon.key, href), note: "Amazon's price shows on Amazon", cta: "See it on Amazon" });
@@ -218,6 +220,8 @@ export function quickViewData(p: AnyProduct, m: MarketCode, offers: Offer[] = of
     brandName: brandName(p.item.brand),
     subline: cardSubline(p.kind === "camera" ? summarizeCamera(p.item, m) : summarizeLens(p.item, m)),
     href: marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`),
+    // The share message (lib/share-texts.ts, 2026-11-02): the real gap between this market's cheapest and dearest new price.
+    share: productShareText(displayName(p.item, m), offers),
     highlights: p.kind === "camera" ? cameraHighlights(p.item) : lensHighlights(p.item),
     rows: offerRows(offers, { page, placement: "quickview", pack, withAmazon: false, tags }),
     // Always where eBay has a programme: live listings when there are some, and the used and sold searches.

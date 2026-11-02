@@ -1746,6 +1746,38 @@ are compared here") that the daily outreach offers instead of asking for a link 
 doesn't do. Each badge is one `<a>` with inline CSS (`src/lib/link-badges.ts`, tested). US paths; the page says how to
 point one at another market.
 
+## 2026-11-02 — Self-updating price report
+
+`/price-report` is one static page, kept at one URL and rebuilt with every price commit: per market, for cameras and
+for lenses, how many stores sell new, the median gap between the cheapest and dearest new price, and how much the
+cheapest used or refurbished price saves under the cheapest new one. It is the citable asset the daily outreach offers
+camera writers (passive-growth plan, owner 2026-11-02), with a quote line. Pure numbers in `src/lib/price-report.ts`
+(tested); bodies and lenses only, never kits or Amazon, like every "lowest" on the site.
+
+## 2026-11-02 — Seasonal sale pages
+
+`/boxing-day`, `/january-sales` and `/lunar-new-year` (and `/<market>/…`; owner-approved growth plan,
+2026-11-02): one URL per market, kept every year like `/black-friday`, built weeks ahead so they are indexed
+before the day. They are the market's deals page under that event's heading (`DealsView` with `sale`), as
+`/black-friday` is, static like every page, noindex where the deals page is. The intro states where the day
+is a sale day as a fact, never as the page's market. Dates, the year a page is about (it rolls over a week
+after the event) and the intro are pure in `src/lib/sale-seasons.ts` (`tests/sale-seasons.test.ts`); Lunar
+New Year is a published-date table to 2040 (6 February 2027). Footer and sitemap. Never a "was" price, a
+countdown or an invented sale.
+
+## 2026-11-02 — Share buttons and shared saved lists
+
+Word of mouth (owner, 2026-11-02). Every camera and lens page and the quick view have a Share button: the phone's
+own share sheet (Web Share API), else copy the link. No pop-up, no reward. The message names the real gap in the
+visitor's market (cheapest and dearest new, in-stock, body-only price from two different stores, never Amazon or a
+kit, never converted), built at build time (`src/lib/share-texts.ts`); the button only picks the market's line. The
+saved list can be shared too: `/saved?i=c:<slug>.l:<slug>` carries up to 50 items in the link, nothing is stored,
+the shared view is read-only with each item's cheapest store, noindex, and "Keep this list" copies it into the
+visitor's own. Every shared link carries `utm_source=share&utm_medium=<product|list|page>` (`src/lib/share-link.ts`,
+client-safe, tested); the button sends a Vercel `share` event and `ShareArrival` one `share_visit` per tab, which
+RiftCompare's weekly growth report counts. No new function and no per-product share image: pages stay static, the
+product photo stays the preview.
+
 ## Sites that grow each other: the family feed, cluster blocks and short footers (2026-11-02)
 
 Owner, 2026-11-02: "We need each site to help each other grow as a team effort", and the

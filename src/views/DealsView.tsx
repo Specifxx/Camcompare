@@ -20,6 +20,7 @@ import PriceTraps from "@/components/PriceTraps";
 import { usedValue } from "@/lib/value";
 import { blackFriday, cyberMonday, longDate, seasonYear } from "@/lib/black-friday";
 import { FamilyCluster } from "@/components/FamilyCluster";
+import { saleIntro, saleYear, SALE_SEASONS, type SaleSlug } from "@/lib/sale-seasons";
 
 /**
  * Today's top bargains in a market: new under its launch RRP, used under the
@@ -136,14 +137,28 @@ export function blackFridayMetadata(m: MarketCode): Metadata {
   });
 }
 
-export default function DealsView({ market: m, blackFriday: bfPage = false }: { market: MarketCode; blackFriday?: boolean }) {
+/** The seasonal sale pages (DECISIONS.md, "Seasonal sale pages", 2026-11-02): the same deals under that event's heading, one URL each kept every year. */
+export function saleMetadata(slug: SaleSlug, m: MarketCode): Metadata {
+  const y = saleYear(slug, new Date().toISOString().slice(0, 10));
+  const name = SALE_SEASONS[slug].name;
+  return pageMeta({
+    title: `${name} camera and lens deals ${y}`,
+    description: `${name} ${y} camera and lens deals in ${MARKETS[m].name}: today's prices furthest under launch RRP, used under the typical used price, and this week's price drops, checked every day.`,
+    path: `/${slug}`,
+    market: m,
+    index: dealsIndexable(m),
+    indexable: dealsIndexable,
+  });
+}
+
+export default function DealsView({ market: m, blackFriday: bfPage = false, sale }: { market: MarketCode; blackFriday?: boolean; sale?: SaleSlug }) {
   const cur = MARKETS[m].currency;
   const { newDrops, usedDrops, savings, gaps, newBargains, usedBargains, empty } = deals(m);
   const updated = offersGeneratedAt(m);
   return (
     <div className="flex flex-col gap-10">
       <div>
-        {bfPage ? <BlackFridayHead m={m} /> : <h1 className="text-2xl font-extrabold tracking-tight">Camera deals in {MARKETS[m].name}</h1>}
+        {sale ? <SaleHead m={m} slug={sale} /> : bfPage ? <BlackFridayHead m={m} /> : <h1 className="text-2xl font-extrabold tracking-tight">Camera deals in {MARKETS[m].name}</h1>}
         <p className="mt-1 max-w-2xl text-sm text-muted">
           From our own record of the lowest in-stock price at each retailer: today against the launch RRP, the typical used price and a week ago. No sponsored placements.
           {updated ? ` Prices checked ${new Date(updated).toUTCString().slice(5, 16)}.` : ""}
@@ -253,6 +268,20 @@ function BlackFridayHead({ m }: { m: MarketCode }) {
         Black Friday is {longDate(bf)} and Cyber Monday is {longDate(cyberMonday(y))} {y}.{today < bf ? " Many retailers start their sales earlier." : ""} This page
         updates with every price check through the sales. We only see what a retailer asks when we read its prices, so check the price on its page before you buy.{" "}
         <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link>
+      </p>
+    </>
+  );
+}
+
+function SaleHead({ m, slug }: { m: MarketCode; slug: SaleSlug }) {
+  const y = saleYear(slug, new Date().toISOString().slice(0, 10));
+  return (
+    <>
+      <h1 className="text-2xl font-extrabold tracking-tight">{SALE_SEASONS[slug].name} camera deals in {MARKETS[m].name}, {y}</h1>
+      <p className="mt-1 max-w-2xl text-sm text-muted">
+        {saleIntro(slug, y, /^United /.test(MARKETS[m].name) ? `the ${MARKETS[m].name}` : MARKETS[m].name)} This page updates with every price check through the sales. We only see what a retailer asks when we read its
+        prices, so check the price on its page before you buy.{" "}
+        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link> · <Link href={marketPath(m, "/black-friday")} prefetch={false}>Black Friday deals</Link>
       </p>
     </>
   );

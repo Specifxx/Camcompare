@@ -24,7 +24,7 @@ export default function Disclosure() {
           before you buy.
         </p>
       </section>
-      <p>As an Amazon Associate we earn from qualifying purchases (Amazon.com, Amazon.co.uk, Amazon.de, Amazon.com.au and Amazon.sg).</p>
+      <p>As an Amazon Associate we earn from qualifying purchases. Amazon links carry our tag only on the Amazon stores whose Associates programme we belong to (today Amazon.com and Amazon.com.au); elsewhere we show no Amazon link.</p>
       <p>
         We are also a member of retailer programmes run through affiliate networks such as Impact, Awin, CJ, Rakuten and Involve Asia. We may show
         display advertising; where no ad is set up, that space shows our own &ldquo;Shop on eBay&rdquo; links, labelled as paid.
