@@ -41,7 +41,7 @@ function prices(r: Retailer): string {
   }
 }
 function link(r: Retailer): string {
-  if (r.amazon) return `\`${r.amazon.tagEnv}\``;
+  if (r.amazon) return r.amazon.tag ? `tag \`${r.amazon.tag}\` (hard-coded)` : "no Associates programme";
   if (r.ebay) return "EPN campaign 5339155912 (in the code)";
   if (!r.network) return "—";
   return `\`AFFILIATE_DEEPLINK_${envKey(r)}\``;
