@@ -22,11 +22,11 @@ import OutboundLink from "./OutboundLink";
 import PriceAlert from "./PriceAlert";
 import ShareButton from "./ShareButton";
 
-/** eBay first, then Amazon (its tagged link: a public file never holds its price), pinned above the rows (owner, 2026-10-30). */
+/** eBay pinned above the rows (owner, 2026-10-30). Never Amazon here (2026-11-02): Amazon's Operating Agreement allows no
+ *  Amazon link in a pop-up window, so the quick view leaves it to the product page. */
 const qvPins = (d: QuickViewData): PinnedLink[] => {
-  const amazon = d.alsoCheck.find((l) => retailer(l.retailer)?.amazon);
   const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null) : null;
-  return [ebay, amazon && { ...amazon, note: "New, sold by Amazon and its sellers: the price shows on Amazon", cta: "Check price" }].filter(Boolean) as PinnedLink[];
+  return [ebay].filter(Boolean) as PinnedLink[];
 };
 
 /** The cheapest in-stock, body-only row, new or not: the price the alert check reads (Amazon and eBay are not in rows). */
@@ -346,7 +346,7 @@ function Dialog({ target }: { target: Target }) {
                 </section>
               )}
               <AlsoCheck links={data.alsoCheck.filter((l) => !retailer(l.retailer)?.amazon)} product={data.slug} placement="quickview-check" />
-              <p className="text-[11px] text-subtle">Amazon and eBay are ads. The stores are sorted by price, cheapest in-stock first; commission never changes the store order.</p>
+              <p className="text-[11px] text-subtle">eBay links are ads. The stores are sorted by price, cheapest in-stock first; commission never changes the store order.</p>
             </>
           )}
         </div>
