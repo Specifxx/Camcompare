@@ -1745,3 +1745,32 @@ are compared here") that the daily outreach offers instead of asking for a link 
 2026-11-02). No live price iframe like the card sites': it would be a request-time read of public data, which this site
 doesn't do. Each badge is one `<a>` with inline CSS (`src/lib/link-badges.ts`, tested). US paths; the page says how to
 point one at another market.
+
+## Sites that grow each other: the family feed, cluster blocks and short footers (2026-11-02)
+
+Owner, 2026-11-02: "We need each site to help each other grow as a team effort", and the
+footer family lists were "a bit convoluted … I'm wondering if it actually helps". Plan:
+"Sites that grow each other" in the consolidation doc (https://claude.ai/artifact/QjrWGrfBqH4sKctwdjwptK).
+
+- **Three clusters** (`src/lib/family-network.ts`, the same file in every repo): card games
+  (Rift, OP, Dex, MTG, Gundam, Lorcana, YGO, Cyberpunk), hobby (Wargame, Figure, Gunpla on
+  Gundam Compare) and tech (Compare Empire, CamCompare). KaeYoung stays out.
+- **The family feed.** Each site's own daily data job writes `family-feed.json` (its best real
+  deals and pre-orders today, per region) beside the data it already commits, and copies its
+  cluster sisters' feeds from raw.githubusercontent.com into `family-cluster.json`. Pages read
+  the committed file: no database of another site, no request-time fetch, no new function. A
+  feed older than four days, from the wrong site, with a link off its own host or a saving that
+  isn't the arithmetic of its two prices is dropped (`validFeed`), so a block shows less, never a guess.
+- **One block per page**, on the deals, Black Friday and pre-order pages: one tile per sister with
+  its best item in the visitor's region, else the US price in its own currency. Labels never name
+  a country. Plain followed links inside a cluster.
+- **Footers: one short line.** The sites of our own cluster by name, then one "A Compare Empire
+  site" link to https://compareempire.com/network, which lists every site. Why: nothing counts
+  footer clicks, footer links get few, and Google gives little weight to sitewide links between
+  one owner's look-alike sites (12 sites all cross-linked in every footer is the pattern it can
+  read as a link scheme). Cross-traffic should come from the price blocks, which people have a
+  reason to click.
+- **Here:** the deals and Black Friday pages show Compare Empire's three best deals for the market
+  (its cameras first); a camera's page links the same model on Compare Empire when `sameProduct`
+  finds exactly one; our feed carries every camera's name and aliases so Compare Empire links back.
+  eBay rows never become a feed deal (stores only).

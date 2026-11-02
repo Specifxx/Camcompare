@@ -1,21 +1,15 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { FAMILY_SITES } from "../src/lib/site";
+import { footerSisters } from "../src/lib/family-network";
 
-// The footer links the owner's other eleven sites (DECISIONS.md "Compare Empire
-// family links"): plain followed links, never sponsored, never this site.
-test("footer: the Compare Empire family, plain followed links with descriptive anchors", () => {
-  assert.equal(FAMILY_SITES.length, 11);
-  for (const s of FAMILY_SITES) {
-    assert.equal(new URL(s.url).protocol, "https:", s.name);
-    assert.doesNotMatch(s.url, /camcompare/, "never this site itself");
-    assert.match(s.anchor, /prices$/, s.name);
-    // Owner, 2026-11-02: never tie a sister site to one country.
-    assert.doesNotMatch(s.anchor, /\b(Australian|Aussie|American|British|Canadian|Australia only|AU only)\b/i, s.name);
-  }
+// The footer (owner, 2026-11-02: the old eleven-site list was "convoluted"): our own cluster (Compare
+// Empire) by name, plus one "A Compare Empire site" link to the network page (DECISIONS.md "Sites that grow each other").
+test("footer: the tech sister and the network page, plain followed links", () => {
+  assert.deepEqual(footerSisters("cam").map((s) => s.id), ["empire"]);
   const footer = readFileSync("src/components/Footer.tsx", "utf8");
-  assert.match(footer, /FAMILY_SITES\.map/);
-  assert.match(footer, /<a href=\{s\.url\} target="_blank" rel="noopener"/);
-  assert.doesNotMatch(footer.slice(footer.indexOf("FAMILY_SITES.map")), /sponsored|nofollow|affiliateUrl/);
+  assert.match(footer, /footerSisters\("cam"\)/);
+  assert.match(footer, /NETWORK_PAGE/);
+  assert.match(footer, /A Compare Empire site/);
+  assert.doesNotMatch(footer.slice(footer.lastIndexOf("footerSisters"), footer.indexOf("</nav>", footer.lastIndexOf("footerSisters"))), /sponsored|nofollow|affiliateUrl/);
 });

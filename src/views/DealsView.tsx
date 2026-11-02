@@ -19,6 +19,7 @@ import { pageMeta } from "@/lib/seo";
 import PriceTraps from "@/components/PriceTraps";
 import { usedValue } from "@/lib/value";
 import { blackFriday, cyberMonday, longDate, seasonYear } from "@/lib/black-friday";
+import { FamilyCluster } from "@/components/FamilyCluster";
 
 /**
  * Today's top bargains in a market: new under its launch RRP, used under the
@@ -234,6 +235,7 @@ export default function DealsView({ market: m, blackFriday: bfPage = false }: { 
         </section>
       )}
       <PriceTraps market={m} />
+      <FamilyCluster market={m} />
       {!empty && <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`deals-${m}`} placement="promo-deals" />}
       {!empty && <QuickViewHost />}
     </div>
