@@ -159,7 +159,8 @@ h1, h2 { font-weight: 700; }
 /* Retailer buttons. Rows whose link earns get a filled button; the order of
    rows is still price, never commission. */
 @layer components {
-  .btn-amazon { @apply btn bg-[#FF9900] text-[#111] hover:bg-[#f08804]; }
+  /* Never Amazon's own orange (2026-11-02, Associates Operating Agreement: no styling that could pass for Amazon's site). */
+  .btn-amazon { @apply btn shadow-sm; color: rgb(var(--c-buy-fg)); background: rgb(var(--c-buy)); }
   .btn-ebay { @apply btn bg-[#0654BA] text-white hover:bg-[#054a9f]; }
 }
 

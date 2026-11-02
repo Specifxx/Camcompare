@@ -73,7 +73,8 @@ export default function Footer() {
             <Link href="/disclosure" prefetch={false} className="font-semibold">
               We earn from qualifying purchases through affiliate links, including eBay Partner Network
             </Link>
-            , at no cost to you. As an Amazon Associate we earn from qualifying purchases.
+            , at no cost to you. As an Amazon Associate we earn from qualifying purchases. Amazon and the Amazon logo are trademarks of
+            Amazon.com, Inc. or its affiliates.
           </p>
           <p className="mt-2">Store offers are always sorted by price. The one exception: Amazon and eBay rows sit above them on product pages, labelled &ldquo;Ad&rdquo;, and are never counted as the best price.</p>
         </div>
