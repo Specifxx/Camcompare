@@ -153,7 +153,7 @@ jobs:
           git config user.name "camcompare-bot"
           git config user.email "camcompare-bot@users.noreply.github.com"
           for f in data/family data/offers data/price-history data/deal-log data/accessories data/accessory-history data/store-photos.json data/releases.json data/amazon-asins.json data/fx.json; do [ -e "$f" ] && git add "$f"; done
-          if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: prices $(date -u +%FT%H:%MZ)" && git pull --rebase origin main && git push; fi
+          if git diff --cached --quiet; then echo "no price changes"; else git commit -m "data: prices $(date -u +%FT%H:%MZ) [deploy]" && git pull --rebase origin main && git push; fi
       - name: Price alerts
         # Emails confirmed price alerts (scripts/check-alerts.ts). Skips cleanly
         # until DATABASE_URL and RESEND_API_KEY are GitHub secrets. Never fails
