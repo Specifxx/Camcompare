@@ -15,7 +15,7 @@ export default function ComparePicker({ base, options, current }: { base: string
         if (value) router.push(`${base}?c=${[...current, value].join(",")}`);
       }}
     >
-      <select value={value} onChange={(e) => setValue(e.target.value)} aria-label="Add to the comparison" className="min-w-[240px] max-w-full rounded-lg border border-line bg-surface px-2 py-2 text-sm">
+      <select value={value} onChange={(e) => setValue(e.target.value)} aria-label="Add to the comparison" className="w-full min-w-0 rounded-lg sm:w-auto sm:min-w-[240px] border border-line bg-surface px-2 py-2 text-sm">
         <option value="">Add {current.length ? "another" : "a camera or lens"}…</option>
         {options.filter((o) => !current.includes(o.slug)).map((o) => (
           <option key={o.slug} value={o.slug}>{o.label}</option>
