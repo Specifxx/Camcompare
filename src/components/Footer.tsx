@@ -11,6 +11,7 @@ import { useMarket } from "@/lib/market-client";
 import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
 import { NETWORK_PAGE } from "@/lib/family-network";
 import Logo from "./brand/Logo";
+import { RateUsLink } from "./site-reviews/SiteReviews";
 
 export default function Footer() {
   const here = useMarket(usePathname() ?? "/");
@@ -59,6 +60,7 @@ export default function Footer() {
           <Link href="/contact#suggest" prefetch={false}>Suggest a store</Link>
           <Link href="/how-we-pick-stores" prefetch={false}>How we pick stores</Link>
           <Link href="/feedback" prefetch={false}>Send feedback</Link>
+          <RateUsLink className="text-left hover:underline">Rate CamCompare</RateUsLink>
           <Link href="/privacy" prefetch={false}>Privacy</Link>
           <Link href="/credits" prefetch={false}>Photo credits</Link>
           <Link href={marketPath(here, "/saved")} prefetch={false} rel="nofollow">Saved</Link>

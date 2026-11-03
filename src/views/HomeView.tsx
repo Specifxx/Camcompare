@@ -33,6 +33,7 @@ import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import { deals } from "@/views/DealsView";
 import { Flag } from "@/components/Flag";
 import MarketChips from "@/components/MarketChips";
+import { SiteReviews } from "@/components/site-reviews/SiteReviews";
 
 export function homeMetadata(m: MarketCode): Metadata {
   return pageMeta({
@@ -438,6 +439,9 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
       </section>
 
       <EbayStrip market={m} />
+
+      {/* The site's own star score and approved reviews (owner, 2026-11-03), loaded in the browser; nothing until there is a rating. */}
+      <SiteReviews />
 
       <section aria-labelledby="faq-title" className="max-w-3xl">
         <h2 id="faq-title" className="font-display text-2xl font-semibold">Questions</h2>

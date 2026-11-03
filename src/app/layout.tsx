@@ -3,12 +3,14 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { ShareArrival } from "@/components/ShareArrival";
 import FeedbackButton from "@/components/FeedbackButton";
+import { RateCard } from "@/components/site-reviews/RateCard";
 import Footer from "@/components/Footer";
 import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
 import Reveal from "@/components/Reveal";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
+import "@/components/site-reviews/site-reviews.css";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 import { SEASON_BOOT_SCRIPT } from "@/lib/season";
@@ -72,6 +74,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <FeedbackButton />
+        {/* Rate us (owner, 2026-11-03): the corner card, asking only after real use; RiftCompare keeps the ratings. */}
+        <RateCard />
         <Reveal />
         <Analytics />
         <ShareArrival />

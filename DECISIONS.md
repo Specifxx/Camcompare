@@ -1920,3 +1920,15 @@ secrets for ASIN discovery, Vercel for the build's price fetch), then the older 
 endpoint, because it follows the store that issued the credential, not the marketplace called. GetItems
 answers `itemResults` in Amazon's published sample, so both that and the earlier `itemsResult` are read.
 Both sites call the API from the same account (1 request a second, 8,640 a day at first).
+## Rate CamCompare and "What people say", run by RiftCompare (2026-11-03)
+
+The owner wanted RiftCompare's rating pop-up on every site, each site's reviews public, and every written review approved in
+RiftCompare's admin; star ratings count at once. This is the site's own star rating, separate from the community's product
+reviews and from the feedback form (which keeps its own table and inbox). Nothing new is stored here and no page gains a server
+read: the corner card (`components/site-reviews/RateCard.tsx`, in the root layout) posts cross-origin to
+`https://riftcompare.com/api/site-reviews`, and the homepage's "What people say" reads the score and approved reviews from
+`https://riftcompare.com/api/site-reviews/cam` in the browser (public JSON, CDN six hours). The card is RiftCompare's corner
+card, not its rating drive: never on arrival, after 4 pages and 3 minutes or on return from a store tab, at most three times 14
+days apart, always closable, on the right so it never covers the Feedback button; "Rate CamCompare" in the footer opens it.
+While no ad script is on the page it says "We don't run banner ads, so if this helped, please leave us a review." No email
+asked for, never review markup. RiftCompare's DECISIONS.md, "Every site's reviews, approved in one queue".

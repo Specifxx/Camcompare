@@ -607,3 +607,14 @@ h1, h2 { font-weight: 700; }
 
 /* lib/region-boot.ts: while a visitor is moved to their own market's copy of the page, at most 1.5 s. */
 html[data-geo="pending"] main { visibility: hidden; }
+
+/* Rate us card and "What people say" (components/site-reviews): drawn in the site's own theme, light and dark. */
+:root {
+  --srv-bg: rgb(var(--c-surface));
+  --srv-fg: rgb(var(--c-fg));
+  --srv-muted: rgb(var(--c-muted));
+  --srv-line: rgb(var(--c-line));
+  --srv-accent: rgb(var(--c-accent));
+  --srv-accent-fg: rgb(var(--c-accent-fg));
+  --srv-field: rgb(var(--c-raised));
+}
