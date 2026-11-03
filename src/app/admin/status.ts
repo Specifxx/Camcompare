@@ -72,7 +72,7 @@ export function envStatus(): { label: string; set: number; of: number }[] {
     group("Site URL override (optional; www.camcompare.app is built in)", ["NEXT_PUBLIC_SITE_URL"]),
     group("Feedback database (DATABASE_URL)", ["DATABASE_URL"]),
     group("Community sign-in (AUTH_SECRET)", ["AUTH_SECRET"]),
-    group("Amazon Creators API", ["AMAZON_CREATORS_NA_CLIENT_ID", "AMAZON_CREATORS_EU_CLIENT_ID", "AMAZON_CREATORS_FE_CLIENT_ID"]),
+    group("Amazon Creators API", ["AMAZON_CREATORS_NA_CLIENT_ID", "AMAZON_CREATORS_EU_CLIENT_ID", "AMAZON_CREATORS_FE_CLIENT_ID", "AMAZON_CREATORS_AU_CLIENT_ID"]),
     { label: "Retailer deep links set", set: deeplinks.filter(has).length, of: retailersWithDeeplinks() },
     group("AdSense", ["NEXT_PUBLIC_ADSENSE_CLIENT"]),
     group("Search verification", ["GOOGLE_SITE_VERIFICATION", "BING_SITE_VERIFICATION"]),

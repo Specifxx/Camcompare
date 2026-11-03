@@ -22,12 +22,19 @@ import type { Condition, Retailer } from "../retailers";
 import { searchPhrase, sleep, type PriceSource } from "./types";
 
 const API = "https://creatorsapi.amazon/catalog/v1";
-const REGION: Record<string, { token: string; env: string }> = {
+const REGION: Record<string, { token: string; env: string; market?: string }> = {
   "www.amazon.com": { token: "https://api.amazon.com/auth/o2/token", env: "NA" },
   "www.amazon.co.uk": { token: "https://api.amazon.co.uk/auth/o2/token", env: "EU" },
   "www.amazon.de": { token: "https://api.amazon.co.uk/auth/o2/token", env: "EU" },
-  "www.amazon.com.au": { token: "https://api.amazon.co.jp/auth/o2/token", env: "FE" },
+  "www.amazon.com.au": { token: "https://api.amazon.co.jp/auth/o2/token", env: "FE", market: "AU" },
   "www.amazon.sg": { token: "https://api.amazon.co.jp/auth/o2/token", env: "FE" },
+};
+// The credential's version (printed beside it in Associates Central) picks the token endpoint: it follows the
+// Associates store that issued the credential, not the marketplace called.
+const TOKEN_BY_VERSION: Record<string, string> = {
+  "3.1": "https://api.amazon.com/auth/o2/token",
+  "3.2": "https://api.amazon.co.uk/auth/o2/token",
+  "3.3": "https://api.amazon.co.jp/auth/o2/token",
 };
 const OFFER_RESOURCES = ["itemInfo.title", "offersV2.listings.price", "offersV2.listings.condition", "offersV2.listings.availability", "offersV2.listings.merchantInfo"];
 
@@ -44,17 +51,22 @@ const RECHECK_MISSING_DAYS = 30;
 // OffersV2 availability types that can be bought today; IN_STOCK_SCARCE is "Only 3 left".
 const IN_STOCK = new Set(["IN_STOCK", "IN_STOCK_SCARCE"]);
 
-type Call = (op: "searchItems" | "getItems", body: object) => Promise<{ searchResult?: { items?: Item[] }; itemsResult?: { items?: Item[] } }>;
+type Call = (op: "searchItems" | "getItems", body: object) => Promise<{ searchResult?: { items?: Item[] }; itemsResult?: { items?: Item[] }; itemResults?: { items?: Item[] } }>;
 
 /** A signed-in API caller for this retailer's marketplace, or why there isn't one. */
 async function client(r: Retailer, market: MarketCode): Promise<{ call: Call; marketplace: string } | { skip: string }> {
   const marketplace = r.amazon?.marketplace ?? "";
   const region = REGION[marketplace];
-  const id = process.env[`AMAZON_CREATORS_${region?.env}_CLIENT_ID`] || (region?.env === "NA" ? process.env.AMAZON_CREATORS_CLIENT_ID : "") || "";
-  const secret = process.env[`AMAZON_CREATORS_${region?.env}_CLIENT_SECRET`] || (region?.env === "NA" ? process.env.AMAZON_CREATORS_CLIENT_SECRET : "") || "";
+  // AU first reads AMAZON_CREATORS_AU_* (the owner's AU Associates account, shared with Compare Empire), then FE.
+  const m = region?.market ? `AMAZON_CREATORS_${region.market}_` : "";
+  const re = `AMAZON_CREATORS_${region?.env}_`;
+  const pick = (k: string) => (m && process.env[`${m}${k}`]) || process.env[`${re}${k}`] || (region?.env === "NA" ? process.env[`AMAZON_CREATORS_${k}`] : "") || "";
+  const id = pick("CLIENT_ID");
+  const secret = pick("CLIENT_SECRET");
+  const tokenUrl = TOKEN_BY_VERSION[pick("VERSION").trim()] ?? region?.token;
   const tag = r.amazon?.tag ?? "";
   if (!region || !id || !secret || !tag) return { skip: `Creators API ${region?.env ?? "?"} credentials or ${marketplace} Associates tag not set` };
-  const tok = await fetch(region.token, {
+  const tok = await fetch(tokenUrl ?? region.token, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ grant_type: "client_credentials", client_id: id, client_secret: secret, scope: "creatorsapi::default" }),
@@ -131,7 +143,8 @@ export async function amazonPrices(r: Retailer, market: MarketCode, cameras: Cam
       failed++;
       continue;
     }
-    for (const it of body.itemsResult?.items ?? []) {
+    // GetItems answers `itemResults` (the published sample); `itemsResult` was the docs' earlier spelling.
+    for (const it of body.itemResults?.items ?? body.itemsResult?.items ?? []) {
       const slug = batch.find(([, k]) => k.asin === it.asin)?.[0];
       const p = slug ? bySlug.get(slug) : undefined;
       if (!p) continue;

@@ -1910,3 +1910,13 @@ each market carries Organization + WebSite + a printed four-question FAQ (FAQPag
 "in the US" phrase. Brand, mount and accessory pages show a breadcrumb with a matching BreadcrumbList, like camera, lens,
 pair and guide pages already did. Product + AggregateOffer on camera and lens pages, hreflang (32 on the homepage) and
 llms.txt were already in place. `tests/seo-audit.test.ts`.
+
+## 2026-11-03: Amazon AU reads the AU account's own Creators API key
+
+The owner's Amazon Associates AU account (tag `compareempire-22`) was approved. Its Creators API credential is
+shared with Compare Empire, so Amazon AU first reads `AMAZON_CREATORS_AU_CLIENT_ID` / `_CLIENT_SECRET` (GitHub
+secrets for ASIN discovery, Vercel for the build's price fetch), then the older `AMAZON_CREATORS_FE_*`.
+`AMAZON_CREATORS_<AU|NA|EU|FE>_VERSION` (3.1, 3.2 or 3.3, printed beside the credential) picks the token
+endpoint, because it follows the store that issued the credential, not the marketplace called. GetItems
+answers `itemResults` in Amazon's published sample, so both that and the earlier `itemsResult` are read.
+Both sites call the API from the same account (1 request a second, 8,640 a day at first).
