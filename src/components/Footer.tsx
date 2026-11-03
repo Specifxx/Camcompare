@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { MARKET_CODES, MARKETS, marketPath } from "@/lib/markets";
 import { useMarket } from "@/lib/market-client";
 import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
-import { NETWORK_PAGE, footerSisters } from "@/lib/family-network";
+import { NETWORK_PAGE } from "@/lib/family-network";
 import Logo from "./brand/Logo";
 
 export default function Footer() {
@@ -81,14 +81,9 @@ export default function Footer() {
           <p className="mt-2">Store offers are always sorted by price. The one exception: Amazon and eBay rows sit above them on product pages, labelled &ldquo;Ad&rdquo;, and are never counted as the best price.</p>
         </div>
       </div>
-      {/* One short line (owner, 2026-11-02: the old list was "convoluted"): our tech sister, then the network page
-          that lists every site (DECISIONS.md "Sites that grow each other"). */}
+      {/* No sister-site list (owner, 2026-11-03: sitewide links between our own sites read as a link network):
+          one link to the page that lists every Compare Empire site (lib/family-network.ts). */}
       <nav aria-label="Compare Empire sites" className="mx-auto max-w-6xl border-t border-line px-4 py-5 text-xs text-subtle">
-        Sister site:{" "}
-        {footerSisters("cam").map((s, i) => (
-          <span key={s.id}>{i ? " · " : ""}<a href={s.url} target="_blank" rel="noopener" className="font-semibold text-muted" title={s.label}>{s.name}</a></span>
-        ))}
-        {" · "}
         <a href={NETWORK_PAGE} target="_blank" rel="noopener" className="font-semibold text-muted">A Compare Empire site →</a>
       </nav>
     </footer>
