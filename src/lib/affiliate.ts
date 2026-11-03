@@ -24,7 +24,7 @@ const deeplinkEnv = (key: string) => `AFFILIATE_DEEPLINK_${key.toUpperCase().rep
 
 // Each Amazon marketplace's Associates tag is hard-coded on its retailer (lib/retailers.ts; owner,
 // 2026-11-02: no Vercel variable decides a tag): riftcompare-20 (US), compareempi03-21 (UK),
-// compareempire-21 (Germany), compareempire-22 (Australia). Singapore has none, so its Amazon
+// compareempire-21 (Germany), camcompare-22 (Australia). Singapore has none, so its Amazon
 // links stay untagged and its "Also check" row hidden.
 export function amazonTag(retailerKey: string): string {
   return retailer(retailerKey)?.amazon?.tag ?? "";
