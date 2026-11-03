@@ -185,7 +185,7 @@ export const RETAILERS: Retailer[] = [
   ebay("eu", "DE", "www.ebay.de", "EBAY_DE", "707-53477-19255-0", "77"),
 
   // ---- Australia
-  { ...amazon("au", "AU", "www.amazon.com.au", "compareempire-22"), checkRow: true },
+  { ...amazon("au", "AU", "www.amazon.com.au", "camcompare-22"), checkRow: true },
   // Ted's robots.txt has `Disallow: /*?limit=` (products.json?limit=250 is out)
   // but allows its sitemaps and /products/<handle>.js (checked 2026-10-22),
   // so it is read through those. Its second-hand stock ("…-secondhand"

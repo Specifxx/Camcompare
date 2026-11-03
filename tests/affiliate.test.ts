@@ -26,7 +26,7 @@ test("each Amazon marketplace gets the owner's hard-coded tag, and only on its o
     assert.equal(tag("amazon", "https://www.amazon.com/dp/B000000000"), "riftcompare-20", "no variable overrides a tag");
     assert.equal(tag("amazon-gb", "https://www.amazon.co.uk/dp/B000000000"), "compareempi03-21");
     assert.equal(tag("amazon-de", "https://www.amazon.de/dp/B000000000"), "compareempire-21");
-    assert.equal(tag("amazon-au", "https://www.amazon.com.au/dp/B000000000"), "compareempire-22");
+    assert.equal(tag("amazon-au", "https://www.amazon.com.au/dp/B000000000"), "camcompare-22");
     assert.equal(new URL(affiliateUrl("amazon", "https://www.amazon.com/dp/B000000000", "cc-cam")).searchParams.get("ascsubtag"), "cc-cam");
     assert.equal(affiliateUrl("amazon-gb", "https://www.amazon.com/dp/B000000000", "x"), "https://www.amazon.com/dp/B000000000");
     assert.equal(isPaid("amazon"), true);
