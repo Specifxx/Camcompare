@@ -19,7 +19,7 @@ export default function GalleryViewer({ images }: { images: GalleryImage[] }) {
         {images.map((im, k) => (
           <li key={im.src} className="shrink-0">
             <button type="button" onClick={() => setI(k)} aria-pressed={k === i} aria-label={`Photo ${k + 1}: ${im.alt}`} className={`relative block h-14 w-[4.5rem] overflow-hidden rounded-md border bg-white ${k === i ? "border-accent ring-2 ring-accent/30" : "border-line"}`}>
-              <Image src={im.src} alt="" fill unoptimized sizes="72px" className="object-contain p-1" />
+              <Image src={im.src} alt={im.alt} fill unoptimized sizes="72px" className="object-contain p-1" />
             </button>
           </li>
         ))}

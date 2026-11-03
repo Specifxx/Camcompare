@@ -91,14 +91,14 @@ export default function StoryPage() {
             <AuthorLine author={s.author} createdAt={s.createdAt} editedAt={s.editedAt} extra={!s.deleted && <span className="text-subtle"> · {s.minutes} min read</span>} />
           </div>
         </div>
-        {s.cover && <Cover src={s.cover} alt="" className="mt-3 max-h-[28rem] w-full" />}
+        {s.cover && <Cover src={s.cover} alt={s.title} className="mt-3 max-h-[28rem] w-full" />}
         {products.length > 0 && (
           <ul className="mt-3 flex flex-wrap gap-2">
             {products.map((r) => (
               <li key={r.s}>
                 <a href={productHref(r, prefix)} className="card flex items-center gap-2 px-2 py-1 text-sm no-underline hover:no-underline">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/products/${r.s}.webp`} alt="" width={40} height={30} loading="lazy" className="h-[30px] w-10 rounded bg-white object-contain" />
+                  <img src={`/products/${r.s}.webp`} alt={r.n} width={40} height={30} loading="lazy" className="h-[30px] w-10 rounded bg-white object-contain" />
                   <span>{r.n}</span>
                   <span className="text-xs text-accent">prices</span>
                 </a>

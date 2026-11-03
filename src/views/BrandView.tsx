@@ -6,6 +6,7 @@ import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
 import { summarizeCamera, summarizeLens } from "@/lib/summary";
 import { typeLabel } from "@/lib/specs/definitions";
+import { breadcrumb, ldJson } from "@/lib/jsonld";
 
 export const liveBrands = () => brands().filter((b) => publishedCameras().some((c) => c.brand === b.slug) || publishedLenses().some((l) => l.brand === b.slug));
 
@@ -50,7 +51,11 @@ export default function BrandView({ slug, market: m }: { slug: string; market: M
   const lensGroups = mounts().map((mt) => ({ title: `Lenses for ${mt.name}`, list: lenses.filter((l) => l.mounts.includes(mt.slug)) })).filter((g) => g.list.length);
   return (
     <div className="flex flex-col gap-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(breadcrumb([{ name: "Brands", path: marketPath(m, "/brands") }, { name: b.name, path: marketPath(m, `/brands/${slug}`) }]))} />
       <div>
+        <nav className="mb-2 text-xs text-subtle" aria-label="Breadcrumb">
+          <Link href={marketPath(m, "/brands")}>Brands</Link> / <span>{b.name}</span>
+        </nav>
         <h1 className="text-2xl font-extrabold tracking-tight">{b.name}</h1>
         <p className="mt-1 text-sm text-muted">
           {[cams.length ? `${cams.length} cameras` : null, lenses.length ? `${lenses.length} lenses` : null].filter(Boolean).join(" and ")} · prices for {MARKETS[m].name}

@@ -16,6 +16,7 @@ import { accessoryEbayCategory, ebayLink, ebayTemplate } from "@/lib/ebay-links"
 import { price } from "@/lib/format";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
+import { breadcrumb, ldJson } from "@/lib/jsonld";
 
 
 export function accessoriesMetadata(m: MarketCode): Metadata {
@@ -121,6 +122,7 @@ export function AccessoryCategoryView({ category, market: m }: { category: strin
   return (
     <div className="flex flex-col gap-8">
       <div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(breadcrumb([{ name: "Accessories", path: marketPath(m, "/accessories") }, { name: c.label, path: marketPath(m, `/accessories/${category}`) }]))} />
         <nav className="mb-2 text-xs text-subtle" aria-label="Breadcrumb">
           <Link href={marketPath(m, "/accessories")}>Accessories</Link> / <span>{c.label}</span>
         </nav>

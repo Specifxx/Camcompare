@@ -297,7 +297,7 @@ export default function MyGear({ ebaySold = {} }: { /** Per market, a tagged sol
               <li key={it.id} className="border-b border-line py-3">
                 <div className="flex gap-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/products/${it.slug}.webp`} alt="" width={64} height={48} loading="lazy" className="h-12 w-16 shrink-0 rounded bg-white object-contain" />
+                  <img src={`/products/${it.slug}.webp`} alt={row?.n ?? it.slug} width={64} height={48} loading="lazy" className="h-12 w-16 shrink-0 rounded bg-white object-contain" />
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold">{row ? <a href={productHref(row, MARKETS[it.market].prefix)} className="text-fg">{row.n}</a> : it.slug}</p>
                     <p className="text-xs text-muted">

@@ -31,7 +31,7 @@ export default function JustAnnounced({ market: m, max = 4 }: { market: MarketCo
               <Link href={marketPath(m, `/releases#${r.id}`)} prefetch={false} className="card group flex h-full flex-col gap-2 overflow-hidden text-fg no-underline hover:border-accent hover:no-underline">
                 {r.videoId ? (
                   // eslint-disable-next-line @next/next/no-img-element -- YouTube's own thumbnail
-                  <img src={`https://i.ytimg.com/vi/${r.videoId}/mqdefault.jpg`} alt="" loading="lazy" decoding="async" className="aspect-video w-full bg-raised object-cover" />
+                  <img src={`https://i.ytimg.com/vi/${r.videoId}/mqdefault.jpg`} alt={r.title} loading="lazy" decoding="async" className="aspect-video w-full bg-raised object-cover" />
                 ) : (
                   <span className="flex aspect-video w-full items-center justify-center bg-raised text-xs font-semibold text-muted">Press release</span>
                 )}

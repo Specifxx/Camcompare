@@ -64,7 +64,7 @@ function Picks({ rows, page, start }: { rows: PickRow[]; page: string; start: nu
           <li key={r.slug} className="card flex flex-col gap-3 p-3 sm:flex-row sm:items-center">
             <div className="flex min-w-0 flex-1 items-center gap-3">
               <span className="w-6 shrink-0 text-center font-mono text-sm text-subtle">{start + i + 1}</span>
-              {r.published && <ProductThumb slug={r.slug} alt="" className="w-20 shrink-0" />}
+              {r.published && <ProductThumb slug={r.slug} alt={c.name} className="w-20 shrink-0" />}
               <div className="min-w-0">
                 {r.published ? (
                   <Link href={pagePath(r)} prefetch={false} className="font-semibold text-fg">

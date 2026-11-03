@@ -27,6 +27,8 @@ import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { quickViewAttrs } from "@/lib/quickview";
 import { CONDITION_LABEL, retailer } from "@/lib/retailers";
 import { pageMeta } from "@/lib/seo";
+import { ldJson } from "@/lib/jsonld";
+import { abs } from "@/lib/site";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import { deals } from "@/views/DealsView";
 import { Flag } from "@/components/Flag";
@@ -35,10 +37,45 @@ import MarketChips from "@/components/MarketChips";
 export function homeMetadata(m: MarketCode): Metadata {
   return pageMeta({
     title: `${SITE_NAME}: ${SITE_TAGLINE}`,
-    description: `The best camera and lens deals in ${MARKETS[m].name}: used and new prices against the RRP, plus specs side by side, at retailers we check every day.`,
+    // "in the US", not "in United States" (SEO audit, 2026-11-03).
+    description: `The best camera and lens deals in ${PLACE[m]}: used and new prices against the RRP, plus specs side by side, at retailers we check every day.`,
     path: "/",
     market: m,
   });
+}
+
+/** The homepage's printed questions (SEO audit, 2026-11-03: FAQPage only for text on the page). */
+function homeFaq(m: MarketCode, stores: number): [string, string][] {
+  return [
+    [
+      `Where is the cheapest place to buy a camera in ${PLACE[m]}?`,
+      `It changes from model to model. We check ${stores} camera retailers in ${PLACE[m]} every day and sort each camera's and lens's prices cheapest first, new, open-box, refurbished and used side by side, so the cheapest in-stock store is at the top.`,
+    ],
+    [
+      "Is a camera sale really a deal?",
+      "Each product keeps its own price history and its launch price (RRP), so you can see whether today's price is genuinely low or the usual price relabelled as a sale.",
+    ],
+    [
+      "Do you convert prices between currencies?",
+      "No. Every market shows only stores that charge in its own currency. The one exception is the world price panel, which marks each conversion as approximate and shows the store's own price beside it.",
+    ],
+    [
+      "Do stores pay to be ranked higher?",
+      "No. Store rows are always sorted by price. Some links earn us a commission, and they are labelled; eBay and Amazon rows are labelled as ads and never counted as the best price.",
+    ],
+  ];
+}
+
+/** Organization, WebSite and the FAQ, for the homepage of each market. */
+function homeLd(m: MarketCode, stores: number) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": `${abs("/")}#org`, name: SITE_NAME, url: abs("/"), logo: abs("/icon.svg") },
+      { "@type": "WebSite", "@id": `${abs("/")}#website`, name: SITE_NAME, url: abs("/"), description: SITE_TAGLINE, publisher: { "@id": `${abs("/")}#org` } },
+      { "@type": "FAQPage", mainEntity: homeFaq(m, stores).map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
+    ],
+  };
 }
 
 const newestOf = ([a, b]: [AnyProduct, AnyProduct]) => (a.item.announced > b.item.announced ? a.item.announced : b.item.announced);
@@ -206,7 +243,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
           {departments.map((d) => (
             <li key={d.path} className="w-[calc(50%-0.3125rem)] sm:w-[calc(33.333%-0.5rem)] lg:w-[calc(16.666%-0.625rem)]">
               <Link href={marketPath(m, d.path)} prefetch={false} className="card group flex h-full flex-col overflow-hidden p-2 text-fg no-underline transition hover:-translate-y-0.5 hover:no-underline sm:p-2.5">
-                {d.slug && <ProductThumb slug={d.slug} alt="" className="img-tile rounded-xl" />}
+                {d.slug && <ProductThumb slug={d.slug} alt={d.label} className="img-tile rounded-xl" />}
                 <span className="mt-2 block px-0.5 font-display text-[15px] font-bold leading-tight group-hover:text-accent sm:text-base">{d.label}</span>
                 <span className="block px-0.5 pb-0.5 text-[11px] leading-snug text-subtle sm:text-xs">
                   {d.count.toLocaleString("en-US")}
@@ -346,11 +383,11 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
             {pairs.map(([a, b]) => (
               <li key={pairSlug(a.item, b.item)}>
                 <Link href={`/compare/${pairSlug(a.item, b.item)}`} prefetch={false} className="card group flex items-center gap-2 p-2.5 text-sm font-semibold text-fg no-underline hover:no-underline">
-                  <ProductThumb slug={a.item.slug} alt="" className="img-tile w-16 shrink-0 rounded-xl" />
+                  <ProductThumb slug={a.item.slug} alt={a.item.name} className="img-tile w-16 shrink-0 rounded-xl" />
                   <span aria-hidden className="shrink-0 text-xs text-subtle">
                     vs
                   </span>
-                  <ProductThumb slug={b.item.slug} alt="" className="img-tile w-16 shrink-0 rounded-xl" />
+                  <ProductThumb slug={b.item.slug} alt={b.item.name} className="img-tile w-16 shrink-0 rounded-xl" />
                   <span className="min-w-0 leading-tight group-hover:text-accent">
                     {displayShortName(a.item, m)} <span className="font-normal text-subtle">vs</span> {displayShortName(b.item, m)}
                   </span>
@@ -402,6 +439,19 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
 
       <EbayStrip market={m} />
 
+      <section aria-labelledby="faq-title" className="max-w-3xl">
+        <h2 id="faq-title" className="font-display text-2xl font-semibold">Questions</h2>
+        <div className="mt-4 space-y-5">
+          {homeFaq(m, storeCount).map(([q, a]) => (
+            <div key={q}>
+              <h3 className="font-semibold">{q}</h3>
+              <p className="mt-1 text-sm text-muted">{a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(homeLd(m, storeCount))} />
+
       <section aria-label="Tell us" className="border-t border-line pt-6">
         <p className="font-semibold">Something missing or wrong?</p>
         <p className="mt-1 text-sm text-muted">
@@ -433,7 +483,7 @@ function FallbackList({ m, title, rows, wide }: { m: MarketCode; title: string; 
                 {...quickViewAttrs(r.slug, m, displayName(p.item, m))}
                 className="card flex min-w-0 flex-1 items-center gap-3 p-2.5 text-fg no-underline hover:border-accent hover:no-underline"
               >
-                <ProductThumb slug={r.slug} alt="" className="w-16 shrink-0" />
+                <ProductThumb slug={r.slug} alt={displayName(p.item, m)} className="w-16 shrink-0" />
                 <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
                 <span className="shrink-0 text-right text-sm">{r.right}</span>
               </Link>

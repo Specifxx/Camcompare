@@ -6,6 +6,7 @@ import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
 import { sensorLabel } from "@/lib/specs/definitions";
 import { summarizeCamera, summarizeLens } from "@/lib/summary";
+import { breadcrumb, ldJson } from "@/lib/jsonld";
 
 export const liveMounts = () => mounts().filter((mt) => publishedCameras().some((c) => c.mount === mt.slug) || publishedLenses().some((l) => l.mounts.includes(mt.slug)));
 
@@ -27,7 +28,11 @@ export default function MountView({ slug, market: m }: { slug: string; market: M
   const makers = [...new Set(lenses.map((l) => l.brand))].sort((a, b) => Number(b === mt.brand) - Number(a === mt.brand) || a.localeCompare(b));
   return (
     <div className="flex flex-col gap-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(breadcrumb([{ name: "Lens mounts", path: marketPath(m, "/mounts") }, { name: mt.name, path: marketPath(m, `/mounts/${slug}`) }]))} />
       <div>
+        <nav className="mb-2 text-xs text-subtle" aria-label="Breadcrumb">
+          <Link href={marketPath(m, "/mounts")}>Lens mounts</Link> / <span>{mt.name}</span>
+        </nav>
         <h1 className="text-2xl font-extrabold tracking-tight">{mt.name}</h1>
         <p className="mt-1 max-w-2xl text-sm text-muted">
           {mt.brand ? `${brandName(mt.brand)}'s` : "An alliance"} mount, introduced in {mt.introduced}, flange distance {mt.flangeMm} mm, for {mt.formats.map((f) => sensorLabel(f)).join(" and ")} sensors{mt.status === "legacy" ? "; no longer developed" : ""}. {bodies.length} bodies and {lenses.length} lenses here.
