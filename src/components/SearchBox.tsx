@@ -97,7 +97,7 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
                 className={`flex w-full items-center gap-3 px-3 py-2 text-left text-sm ${i === active ? "bg-raised" : ""}`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/products/${r.s}.webp`} alt="" width={48} height={36} className="h-9 w-12 shrink-0 rounded bg-white object-contain" />
+                <img src={`/products/${r.s}.webp`} alt={r.n} width={48} height={36} className="h-9 w-12 shrink-0 rounded bg-white object-contain" />
                 <span className="min-w-0">
                   <span className="block truncate font-medium">{r.n}</span>
                   <span className="text-xs text-subtle">{r.k === "c" ? "Camera" : "Lens"} · {r.y}</span>

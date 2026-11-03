@@ -63,7 +63,7 @@ export default function SavedList({ market }: { market: MarketCode }) {
         return (
           <li key={it.slug} className="flex items-center gap-3 px-4 py-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`/products/${it.slug}.webp`} alt="" width={64} height={48} className="h-12 w-16 shrink-0 rounded bg-white object-contain" />
+            <img src={`/products/${it.slug}.webp`} alt={row?.n ?? it.slug} width={64} height={48} className="h-12 w-16 shrink-0 rounded bg-white object-contain" />
             <Link href={marketPath(market, `/${it.kind === "c" ? "cameras" : "lenses"}/${it.slug}`)} className="min-w-0 flex-1 truncate font-semibold">
               {row?.n ?? it.slug}
             </Link>

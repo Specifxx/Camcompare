@@ -1,6 +1,7 @@
 import { postSlugs } from "@/lib/guide-blocks";
 import type { Guide } from "@/lib/guides";
 import { hasLicensedThumb } from "@/lib/images";
+import { product } from "@/lib/catalog";
 
 // Fanned photo cards on a post's thumbnail, the first in front. Positions for one, two and three photos.
 const FAN: Record<number, { left: string; top: string; w: string; rot: string; z: number }[]> = {
@@ -45,7 +46,7 @@ export function GuideThumb({ g, className = "" }: { g: Guide; className?: string
             style={{ left: fan[i].left, top: fan[i].top, width: fan[i].w, transform: `rotate(${fan[i].rot})`, zIndex: fan[i].z }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element -- static licensed thumbnails; no optimiser */}
-            <img src={`/products/${slug}.webp`} alt="" loading="lazy" className="h-full w-full object-contain" />
+            <img src={`/products/${slug}.webp`} alt={product(slug)?.item.name ?? ""} loading="lazy" className="h-full w-full object-contain" />
           </span>
         ))
       ) : (

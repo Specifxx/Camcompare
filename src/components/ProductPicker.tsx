@@ -80,7 +80,7 @@ export default function ProductPicker({ onPick, exclude = [], placeholder = "Sea
             <li key={r.s} role="option" aria-selected={i === active}>
               <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => pick(r)} className={`flex w-full items-center gap-2 px-2 py-1.5 text-left text-sm ${i === active ? "bg-raised" : ""}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={thumbSrc(r.s)} alt="" width={40} height={30} loading="lazy" className="h-[30px] w-10 shrink-0 rounded bg-white object-contain" />
+                <img src={thumbSrc(r.s)} alt={r.n} width={40} height={30} loading="lazy" className="h-[30px] w-10 shrink-0 rounded bg-white object-contain" />
                 <span className="min-w-0 flex-1 truncate">{r.n}</span>
                 <span className="text-xs text-subtle">
                   {r.k === "c" ? "camera" : "lens"} · {r.y}

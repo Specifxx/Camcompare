@@ -78,7 +78,7 @@ export function StoryRow({ s, mine, own, index, prefix, onNeedSignIn }: { s: Sto
         />
         <ProductLinks slugs={s.products} index={index} prefix={prefix} />
       </div>
-      {s.cover && <Cover src={s.cover} alt="" className="hidden h-20 w-28 shrink-0 sm:block" />}
+      {s.cover && <Cover src={s.cover} alt={s.title} className="hidden h-20 w-28 shrink-0 sm:block" />}
     </li>
   );
 }

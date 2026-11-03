@@ -140,7 +140,7 @@ function FeedItem({ r, m, currency, now, i }: { r: FeedRow; m: MarketCode; curre
   return (
     <li className="hf-row -mx-2 grid grid-cols-[4rem_minmax(0,1fr)] items-start gap-x-3 gap-y-2 rounded-xl border-b border-line px-2 py-3 last:border-b-0 sm:grid-cols-[4.5rem_minmax(0,1fr)_auto] sm:items-center sm:gap-x-4" style={{ "--i": i } as React.CSSProperties}>
       <Link href={r.href} prefetch={false} {...quickViewAttrs(r.slug, m, r.name)} className={`hf-thumb block ${gone ? "opacity-50 grayscale" : ""}`} tabIndex={-1} aria-hidden>
-        <ProductThumb slug={r.slug} alt="" priority={i < 3} />
+        <ProductThumb slug={r.slug} alt={r.name} priority={i < 3} />
       </Link>
       <div className={`min-w-0 ${dim}`}>
         <h3 className="text-[0.95rem] font-semibold leading-snug">

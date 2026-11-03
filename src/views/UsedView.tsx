@@ -84,7 +84,7 @@ function Table({ rows, m, title, id }: { rows: UsedRow[]; m: MarketCode; title: 
                 <tr key={p.item.slug} className="border-t border-line align-middle">
                   <td className="py-2 pr-3">
                     <Link href={marketPath(m, productPath(p))} prefetch={false} {...quickViewAttrs(p.item.slug, m, name)} className="flex items-center gap-3 font-semibold">
-                      <ProductThumb slug={p.item.slug} alt="" className="w-14 shrink-0" />
+                      <ProductThumb slug={p.item.slug} alt={name} className="w-14 shrink-0" />
                       <span>
                         {name}
                         <span className="block text-xs font-normal text-subtle">{brandName(p.item.brand)}</span>

@@ -79,7 +79,7 @@ export function BargainCard({ b, m }: { b: Bargain; m: MarketCode }) {
   return (
     <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${b.slug}`)} prefetch={false} {...quickViewAttrs(b.slug, m, name)} className="card group flex h-full flex-col gap-2 p-3 text-fg no-underline hover:no-underline">
       <span className="relative block">
-        <ProductThumb slug={b.slug} alt="" className="rounded-md" />
+        <ProductThumb slug={b.slug} alt={name} className="rounded-md" />
         <span className="absolute left-1.5 top-1.5 rounded bg-buy px-2 py-0.5 text-xs font-bold text-buy-fg">−{b.pct}%</span>
       </span>
       <span className="text-[15px] font-semibold leading-snug group-hover:text-accent">{name}</span>
@@ -104,7 +104,7 @@ function Row({ slug, m, vote, right, ebay }: { slug: string; m: MarketCode; vote
       <div className="flex items-center gap-2">
       <DealVotes dealKey={`${m}:${slug}:${vote}`} layout="column" className="shrink-0" />
       <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${slug}`)} prefetch={false} {...quickViewAttrs(slug, m, displayName(p.item, m))} className="card flex min-w-0 flex-1 items-center gap-3 p-3 text-fg no-underline hover:no-underline">
-        <ProductThumb slug={slug} alt="" className="w-20 shrink-0" />
+        <ProductThumb slug={slug} alt={displayName(p.item, m)} className="w-20 shrink-0" />
         <span className="min-w-0 flex-1 text-sm font-semibold">{displayName(p.item, m)}</span>
         <span className="shrink-0 text-right text-sm">{right}</span>
       </Link>

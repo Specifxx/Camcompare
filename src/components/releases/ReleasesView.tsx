@@ -135,7 +135,7 @@ function ReleaseCard({ r, m, first }: { r: Release; m: MarketCode; first: boolea
               {named.map((p) => (
                 <li key={p.item.slug}>
                   <Link href={marketPath(m, productPath(p))} prefetch={false} className="flex items-center gap-2 rounded-lg border border-line py-1 pl-1 pr-3 text-sm font-semibold text-fg no-underline hover:border-accent hover:no-underline">
-                    <ProductThumb slug={p.item.slug} alt="" className="w-12 shrink-0" />
+                    <ProductThumb slug={p.item.slug} alt={p.item.name} className="w-12 shrink-0" />
                     {displayShortName(p.item, m)}
                   </Link>
                 </li>

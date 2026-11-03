@@ -17,7 +17,7 @@ export function FamilyCluster({ market }: { market: MarketCode }) {
         {tiles.map(({ site, item }) => (
           <li key={item.url} className="card flex gap-3 p-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            {item.image ? <img src={item.image} alt="" className="h-16 w-16 shrink-0 object-contain" loading="lazy" /> : null}
+            {item.image ? <img src={item.image} alt={item.title} className="h-16 w-16 shrink-0 object-contain" loading="lazy" /> : null}
             <div className="min-w-0 text-sm">
               <div className="text-xs text-subtle">{site.name}</div>
               <a href={item.url} rel="noopener" className="line-clamp-2 font-semibold">{item.title}</a>

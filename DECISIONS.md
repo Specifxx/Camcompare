@@ -1900,3 +1900,13 @@ as a link network and looks odd to a reader. The owner said do it.
   one owner, not paid, so no `sponsored`/`nofollow`.
 - Kept: the "Other card games" / hobby / tech price blocks on deals, Black Friday and pre-order pages
   (`clusterSisters`). They sit on a few pages, show real prices a reader of that page may want, and are not sitewide.
+
+## 2026-11-03 SEO audit: alt text, homepage schema and FAQ, breadcrumbs on hubs
+
+Bill's network SEO audit read CamCompare's homepage as having no JSON-LD, 61 of 61 photos without alt text and the
+description "deals in United States". Every product photo (`ProductThumb`, search, picker, gallery, guide thumbnails,
+saved and My gear lists, stories, release videos) now carries the product's name or the story's title. The homepage of
+each market carries Organization + WebSite + a printed four-question FAQ (FAQPage), and its description uses the market's
+"in the US" phrase. Brand, mount and accessory pages show a breadcrumb with a matching BreadcrumbList, like camera, lens,
+pair and guide pages already did. Product + AggregateOffer on camera and lens pages, hreflang (32 on the homepage) and
+llms.txt were already in place. `tests/seo-audit.test.ts`.
