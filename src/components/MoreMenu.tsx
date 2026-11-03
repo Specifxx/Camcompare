@@ -12,6 +12,7 @@ export const MORE = [
   { path: "/stories", label: "Member stories", market: false },
   { path: "/collection", label: "My gear", market: false },
   { path: "/community", label: "Community", market: false },
+  { path: "/creators", label: "Creators", market: false },
   { path: "/requests", label: "Requests", market: false },
 ] as const;
 
