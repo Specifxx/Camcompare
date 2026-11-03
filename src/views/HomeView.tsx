@@ -14,6 +14,7 @@ import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
 import EbayStrip from "@/components/home/EbayStrip";
 import { ChristmasDecor } from "@/components/ChristmasDecor";
+import { CreatorsCornerBadge } from "@/components/creators/CreatorsCornerBadge";
 import { brandName, brands, displayName, displayShortName, historyFor, indexedPairs, mounts, offersFor, offersGeneratedAt, pairSlug, product, publishedCameras, publishedLenses, type AnyProduct } from "@/lib/catalog";
 import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
 import { dealInputs } from "@/lib/deal-inputs";
@@ -207,6 +208,8 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2">
           <ChristmasDecor />
         </div>
+        {/* The creators hub, above the fold (owner, 2026-11-03): top-right corner from sm, a centred pill above the headline on a phone. */}
+        <CreatorsCornerBadge />
         {generatedAt && (
           <p className="inline-block rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-muted shadow-card">
             <span className="cc-live" aria-hidden />

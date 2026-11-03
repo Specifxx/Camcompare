@@ -41,6 +41,7 @@ export default function Footer() {
           <p className="eyebrow mb-1 text-subtle">About</p>
           <Link href="/guides" prefetch={false}>Guides</Link>
           <Link href="/community" prefetch={false}>Community</Link>
+          <Link href="/creators" prefetch={false}>Creators</Link>
           <Link href="/stories" prefetch={false}>Member stories</Link>
           <Link href="/collection" prefetch={false}>My gear</Link>
           <Link href={marketPath(here, "/releases")} prefetch={false}>Just announced</Link>

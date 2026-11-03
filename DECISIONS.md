@@ -1932,3 +1932,17 @@ card, not its rating drive: never on arrival, after 4 pages and 3 minutes or on 
 days apart, always closable, on the right so it never covers the Feedback button; "Rate CamCompare" in the footer opens it.
 While no ad script is on the page it says "We don't run banner ads, so if this helped, please leave us a review." No email
 asked for, never review markup. RiftCompare's DECISIONS.md, "Every site's reviews, approved in one queue".
+
+## 2026-11-03: A Creators page and a homepage bubble, like RiftCompare's
+
+Owner: "having the creators page for all of these sites as well is really, really good. Like just a bubble and then a
+really nice formatted creators page, just like how RiftCompare does it." Word of mouth from creators and visitors is the
+sites' main growth channel, so every site gets one.
+
+`/creators` is RiftCompare's page in CamCompare's theme, without the parts that need a database: the list is the static
+array in `src/lib/creators.ts` (empty until the first creator agrees; the grid shows "Your channel here" spots, never an
+invented creator), applying is a pre-filled email to `CONTACT_EMAIL`, and there are no creator codes. "Buy them a
+coffee" is the creator's own Ko-fi, Patreon or tip page: the site never handles the money. `CreatorsCornerBadge` is the
+bubble in the homepage hero of every market (top-right from sm, a centred pill above the headline on a phone); the
+header's "More" menu, the footer and the sitemap link the page. Static like every page: no data or request read, no
+`revalidate`. Not called "partners" anywhere: that word means the affiliate links.
