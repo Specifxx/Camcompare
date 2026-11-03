@@ -3,13 +3,13 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { footerSisters } from "../src/lib/family-network";
 
-// The footer (owner, 2026-11-02: the old eleven-site list was "convoluted"): our own cluster (Compare
-// Empire) by name, plus one "A Compare Empire site" link to the network page (DECISIONS.md "Sites that grow each other").
-test("footer: the tech sister and the network page, plain followed links", () => {
-  assert.deepEqual(footerSisters("cam").map((s) => s.id), ["empire"]);
+// The footer (owner, 2026-11-03): no sister-site list, only one "A Compare Empire site" link to the
+// network page that lists every site (DECISIONS.md).
+test("footer: no sister list, one plain link to the network page", () => {
+  assert.deepEqual(footerSisters("cam"), []);
   const footer = readFileSync("src/components/Footer.tsx", "utf8");
-  assert.match(footer, /footerSisters\("cam"\)/);
+  assert.doesNotMatch(footer, /footerSisters|Sister site/);
   assert.match(footer, /NETWORK_PAGE/);
   assert.match(footer, /A Compare Empire site/);
-  assert.doesNotMatch(footer.slice(footer.lastIndexOf("footerSisters"), footer.indexOf("</nav>", footer.lastIndexOf("footerSisters"))), /sponsored|nofollow|affiliateUrl/);
+  assert.doesNotMatch(footer.slice(footer.lastIndexOf("NETWORK_PAGE"), footer.indexOf("</nav>", footer.lastIndexOf("NETWORK_PAGE"))), /sponsored|nofollow|affiliateUrl/);
 });
