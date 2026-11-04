@@ -58,7 +58,7 @@ export default function Footer() {
           <Link href="/about" prefetch={false}>How we price &amp; check specs</Link>
           <Link href="/disclosure" prefetch={false}>Affiliate disclosure</Link>
           <Link href="/contact" prefetch={false}>Contact us</Link>
-          <Link href="/contact#suggest" prefetch={false}>Suggest a store</Link>
+          <Link href="/list-your-store" prefetch={false}>List your store</Link>
           <Link href="/how-we-pick-stores" prefetch={false}>How we pick stores</Link>
           <Link href="/feedback" prefetch={false}>Send feedback</Link>
           <RateUsLink className="text-left hover:underline">Rate CamCompare</RateUsLink>
