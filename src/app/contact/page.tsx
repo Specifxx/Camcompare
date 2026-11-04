@@ -54,7 +54,7 @@ export default function ContactPage() {
         Seen a wrong price? Every camera and lens page has a <b>Report a wrong price</b> link under its prices: no email needed.
       </p>
       <h2 id="suggest" className="h-section scroll-mt-28 pt-2">Suggest a store</h2>
-      <p>A camera retailer we don&apos;t compare yet? We check every suggestion and add the store if it publishes prices we&apos;re allowed to read.</p>
+      <p>A camera retailer we don&apos;t compare yet? We check every suggestion and add the store if it publishes prices we&apos;re allowed to read. Run one? <Link href="/list-your-store" prefetch={false}>List your store</Link>, free.</p>
       <SuggestStore regions={MARKET_CODES.map((m) => [m.toUpperCase(), MARKETS[m].name])} what="cameras and lenses" buttonClassName="btn-primary" />
     </div>
   );
