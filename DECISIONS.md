@@ -1972,3 +1972,14 @@ The request is filed as a `suggest-store` report with `issue: "owner"`; RiftComp
 those first and asks for a reply within two days. No email is asked for (the reports branch is public); no pop-up,
 no cold email. RiftCompare and OP Compare keep their `/stores/suggest` page (now the owner pitch) and redirect
 `/list-your-store` to it.
+
+## 2026-11-04 — Kamera Express: name the currency, since its /meta.json is bot-walled
+
+The first two price refreshes after adding Kamera Express failed their final source check: `no store currency in
+/meta.json`. The store's homepage sits behind a bot wall (noted when it was added) and so does `/meta.json`, which the
+Shopify reader asks for the store's currency; `products.json` is the only thing it answers. The reader already has the
+answer for that case, `currency` in the store's config (Challenger, Canon Store and Sony Store in Singapore use it), so
+Kamera Express now says EUR; a `/meta.json` that answers with another currency would still refuse the store. The prices
+themselves never stopped: every market's import and the data commit succeeded in both runs, only the check at the end
+was red, as the health monitor reported.
+
