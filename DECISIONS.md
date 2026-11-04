@@ -1946,3 +1946,17 @@ coffee" is the creator's own Ko-fi, Patreon or tip page: the site never handles 
 bubble in the homepage hero of every market (top-right from sm, a centred pill above the headline on a phone); the
 header's "More" menu, the footer and the sitemap link the page. Static like every page: no data or request read, no
 `revalidate`. Not called "partners" anywhere: that word means the affiliate links.
+
+## 2026-11-04 — Big-store gap: five Shopify camera stores, and why the rest can't be read
+
+The owner asked for every big store captured with no gaps, on every site. Research per market named 87 camera retailers not
+in `retailers.ts`; a platform sniff on a GitHub runner (the sandbox cannot reach stores) checked each one's homepage,
+robots.txt, `products.json`, the WooCommerce Store API and one JSON-LD product page. Five run Shopify with the feed
+allowed by robots.txt and are added as `shop()` dealers: **Glazer's Camera** and **Ritz Camera** (US), **Cambrian
+Photography** and **HDEW Cameras** (UK; HDEW is a grey importer and the docs say so), **Kamera Express** (NL, EUR; its
+homepage is behind a bot wall but the feed answers and robots.txt allows it). No affiliate programme for any of them, so
+they are plain links. Everything else is a bot wall, a Magento or custom storefront with no feed and no usable JSON-LD, a
+WooCommerce store (no reader here, and the two found sell accessories or used stock), or unreachable from the runner; the
+list per reason is in `docs/retailers.md` ("Big-store gap research, 2026-11-04"). The most-wanted names that stay out
+(Samy's, Hunt's, Roberts, CameraNU, Foto Koch, CVP, Wilkinson, Kogan, Ryda) all sit behind bot walls, which are never
+worked around.

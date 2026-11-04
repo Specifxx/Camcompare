@@ -155,6 +155,9 @@ export const RETAILERS: Retailer[] = [
   // Structured data (JSON-LD) on their product pages; robots.txt allows them.
   dealer({ key: "precision-camera", name: "Precision Camera", market: "us", country: "US", site: "https://www.precision-camera.com", network: null, ...pages({ sitemaps: ["https://www.precision-camera.com/xmlsitemap.php?type=products&page=1", "https://www.precision-camera.com/xmlsitemap.php?type=products&page=2"] }), conditions: ["new", "used"] }),
   dealer({ key: "dodd-camera", name: "Dodd Camera", market: "us", country: "US", site: "https://doddcamera.com", network: null, ...pages(), conditions: ["new", "used"] }),
+  // Big-store gap research 2026-11-04 (DECISIONS.md): Shopify feeds read on a runner, robots.txt allows products.json.
+  dealer({ key: "glazers-camera", name: "Glazer's Camera", market: "us", country: "US", site: "https://www.glazerscamera.com", network: null, ...shop("https://www.glazerscamera.com"), conditions: ["new", "used"], searchUrl: (q) => `https://www.glazerscamera.com/search?q=${enc(q)}` }),
+  dealer({ key: "ritz-camera", name: "Ritz Camera", market: "us", country: "US", site: "https://ritzcamera.com", network: null, ...shop("https://ritzcamera.com"), searchUrl: (q) => `https://ritzcamera.com/search?q=${enc(q)}` }),
   used({ key: "mpb", name: "MPB", market: "us", country: "US", site: "https://www.mpb.com/en-us", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.mpb.com/en-us/search?q=${enc(q)}` }),
   used({ key: "keh", name: "KEH", market: "us", country: "US", site: "https://www.keh.com", network: "awin" }),
   ebay("us", "US", "www.ebay.com", "EBAY_US", "711-53200-19255-0", "0"),
@@ -170,6 +173,10 @@ export const RETAILERS: Retailer[] = [
   dealer({ key: "currys", name: "Currys", market: "uk", country: "GB", site: "https://www.currys.co.uk", network: "awin" }),
   used({ key: "mpb-uk", name: "MPB", market: "uk", country: "GB", site: "https://www.mpb.com/en-uk", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.mpb.com/en-uk/search?q=${enc(q)}` }),
   used({ key: "harrison-cameras", name: "Harrison Cameras", market: "uk", country: "GB", site: "https://www.harrisoncameras.co.uk", network: null, ...shop("https://www.harrisoncameras.co.uk"), conditions: ["used", "new"] }),
+  // Big-store gap research 2026-11-04 (DECISIONS.md): Shopify feeds read on a runner, robots.txt allows products.json.
+  dealer({ key: "cambrian-photography", name: "Cambrian Photography", market: "uk", country: "GB", site: "https://www.cambrianphoto.co.uk", network: null, ...shop("https://www.cambrianphoto.co.uk"), conditions: ["new", "used"], searchUrl: (q) => `https://www.cambrianphoto.co.uk/search?q=${enc(q)}` }),
+  // A grey importer (stock sourced outside the UK, its own warranty): listed because buyers cross-shop it, named plainly.
+  dealer({ key: "hdew-cameras", name: "HDEW Cameras", market: "uk", country: "GB", site: "https://hdewcameras.co.uk", network: null, ...shop("https://hdewcameras.co.uk"), searchUrl: (q) => `https://hdewcameras.co.uk/search?q=${enc(q)}` }),
   // Same platform as cash-converters-au (checked 2026-10-17).
   used({ key: "cash-converters-uk", name: "Cash Converters", market: "uk", country: "GB", site: "https://www.cashconverters.co.uk", network: null, ...pages({ slugless: true, sitemapWindow: 36, budget: 200, urlFilter: CASH_CONVERTERS_CAMERAS, branch: CASH_CONVERTERS_BRANCH }) }),
   ebay("uk", "GB", "www.ebay.co.uk", "EBAY_GB", "710-53481-19255-0", "3"),
@@ -181,6 +188,9 @@ export const RETAILERS: Retailer[] = [
   dealer({ key: "cyberport", name: "Cyberport", market: "eu", country: "DE", site: "https://www.cyberport.de", network: "direct", searchUrl: (q) => `https://www.cyberport.de/tools/search?query=${enc(q)}` }),
   dealer({ key: "mediamarkt-de", name: "MediaMarkt", market: "eu", country: "DE", site: "https://www.mediamarkt.de", network: "direct", searchUrl: (q) => `https://www.mediamarkt.de/de/search.html?query=${enc(q)}` }),
   dealer({ key: "coolblue", name: "Coolblue", market: "eu", country: "NL", site: "https://www.coolblue.nl", network: "awin", searchUrl: (q) => `https://www.coolblue.nl/zoeken?query=${enc(q)}` }),
+  // Big-store gap research 2026-11-04 (DECISIONS.md): the Benelux chain's Shopify feed (EUR) read on a runner; its homepage
+  // sits behind a bot wall but robots.txt allows products.json and the feed answers. New and "tweedehands" (used) listings.
+  dealer({ key: "kamera-express", name: "Kamera Express", market: "eu", country: "NL", site: "https://www.kamera-express.nl", network: null, ...shop("https://www.kamera-express.nl"), conditions: ["new", "used"], searchUrl: (q) => `https://www.kamera-express.nl/search?q=${enc(q)}` }),
   used({ key: "mpb-eu", name: "MPB", market: "eu", country: "DE", site: "https://www.mpb.com/de-de", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.mpb.com/de-de/suche?q=${enc(q)}` }),
   ebay("eu", "DE", "www.ebay.de", "EBAY_DE", "707-53477-19255-0", "77"),
 

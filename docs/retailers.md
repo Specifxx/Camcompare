@@ -108,6 +108,8 @@ priced in another currency is refused.
 | Pictureline | US | Shopify products.json (no setup) | none known | — |
 | Camera Wholesalers | US | Shopify products.json (no setup) | none known | — |
 | Helix Camera | US | Shopify products.json (no setup) | none known | — |
+| Glazer's Camera | US | Shopify products.json (no setup) | none known | — |
+| Ritz Camera | US | Shopify products.json (no setup) | none known | — |
 | Shop Panasonic | US | Shopify products.json (no setup) | none known | — |
 | Leica Store Miami | US | Shopify products.json (no setup) | none known | — |
 | Precision Camera | US | Structured data on its product pages (no setup) | none known | — |
@@ -130,6 +132,8 @@ priced in another currency is refused.
 | Currys | GB | Product feed `FEED_URL_CURRYS` | Awin | `AFFILIATE_DEEPLINK_CURRYS` |
 | MPB ★ | GB | Product feed `FEED_URL_MPB_UK` | Partnerize | `AFFILIATE_DEEPLINK_MPB_UK` |
 | Harrison Cameras | GB | Shopify products.json (no setup) | none known | — |
+| Cambrian Photography | GB | Shopify products.json (no setup) | none known | — |
+| HDEW Cameras (grey import) | GB | Shopify products.json (no setup) | none known | — |
 | Cash Converters | GB | Structured data on its product pages (no setup) | none known | — |
 | eBay.co.uk | GB | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | EPN campaign 5339155912 (in the code) |
 
@@ -143,6 +147,7 @@ priced in another currency is refused.
 | Cyberport | DE | Product feed `FEED_URL_CYBERPORT` | Retailer's own programme | `AFFILIATE_DEEPLINK_CYBERPORT` |
 | MediaMarkt | DE | Product feed `FEED_URL_MEDIAMARKT_DE` | Retailer's own programme | `AFFILIATE_DEEPLINK_MEDIAMARKT_DE` |
 | Coolblue | NL | Product feed `FEED_URL_COOLBLUE` | Awin | `AFFILIATE_DEEPLINK_COOLBLUE` |
+| Kamera Express | NL | Shopify products.json (no setup) | none known | — |
 | MPB ★ | DE | Product feed `FEED_URL_MPB_EU` | Partnerize | `AFFILIATE_DEEPLINK_MPB_EU` |
 | eBay.de | DE | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | EPN campaign 5339155912 (in the code) |
 
@@ -184,7 +189,7 @@ priced in another currency is refused.
 ## Researched but not listed (2026-10-17)
 
 - **No affiliate programme found and no legitimate price source:** Samy's,
-  Crutchfield, John Lewis, Ffordes, Camera Jungle, Foto Koch, Kamera Express,
+  Crutchfield, John Lewis, Ffordes, Camera Jungle, Foto Koch,
   Fnac, Harvey Norman, Best Denki.
 - **Price source exists but isn't built here yet:** MS Color (WooCommerce
   Store API; RiftCompare has the adapter) and Alan Photo.
@@ -289,3 +294,25 @@ lines with bare carriage returns, which the robots parser read as no rules at
 all. It now splits on CR, LF and CRLF (RFC 9309), so a rule written that way
 is obeyed.
 
+
+## Big-store gap research, 2026-11-04
+
+87 camera retailers named by per-market research (the big chains, the independents buyers name, brand stores, refurbished
+marketplaces) were sniffed from a GitHub runner: homepage platform, robots.txt, `products.json`, the WooCommerce Store API
+and one JSON-LD product page each. Five run Shopify with the feed allowed and are **added**: Glazer's Camera and Ritz Camera
+(US), Cambrian Photography and HDEW Cameras (UK), Kamera Express (NL). The rest, by reason:
+
+- **Bot wall or Cloudflare challenge (never worked around):** Samy's, Hunt's, Roberts, UsedPhotoPro, Allen's, Bedford,
+  Kogan, Ryda, OzDigitalOnline, CameraNU, Foto Koch, Foto Gregor, Fnac, Darty, Galaxus, Saturn, asgoodasnew, bol.com,
+  CVP, Wilkinson, Bristol Cameras, Argos, Gain City, Unique Photo's product pages.
+- **Custom or Magento storefront, no feed, no JSON-LD on the page we fetched:** Mike's, Bergen County, BuyDig, Cardinal,
+  Milford, Camera Warehouse, Diamonds, DCW, Michaels, Paxtons, AC Foto, Digit-Photo (robots.txt disallows `/`),
+  Miss Numérique, Foto Leistenschneider, Foto Mundus, Sauter, Back Market, rebuy, refurbed, otto, Castle, Ffordes,
+  Grays, Mathers, Panamoz, Carmarthen, Camera Centre UK, Camera Jungle, Aperture UK, SRS, Alan Photo, Courts,
+  Best Denki, SLR Revolution, Black Market Camera, Abe's of Maine, Kenmore (BigCommerce).
+- **JSON-LD present but no sitemap to walk, or robots.txt unclear:** 42nd Street Photo (no sitemap), M S Color (SG;
+  WooCommerce with JSON-LD, but robots.txt disallows `/` for many agents: needs a hand check before listing).
+- **WooCommerce Store API only (no reader here; the catalogue is accessories or used stock):** Leederville Cameras (AU),
+  Mifsuds (UK).
+- **Unreachable from the runner (DNS or connection refused):** Canon Store AU, Boulanger, Grobet, Harvey Norman SG,
+  Fujifilm Store SG, John Lewis, Cameta, Lens Authority, Midwest Photo.
