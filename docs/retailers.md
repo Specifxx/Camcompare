@@ -147,7 +147,7 @@ priced in another currency is refused.
 | Cyberport | DE | Product feed `FEED_URL_CYBERPORT` | Retailer's own programme | `AFFILIATE_DEEPLINK_CYBERPORT` |
 | MediaMarkt | DE | Product feed `FEED_URL_MEDIAMARKT_DE` | Retailer's own programme | `AFFILIATE_DEEPLINK_MEDIAMARKT_DE` |
 | Coolblue | NL | Product feed `FEED_URL_COOLBLUE` | Awin | `AFFILIATE_DEEPLINK_COOLBLUE` |
-| Kamera Express | NL | Shopify products.json (no setup; its `/meta.json` is behind the bot wall, so the config names EUR) | none known | — |
+| Kamera Express | NL | Shopify products.json, **disabled**: the bot wall lets one page through, then 403 (2026-11-05) | none known | — |
 | MPB ★ | DE | Product feed `FEED_URL_MPB_EU` | Partnerize | `AFFILIATE_DEEPLINK_MPB_EU` |
 | eBay.de | DE | Browse API (`EBAY_CLIENT_ID/SECRET`) | eBay Partner Network | EPN campaign 5339155912 (in the code) |
 

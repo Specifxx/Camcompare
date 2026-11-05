@@ -190,7 +190,7 @@ export const RETAILERS: Retailer[] = [
   dealer({ key: "coolblue", name: "Coolblue", market: "eu", country: "NL", site: "https://www.coolblue.nl", network: "awin", searchUrl: (q) => `https://www.coolblue.nl/zoeken?query=${enc(q)}` }),
   // Big-store gap research 2026-11-04 (DECISIONS.md): the Benelux chain's Shopify feed (EUR) read on a runner; its homepage
   // sits behind a bot wall but robots.txt allows products.json and the feed answers. New and "tweedehands" (used) listings.
-  dealer({ key: "kamera-express", name: "Kamera Express", market: "eu", country: "NL", site: "https://www.kamera-express.nl", network: null, ...shop("https://www.kamera-express.nl", { currency: "EUR" }), conditions: ["new", "used"], searchUrl: (q) => `https://www.kamera-express.nl/search?q=${enc(q)}` }),
+  dealer({ key: "kamera-express", name: "Kamera Express", market: "eu", country: "NL", site: "https://www.kamera-express.nl", network: null, ...shop("https://www.kamera-express.nl", { currency: "EUR", disabled: "bot wall: products.json answers one page, then 403 (2026-11-05); never worked around" }), conditions: ["new", "used"], searchUrl: (q) => `https://www.kamera-express.nl/search?q=${enc(q)}` }),
   used({ key: "mpb-eu", name: "MPB", market: "eu", country: "DE", site: "https://www.mpb.com/de-de", network: "partnerize", checkRow: true, searchUrl: (q) => `https://www.mpb.com/de-de/suche?q=${enc(q)}` }),
   ebay("eu", "DE", "www.ebay.de", "EBAY_DE", "707-53477-19255-0", "77"),
 
