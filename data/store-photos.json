@@ -846,7 +846,7 @@
    "retailer": "leica-store-miami"
   },
   "meta-oakley-meta-hstn": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-glasses-OW8002800202.jpg",
+   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-glasses-OW8002800203-2.jpg",
    "store": "Abt",
    "retailer": "abt"
   },
@@ -854,6 +854,11 @@
    "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-smart-glasses-OOW8001800101-front-left.jpg",
    "store": "Abt",
    "retailer": "abt"
+  },
+  "meta-ray-ban-meta-gen-1": {
+   "src": "https://cdn.shopify.com/s/files/1/0024/9803/5810/files/799226-Product-0-I-638789806812389694.jpg?width=640",
+   "store": "JB Hi-Fi",
+   "retailer": "jbhifi"
   },
   "meta-ray-ban-meta-gen-2": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/ray-ban-meta-sunglasses-RW4013-6011M50.jpg",
@@ -1861,7 +1866,7 @@
    "retailer": "digidirect"
   },
   "viltrox-af-28mm-f4-5": {
-   "src": "https://cdn.shopify.com/s/files/1/0753/8897/7337/files/167265_token.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0753/8897/7337/files/1732284601_img_2378926_1__2_84522c9a-c73b-43d9-8cd1-9719f091112a.jpg?width=640",
    "store": "Digidirect",
    "retailer": "digidirect"
   },
