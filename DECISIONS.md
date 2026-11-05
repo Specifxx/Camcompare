@@ -1983,3 +1983,9 @@ Kamera Express now says EUR; a `/meta.json` that answers with another currency w
 themselves never stopped: every market's import and the data commit succeeded in both runs, only the check at the end
 was red, as the health monitor reported.
 
+**Then disabled (2026-11-05).** With the currency named, the next run got past `/meta.json` and the bot wall answered
+`products.json` page 1, then 403 on page 2. A 403 stops a shop and is never worked around (CLAUDE.md), so the store is
+`disabled` with that reason, like Moment: it stays in the registry as a known store, prices nothing and is listed as
+"skip", not "FAIL", by the source check. The 2026-11-04 sniff saw only the first page answer, which is why it looked
+readable. If it ever gets a feed or an affiliate programme, re-enable it.
+
