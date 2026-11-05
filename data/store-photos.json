@@ -846,7 +846,7 @@
    "retailer": "leica-store-miami"
   },
   "meta-oakley-meta-hstn": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-glasses-OW8002800203-2.jpg",
+   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-glasses-OW8002800202.jpg",
    "store": "Abt",
    "retailer": "abt"
   },
@@ -1211,9 +1211,9 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-g-vario-14-140mm-f3-5-5-6-ii-asph-power-o-i-s": {
-   "src": "https://cdn.shopify.com/s/files/1/1165/5118/files/650e367f-dc57-447e-8cc4-7831ecc9fc4f.jpg?width=640",
-   "store": "Cambrian Photography",
-   "retailer": "cambrian-photography"
+   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/wu6owo2wcpginjsfskwe.jpg?width=640",
+   "store": "Shop Panasonic",
+   "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-g-vario-35-100mm-f4-0-5-6-asph-mega-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/mg9cpzvewz6cqhf6il55.jpg?width=640",
@@ -1385,20 +1385,10 @@
    "store": "Cambrian Photography",
    "retailer": "cambrian-photography"
   },
-  "samyang-af-14mm-f2-8-fe": {
-   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-14mm-f2-8-2.jpg?width=640",
-   "store": "Ted's Cameras",
-   "retailer": "teds"
-  },
   "samyang-af-18mm-f2-8-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200675_0_3.jpg?width=640",
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
-  },
-  "samyang-af-24mm-f2-8-fe": {
-   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-24mm-f2-8.jpg?width=640",
-   "store": "Ted's Cameras",
-   "retailer": "teds"
   },
   "samyang-af-50mm-f1-4-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200684_0_3.jpg?width=640",
