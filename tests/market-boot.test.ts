@@ -4,7 +4,7 @@ import vm from "node:vm";
 import { readFileSync } from "node:fs";
 import { MARKET_BOOT_SCRIPT } from "../src/lib/market-boot";
 
-// Owner, 2026-11-01: the visitor's own market by default, the US when we can't tell; crawlers are never moved.
+// Owner, 2026-11-06 (2026-11-01 first): the visitor's own market by default, the US when we can't tell; crawlers are never moved.
 
 function boot(path: string, tz: string, opts: { saved?: string; ua?: string; alternates?: Record<string, string> } = {}) {
   const attrs: Record<string, string> = {};
@@ -51,36 +51,11 @@ test("the layout runs it before paint", () => {
   assert.match(readFileSync("src/app/globals.css", "utf8"), /html\[data-geo="pending"\] main \{ visibility: hidden; \}/);
 });
 
-test("a visitor who never picked is not moved, but offered their region's copy in one line (2026-11-02)", () => {
-  const made: any[] = [];
-  const body = { firstChild: null, insertBefore: (el: any) => made.push(el) };
-  const el = () => { const e: any = { style: {}, kids: [] as any[], setAttribute(k: string, v: string) { e[k] = v; }, appendChild(c: any) { e.kids.push(c); } }; return e; };
-  let moved: string | null = null;
-  const run = (ua: string) => vm.runInNewContext(MARKET_BOOT_SCRIPT, {
-    URL,
-    navigator: { userAgent: ua },
-    location: { pathname: "/cameras/a7-iv", search: "", hash: "", href: "https://www.camcompare.app/cameras/a7-iv", replace: (u: string) => (moved = u) },
-    localStorage: { getItem: () => null, setItem() {} },
-    sessionStorage: { getItem: () => null, setItem() {} },
-    Intl: { DateTimeFormat: () => ({ resolvedOptions: () => ({ timeZone: "Australia/Sydney" }) }) },
-    setTimeout: () => 0,
-    document: {
-      readyState: "complete",
-      body,
-      addEventListener() {},
-      getElementById: () => null,
-      createElement: el,
-      documentElement: { setAttribute() {}, removeAttribute() {} },
-      querySelector: (sel: string) => (/hreflang=/.test(sel) ? { href: "https://www.camcompare.app/au/cameras/a7-iv" } : null),
-    },
-  });
-  run("Mozilla/5.0 (iPhone) Safari/604.1");
-  assert.equal(moved, null, "not moved on a guess");
-  assert.equal(made.length, 1, "one line offered");
-  const link = made[0].kids[1];
-  assert.equal(link.href, "/au/cameras/a7-iv");
-  assert.equal(link.textContent, "Switch to Australian prices");
-  made.length = 0;
-  run("Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-  assert.equal(made.length, 0, "never for crawlers");
+test("a visitor who never picked goes to their time zone's market, else the US (owner, 2026-11-06)", () => {
+  assert.equal(boot("/cameras/a7-iv", "Australia/Sydney", { alternates: alts }), "/au/cameras/a7-iv", "detected → their market");
+  assert.equal(boot("/au/cameras/a7-iv", "America/Denver", { alternates: alts }), "/cameras/a7-iv");
+  assert.equal(boot("/au/cameras/a7-iv", "Asia/Tokyo", { alternates: alts }), "/cameras/a7-iv", "unknown → US");
+  assert.equal(boot("/au/cameras/a7-iv", "", { alternates: alts }), "/cameras/a7-iv", "no time zone → US");
+  assert.equal(boot("/cameras/a7-iv", "Australia/Sydney", { saved: "us", alternates: alts }), null, "a pick beats the time zone");
+  assert.equal(boot("/cameras/a7-iv", "Australia/Sydney", { ua: "Googlebot/2.1", alternates: alts }), null, "never crawlers");
 });
