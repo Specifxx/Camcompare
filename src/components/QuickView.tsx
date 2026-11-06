@@ -25,7 +25,7 @@ import ShareButton from "./ShareButton";
 /** eBay pinned above the rows (owner, 2026-10-30). Never Amazon here (2026-11-02): Amazon's Operating Agreement allows no
  *  Amazon link in a pop-up window, so the quick view leaves it to the product page. */
 const qvPins = (d: QuickViewData): PinnedLink[] => {
-  const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null) : null;
+  const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null, d.name) : null;
   return [ebay].filter(Boolean) as PinnedLink[];
 };
 

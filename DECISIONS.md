@@ -2059,3 +2059,16 @@ CamCompare, just like we did for DexCompare and MTG Compare … RiftCompare and 
 
 Not beside a buy button and not above a price (the Ads rules): the rails sit outside the page's column.
 **Measure** with the sisters' ~11-10 / ~11-17 checks. If pages per visit drop on phones, drop the dock first.
+
+## 2026-11-06 — eBay and Amazon rows are full price rows, on top, outlined
+
+**Decision (owner: "eBay prices and Amazon prices should function exactly like a normal store price row. So you can also
+add to cart … if it's in stock … it just sits on the very top. And it has a different colored outline"):** the eBay row
+is always the first row, with a green outline, and Amazon the second, with an amber one. Both carry everything a store
+row has: the stock line, the store thumbs (one tally per eBay / Amazon domain, `ebay.com.au`, `amazon.com`…) and the
+cart button. They are "manual" cart lines on their own tagged links (`src/lib/cart-list.ts`), never a Shopify checkout;
+an Amazon line's price is dropped from the visitor's list after 24 hours (Amazon's licence), and the cart then says to
+see today's price on Amazon. With no Amazon price the row reads "Also check on Amazon", a tagged link. Unchanged: neither
+is counted as a store, "Best price", a deal, an alert price or the reference price; TCGplayer and Cardmarket stay
+references (no thumbs, no cart line); no Amazon link in a pop-up.
+CamCompare: `PinnedMarkets` rows take the stores' own `retailerButtonClass` button (was `btn-buy`), the stock line and the cart line from `ebayPin` / the Amazon pin.
