@@ -14,6 +14,8 @@ export type OfferRow = {
   id: string;
   retailer: string; // retailer key
   name: string; // "B&H Photo"
+  /** the store's own listing URL, for the shared thumbs up / down (components/StoreVote.tsx); eBay and Amazon get none */
+  store?: string;
   condition: string; // "New", "Used", "Open box", "Refurbished"
   price: number; // minor units of `currency`
   currency: Currency;

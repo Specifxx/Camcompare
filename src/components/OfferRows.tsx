@@ -7,6 +7,7 @@ import type { CheckLink, OfferRow } from "@/lib/quickview";
 import { retailer } from "@/lib/retailers";
 import { rowWarning } from "@/lib/rrp";
 import OutboundLink from "./OutboundLink";
+import { StoreVote } from "./StoreVote";
 import AccessoryThumb from "./AccessoryThumb";
 
 /** Filled button for a link that earns, outlined for the rest. Amazon and eBay
@@ -56,6 +57,7 @@ export function OfferRowItem({ row, product, placement, priceNode, dense = false
       <div className="min-w-0 flex-1">
         <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
           <span className="font-semibold">{row.name}</span>
+          <StoreVote url={row.store} name={row.name} className="text-muted" />
           {row.tag && <span className={`rounded px-1.5 py-px text-[11px] font-semibold ${row.tag === "best" ? "bg-buy text-buy-fg" : "bg-buy-soft text-win"}`}>{TAG[row.tag]}</span>}
         </p>
         <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-xs text-muted">
