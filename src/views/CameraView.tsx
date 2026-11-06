@@ -147,7 +147,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
   const rival = rivals[0] ? { item: rivals[0].item, brandName: brandName(rivals[0].item.brand) } : null;
   const compareHref = rivals[0] ? (isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)) : null;
   return (
-    <article className="flex flex-col gap-10">
+    <article className="flex flex-col gap-10" data-no-dock>
       <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(productLd(c, "camera", offers, m))} />
       <script
         type="application/ld+json"

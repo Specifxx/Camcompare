@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
 import Reveal from "@/components/Reveal";
+import { SideRails } from "@/components/SideRails";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
 // The cart list's styles (components/cart): imported here, never from a component, so node tests can load them.
@@ -78,6 +79,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FeedbackButton />
         {/* Rate us (owner, 2026-11-03): the corner card, asking only after real use; RiftCompare keeps the ratings. */}
         <RateCard />
+        {/* eBay and Amazon side rails from 1280px, the eBay tiles in the phone dock below: browser only (components/SideRails.tsx). */}
+        <SideRails />
         <Reveal />
         <Analytics />
         <ShareArrival />

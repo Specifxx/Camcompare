@@ -2035,3 +2035,27 @@ every person, never a crawler, on a regional page of another region to the same 
 picked and offered everyone else a "Switch to <X> prices" line; Compare Empire made the same reversal earlier the same
 day. Crawlers still see every regional page as it is, and URLs, titles, canonicals and hreflang are unchanged, so
 indexing is untouched. A pick always beats the time zone. `tests/market-boot.test.ts` pins it.
+
+## 2026-11-06 — Side rails: eBay left, Amazon right, and the phone dock
+
+Owner: "the eBay and TCGplayer ads, but instead of the TCGplayer ad, we have the Amazon ad banner that's scrollable … and
+CamCompare, just like we did for DexCompare and MTG Compare … RiftCompare and the card engine."
+
+- **Rails** (`components/SideRails.tsx`, in the root layout): eBay down the far left, Amazon down the far right, outside the
+  page's column, up to ten tiles each that scroll inside the rail. From **1280px** like the sisters: below 1472px `#main` and
+  the footer's rows give up 160px a side (globals.css), from 1472px they are their full 72rem and the rails sit just outside.
+  The header keeps its full width. Tiles come from one static JSON per market (`/rails/<market>`, force-static,
+  `lib/side-rails.ts`), fetched after hydration: nothing in a page's HTML, no function, no SEO change, no AdSense slot moved.
+- **eBay tiles**: the import's own eBay Browse offers for the bodies and lenses the most shops list (two bodies, then a
+  lens), cheapest new body-only, else used (labelled), with our own product photo. subId `cc-<market>-side-ebay`.
+- **Amazon tiles have no price**: the file is served for a day, and Amazon's licence allows a price only 24 hours from its
+  fetch with its time shown (the product page's own row does that). Links go to Amazon's page of the item when its ASIN is
+  known, else an exact product-name search; ascsubtag `cc-<market>-side-amazon`. No Amazon rail in Singapore (no tag), and
+  Singapore has no eBay rail (no eBay offers there).
+- **Phone dock** (`components/AdDock.tsx`, from DexCompare / WargameCompare): below 1280px the eBay tiles in a 64px bar at
+  the foot of the screen, after 60% of a screen is scrolled, hidden beside the footer, the rating card, any ad unit, a dialog
+  or the keyboard, never on a camera or lens page (`data-no-dock`), ✕ for the visit; the feedback button already lifts above
+  fixed bars. **Never Amazon** (no Amazon link in an overlay). subId `cc-<market>-dock-ebay`.
+
+Not beside a buy button and not above a price (the Ads rules): the rails sit outside the page's column.
+**Measure** with the sisters' ~11-10 / ~11-17 checks. If pages per visit drop on phones, drop the dock first.
