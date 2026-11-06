@@ -54,6 +54,24 @@ export function rowTags(offers: Offer[], withAmazon: boolean): Map<Offer, NonNul
   return t;
 }
 
+/**
+ * The cart list's checkout line for a Shopify store's offer: `<shop>[/<locale>]/cart/<variant>:1`, from the
+ * `/products/<handle>?variant=<id>` URL the Shopify source stores. Never for a link that earns (an affiliate
+ * template or Awin), whose tracking runs on the store's own pages, which a cart permalink skips.
+ */
+export function shopifyCartHref(url: string, source: string | undefined, paid: boolean, inStock: boolean): string | null {
+  if (source !== "shopify" || paid || !inStock) return null;
+  try {
+    const u = new URL(url);
+    const m = u.pathname.match(/^((?:\/[a-z]{2}(?:-[a-z]{2})?)?)\/products\/[^/]+\/?$/i);
+    const v = u.searchParams.get("variant");
+    if (u.protocol !== "https:" || !m || !v || !/^\d{6,20}$/.test(v)) return null;
+    return `${u.origin}${m[1]}/cart/${v}:1`;
+  } catch {
+    return null;
+  }
+}
+
 export function toRow(o: Offer, ctx: RowContext): OfferRow {
   const r = retailer(o.retailer);
   // A feed or eBay link may already carry the affiliate id the import ran with.
@@ -65,6 +83,8 @@ export function toRow(o: Offer, ctx: RowContext): OfferRow {
   const tag = ctx.tags?.get(o);
   // Second-hand units differ, so their row shows the listing's own photo.
   const image = o.condition !== "new" ? accessoryImageUrl(o.image) : null;
+  const paid = isPaid(o.retailer, href);
+  const cartHref = shopifyCartHref(o.url, r?.source, paid, o.inStock);
   return {
     id: `${o.retailer}-${o.sourceId ?? o.url}`,
     retailer: o.retailer,
@@ -74,7 +94,8 @@ export function toRow(o: Offer, ctx: RowContext): OfferRow {
     price: o.price,
     currency: o.currency,
     href,
-    paid: isPaid(o.retailer, href),
+    paid,
+    ...(cartHref ? { cartHref } : {}),
     inStock: o.inStock,
     kit: o.kit,
     pack: packLabel(o, ctx.pack),

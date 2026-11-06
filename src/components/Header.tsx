@@ -17,6 +17,7 @@ import { SITE_NAME } from "@/lib/site";
 import MarketSwitcher from "./MarketSwitcher";
 import MoreMenu from "./MoreMenu";
 import SearchBox from "./SearchBox";
+import { CartHeaderLink } from "./cart/CartHeaderLink";
 
 /** The tools: top row from md up. `market: false` paths are global. */
 const TOOLS = [
@@ -63,6 +64,8 @@ export default function Header() {
         <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-2 md:flex-none">
           <SearchBox market={m} />
           <MarketSwitcher current={m} />
+          {/* The cart list (components/cart, owner 2026-11-06): every width, with its count. */}
+          <CartHeaderLink className="shrink-0 text-muted hover:text-fg" />
           <MoreMenu market={m} pathname={pathname} icon className="shrink-0 md:hidden" />
         </div>
       </div>

@@ -208,7 +208,7 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
 
       <section id="prices" className="scroll-mt-28">
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
-        <OffersTable product={c.slug} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} amazonAsin={c.amazonAsin} />
+        <OffersTable product={c.slug} title={name} query={name.replace(/α/g, "a")} offers={offers} market={m} page={page} amazonAsin={c.amazonAsin} />
         {ce && (
           // Hand-off to the broad sister (DECISIONS.md "Sites that grow each other"): the same model only (sameProduct).
           <p className="mt-3 text-sm text-muted">

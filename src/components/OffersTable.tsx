@@ -36,7 +36,7 @@ import { ReportPrice } from "./ReportForms";
 const FIRST_BODY = 5;
 const FIRST_KITS = 3;
 
-export default function OffersTable({ product, query, offers, market, page, amazonAsin }: { product: string; query: string; offers: Offer[]; market: MarketCode; page: string; amazonAsin?: string }) {
+export default function OffersTable({ product, title, query, offers, market, page, amazonAsin }: { product: string; /** The product's display name, for the cart list. */ title?: string; query: string; offers: Offer[]; market: MarketCode; page: string; amazonAsin?: string }) {
   const p = getProduct(product);
   const pack = p ? packKind(p) : "lens";
   const rows = offerRows(offers, { page, placement: "offers", pack, withAmazon: true });
@@ -86,6 +86,7 @@ export default function OffersTable({ product, query, offers, market, page, amaz
       key={r.id}
       row={r}
       product={product}
+      title={title}
       placement="offers"
       rrp={rrp}
       usedTypical={usedTypical}

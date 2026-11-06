@@ -311,7 +311,7 @@ function Dialog({ target }: { target: Target }) {
                 {data.rows.length ? (
                   <ul className="card divide-y divide-line">
                     {data.rows.map((r) => (
-                      <OfferRowItem key={r.id} row={r} product={data.slug} placement="quickview" dense rrp={data.rrp} usedTypical={data.usedTypical} />
+                      <OfferRowItem key={r.id} row={r} product={data.slug} title={data.name} placement="quickview" dense rrp={data.rrp} usedTypical={data.usedTypical} />
                     ))}
                   </ul>
                 ) : (

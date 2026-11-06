@@ -2011,3 +2011,17 @@ sites shares its thumbs; this site stores nothing and fetches the tally in the b
 step). One vote per browser per store, a few per network, marketplaces (eBay, Amazon, TCGplayer…) get none. Votes never
 order prices, hide a store or decide the cheapest. RiftCompare's DECISIONS.md, 2026-11-06, has the rules; change the
 component there first and copy it.
+
+## 2026-11-06 — A cart list on every site
+
+**Decision (owner: "I really like the cart feature … all of our websites"; built on RiftCompare first, TCGEmpire
+#346):** every store price row gets an "Add to cart" button, and the header a cart with its count on every width.
+`/cart` (static, noindexed, out of the sitemap) groups the lines by store with ONE "Check out at <store>" button per
+store: Shopify's cart permalink `/cart/<variant>:<qty>,…`, which fills that store's cart and opens its checkout. The
+list lives in the visitor's browser only (`localStorage` `ce_cart_v1`): no account, no database, no function. The page
+re-checks each line's price and stock from the store's own `/products/<handle>.js` in the browser (Shopify serves it
+with CORS open) and leaves a sold-out line out. A line is cartable only when the row's own buy link already is a cart
+permalink (the single-click checkout links), so Awin and partner stores, and rows whose variant we don't know, stay
+"manual" lines on their own tracked links; eBay, Amazon, TCGplayer and Cardmarket are never lines. Shared files, the
+same in every site (port fixes by hand): `src/lib/cart-list.ts`, `src/components/cart/*` (`cart-config.ts` is the
+one per-site file; styles imported once from the root layout), `tests/cart-list.test.ts`.
