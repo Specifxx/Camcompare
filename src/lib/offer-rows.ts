@@ -69,6 +69,7 @@ export function toRow(o: Offer, ctx: RowContext): OfferRow {
     id: `${o.retailer}-${o.sourceId ?? o.url}`,
     retailer: o.retailer,
     name: r?.name ?? o.retailer,
+    store: o.url,
     condition: CONDITION_LABEL[o.condition],
     price: o.price,
     currency: o.currency,
