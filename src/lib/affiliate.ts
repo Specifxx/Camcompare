@@ -16,6 +16,7 @@
 // (`https://www.awin1.com/cread.php?awinmid=M&awinaffid=A&clickref={subid}&ued={url}`),
 // Involve Asia, AccessTrade and FlexOffers without a code change per network.
 import { retailer } from "./retailers";
+import { awinProgrammeFor, awinUrl } from "./awin";
 
 export const OUTBOUND_REL = "sponsored nofollow noopener noreferrer";
 
@@ -83,7 +84,8 @@ export function affiliateUrl(retailerKey: string, url: string, sub: string): str
     return u.toString();
   }
   const template = env(deeplinkEnv(retailerKey));
-  if (!isTemplate(template)) return url;
+  // No template of its own: a retailer that accepted the family on Awin (src/lib/awin.ts) gets its tracked deep link.
+  if (!isTemplate(template)) return awinUrl(url, sub) ?? url;
   // Some feeds (CJ, Awin) already hand out tracking links: wrap only links to
   // the retailer's own site.
   if (r && !sameSite(u.hostname, new URL(r.site).hostname)) return url;
@@ -106,7 +108,7 @@ export function isPaid(retailerKey: string, href?: string): boolean {
   if (href && isTagged(href)) return true;
   if (r?.amazon) return Boolean(amazonTag(retailerKey));
   if (r?.ebay) return Boolean(ebayCampaign());
-  return isTemplate(env(deeplinkEnv(retailerKey)));
+  return isTemplate(env(deeplinkEnv(retailerKey))) || Boolean(r && awinProgrammeFor(r.site));
 }
 
 // Click hosts of the affiliate networks: Awin, CJ, Impact, Rakuten, FlexOffers, Involve Asia.
