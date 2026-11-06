@@ -9,6 +9,7 @@ import { rowWarning } from "@/lib/rrp";
 import OutboundLink from "./OutboundLink";
 import { StoreVote } from "./StoreVote";
 import AccessoryThumb from "./AccessoryThumb";
+import { CartAddButton } from "./cart/CartAddButton";
 
 /** Filled button for a link that earns, outlined for the rest. Amazon and eBay
  *  wear the same button as every store (owner, 2026-11-01: "blend in"). */
@@ -46,8 +47,14 @@ export const pctOff = (p: number, was?: number) => (was && was > p ? Math.floor(
  * them. The badge flags the price, never the seller. `className` carries the
  * tab filter classes (OffersTable).
  */
-export function OfferRowItem({ row, product, placement, priceNode, dense = false, rrp, usedTypical, className = "" }: { row: OfferRow; product: string; placement: string; priceNode?: React.ReactNode; dense?: boolean; rrp?: number | null; usedTypical?: number | null; className?: string }) {
+export function OfferRowItem({ row, product, title, placement, priceNode, dense = false, rrp, usedTypical, className = "" }: { row: OfferRow; product: string; /** The product's name: with it, in-stock store rows get the cart list's add button. */ title?: string; placement: string; priceNode?: React.ReactNode; dense?: boolean; rrp?: number | null; usedTypical?: number | null; className?: string }) {
   const warn = rowWarning(row, rrp, usedTypical);
+  // The cart list (components/cart, owner 2026-11-06): in-stock store rows, never Amazon or eBay. A Shopify row
+  // with no programme adds its cart permalink (checkout at the store); the rest keep their own, tagged link.
+  const cart =
+    title && row.inStock && row.store && !row.amazon && !row.seller
+      ? { href: row.cartHref ?? row.href, productUrl: row.store, storeName: row.name, title, detail: [row.condition, row.kit ? row.pack : null].filter(Boolean).join(" · ") || null, priceCents: row.price, currency: row.currency, image: row.image ?? `/products/${product}.webp` }
+      : null;
   const who = row.seller ? `Seller: ${row.seller}` : row.authorized ? "Authorized dealer" : null;
   const details = [row.detail, who, row.variant ? `${row.variant} version` : null].filter(Boolean).join(" · ");
   const off = pctOff(row.price, row.was);
@@ -69,6 +76,8 @@ export function OfferRowItem({ row, product, placement, priceNode, dense = false
         </p>
         {row.kit && row.pack && <p className="mt-0.5 text-xs font-medium text-fg">{row.pack}</p>}
         {details && <p className="text-xs text-subtle">{details}</p>}
+        {/* Phones: the cart list's add button as a line under the store, where the row has no width to spare. */}
+        {cart && <CartAddButton inline {...cart} className="text-xs sm:hidden" />}
         {(row.promo || warn) && (
           <p className="mt-1 flex flex-wrap gap-1">
             {row.promo && (
@@ -94,6 +103,7 @@ export function OfferRowItem({ row, product, placement, priceNode, dense = false
           </p>
         )}
       </div>
+      {cart && <CartAddButton {...cart} className="hidden shrink-0 text-muted sm:inline-flex" />}
       <div className={`${dense ? "w-[4.5rem]" : "w-20 sm:w-24"} shrink-0 text-right`}>
         <OutboundLink href={row.href} retailer={row.retailer} product={product} placement={placement} className={`${retailerButtonClass(row.retailer, row.paid)} w-full ${dense ? "px-2" : ""}`}>
           View<span className="sr-only"> at {row.name}</span>

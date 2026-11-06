@@ -20,6 +20,9 @@ export type OfferRow = {
   price: number; // minor units of `currency`
   currency: Currency;
   href: string; // already through affiliateUrl, with a sub-id
+  /** The cart list (components/cart, owner 2026-11-06): the store's Shopify cart permalink for this variant,
+   *  only for an in-stock Shopify row whose link earns nothing (shopifyCartHref). Absent otherwise. */
+  cartHref?: string;
   paid: boolean; // isPaid(retailer, href): filled button and "Paid link"
   inStock: boolean;
   kit: boolean;

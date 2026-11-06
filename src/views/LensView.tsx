@@ -166,7 +166,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
 
       <section id="prices" className="scroll-mt-28">
         <h2 className="h-section mb-3">Where to buy the {short} in {MARKETS[m].name}</h2>
-        <OffersTable product={l.slug} query={name} offers={offers} market={m} page={page} amazonAsin={l.amazonAsin} />
+        <OffersTable product={l.slug} title={name} query={name} offers={offers} market={m} page={page} amazonAsin={l.amazonAsin} />
         {l.mounts.length > 1 && <p className="mt-2 text-xs text-subtle">Made in {l.mounts.length} mount versions. Check the version before you buy: each offer says which, when the retailer does.</p>}
       </section>
 
