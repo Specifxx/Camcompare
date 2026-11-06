@@ -49,10 +49,22 @@ export default function OffersTable({ product, title, query, offers, market, pag
   const amazonRow = rows.find((r) => r.amazon && r.inStock && !r.kit) ?? rows.find((r) => r.amazon);
   // eBay first, Amazon second (owner, 2026-10-30), as on every sister site.
   const pins = [
-    ebayPin(ebayFor(market)?.name ?? "eBay", listings[0], ebaySearch(query, market, page, "product-ebay-pinned")),
+    ebayPin(ebayFor(market)?.name ?? "eBay", listings[0], ebaySearch(query, market, page, "product-ebay-pinned"), title),
     amazonRow
-      ? { retailer: amazonRow.retailer, name: amazonRow.name, href: amazonRow.href, paid: amazonRow.paid, note: [amazonRow.condition, amazonRow.kit ? amazonRow.pack : null, amazonRow.inStock ? "In stock" : "Out of stock"].filter(Boolean).join(" · "), cta: "View", price: amazonRow.seenAt ? <TimedPrice text={price(amazonRow.price, amazonRow.currency)} seenAt={amazonRow.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : price(amazonRow.price, amazonRow.currency) }
-      : amazonLink && { ...amazonLink, note: "New, sold by Amazon and its sellers: the price shows on Amazon", cta: "Check price" },
+      ? {
+          retailer: amazonRow.retailer,
+          name: amazonRow.name,
+          href: amazonRow.href,
+          paid: amazonRow.paid,
+          note: [amazonRow.condition, amazonRow.kit ? amazonRow.pack : null].filter(Boolean).join(" · "),
+          cta: "View",
+          price: amazonRow.seenAt ? <TimedPrice text={price(amazonRow.price, amazonRow.currency)} seenAt={amazonRow.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : price(amazonRow.price, amazonRow.currency),
+          inStock: amazonRow.inStock,
+          vote: amazonRow.href,
+          // The cart list keeps Amazon's price 24 hours at most (lib/cart-list.ts), as the row does.
+          cart: title && amazonRow.inStock ? { href: amazonRow.href, productUrl: amazonRow.href, storeName: amazonRow.name, title, detail: amazonRow.condition || null, priceCents: amazonRow.price, currency: amazonRow.currency, image: `/products/${product}.webp` } : null,
+        }
+      : amazonLink && { ...amazonLink, note: "Also check on Amazon: new, sold by Amazon and its sellers, the price shows there", cta: "Check Amazon", vote: amazonLink.href },
   ].filter(Boolean) as PinnedLink[];
   const ebayUsed = ebayLink(market, { query, condition: "used" }, page, "product-ebay-tab-used", `More used ${query} on eBay`);
   const side = listings.length > 0 || checks.length > 0 || Boolean(ebayFor(market));

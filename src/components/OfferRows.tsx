@@ -165,8 +165,29 @@ export function AlsoCheck({ links, product, placement, className = "" }: { links
   );
 }
 
-/** A pinned Amazon or eBay row: a link, with a price only when we have a live one. */
-export type PinnedLink = { retailer: string; name: string; href: string; paid: boolean; note: string; cta: string; price?: React.ReactNode };
+/**
+ * A pinned Amazon or eBay row: a link, with a price only when we have a live one. Since 2026-11-06 (owner: they "function exactly
+ * like a normal store price row … add to cart … if it's in stock") a priced one carries the store row's stock line and cart line
+ * (a manual line on its tagged link, lib/cart-list.ts), and every one the thumbs (`vote`: its listing's or search's URL).
+ */
+export type PinnedLink = {
+  retailer: string;
+  name: string;
+  href: string;
+  paid: boolean;
+  note: string;
+  cta: string;
+  price?: React.ReactNode;
+  inStock?: boolean;
+  vote?: string;
+  cart?: React.ComponentProps<typeof CartAddButton> | null;
+};
+
+/** The pinned rows' outlines (owner, 2026-11-06: "a different colored outline"): eBay green, Amazon amber. Inset, so the row keeps its size. */
+export const PIN_OUTLINE = {
+  ebay: "outline outline-2 -outline-offset-2 outline-[#16a34a]",
+  amazon: "outline outline-2 -outline-offset-2 outline-[#f59e0b]",
+} as const;
 
 /**
  * Amazon and eBay, pinned above the price-sorted rows on the product page and
@@ -182,17 +203,28 @@ export function PinnedMarkets({ links, product, placement, dense = false, classN
       {links.map((l) => {
         const kind = retailer(l.retailer)?.amazon ? "amazon" : "ebay";
         return (
-          <li key={l.retailer} className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"}`}>
+          <li key={l.retailer} data-pin={kind} className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${PIN_OUTLINE[kind]}`}>
             <div className="min-w-0 flex-1">
               <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
                 <span className="font-semibold">{l.name}</span>
+                {l.vote && <StoreVote url={l.vote} name={l.name} className="text-muted" />}
                 <span className="rounded bg-buy-soft px-1.5 py-px text-[11px] font-semibold text-win">Ad</span>
               </p>
-              <p className="mt-0.5 text-xs text-muted">{l.note}</p>
+              <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-xs text-muted">
+                {l.inStock != null && l.price && (
+                  <>
+                    <Availability row={{ inStock: l.inStock }} />
+                    <span aria-hidden>·</span>
+                  </>
+                )}
+                <span>{l.note}</span>
+              </p>
+              {l.cart && <CartAddButton inline {...l.cart} className="text-xs sm:hidden" />}
             </div>
             {l.price && <div className={`price shrink-0 text-right font-bold ${dense ? "text-[15px]" : "text-base"}`}>{l.price}</div>}
+            {l.cart && <CartAddButton {...l.cart} className="hidden shrink-0 text-muted sm:inline-flex" />}
             <div className={`${l.price ? (dense ? "w-[4.5rem]" : "w-20 sm:w-24") : ""} shrink-0 text-right`}>
-              <OutboundLink href={l.href} retailer={l.retailer} product={product} placement={`${placement}-${kind}`} className={`btn-buy ${l.price ? "w-full" : "whitespace-nowrap"} ${dense ? "px-2" : ""}`}>
+              <OutboundLink href={l.href} retailer={l.retailer} product={product} placement={`${placement}-${kind}`} className={`${retailerButtonClass(l.retailer, l.paid)} ${l.price ? "w-full" : "whitespace-nowrap"} ${dense ? "px-2" : ""}`}>
                 {l.cta}
                 <span className="sr-only"> at {l.name}</span>
               </OutboundLink>
@@ -206,10 +238,21 @@ export function PinnedMarkets({ links, product, placement, dense = false, classN
 }
 
 /** eBay's pinned row: today's cheapest live listing when there is one, else the tagged search. */
-export function ebayPin(name: string, listing: OfferRow | undefined, search: CheckLink | null): PinnedLink | null {
+export function ebayPin(name: string, listing: OfferRow | undefined, search: CheckLink | null, title?: string): PinnedLink | null {
   if (listing) {
     const who = [listing.condition, listing.seller].filter(Boolean).join(" · ");
-    return { retailer: listing.retailer, name, href: listing.href, paid: listing.paid, note: `Cheapest live listing today${who ? `: ${who}` : ""}`, cta: "View", price: price(listing.price, listing.currency) };
+    return {
+      retailer: listing.retailer,
+      name,
+      href: listing.href,
+      paid: listing.paid,
+      note: `Cheapest live listing today${who ? `: ${who}` : ""}`,
+      cta: "View",
+      price: price(listing.price, listing.currency),
+      inStock: listing.inStock,
+      vote: listing.store ?? listing.href,
+      cart: title && listing.inStock ? { href: listing.href, productUrl: listing.store ?? listing.href, storeName: name, title, detail: listing.condition || null, priceCents: listing.price, currency: listing.currency, image: listing.image ?? null } : null,
+    };
   }
-  return search ? { retailer: search.retailer, name, href: search.href, paid: search.paid, note: "New and used, from single sellers: check condition and returns", cta: "Search eBay" } : null;
+  return search ? { retailer: search.retailer, name, href: search.href, paid: search.paid, note: "New and used, from single sellers: check condition and returns", cta: "Search eBay", vote: search.href } : null;
 }
