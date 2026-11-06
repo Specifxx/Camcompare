@@ -99,7 +99,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
   const compareHref = rivals[0] ? (isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(l, rivals[0].item)}` : marketPath(m, `/compare?c=${l.slug},${rivals[0].item.slug}`)) : null;
   const mountNames = l.mounts.map((x) => mount(x)).filter((x): x is NonNullable<typeof x> => x !== null);
   return (
-    <article className="flex flex-col gap-10">
+    <article className="flex flex-col gap-10" data-no-dock>
       <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(productLd(l, "lens", offers, m))} />
       <script
         type="application/ld+json"
