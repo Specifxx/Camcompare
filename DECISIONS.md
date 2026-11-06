@@ -1989,3 +1989,13 @@ was red, as the health monitor reported.
 "skip", not "FAIL", by the source check. The 2026-11-04 sniff saw only the first page answer, which is why it looked
 readable. If it ever gets a feed or an affiliate programme, re-enable it.
 
+
+## 2026-11-06 — Awin: a retailer that accepts us pays from the next build, with no Vercel step
+
+**Decision (owner: "check if we are making the most of Awin, and if it's not there, just do it"):** the family's Awin
+account (Compare Empire, publisher 3144410) is read each morning by Compare Empire's `scripts/awin-sync.ts`, which
+publishes the programmes that accepted us, with their tracked domains, in its public `data/awin/programmes.json`. This
+site copies it first in every build (`scripts/fetch-awin.ts` → `src/lib/awin-programmes.json`; the committed copy is an
+empty list). A retailer with no `AFFILIATE_DEEPLINK_<KEY>` template whose site is a joined advertiser's domain (KEH,
+Clifton, Wex, Park Cameras, MPB UK, Calumet, Coolblue…, whichever accept) gets its Awin deep link, and `isPaid` shows
+"Paid link". A template, when set, still wins; order and prices never change.
