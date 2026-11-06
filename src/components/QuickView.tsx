@@ -22,11 +22,15 @@ import OutboundLink from "./OutboundLink";
 import PriceAlert from "./PriceAlert";
 import ShareButton from "./ShareButton";
 
-/** eBay pinned above the rows (owner, 2026-10-30). Never Amazon here (2026-11-02): Amazon's Operating Agreement allows no
- *  Amazon link in a pop-up window, so the quick view leaves it to the product page. */
+/** eBay then Amazon pinned above the rows (owner, 2026-10-30). Amazon is the product page's tagged link (its ASIN page or
+ *  search, from the quick view file's alsoCheck), never its price (owner, 2026-11-06: a visitor-opened view of this one
+ *  product is the Associates policy's "pop-up windows in conjunction with your Site promoting Products closely associated
+ *  with the materials on your Site"); the price stays on the product page (24-hour licence). */
 const qvPins = (d: QuickViewData): PinnedLink[] => {
   const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null, d.name) : null;
-  return [ebay].filter(Boolean) as PinnedLink[];
+  const a = d.alsoCheck.find((l) => retailer(l.retailer)?.amazon);
+  const amazon: PinnedLink | null = a ? { ...a, note: "Also check on Amazon: new, sold by Amazon and its sellers, the price shows there", cta: "Check Amazon", vote: a.href } : null;
+  return [ebay, amazon].filter(Boolean) as PinnedLink[];
 };
 
 /** The cheapest in-stock, body-only row, new or not: the price the alert check reads (Amazon and eBay are not in rows). */

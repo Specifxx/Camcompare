@@ -103,3 +103,11 @@ test("eBay links carry the owner's EPN campaign with no environment variable", (
     assert.equal(au.searchParams.get("mkrid"), "705-53470-19255-0");
   });
 });
+
+test("the quick view pins the product page's tagged Amazon link second, never Amazon's price (owner, 2026-11-06)", async () => {
+  const { readFileSync } = await import("node:fs");
+  const qv = readFileSync("src/components/QuickView.tsx", "utf8");
+  assert.match(qv, /const a = d\.alsoCheck\.find\(\(l\) => retailer\(l\.retailer\)\?\.amazon\);/);
+  assert.match(qv, /return \[ebay, amazon\]\.filter\(Boolean\)/, "eBay first, Amazon second");
+  assert.doesNotMatch(qv.slice(qv.indexOf("const qvPins"), qv.indexOf("const lowRow")), /price:/, "no Amazon price in the quick view");
+});
