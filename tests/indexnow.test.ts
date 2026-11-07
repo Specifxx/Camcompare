@@ -57,3 +57,7 @@ test("the key file route reads no data and is built once per deploy", () => {
   assert.match(route, /indexNowKey\(\)/);
   assert.doesNotMatch(route, /@\/lib\/(db|data)/);
 });
+
+test("the key is also served at IndexNow's standard root location, /<key>.txt", () => {
+  assert.ok(read("next.config.js").includes(`source: "/${DEFAULT_INDEXNOW_KEY}.txt", destination: "/indexnow.txt"`));
+});

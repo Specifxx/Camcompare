@@ -42,6 +42,10 @@ module.exports = {
   // render (DECISIONS.md, 2026-10-17 "Community v1").
   async rewrites() {
     return [
+      // IndexNow's standard key location, /<key>.txt at the root, beside /indexnow.txt (SEO audit, 2026-11-07: Bing
+      // still says "Set up IndexNow" for www.camcompare.app although every daily submission answers 200). Both serve
+      // the same key (src/lib/indexnow.ts).
+      { source: "/e1b449a139464aa1985a25351882050f.txt", destination: "/indexnow.txt" },
       { source: "/community/t/:id(\\d{1,18})", destination: "/community/t" },
       { source: "/u/:username([A-Za-z][A-Za-z0-9_]{2,19})", destination: "/u" },
       // Member stories, the same way (DECISIONS.md, "Member stories and My gear").
