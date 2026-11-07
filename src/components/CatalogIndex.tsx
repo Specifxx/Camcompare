@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { displayShortName, offersFor } from "@/lib/catalog";
+import { productIndexable } from "@/lib/indexing";
 import { marketPath, type MarketCode } from "@/lib/markets";
 import { catalogIndex } from "@/lib/related";
 
@@ -31,7 +32,7 @@ export default function CatalogIndex({ kind, market: m }: { kind: "camera" | "le
             <ul className="text-sm leading-relaxed">
               {g.items.map((p) => (
                 <li key={p.slug}>
-                  <Link href={marketPath(m, `${path}/${p.slug}`)} prefetch={false} rel={m === "us" || offersFor(p.slug, m).length ? undefined : "nofollow"}>
+                  <Link href={marketPath(m, `${path}/${p.slug}`)} prefetch={false} rel={productIndexable(p.slug, m) ? undefined : "nofollow"}>
                     {displayShortName(p, m)}
                   </Link>
                 </li>

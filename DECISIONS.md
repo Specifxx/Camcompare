@@ -2107,6 +2107,7 @@ price". So (`lib/price-rules.ts`):
 - **Brand pages**: "Hasselblad camera prices 2026: N cameras & M lenses compared", stepping down to fit.
 
 URLs, headings and page content are unchanged. Recheck CTR on these pages ~2026-11-25 with the same report.
+
 ## 2026-11-07 — Black Friday strip and Cyber Monday page (owner: "capture all of the Black Friday SEO")
 
 Black Friday is 27 November 2026 and Cyber Monday 30 November. Three additions, this site:
@@ -2120,3 +2121,15 @@ Black Friday is 27 November 2026 and Cyber Monday 30 November. Three additions, 
 - **More on both pages, nothing taken away**: the URL, title and h1 of `/black-friday` are unchanged; below the
   existing deals come four visible questions (the dates, whether stores have sales, shipping, how often it updates). No FAQ rich-result markup:
   Google shows those only for government and health sites since 2023, so the text is what ranks.
+
+## 2026-11-07: A market's product page needs three stores to be indexed
+
+The owner's Search Console and Bing audit (2026-11-07): the same camera exists at five market URLs, and outside the US
+most of those pages were one or two stores' rows under the US page's specs, which Google buckets as thin. Since then a
+product page outside the US is indexable only with three or more stores listing it there (`src/lib/indexing.ts`,
+`MIN_MARKET_STORES`; Amazon is not counted, as its prices are fetched at build and never committed). Below that it is
+noindex, follow, out of the sitemap and out of hreflang, and links to it are nofollow; it stays live for a visitor in that
+market. The US page is always indexable (it is the catalogue's own page). The product page, hreflang, the sitemap, the
+summaries and the related-product links all ask `productIndexable`, so they cannot disagree. Sitemap: 3,960 → 2,616 URLs
+(product pages 2,864 → 1,520), which keeps "Every sitemap URL is indexable" in `tests/seo.test.ts` true. Earlier rule
+("Market product pages are noindex until priced") is replaced by this one; CLAUDE.md updated.

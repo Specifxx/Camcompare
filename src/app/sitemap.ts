@@ -1,6 +1,7 @@
 import { WORLD_LINES, worldTable } from "@/lib/world";
 import type { MetadataRoute } from "next";
-import { indexedPairs, offersFor, pairSlug, publishedCameras, publishedLenses } from "@/lib/catalog";
+import { indexedPairs, pairSlug, publishedCameras, publishedLenses } from "@/lib/catalog";
+import { productIndexable } from "@/lib/indexing";
 import { MARKET_CODES, marketPath } from "@/lib/markets";
 import { guides } from "@/lib/guides";
 import { abs } from "@/lib/site";
@@ -14,7 +15,7 @@ import { usedIndexable } from "@/views/UsedView";
 import { liveMounts } from "@/views/MountView";
 
 // Only pages that are indexed: every US product page, and a market's product
-// page once that market has prices for it (the same rule as the noindex).
+// page once three stores there list it (lib/indexing.ts, the same rule as the noindex).
 // Deals pages once they have deals (dealsIndexable).
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = [];
@@ -30,8 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (acc.length) out.push({ url: abs(marketPath(m, "/accessories")) }, ...acc.map((s) => ({ url: abs(marketPath(m, `/accessories/${s.slug}`)) })));
     for (const b of liveBrands()) out.push({ url: abs(marketPath(m, `/brands/${b.slug}`)) });
     for (const mt of liveMounts()) out.push({ url: abs(marketPath(m, `/mounts/${mt.slug}`)) });
-    for (const c of publishedCameras()) if (m === "us" || offersFor(c.slug, m).length) out.push({ url: abs(marketPath(m, `/cameras/${c.slug}`)) });
-    for (const l of publishedLenses()) if (m === "us" || offersFor(l.slug, m).length) out.push({ url: abs(marketPath(m, `/lenses/${l.slug}`)) });
+    for (const c of publishedCameras()) if (productIndexable(c.slug, m)) out.push({ url: abs(marketPath(m, `/cameras/${c.slug}`)) });
+    for (const l of publishedLenses()) if (productIndexable(l.slug, m)) out.push({ url: abs(marketPath(m, `/lenses/${l.slug}`)) });
   }
   for (const [a, b] of indexedPairs()) out.push({ url: abs(`/compare/${pairSlug(a.item, b.item)}`) });
   out.push({ url: abs("/guides") }, ...guides().map((g) => ({ url: abs(`/guides/${g.slug}`), lastModified: g.updated || undefined })));

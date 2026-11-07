@@ -116,9 +116,10 @@ The US is the site root; the others live under `/uk`, `/eu`, `/au` and `/sg`
   visitor picks, each figure marked ≈ with the store's own price under it
   (DECISIONS.md "Global price comparison page").
   Nowhere else: not cards, rows, deals, metadata or structured data.
-- **Market product pages are noindex until priced.** A product page outside
-  the US is noindex, out of the sitemap and out of hreflang until that market
-  has an offer (`marketIndexable`). Keep that rule wherever a page is added.
+- **Market product pages are noindex until three stores list them.** A product
+  page outside the US is noindex, out of the sitemap and out of hreflang until
+  three stores (Amazon not counted) list it in that market (`productIndexable`,
+  `src/lib/indexing.ts`, 2026-11-07). Keep that rule wherever a page is added.
 - **Regional pages are hreflang alternates, each its own canonical**, never
   canonical to the US page (DECISIONS.md "Indexing: canonicals, hreflang and
   internal links"). Links to a page that is noindex (the `/compare?c=`

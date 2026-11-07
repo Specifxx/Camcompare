@@ -65,9 +65,10 @@ import { CATEGORY_LABEL, cropOn, lensCategories, type LensCategory } from "@/lib
 import { summarizeLens } from "@/lib/summary";
 import { longMonthYear } from "@/lib/format";
 import { compareEmpireFor } from "@/lib/family";
+import { productIndexable } from "@/lib/indexing";
 
-/** A product page outside the US is worth indexing only once that market has prices. */
-export const marketIndexable = (slug: string) => (m: MarketCode) => m === "us" || offersFor(slug, m).length > 0;
+/** A product page outside the US is worth indexing only once three stores there list it (lib/indexing.ts). */
+export const marketIndexable = (slug: string) => (m: MarketCode) => productIndexable(slug, m);
 
 export function cameraMetadata(slug: string, m: MarketCode): Metadata {
   const c = getCamera(slug);
