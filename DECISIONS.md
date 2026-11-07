@@ -2104,6 +2104,6 @@ price". So (`lib/price-rules.ts`):
 - **Descriptions** `priceDescription`: the price first ("Leica M11 price in the US: new from $8,995 at 4 stores, used
   from $6,495."), then the spec line, then what the page has, each part kept only while it fits 160 characters; a
   product nobody has in stock says so instead of a bare spec line.
-- **Brand pages**: "Hasselblad camera prices 2026: 9 cameras & 12 lenses compared", stepping down to fit.
+- **Brand pages**: "Hasselblad camera prices 2026: N cameras & M lenses compared", stepping down to fit.
 
 URLs, headings and page content are unchanged. Recheck CTR on these pages ~2026-11-25 with the same report.
