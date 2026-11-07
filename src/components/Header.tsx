@@ -42,11 +42,12 @@ const SECTIONS = [
 
 const pill = (on: boolean) => `shrink-0 rounded-lg px-3 py-1.5 font-medium no-underline transition-colors hover:no-underline ${on ? "bg-accent-soft text-accent" : "text-muted hover:bg-raised hover:text-fg"}`;
 
-export default function Header() {
+/** `sale`: Black Friday or Cyber Monday while the strip shows (lib/black-friday.ts saleStrip, decided by the layout at the build): the first tool. */
+export default function Header({ sale = null }: { sale?: { path: string; name: string } | null }) {
   const pathname = usePathname() ?? "/";
   const m = useMarket(pathname);
   const isOn = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
-  const tools = TOOLS.map((t) => ({ ...t, href: t.market ? marketPath(m, t.path) : t.path }));
+  const tools = [...(sale ? [{ path: sale.path, label: sale.name, market: true }] : []), ...TOOLS].map((t) => ({ ...t, href: t.market ? marketPath(m, t.path) : t.path }));
   return (
     <header className="cc-header glass sticky top-0 z-30">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 sm:gap-4">
