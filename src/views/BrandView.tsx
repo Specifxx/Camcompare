@@ -3,7 +3,7 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import { brand as getBrand, brands, mounts, publishedCameras, publishedLenses } from "@/lib/catalog";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, titleRoom } from "@/lib/seo";
 import { summarizeCamera, summarizeLens } from "@/lib/summary";
 import { typeLabel } from "@/lib/specs/definitions";
 import { breadcrumb, ldJson } from "@/lib/jsonld";
@@ -36,7 +36,16 @@ export function BrandsIndex({ market: m }: { market: MarketCode }) {
 export function brandMetadata(slug: string, m: MarketCode): Metadata {
   const b = getBrand(slug);
   if (!b) return {};
-  return pageMeta({ title: `${b.name} cameras and lenses: prices and specs`, description: `Every ${b.name} camera and lens we track, with today's lowest new and used prices in ${MARKETS[m].name}.`, path: `/brands/${b.slug}`, market: m });
+  // Search Console 90 days to 2026-11-04 (the owner's audit of 11-07): "hasselblad camera price" (pos 11.5),
+  // "hasselblad price" (7.8), "gopro cameras", "cheap gopro" at 0 clicks under "<brand> cameras and lenses: prices
+  // and specs". Lead with "<brand> camera prices", the year and what the page lists.
+  const nc = publishedCameras().filter((c) => c.brand === b.slug).length;
+  const nl = publishedLenses().filter((l) => l.brand === b.slug).length;
+  const what = [nc ? `${nc} camera${nc === 1 ? "" : "s"}` : "", nl ? `${nl} lens${nl === 1 ? "" : "es"}` : ""].filter(Boolean).join(" & ");
+  const noun = nc ? "camera" : "lens";
+  const year = new Date().getUTCFullYear();
+  const title = [`${b.name} ${noun} prices ${year}: ${what} compared`, `${b.name} ${noun} prices ${year}: ${what}`, `${b.name} ${noun} prices ${year}`, `${b.name} ${noun} prices`].find((t) => t.length <= titleRoom(m)) ?? `${b.name} ${noun} prices`;
+  return pageMeta({ title, description: `${b.name} ${noun} prices in ${MARKETS[m].name}: every ${b.name} camera and lens we track${what ? ` (${what})` : ""}, with today's lowest new and used prices at camera shops, specs and price history.`, path: `/brands/${b.slug}`, market: m });
 }
 
 export default function BrandView({ slug, market: m }: { slug: string; market: MarketCode }) {

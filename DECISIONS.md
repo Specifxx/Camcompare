@@ -2085,3 +2085,25 @@ the owner accepted the remaining risk. The quick view shows the link only (the i
 else the tagged search), never Amazon's price: that stays on the product page under the 24-hour licence. Uninvited
 overlays (a phone ad dock, a corner card, an exit pop-up) still never carry Amazon, and an Amazon page is never framed
 (item (n)).
+
+## 2026-11-07 — Product and brand titles say the year, the market and the store count
+
+The owner's Search Console and Bing audit (2026-11-07: 145 clicks from 54.8K impressions, CTR 0.3%) asked for the top
+20 pages by impressions to be rewritten. Search Console's 90 days to 2026-11-04 (`sc-domain:camcompare.app`,
+TCGEmpire *Maintenance* `gsc-queries`): 15 of the top 20 are camera pages (Canon EOS C500 Mark II 882, Sony FX5 213,
+Hasselblad X2D 100C 195, Canon 5D Mark IV/III, Nikon Z6, X100VI, Leica M11, EOS R, G7 X Mark III, Z6 II, GoPro Hero5,
+Ricoh GR IV, Nikon ZR, Leica Q3) at positions 8–25 and almost no clicks, then two AU accessory hubs (already retitled
+2026-11-01), the Hasselblad and AU GoPro brand pages and two lens pairs (one at 10.8% CTR, left alone). Their queries:
+"<model> price", "<model> price 2026", "<model> price usd", "cost of <model>", "sell <model>", "hasselblad camera
+price". So (`lib/price-rules.ts`):
+
+- **Titles** `priceTitle`: "Leica M11 price 2026: from $8,995, 4 stores", stepping down to "…price 2026: from $X",
+  "…price: from $X", then the old forms. Outside the US the title names its market itself ("Sony FX5 price in
+  Australia 2026: from A$7,770", else "…price AU: from …") instead of the "(AU prices)" suffix, which cost the price
+  its room. Only used stock: "…price 2026: used from $X". Always within 60 characters with " | CamCompare".
+- **Descriptions** `priceDescription`: the price first ("Leica M11 price in the US: new from $8,995 at 4 stores, used
+  from $6,495."), then the spec line, then what the page has, each part kept only while it fits 160 characters; a
+  product nobody has in stock says so instead of a bare spec line.
+- **Brand pages**: "Hasselblad camera prices 2026: N cameras & M lenses compared", stepping down to fit.
+
+URLs, headings and page content are unchanged. Recheck CTR on these pages ~2026-11-25 with the same report.

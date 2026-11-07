@@ -153,15 +153,59 @@ export function priceSentence(offers: Offer[], currency: Currency, pack: "body" 
   return "";
 }
 
+/** How many stores have this product in stock outright today (new or used, no kits, no Amazon). */
+export function storeCount(offers: Offer[]): number {
+  return new Set(offers.filter((o) => o.inStock && !o.kit && !isAmazonOffer(o)).map((o) => o.retailer)).size;
+}
+
 /**
- * A product page's title with today's lowest new price when it fits ("Leica M11 price from $8,995 & specs").
+ * A product page's title with today's lowest new price when it fits ("Leica M11 price 2026: from $8,995, 6 stores").
  * Search Console 2026-11-01: product pages sit at positions 8–15 for "<model> price" with no clicks; a real
- * price in the title is what the result can say that the shops' own titles don't. `room` is what is left once
- * the market suffix and " | CamCompare" are added.
+ * price in the title is what the result can say that the shops' own titles don't. 2026-11-07 (the owner's audit,
+ * 90 days of queries): the year ("hasselblad x2d 100c price 2026", "fujifilm gfx100 ii price 2026") and the store
+ * count come first when they fit. `room` is what is left once the market suffix and " | CamCompare" are added.
  */
-export function priceTitle(name: string, offers: Offer[], currency: Currency, room: number): string {
-  const n = headline(offers).new;
+export function priceTitle(name: string, offers: Offer[], currency: Currency, place: { long: string; short: string } | null = null, year = new Date().getUTCFullYear()): string {
+  // The title names its market itself (no "(AU prices)" suffix): "price in Australia" is what AU searches say.
+  const room = 60 - " | CamCompare".length;
+  const h0 = headline(offers);
+  const n = h0.new;
   const p = n ? price(n.price, currency) : null;
-  const ladder = p ? [`${name} price from ${p} & specs`, `${name} price from ${p}`] : [];
-  return [...ladder, `${name} price & specs`].find((t) => t.length <= room) ?? `${name} price & specs`;
+  const used = !n && h0.used ? price(h0.used.price, currency) : null;
+  const k = storeCount(offers);
+  const heads = place ? [`${name} price in ${place.long}`, `${name} price ${place.short}`] : [`${name} price`];
+  const ladder: string[] = [];
+  for (const h of heads)
+    ladder.push(
+      ...(p
+        ? [...(k >= 2 ? [`${h} ${year}: from ${p}, ${k} stores`] : []), `${h} ${year}: from ${p}`, `${h}: from ${p}`]
+        : used
+          ? [`${h} ${year}: used from ${used}`, `${h}: used from ${used}`, `${h} ${year} & specs`, `${h} ${year}`]
+          : [`${h} ${year} & specs`, `${h} ${year}`]),
+    );
+  if (!place) ladder.push(...(p ? [`${name} price from ${p} & specs`, `${name} price from ${p}`] : []), `${name} price & specs`);
+  const last = place ? `${name} price ${place.short}` : `${name} price & specs`;
+  return ladder.find((t) => t.length <= room) ?? last;
+}
+
+/**
+ * A product page's search snippet (2026-11-07): the price people searched for first, with the store count and the
+ * used price (top queries include "sell canon cinema eos c500 ii" and "<model> price usd"), then the spec line,
+ * then what the page has, each part kept only while the whole fits 160 characters.
+ */
+export function priceDescription(d: { name: string; place: string; offers: Offer[]; currency: Currency; pack: "body" | "fixed" | "lens"; specs: string; tail: string }): string {
+  const h = headline(d.offers);
+  const k = storeCount(d.offers);
+  const at = k >= 2 ? ` at ${k} stores` : "";
+  const lead = h.new
+    ? `${d.name} price in ${d.place}: new from ${price(h.new.price, d.currency)}${at}${h.used ? `, used from ${price(h.used.price, d.currency)}` : ""}.`
+    : h.used
+      ? `${d.name} price in ${d.place}: used from ${price(h.used.price, d.currency)}${at}.`
+      : h.kit
+        ? `${d.name} price in ${d.place}: ${d.pack === "body" ? "kits with a lens" : "bundles"} from ${price(h.kit.price, d.currency)}.`
+        : `${d.name} price in ${d.place}: no store we compare has it in stock today.`;
+  let out = lead;
+  for (const alts of [[d.specs], [d.tail, "Specs and price history."]])
+    for (const part of alts) if (`${out} ${part}`.length <= 160) { out = `${out} ${part}`; break; }
+  return out;
 }

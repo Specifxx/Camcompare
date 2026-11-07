@@ -31,7 +31,7 @@ import ReviewStars from "@/components/product/ReviewStars";
 import ThingsToKnow from "@/components/product/ThingsToKnow";
 import { galleryFor } from "@/lib/gallery";
 import { discussionLinks, videoLinks } from "@/lib/media-links";
-import { headline, priceSentence, priceTitle } from "@/lib/price-rules";
+import { headline, priceDescription, priceTitle } from "@/lib/price-rules";
 import { lensThings } from "@/lib/things-to-know";
 import { usedValue } from "@/lib/value";
 import { lensHighlights } from "@/lib/highlights";
@@ -40,7 +40,7 @@ import type { Lens } from "@/lib/catalog/schema";
 import { longMonthYear } from "@/lib/format";
 import { breadcrumb, ldJson, productLd } from "@/lib/jsonld";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
-import { pageMeta, titleRoom } from "@/lib/seo";
+import { pageMeta } from "@/lib/seo";
 import { CATEGORY_LABEL, LENS_SPEC_GROUPS, apertureLabel, coverageLabel, equivalentLabel, focalLabel, lensCategories } from "@/lib/specs/lens";
 import { summarizeCamera } from "@/lib/summary";
 import { marketIndexable } from "./CameraView";
@@ -51,12 +51,19 @@ export function lensMetadata(slug: string, m: MarketCode): Metadata {
   const offers = offersFor(l.slug, m);
   const cur = MARKETS[m].currency;
   const name = displayName(l, m);
-  // The same headline rule as the page (lib/price-rules.ts).
-  const priceText = priceSentence(offers, cur, "lens");
   const mounts = l.mounts.map((x) => mount(x)?.name ?? x).join(", ");
   return pageMeta({
-    title: priceTitle(name, offers, cur, titleRoom(m)),
-    description: `${name}: ${focalLabel(l)} ${apertureLabel(l)} ${coverageLabel(l.coverage).toLowerCase()} lens for ${mounts}.${priceText} Specs, compatible cameras and price history.`,
+    title: priceTitle(name, offers, cur, m === "us" ? null : { long: m === "uk" ? "the UK" : MARKETS[m].name, short: MARKETS[m].short }),
+    titleNamesMarket: true,
+    description: priceDescription({
+      name,
+      place: m === "us" ? "the US" : m === "uk" ? "the UK" : MARKETS[m].name,
+      offers,
+      currency: cur,
+      pack: "lens",
+      specs: `${focalLabel(l)} ${apertureLabel(l)} ${coverageLabel(l.coverage).toLowerCase()} lens for ${mounts}.`,
+      tail: "Specs, compatible cameras and price history.",
+    }),
     path: `/lenses/${l.slug}`,
     market: m,
     image: `/products/${l.slug}.webp`,
