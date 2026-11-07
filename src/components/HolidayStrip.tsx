@@ -16,7 +16,7 @@ export default function HolidayStrip({ sale }: { sale: { path: string; name: str
     <div className="border-b border-line bg-accent-soft" data-holiday-strip={sale.path.slice(1)}>
       <p className="mx-auto max-w-6xl truncate px-4 py-1.5 text-center text-xs sm:text-sm">
         <Link href={marketPath(m, sale.path)} prefetch={false} className="text-fg no-underline hover:underline">
-          <b>{sale.name} camera deals</b> · today&apos;s prices under launch RRP, updated daily · <span className="font-semibold text-accent">see the deals →</span>
+          <b>{sale.name} camera deals</b><span className="hidden sm:inline"> · today&apos;s prices under launch RRP, updated daily</span> · <span className="font-semibold text-accent">see the deals →</span>
         </Link>
       </p>
     </div>
