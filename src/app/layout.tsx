@@ -7,6 +7,8 @@ import { RateCard } from "@/components/site-reviews/RateCard";
 import Footer from "@/components/Footer";
 import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
+import HolidayStrip from "@/components/HolidayStrip";
+import { saleStrip } from "@/lib/black-friday";
 import Reveal from "@/components/Reveal";
 import { SideRails } from "@/components/SideRails";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
@@ -70,7 +72,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-surface focus:px-3 focus:py-2">
           Skip to content
         </a>
-        <Header />
+        <Header sale={saleStrip(new Date().toISOString().slice(0, 10))} />
+        <HolidayStrip sale={saleStrip(new Date().toISOString().slice(0, 10))} />
         <GeoSuggest />
         <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">
           {children}

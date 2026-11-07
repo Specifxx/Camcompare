@@ -18,7 +18,7 @@ import { retailerQuery } from "@/lib/offer-rows";
 import { pageMeta } from "@/lib/seo";
 import PriceTraps from "@/components/PriceTraps";
 import { usedValue } from "@/lib/value";
-import { blackFriday, cyberMonday, longDate, seasonYear } from "@/lib/black-friday";
+import { blackFriday, cyberMonday, holidayFaq, longDate, seasonYear } from "@/lib/black-friday";
 import { FamilyCluster } from "@/components/FamilyCluster";
 import { saleIntro, saleYear, SALE_SEASONS, type SaleSlug } from "@/lib/sale-seasons";
 
@@ -137,6 +137,19 @@ export function blackFridayMetadata(m: MarketCode): Metadata {
   });
 }
 
+/** The Cyber Monday page (DECISIONS.md, "Black Friday strip and Cyber Monday page", 2026-11-07): the same deals under its own heading and URL. */
+export function cyberMondayMetadata(m: MarketCode): Metadata {
+  const y = seasonYear(new Date().toISOString().slice(0, 10));
+  return pageMeta({
+    title: `Cyber Monday camera and lens deals ${y}`,
+    description: `Cyber Monday ${y} camera and lens deals in ${MARKETS[m].name}: today's online prices furthest under launch RRP, used under the typical used price, and this week's price drops, checked every day.`,
+    path: "/cyber-monday",
+    market: m,
+    index: dealsIndexable(m),
+    indexable: dealsIndexable,
+  });
+}
+
 /** The seasonal sale pages (DECISIONS.md, "Seasonal sale pages", 2026-11-02): the same deals under that event's heading, one URL each kept every year. */
 export function saleMetadata(slug: SaleSlug, m: MarketCode): Metadata {
   const y = saleYear(slug, new Date().toISOString().slice(0, 10));
@@ -151,14 +164,14 @@ export function saleMetadata(slug: SaleSlug, m: MarketCode): Metadata {
   });
 }
 
-export default function DealsView({ market: m, blackFriday: bfPage = false, sale }: { market: MarketCode; blackFriday?: boolean; sale?: SaleSlug }) {
+export default function DealsView({ market: m, blackFriday: bfPage = false, cyberMonday: cmPage = false, sale }: { market: MarketCode; blackFriday?: boolean; cyberMonday?: boolean; sale?: SaleSlug }) {
   const cur = MARKETS[m].currency;
   const { newDrops, usedDrops, savings, gaps, newBargains, usedBargains, empty } = deals(m);
   const updated = offersGeneratedAt(m);
   return (
     <div className="flex flex-col gap-10">
       <div>
-        {sale ? <SaleHead m={m} slug={sale} /> : bfPage ? <BlackFridayHead m={m} /> : <h1 className="text-2xl font-extrabold tracking-tight">Camera deals in {MARKETS[m].name}</h1>}
+        {sale ? <SaleHead m={m} slug={sale} /> : bfPage ? <BlackFridayHead m={m} /> : cmPage ? <CyberMondayHead m={m} /> : <h1 className="text-2xl font-extrabold tracking-tight">Camera deals in {MARKETS[m].name}</h1>}
         <p className="mt-1 max-w-2xl text-sm text-muted">
           From our own record of the lowest in-stock price at each retailer: today against the launch RRP, the typical used price and a week ago. No sponsored placements.
           {updated ? ` Prices checked ${new Date(updated).toUTCString().slice(5, 16)}.` : ""}
@@ -252,8 +265,41 @@ export default function DealsView({ market: m, blackFriday: bfPage = false, sale
       <PriceTraps market={m} />
       <FamilyCluster market={m} />
       {!empty && <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`deals-${m}`} placement="promo-deals" />}
+      {(bfPage || cmPage) && <HolidayFaq m={m} event={bfPage ? "black-friday" : "cyber-monday"} />}
       {!empty && <QuickViewHost />}
     </div>
+  );
+}
+
+function HolidayFaq({ m, event }: { m: MarketCode; event: "black-friday" | "cyber-monday" }) {
+  const y = seasonYear(new Date().toISOString().slice(0, 10));
+  const where = /^United /.test(MARKETS[m].name) ? `the ${MARKETS[m].name}` : MARKETS[m].name;
+  return (
+    <section aria-labelledby="holiday-faq" className="max-w-3xl">
+      <h2 id="holiday-faq" className="h-section mb-2">{event === "black-friday" ? "Black Friday" : "Cyber Monday"} {y}: questions</h2>
+      {holidayFaq(event, y, where).map((f) => (
+        <div key={f.q} className="mt-3 text-sm">
+          <h3 className="font-semibold">{f.q}</h3>
+          <p className="text-muted">{f.a}</p>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+function CyberMondayHead({ m }: { m: MarketCode }) {
+  const today = new Date().toISOString().slice(0, 10);
+  const y = seasonYear(today);
+  const cm = cyberMonday(y);
+  return (
+    <>
+      <h1 className="text-2xl font-extrabold tracking-tight">Cyber Monday camera deals in {MARKETS[m].name}, {y}</h1>
+      <p className="mt-1 max-w-2xl text-sm text-muted">
+        Cyber Monday is {longDate(cm)} {y}, the Monday after Black Friday ({longDate(blackFriday(y))}).{today < cm ? " Many retailers start their sales earlier." : ""} This page
+        updates with every price check through the sales. We only see what a retailer asks when we read its prices, so check the price on its page before you buy.{" "}
+        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link> · <Link href={marketPath(m, "/black-friday")} prefetch={false}>Black Friday deals</Link>
+      </p>
+    </>
   );
 }
 
@@ -267,7 +313,7 @@ function BlackFridayHead({ m }: { m: MarketCode }) {
       <p className="mt-1 max-w-2xl text-sm text-muted">
         Black Friday is {longDate(bf)} and Cyber Monday is {longDate(cyberMonday(y))} {y}.{today < bf ? " Many retailers start their sales earlier." : ""} This page
         updates with every price check through the sales. We only see what a retailer asks when we read its prices, so check the price on its page before you buy.{" "}
-        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link>
+        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link> · <Link href={marketPath(m, "/cyber-monday")} prefetch={false}>Cyber Monday deals</Link>
       </p>
     </>
   );

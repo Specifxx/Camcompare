@@ -34,7 +34,46 @@ export function addDays(iso: string, n: number): string {
 }
 
 /** "Friday 27 November" */
-/** "Friday 27 November" */
 export function longDate(iso: string): string {
   return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" });
+}
+
+/**
+ * The one-line strip under the header and the header's first tool (DECISIONS.md, "Black Friday strip and Cyber Monday
+ * page", 2026-11-07): Black Friday from 1 November to the Saturday after it, then Cyber Monday to the day after Cyber
+ * Monday, then nothing. Decided at the build (the layout passes it down), a link, never a pop-up or a countdown.
+ */
+export function saleStrip(today: string): { path: "/black-friday" | "/cyber-monday"; name: string } | null {
+  const y = Number(today.slice(0, 4));
+  if (today < `${y}-11-01`) return null;
+  if (today <= addDays(blackFriday(y), 1)) return { path: "/black-friday", name: "Black Friday" };
+  if (today <= addDays(cyberMonday(y), 1)) return { path: "/cyber-monday", name: "Cyber Monday" };
+  return null;
+}
+
+/** The questions both pages answer in visible text. */
+export function holidayFaq(event: "black-friday" | "cyber-monday", year: number, where: string): { q: string; a: string }[] {
+  const bf = longDate(blackFriday(year));
+  const cm = longDate(cyberMonday(year));
+  const name = event === "black-friday" ? "Black Friday" : "Cyber Monday";
+  return [
+    {
+      q: `When is ${name} ${year}?`,
+      a: event === "black-friday"
+        ? `Black Friday ${year} is ${bf}, the day after US Thanksgiving. Cyber Monday follows on ${cm}. Many retailers start their sales the week before and run them through the weekend.`
+        : `Cyber Monday ${year} is ${cm}, the Monday after Black Friday (${bf}). Online retailers often keep their Black Friday prices through the weekend and end them on Cyber Monday night.`,
+    },
+    {
+      q: `Is ${name} a good time to buy a camera in ${where}?`,
+      a: "Often, for bodies and lenses that have been out a year or more: retailers and makers cut those first. A camera announced in the last few months rarely drops much. Compare today's price with the launch RRP and the typical used price on each product's page before you decide.",
+    },
+    {
+      q: "Are these prices before or after shipping?",
+      a: "Item prices as each retailer lists them, before shipping. Check the price on the retailer's page before you buy.",
+    },
+    {
+      q: "How often does this page update?",
+      a: "With every price check, through the sales and after them. The URL stays the same every year, so bookmark it.",
+    },
+  ];
 }

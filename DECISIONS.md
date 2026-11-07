@@ -2085,3 +2085,17 @@ the owner accepted the remaining risk. The quick view shows the link only (the i
 else the tagged search), never Amazon's price: that stays on the product page under the 24-hour licence. Uninvited
 overlays (a phone ad dock, a corner card, an exit pop-up) still never carry Amazon, and an Amazon page is never framed
 (item (n)).
+
+## 2026-11-07 — Black Friday strip and Cyber Monday page (owner: "capture all of the Black Friday SEO")
+
+Black Friday is 27 November 2026 and Cyber Monday 30 November. Three additions, this site:
+
+- **`/cyber-monday`**, its own URL for its own searches ("camera cyber monday deals"), kept every year like
+  `/black-friday`, listing the same real store deals. In the sitemap and footer; the two pages link each other.
+- **The holiday strip**: one line under the header on every page, in the server HTML, linking `/black-friday`
+  from 1 November to the Saturday after it, then `/cyber-monday` to the day after Cyber Monday, then nothing
+  (`saleStrip` in `lib/black-friday.ts`, tested). The same link leads the nav while it shows. A link, never a
+  pop-up (pop-up policy: no uninvited interruption on a visit's first page), never a countdown or "ends soon".
+- **More on both pages, nothing taken away**: the URL, title and h1 of `/black-friday` are unchanged; below the
+  existing deals come four visible questions (the dates, whether stores have sales, shipping, how often it updates). No FAQ rich-result markup:
+  Google shows those only for government and health sites since 2023, so the text is what ranks.
