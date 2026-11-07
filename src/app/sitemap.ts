@@ -1,6 +1,6 @@
 import { WORLD_LINES, worldTable } from "@/lib/world";
 import type { MetadataRoute } from "next";
-import { indexedPairs, pairSlug, publishedCameras, publishedLenses } from "@/lib/catalog";
+import { indexedPairs, offersGeneratedAt, pairSlug, publishedCameras, publishedLenses } from "@/lib/catalog";
 import { productIndexable } from "@/lib/indexing";
 import { MARKET_CODES, marketPath } from "@/lib/markets";
 import { guides } from "@/lib/guides";
@@ -21,7 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = [];
   for (const m of MARKET_CODES) {
     for (const p of ["/", "/cameras", "/lenses", "/finder", "/brands", "/mounts"]) out.push({ url: abs(marketPath(m, p)) });
-    if (dealsIndexable(m)) out.push({ url: abs(marketPath(m, "/deals")) }, { url: abs(marketPath(m, "/black-friday")) }, { url: abs(marketPath(m, "/cyber-monday")) }, ...["/boxing-day", "/january-sales", "/lunar-new-year"].map((p) => ({ url: abs(marketPath(m, p)) })));
+    // The deals and sale pages are rebuilt from each import's offers, so that import's time is their real lastmod.
+    const priced = offersGeneratedAt(m) || undefined;
+    if (dealsIndexable(m)) out.push(...["/deals", "/black-friday", "/cyber-monday", "/boxing-day", "/january-sales", "/lunar-new-year"].map((p) => ({ url: abs(marketPath(m, p)), lastModified: priced })));
     if (usedIndexable(m)) out.push({ url: abs(marketPath(m, "/used")) });
     if (releasesIndexable(m)) out.push({ url: abs(marketPath(m, "/releases")) });
     if (pricedIn(digicams(), m)) out.push({ url: abs(marketPath(m, "/digicams")) });
