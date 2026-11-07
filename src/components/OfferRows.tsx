@@ -59,7 +59,7 @@ export function OfferRowItem({ row, product, title, placement, priceNode, dense 
   const details = [row.detail, who, row.variant ? `${row.variant} version` : null].filter(Boolean).join(" · ");
   const off = pctOff(row.price, row.was);
   return (
-    <li className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${row.tag === "best" ? "bg-buy-soft/40" : ""} ${className}`}>
+    <li className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${row.tag === "best" ? `bg-buy-soft/40 ${PIN_OUTLINE.cheapest}` : ""} ${className}`}>
       {row.image && <AccessoryThumb src={row.image} alt={`${row.condition} listing at ${row.name}`} group="camera" store={row.name} size="sm" />}
       <div className="min-w-0 flex-1">
         <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
@@ -187,6 +187,9 @@ export type PinnedLink = {
 export const PIN_OUTLINE = {
   ebay: "outline outline-2 -outline-offset-2 outline-[#16a34a]",
   amazon: "outline outline-2 -outline-offset-2 outline-[#f59e0b]",
+  /** The "Best price" row (owner, 2026-11-07: "the cheapest listing should also have an outline too"): sky blue, never read as
+   *  eBay's green or Amazon's amber. */
+  cheapest: "outline outline-2 -outline-offset-2 outline-[#0ea5e9]",
 } as const;
 
 /**
