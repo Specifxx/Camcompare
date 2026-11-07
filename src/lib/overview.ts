@@ -8,6 +8,7 @@
 // hreflang and internal links").
 // Server-only (reads the catalog).
 import { brandName, camerasFor, displayShortName, mount, offersFor, product, type AnyProduct } from "./catalog";
+import { productIndexable } from "./indexing";
 import type { Camera, Lens } from "./catalog/schema";
 import { longMonthYear, price } from "./format";
 import { MARKET_CODES, MARKETS, marketPath, type MarketCode } from "./markets";
@@ -57,7 +58,7 @@ const productHref = (p: AnyProduct, m: MarketCode) => marketPath(m, `/${p.kind =
 const productLink = (p: AnyProduct, m: MarketCode): Seg => ({
   text: `${brandName(p.item.brand)} ${displayShortName(p.item, m)}`,
   href: productHref(p, m),
-  ...(m === "us" || offersFor(p.item.slug, m).length ? {} : { nofollow: true }),
+  ...(productIndexable(p.item.slug, m) ? {} : { nofollow: true }),
 });
 
 function whatItIs(self: AnyProduct, m: MarketCode, name: string): Seg[] {

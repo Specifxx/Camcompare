@@ -124,3 +124,13 @@ test("the overview prices in the market's own currency only, and names where els
     assert.ok(links.some((h) => h.endsWith(`/lenses/${l.slug}`)));
   }
 });
+
+test("a market's product page needs three stores (Amazon not counted) to be indexed; the US always is", async () => {
+  const { indexableWith, MIN_MARKET_STORES } = await import("../src/lib/indexing");
+  const o = (retailer: string) => ({ retailer }) as never;
+  assert.equal(MIN_MARKET_STORES, 3);
+  assert.equal(indexableWith("us", []), true);
+  assert.equal(indexableWith("uk", [o("a"), o("b")]), false, "two stores");
+  assert.equal(indexableWith("uk", [o("a"), o("a"), o("b")]), false, "two stores, three offers");
+  assert.equal(indexableWith("uk", [o("a"), o("b"), o("c")]), true);
+});

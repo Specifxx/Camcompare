@@ -4,6 +4,7 @@ import type { Camera, Lens } from "./catalog/schema";
 import { brandName, displayName, displayShortName, launchPrice, offersFor } from "./catalog";
 import { MARKETS, type MarketCode } from "./markets";
 import { isAmazonOffer } from "./offers";
+import { indexableWith } from "./indexing";
 import { headline } from "./price-rules";
 import { thumbSrc } from "./thumb";
 import { cropFactor, lensCategories } from "./specs/lens";
@@ -31,8 +32,8 @@ function base(p: Camera | Lens, m: MarketCode): Base {
     // Stores with it in stock today. Amazon's price is never in a summary
     // (they are embedded in static pages), so neither is its count.
     stores: new Set(offers.filter((o) => o.inStock && !isAmazonOffer(o)).map((o) => o.retailer)).size,
-    // The same rule as the product page's noindex (marketIndexable).
-    indexed: m === "us" || offers.length > 0,
+    // The same rule as the product page's noindex (lib/indexing.ts).
+    indexed: indexableWith(m, offers),
     thumb: thumbSrc(p.slug),
     weightG: p.specs.weightG,
     sealed: p.specs.weatherSealed,

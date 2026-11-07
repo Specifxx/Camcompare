@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import { brandName, displayShortName, mount, offersFor, publishedCameras, publishedLenses, type AnyProduct } from "@/lib/catalog";
+import { productIndexable } from "@/lib/indexing";
 import { marketPath, type MarketCode } from "@/lib/markets";
 import type { relatedFor } from "@/lib/related";
 import { summarizeCamera, summarizeLens } from "@/lib/summary";
@@ -58,7 +59,7 @@ function LinkList({ title, items, m, hub, brandFirst = false }: { title: string;
       <h3 className="mb-2 text-sm font-bold text-muted">{title}</h3>
       <ul className="flex flex-col gap-1 text-sm">
         {items.map((p) => {
-          const listed = m === "us" || offersFor(p.item.slug, m).length > 0;
+          const listed = productIndexable(p.item.slug, m);
           return (
             <li key={p.item.slug}>
               <Link href={marketPath(m, `/${p.kind === "camera" ? "cameras" : "lenses"}/${p.item.slug}`)} prefetch={false} rel={listed ? undefined : "nofollow"}>
