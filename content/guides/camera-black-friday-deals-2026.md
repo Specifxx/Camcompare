@@ -2,7 +2,7 @@
 title: "Black Friday 2026 camera deals: what's actually cheaper"
 description: Which cameras and lenses are really cheaper than their launch price right now, checked against our own price history, and how to tell a real Black Friday deal from a fake one.
 date: 2026-10-30
-updated: 2026-10-30
+updated: 2026-11-07
 kind: blog
 hero: canon-eos-r6-mark-iii
 ---
@@ -10,6 +10,8 @@ hero: canon-eos-r6-mark-iii
 Black Friday is on 27 November 2026, and camera "deals" have already started. Some are real. Many are a price that was the same last month, with a bigger crossed-out number next to it. We record the price of every camera and lens we track at every store, every few hours, so we can tell which is which.
 
 This post updates itself. The lists below are recalculated at every price check, so come back during Black Friday week and they will show that day's deals.
+
+For the deals themselves in your country, our [Black Friday camera deals](/black-friday) page lists them as the sale happens, and [Cyber Monday camera deals](/cyber-monday) does the same for the Monday. Both follow the market you pick at the top of the page.
 
 ## Today's biggest savings against the launch price
 

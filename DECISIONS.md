@@ -2133,3 +2133,10 @@ market. The US page is always indexable (it is the catalogue's own page). The pr
 summaries and the related-product links all ask `productIndexable`, so they cannot disagree. Sitemap: 3,960 → 2,616 URLs
 (product pages 2,864 → 1,520), which keeps "Every sitemap URL is indexable" in `tests/seo.test.ts` true. Earlier rule
 ("Market product pages are noindex until priced") is replaced by this one; CLAUDE.md updated.
+
+## Black Friday indexing push (2026-11-07)
+
+Owner: get the Black Friday pages indexed and ranking. Every market's sale pages were already in the sitemap and in the daily
+whole-sitemap IndexNow run, but with no lastmod. They now carry the market's last offers import (`offersGeneratedAt`), which
+is when they last changed. The Black Friday post (`camera-black-friday-deals-2026`) now links both sale pages, and the
+Black Friday and Cyber Monday pages link the post.

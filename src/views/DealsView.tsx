@@ -297,7 +297,7 @@ function CyberMondayHead({ m }: { m: MarketCode }) {
       <p className="mt-1 max-w-2xl text-sm text-muted">
         Cyber Monday is {longDate(cm)} {y}, the Monday after Black Friday ({longDate(blackFriday(y))}).{today < cm ? " Many retailers start their sales earlier." : ""} This page
         updates with every price check through the sales. We only see what a retailer asks when we read its prices, so check the price on its page before you buy.{" "}
-        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link> · <Link href={marketPath(m, "/black-friday")} prefetch={false}>Black Friday deals</Link>
+        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link> · <Link href={marketPath(m, "/black-friday")} prefetch={false}>Black Friday deals</Link> · <Link href="/guides/camera-black-friday-deals-2026" prefetch={false}>What&apos;s really cheaper this Black Friday</Link>
       </p>
     </>
   );
@@ -313,7 +313,7 @@ function BlackFridayHead({ m }: { m: MarketCode }) {
       <p className="mt-1 max-w-2xl text-sm text-muted">
         Black Friday is {longDate(bf)} and Cyber Monday is {longDate(cyberMonday(y))} {y}.{today < bf ? " Many retailers start their sales earlier." : ""} This page
         updates with every price check through the sales. We only see what a retailer asks when we read its prices, so check the price on its page before you buy.{" "}
-        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link> · <Link href={marketPath(m, "/cyber-monday")} prefetch={false}>Cyber Monday deals</Link>
+        <Link href={marketPath(m, "/deals")} prefetch={false}>All deals</Link> · <Link href={marketPath(m, "/cyber-monday")} prefetch={false}>Cyber Monday deals</Link> · <Link href="/guides/camera-black-friday-deals-2026" prefetch={false}>What&apos;s really cheaper this Black Friday</Link>
       </p>
     </>
   );
