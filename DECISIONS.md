@@ -2140,3 +2140,14 @@ Owner: get the Black Friday pages indexed and ranking. Every market's sale pages
 whole-sitemap IndexNow run, but with no lastmod. They now carry the market's last offers import (`offersGeneratedAt`), which
 is when they last changed. The Black Friday post (`camera-black-friday-deals-2026`) now links both sale pages, and the
 Black Friday and Cyber Monday pages link the post.
+
+## 2026-11-08 — One Our sites page instead of footer cross-links
+
+From the owner's Search Console audit of DexCompare: its only links from other sites were ~9,000 site-wide footer
+links from our own sites, all to its home page, with the brand or a keyword as the anchor. They pass no authority,
+and a network of same-owner sites linking each other from every page is the pattern Google's link-spam policy warns
+about. CamCompare indexes well with more of them, so they are not what holds a site back, but they buy nothing.
+DexCompare's footer went first (CompareEmpire #153); every other site now does the same: the footer links one
+internal page, `/our-sites`, and that page links each other family site once, by its plain name, from
+`FAMILY_SITES` (`lib/family-network.ts`, unchanged; `footerSisters` stays for the shared test). Every other footer
+link, page URL and title is unchanged. Cross-traffic still comes from the price blocks on the deals and pre-order pages.
