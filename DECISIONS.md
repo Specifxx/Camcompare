@@ -2182,3 +2182,14 @@ commission never decides it, and nothing is invented: the rules read the catalog
 - Static at build like every page (no `revalidate`); indexed, and in the sitemap, only with 3+ priced picks in the market
   (owner: 3+); the regional copies are hreflang alternates of each other through `pageMeta`.
 - The finder page links all seven.
+
+## "Is this a good price?" link checker (2026-11-08)
+
+The competitor scan's gap #7, the same checker every Compare Empire site got that day. `/is-this-a-good-price` (one
+page for every market: the store's own market decides) takes a pasted camera store link, or one pasted into the header
+search, and reads `/check/<host>`: one static file per store host, written at the build from the committed offer files
+(`lib/link-check-index.ts`, `force-static`, `dynamicParams = false`). No function, no request-time fetch, and the
+store's page is never opened. Like is compared with like: one key per market, product, condition, kit (by its lens)
+and lens mount, so a used body never sets a new body's verdict. Amazon (its prices are never committed), eBay and the
+link-only marketplaces are never a store here. A link we can't place offers the closest catalogue matches from
+`/search-index.json`.
