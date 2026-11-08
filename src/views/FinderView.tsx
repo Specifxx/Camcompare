@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Finder from "@/components/Finder";
 import { publishedCameras } from "@/lib/catalog";
-import { MARKETS, type MarketCode } from "@/lib/markets";
+import Link from "next/link";
+import { USE_KEYS } from "@/components/curated/UseView";
+import { USES } from "@/lib/finder";
+import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
 import { summarizeCamera } from "@/lib/summary";
 
@@ -14,6 +17,13 @@ export default function FinderView({ market: m }: { market: MarketCode }) {
     <div>
       <h1 className="text-2xl font-extrabold tracking-tight">Which camera should you buy?</h1>
       <p className="mb-8 mt-1 max-w-2xl text-sm text-muted">Three questions. Every suggestion shows the specs that earned it a place, and prices are for {MARKETS[m].name}.</p>
+      <nav aria-label="Best cameras by use" className="mb-6 flex flex-wrap gap-2 text-sm">
+        {USE_KEYS.map((k) => (
+          <Link key={k} href={marketPath(m, `/cameras-for/${k}`)} prefetch={false} className="rounded-full border border-line px-3 py-1">
+            Best for {USES[k].label.toLowerCase()}
+          </Link>
+        ))}
+      </nav>
       <Finder cameras={publishedCameras().filter((c) => c.status === "current" || c.announced >= "2019").map((c) => summarizeCamera(c, m))} market={m} />
     </div>
   );

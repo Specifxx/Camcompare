@@ -2169,3 +2169,16 @@ collection worth"; Scryfall grew on free data credited with a link; price sites 
   badge (an ordinary link: no iframe, script, image or tracking) and its code to copy. `ListYourStore.tsx` takes it as the
   optional `badge` prop and stays the same file in every site. Stores see it when they come to us; nobody is emailed about it
   (cold outreach stays stopped).
+
+## 2026-11-08 — Best cameras by use: the finder's rules as static pages
+
+Owner approved the competitor scan's search-by-need hubs (2026-11-08). People search "best camera for vlogging", not a
+model. `/cameras-for/<use>` (and `/uk/…`, `/eu/…`, `/au/…`, `/sg/…`) turns the camera finder's seven uses (`lib/finder.ts`
+USES: everyday, vlogging, sports, wildlife, landscape, portrait, adventure) into a static page each
+(`components/curated/UseView.tsx`): the 12 best-scoring cameras with a price in the market, then up to 6 under 650 g,
+every pick showing the spec rules it met. The order is the finder's own score (then current models, then newest);
+commission never decides it, and nothing is invented: the rules read the catalog's spec-sheet facts.
+
+- Static at build like every page (no `revalidate`); indexed, and in the sitemap, only with 3+ priced picks in the market
+  (owner: 3+); the regional copies are hreflang alternates of each other through `pageMeta`.
+- The finder page links all seven.
