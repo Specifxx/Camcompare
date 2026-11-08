@@ -2183,7 +2183,7 @@ commission never decides it, and nothing is invented: the rules read the catalog
   (owner: 3+); the regional copies are hreflang alternates of each other through `pageMeta`.
 - The finder page links all seven.
 
-## "Is this a good price?" link checker (2026-11-08)
+## 2026-11-08 — "Is this a good price?" link checker
 
 The competitor scan's gap #7, the same checker every Compare Empire site got that day. `/is-this-a-good-price` (one
 page for every market: the store's own market decides) takes a pasted camera store link, or one pasted into the header
