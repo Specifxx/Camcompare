@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, SITE_NAME, SITE_URL } from "@/lib/site";
 import { MARKETS, MARKET_CODES } from "@/lib/markets";
 import { RETAILERS } from "@/lib/retailers";
 import { ListYourStore } from "@/components/ListYourStore";
+import { storeBadge } from "@/lib/store-badge";
 
 // The store-owner page every Compare Empire site shares (owner, 2026-11-04).
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function ListYourStorePage() {
   return (
     <div className="mx-auto max-w-2xl leading-relaxed">
       <ListYourStore
+        badge={storeBadge(`${SITE_URL}/`, "Camera prices compared on CamCompare")}
         site={SITE_NAME}
         what="cameras and lenses"
         markets={markets}
