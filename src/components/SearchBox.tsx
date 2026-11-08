@@ -67,7 +67,11 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
         onKeyDown={(e) => {
           if (e.key === "ArrowDown") setActive((a) => Math.min(a + 1, hits.length - 1));
           else if (e.key === "ArrowUp") setActive((a) => Math.max(a - 1, 0));
-          else if (e.key === "Enter" && hits[active]) go(hits[active]);
+          // A pasted store link goes to the price checker, not a search for its words.
+          else if (e.key === "Enter" && /^https?:\/\/\S+\.\S+/i.test(q.trim())) {
+            setOpen(false);
+            router.push(`/is-this-a-good-price#link=${encodeURIComponent(q.trim())}`);
+          } else if (e.key === "Enter" && hits[active]) go(hits[active]);
           else if (e.key === "Escape") setOpen(false);
         }}
         className={
