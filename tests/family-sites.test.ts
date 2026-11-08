@@ -3,13 +3,14 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { footerSisters } from "../src/lib/family-network";
 
-// The footer (owner, 2026-11-03): no sister-site list, only one "A Compare Empire site" link to the
-// network page that lists every site (DECISIONS.md).
-test("footer: no sister list, one plain link to the network page", () => {
+// The footer (owner, 2026-11-03: no sister list; 2026-11-08: no link to another of our domains on every page): one
+// internal link to /our-sites, which lists every other family site once (DECISIONS.md).
+test("footer: no sister list, one internal link to /our-sites", () => {
   assert.deepEqual(footerSisters("cam"), []);
   const footer = readFileSync("src/components/Footer.tsx", "utf8");
-  assert.doesNotMatch(footer, /footerSisters|Sister site/);
-  assert.match(footer, /NETWORK_PAGE/);
-  assert.match(footer, /A Compare Empire site/);
-  assert.doesNotMatch(footer.slice(footer.lastIndexOf("NETWORK_PAGE"), footer.indexOf("</nav>", footer.lastIndexOf("NETWORK_PAGE"))), /sponsored|nofollow|affiliateUrl/);
+  assert.doesNotMatch(footer, /footerSisters|Sister site|NETWORK_PAGE/);
+  assert.match(footer, /href="\/our-sites"/);
+  const page = readFileSync("src/app/our-sites/page.tsx", "utf8");
+  assert.match(page, /FAMILY_SITES\.filter\(\(s\) => s\.id !== "cam"\)/);
+  assert.doesNotMatch(page, /sponsored|nofollow|affiliateUrl|revalidate/);
 });
