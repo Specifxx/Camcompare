@@ -2151,3 +2151,12 @@ DexCompare's footer went first (CompareEmpire #153); every other site now does t
 internal page, `/our-sites`, and that page links each other family site once, by its plain name, from
 `FAMILY_SITES` (`lib/family-network.ts`, unchanged; `footerSisters` stays for the shared test). Every other footer
 link, page URL and title is unchanged. Cross-traffic still comes from the price blocks on the deals and pre-order pages.
+
+## 2026-11-08 — Christmas is one quiet line, not a costume
+
+Owner: "some of the christmas themes on our websites are a bit too much - the theme must match the domain". The
+2026-11-01 Christmas look (falling snow, a strand of lights, trees, presents, candy canes, stockings, a Santa hat on the
+logo, candy-cane stripes and seasonal palette swaps) is gone, with its art in `public/xmas/`. The season keeps at most ONE
+touch, drawn in the site's own colours: the "Holiday camera deals" line in the hero (`.xmas-pill`), in the site's own colours, with no gift icon. It still starts and ends by itself (`lib/season.ts`, 1 November to
+Boxing Day), and the tests pin that nothing else comes back. Black Friday and Cyber Monday (strip, pages, nav) are
+unchanged. The same rule went to every sister site: the site's own identity first.
