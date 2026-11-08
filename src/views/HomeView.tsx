@@ -13,7 +13,6 @@ import Freshness from "@/components/home/Freshness";
 import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
 import EbayStrip from "@/components/home/EbayStrip";
-import { ChristmasDecor } from "@/components/ChristmasDecor";
 import { CreatorsCornerBadge } from "@/components/creators/CreatorsCornerBadge";
 import { brandName, brands, displayName, displayShortName, historyFor, indexedPairs, mounts, offersFor, offersGeneratedAt, pairSlug, product, publishedCameras, publishedLenses, type AnyProduct } from "@/lib/catalog";
 import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
@@ -206,7 +205,6 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         <div aria-hidden className="hero-wash pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2" />
         {/* Christmas only (1 November to Boxing Day, lib/season.ts; hidden by CSS otherwise): snow, lights, trees. */}
         <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2">
-          <ChristmasDecor />
         </div>
         {/* The creators hub, above the fold (owner, 2026-11-03): top-right corner from sm, a centred pill above the headline on a phone. */}
         <CreatorsCornerBadge />
@@ -220,7 +218,6 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         {/* Christmas only: a line to the deals, for gift shoppers. */}
         <div className="xmas-pill-row mt-4 justify-center">
           <Link href={marketPath(m, "/deals")} prefetch={false} className="xmas-pill">
-            <span className="xmas-pill-icon" aria-hidden="true" />
             <b>Holiday camera deals</b>
             <span className="xmas-pill-more hidden sm:inline">· real price drops, checked every day →</span>
           </Link>

@@ -33,14 +33,11 @@ test("the boot script agrees with isChristmas(), takes ?season=, and never throw
   assert.doesNotThrow(() => vm.runInNewContext(SEASON_BOOT_SCRIPT, { Date }));
 });
 
-test("the layout stamps the season before paint, and the decoration is gated and takes no taps", () => {
+test("the layout stamps the season before paint, and Christmas is one quiet line (owner, 2026-11-08)", () => {
   assert.match(readFileSync("src/app/layout.tsx", "utf8"), /__html: SEASON_BOOT_SCRIPT/);
   const css = readFileSync("src/app/globals.css", "utf8");
-  assert.match(css, /\.xmas-only \{\s*display: none !important;/);
-  for (const sel of [".xmas-snow {", ".xmas-lights {", ".xmas-art {", ".xmas-hero {"]) {
-    const i = css.indexOf(sel);
-    assert.ok(i >= 0, sel);
-    assert.match(css.slice(i, css.indexOf("}", i)), /pointer-events: none;/, `${sel} must not take taps`);
-  }
-  assert.match(readFileSync("src/components/ChristmasDecor.tsx", "utf8"), /className="xmas-only xmas-hero" aria-hidden="true"/);
+  // "The theme must match the domain": no snow, lights, art or Santa hat; only the deals line, in the site's colours.
+  for (const gone of [".xmas-snow", ".xmas-lights", ".xmas-art", ".xmas-hero", ".xmas-logo-hat", "/xmas/"]) assert.ok(!css.includes(gone), gone);
+  assert.match(css, /:root\[data-season="christmas"\] \.xmas-pill-row \{\s*display: flex;/);
+  assert.match(css, /\.xmas-pill \{[^}]*color: inherit;/);
 });
