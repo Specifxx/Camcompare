@@ -7,7 +7,7 @@ import { marketPath, type MarketCode } from "@/lib/markets";
 import { searchRank, type SearchRow } from "@/lib/search";
 
 // variant "hero": the home hero's big box (styling only; same search).
-export default function SearchBox({ market, variant = "header", placeholder = "Search cameras & lenses" }: { market: MarketCode; variant?: "header" | "hero"; placeholder?: string }) {
+export default function SearchBox({ market, variant = "header", placeholder = "Search a model, brand or lens (a7 IV, 24-70)" }: { market: MarketCode; variant?: "header" | "hero"; placeholder?: string }) {
   const hero = variant === "hero";
   const ids = hero ? "hero-search" : "site-search";
   const router = useRouter();
@@ -39,7 +39,7 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
   };
 
   return (
-    <div ref={box} className={hero ? "relative w-full" : "relative min-w-0 flex-1 md:w-64 md:flex-none"}>
+    <div ref={box} className={hero ? "relative w-full" : "relative min-w-0 flex-1 lg:w-44 lg:flex-none xl:w-52"}>
       {hero && (
         <svg aria-hidden viewBox="0 0 24 24" className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-subtle" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
           <circle cx="11" cy="11" r="7" />
