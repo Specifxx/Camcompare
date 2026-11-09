@@ -2193,3 +2193,26 @@ store's page is never opened. Like is compared with like: one key per market, pr
 and lens mount, so a used body never sets a new body's verdict. Amazon (its prices are never committed), eBay and the
 link-only marketplaces are never a store here. A link we can't place offers the closest catalogue matches from
 `/search-index.json`.
+
+## 2026-11-09 — Navigation audit: one list, seven header items, dropdowns in the HTML
+
+Owner: navigation is very important; a buyer deep in one corner (Sony E, full frame, a 70-200) must reach it fast. The header
+had thirteen links on two rows, and "Camera systems" (the way most buyers start: which mount am I on?) sat inside a
+click-to-open "More" menu that was not in the server HTML at all.
+
+- **Seven items from lg up:** Cameras, Lenses, Brands and Systems open a dropdown; then Deals, Used and More. Dropdown
+  panels are ordinary links in the server HTML (shown by CSS hover and focus, and by the chevron button on touch);
+  Escape closes. Cameras: by type, sensor, budget and use. Lenses: by mount, focal length and budget. Brands and Systems
+  list every live brand and mount, so each hub is one click from any page.
+- **One source** (`lib/nav.ts` constants, `lib/nav-data.ts` built from the catalog once per process): the header, the
+  phone menu and the footer read it. Only what is live is linked: a type, sensor, brand, mount or use with nothing behind
+  it is left out, the budget tiers are in the market's currency, and `/cameras-for/<use>` is linked only where that market
+  has the three priced picks that index it (`lib/uses.ts`, moved out of `UseView.tsx` so node tests can load it).
+- **Filter links open the finder** (`/cameras?type=`, `?sensor=`, `?budget=`, `/lenses?mount=`, `?focal=`). The finder's
+  canonical stays the bare page, so these add no thin indexed pages. No new URL, title, h1 or JSON-LD.
+- **Phones:** under lg a strip of the same sections and a menu button that opens the full list, grouped; search stays in the
+  header row. The old "⋯" menu (`MoreMenu.tsx`) is gone.
+- **Orientation:** a brand page links its systems (and the finder preset to the brand); a mount page links its lens makers.
+  The footer's 40-link column is regrouped (Shop, Learn and join in, About) with the same destinations.
+- Not changed, flagged to the owner: the eBay and Amazon side rails and the phone dock (owner-approved 2026-11-06, but they
+  float beside the page), and no sidebar (the layout is a single 6xl column by design).

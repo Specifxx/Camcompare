@@ -58,6 +58,8 @@ export default function BrandView({ slug, market: m }: { slug: string; market: M
     { title: "Other fixed-lens cameras", list: cams.filter((c) => !c.mount && !["compact", "action", "360", "drone", "smart-glasses"].includes(c.type)) },
   ].filter((g) => g.list.length);
   const lensGroups = mounts().map((mt) => ({ title: `Lenses for ${mt.name}`, list: lenses.filter((l) => l.mounts.includes(mt.slug)) })).filter((g) => g.list.length);
+  // Orientation (navigation audit, 2026-11-09): the systems this brand's products fit, and the way back to the finder with the brand preset.
+  const systems = mounts().filter((mt) => cams.some((c) => c.mount === mt.slug) || lenses.some((l) => l.mounts.includes(mt.slug)));
   return (
     <div className="flex flex-col gap-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(breadcrumb([{ name: "Brands", path: marketPath(m, "/brands") }, { name: b.name, path: marketPath(m, `/brands/${slug}`) }]))} />
@@ -70,6 +72,14 @@ export default function BrandView({ slug, market: m }: { slug: string; market: M
           {[cams.length ? `${cams.length} cameras` : null, lenses.length ? `${lenses.length} lenses` : null].filter(Boolean).join(" and ")} · prices for {MARKETS[m].name}
           {b.sublines?.length ? ` · includes ${b.sublines.join(", ")}` : ""}
         </p>
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
+          {cams.length > 0 && <Link href={marketPath(m, `/cameras?brand=${b.slug}`)} className="btn-ghost">Filter {b.name} cameras</Link>}
+          {lenses.length > 0 && <Link href={marketPath(m, `/lenses?brand=${b.slug}`)} className="btn-ghost">Filter {b.name} lenses</Link>}
+          {systems.length > 0 && <span className="ml-1 text-subtle">Systems:</span>}
+          {systems.map((mt) => (
+            <Link key={mt.slug} href={marketPath(m, `/mounts/${mt.slug}`)} className="chip-link">{mt.name}</Link>
+          ))}
+        </div>
       </div>
       {camGroups.map((g) => (
         <section key={g.title}>

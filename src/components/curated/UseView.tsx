@@ -11,27 +11,9 @@ import { recommend, USES, type Use } from "@/lib/finder";
 import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { pageMeta } from "@/lib/seo";
 import { summarizeCamera } from "@/lib/summary";
-import { priceOf, type CameraSummary } from "@/lib/summary-types";
+import { USE_KEYS, USE_INDEX_MIN, picksForUse } from "@/lib/uses";
 
-export const USE_KEYS = Object.keys(USES) as Use[];
-export const USE_INDEX_MIN = 3;
-const TOP = 12;
-const LIGHT = 6;
-
-const priced = (c: CameraSummary) => c.lowestNew !== null || c.lowestUsed !== null;
-
-export function picksForUse(use: Use, m: MarketCode) {
-  const cams = publishedCameras()
-    .filter((c) => c.status === "current" || c.announced >= "2019")
-    .map((c) => summarizeCamera(c, m))
-    .filter(priced);
-  const top = recommend(cams, use, "any", null, priceOf).slice(0, TOP);
-  const shown = new Set(top.map((x) => x.c.slug));
-  const light = recommend(cams, use, "small", null, priceOf)
-    .filter((x) => !shown.has(x.c.slug))
-    .slice(0, LIGHT);
-  return { top, light };
-}
+export { USE_KEYS, USE_INDEX_MIN, picksForUse };
 
 export const isUse = (s: string): s is Use => s in USES;
 const indexableForUse = (use: Use) => (x: MarketCode) => picksForUse(use, x).top.length >= USE_INDEX_MIN;
