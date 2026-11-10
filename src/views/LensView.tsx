@@ -17,6 +17,7 @@ import PriceAlert from "@/components/PriceAlert";
 import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
 import Gallery from "@/components/product/Gallery";
+import CompareWith from "@/components/product/CompareWith";
 import MoreOptions from "@/components/product/MoreOptions";
 import PageNav from "@/components/product/PageNav";
 import ProductOverview from "@/components/product/ProductOverview";
@@ -103,7 +104,6 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
   const related = relatedFor(self);
   const over = overview({ self, m, name, goodFor: things.goodFor, notFor: things.notFor, history, launch: launchPrice(l, m), alternatives: [...rivals, ...related.alternatives].filter((p, i, a) => a.findIndex((q) => q.item.slug === p.item.slug) === i) });
   const rival = rivals[0] ? { item: rivals[0].item, brandName: brandName(rivals[0].item.brand) } : null;
-  const compareHref = rivals[0] ? (isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(l, rivals[0].item)}` : marketPath(m, `/compare?c=${l.slug},${rivals[0].item.slug}`)) : null;
   const mountNames = l.mounts.map((x) => mount(x)).filter((x): x is NonNullable<typeof x> => x !== null);
   return (
     <article className="flex flex-col gap-10" data-no-dock>
@@ -117,10 +117,13 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
           <Link href={marketPath(m, "/lenses")}>Lenses</Link> / <Link href={marketPath(m, `/brands/${l.brand}`)}>{brand}</Link> / <span>{short}</span>
         </nav>
         <header className="grid grid-cols-1 gap-5 md:grid-cols-[minmax(0,340px)_minmax(0,1fr)] md:gap-8">
-          <Gallery slug={l.slug} images={galleryFor(l.slug, name)} />
+          {/* On a phone the photo follows the price, so the first screen holds the price, the buy button and "Compare with" (CAM-3, 2026-11-10). */}
+          <div className="order-last md:order-none">
+            <Gallery slug={l.slug} images={galleryFor(l.slug, name)} />
+          </div>
           <div className="flex min-w-0 flex-col gap-4">
             <div>
-              <h1 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] sm:text-4xl">{name}</h1>
+              <h1 className="text-2xl font-extrabold leading-tight tracking-[-0.03em] sm:text-4xl">{name}</h1>
               <p className="mt-1 text-sm text-muted">
                 Lens for{" "}
                 {mountNames.map((mt, i) => (
@@ -137,15 +140,13 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
                 <OfficialLink p={l} />
               </p>
             </div>
-            <KeySpecs l={l} />
+            <div className="max-md:order-last">
+              <KeySpecs l={l} />
+            </div>
             <PriceBox offers={offers} history={history} launch={launchPrice(l, m)} market={m} pack="lens" page={page} />
+            <CompareWith self={self} rivals={rivals} market={m} />
             <div className="flex flex-wrap gap-2">
               <PriceAlert slug={l.slug} kind="lens" market={m} newPrice={h.new?.price ?? null} usedPrice={h.used?.price ?? null} />
-              {compareHref && rivals[0] && (
-                <Link href={compareHref} rel={compareHref.startsWith("/compare/") ? undefined : "nofollow"} className="btn-ghost">
-                  Compare with {displayShortName(rivals[0].item, m)}
-                </Link>
-              )}
               <SaveButton slug={l.slug} kind="lens" market={m} seen={(h.new ?? h.used)?.price ?? null} cond={h.new ? "new" : "used"} />
               <ShareButton title={name} path={marketPath(m, `/lenses/${l.slug}`)} text={productShareText(name, offers)} />
             </div>

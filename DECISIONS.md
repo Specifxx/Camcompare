@@ -2216,3 +2216,15 @@ click-to-open "More" menu that was not in the server HTML at all.
   The footer's 40-link column is regrouped (Shop, Learn and join in, About) with the same destinations.
 - Not changed, flagged to the owner: the eBay and Amazon side rails and the phone dock (owner-approved 2026-11-06, but they
   float beside the page), and no sidebar (the layout is a single 6xl column by design).
+
+## 2026-11-10: A product page's first phone screen: price, buy button, used, and "Compare with" (site review CAM-3)
+
+Visitors viewed 1.3 pages; the top entries are product pages (G7 X Mark III, GFX100S II, ZV-E10), landed from Google on
+a phone. At 400 px the first screen was the photo, then the name: the price and its button started below it, and the one
+"Compare with" link sat under the actions. Now, below `md` only, the photo follows the text column (`order-last`), the
+h1 is a size smaller, the price panel's "Typically X–Y" line is hidden (it stays from `sm` up), and a new `CompareWith`
+row under the price panel links up to three rivals: an indexed pair (each names the other) to its `/compare/<a>-vs-<b>`
+page, any other rival to the noindex builder with `rel="nofollow"`, as before. It replaces the single "Compare with"
+button. On a 400×780 screen the G7 X Mark III page now shows the best new price, its buy button, the used price and the
+three compare links before any scroll. Lens pages get the same, with their key specs after the actions on a phone. No URL,
+title, meta, canonical or JSON-LD changed, and no ad sits beside the buy button. Desktop is unchanged.
