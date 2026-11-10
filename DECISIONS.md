@@ -2308,6 +2308,17 @@ so old links keep working with no redirect function. Both pages are noindex (a s
 so no ranking is at stake; a featured story's canonical is now the titled address. Capability links (shared decks,
 lists, snapshots, creator edit links) stay opaque on purpose: unguessable, noindex.
 
+## 2026-11-10: The nearest paid price under the hero's best price
+
+The zero-earnings diagnosis (10 Nov) found 197 buy clicks in 30 days, 96 of them to a link that can earn, and nothing
+earned. The hero names one offer, the cheapest, which often pays nothing. RiftCompare's paid-alternative rule (owner
+2026-10-27) is ported (`lib/paid-alternative.ts`, `PriceBox`): when the hero's offer is not a paid link, a line under its
+button names the cheapest paid offer of the SAME kind (new body-only, used body-only, or a kit of the same condition, the
+`lib/price-rules.ts` groups), in stock and in the same currency, within 20% of it: "or $7,160 at eBay.com +7% →",
+"Paid link". Amazon counts only as the hero does (shown live with its time, `TimedPrice`). It is the offer's real price,
+never "Best price", never a reorder. Clicks are `buy_click` placement `hero_alt` (and the sub id). On the day's data (no
+Amazon prices locally) it shows on 205 of 2,558 product-market heroes; 708 heroes already lead with a paid offer.
+
 ## 2026-11-10: parts, accessory bundles and special editions are no longer a camera's price
 
 The US offers of 10 Nov carried eBay parts as cameras ("Canon PowerShot G7X Mark III LCD Part" at $395 new, "Fujifilm X 100vi
