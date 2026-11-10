@@ -9,7 +9,7 @@ import { readAccessoriesFile, writeAccessoriesFile, writeAccessoryHistory } from
 import type { Camera, Lens } from "./catalog/schema";
 import { MARKETS, type MarketCode } from "./markets";
 import { hasLicensedThumb } from "./images";
-import { buildIndex } from "./matching";
+import { buildIndex, matchListing, otherEdition, type CatalogIndex } from "./matching";
 import { writeStorePhotos } from "./store-photos";
 import { AMAZON_MAX_AGE_H, historyDir, isAmazonOffer, lowest, OFFER_MAX_AGE_H, offersFile, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
 import { retailer } from "./retailers";
@@ -37,6 +37,70 @@ export function mergeOffers(prev: OffersFile, results: Record<string, SourceResu
   for (const key of new Set(prev.offers.map((o) => o.retailer))) if (!(key in results) && retailer(key)) out.push(...keepPrev(key));
   // A product removed from the catalog takes its offers with it.
   return out.filter((o) => slugs.has(o.product)).sort((a, b) => a.product.localeCompare(b.product) || a.price - b.price);
+}
+
+// What a title-only re-match may refuse a stored offer for: the listing says
+// it is a part, an accessory or an edition we don't list. "No alias" and the
+// like are no evidence against an offer matched by its GTIN or part number.
+const RECHECK_REFUSALS = /^(parts\/broken|film camera|accessory|accessories only|lens accessory|drone part|glasses part|"[^"]+": an edition)/;
+
+/**
+ * Every offer, kept or fresh, read again by today's matcher (titles only): a
+ * listing it now refuses as a part, an accessory or another edition goes, and
+ * one that names an edition this product is not (filed before the edition had
+ * its own page) goes too, and one it reads as a bundle of the same product
+ * becomes a kit. One-way: it never adds an offer, moves
+ * one to another product or un-kits one.
+ */
+export function recheckOffers(offers: Offer[], index: CatalogIndex): Offer[] {
+  const out: Offer[] = [];
+  for (const o of offers) {
+    const m = matchListing({ title: o.title }, index, o.kind);
+    if (!m.product) {
+      if (!RECHECK_REFUSALS.test(m.reason)) out.push(o);
+      continue;
+    }
+    if (m.product.slug !== o.product) {
+      // The title names an edition of this product that is its own product (a
+      // "GR IV Monochrom" filed under the GR IV): not this one's price. Any
+      // other disagreement may be a GTIN match with a loose title: kept.
+      const stored = index.bySlug.get(o.product);
+      if (!stored || !otherEdition(o.title.toLowerCase(), stored)) out.push(o);
+      continue;
+    }
+    out.push(m.kit && !o.kit ? { ...o, kit: true } : o);
+  }
+  return out;
+}
+
+/** Floors, as a share of the product's median new price, under which a listing is a part or a different product. */
+export const MEDIAN_FLOOR = { new: 0.5, used: 0.25 } as const;
+const MEDIAN_MIN_OFFERS = 3;
+
+/**
+ * plausiblePrice holds a price against the launch price; this holds it against
+ * what stores ask today. With 3+ in-stock new offers of a camera alone, a new
+ * offer under half their median, or a used, open-box or refurbished one under
+ * a quarter, is dropped: a part or an accessory titled with the camera's name
+ * (a GO 3S Action Pod, a GR IIIx viewfinder, Zeiss ZF lenses under the Nikon
+ * Zf), a scam or a used body listed as new. Kits are their own price and are
+ * left alone. Lenses are not held to it: white-box and kit-split lenses sell
+ * new at under half, and used kit zooms at a fifth, of the boxed price.
+ */
+export function dropPriceOutliers(offers: Offer[]): Offer[] {
+  const newPrices = new Map<string, number[]>();
+  for (const o of offers) if (o.kind === "camera" && !o.kit && o.inStock && o.condition === "new") (newPrices.get(o.product) ?? newPrices.set(o.product, []).get(o.product)!).push(o.price);
+  const median = new Map<string, number>();
+  for (const [slug, ps] of newPrices) {
+    if (ps.length < MEDIAN_MIN_OFFERS) continue;
+    const s = [...ps].sort((a, b) => a - b);
+    median.set(slug, s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2);
+  }
+  return offers.filter((o) => {
+    const m = median.get(o.product);
+    if (!m || o.kit) return true;
+    return o.price >= m * (o.condition === "new" ? MEDIAN_FLOOR.new : MEDIAN_FLOOR.used);
+  });
 }
 
 // Run notes are committed with the offers, and a fetch error can quote the
@@ -83,7 +147,7 @@ export async function runMarket(market: MarketCode, cameras: Camera[], lenses: L
     log(`[${market}] ${s.retailer}: ${res.status}${res.status === "ok" ? ` ${res.offers.length} offers` : ""}${res.note ? ` (${res.note})` : ""}`);
   }
   const slugs = new Set([...cameras, ...lenses].map((p) => p.slug));
-  const offers = mergeOffers(prev, results, now, slugs);
+  const offers = dropPriceOutliers(recheckOffers(mergeOffers(prev, results, now, slugs), index));
   const file: OffersFile = { generatedAt: now, market, currency: MARKETS[market].currency, sources: { ...prev.sources, ...runs }, offers };
   fs.mkdirSync(path.dirname(offersFile(market)), { recursive: true });
   fs.writeFileSync(offersFile(market), JSON.stringify(file, null, 1) + "\n");

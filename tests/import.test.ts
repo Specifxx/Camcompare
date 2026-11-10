@@ -270,3 +270,34 @@ test("eBay: the daily cap is split across the day's runs and markets", () => {
   assert.equal(ebayRunBudget("sg", M, now, {}).perRun, 0, "no eBay retailer, no calls");
   assert.notEqual(ebayRunBudget("us", M, now, {}).slot, ebayRunBudget("us", M, "2026-10-30T06:17:00Z", {}).slot);
 });
+
+test("the import re-reads every offer: parts and other editions go, bundles become kits", async () => {
+  const { recheckOffers } = await import("../src/lib/import");
+  const { readCameraFiles, readLensFiles } = await import("../src/lib/catalog/load");
+  const real = buildIndex(readCameraFiles().cameras, readLensFiles().lenses);
+  const o = (product: string, title: string, over: Partial<Offer> = {}): Offer => ({ ...offer({ product, retailer: "ebay" }), title, ...over });
+  const out = recheckOffers([
+    o("canon-powershot-g7-x-mark-iii", "Canon PowerShot G7X Mark III LCD Part CY1-9957-LCD"),
+    o("ricoh-gr-iv", "Ricoh GR IV Monochrom Camera"),
+    o("dji-osmo-pocket-3", "DJI Osmo Pocket 3 Creator Combo"),
+    o("ricoh-gr-iv", "Ricoh GR IV Digital Camera"),
+    // A GTIN match whose title the matcher can't read is no evidence against it.
+    o("sony-a7-iv", "ILCE7M4/B"),
+  ], real);
+  assert.deepEqual(out.map((x) => [x.product, x.kit]), [["dji-osmo-pocket-3", true], ["ricoh-gr-iv", false], ["sony-a7-iv", false]]);
+});
+
+test("a camera offer far under its stores' median new price is dropped; lenses and kits are not", async () => {
+  const { dropPriceOutliers } = await import("../src/lib/import");
+  const at = (price: number, over: Partial<Offer> = {}) => offer({ product: "fujifilm-x100vi", price, ...over });
+  const stores = [at(179900, { retailer: "bh" }), at(179900, { retailer: "adorama" }), at(184900, { retailer: "keh" })];
+  const parts = at(20898, { retailer: "ebay", condition: "used", title: "Fujifilm X 100vi Lens Assembly Part" });
+  const low = at(39500, { retailer: "ebay" }); // new, under half the median
+  const used = at(129900, { retailer: "ebay", condition: "used" });
+  const bundle = at(60000, { retailer: "ebay", kit: true });
+  const lens = offer({ product: "sony-fe-28-70mm", kind: "lens", price: 5000, condition: "used" });
+  const kept = dropPriceOutliers([...stores, parts, low, used, bundle, lens]);
+  assert.deepEqual(kept.map((x) => x.price), [179900, 179900, 184900, 129900, 60000, 5000]);
+  // Fewer than three new offers: nothing to hold a price against.
+  assert.equal(dropPriceOutliers([stores[0], parts]).length, 2);
+});

@@ -90,12 +90,20 @@ export function kitLensLabel(o: Pick<Offer, "kit" | "title"> & Partial<Pick<Offe
   return ls.length ? ls.join(" + ") : null;
 }
 
-/** "Kit with RF-S 18-45mm", or "Kit (lens not named)" for a body; "Bundle" otherwise. */
+/**
+ * "Kit with RF-S 18-45mm", or "Kit with a lens" for a body whose lens isn't
+ * named; "Bundle" for a body sold with accessories only ("Body + Accessories
+ * Bundle", lib/matching.ts isBundle) and for anything else.
+ */
 export function kitText(o: Offer, pack: "body" | "fixed" | "lens" = "body"): string {
   const l = kitLensLabel(o, pack);
   if (pack !== "body") return l ? `Bundle with ${l}` : "Bundle";
+  if (!l && BODY_ACCESSORY_BUNDLE.test(o.title)) return "Bundle";
   return l ? `Kit with ${l}` : "Kit with a lens";
 }
+// A body named as a body, with no lens beside it ("Interchangeable Lens
+// Camera" names none): its kit flag came from accessories.
+const BODY_ACCESSORY_BUNDLE = /^(?!.*(?<!interchangeable )\blens\b(?!\s+camera)).*\bbody\b/i;
 
 // ------------------------------------------------------------ typical range
 

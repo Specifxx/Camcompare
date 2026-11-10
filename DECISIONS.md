@@ -2318,3 +2318,33 @@ button names the cheapest paid offer of the SAME kind (new body-only, used body-
 "Paid link". Amazon counts only as the hero does (shown live with its time, `TimedPrice`). It is the offer's real price,
 never "Best price", never a reorder. Clicks are `buy_click` placement `hero_alt` (and the sub id). On the day's data (no
 Amazon prices locally) it shows on 205 of 2,558 product-market heroes; 708 heroes already lead with a paid offer.
+
+## 2026-11-10: parts, accessory bundles and special editions are no longer a camera's price
+
+The US offers of 10 Nov carried eBay parts as cameras ("Canon PowerShot G7X Mark III LCD Part" at $395 new, "Fujifilm X 100vi
+Lens Assembly Part" at $208.98 used, a PolarPro grip set on the X100VI), and bundles and editions filed under the base product
+with `kit: false` (Beach Camera's "Body + 128GB Card Bundle", the Osmo Pocket 3 Creator Combo, Insta360 X5 Essentials Bundle,
+GR IV 30th Anniversary and Monochrom under the GR IV, Leica Q3 Monochrom under the Q3). Every rule below only refuses or
+re-labels, with a real title for each in `tests/matching.test.ts`:
+
+- **Parts** (`PARTS`): "part(s)", "ass'y"/"assy"/"assembly", "PCB", "optical unit", "job lot", for every listing.
+- **Accessory makers** (`ACCESSORY_MAKER`: PolarPro, SmallRig, Tilta…) in a camera listing, unless "+", "with" or "&" comes
+  first ("X100VI + SmallRig UV Filter" is the camera); a title ending "Accessories" with nothing before it saying "with".
+- **Editions** (`otherEdition`): "Monochrom(e)", "Anniversary", "Commemorative" or any "<word> Edition" the catalog
+  product's own names don't carry is refused: special and limited editions are other products, priced apart. "Standard
+  Edition" is the base product, "Creator Edition" a bundle. The GR IV Monochrome gained the store spelling "GR IV Monochrom".
+- **Bundles** (`isBundle`): combo, bundle, package, creator/vlog/starter kits, a card, SSD or reader thrown in, "with 8
+  Essential Accessories" make `kit: true` for every camera, body or fixed lens, and "kit" alone does for a fixed-lens one.
+  "Body" no longer cancels it. "Standard Combo/Bundle" (the maker's base pack) and a used listing "with accessories" (its own
+  box contents) stay the camera. A body bundle with no lens reads "Bundle", not "Kit with a lens" (`kitText`).
+- **The import re-reads every offer** (`recheckOffers`, after `mergeOffers`): one the matcher now refuses as a part, an
+  accessory or an edition goes, one naming an edition the stored product isn't goes, and a bundle becomes a kit. Rows a
+  rotating eBay pass keeps from earlier runs are cleaned without a new search. A title the matcher simply can't read (a
+  GTIN match) is kept.
+- **Median floor for cameras** (`dropPriceOutliers`): with 3+ in-stock new offers, a new camera offer under 50% of their
+  median, or a used/open-box/refurbished one under 25%, is dropped (GO 3S Action Pod, GR IIIx viewfinder, Zeiss ZF lenses
+  under the Nikon Zf, used Leicas listed as new). Lenses are left to `plausiblePrice`: white-box and kit-split lenses sell new
+  at 45–50% of the boxed median and used kit zooms at 16–35%, so the same floor would drop real prices.
+
+Dry run over the committed offers: 135 rows dropped as parts, accessories or editions and 466 re-labelled as bundles across
+the five markets; the median floor drops 19 more, all camera accessories, wrong products or used bodies listed as new.

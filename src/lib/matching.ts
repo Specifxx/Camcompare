@@ -15,7 +15,9 @@
 //    the same kind left standing means the listing is refused, not guessed;
 //  - a model followed by a generation mark the catalog doesn't have ("R6
 //    Mark III" when only the R6 exists) is refused, not read as the older one;
-//  - accessories, parts and film bodies are refused outright;
+//  - accessories, parts, film bodies and special editions are refused outright;
+//  - a combo, a store's accessory bundle or a card thrown in is a bundle
+//    (kit: true), never the camera's own price;
 //  - a camera named alongside a lens is a kit (for a camera) and never a
 //    lens offer; a camera named after "for" ("… for Sony a6400") is only a
 //    compatibility note on a lens listing.
@@ -95,11 +97,57 @@ const MOUNT_WORDS: [RegExp, string][] = [
 // included. Checked on the lowercased title. Never a bare spec word ("CMOS
 // sensor", "LCD display"): real titles list those.
 const PARTS =
-  /\b(for parts|parts only|not working|(doesn['’]?t|does not|don['’]?t|do not) work(ing|s)?|not functioning|defective|damaged|broken|as[- ]is|repair|replacement|untested|spares|faulty|box only|empty box|dummy|replica|manual only|rental|(image )?sensor (unit|assembly|board)|main ?board|logic board|flex cable|shutter (assembly|unit|block)|(lcd|display|screen) (assembly|module)|(lens|glass) (element|group)|element (glass|group))\b/;
+  /\b(for parts|parts only|not working|(doesn['’]?t|does not|don['’]?t|do not) work(ing|s)?|not functioning|defective|damaged|broken|as[- ]is|repair|replacement|untested|spares|faulty|box only|empty box|dummy|replica|manual only|rental|(image )?sensor (unit|assembly|board)|main ?board|logic board|flex cable|shutter (assembly|unit|block)|(lcd|display|screen) (assembly|module)|(lens|glass) (element|group)|element (glass|group)|parts?|ass['’]?y|assembly|pcb|optical unit|job lot|lot of \d+)\b/;
 // Accessories sold "for" a camera: batteries, grips, cages… (camera listings only).
 const CAMERA_ACCESSORY =
   /\b(battery|batteries|charger|grip|cage|strap|case|bag|protector|skin|decal|cover|eyecup|eye cup|body cap|remote|cable|bracket|plate|hot ?shoe|microphone|gimbal|tripod|speedlite|flash unit|memory card|sd card|cfexpress card|motherboard|lcd screen|eyepiece|top handle|handle unit|(lens|media|light|display|filter) mods?|sensor cleaning|lens only|teleconverter|extension tube|viewfinder only|evf only|housing|mount adapter)\b/;
 const FOR_PHRASE = /\b(for|fits|compatible with)\s+(the\s+)?(sony|canon|nikon|fuji|fujifilm|panasonic|lumix|olympus|om system|leica|ricoh|pentax|sigma|hasselblad|gopro|dji|insta360|blackmagic|ray-?ban|oakley|meta)\b/;
+// Camera accessory makers: their name in a camera listing is the accessory,
+// unless something before it says it comes with the camera ("+ SmallRig UV
+// Filter"). "PolarPro Magflip Fujifilm X100VI (THE SET ThumbGrip…)".
+const ACCESSORY_MAKER = /\b(polarpro|smallrig|tilta|ulanzi|jjc|neewer|kiwifotos|pgytech|freewell|nisi|urth|lensmate|fotodiox|vello|leofoto|peak design|gariz|kase)\b/;
+// A listing of a product's accessories alone: "… Creator Combo Accessories".
+const ACCESSORIES_ONLY = /\baccessor(y|ies)( only| set| pack| lot)?\W*$/;
+// A special or limited edition is a different product, priced apart (Ricoh GR
+// IV 30th Anniversary, Hasselblad X2D Earth Explorer, X-Pro2 Graphite
+// Edition): refused unless the catalog product's own name says it (Leica M10
+// Monochrom, Insta360 ONE RS 1-Inch 360 Edition). "Standard Edition" is the
+// base product; "Creator Edition" is a bundle (below).
+const EDITION_WORDS = /\b(monochrome?|anniversary|commemorative)\b|\b([a-z0-9-]+) edition\b/g;
+const PLAIN_EDITION = new Set(["standard", "creator", "bundle", "international", "us", "usa", "global"]);
+// Not the camera alone: a combo, a store's accessory bundle, a creator kit,
+// a card or drive thrown in. Never the camera's own price (kit: true, shown as
+// "Bundle"). The maker's base pack keeps its price: "Standard Combo".
+const STANDARD = /\bstandard[- ](bundle|package|pack|combo|edition|kit)\b/;
+const BUNDLE_WORDS = /\b(bundle|combo|package|creators? edition|(creators?|vlog\w*|video|starter|accessor(y|ies)|cleaning) kit)\b/;
+const BUNDLE_EXTRAS = /\+\s*\d+\s?(gb|tb)\b|\b(micro ?)?sd(hc|xc)? card\b|\bmemory card\b|\bcfexpress\b|\bssd\b|\bcard reader\b|\b(protection|warranty) pack\b|\bwith (\d+ |essential |premium |pro |deluxe |advanced )accessor(y|ies)\b|\baccessor(y|ies) (bundle|kit|package)\b/;
+// A fixed-lens camera has no lens kit: any "kit" is a bundle.
+const FIXED_BUNDLE = /\bkit\b/;
+// "… with Accessories" is a store's bundle on a new listing, but a used one's
+// original box contents ("boxed with accessories", "Mint, with accessories").
+const WITH_ACCESSORIES = /\bwith accessor(y|ies)\b/;
+const SECOND_HAND = /\b(used|mint|boxed|sealed|condition|excellent|exc\+*|euc|shutter count)\b/;
+// "Body + Lens Kit": the word "body" does not make it body only.
+const BODY_AND_LENS = /\bbody\s*(\+|&|and|with|w\/)\s*lens\b/;
+
+/** An edition word the title names that the product's own names don't, or null. */
+export function otherEdition(lower: string, p: Pick<Matchable, "shortName" | "aliases">): string | null {
+  const own = tokens([p.shortName, ...p.aliases].join(" ")).join(" ");
+  for (const m of lower.matchAll(EDITION_WORDS)) {
+    if (m[2] && PLAIN_EDITION.has(m[2])) continue;
+    const word = tokens(m[1] ?? m[2]).join("");
+    if (!word || own.split(" ").some((w) => w === word || (word.startsWith("monochrom") && w.startsWith("monochrom")))) continue;
+    return m[0];
+  }
+  return null;
+}
+
+/** A camera listing that is more than the camera: a combo, an accessory bundle, a card thrown in. */
+export function isBundle(lower: string, fixed: boolean): boolean {
+  if (STANDARD.test(lower)) return false;
+  return BUNDLE_WORDS.test(lower) || BUNDLE_EXTRAS.test(lower) || (WITH_ACCESSORIES.test(lower) && !SECOND_HAND.test(lower)) || (fixed && FIXED_BUNDLE.test(lower));
+}
+
 // Lens accessories name the lens after "for": "Lens hood for Sony FE 24-70mm GM II".
 const LENS_ACCESSORY = /\b(hood|cap|caps|filter|case|pouch|collar|tripod foot|adapter|cover|protector|skin|wrap|bag|ring|teleconverter|extender|extension tube)\b[^,()]*\b(for|fits|compatible with)\b/;
 // …or after the lens ("Canon EF 24-70mm f/2.8L II USM Lens Hood EW-88C"),
@@ -315,6 +363,10 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
   const finish = (p: Matchable, via: MatchVia): MatchResult => {
     if (ACCESSORY_BEFORE_DASH.test(lower)) return { product: null, reason: "accessory named before the product" };
     if (want && p.kind !== want) return { product: null, reason: `is a ${p.kind}` };
+    if (p.kind === "camera") {
+      const ed = otherEdition(lower, p);
+      if (ed) return { product: null, reason: `"${ed}": an edition we don't list` };
+    }
     if (p.kind === "camera" && (p.type === "drone" || p.type === "smart-glasses")) {
       const head = gadgetHead(lower);
       if (FOR_PHRASE.test(lower) || CAMERA_ACCESSORY.test(head)) return { product: null, reason: "accessory/part" };
@@ -329,7 +381,13 @@ export function matchListing(listing: Listing, index: CatalogIndex, want?: Produ
     if (p.kind === "camera") {
       if (CAMERA_ACCESSORY.test(lower)) return { product: null, reason: "accessory/part" };
       if (FOR_PHRASE.test(lower)) return { product: null, reason: "accessory phrasing" };
-      return { product: p, kind: "camera", via, kit: p.interchangeable && (KIT_PLUS.test(lower) || (KIT.test(lower) && !BODY_ONLY.test(lower))), mount: p.mounts[0] ?? null };
+      const maker = ACCESSORY_MAKER.exec(lower);
+      if (maker && !INCLUDED.test(lower.slice(0, maker.index))) return { product: null, reason: "accessory maker" };
+      const only = ACCESSORIES_ONLY.exec(lower);
+      if (only && !INCLUDED.test(lower.slice(0, only.index))) return { product: null, reason: "accessories only" };
+      const bundle = isBundle(lower, !p.interchangeable);
+      const kit = p.interchangeable ? KIT_PLUS.test(lower) || BODY_AND_LENS.test(lower) || (KIT.test(lower) && !BODY_ONLY.test(lower)) || bundle : bundle;
+      return { product: p, kind: "camera", via, kit, mount: p.mounts[0] ?? null };
     }
     if (LENS_ACCESSORY.test(lower)) return { product: null, reason: "lens accessory" };
     const part = LENS_PART.exec(lower);
