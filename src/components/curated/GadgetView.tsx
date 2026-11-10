@@ -55,7 +55,7 @@ export default function GadgetView({ type: t, market: m }: { type: GadgetType; m
         <h1 className="text-2xl font-extrabold tracking-tight">{c.h1}</h1>
         <p className="mt-2 text-sm text-muted">
           {c.intro} Prices are today&apos;s cheapest in {MARKETS[m].name}, new and used. To line two up, open one and press Compare, or use the{" "}
-          <Link href={marketPath(m, `/cameras?type=${t}`)} prefetch={false}>filterable list</Link>.
+          <Link href={marketPath(m, `/cameras?type=${t}`)} prefetch={false} rel="nofollow">filterable list</Link>.
         </p>
         <nav className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm" aria-label="On this page">
           {groups.length > 1 &&

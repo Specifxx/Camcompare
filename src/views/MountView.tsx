@@ -38,8 +38,8 @@ export default function MountView({ slug, market: m }: { slug: string; market: M
           {mt.brand ? `${brandName(mt.brand)}'s` : "An alliance"} mount, introduced in {mt.introduced}, flange distance {mt.flangeMm} mm, for {mt.formats.map((f) => sensorLabel(f)).join(" and ")} sensors{mt.status === "legacy" ? "; no longer developed" : ""}. {bodies.length} bodies and {lenses.length} lenses here.
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-sm">
-          <Link href={marketPath(m, `/cameras?mount=${mt.slug}`)} className="btn-ghost">Filter cameras</Link>
-          <Link href={marketPath(m, `/lenses?mount=${mt.slug}`)} className="btn-ghost">Filter lenses</Link>
+          <Link href={marketPath(m, `/cameras?mount=${mt.slug}`)} rel="nofollow" className="btn-ghost">Filter cameras</Link>
+          <Link href={marketPath(m, `/lenses?mount=${mt.slug}`)} rel="nofollow" className="btn-ghost">Filter lenses</Link>
           {makers.length > 0 && <span className="ml-1 text-subtle">Makers:</span>}
           {makers.map((b) => (
             <Link key={b} href={marketPath(m, `/brands/${b}`)} className="chip-link">{brandName(b)}</Link>

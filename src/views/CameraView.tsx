@@ -112,7 +112,7 @@ function LensesForCamera({ c, m }: { c: Camera; m: MarketCode }) {
     <section>
       <div className="mb-3 flex items-baseline justify-between gap-4">
         <h2 className="h-section">Lenses for the {displayShortName(c, m)}</h2>
-        <Link href={marketPath(m, `/lenses?mount=${c.mount}`)} className="shrink-0 text-sm">All {lenses.length} {mt?.name ?? ""} lenses →</Link>
+        <Link href={marketPath(m, `/lenses?mount=${c.mount}`)} rel="nofollow" className="shrink-0 text-sm">All {lenses.length} {mt?.name ?? ""} lenses →</Link>
       </div>
       <div className="flex flex-col gap-5">
         {groups.map(({ g, list }) => (

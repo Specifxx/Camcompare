@@ -38,7 +38,7 @@ export default function CameraAccessories({ slug, market: m }: { slug: string; m
                 {count > 1 ? (
                   <>
                     {" · "}
-                    <Link href={marketPath(m, `/accessories/${category}?${forModel ? `camera=${slug}` : `cb=${c.brand}`}`)} prefetch={false}>
+                    <Link href={marketPath(m, `/accessories/${category}?${forModel ? `camera=${slug}` : `cb=${c.brand}`}`)} prefetch={false} rel="nofollow">
                       {count} options
                     </Link>
                   </>

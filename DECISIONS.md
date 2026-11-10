@@ -2216,3 +2216,16 @@ click-to-open "More" menu that was not in the server HTML at all.
   The footer's 40-link column is regrouped (Shop, Learn and join in, About) with the same destinations.
 - Not changed, flagged to the owner: the eBay and Amazon side rails and the phone dock (owner-approved 2026-11-06, but they
   float beside the page), and no sidebar (the layout is a single 6xl column by design).
+
+## 2026-11-10: Query URLs are closed to crawlers (SEO indexing plan, SEO-2)
+
+- Every page carried about 34 followed filter links (`/cameras?type=mirrorless`, `/au/cameras?sensor=full-frame`,
+  `/lenses?mount=`, `?brand=`, `?budget=`, `?focal=`). Search Console listed them under "Duplicate without user-selected
+  canonical" while 619 real pages still waited to be crawled.
+- `robots.ts` now disallows `/*?` for `*`, with the sister sites' Allow list (`/_next/`, share images, icons,
+  `?utm_source=share`) so Next's assets and link-preview fetchers still work; the longest rule wins. No sitemap URL has a
+  query string, and `/compare?c=` is noindex already, so nothing indexable depends on one.
+- Every internal link whose href has a query string now carries `rel="nofollow"` (the header dropdowns and phone menu,
+  brand, mount, camera, lens and gadget views, accessory counts). The links stay: visitors still reach the finder.
+- Pinned by `tests/seo.test.ts`. Titles, URLs, canonicals and the sitemap are unchanged. SEO-9 (real type and sensor hub
+  pages, replacing the filter links in the navigation) is the follow-up.
