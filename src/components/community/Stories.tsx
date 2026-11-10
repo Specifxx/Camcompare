@@ -59,7 +59,7 @@ export function StoryRow({ s, mine, own, index, prefix, onNeedSignIn }: { s: Sto
           {s.featured && <span className="mr-2 font-semibold text-win">Featured</span>}
           <TagList tags={s.tags} />
         </p>
-        <a href={storyPath(s.id)} className="block font-semibold text-fg">
+        <a href={storyPath(s.id, s.title)} className="block font-semibold text-fg">
           {s.title}
         </a>
         <p className="mt-0.5 text-sm text-muted">{s.excerpt}</p>
@@ -70,7 +70,7 @@ export function StoryRow({ s, mine, own, index, prefix, onNeedSignIn }: { s: Sto
             <span className="text-subtle">
               {" "}
               · {s.minutes} min read ·{" "}
-              <a href={`${storyPath(s.id)}#comments`} className="text-muted">
+              <a href={`${storyPath(s.id, s.title)}#comments`} className="text-muted">
                 {s.comments} {s.comments === 1 ? "comment" : "comments"}
               </a>
             </span>

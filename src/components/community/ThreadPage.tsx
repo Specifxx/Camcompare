@@ -3,7 +3,7 @@
 // /community/t shell (a rewrite in next.config.js), which reads the id from
 // the address. The post, its votes and its comments (target "thread:<id>").
 import { useEffect, useState } from "react";
-import { boardName, ID_RE, THREAD_BODY_MAX, THREAD_TITLE_MAX, type ThreadItem, type VoteValue } from "@/lib/community/rules";
+import { boardName, idFromSegment, threadPath, THREAD_BODY_MAX, THREAD_TITLE_MAX, type ThreadItem, type VoteValue } from "@/lib/community/rules";
 import { AuthorLine, PlainText, ReportLink, VoteArrows } from "./bits";
 import { api, inputClass, linkButton, myVotes, useMe } from "./client";
 import Comments from "./Comments";
@@ -20,13 +20,15 @@ export default function ThreadPage() {
 
   useEffect(() => {
     const m = location.pathname.match(/^\/community\/t\/([^/]+)\/?$/);
-    const tid = m && ID_RE.test(m[1]) ? m[1] : null;
+    const tid = m ? idFromSegment(m[1]) : null;
     setId(tid);
     if (!tid) return setErr("That thread doesn't exist.");
     void api<{ thread: ThreadItem }>(`/api/community/threads/${tid}`).then((r) => {
       if (!r.ok) return setErr(r.error);
       setT(r.thread);
       document.title = `${r.thread.title} | CamCompare community`;
+      const want = threadPath(tid, r.thread.title);
+      if (location.pathname !== want) history.replaceState(null, "", want + location.search + location.hash);
     });
   }, []);
 

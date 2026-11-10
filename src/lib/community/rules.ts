@@ -152,7 +152,20 @@ export function checkUsername(raw: unknown): UsernameCheck {
 
 /** A path inside /u/ for a username (already validated, so no escaping surprises). */
 export const userPath = (username: string) => `/u/${encodeURIComponent(username)}`;
-export const threadPath = (id: string) => `/community/t/${id}`;
+/** A readable tail for a member-made page address ("12-best-travel-lens"): the id decides, the words are for people and shared links. */
+export function titleSlug(title: string | null | undefined): string {
+  const s = (title ?? "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  return s.slice(0, 60).replace(/-+$/g, "");
+}
+/** The id at the front of a path segment: "12" or "12-best-travel-lens". */
+export function idFromSegment(seg: string): string | null {
+  const m = /^([1-9][0-9]{0,17})(?:-[a-z0-9-]*)?$/.exec(seg);
+  return m ? m[1]! : null;
+}
+export const threadPath = (id: string, title?: string | null) => {
+  const s = titleSlug(title);
+  return `/community/t/${id}${s ? `-${s}` : ""}`;
+};
 
 // ---------------------------------------------------------------- text
 
