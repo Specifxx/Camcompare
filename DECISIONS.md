@@ -2228,3 +2228,29 @@ page, any other rival to the noindex builder with `rel="nofollow"`, as before. I
 button. On a 400×780 screen the G7 X Mark III page now shows the best new price, its buy button, the used price and the
 three compare links before any scroll. Lens pages get the same, with their key specs after the actions on a phone. No URL,
 title, meta, canonical or JSON-LD changed, and no ad sits beside the buy button. Desktop is unchanged.
+
+## 2026-11-10: Striking-distance pass, step one: home-page links to the price-check pages (SEO-6)
+
+**Why.** Week ending 8 Nov: 10,778 impressions at average position 28 for 41 clicks. Search Console query report
+(TCGEmpire Maintenance `gsc-queries`, 28 days to 9 Nov), queries at position 4–20 with 40+ impressions, and the page
+Google shows. Cam's product pages already answer a price query in their first screens (PriceBox, then the Overview's
+price line from `lib/overview.ts`), so the content half of the card was already done; what the ranked pages lacked was
+internal links with the query's own wording. Titles are untouched (judged 25 Nov).
+
+| Query (position 9 Nov) | Impressions | Page |
+|---|---|---|
+| fujifilm (17.1) | 188 | `/brands/fujifilm` |
+| leica m11 price (9.2) | 77 | `/cameras/leica-m11` |
+| cheap manfrotto 434b aluminium monopod (13.8) | 65 | accessory pages (not changed) |
+| fujifilm x100vi price (14.7) | 64 | `/cameras/fujifilm-x100vi` |
+| gimbal near me (9.9), gimbal deals (11.8), gimbal for sale (14.6) | 58 / 53 / 40 | `/accessories/gimbals` |
+| c500 mark ii price (11.3), canon c500 mark ii price (13.4), buy canon cinema eos c500 ii (19.0), canon eos c500 mark ii price (15.4), eos c500 mark ii price (14.8), cheap canon cinema eos c500 ii (14.6) | 56 / 55 / 52 / 51 / 45 / 40 | `/cameras/canon-eos-c500-mark-ii` |
+| leica q3 price (9.4) | 47 | `/cameras/leica-q3` |
+
+**What.** `lib/striking-links.ts` lists ten camera pages (these plus Nikon Z6 II, Z5 II, Panasonic GH7, S9, Hasselblad
+X2D II and Nikon ZR, which show at 7–17 for "<name> price"); the home page gets a "Camera prices people look up" strip
+of plain followed links ("Leica M11 price" …), plus "Gimbal deals" and "Fujifilm cameras and lenses". A camera's link
+shows only where its page in the visitor's market is indexable. No URL, title, canonical or JSON-LD change.
+Cannibalisation: none of these queries is shared by two of our pages in the report.
+
+**Recheck 25 Nov:** same ten query groups, same pages, compare position and impressions.
