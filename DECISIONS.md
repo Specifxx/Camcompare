@@ -2254,3 +2254,12 @@ shows only where its page in the visitor's market is indexable. No URL, title, c
 Cannibalisation: none of these queries is shared by two of our pages in the report.
 
 **Recheck 25 Nov:** same ten query groups, same pages, compare position and impressions.
+
+## 2026-11-10: Compare pairs from the "vs" searches Google already sends us
+
+Site review task CAM-2. `/compare` pages win 1.9% of their impressions as clicks; product pages 0.2%. We listed every Search
+Console query with "vs", "versus" or "or" over 90 days (TCGEmpire `gsc-queries` now prints them all, with the page Google shows
+most) and every `/compare` URL with impressions in the `demand` branch. Every compare page with impressions is already an indexed
+pair (both products name each other). The searches with no page of their own, and only those, became pairs, each a real cross-shop:
+Nikon Z7 vs D850 (the Z7 named the D850, not back), Leica M10 vs M11 (same), and Fujifilm X-E5 vs Ricoh GR IV (neither). Searches
+naming brands we don't sell ("nikon vs black diamond") were left alone. Rerun the report monthly; add only pairs a search names.
