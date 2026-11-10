@@ -134,3 +134,12 @@ test("a market's product page needs three stores (Amazon not counted) to be inde
   assert.equal(indexableWith("uk", [o("a"), o("a"), o("b")]), false, "two stores, three offers");
   assert.equal(indexableWith("uk", [o("a"), o("b"), o("c")]), true);
 });
+
+test("SEO-6: the home page's price-check links name real cameras, in the query's wording", async () => {
+  const { PRICE_CHECK_CAMERAS } = await import("../src/lib/striking-links");
+  const slugs = new Set(publishedCameras().map((c) => c.slug));
+  for (const x of PRICE_CHECK_CAMERAS) {
+    assert.ok(slugs.has(x.slug), `${x.slug} is a published camera`);
+    assert.match(x.text, / price$/);
+  }
+});
