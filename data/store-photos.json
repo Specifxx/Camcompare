@@ -181,7 +181,7 @@
    "retailer": "camera-electronic"
   },
   "dji-osmo-action-4": {
-   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1075495_1.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1075523_1.jpg?width=640",
    "store": "Beach Camera",
    "retailer": "beach-camera"
   },
@@ -651,7 +651,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-c-lux": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/C-Lux_StyleKit_blue_black_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_C-Lux_light-gold_front_RGB.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -726,7 +726,7 @@
    "retailer": "leica-store-miami"
   },
   "leica-q-typ-116": {
-   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Q_khaki_front_RGB.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0253/1179/products/Leica_Q_Titanium_gray_front.jpg?width=640",
    "store": "Leica Store Miami",
    "retailer": "leica-store-miami"
   },
@@ -1106,7 +1106,7 @@
    "retailer": "cambrian-photography"
   },
   "om-system-om-5-mark-ii": {
-   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1210717_1.jpg?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1139254_1_80facbf4-718e-47b4-a7c0-5936b8f044d7.jpg?width=640",
    "store": "Beach Camera",
    "retailer": "beach-camera"
   },
@@ -1142,11 +1142,6 @@
   },
   "panasonic-leica-dg-vario-elmar-100-400mm-f4-0-6-3-asph-power-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/ql9hlokang9ykvjxhd3p.jpg?width=640",
-   "store": "Shop Panasonic",
-   "retailer": "panasonic-store-us"
-  },
-  "panasonic-leica-dg-vario-elmar-100-400mm-f4-0-6-3-ii-asph-power-o-i-s": {
-   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/files/H-RSA100400.jpg?width=640",
    "store": "Shop Panasonic",
    "retailer": "panasonic-store-us"
   },
@@ -1261,7 +1256,7 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-s-20mm-f2-5": {
-   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/files/lumix-2026-s20-galleryimages-1-260827_158cd94c-1b71-435b-ac4e-def2bf34bc85.png?width=640",
+   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/files/lumix-2026-s20-galleryimages-2-260827_40010462-9b05-4682-bb7b-468a3f14651b.png?width=640",
    "store": "Shop Panasonic",
    "retailer": "panasonic-store-us"
   },
@@ -1616,9 +1611,9 @@
    "retailer": "cambrian-photography"
   },
   "sony-fe-16-25mm-f2-8-g": {
-   "src": "https://cdn.shopify.com/s/files/1/1165/5118/files/c607ceab-4eda-4a81-b357-775e4280f185.jpg?width=640",
-   "store": "Cambrian Photography",
-   "retailer": "cambrian-photography"
+   "src": "https://content.abt.com/media/images/products/BDP_Images/sony-lens-SEL1625G-dynamic-view.jpg",
+   "store": "Abt",
+   "retailer": "abt"
   },
   "sony-fe-16-35mm-f2-8-gm": {
    "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/296031_1.jpg?width=640",
@@ -1706,7 +1701,7 @@
    "retailer": "abt"
   },
   "tamron-12-20mm-f2-8": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/tamron-lens-A084Z700-side.jpg",
+   "src": "https://content.abt.com/media/images/products/BDP_Images/tamron-lens-A084S700-side-angled.jpg",
    "store": "Abt",
    "retailer": "abt"
   },
