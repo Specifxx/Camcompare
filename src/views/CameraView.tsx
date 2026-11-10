@@ -21,6 +21,7 @@ import SpecHighlights from "@/components/SpecHighlights";
 import SpecSheet from "@/components/SpecSheet";
 import SuggestedKit from "@/components/SuggestedKit";
 import Gallery from "@/components/product/Gallery";
+import CompareWith from "@/components/product/CompareWith";
 import MoreOptions from "@/components/product/MoreOptions";
 import PageNav from "@/components/product/PageNav";
 import ProductOverview from "@/components/product/ProductOverview";
@@ -153,7 +154,6 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
   const related = relatedFor(self);
   const over = overview({ self, m, name, goodFor: things.goodFor, notFor: things.notFor, history, launch: launchPrice(c, m), alternatives: [...rivals, ...related.alternatives].filter((p, i, a) => a.findIndex((q) => q.item.slug === p.item.slug) === i) });
   const rival = rivals[0] ? { item: rivals[0].item, brandName: brandName(rivals[0].item.brand) } : null;
-  const compareHref = rivals[0] ? (isIndexedPair(self, rivals[0]) ? `/compare/${pairSlug(c, rivals[0].item)}` : marketPath(m, `/compare?c=${c.slug},${rivals[0].item.slug}`)) : null;
   return (
     <article className="flex flex-col gap-10" data-no-dock>
       <script type="application/ld+json" dangerouslySetInnerHTML={ldJson(productLd(c, "camera", offers, m))} />
@@ -167,10 +167,13 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
         </nav>
         {/* Hero: photo, then name, stars, the best price and the actions (shopping-panel order). */}
         <header className="grid grid-cols-1 gap-5 md:grid-cols-[minmax(0,340px)_minmax(0,1fr)] md:gap-8">
-          <Gallery slug={c.slug} images={galleryFor(c.slug, name)} />
+          {/* On a phone the photo follows the price, so the first screen holds the price, the buy button and "Compare with" (CAM-3, 2026-11-10). */}
+          <div className="order-last md:order-none">
+            <Gallery slug={c.slug} images={galleryFor(c.slug, name)} />
+          </div>
           <div className="flex min-w-0 flex-col gap-4">
             <div>
-              <h1 className="text-3xl font-extrabold leading-tight tracking-[-0.03em] sm:text-4xl">{name}</h1>
+              <h1 className="text-2xl font-extrabold leading-tight tracking-[-0.03em] sm:text-4xl">{name}</h1>
               <p className="mt-1 text-sm text-muted">
                 {typeLabel(c.type)} · {mt ? <Link href={marketPath(m, `/mounts/${mt.slug}`)}>{mt.name}</Link> : isGadget(c.type) ? null : "Fixed lens"}{isGadget(c.type) ? "" : " ·"} Announced {longMonthYear(c.announced)}
                 {c.status === "discontinued" ? " · Discontinued (new stock may be limited)" : ""}
@@ -182,13 +185,9 @@ export default function CameraView({ slug, market: m }: { slug: string; market: 
               </p>
             </div>
             <PriceBox offers={offers} history={history} launch={launchPrice(c, m)} market={m} pack={c.mount ? "body" : "fixed"} page={page} extra={c.mount ? " (body)" : ""} />
+            <CompareWith self={self} rivals={rivals} market={m} />
             <div className="flex flex-wrap gap-2">
               <PriceAlert slug={c.slug} kind="camera" market={m} newPrice={h.new?.price ?? null} usedPrice={h.used?.price ?? null} />
-              {compareHref && rivals[0] && (
-                <Link href={compareHref} rel={compareHref.startsWith("/compare/") ? undefined : "nofollow"} className="btn-ghost">
-                  Compare with {displayShortName(rivals[0].item, m)}
-                </Link>
-              )}
               <SaveButton slug={c.slug} kind="camera" market={m} seen={(h.new ?? h.used)?.price ?? null} cond={h.new ? "new" : "used"} />
               <ShareButton title={name} path={marketPath(m, `/cameras/${c.slug}`)} text={productShareText(name, offers)} />
             </div>
