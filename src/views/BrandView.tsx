@@ -73,8 +73,8 @@ export default function BrandView({ slug, market: m }: { slug: string; market: M
           {b.sublines?.length ? ` · includes ${b.sublines.join(", ")}` : ""}
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
-          {cams.length > 0 && <Link href={marketPath(m, `/cameras?brand=${b.slug}`)} className="btn-ghost">Filter {b.name} cameras</Link>}
-          {lenses.length > 0 && <Link href={marketPath(m, `/lenses?brand=${b.slug}`)} className="btn-ghost">Filter {b.name} lenses</Link>}
+          {cams.length > 0 && <Link href={marketPath(m, `/cameras?brand=${b.slug}`)} rel="nofollow" className="btn-ghost">Filter {b.name} cameras</Link>}
+          {lenses.length > 0 && <Link href={marketPath(m, `/lenses?brand=${b.slug}`)} rel="nofollow" className="btn-ghost">Filter {b.name} lenses</Link>}
           {systems.length > 0 && <span className="ml-1 text-subtle">Systems:</span>}
           {systems.map((mt) => (
             <Link key={mt.slug} href={marketPath(m, `/mounts/${mt.slug}`)} className="chip-link">{mt.name}</Link>

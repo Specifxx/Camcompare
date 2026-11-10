@@ -79,7 +79,7 @@ function Dropdown({ item, groups, m, pathname, align = "left", cols }: { item: P
               <ul className="space-y-0.5">
                 {links.map((l) => (
                   <li key={l.path}>
-                    <Link href={href(m, l)} prefetch={false} className="block whitespace-nowrap rounded-md px-2 py-1 text-muted no-underline hover:bg-raised hover:text-fg hover:no-underline">
+                    <Link href={href(m, l)} prefetch={false} rel={l.path.includes("?") ? "nofollow" : undefined} className="block whitespace-nowrap rounded-md px-2 py-1 text-muted no-underline hover:bg-raised hover:text-fg hover:no-underline">
                       {l.label}
                       {l.hint && <span className="ml-2 text-xs text-subtle">{l.hint}</span>}
                     </Link>
@@ -103,7 +103,7 @@ function Dropdown({ item, groups, m, pathname, align = "left", cols }: { item: P
 function PhoneMenu({ nav, m, pathname, onClose }: { nav: NavData; m: MarketCode; pathname: string; onClose: () => void }) {
   const link = (l: NavLink) => (
     <li key={l.path}>
-      <Link href={href(m, l)} prefetch={false} onClick={onClose} aria-current={isOnPath(pathname, href(m, l)) && !l.path.includes("?") ? "page" : undefined} className="block rounded-lg px-3 py-2 text-base text-fg no-underline hover:bg-raised hover:no-underline">
+      <Link href={href(m, l)} prefetch={false} rel={l.path.includes("?") ? "nofollow" : undefined} onClick={onClose} aria-current={isOnPath(pathname, href(m, l)) && !l.path.includes("?") ? "page" : undefined} className="block rounded-lg px-3 py-2 text-base text-fg no-underline hover:bg-raised hover:no-underline">
         {l.label}
         {l.hint && <span className="ml-2 text-xs text-subtle">{l.hint}</span>}
       </Link>
