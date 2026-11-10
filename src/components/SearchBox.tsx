@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { marketPath, type MarketCode } from "@/lib/markets";
 import { searchRank, type SearchRow } from "@/lib/search";
+import { compareSearchHref } from "@/lib/compare-search";
 
 // variant "hero": the home hero's big box (styling only; same search).
 export default function SearchBox({ market, variant = "header", placeholder = "Search a model, brand or lens (a7 IV, 24-70)" }: { market: MarketCode; variant?: "header" | "hero"; placeholder?: string }) {
@@ -110,6 +111,21 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
             </li>
           ))}
         </ul>
+      )}
+      {/* Compare search test (2026-11-10): only when this catalog has nothing for the words. */}
+      {open && rows && q.trim().length >= 2 && hits.length === 0 && (
+        <div
+          className={
+            hero
+              ? "absolute inset-x-0 top-full z-40 mt-2 rounded-2xl border border-line bg-surface p-3 text-left text-sm shadow-lift"
+              : "fixed inset-x-4 top-16 z-40 mt-1 rounded-2xl border border-line bg-surface p-3 text-sm shadow-lg md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-[22rem]"
+          }
+        >
+          <p className="text-subtle">No camera or lens here matches &ldquo;{q.trim()}&rdquo;.</p>
+          <a href={compareSearchHref(q, "cam", market)} rel="nofollow" onMouseDown={(e) => e.preventDefault()} className="mt-1 block font-semibold text-accent hover:underline">
+            Search every Compare Empire site for &ldquo;{q.trim()}&rdquo; &rarr;
+          </a>
+        </div>
       )}
     </div>
   );
