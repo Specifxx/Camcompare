@@ -90,7 +90,8 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
   return (
     <div className="card flex flex-col gap-3 p-4 sm:p-5">
       {typical && lead.what === "new" && (
-        <p className="text-sm">
+        // Not on a phone (CAM-3, 2026-11-10): the first screen keeps the price, the buy button, used and "Compare with".
+        <p className="hidden text-sm sm:block">
           <span className="text-muted">Typically </span>
           <span className="price font-semibold">
             {price(typical.low, cur)}

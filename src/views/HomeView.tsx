@@ -27,6 +27,8 @@ import { MARKETS, marketPath, type MarketCode } from "@/lib/markets";
 import { quickViewAttrs } from "@/lib/quickview";
 import { CONDITION_LABEL, retailer } from "@/lib/retailers";
 import { pageMeta } from "@/lib/seo";
+import { productIndexable } from "@/lib/indexing";
+import { PRICE_CHECK_CAMERAS } from "@/lib/striking-links";
 import { ldJson } from "@/lib/jsonld";
 import { abs } from "@/lib/site";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
@@ -163,6 +165,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   const pairs = indexedPairs("camera")
     .sort((p, q) => newestOf(q).localeCompare(newestOf(p)))
     .slice(0, 6);
+  const priceChecks = PRICE_CHECK_CAMERAS.filter((x) => cameras.some((c) => c.slug === x.slug) && productIndexable(x.slug, m));
   const live = brands().filter((b) => all.some((p) => p.brand === b.slug));
   const brandTiles = live.map((b) => ({ ...b, n: all.filter((p) => p.brand === b.slug).length })).sort((a, b) => b.n - a.n);
   const systems = mounts().filter((mt) => mt.status === "current" && cameras.some((c) => c.mount === mt.slug));
@@ -395,6 +398,31 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
                 </Link>
               </li>
             ))}
+          </ul>
+        </section>
+      )}
+
+      {priceChecks.length > 0 && (
+        <section aria-labelledby="price-checks-title">
+          <SectionHeading id="price-checks-title" eyebrow="Price checks" title="Camera prices people look up" href="/cameras" link="All cameras" />
+          <ul className="flex flex-wrap gap-2">
+            {priceChecks.map((x) => (
+              <li key={x.slug}>
+                <Link href={marketPath(m, `/cameras/${x.slug}`)} prefetch={false} className="chip-link px-3 py-1 text-sm">
+                  {x.text}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href={marketPath(m, "/accessories/gimbals")} prefetch={false} className="chip-link px-3 py-1 text-sm">
+                Gimbal deals
+              </Link>
+            </li>
+            <li>
+              <Link href={marketPath(m, "/brands/fujifilm")} prefetch={false} className="chip-link px-3 py-1 text-sm">
+                Fujifilm cameras and lenses
+              </Link>
+            </li>
           </ul>
         </section>
       )}

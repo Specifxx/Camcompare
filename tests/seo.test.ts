@@ -149,4 +149,12 @@ test("navigation links that carry a query string are nofollow", async () => {
   const { readFileSync } = await import("node:fs");
   const header = readFileSync(new URL("../src/components/Header.tsx", import.meta.url), "utf8");
   assert.match(header, /rel=\{l\.path\.includes\("\?"\) \? "nofollow" : undefined\}/);
+
+test("SEO-6: the home page's price-check links name real cameras, in the query's wording", async () => {
+  const { PRICE_CHECK_CAMERAS } = await import("../src/lib/striking-links");
+  const slugs = new Set(publishedCameras().map((c) => c.slug));
+  for (const x of PRICE_CHECK_CAMERAS) {
+    assert.ok(slugs.has(x.slug), `${x.slug} is a published camera`);
+    assert.match(x.text, / price$/);
+  }
 });
