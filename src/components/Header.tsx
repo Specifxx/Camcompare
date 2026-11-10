@@ -115,7 +115,7 @@ function PhoneMenu({ nav, m, pathname, onClose }: { nav: NavData; m: MarketCode;
       {nav.menus.map((item) => {
         const folded = item.key === "brands" || item.key === "systems";
         const body = item.groups.map((g, i) => {
-          const links = groupLinks(g, m, nav.uses);
+          const links = groupLinks(g, m, nav.uses, nav.hubs);
           if (!links.length) return null;
           return (
             <div key={`${g.title}-${i}`}>
@@ -160,7 +160,7 @@ export default function Header({ nav, sale = null }: { nav: NavData; sale?: { pa
   useEffect(() => setMenu(false), [pathname]);
   // The sale link leads the phone strip; on desktop the sale banner under the header carries it, so the seven stay seven.
   const direct = nav.direct;
-  const resolved = (item: NavItem) => item.groups.map((group) => ({ group, links: groupLinks(group, m, nav.uses) })).filter((x) => x.links.length);
+  const resolved = (item: NavItem) => item.groups.map((group) => ({ group, links: groupLinks(group, m, nav.uses, nav.hubs) })).filter((x) => x.links.length);
   const moreGroups = nav.more.map((group) => ({ group, links: group.links }));
   const cols = (n: number) => (n >= 4 ? "w-[46rem] grid-cols-4" : n === 3 ? "w-[34rem] grid-cols-3" : n === 2 ? "w-[22rem] grid-cols-2" : "w-[14rem] grid-cols-1");
   const strip: NavLink[] = [...(sale ? [{ label: sale.name, path: sale.path, market: true }] : []), ...nav.menus.map((i) => ({ label: i.label, path: i.path, market: true })), ...direct];

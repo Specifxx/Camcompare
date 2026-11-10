@@ -4,6 +4,7 @@ import { USE_INDEX_MIN, picksForUse, USE_KEYS } from "./uses";
 import { brands, mounts, publishedCameras, publishedLenses } from "./catalog";
 import { GADGET_PAGES, digicams, gadgets } from "./curated";
 import { USES } from "./finder";
+import { hubPath, liveHubs } from "./hubs";
 import { MARKET_CODES, type MarketCode } from "./markets";
 import { CAMERA_TYPES, FOCAL_GROUPS, SENSOR_SIZES, type NavData, type NavGroup, type NavLink } from "./nav";
 
@@ -22,7 +23,7 @@ export function navData(): NavData {
     .filter((x) => x.bodies + x.lenses > 0);
   const byMount = [...liveMounts].sort((a, b) => b.bodies + b.lenses - (a.bodies + a.lenses));
 
-  const typeLinks = CAMERA_TYPES.filter(([k]) => types.has(k as never)).map(([k, label]) => L(label, `/cameras?type=${k}`));
+  const typeLinks = CAMERA_TYPES.filter(([k]) => types.has(k as never)).map(([k, label]) => L(label, `/cameras?type=${k}`)); // the fallback; each market gets its live hubs (hubs below)
   if (digicams().length) typeLinks.splice(2, 0, L("Compact & digicams", "/digicams"));
   if (gadgets("drone").length) typeLinks.push(L("Drones", GADGET_PAGES.drone.path));
   if (gadgets("smart-glasses").length) typeLinks.push(L("Smart glasses", GADGET_PAGES["smart-glasses"].path));
@@ -30,8 +31,8 @@ export function navData(): NavData {
   const sensorLinks = SENSOR_SIZES.filter(([k]) => sensors.has(k as never) || (k === "micro-four-thirds" && sensors.has("four-thirds" as never))).map(([k, label]) => L(label, `/cameras?sensor=${k}`));
 
   const cameraGroups: NavGroup[] = [
-    { title: "Shop by type", links: typeLinks, all: L("All cameras", "/cameras") },
-    { title: "Shop by sensor", links: sensorLinks },
+    { title: "Shop by type", links: typeLinks, fill: "types", all: L("All cameras", "/cameras") },
+    { title: "Shop by sensor", links: sensorLinks, fill: "sensors" },
     { title: "Shop by budget", links: [], fill: "camera-budget" },
     { title: "Best cameras for…", links: [], fill: "uses", all: L("Camera finder", "/finder") },
   ];
@@ -49,7 +50,17 @@ export function navData(): NavData {
     MARKET_CODES.map((m: MarketCode) => [m, USE_KEYS.filter((u) => picksForUse(u, m).top.length >= USE_INDEX_MIN).map((u) => L(USES[u].label, `/cameras-for/${u}`))]),
   ) as NavData["uses"];
 
+  const hubLinks = (kind: "type" | "sensor") =>
+    Object.fromEntries(
+      MARKET_CODES.map((m: MarketCode) => {
+        const links = liveHubs(kind, m).map((h) => L(h.label, hubPath(h)));
+        if (kind === "type") links.push(...typeLinks.filter((l) => !l.path.startsWith("/cameras?type="))); // compacts, drones, glasses: their own pages, as before
+        return [m, links];
+      }),
+    ) as NavData["uses"];
+
   cached = {
+    hubs: { types: hubLinks("type"), sensors: hubLinks("sensor") },
     menus: [
       { key: "cameras", label: "Cameras", path: "/cameras", groups: cameraGroups },
       { key: "lenses", label: "Lenses", path: "/lenses", groups: lensGroups },

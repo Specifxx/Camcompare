@@ -1,5 +1,34 @@
 {
   "publisherId": 3144410,
   "updatedAt": null,
-  "joined": []
+  "joined": [
+    {
+      "id": 123248,
+      "name": "Opulensi Perfumes Lattafa Sapil Anfar",
+      "domains": [
+        "opulensi.com",
+        "opulensi.myshopify.com"
+      ],
+      "region": "GB",
+      "currency": "GBP"
+    },
+    {
+      "id": 3326,
+      "name": "Ryman",
+      "domains": [
+        "ryman.co.uk"
+      ],
+      "region": "GB",
+      "currency": "GBP"
+    },
+    {
+      "id": 90791,
+      "name": "Stylevana",
+      "domains": [
+        "stylevana.com"
+      ],
+      "region": "US",
+      "currency": "USD"
+    }
+  ]
 }

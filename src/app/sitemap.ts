@@ -7,6 +7,7 @@ import { MARKET_CODES, marketPath } from "@/lib/markets";
 import { guides } from "@/lib/guides";
 import { abs } from "@/lib/site";
 import { BOARDS } from "@/lib/community/rules";
+import { hubPath, liveHubs } from "@/lib/hubs";
 import { digicams, gadgets, GADGET_PAGES, pricedIn, viralCameras } from "@/lib/curated";
 import { releasesIndexable } from "@/components/releases/ReleasesView";
 import { categorySummaries } from "@/lib/accessory-rows";
@@ -30,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (pricedIn(digicams(), m)) out.push({ url: abs(marketPath(m, "/digicams")) });
     // Cameras by use (components/curated/UseView.tsx): a page once it has USE_INDEX_MIN priced picks in the market.
     for (const use of USE_KEYS) if (picksForUse(use, m).top.length >= USE_INDEX_MIN) out.push({ url: abs(marketPath(m, `/cameras-for/${use}`)) });
+    // Camera hubs by type and sensor (lib/hubs.ts): once HUB_INDEX_MIN cameras are priced in the market.
+    for (const kind of ["type", "sensor"] as const) for (const h of liveHubs(kind, m)) out.push({ url: abs(marketPath(m, hubPath(h))) });
     if (pricedIn(viralCameras().map((v) => v.camera), m)) out.push({ url: abs(marketPath(m, "/viral-cameras")) });
     for (const t of ["drone", "smart-glasses"] as const) if (gadgets(t).length && pricedIn(gadgets(t), m)) out.push({ url: abs(marketPath(m, GADGET_PAGES[t].path)) });
     const acc = categorySummaries(m); // accessory pages only where that market has listings
