@@ -7,6 +7,7 @@ import { publishedCameras } from "@/lib/catalog";
 import type { Camera } from "@/lib/catalog/schema";
 import { price } from "@/lib/format";
 import { MARKETS, type MarketCode } from "@/lib/markets";
+import { inMarket } from "@/lib/overview";
 import { summarizeCamera } from "@/lib/summary";
 import { priceOf, type CameraSummary } from "@/lib/summary-types";
 
@@ -64,8 +65,8 @@ export const liveHubs = (kind: HubKind, m: MarketCode) => hubsOf(kind).filter((h
 /** The intro's facts as a sentence, only from the data: how many, from what, the middle of the range. */
 export function hubFacts(h: Hub, d: HubData, m: MarketCode): string {
   const cur = MARKETS[m].currency;
-  const parts = [`We track ${d.cameras.length} ${h.noun} with a price at stores in ${MARKETS[m].name}, from ${d.brands} ${d.brands === 1 ? "maker" : "makers"}.`];
-  if (d.cheapest && d.cheapest.lowestNew !== null) parts.push(`The cheapest new one today is the ${d.cheapest.name} at ${price(d.cheapest.lowestNew, cur)}${d.medianNew !== null && d.withNew > 2 ? `, and the middle of the range is ${price(d.medianNew, cur)}` : ""}.`);
+  const parts = [`We track ${d.cameras.length} ${h.noun} with a price at stores ${inMarket(m)}, from ${d.brands} ${d.brands === 1 ? "maker" : "makers"}.`];
+  if (d.cheapest && d.cheapest.lowestNew !== null) parts.push(`The cheapest new one today is the ${d.cheapest.name} at ${price(d.cheapest.lowestNew, cur)}${d.medianNew !== null && d.withNew > 2 ? `, and the middle of the range is ${price(Math.round(d.medianNew / 100) * 100, cur)}` : ""}.`);
   else parts.push("None has a new price today; the prices below are used and refurbished.");
   return parts.join(" ");
 }
