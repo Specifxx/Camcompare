@@ -111,3 +111,14 @@ test("the quick view pins the product page's tagged Amazon link second, never Am
   assert.match(qv, /return \[ebay, amazon\]\.filter\(Boolean\)/, "eBay first, Amazon second");
   assert.doesNotMatch(qv.slice(qv.indexOf("const qvPins"), qv.indexOf("const lowRow")), /price:/, "no Amazon price in the quick view");
 });
+
+test("a stored eBay listing link (itemAffiliateWebUrl, empty customid) gets CamCompare's customid at render", () => {
+  // The Browse API returns links already carrying the campaign and `customid=` empty;
+  // the import stores them as they are, so the render must fill in the cc- tag.
+  const stored = "https://www.ebay.com.au/itm/287662573886?_skw=x&mkevt=1&mkcid=1&mkrid=705-53470-19255-0&campid=5339155912&customid=&toolid=10049";
+  const u = new URL(affiliateUrl("ebay-au", stored, subId("cam-x", "offers")));
+  assert.equal(u.searchParams.get("campid"), "5339155912");
+  assert.equal(u.searchParams.get("toolid"), "10049");
+  assert.equal(u.searchParams.get("customid"), "cc-cam-x-offers");
+  assert.equal(u.searchParams.getAll("customid").length, 1);
+});
