@@ -136,6 +136,22 @@ test("a market's product page needs three stores (Amazon not counted) to be inde
   assert.equal(indexableWith("uk", [o("a"), o("b"), o("c")]), true);
 });
 
+test("robots.txt blocks query URLs for everyone, but not Next's assets or shared links", async () => {
+  const robots = (await import("../src/app/robots")).default;
+  const rules = robots().rules;
+  const star = (Array.isArray(rules) ? rules : [rules]).find((r) => r.userAgent === "*")!;
+  const disallow = ([] as string[]).concat(star.disallow ?? []);
+  const allow = ([] as string[]).concat(star.allow ?? []);
+  assert.ok(disallow.includes("/*?"), "filter and query URLs are disallowed");
+  assert.ok(allow.includes("/*utm_source=share") && allow.includes("/_next/"));
+});
+
+test("navigation links that carry a query string are nofollow", async () => {
+  const { readFileSync } = await import("node:fs");
+  const header = readFileSync(new URL("../src/components/Header.tsx", import.meta.url), "utf8");
+  assert.match(header, /rel=\{l\.path\.includes\("\?"\) \? "nofollow" : undefined\}/);
+});
+
 test("SEO-6: the home page's price-check links name real cameras, in the query's wording", async () => {
   const { PRICE_CHECK_CAMERAS } = await import("../src/lib/striking-links");
   const slugs = new Set(publishedCameras().map((c) => c.slug));

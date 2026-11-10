@@ -216,7 +216,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
           <div className="mb-3 flex items-baseline justify-between gap-4">
             <h2 className="h-section">Cameras it fits</h2>
             {mountNames[0] && (
-              <Link href={marketPath(m, `/cameras?mount=${l.mounts.join(",")}`)} className="shrink-0 text-sm">
+              <Link href={marketPath(m, `/cameras?mount=${l.mounts.join(",")}`)} rel="nofollow" className="shrink-0 text-sm">
                 All {bodies.length} →
               </Link>
             )}
