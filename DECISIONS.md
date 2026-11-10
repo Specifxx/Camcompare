@@ -2254,3 +2254,24 @@ shows only where its page in the visitor's market is indexable. No URL, title, c
 Cannibalisation: none of these queries is shared by two of our pages in the report.
 
 **Recheck 25 Nov:** same ten query groups, same pages, compare position and impressions.
+
+## 2026-11-10: Camera hubs by type and by sensor size (SEO-9)
+
+**Why.** "Mirrorless cameras", "full-frame cameras" and "action cameras" are searches with buyers behind them, but
+they existed only as filter states (`/cameras?type=mirrorless`) that Google folds into the one `/cameras` page. SEO-2
+closes the filter-link crawl trap (robots `Disallow: /*?`), so the navigation needs real pages to link instead.
+
+**What.** Static pages `/cameras/type/<type>` (mirrorless, dslr, medium-format, rangefinder, action, 360, cinema) and
+`/cameras/sensor/<sensor>` (full-frame, aps-c, micro-four-thirds, medium-format), US at the root and each market under
+its prefix (`lib/hubs.ts`, `components/curated/HubView.tsx`, same pattern as `/cameras-for/<use>`). Each has its own
+title and description ("Mirrorless cameras: N models from $X"), an intro whose numbers come from the day's offers (how
+many are priced, how many makers, the cheapest new one, the median), every camera priced in that market cheapest first
+with no paid placement, links to the other hubs, BreadcrumbList JSON-LD and hreflang between the markets that list it.
+The sensor grouping is the filter's own (`sensorGroup`: Four Thirds counts as Micro Four Thirds, Super 35 as APS-C,
+APS-H as full frame), so a hub lists what the filter did.
+
+**Indexing.** A hub is indexed, in the sitemap and in hreflang only where HUB_INDEX_MIN (3) cameras are priced in that
+market; otherwise it is noindex,follow, like `/cameras-for`. The header's "Shop by type" and "Shop by sensor" columns now
+link the hubs live in the visitor's market (`nav.hubs`, `groupLinks`), in place of the `?type=` and `?sensor=` links;
+compacts, drones and glasses keep their own pages. The finder page `/cameras` keeps its filters and its canonical.
+`tests/seo.test.ts` pins sitemap membership, metadata and ordering.

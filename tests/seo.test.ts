@@ -29,6 +29,7 @@ async function metaFor(path: string): Promise<Metadata | undefined> {
   const parts = m === "us" ? [first, ...rest] : rest;
   const [section, slug] = parts;
   if (!section) return v.home.homeMetadata(m);
+  if (section === "cameras" && (slug === "type" || slug === "sensor")) return (await import("../src/components/curated/HubView")).metadataForHub(slug, parts[2], m);
   if (section === "cameras") return slug ? v.camera.cameraMetadata(slug, m) : v.browse.browseMetadata("camera", m);
   if (section === "lenses") return slug ? v.lens.lensMetadata(slug, m) : v.browse.browseMetadata("lens", m);
   if (section === "brands") return slug ? v.brand.brandMetadata(slug, m) : v.brand.brandsMetadata(m);
@@ -141,5 +142,25 @@ test("SEO-6: the home page's price-check links name real cameras, in the query's
   for (const x of PRICE_CHECK_CAMERAS) {
     assert.ok(slugs.has(x.slug), `${x.slug} is a published camera`);
     assert.match(x.text, / price$/);
+  }
+});
+
+test("SEO-9: type and sensor hubs list priced cameras cheapest first, are in the sitemap and carry their own metadata", async () => {
+  const { TYPE_HUBS, SENSOR_HUBS, hubData, hubPath, hubIndexable, HUB_INDEX_MIN } = await import("../src/lib/hubs");
+  const { sitemap, home } = await load();
+  void home;
+  const urls = new Set((sitemap() as { url: string }[]).map((x) => x.url));
+  const { metadataForHub } = await import("../src/components/curated/HubView");
+  const mirrorless = TYPE_HUBS.find((h) => h.key === "mirrorless")!;
+  const us = hubData(mirrorless, "us");
+  assert.ok(us.cameras.length >= HUB_INDEX_MIN, "mirrorless is priced in the US");
+  const prices = us.cameras.map((c) => c.lowestNew ?? c.lowestUsed ?? Infinity);
+  assert.deepEqual([...prices].sort((a, b) => a - b), prices, "cheapest first");
+  for (const h of [...TYPE_HUBS, ...SENSOR_HUBS]) for (const m of MARKET_CODES) {
+    const listed = urls.has(abs(m === "us" ? hubPath(h) : `/${m}${hubPath(h)}`));
+    assert.equal(listed, hubIndexable(h, m), `${m} ${hubPath(h)}: in the sitemap exactly when it is indexable`);
+    const meta = metadataForHub(h.kind, h.key, m);
+    assert.equal(meta.robots === undefined || (meta.robots as { index?: boolean }).index !== false, hubIndexable(h, m));
+    assert.ok(meta.alternates?.canonical, "canonical set");
   }
 });
