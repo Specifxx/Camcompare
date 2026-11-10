@@ -5,6 +5,7 @@ import { MARKETS, type Currency, type MarketCode } from "@/lib/markets";
 import { toRow, type PackKind } from "@/lib/offer-rows";
 import { AMAZON_MAX_AGE_H, isAmazonOffer, type HistoryPoint, type Offer } from "@/lib/offers";
 import { headline, kitText, leadOffer, lowestKit, typicalRange } from "@/lib/price-rules";
+import { paidAlternative } from "@/lib/paid-alternative";
 import { retailer } from "@/lib/retailers";
 import { usedValue } from "@/lib/value";
 import OutboundLink from "./OutboundLink";
@@ -87,6 +88,9 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
   const what = lead.what === "new" ? `New${pack === "body" ? " · body only" : ""}` : lead.what === "used" ? `${row.condition}${pack === "body" ? " · body only" : ""}` : `${row.condition} · ${kitText(o, pack)}`;
   // With kits only: the cheapest used kit too, when the lead is a new one.
   const usedKit = lead.what === "kit" && o.condition === "new" ? lowestKit(offers, "used", true) : null;
+  // A paid offer of the same kind within 20% when the best one pays nothing (lib/paid-alternative.ts).
+  const alt = paidAlternative(lead, offers, (x) => toRow(x, { page, placement: "hero_alt", pack }).paid);
+  const altRow = alt && toRow(alt.offer, { page, placement: "hero_alt", pack });
   return (
     <div className="card flex flex-col gap-3 p-4 sm:p-5">
       {typical && lead.what === "new" && (
@@ -117,6 +121,15 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
           {tag} at {storeName(o)} <span aria-hidden>→</span>
         </OutboundLink>
         {row.paid && <p className="mt-1 text-[11px] text-subtle">Paid link: we may earn a commission. It never changes which price is best.</p>}
+        {alt && altRow && (
+          <p className="mt-2 flex flex-wrap items-baseline gap-x-2 text-sm">
+            <OutboundLink href={altRow.href} retailer={alt.offer.retailer} product={alt.offer.product} placement="hero_alt" className="font-semibold text-accent hover:underline">
+              or <span className="price">{shown(alt.offer, cur)}</span> at {storeName(alt.offer)}
+              {alt.pctMore > 0 ? <span className="font-normal text-muted"> +{alt.pctMore}%</span> : null} <span aria-hidden>→</span>
+            </OutboundLink>
+            <span className="text-[11px] text-subtle">Paid link</span>
+          </p>
+        )}
       </div>
       <div className="border-t border-line pt-3">
         {usedKit && (
