@@ -2296,3 +2296,14 @@ most) and every `/compare` URL with impressions in the `demand` branch. Every co
 pair (both products name each other). The searches with no page of their own, and only those, became pairs, each a real cross-shop:
 Nikon Z7 vs D850 (the Z7 named the D850, not back), Leica M10 vs M11 (same), and Fujifilm X-E5 vs Ricoh GR IV (neither). Searches
 naming brands we don't sell ("nikon vs black diamond") were left alone. Rerun the report monthly; add only pairs a search names.
+
+## 2026-11-10: member thread and story links carry a readable title
+
+URL audit across all 17 sites (owner: "all links meaningful, not a hash"). Every indexed page on every site already
+uses a readable slug; the only opaque public addresses were Cam's member `/community/t/<id>` and `/stories/p/<id>`,
+which people paste into chats. They are now `/community/t/12-best-travel-lens` and `/stories/p/7-my-first-film-roll`
+(`threadPath`, `storyPath`, `titleSlug`, `idFromSegment` in `lib/community/rules.ts`). The id still decides: the rewrites
+accept the bare id and any title tail, and the page replaces the address with the canonical one once the title loads,
+so old links keep working with no redirect function. Both pages are noindex (a story only when the owner features it),
+so no ranking is at stake; a featured story's canonical is now the titled address. Capability links (shared decks,
+lists, snapshots, creator edit links) stay opaque on purpose: unguessable, noindex.

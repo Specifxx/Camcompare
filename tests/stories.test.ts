@@ -134,7 +134,7 @@ test("stories, requests and My gear pages are static shells: no server reads, no
   }
   for (const f of ["src/components/community/Stories.tsx", "src/components/community/StoryPage.tsx", "src/components/community/ProductStories.tsx", "src/components/community/Requests.tsx", "src/components/collection/MyGear.tsx"])
     assert.ok(read(f).startsWith('"use client"'), `${f} is a client component`);
-  assert.ok(/\/stories\/p\/:id\(\\\\d\{1,18\}\)/.test(read("next.config.js")), "the /stories/p/<id> rewrite");
+  assert.ok(/\/stories\/p\/:seg\(\\\\d\{1,18\}/.test(read("next.config.js")), "the /stories/p/<id> rewrite");
   // The shell has no robots tag (StoryPage adds noindex unless featured) and no canonical of its own.
   assert.ok(!/robots|canonical/.test(read("src/app/stories/p/page.tsx").replace(/\/\/.*$/gm, "")));
   // Covers: lazy, no referrer, and only ever served for featured stories.
@@ -146,4 +146,16 @@ test("the gear list is private: its route is no-store and never public", () => {
   const s = read("src/app/api/community/collection/route.ts");
   assert.ok(!/publicJson|PUBLIC_CACHE/.test(s));
   assert.ok(/requireMember/.test(s));
+});
+
+test("member thread and story addresses carry a readable title; the id still decides", async () => {
+  const { threadPath, idFromSegment, titleSlug } = await import("../src/lib/community/rules");
+  const { storyPath } = await import("../src/lib/community/stories");
+  assert.equal(titleSlug("Best travel lens for the Sony A7 IV?"), "best-travel-lens-for-the-sony-a7-iv");
+  assert.equal(threadPath("12", "Best travel lens?"), "/community/t/12-best-travel-lens");
+  assert.equal(threadPath("12"), "/community/t/12");
+  assert.equal(storyPath("7", "My first film roll"), "/stories/p/7-my-first-film-roll");
+  assert.equal(idFromSegment("12-best-travel-lens"), "12");
+  assert.equal(idFromSegment("12"), "12");
+  assert.equal(idFromSegment("abc"), null);
 });

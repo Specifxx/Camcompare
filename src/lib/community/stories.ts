@@ -10,7 +10,7 @@
 // rules, **bold**, *italic*, `code`, [text](https://…) and bare http(s)
 // links. Image syntax becomes a plain link: pictures in a body are not
 // shown (DECISIONS.md, "Member stories and My gear").
-import { linkSegments, type Author } from "./rules";
+import { linkSegments, titleSlug, type Author } from "./rules";
 
 export const STORY_TAGS = [
   { slug: "review", label: "Review" },
@@ -37,7 +37,10 @@ export const STORIES_PER_DAY = 3;
 /** Stories a product page shows. */
 export const PRODUCT_STORIES_MAX = 5;
 
-export const storyPath = (id: string) => `/stories/p/${id}`;
+export const storyPath = (id: string, title?: string | null) => {
+  const s = titleSlug(title);
+  return `/stories/p/${id}${s ? `-${s}` : ""}`;
+};
 
 /**
  * A cover image address members may give: https only, a real host name (no

@@ -56,7 +56,7 @@ export async function POST(req: Request) {
       `${m.user.username} posted the story "${s.title}" (${s.tags.join(", ")}):`,
       storyExcerpt(s.body, 300),
       s.cover ? `Cover image (shown only if you feature it): ${s.cover}` : "",
-      `It is noindex until you feature it on the admin page. ${abs(storyPath(id))}`,
+      `It is noindex until you feature it on the admin page. ${abs(storyPath(id, s.title))}`,
     ].filter(Boolean));
     return privateJson({ ok: true, id }, 201);
   } catch (e) {

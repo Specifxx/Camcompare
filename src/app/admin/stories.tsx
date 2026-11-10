@@ -78,7 +78,7 @@ export default async function StoriesAdmin() {
                 {s.products.length > 0 && <span>{s.products.join(", ")}</span>}
               </div>
               <p className="mt-1">
-                <a href={storyPath(s.id)}>{s.title}</a>
+                <a href={storyPath(s.id, s.title)}>{s.title}</a>
               </p>
               {s.cover && (
                 <p className="break-all text-xs text-muted">

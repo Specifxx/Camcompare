@@ -21,7 +21,7 @@ function NewThread({ board, onCancel }: { board: BoardSlug | null; onCancel: () 
         const r = await api<{ id: string }>("/api/community/threads", { method: "POST", body: { board: b, title, body } });
         setBusy(false);
         if (!r.ok) return setErr(r.error);
-        location.href = threadPath(r.id);
+        location.href = threadPath(r.id, title);
       }}
     >
       {!board && (
@@ -116,7 +116,7 @@ export default function Threads({ board }: { board: BoardSlug | null }) {
           <li key={t.id} className="flex gap-2 border-b border-line py-2">
             <VoteArrows kind="thread" target={t.id} score={t.score} mine={votes[t.id] ?? 0} disabled={Boolean(user?.username && t.author?.username === user.username)} onNeedSignIn={() => setAskSignIn(true)} />
             <div className="min-w-0 flex-1">
-              <a href={threadPath(t.id)} className="font-semibold text-fg">
+              <a href={threadPath(t.id, t.title)} className="font-semibold text-fg">
                 {t.title}
               </a>
               {!board && (
@@ -128,7 +128,7 @@ export default function Threads({ board }: { board: BoardSlug | null }) {
                 author={t.author}
                 createdAt={t.createdAt}
                 extra={
-                  <a href={threadPath(t.id)} className="ml-2 text-xs text-muted">
+                  <a href={threadPath(t.id, t.title)} className="ml-2 text-xs text-muted">
                     {t.replies} {t.replies === 1 ? "comment" : "comments"}
                   </a>
                 }

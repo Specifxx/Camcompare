@@ -46,7 +46,7 @@ export default function ProductStories({ slug, name }: { slug: string; /** The p
                 {s.featured && <span className="mr-2 font-semibold text-win">Featured</span>}
                 {s.tags.map(tagLabel).join(" · ")}
               </p>
-              <a href={storyPath(s.id)} className="font-semibold text-fg">
+              <a href={storyPath(s.id, s.title)} className="font-semibold text-fg">
                 {s.title}
               </a>
               <p className="text-sm text-muted">{s.excerpt}</p>

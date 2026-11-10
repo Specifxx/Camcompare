@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MARKETS } from "@/lib/markets";
 import { useMarket } from "@/lib/market-client";
-import { ID_RE, type VoteValue } from "@/lib/community/rules";
+import { idFromSegment, type VoteValue } from "@/lib/community/rules";
 import { storyPath, type StoryItem } from "@/lib/community/stories";
 import { abs } from "@/lib/site";
 import { productHref, useCatalogIndex } from "../ProductPicker";
@@ -45,7 +45,7 @@ export default function StoryPage() {
 
   useEffect(() => {
     const mm = location.pathname.match(/^\/stories\/p\/([^/]+)\/?$/);
-    const sid = mm && ID_RE.test(mm[1]) ? mm[1] : null;
+    const sid = mm ? idFromSegment(mm[1]) : null;
     setId(sid);
     if (!sid) {
       setHead({ index: false });
@@ -57,6 +57,7 @@ export default function StoryPage() {
         return setErr(r.status === 503 ? "Member stories aren't switched on yet. Please check back soon." : r.error);
       }
       setS(r.story);
+      { const want = storyPath(sid, r.story.title); if (location.pathname !== want) history.replaceState(null, "", want + location.search + location.hash); }
       const featured = r.story.featured && !r.story.deleted;
       setHead({ index: featured, title: `${r.story.title} | CamCompare member stories`, description: r.story.excerpt, canonical: featured ? abs(storyPath(sid)) : undefined });
     });

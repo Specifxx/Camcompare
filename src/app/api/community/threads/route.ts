@@ -40,7 +40,7 @@ export async function POST(req: Request) {
   try {
     if ((await recentPosts(m.user.id, POST_WINDOW_MIN)) >= POSTS_PER_WINDOW) return tooMany(POST_WINDOW_MIN * 60, "That's a lot of posts in a short time");
     const id = await createThread(m.user.id, board, title, body);
-    await notifyOwnerBounded("post", `New thread by ${m.user.username}`, [`${m.user.username} started "${title}" in ${boardName(board)}:`, body.slice(0, 300), abs(threadPath(id))]);
+    await notifyOwnerBounded("post", `New thread by ${m.user.username}`, [`${m.user.username} started "${title}" in ${boardName(board)}:`, body.slice(0, 300), abs(threadPath(id, title))]);
     return privateJson({ ok: true, id }, 201);
   } catch (e) {
     console.error(`community: thread save failed: ${logSafe(e)}`);
