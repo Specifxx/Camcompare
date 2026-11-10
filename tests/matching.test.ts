@@ -355,3 +355,95 @@ test("2025-26 launches match the real catalog without stealing older models' lis
   assert.equal(s("Olympus PEN E-PL7 Mirrorless Camera"), null); // not the 2026 PEN
   assert.equal(s("Olympus PEN E-P7 Body"), "olympus-pen-e-p7");
 });
+
+// ---- parts, accessories, bundles and editions (US offers, 2026-11-10: an "LCD
+// Part" was the G7 X Mark III's lowest new price, a lens assembly the X100VI's
+// lowest used one). Every title below is a real store or eBay listing.
+test("parts pulled from a camera are refused, whatever they are called", async () => {
+  const { readCameraFiles, readLensFiles } = await import("../src/lib/catalog/load");
+  const real = buildIndex(readCameraFiles().cameras, readLensFiles().lenses);
+  const r = (title: string) => matchListing({ title }, real);
+  for (const t of [
+    "Canon PowerShot G7X Mark III LCD Part CY1-9957-LCD",
+    "Fujifilm X 100vi Lens Assembly Part",
+    "Fujifilm X 100vi View Finder Complete Assembly Part",
+    "Genuine Canon PowerShot G7X Mark II LCD Ass'y Parts CY1-9858-LCD WORKING!!!",
+    "Canon PowerShot G7X Mark II Optical Ass'y Black CY1-9855",
+    "CANON DSLR EOS R3  CMOS CCD SENSOR ASSY ORIGINAL PART CY3-1942",
+    "NEW  CANON DSLR EOS R50V  MAIN PCB ASSY   ORIGINAL PART CG2-8074",
+    "Canon EOS R6 Mark II Main PCB Parts CY3-1998, Only 2000 Shutter Count",
+    "Used Canon PowerShot SX740 HS Optical Unit Part 90%, CY1-9938 #02",
+    "Blackmagic Pocket Cinema Camera 6K G2 DC/DC Board Assembly Part",
+    "DJI Pocket 2 Action Camera Accessory Job Lot Housings Floating Grips Mounts",
+    "Open Box  DJI Osmo Pocket 3 MISSING PARTS",
+  ]) assert.equal(r(t).product, null, t);
+  // Spec words in real titles still match.
+  assert.equal(r("Canon EOS R50 V 24.2MP UHD 4K60p LCD Mirrorless Camera - Body Only").product?.slug, "canon-eos-r50-v");
+});
+
+test("an accessory maker's product titled with the camera is refused, unless it comes with the camera", async () => {
+  const { readCameraFiles, readLensFiles } = await import("../src/lib/catalog/load");
+  const real = buildIndex(readCameraFiles().cameras, readLensFiles().lenses);
+  const r = (title: string) => matchListing({ title }, real);
+  assert.equal(r("PolarPro Magflip Fujifilm X100VI (THE SET ThumbGrip| SoftShutter|BaseGrip(Bronze").product, null);
+  assert.equal(r("Tilta dji Osmo Pocket 4 Accessories Bundle").product, null);
+  assert.equal(r("GoPro Hero 8 PolarPro SWITCHBLADE8 Professional Dive Filter & Macro System New").product, null);
+  assert.equal(r("Selective Original DJI Osmo Pocket 3 Creator Combo Accessories").product, null);
+  assert.equal(r("Fujifilm X100VI Silver - 4 Months Old AU Stock + Smallrig UV Filter").product?.slug, "fujifilm-x100vi");
+  // A used body with its grip on is still the body.
+  assert.equal(r("Leica M11 Black, Thumbgrip 5593373").product?.slug, "leica-m11");
+});
+
+test("a special edition is not the standard camera, unless the catalog lists it", async () => {
+  const { readCameraFiles, readLensFiles } = await import("../src/lib/catalog/load");
+  const real = buildIndex(readCameraFiles().cameras, readLensFiles().lenses);
+  const s = (title: string) => matchListing({ title }, real).product?.slug ?? null;
+  for (const t of [
+    "Ricoh GR IV 30th Anniversary Edition Kit",
+    "Canon PowerShot G7 X Mark III Digital Camera (30th Anniversary Limited Edition)",
+    "Canon PowerShot G7 X Mark III Digital Camera Kit (30th Anniversary Graphite)",
+    "Hasselblad X2D 100C Earth Explorer Limited Edition",
+    "FUJIFILM X-Pro2 Body Graphite Edition Body Only [USER CONDITION]",
+    "Leica Q3 Monochrom",
+    "Pentax K-3 Mark III Monochrome DSLR Camera (Matte Black)",
+    "Ricoh GR IIIx Urban Edition Digital Camera - Metallic Gray",
+    "Insta360 Ace Pro 2 Xplorer Bundle SG60 Edition (Slate Grey)",
+    "Used *Monochrome Converted* FUJIFILM X-E3 Mirrorless Digital Camera Body (EX+)",
+  ]) assert.equal(s(t), null, t);
+  // Monochrom and Monochrome are one word; the catalog's own editions match.
+  assert.equal(s("Ricoh GR IV Monochrom Camera"), "ricoh-gr-iv-monochrome");
+  assert.equal(s("Leica M10 Monochrom, Boxed 5504498"), "leica-m10-monochrom");
+  assert.equal(s("Leica M10 Monochrome Digital Rangefinder Camera"), "leica-m10-monochrom");
+  // "Standard Edition" is the base product.
+  assert.equal(s("Insta360 GO 3S 4K Standard Edition 128GB Action Camera, Arctic White - Open Box"), "insta360-go-3s");
+});
+
+test("combos, store bundles and creator kits are bundles, never the camera's own price", async () => {
+  const { readCameraFiles, readLensFiles } = await import("../src/lib/catalog/load");
+  const real = buildIndex(readCameraFiles().cameras, readLensFiles().lenses);
+  const kit = (title: string) => {
+    const m = matchListing({ title }, real);
+    return m.product ? `${m.product.slug}${m.kit ? " bundle" : ""}` : null;
+  };
+  // Fixed-lens and action cameras.
+  assert.equal(kit("DJI Osmo Pocket 3 Creator Combo"), "dji-osmo-pocket-3 bundle");
+  assert.equal(kit("Insta360 X5 Essentials Bundle, 8K30fps 360 Camera Wi-Fi Waterproof, PureVideo AI"), "insta360-x5 bundle");
+  assert.equal(kit("GoPro HERO13 Black Creator Edition"), "gopro-hero13-black bundle");
+  assert.equal(kit("Canon PowerShot G7 X Mark III 20.1MP 4.2x Optical Zoom Digital Camera + 128GB Bundle"), "canon-powershot-g7-x-mark-iii bundle");
+  assert.equal(kit("Canon PowerShot V1 Video Creator Kit - 6390C029"), "canon-powershot-v1 bundle");
+  assert.equal(kit("DJI Osmo Action 4 Adventure Combo"), "dji-osmo-action-4 bundle");
+  assert.equal(kit("LUMIX ZS300 Compact Point and Shoot 4K Digital Camera (Silver) with Accessories"), "panasonic-lumix-zs300 bundle");
+  // The maker's base pack, and storage built into the camera, are the camera.
+  assert.equal(kit("DJI Osmo Action 3 Action Camera - Standard Combo"), "dji-osmo-action-3");
+  assert.equal(kit("Insta360 GO 3S Action Camera Standard Bundle (128GB, Midnight Black)"), "insta360-go-3s");
+  assert.equal(kit("Insta360 GO 3S 128GB Action Camera in Arctic White - CINSAATA_GO3S04"), "insta360-go-3s");
+  // Bodies: "Body" no longer makes an accessory bundle the body price.
+  assert.equal(kit("Canon EOS R6 Mark II Full-Frame 24.2 MP Mirrorless Camera Body+128GB Card Bundle"), "canon-eos-r6-mark-ii bundle");
+  assert.equal(kit("Canon EOS R50 Mirrorless Camera Body Only (White) 5812C002 + Accessories Bundle"), "canon-eos-r50 bundle");
+  assert.equal(kit("Canon EOS R3 Full Frame Mirrorless Camera Body w/ BSI Stacked CMOS Sensor + 128GB Kit"), "canon-eos-r3 bundle");
+  assert.equal(kit("Canon EOS R5 Full Frame Mirrorless Camera Body+Lens Kit with Accessories Bundle"), "canon-eos-r5 bundle");
+  // A used body with its own box and accessories is the body.
+  assert.equal(kit("Used Hasselblad 907x 50c with Original Box and all Accessories"), "hasselblad-907x-50c");
+  assert.equal(kit("Nikon Coolpix P1100 Bridge Camera with Accessories Excellent Condition Used Once"), "nikon-coolpix-p1100");
+  assert.equal(kit("Sony Alpha a7 IV Mirrorless Digital Camera Body"), "sony-a7-iv");
+});
