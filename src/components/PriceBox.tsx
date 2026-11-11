@@ -122,13 +122,13 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
         </OutboundLink>
         {row.paid && <p className="mt-1 text-[11px] text-subtle">Paid link: we may earn a commission. It never changes which price is best.</p>}
         {alt && altRow && (
-          <p className="mt-2 flex flex-wrap items-baseline gap-x-2 text-sm">
-            <OutboundLink href={altRow.href} retailer={alt.offer.retailer} product={alt.offer.product} placement="hero_alt" className="font-semibold text-accent hover:underline">
-              or <span className="price">{shown(alt.offer, cur)}</span> at {storeName(alt.offer)}
+          <div className="mt-2">
+            <OutboundLink href={altRow.href} retailer={alt.offer.retailer} product={alt.offer.product} placement="hero_alt" className="btn-ghost w-full justify-center border-accent py-2 text-sm font-semibold text-accent sm:w-auto sm:px-5">
+              Or <span className="price">{shown(alt.offer, cur)}</span> at {storeName(alt.offer)}
               {alt.pctMore > 0 ? <span className="font-normal text-muted"> +{alt.pctMore}%</span> : null} <span aria-hidden>→</span>
             </OutboundLink>
-            <span className="text-[11px] text-subtle">Paid link</span>
-          </p>
+            <p className="mt-1 text-[11px] text-subtle">Paid link: we may earn a commission. Not the cheapest, never a reorder.</p>
+          </div>
         )}
       </div>
       <div className="border-t border-line pt-3">

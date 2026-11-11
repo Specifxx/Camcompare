@@ -211,7 +211,7 @@ export function PinnedMarkets({ links, product, placement, dense = false, classN
               <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
                 <span className="font-semibold">{l.name}</span>
                 {l.vote && <StoreVote url={l.vote} name={l.name} className="text-muted" />}
-                <span className="rounded bg-buy-soft px-1.5 py-px text-[11px] font-semibold text-win">Ad</span>
+                <span className="rounded bg-buy-soft px-1.5 py-px text-[11px] font-semibold text-win">Ad · Paid link</span>
               </p>
               <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-xs text-muted">
                 {l.inStock != null && l.price && (
@@ -228,7 +228,8 @@ export function PinnedMarkets({ links, product, placement, dense = false, classN
             {l.cart && <CartAddButton {...l.cart} className="hidden shrink-0 text-muted sm:inline-flex" />}
             <div className={`${l.price ? (dense ? "w-[4.5rem]" : "w-20 sm:w-24") : ""} shrink-0 text-right`}>
               <OutboundLink href={l.href} retailer={l.retailer} product={product} placement={`${placement}-${kind}`} className={`${retailerButtonClass(l.retailer, l.paid)} ${l.price ? "w-full" : "whitespace-nowrap"} ${dense ? "px-2" : ""}`}>
-                {l.cta}
+                {l.paid && l.price ? `Buy on ${kind === "ebay" ? "eBay" : "Amazon"}` : l.cta}
+                {l.paid && l.price ? <span aria-hidden> →</span> : null}
                 <span className="sr-only"> at {l.name}</span>
               </OutboundLink>
               <PaidNote paid={l.paid} />
