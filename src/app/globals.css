@@ -291,6 +291,98 @@ h1, h2 { font-weight: 700; }
 .xmas-pill .xmas-pill-more {
   opacity: 0.75;
 }
+/* Festive layer (owner, 2026-11-12: "more festive again", after the 8 November tone-down). TASTEFUL ACCENTS ONLY, CSS from
+   html[data-season="christmas"][data-festive], no JS, no images, no animation: a 3px two-tone (cranberry, then pine) hairline
+   at the very top of the page, a Christmas card on the home page (ChristmasBanner), and the deals pill and the sale strip
+   picking up the same two colour tokens. The site's own palette is untouched. Switch it all off with
+   CHRISTMAS_FESTIVE_LAYER in lib/season.ts. */
+:root[data-season="christmas"][data-festive] {
+  --xmas-red: 155 28 49; /* cranberry: 7.9:1 on white */
+  --xmas-green: 38 94 66; /* pine: 8.1:1 on white */
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-season="christmas"][data-festive] {
+    --xmas-red: 224 86 108; /* 5.9:1 on the dark surface */
+    --xmas-green: 84 170 128; /* 7.0:1 on the dark surface */
+  }
+}
+:root[data-season="christmas"][data-festive]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 60;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgb(var(--xmas-red)) 50%, rgb(var(--xmas-green)) 50%);
+}
+:root[data-season="christmas"][data-festive] .xmas-pill {
+  border-color: rgb(var(--xmas-red) / 0.55);
+}
+:root[data-season="christmas"][data-festive] [data-holiday-strip] {
+  border-bottom-color: rgb(var(--xmas-green) / 0.55);
+}
+.xmas-gift {
+  display: none;
+}
+:root[data-season="christmas"] .xmas-gift {
+  display: block;
+  margin: 1rem auto 0;
+  max-width: 40rem;
+  text-align: left;
+}
+.xmas-gift a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid rgb(var(--c-line));
+  border-left: 3px solid rgb(var(--xmas-red, var(--c-accent)));
+  border-radius: 0.75rem;
+  background: rgb(var(--c-surface));
+  padding: 0.7rem 0.9rem;
+  color: rgb(var(--c-fg));
+  text-decoration: none;
+}
+.xmas-gift a:hover,
+.xmas-gift a:focus-visible {
+  border-color: rgb(var(--xmas-green, var(--c-accent)) / 0.6);
+  border-left-color: rgb(var(--xmas-red, var(--c-accent)));
+}
+.xmas-gift svg {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: rgb(var(--xmas-red, var(--c-accent)));
+}
+.xmas-gift-text {
+  min-width: 0;
+  flex: 1;
+  line-height: 1.3;
+}
+.xmas-gift-text b {
+  display: block;
+  font-size: 0.95rem;
+}
+.xmas-gift-sub {
+  display: none;
+  font-size: 0.82rem;
+  color: rgb(var(--c-muted));
+}
+@media (min-width: 640px) {
+  .xmas-gift-sub {
+    display: block;
+  }
+}
+.xmas-gift-badge {
+  flex: none;
+  border: 1px solid rgb(var(--xmas-green, var(--c-accent)));
+  border-radius: 9999px;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgb(var(--xmas-green, var(--c-accent)));
+}
 /* xmas-common:end */
 
 

@@ -2361,3 +2361,19 @@ A$1,490), and "Hot", the feed's default order, weighs money saved times percenta
 cheap lens. A market with fewer than six qualifying deals keeps the whole feed. Cheaper deals are not removed: they stay on
 /deals, the product pages and search, and URLs, titles, metadata, JSON-LD, the sitemap and the price order inside a product's
 table are unchanged. Nothing ranks by commission.
+
+## 2026-11-12 — A tasteful Christmas layer, more festive than the 8 November pill (owner)
+
+On 2026-11-08 the owner had the first Christmas look stripped ("a bit too much: the theme must match the domain"); on 2026-11-12
+he asked for it to be more festive again. The answer is accents, not a costume, the same shape on every Compare site in each
+site's own colours. Inside the existing window (`lib/season.ts`, 1 November to 26 December by the visitor's date,
+`?season=christmas|off`), the home hero's deals pill becomes a one-line Christmas card (`ChristmasBanner`: inline SVG gift in
+`currentColor`, "Christmas camera deals", a short subline from 640px, a pine badge, a cranberry 3px left border; not a heading).
+CamCompare has no gift-guide page and none was created, so it links the market's `/deals` page, as the pill did. `globals.css`
+adds a 3px two-tone cranberry-then-pine hairline at the very top of the page (a hard-stop gradient on `html::before`, absolutely
+positioned, no layout shift) with light and dark tokens (`--xmas-red`, `--xmas-green`), and the pill and the Black Friday strip
+take the same tokens for their border only. No new request, script, image or font. Still gone, and pinned in
+`tests/season.test.ts`: snow, lights, hats, candy stripes, palette swaps, sparkles, keyframes and canvas. ONE off switch:
+`CHRISTMAS_FESTIVE_LAYER` in `lib/season.ts` gates the card's markup (false renders the old pill) and the `data-festive`
+attribute every rule keys on; set it false after New Year, or let the window end on 26 December. No URL, title, meta, h1 or h2
+changes, and the pages stay static.
