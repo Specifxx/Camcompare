@@ -44,8 +44,8 @@ export default function OffersTable({ product, title, query, offers, market, pag
   // eBay has its own card (EbayPanel) with used, new and sold searches, so it is not in "Also check".
   // Amazon is pinned above the rows instead (PinnedMarkets): with its live price when it has one.
   const allChecks = alsoCheckLinks({ product, query, offers, market, page, amazonAsin, placement: "pinned", amazonShown: false, ebay: false });
-  const amazonLink = allChecks.find((l) => retailer(l.retailer)?.amazon);
-  const checks = allChecks.filter((l) => l !== amazonLink);
+  // Amazon is pinned only with a real price (owner, 2026-11-12), never as an "Also check" link.
+  const checks = allChecks;
   const amazonRow = rows.find((r) => r.amazon && r.inStock && !r.kit) ?? rows.find((r) => r.amazon);
   // eBay first, Amazon second (owner, 2026-10-30), as on every sister site.
   const pins = [
@@ -64,7 +64,7 @@ export default function OffersTable({ product, title, query, offers, market, pag
           // The cart list keeps Amazon's price 24 hours at most (lib/cart-list.ts), as the row does.
           cart: title && amazonRow.inStock ? { href: amazonRow.href, productUrl: amazonRow.href, storeName: amazonRow.name, title, detail: amazonRow.condition || null, priceCents: amazonRow.price, currency: amazonRow.currency, image: `/products/${product}.webp` } : null,
         }
-      : amazonLink && { ...amazonLink, note: "Also check on Amazon: new, sold by Amazon and its sellers, the price shows there", cta: "Check Amazon", vote: amazonLink.href },
+      : null,
   ].filter(Boolean) as PinnedLink[];
   const ebayUsed = ebayLink(market, { query, condition: "used" }, page, "product-ebay-tab-used", `More used ${query} on eBay`);
   const side = listings.length > 0 || checks.length > 0 || Boolean(ebayFor(market));

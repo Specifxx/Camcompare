@@ -183,19 +183,11 @@ export function ebaySearch(query: string, m: MarketCode, page: string, placement
 }
 
 /**
- * The "Also check" links: Amazon unless its price is shown (`amazonShown`),
- * then eBay's search unless live listings are shown. Nothing else: a dealer
+ * The "Also check" links: eBay's search unless live listings are shown. Never Amazon without a price (owner, 2026-11-12). Nothing else: a dealer
  * without a price is not a row and not a link.
  */
 export function alsoCheckLinks(x: CheckInput): CheckLink[] {
   const out: CheckLink[] = [];
-  const amazon = retailersFor(x.market).find((r) => r.amazon && r.searchUrl);
-  // An untagged Amazon link earns nothing and only takes the click away: no row until the market has a tag.
-  if (amazon && !x.amazonShown && amazonTag(amazon.key)) {
-    const asin = asinFor(x.product, amazon.amazon!.marketplace, x.amazonAsin);
-    const href = affiliateUrl(amazon.key, asin ? `https://${amazon.amazon!.marketplace}/dp/${asin}` : amazon.searchUrl!(x.query), subId(x.page, x.placement));
-    out.push({ retailer: amazon.key, name: amazon.name, href, paid: isPaid(amazon.key, href), note: "Amazon's price shows on Amazon", cta: "See it on Amazon" });
-  }
   const r = ebayFor(x.market);
   if (r && x.ebay !== false && !x.offers.some((o) => o.retailer === r.key && o.inStock)) {
     const link = ebaySearch(x.query, x.market, x.page, x.placement);
