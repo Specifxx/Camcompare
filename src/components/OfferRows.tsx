@@ -183,13 +183,12 @@ export type PinnedLink = {
   cart?: React.ComponentProps<typeof CartAddButton> | null;
 };
 
-/** The pinned rows' outlines (owner, 2026-11-06: "a different colored outline"): eBay green, Amazon amber. Inset, so the row keeps its size. */
+/** The rows' marks. Since 2026-11-12 (owner: "too many colors … all the colored rows") no row carries a coloured outline: the
+ *  pinned eBay and Amazon rows are told apart by their place and their "Ad" label, and the "Best price" row by its soft tint and tag. */
 export const PIN_OUTLINE = {
-  ebay: "outline outline-2 -outline-offset-2 outline-[#16a34a]",
-  amazon: "outline outline-2 -outline-offset-2 outline-[#f59e0b]",
-  /** The "Best price" row (owner, 2026-11-07: "the cheapest listing should also have an outline too"): sky blue, never read as
-   *  eBay's green or Amazon's amber. */
-  cheapest: "outline outline-2 -outline-offset-2 outline-[#0ea5e9]",
+  ebay: "",
+  amazon: "",
+  cheapest: "",
 } as const;
 
 /**
