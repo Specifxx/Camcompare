@@ -88,3 +88,11 @@ test("freshness reads like a person wrote it", () => {
   assert.equal(checkedAgo("2026-10-17T07:00:00Z", now), "5 hours ago");
   assert.equal(checkedAgo("2026-10-14T12:00:00Z", now), "3 days ago");
 });
+
+test("the home floor is the median live-deal price, and a thin market keeps everything", async () => {
+  const { homeFloor } = await import("../src/lib/deals-home");
+  const rows = [100, 200, 300, 400, 500, 600, 700, 800].map((price) => ({ price }));
+  assert.equal(homeFloor(rows, 4), 500);
+  assert.equal(homeFloor(rows, 6), 0);
+  assert.equal(homeFloor([], 6), 0);
+});

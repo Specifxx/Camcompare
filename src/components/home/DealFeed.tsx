@@ -62,7 +62,8 @@ const FILTERS: [Filter, string][] = [
 ];
 
 const order: Record<Sort, (a: FeedRow, b: FeedRow) => number> = {
-  hot: (a, b) => b.pct - a.pct || b.save - a.save,
+  // Hot weighs the money saved as well as the percentage, so a 20% saving on a body outranks 40% on a cheap lens (owner, 2026-11-12).
+  hot: (a, b) => b.pct * b.save - a.pct * a.save || b.pct - a.pct,
   new: (a, b) => b.firstSeen.localeCompare(a.firstSeen) || b.pct - a.pct,
   off: (a, b) => b.save - a.save || b.pct - a.pct,
 };

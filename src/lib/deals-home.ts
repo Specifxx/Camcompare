@@ -69,3 +69,15 @@ export function homeDealViews(items: HomeDealInput[], mode: "used" | "new", max 
   for (const d of [...all, ...homeDeals(items, mode, { max, minPct, kind: "camera" }), ...homeDeals(items, mode, { max, minPct, kind: "lens" })]) union.set(d.slug, d);
   return [...union.values()].sort(rank).map((d) => ({ ...d, inAll: top.has(d.slug) }));
 }
+
+/**
+ * The price floor for the home page's feed (owner, 2026-11-12: a bigger ticket pays a bigger commission): the MEDIAN price of
+ * the market's live deals, in its own currency. Cheaper deals stay on /deals and on their product pages; the home feed keeps
+ * to the dearer half, and keeps everything when too few would qualify (`min`).
+ */
+export function homeFloor<T extends { price: number }>(live: readonly T[], min = 6): number {
+  if (!live.length) return 0;
+  const xs = live.map((d) => d.price).sort((a, b) => a - b);
+  const floor = xs[Math.floor(xs.length / 2)];
+  return xs.filter((x) => x >= floor).length >= min ? floor : 0;
+}
