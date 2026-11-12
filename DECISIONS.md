@@ -2352,3 +2352,12 @@ the five markets; the median floor drops 19 more, all camera accessories, wrong 
 ## 2026-11-12 — Paid rows made visible and clickable (owner: "flood the underperforming sites with affiliate links, highly visible")
 
 The owner asked for the paid rows to be easy to see and click on the two sites that earn almost nothing from heavy traffic (Compare Empire, CamCompare). Changes are presentation only: the eBay and Amazon rows and any paid store row now carry a filled button with its action ("Buy on eBay", "Buy on Amazon", "Buy at store") at every width, including phones, where the button used to be a bare icon; the label reads "Ad · Paid link"; the hero's eBay button is filled; CamCompare's "or $X at <store>" line is a button. Unchanged on purpose: every link is rel sponsored, a paid row is never counted as a store, "cheapest" or a deal, commission never decides the order of the store rows, no pop-ups, URLs, titles and metadata are as before.
+
+## 2026-11-12 — The home deal feed features the dearer half (owner)
+
+A bigger ticket pays a bigger commission, so the home page's deal feed keeps to deals priced at or above the MEDIAN live deal price
+of the market (`homeFloor` in `lib/deals-home.ts`; own currency, never converted; on 2026-11-12 data about US$899, £780, €1,449,
+A$1,490), and "Hot", the feed's default order, weighs money saved times percentage saved, so a 20% saving on a body outranks 40% on a
+cheap lens. A market with fewer than six qualifying deals keeps the whole feed. Cheaper deals are not removed: they stay on
+/deals, the product pages and search, and URLs, titles, metadata, JSON-LD, the sitemap and the price order inside a product's
+table are unchanged. Nothing ranks by commission.

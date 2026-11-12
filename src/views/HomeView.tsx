@@ -33,6 +33,7 @@ import { ldJson } from "@/lib/jsonld";
 import { abs } from "@/lib/site";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import { deals } from "@/views/DealsView";
+import { homeFloor } from "@/lib/deals-home";
 import { Flag } from "@/components/Flag";
 import MarketChips from "@/components/MarketChips";
 import { SiteReviews } from "@/components/site-reviews/SiteReviews";
@@ -114,11 +115,14 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
   const log = readDealLog(m);
   const inputs = new Map(dealInputs(m).map((it) => [it.slug, it]));
   const since = log?.updatedAt ? Date.parse(log.updatedAt) - GONE_SHOW_H * 3_600_000 : 0;
-  const liveDeals = (log?.deals ?? [])
-    .filter((d) => d.status === "live" && product(d.slug))
+  // Only the dearer half of the market's live deals is featured here (lib/deals-home.ts homeFloor); the rest stay on /deals.
+  const liveAll = (log?.deals ?? []).filter((d) => d.status === "live" && product(d.slug));
+  const floor = homeFloor(liveAll, MIN_DEALS);
+  const liveDeals = liveAll
+    .filter((d) => d.price >= floor)
     .sort((a, b) => b.pct - a.pct || b.save - a.save)
     .slice(0, FEED_MAX);
-  const goneDeals = (log?.deals ?? []).filter((d) => d.status === "gone" && d.goneAt && Date.parse(d.goneAt) >= since && product(d.slug));
+  const goneDeals = (log?.deals ?? []).filter((d) => d.status === "gone" && d.price >= floor && d.goneAt && Date.parse(d.goneAt) >= since && product(d.slug));
   const toFeedRow = (d: DealEntry): FeedRow | null => {
     const p = product(d.slug)!;
     const gone = d.status === "gone" ? { at: d.goneAt!, why: d.goneWhy ?? "sold" } : null;
