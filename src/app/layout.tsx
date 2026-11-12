@@ -19,7 +19,7 @@ import "@/components/cart/cart.css";
 import "@/components/site-reviews/site-reviews.css";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
-import { SEASON_BOOT_SCRIPT } from "@/lib/season";
+import { SEASON_BOOT_SCRIPT, CHRISTMAS_FESTIVE_LAYER } from "@/lib/season";
 import { MARKET_BOOT_SCRIPT } from "@/lib/market-boot";
 
 // Inter for text, Bricolage Grotesque for headings and big figures (the same
@@ -59,7 +59,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`} data-festive={CHRISTMAS_FESTIVE_LAYER ? "" : undefined} suppressHydrationWarning>
       <head>
         {/* Christmas (1 November to Boxing Day): data-season on <html> from the visitor's own date. lib/season.ts. */}
         <script dangerouslySetInnerHTML={{ __html: SEASON_BOOT_SCRIPT }} />

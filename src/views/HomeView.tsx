@@ -1,3 +1,4 @@
+import { ChristmasBanner } from "@/components/ChristmasBanner";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
@@ -222,13 +223,8 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
             <Freshness at={generatedAt} fallback={stamp(generatedAt)} />
           </p>
         )}
-        {/* Christmas only: a line to the deals, for gift shoppers. */}
-        <div className="xmas-pill-row mt-4 justify-center">
-          <Link href={marketPath(m, "/deals")} prefetch={false} className="xmas-pill">
-            <b>Holiday camera deals</b>
-            <span className="xmas-pill-more hidden sm:inline">· real price drops, checked every day →</span>
-          </Link>
-        </div>
+        {/* Christmas only (1 November to Boxing Day): a card to the deals, for gift shoppers. */}
+        <ChristmasBanner href={marketPath(m, "/deals")} />
         <h1 id="hero-title" className="mx-auto mt-5 max-w-3xl text-[2.35rem] font-extrabold leading-[1.05] tracking-[-0.035em] sm:text-6xl">
           Camera &amp; lens prices, compared. <span className="text-gradient">Best deals first.</span>
         </h1>
