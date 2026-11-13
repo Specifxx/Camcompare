@@ -53,6 +53,9 @@ function useRails(enabled: boolean): Rails | null {
 }
 
 /** The rails, mounted once in the root layout. */
+/** The side rails are OFF (owner, 2026-11-13: "banner ads on the side … doesn't look as good … fill in that space on the side again"): the ads are the strips inside the page and the phone dock. The rail code stays; nothing renders or fetches it while this is false. */
+export const SIDE_RAILS = false;
+
 export function SideRails() {
   const [fit, setFit] = useState(false);
   const [narrow, setNarrow] = useState(false);
@@ -60,7 +63,7 @@ export function SideRails() {
   useEffect(() => {
     const mq = window.matchMedia(`(min-width: ${MIN_WIDTH}px)`);
     const update = () => {
-      setFit(mq.matches && window.innerHeight >= MIN_HEIGHT);
+      setFit(SIDE_RAILS && mq.matches && window.innerHeight >= MIN_HEIGHT);
       setNarrow(!mq.matches);
       // Under the sticky header (two rows on wide screens): its bottom edge.
       const h = document.querySelector("header");
