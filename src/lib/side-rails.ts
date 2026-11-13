@@ -1,13 +1,13 @@
-// The side rails' tiles (components/SideRails.tsx draws them; owner, 2026-11-06: "the eBay ads … and instead of the TCGplayer
+// The ad tiles (components/InlineAds.tsx draws six of them in the page, PhoneDock.tsx the eBay ones; they were the side rails' tiles, owner, 2026-11-06: "the eBay ads … and instead of the TCGplayer
 // ad, the Amazon ad banner that's scrollable", as on DexCompare and MTG Compare), computed once per market at build and served
 // as one static file per market (/rails/<market>, force-static): no page carries them and a visit never runs a function.
 //
-//   • Left, eBay: the daily import's own eBay Browse offers for the bodies and lenses the most shops in the market list today,
-//     the cheapest new body-only listing (else used, labelled), with our own product photo. subId cc-<market>-side-ebay.
-//   • Right, Amazon: the same products as tagged links to Amazon's page of the item when its ASIN is known
+//   • eBay: the daily import's own eBay Browse offers for the bodies and lenses the most shops in the market list today,
+//     the cheapest new body-only listing (else used, labelled), with our own product photo. subId cc-<market>-inline-ebay.
+//   • Amazon (after eBay in the block): the same products as tagged links to Amazon's page of the item when its ASIN is known
 //     (data/amazon-asins.json, the catalogue's amazonAsin), else an exact product-name search (Associates: a specific product,
 //     never a category). NO price: the rails file is served for a day, and Amazon's licence allows a price only for 24 hours
-//     from its fetch with its time shown, which the product page's own row does. No Amazon rail in Singapore (no tag).
+//     from its fetch with its time shown, which the product page's own row does. No Amazon tiles in Singapore (no tag).
 //   • Never in the phone dock (an overlay: Associates' rule), never in an email, never counted as a store.
 import { affiliateUrl, amazonTag, subId } from "./affiliate";
 import { asinFor } from "./amazon-asins";
@@ -77,7 +77,7 @@ export function railsFor(m: MarketCode): Rails {
         img: thumbSrc(p.slug),
         price: money(o.price, cur, true),
         ...(o.condition !== "new" ? { note: "Used" } : {}),
-        href: affiliateUrl(ebay.key, o.url, subId(m, "side-ebay")),
+        href: affiliateUrl(ebay.key, o.url, subId(m, "inline-ebay")),
       });
       if (ebayTiles.length >= MAX_TILES) break;
     }
@@ -91,7 +91,7 @@ export function railsFor(m: MarketCode): Rails {
     for (const p of [...products.filter((p) => !seen.has(p.slug)), ...products.filter((p) => seen.has(p.slug))]) {
       const name = displayName(p, m);
       const asin = asinFor(p.slug, az.amazon!.marketplace, p.amazonAsin);
-      tiles.push({ id: p.slug, name, img: thumbSrc(p.slug), price: null, href: affiliateUrl(az.key, asin ? `https://${az.amazon!.marketplace}/dp/${asin}` : az.searchUrl!(name), subId(m, "side-amazon")) });
+      tiles.push({ id: p.slug, name, img: thumbSrc(p.slug), price: null, href: affiliateUrl(az.key, asin ? `https://${az.amazon!.marketplace}/dp/${asin}` : az.searchUrl!(name), subId(m, "inline-amazon")) });
       if (tiles.length >= MAX_TILES) break;
     }
     amazon = { label: az.name, tiles };

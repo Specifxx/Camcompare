@@ -13,7 +13,7 @@ import JustAnnounced from "@/components/releases/JustAnnounced";
 import Freshness from "@/components/home/Freshness";
 import MakersNote from "@/components/home/MakersNote";
 import SectionHeading from "@/components/home/SectionHeading";
-import EbayStrip from "@/components/home/EbayStrip";
+import InlineAds from "@/components/InlineAds";
 import { CreatorsCornerBadge } from "@/components/creators/CreatorsCornerBadge";
 import { brandName, brands, displayName, displayShortName, historyFor, indexedPairs, mounts, offersFor, offersGeneratedAt, pairSlug, product, publishedCameras, publishedLenses, type AnyProduct } from "@/lib/catalog";
 import { affiliateUrl, isPaid, subId } from "@/lib/affiliate";
@@ -466,7 +466,7 @@ export default function HomeView({ market: m }: { market: MarketCode }) {
         )}
       </section>
 
-      <EbayStrip market={m} />
+      <InlineAds />
 
       {/* The site's own star score and approved reviews (owner, 2026-11-03), loaded in the browser; nothing until there is a rating. */}
       <SiteReviews />

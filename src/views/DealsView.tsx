@@ -264,7 +264,7 @@ export default function DealsView({ market: m, blackFriday: bfPage = false, cybe
       )}
       <PriceTraps market={m} />
       <FamilyCluster market={m} />
-      {!empty && <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`deals-${m}`} placement="promo-deals" />}
+      {!empty && <AdOrPromo slot={AD_SLOTS.listing} />}
       {(bfPage || cmPage) && <HolidayFaq m={m} event={bfPage ? "black-friday" : "cyber-monday"} />}
       {!empty && <QuickViewHost />}
     </div>

@@ -35,7 +35,7 @@ export default function BrowseView({ kind, market: m }: { kind: "camera" | "lens
         <Browser kind="lens" items={publishedLenses().map((l) => summarizeLens(l, m))} brands={brandOpts} mounts={mountOpts} market={m} />
       )}
       <CatalogIndex kind={kind} market={m} />
-      <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`browse-${m}-${kind}`} placement="promo-browse" />
+      <AdOrPromo slot={AD_SLOTS.listing} />
     </div>
   );
 }

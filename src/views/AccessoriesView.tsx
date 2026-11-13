@@ -4,7 +4,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AccessoryBrowser from "@/components/AccessoryBrowser";
-import AdSlot from "@/components/AdSlot";
 import PerGbTrend from "@/components/PerGbTrend";
 import { accessoryCategory, CATEGORIES, formatLabel, GROUP_LABEL, GROUP_ORDER, PER_GB_CATEGORIES, SYSTEM_CATEGORIES } from "@/lib/accessories";
 import { accessoriesIn, marketAccessories, readAccessoryHistory } from "@/lib/accessory-data";
@@ -78,7 +77,7 @@ export default function AccessoriesView({ market: m }: { market: MarketCode }) {
           </section>
         );
       })}
-      {listed && <AdOrPromo slot={AD_SLOTS.listing} market={m} page={`acc-${m}`} placement="promo-acc" links="accessories" />}
+      {listed && <AdOrPromo slot={AD_SLOTS.listing} />}
     </div>
   );
 }
@@ -153,7 +152,7 @@ export function AccessoryCategoryView({ category, market: m }: { category: strin
       <p className="text-sm">
         <Link href={marketPath(m, "/accessories")}>All accessory categories →</Link>
       </p>
-      {rows.length > 0 && <AdSlot slot={AD_SLOTS.listing} />}
+      {rows.length > 0 && <AdOrPromo slot={AD_SLOTS.listing} />}
     </div>
   );
 }
