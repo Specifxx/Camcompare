@@ -2401,3 +2401,7 @@ bringing any outline back.
 Owner: "we just want eBay and TCGplayer as the paid links at the top. That is why our revenue is declining." Amazon is pinned only
 when its Creators API price is shown; the "Also check on Amazon" pinned row and the quick view's Amazon link are gone.
 `tests/paid-rows.test.ts` pins it.
+
+## 2026-11-13: urgent release
+
+Owner asked for every site to be released now: the unpriced-Amazon fix, Fetch as an ordinary store row and the blue TCGplayer button had been merged without a deploy marker. One build, via this commit's subject.
