@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdOrPromo from "@/components/ebay/AdOrPromo";
 import { AD_SLOTS } from "@/lib/ads";
-import { ebayRelatedLinks } from "@/lib/ebay-links";
 import OffersTable from "@/components/OffersTable";
 import PriceBox from "@/components/PriceBox";
 import OfficialLink from "@/components/OfficialLink";
@@ -230,7 +229,7 @@ export default function LensView({ slug, market: m }: { slug: string; market: Ma
         </section>
       )}
 
-      <AdOrPromo slot={AD_SLOTS.product} market={m} page={page} placement="promo-product" title="More used gear on eBay" links={ebayRelatedLinks(m, page, "promo-product", { brand, mountName: mountNames[0]?.name ?? null, kind: "lens" })} />
+      <AdOrPromo slot={AD_SLOTS.product} />
     </article>
   );
 }

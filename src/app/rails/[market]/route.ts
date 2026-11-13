@@ -1,5 +1,5 @@
-// The side rails' tiles for one market (lib/side-rails.ts): one static JSON per market and build (force-static, every market
-// prerendered), fetched by components/SideRails.tsx only on a screen wide enough for the rails or once the dock may show.
+// The ad tiles for one market (lib/side-rails.ts): one static JSON per market and build (force-static, every market
+// prerendered), fetched by components/useAdFeed.ts, for the in-page ad block and the phone dock.
 import { railsFor } from "@/lib/side-rails";
 import { isMarket, MARKET_CODES } from "@/lib/markets";
 

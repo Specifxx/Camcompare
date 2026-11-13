@@ -2409,3 +2409,24 @@ Owner asked for every site to be released now: the unpriced-Amazon fix, Fetch as
 ## 2026-11-13: the side rails are off; the ads are the strips inside the page
 
 Owner: visitors looked down, the side banners "don't look as good" and spoil the site's look, so the eBay and TCGplayer (or Amazon) rails come off every site and the page column gets the side space back. The ads that stay are the horizontal strips inside the page and, on small screens, the phone dock (after a scroll, never on a product page). The rail code stays behind one constant (`SIDE_RAILS = false` in the rail component, or `SITE.sideRails` on MotorCompare): nothing is rendered or fetched while it is false, and the CSS that narrowed the column for them is gone. Measured before the change (Vercel Web Analytics, unique visitors, Oct 30 to Nov 5 against Nov 6 to Nov 12, the rails having shipped Nov 6): DexCompare 4,200 to 4,972 with bounce 57% to 43%; RiftCompare 3,399 to 3,179 (its fall was Oct 29, a week before the rails); OP Compare 1,123 to 1,016. The measure to watch next is clicks per placement for the strips, not visitors. Never re-add rails, a floating banner or a gutter ad without the owner.
+
+## 2026-11-13: one native horizontal ad block in place of the side rails (owner)
+
+Owner: the side rails are off (entry above), and wanted the ad space back as ONE bigger, subtler horizontal block inside the page that looks like
+the site, not a banner. `components/InlineAds.tsx`: a `card` section of six larger tiles (144px picture, two-line title, price), full column
+width, scrolling sideways on a phone, a small muted "Ad" label, the site's own surface, border and text tokens, no colour of its own. eBay's tiles first
+(four, or all six where there is no Amazon, i.e. Singapore), then Amazon's two: Amazon tiles carry NO price and link to the product's page by ASIN, else an
+exact-name search; Amazon is a labelled paid link and is in no overlay.
+
+- **Same data as the rails**: the static `/rails/<market>` file (`lib/side-rails.ts`), fetched after hydration by `useAdFeed`. Nothing is in the server
+  HTML but the section's reserved height (CLS 0); with nothing to show it folds away. New tags: `cc-<market>-inline-ebay` and `…-inline-amazon`
+  (the dock rewrites inline-ebay to `dock-ebay`); every link goes through `OutboundLink`, rel sponsored, a `buy_click` event with that placement.
+- **Where, once per page**, always through `AdOrPromo`: the home page between the browse section and the reviews; a camera or lens page below all its
+  content (never beside a buy button or above a price, never in the quick view); the browse, deals and accessories pages after their lists. `AdOrPromo`
+  draws the AdSense slot instead while `NEXT_PUBLIC_ADSENSE_CLIENT` and a slot are set (the AdSlot rules unchanged), else this block. It replaces the
+  "Shop on eBay" boxes (`EbayPromo`) and the home page's `EbayStrip`, both deleted, so there is exactly one such block per page.
+  `data-ad` makes the phone dock yield to it.
+- **Kept**: the phone dock (`PhoneDock.tsx`, eBay only, after a scroll, never on a product page). Deleted: `SideRails.tsx`, the rail CSS and the
+  `SIDE_RAILS` switch. `ebay-links.ts` keeps its link builders (viral cameras, My gear). Never a store, best price, deal or alert; rankings unchanged.
+- Measure clicks per placement (`inline-ebay`, `inline-amazon`, `dock-ebay`) against the boxes of the week before. No pop-up, no fixed or floating
+  banner and no gutter ad without the owner.

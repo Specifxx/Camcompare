@@ -400,10 +400,3 @@ html[data-geo="pending"] main { visibility: hidden; }
   --srv-field: rgb(var(--c-raised));
 }
 
-/* The side rails (components/SideRails.tsx; owner, 2026-11-06): from 1280px the page's column leaves 160px (a 136px rail and
-   two 12px gutters) free on each side; from 1472px it is its full 72rem again and the rails sit just outside it. The header
-   keeps its full width (the rails start below it). Pure CSS, the same on the server: no layout shift when the rails mount. */
-.rail-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(var(--line)) transparent;
-}
