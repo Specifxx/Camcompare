@@ -403,12 +403,6 @@ html[data-geo="pending"] main { visibility: hidden; }
 /* The side rails (components/SideRails.tsx; owner, 2026-11-06): from 1280px the page's column leaves 160px (a 136px rail and
    two 12px gutters) free on each side; from 1472px it is its full 72rem again and the rails sit just outside it. The header
    keeps its full width (the rails start below it). Pure CSS, the same on the server: no layout shift when the rails mount. */
-@media (min-width: 1280px) {
-  #main,
-  footer .max-w-6xl {
-    max-width: min(72rem, calc(100vw - 320px));
-  }
-}
 .rail-scroll {
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--line)) transparent;
