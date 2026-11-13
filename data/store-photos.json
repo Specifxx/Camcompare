@@ -456,9 +456,9 @@
    "retailer": "teds"
   },
   "hasselblad-907x-50c": {
-   "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/files/SH-BGE7-SH_626a1a78-5b85-438f-aac5-cbebc109e8dc.jpg?width=640",
-   "store": "Georges Cameras",
-   "retailer": "georges"
+   "src": "https://cdn.shopify.com/s/files/1/0709/3256/2235/files/CM24471-001-00.jpg?width=640",
+   "store": "Camera West",
+   "retailer": "camera-west"
   },
   "hasselblad-907x-cfv-100c": {
    "src": "https://www.camerahouse.com.au/media/catalog/product/h/a/hasselblad_907x_cfv_100c_au_2_.jpg",
@@ -471,9 +471,9 @@
    "retailer": "camera-electronic"
   },
   "hasselblad-xcd-1-9-80": {
-   "src": "https://doddcamera.com/media/catalog/product/cache/96fe54fcbcf5a7161b7caac20375349f/7/b/7b73cdd79227a47207e4dc5dc5693a76c647e5a5_xcd-80.jpg",
-   "store": "Dodd Camera",
-   "retailer": "dodd-camera"
+   "src": "https://cdn.shopify.com/s/files/1/0709/3256/2235/files/CM24471-005-00.jpg?width=640",
+   "store": "Camera West",
+   "retailer": "camera-west"
   },
   "hasselblad-xcd-2-5-25v": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/1715071559_1819850.jpg?width=640",
@@ -846,12 +846,12 @@
    "retailer": "leica-store-miami"
   },
   "meta-oakley-meta-hstn": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-glasses-OW8002800202.jpg",
+   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-glasses-OW8002800203-2.jpg",
    "store": "Abt",
    "retailer": "abt"
   },
   "meta-oakley-meta-vanguard": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-smart-glasses-OOW8001800101-front-left.jpg",
+   "src": "https://content.abt.com/media/images/products/BDP_Images/oakley-smart-glasses-OW8001800104-front-left.jpg",
    "store": "Abt",
    "retailer": "abt"
   },
@@ -861,7 +861,7 @@
    "retailer": "jbhifi"
   },
   "meta-ray-ban-meta-gen-2": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/ray-ban-meta-sunglasses-RW4013-6011M50.jpg",
+   "src": "https://content.abt.com/media/images/products/BDP_Images/ray-ban-sunglasses-RW4013-601SSB50.jpg",
    "store": "Abt",
    "retailer": "abt"
   },
@@ -1421,7 +1421,7 @@
    "retailer": "camera-house"
   },
   "sigma-14-24mm-f2-8-dg-hsm-art": {
-   "src": "https://www.camerahouse.com.au/media/catalog/product/9/2/92943.jpg",
+   "src": "https://www.camerahouse.com.au/media/catalog/product/5/5/555_1.jpg",
    "store": "Camera House",
    "retailer": "camera-house"
   },
