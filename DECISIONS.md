@@ -2441,3 +2441,27 @@ text button (`inline`) is drawn as a bordered button (`cart.css`). Neutral, neve
 filled action and the calm three-colour rule holds. Nothing else moved: which rows can be added (open store rows, eBay and
 Amazon with a live price; never a marketplace or a search row), the line's buy link and its affiliate tag, the row order, the
 buy button and every placement are unchanged. A caller can still ask for the bare icon (`label={false}`).
+
+## 2026-11-14: Site-wide polish, faults only (owner: "make all the other pages more aesthetic as well")
+
+CamCompare is a frozen site, so this pass fixes real faults found by measuring every page type at 390px and 1440px in the
+light and dark themes, and changes nothing else. Measured before and after: no page wider than the screen, no console or
+hydration errors, layout shift unchanged, and no text under 4.5:1 left on the sampled pages.
+
+- **Search (every page):** a search that matches nothing used to show nothing at all. It now says so ("Nothing matches …")
+  and offers Cameras, Lenses and Brands as 40px chips (`SearchBox.tsx`), in the header box and the home hero's.
+- **Feedback button (every page):** the floating pill was a filled brand-colour button that covered text, buttons and the
+  phone menu. It is a quiet neutral surface pill now (the brand colour is for the page's one action), the icon alone on
+  phones with its name still read, and it steps aside while the phone menu is open (`FeedbackWidget.tsx`, `globals.css`).
+- **Product pages, store rows:** the "Above RRP" badge no longer breaks into a two-line blob, and a long store promotion
+  ("Free 2 Day Shipping") ends in an ellipsis instead of being cut mid-letter (`OfferRows.tsx`). The pressed offer tab's
+  count was 4.35:1 in the light theme; it is the muted grey now (`MoreOffers.tsx`).
+- **Filter pills (home deal feed, offer tabs, stories):** drawn the same size, but each takes a 40px-tall touch. The member
+  stories' tag filter, bare 12px words, uses the same pills.
+- **404:** the same heading, words and first button, plus Lenses and Home, so a dead end has a way back.
+
+Unchanged, checked on ten URLs' server HTML against `main`: titles, descriptions, canonicals, robots, Open Graph, JSON-LD,
+h1 and h2 text, every internal link, every outbound link with its words, and no indexed word lost. No paid link, ad block,
+pinned row, affiliate tag, placement name, URL or metadata changed, so the 19 November clicks-per-placement recheck is
+unaffected. Left for the owner: the pinned eBay row's "Buy on eBay →" button wraps to three lines in its narrow column on
+phones and on desktop; making it one line changes its shape, which is frozen until the recheck.

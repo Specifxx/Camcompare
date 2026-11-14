@@ -74,7 +74,7 @@ export default function OfferTabs({
           {tabs.map((t) => (
             <button key={t.key} type="button" className="hd-pill shrink-0" aria-pressed={tab === t.key} onClick={() => setTab(t.key)}>
               {t.label}
-              <span className="ml-1.5 text-xs font-normal text-subtle">{t.count}</span>
+              <span className="ml-1.5 text-xs font-normal text-muted">{t.count}</span>
             </button>
           ))}
         </div>
