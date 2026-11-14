@@ -1,6 +1,7 @@
 "use client";
 // Site-wide instant search over /search-index.json (built from the catalog
 // by scripts/build-public-data.ts, ~1,000 rows). Loaded on first focus only.
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { marketPath, type MarketCode } from "@/lib/markets";
@@ -32,6 +33,8 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
     return () => document.removeEventListener("mousedown", close);
   }, []);
   const listed = open && hits.length > 0;
+  // Searched, the index has loaded, and nothing matched: say so and offer the ways in, instead of an empty box.
+  const empty = open && rows !== null && hits.length === 0 && q.trim().length >= 2 && !/^https?:\/\//i.test(q.trim());
   const go = (r: SearchRow) => {
     setOpen(false);
     setQ("");
@@ -110,6 +113,32 @@ export default function SearchBox({ market, variant = "header", placeholder = "S
             </li>
           ))}
         </ul>
+      )}
+      {empty && (
+        <div
+          role="status"
+          className={
+            hero
+              ? "absolute inset-x-0 top-full z-40 mt-2 rounded-2xl border border-line bg-surface p-4 text-left text-sm shadow-lift"
+              : "fixed inset-x-4 top-16 z-40 mt-1 rounded-2xl border border-line bg-surface p-4 text-sm shadow-lg md:absolute md:inset-x-auto md:right-0 md:top-auto md:w-[22rem]"
+          }
+        >
+          <p className="font-medium text-fg">Nothing matches &ldquo;{q.trim()}&rdquo;.</p>
+          <p className="mt-1 text-muted">Try a brand or a model number, like Sony or a7&nbsp;IV, or browse instead.</p>
+          <p className="mt-3 flex flex-wrap gap-2">
+            {(
+              [
+                ["Cameras", "/cameras"],
+                ["Lenses", "/lenses"],
+                ["Brands", "/brands"],
+              ] as const
+            ).map(([label, path]) => (
+              <Link key={path} href={marketPath(market, path)} prefetch={false} onClick={() => setOpen(false)} className="chip-link min-h-[40px] px-3.5 text-sm">
+                {label}
+              </Link>
+            ))}
+          </p>
+        </div>
       )}
     </div>
   );

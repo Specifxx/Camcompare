@@ -1,6 +1,7 @@
 "use client";
 // The floating "Feedback" button on every page, and the small form panel it
-// opens. Never opens by itself.
+// opens. Never opens by itself. Neutral (2026-11-14): the brand colour is for the
+// page's one action, so the button is a quiet surface pill, an icon alone on phones.
 //
 // Placement: bottom LEFT, because buy buttons sit at the right end of every
 // offer row. It lifts itself above any fixed bar along the bottom edge (the
@@ -121,14 +122,15 @@ export default function FeedbackWidget({ connected }: { connected: boolean }) {
         }}
         aria-haspopup="dialog"
         style={{ bottom: `calc(${lift}px + max(1rem, env(safe-area-inset-bottom)))` }}
-        className={`fixed left-4 z-30 h-10 items-center gap-1.5 rounded-full bg-accent px-3.5 text-[13px] font-semibold text-accent-fg shadow-lg ring-1 ring-black/5 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:h-11 sm:px-4 sm:text-sm ${open ? "hidden" : "inline-flex"} ${
+        className={`cc-feedback fixed left-4 z-30 h-10 w-10 items-center justify-center gap-1.5 rounded-full border border-line bg-surface text-[13px] font-semibold text-muted shadow-lg transition-colors hover:border-fg/25 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:h-11 sm:w-auto sm:px-4 sm:text-sm ${open ? "hidden" : "inline-flex"} ${
           overAd ? "invisible" : ""
         }`}
       >
         <svg aria-hidden width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z" />
         </svg>
-        Feedback
+        {/* Phones: the icon alone, so the button covers as little of the page as it can; its name is still read. */}
+        <span className="sr-only sm:not-sr-only">Feedback</span>
       </button>
 
       {opened && (

@@ -131,7 +131,7 @@ export default function Stories() {
         )}
       </div>
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line pb-1">
-        <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs" role="group" aria-label="Filter by tag">
+        <div className="flex flex-wrap gap-2 py-1" role="group" aria-label="Filter by tag">
           {[null, ...STORY_TAGS.map((t) => t.slug)].map((t) => (
             <button
               key={t ?? "all"}
@@ -141,7 +141,7 @@ export default function Stories() {
                 setTag(t);
                 reset();
               }}
-              className={tag === t ? "font-semibold text-fg" : "text-muted hover:text-fg hover:underline"}
+              className="hd-pill"
             >
               {t ? tagLabel(t) : "All"}
             </button>

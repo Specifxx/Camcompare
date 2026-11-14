@@ -244,6 +244,9 @@ h1, h2 { font-weight: 700; }
 .hd-pill:hover:not(:disabled) { border-color: rgb(var(--c-fg) / 0.3); color: rgb(var(--c-fg)); }
 .hd-pill[aria-pressed="true"] { border-color: rgb(var(--c-accent)); background: rgb(var(--c-accent-soft)); color: rgb(var(--c-fg)); font-weight: 600; }
 .hd-pill:disabled { opacity: 0.45; cursor: not-allowed; }
+/* The pills stay small to the eye but take a 40px-tall touch (2026-11-14): the hit area reaches past the drawn edge. */
+.hd-pill { position: relative; }
+.hd-pill::after { content: ""; position: absolute; inset: -6px -2px; }
 .hd-seg-btn:focus-visible, .hd-pill:focus-visible { outline: 2px solid rgb(var(--c-accent)); outline-offset: 2px; }
 
 /* xmas-common:start (the same block on every Compare site) */
@@ -408,4 +411,9 @@ html[data-geo="pending"] main { visibility: hidden; }
    utilities on the same element still win. Pinned by tests/scroller-clip.test.ts. */
 :where(.scroller, .overflow-x-auto, .overflow-x-scroll, .ex-scroll, .ad-scroll) {
   position: relative;
+}
+
+/* The floating feedback button steps aside while the phone menu is open, so it never covers a menu link (2026-11-14). */
+body:has(#phone-menu) .cc-feedback {
+  display: none;
 }

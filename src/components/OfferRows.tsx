@@ -81,13 +81,13 @@ export function OfferRowItem({ row, product, title, placement, priceNode, dense 
         {(row.promo || warn) && (
           <p className="mt-1 flex flex-wrap gap-1">
             {row.promo && (
-              <span className="inline-flex max-w-full items-center gap-1 truncate rounded-full border border-accent/30 bg-accent-soft px-2 py-0.5 text-[11px] font-medium text-fg" title={row.promo}>
+              <span className="inline-flex min-w-0 max-w-full items-center gap-1 rounded-full border border-accent/30 bg-accent-soft px-2 py-0.5 text-[11px] font-medium text-fg" title={row.promo}>
                 <span aria-hidden className="text-accent">+</span>
-                {row.promo}
+                <span className="min-w-0 truncate">{row.promo}</span>
               </span>
             )}
             {warn && (
-              <span className="inline-flex items-center gap-1 rounded-full border border-warn/50 bg-warn/10 px-2 py-0.5 text-[11px] font-semibold text-warn" title={warn.kind === "rrp" ? "Priced above the maker's launch RRP in this market" : "Priced above the typical used asking price we've recorded"}>
+              <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-warn/50 bg-warn/10 px-2 py-0.5 text-[11px] font-semibold text-warn" title={warn.kind === "rrp" ? "Priced above the maker's launch RRP in this market" : "Priced above the typical used asking price we've recorded"}>
                 <span aria-hidden>▲</span>
                 {warn.text}
               </span>
