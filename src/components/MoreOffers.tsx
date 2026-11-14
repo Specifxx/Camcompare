@@ -69,8 +69,9 @@ export default function OfferTabs({
 
   return (
     <div>
+      {/* -mt-1.5 / py-1.5 / mb-2.5: the same box as pb-1 + mb-3, with room for each pill's taller tap area (.hd-pill::after), so the strip never scrolls up and down by a pixel. */}
       {tabs.length > 2 && (
-        <div className="-mx-4 mb-3 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0" role="group" aria-label="Show offers">
+        <div className="-mx-4 -mt-1.5 mb-2.5 flex gap-2 overflow-x-auto px-4 py-1.5 sm:mx-0 sm:flex-wrap sm:px-0" role="group" aria-label="Show offers">
           {tabs.map((t) => (
             <button key={t.key} type="button" className="hd-pill shrink-0" aria-pressed={tab === t.key} onClick={() => setTab(t.key)}>
               {t.label}

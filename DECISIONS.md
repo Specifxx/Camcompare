@@ -2465,3 +2465,20 @@ h1 and h2 text, every internal link, every outbound link with its words, and no 
 pinned row, affiliate tag, placement name, URL or metadata changed, so the 19 November clicks-per-placement recheck is
 unaffected. Left for the owner: the pinned eBay row's "Buy on eBay →" button wraps to three lines in its narrow column on
 phones and on desktop; making it one line changes its shape, which is frozen until the recheck.
+
+## 2026-11-14: Review of the day's polish: two follow-up fixes
+
+An independent check of the polish above, built against `main` without it (same data) and measured on twelve URLs at 390px
+and 1440px in both themes. It found one fault the polish introduced and one older one, and fixes both. Nothing else moved.
+
+- **Product pages, offer tabs:** the pills' taller touch area (`.hd-pill::after`, 6px above and below) reached past the
+  bottom of the tabs strip, which scrolls sideways, so the strip also scrolled up and down by a pixel (a stray vertical
+  scrollbar where scrollbars are always drawn, as on Windows) and the touch area's top was clipped. The strip now has 6px of
+  padding above and below and the same outer box as before (`-mt-1.5 py-1.5 mb-2.5` in place of `pb-1 mb-3`), so no page's
+  height or layout changed (`MoreOffers.tsx`).
+- **Product pages, price history:** the "Is this a good price?" label was the subtle grey on the verdict's tinted box,
+  4.35:1 in the light theme; it is the muted grey now (`PriceHistory.tsx`).
+
+Server HTML with scripts off is unchanged on ten URLs (titles, descriptions, canonicals, robots, Open Graph, JSON-LD, h1
+and h2 text, every internal link, every outbound link with its words). No paid link, ad block, pinned row, affiliate tag,
+placement name, URL or metadata changed, so the 19 November clicks-per-placement recheck is unaffected.

@@ -88,7 +88,7 @@ export default function PriceHistory({ slug, market, currency }: { slug: string;
   return (
     <div className="flex flex-col gap-3">
       <div className={`rounded-lg border p-3 ${tone}`}>
-        <p className="text-xs font-bold uppercase tracking-wide text-subtle">Is this a good price?</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-muted">Is this a good price?</p>
         <p className={`mt-0.5 font-bold ${verdict.tone === "good" ? "text-win" : verdict.tone === "high" ? "text-warn" : "text-fg"}`}>{verdict.headline}</p>
         {today !== null && verdict.typical !== null && (
           <p className="mt-0.5 text-sm text-muted">
