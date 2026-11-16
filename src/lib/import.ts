@@ -12,6 +12,7 @@ import { hasLicensedThumb } from "./images";
 import { buildIndex, matchListing, otherEdition, type CatalogIndex } from "./matching";
 import { writeStorePhotos } from "./store-photos";
 import { AMAZON_MAX_AGE_H, historyDir, isAmazonOffer, lowest, OFFER_MAX_AGE_H, offersFile, readOffersFile, type HistoryDay, type Offer, type OffersFile, type SourceRun } from "./offers";
+import { hostOf, loadDenylist } from "./denylist";
 import { retailer } from "./retailers";
 import { sourcesFor } from "./sources";
 import type { PriceSource, SourceResult } from "./sources/types";
@@ -177,8 +178,14 @@ function writeAccessories(market: MarketCode, results: Record<string, SourceResu
 }
 
 export async function runImport(markets: MarketCode[], cameras: Camera[], lenses: Lens[], only?: string[], log = console.log) {
+  // The shared scam denylist (TCGEmpire scam sweep, owner 2026-11-16): a denied shop is not read (its old rows age out).
+  const deny = await loadDenylist();
+  const denied = (key: string) => {
+    const site = retailer(key)?.site;
+    return site != null && deny.has(hostOf(site));
+  };
   for (const m of markets) {
-    const sources = sourcesFor(m).filter((s) => !only || only.includes(s.retailer));
+    const sources = sourcesFor(m).filter((s) => (!only || only.includes(s.retailer)) && !denied(s.retailer));
     await runMarket(m, cameras, lenses, sources, log);
   }
   // Store photos for products without a licensed one, from every market's offers.
