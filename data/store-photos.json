@@ -866,9 +866,9 @@
    "retailer": "abt"
   },
   "nikon-af-p-dx-10-20mm-f4-5-5-6g-vr": {
-   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/jaa832da_0_3.jpg?width=640",
-   "store": "Camera Electronic",
-   "retailer": "camera-electronic"
+   "src": "https://doddcamera.com/media/catalog/product/cache/96fe54fcbcf5a7161b7caac20375349f/1/4/1496199050_1341603.jpg",
+   "store": "Dodd Camera",
+   "retailer": "dodd-camera"
   },
   "nikon-af-s-105mm-f1-4e-ed": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/jaa343da_0_3.webp?width=640",
@@ -1380,10 +1380,20 @@
    "store": "Cambrian Photography",
    "retailer": "cambrian-photography"
   },
+  "samyang-af-14mm-f2-8-fe": {
+   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-14mm-f2-8-2.jpg?width=640",
+   "store": "Ted's Cameras",
+   "retailer": "teds"
+  },
   "samyang-af-18mm-f2-8-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200675_0_3.jpg?width=640",
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
+  },
+  "samyang-af-24mm-f2-8-fe": {
+   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-24mm-f2-8.jpg?width=640",
+   "store": "Ted's Cameras",
+   "retailer": "teds"
   },
   "samyang-af-50mm-f1-4-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200684_0_3.jpg?width=640",
@@ -1631,9 +1641,9 @@
    "retailer": "abt"
   },
   "sony-fe-28-70mm-f3-5-5-6-oss-ii": {
-   "src": "https://cdn.shopify.com/s/files/1/0753/8897/7337/files/1764667705_img_2624199.jpg?width=640",
-   "store": "Digidirect",
-   "retailer": "digidirect"
+   "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/files/GC35-SEL28702_1.jpg?width=640",
+   "store": "Georges Cameras",
+   "retailer": "georges"
   },
   "sony-fe-300mm-f2-8-gm-oss": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/sony-lens-SEL300F28GM-dynamic-view.jpg",
