@@ -53,7 +53,7 @@ test("the festive layer (owner, 2026-11-12) is CSS-only accents behind one switc
   assert.doesNotMatch(banner, /<h[1-6]/, "the banner is not a heading");
   assert.match(banner, /currentColor/, "the gift icon is inline SVG in currentColor");
   assert.match(css, /\[data-festive\]::before \{[^}]*height: 3px;[^}]*rgb\(var\(--xmas-red\)\) 50%, rgb\(var\(--xmas-green\)\) 50%/, "a 3px two-tone hairline, hard stop");
-  assert.match(css, /prefers-color-scheme: dark\) \{\s*:root\[data-season="christmas"\]\[data-festive\] \{[^}]*--xmas-red/, "dark mode has its own tokens");
+  assert.match(css, /@media all \{\s*:root\[data-season="christmas"\]\[data-festive\] \{[^}]*--xmas-red/, "dark mode has its own tokens");
   const block = css.slice(css.indexOf("/* xmas-common:start"), css.indexOf("/* xmas-common:end */")).replace(/\/\*[\s\S]*?\*\//g, "");
   assert.ok(block.includes(".xmas-gift"));
   assert.doesNotMatch(block, /@keyframes|animation:|repeating-linear-gradient|canvas|url\(|snow|flake/i, "no animation, stripes, canvas, images, snow or flakes");
