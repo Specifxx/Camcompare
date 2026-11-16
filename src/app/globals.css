@@ -6,8 +6,8 @@
    brand blue (--c-accent, the logo's colour) that runs into azure in the hero
    and the logo, brand green (--c-buy) for money: buy buttons and lowest prices.
    Colours are RGB triplets (--c-*) used through Tailwind (bg-surface, text-muted,
-   border-line, text-accent, bg-buy …): light by default, dark under
-   prefers-color-scheme.
+   border-line, text-accent, bg-buy …): dark for everyone (owner, 2026-11-16: dark
+   is the default on every site; there is no toggle here, so the light tokens above are kept for a future one).
    Type: Inter for text (font-sans), Bricolage Grotesque for headings and big
    figures (font-display; every h1–h3 gets it), JetBrains Mono only where a
    component asks for font-mono.
@@ -55,7 +55,7 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
+@media all {
   :root {
     --c-bg: 11 12 18;
     --c-surface: 20 22 31;
@@ -303,7 +303,7 @@ h1, h2 { font-weight: 700; }
   --xmas-red: 155 28 49; /* cranberry: 7.9:1 on white */
   --xmas-green: 38 94 66; /* pine: 8.1:1 on white */
 }
-@media (prefers-color-scheme: dark) {
+@media all {
   :root[data-season="christmas"][data-festive] {
     --xmas-red: 224 86 108; /* 5.9:1 on the dark surface */
     --xmas-green: 84 170 128; /* 7.0:1 on the dark surface */
