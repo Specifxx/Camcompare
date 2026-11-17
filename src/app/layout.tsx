@@ -16,6 +16,7 @@ import { SITE_NAME, SITE_TAGLINE, SITE_URL, VERIFY } from "@/lib/site";
 import "./globals.css";
 // The cart list's styles (components/cart): imported here, never from a component, so node tests can load them.
 import "@/components/cart/cart.css";
+import "@/components/cart/cart-drawer.css";
 import "@/components/site-reviews/site-reviews.css";
 import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
