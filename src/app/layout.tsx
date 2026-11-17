@@ -68,6 +68,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" type="application/rss+xml" title="CamCompare guides" href="/feed.xml" />
         {/* Impact reads the non-standard `value` attribute. */}
         {VERIFY.impact && <meta {...({ name: "impact-site-verification", value: VERIFY.impact } as object)} />}
+        {/* The camcompare.app property (added 2026-11-17), kept in code so it never depends on a Vercel variable. */}
+        <meta {...({ name: "impact-site-verification", value: "33ae774b-b672-4c24-b811-be5040795944" } as object)} />
       </head>
       <body className="flex min-h-screen flex-col">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-surface focus:px-3 focus:py-2">
