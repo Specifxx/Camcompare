@@ -131,3 +131,11 @@ test("Cam: a Shopify row with no programme adds its cart permalink; a paid, out-
   const { cartTarget: target } = await import("../src/lib/cart-list");
   assert.deepEqual(target(shopifyCartHref(url, "shopify", false, true)), { base: "https://shop.example.com", variantId: "41234567890" });
 });
+
+test("a search row with no price is still a line and counts for nothing (owner, 2026-11-17)", async () => {
+  const { makeLine } = await import("../src/lib/cart-list");
+  const l = makeLine({ href: "https://www.ebay.com/sch/i.html?_nkw=a7&campid=5339155912", productUrl: "https://www.ebay.com/sch/i.html?_nkw=a7", storeName: "eBay", title: "Sony A7", priceCents: 0, currency: "USD", image: null });
+  assert.ok(l);
+  assert.equal(l!.priceCents, 0);
+  assert.equal(makeLine({ href: "https://x.com/a", productUrl: "https://x.com/a", storeName: "X", title: "Sony A7", priceCents: -1, currency: "USD", image: null }), null);
+});

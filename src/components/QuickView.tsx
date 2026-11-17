@@ -27,9 +27,9 @@ import ShareButton from "./ShareButton";
  *  product is the Associates policy's "pop-up windows in conjunction with your Site promoting Products closely associated
  *  with the materials on your Site"); the price stays on the product page (24-hour licence). */
 const qvPins = (d: QuickViewData): PinnedLink[] => {
-  const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null, d.name) : null;
+  const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null, d.name, { currency: d.currency, image: `/products/${d.slug}.webp` }) : null;
   const a = d.alsoCheck.find((l) => retailer(l.retailer)?.amazon);
-  const amazon: PinnedLink | null = a ? { ...a, note: "Also check on Amazon: new, sold by Amazon and its sellers, the price shows there", cta: "Check Amazon", vote: a.href } : null;
+  const amazon: PinnedLink | null = a ? { ...a, note: "Also check on Amazon: new, sold by Amazon and its sellers, the price shows there", cta: "Check Amazon", vote: a.href, cart: { href: a.href, productUrl: a.href, storeName: a.name, title: d.name, detail: "Search results", priceCents: 0, currency: d.currency, image: `/products/${d.slug}.webp` } } : null;
   return [ebay, amazon].filter(Boolean) as PinnedLink[];
 };
 
@@ -349,7 +349,7 @@ function Dialog({ target }: { target: Target }) {
                   )}
                 </section>
               )}
-              <AlsoCheck links={data.alsoCheck.filter((l) => !retailer(l.retailer)?.amazon)} product={data.slug} placement="quickview-check" />
+              <AlsoCheck links={data.alsoCheck.filter((l) => !retailer(l.retailer)?.amazon)} product={data.slug} placement="quickview-check" cart={{ title: data.name, currency: data.currency }} />
               <p className="text-[11px] text-subtle">eBay links are ads. The stores are sorted by price, cheapest in-stock first; commission never changes the store order.</p>
             </>
           )}
