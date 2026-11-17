@@ -201,9 +201,12 @@ export const PIN_OUTLINE = {
  */
 export function PinnedMarkets({ links, product, placement, dense = false, className = "" }: { links: PinnedLink[]; product: string; placement: string; dense?: boolean; className?: string }) {
   if (!links.length) return null;
+  // Owner, 2026-11-17: affiliated rows at the top, cheapest price first, the unpriced "Check" rows after them in their given order (eBay, Amazon).
+  const cents = (l: PinnedLink) => (l.price && l.cart && typeof l.cart.priceCents === "number" && l.cart.priceCents > 0 ? l.cart.priceCents : null);
+  const ordered = [...links.filter((l) => cents(l) !== null).sort((a, b) => cents(a)! - cents(b)!), ...links.filter((l) => cents(l) === null)];
   return (
     <ul className={`card divide-y divide-line overflow-hidden ${className}`} aria-label="Amazon and eBay">
-      {links.map((l) => {
+      {ordered.map((l) => {
         const kind = retailer(l.retailer)?.amazon ? "amazon" : "ebay";
         return (
           <li key={l.retailer} data-pin={kind} className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${PIN_OUTLINE[kind]}`}>
