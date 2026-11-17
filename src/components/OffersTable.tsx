@@ -49,7 +49,7 @@ export default function OffersTable({ product, title, query, offers, market, pag
   const amazonRow = rows.find((r) => r.amazon && r.inStock && !r.kit) ?? rows.find((r) => r.amazon);
   // eBay first, Amazon second (owner, 2026-10-30), as on every sister site.
   const pins = [
-    ebayPin(ebayFor(market)?.name ?? "eBay", listings[0], ebaySearch(query, market, page, "product-ebay-pinned"), title),
+    ebayPin(ebayFor(market)?.name ?? "eBay", listings[0], ebaySearch(query, market, page, "product-ebay-pinned"), title, { currency: MARKETS[market].currency, image: `/products/${product}.webp` }),
     amazonRow
       ? {
           retailer: amazonRow.retailer,
@@ -166,7 +166,7 @@ export default function OffersTable({ product, title, query, offers, market, pag
       {side && (
         <div className="flex flex-col gap-4">
           <EbayPanel product={product} query={query} name={query} offers={offers} market={market} page={page} />
-          <AlsoCheck links={checks} product={product} placement="check" />
+          <AlsoCheck links={checks} product={product} placement="check" cart={title ? { title, currency: MARKETS[market].currency } : undefined} />
         </div>
       )}
     </div>

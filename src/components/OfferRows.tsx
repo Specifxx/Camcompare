@@ -139,7 +139,7 @@ export function EbayListings({ listings, product, placement }: { listings: Offer
  * until its keys are set): a tagged link each, apart from the priced rows,
  * so a link never looks like a price.
  */
-export function AlsoCheck({ links, product, placement, className = "" }: { links: CheckLink[]; product: string; placement: string; className?: string }) {
+export function AlsoCheck({ links, product, placement, className = "", cart }: { links: CheckLink[]; product: string; placement: string; className?: string; /** With it, every check row gets the cart list's add button (owner, 2026-11-17: every price row). */ cart?: { title: string; currency: string } }) {
   if (!links.length) return null;
   return (
     <aside className={`card p-4 ${className}`} aria-label="Also check">
@@ -158,6 +158,7 @@ export function AlsoCheck({ links, product, placement, className = "" }: { links
               </OutboundLink>
               <PaidNote paid={l.paid} />
             </div>
+            {cart && <CartAddButton href={l.href} productUrl={l.href} storeName={l.name} title={cart.title} detail="Search results" priceCents={0} currency={cart.currency} image={`/products/${product}.webp`} className="shrink-0 text-muted" />}
           </li>
         ))}
       </ul>
@@ -241,7 +242,7 @@ export function PinnedMarkets({ links, product, placement, dense = false, classN
 }
 
 /** eBay's pinned row: today's cheapest live listing when there is one, else the tagged search. */
-export function ebayPin(name: string, listing: OfferRow | undefined, search: CheckLink | null, title?: string): PinnedLink | null {
+export function ebayPin(name: string, listing: OfferRow | undefined, search: CheckLink | null, title?: string, ctx?: { currency: string; image: string | null }): PinnedLink | null {
   if (listing) {
     const who = [listing.condition, listing.seller].filter(Boolean).join(" · ");
     return {
@@ -257,5 +258,8 @@ export function ebayPin(name: string, listing: OfferRow | undefined, search: Che
       cart: title && listing.inStock ? { href: listing.href, productUrl: listing.store ?? listing.href, storeName: name, title, detail: listing.condition || null, priceCents: listing.price, currency: listing.currency, image: listing.image ?? null } : null,
     };
   }
-  return search ? { retailer: search.retailer, name, href: search.href, paid: search.paid, note: "New and used, from single sellers: check condition and returns", cta: "Search eBay", vote: search.href } : null;
+  return search ? { retailer: search.retailer, name, href: search.href, paid: search.paid, note: "New and used, from single sellers: check condition and returns", cta: "Search eBay", vote: search.href,
+        // Every price row has an Add to cart (owner, 2026-11-17): the search line opens this tagged link and says "See today's price".
+        cart: title && ctx ? { href: search.href, productUrl: search.href, storeName: name, title, detail: "Search results", priceCents: 0, currency: ctx.currency, image: ctx.image } : null }
+    : null;
 }
