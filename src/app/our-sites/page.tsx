@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { FAMILY_SITES, NETWORK_PAGE } from "@/lib/family-network";
+import { FAMILY_SITES, NETWORK_PAGE, sameSide } from "@/lib/family-network";
 import { SITE_NAME } from "@/lib/site";
 
 // The one page that links the owner's other sites (2026-11-08, DECISIONS.md "One Our sites page instead of footer
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function OurSites() {
-  const sites = FAMILY_SITES.filter((s) => s.id !== "cam");
+  const sites = FAMILY_SITES.filter((s) => s.id !== "cam" && sameSide("cam", s.id));
   return (
     <div className="max-w-2xl space-y-4 text-sm leading-relaxed">
       <h1 className="text-2xl font-extrabold tracking-tight">Our other sites</h1>

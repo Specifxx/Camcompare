@@ -11,6 +11,6 @@ test("footer: no sister list, one internal link to /our-sites", () => {
   assert.doesNotMatch(footer, /footerSisters|Sister site|NETWORK_PAGE/);
   assert.match(footer, /href="\/our-sites"/);
   const page = readFileSync("src/app/our-sites/page.tsx", "utf8");
-  assert.match(page, /FAMILY_SITES\.filter\(\(s\) => s\.id !== "cam"\)/);
+  assert.match(page, /FAMILY_SITES\.filter\(\(s\) => s\.id !== "cam" && sameSide\("cam", s\.id\)\)/);
   assert.doesNotMatch(page, /sponsored|nofollow|affiliateUrl|revalidate/);
 });
