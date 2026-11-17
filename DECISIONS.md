@@ -2496,3 +2496,13 @@ on every card page, non-card sisters in `SITE.sisterSites`) it is removed. A con
 DexCompare's links read dexcompare.io (the old host is still accepted in a feed until Dex republishes). Not changed: price alerts,
 `alert-feed.json`, the family feeds and the sister data reads: they are data, not links. Also a "URL freeze" rule in CLAUDE.md:
 no mass path change without a redirect map, agents never flip hosts, no pop-unders or surprise navigation (this repo had none).
+
+## 2026-11-17: Fiverr first-time-shopper review of DexCompare, applied here (owner)
+
+The owner bought a professional first-time-shopper QA review of DexCompare and asked for every finding that generalises to reach every site.
+Applied here (the full reasoning is in DexCompare's DECISIONS.md, same date):
+
+- **Cart hand-off:** the cart drawer opens with "You pay each store on its own site. We never take payment." (normal-size text, first thing in the
+  drawer); "Total before postage" became "Estimated total (before postage)"; the add button's tooltip says you pay at the store. The label stays
+  "Add to cart" (owner, 2026-11-14: a literal "Add to cart" on every row).
+- **The quick view sets the tab title and description while it is open** and restores them on close (the tab used to keep the list's title).
