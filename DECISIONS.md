@@ -2555,3 +2555,10 @@ pinned row takes the "Best price" tag when its cheapest listing is NEW, in stock
 row and not more than 25% under it (a wrong product, not a deal); that store row then drops its tag, so there is one tag. A used or open-box
 listing never qualifies. The page headline, metadata, JSON-LD, deals and feeds still use the store prices. Amazon never takes the tag (its price
 is licensed for 24 hours). `tests/ebay-best-price.test.ts`.
+
+## 2026-11-18: Share for a deal (owner)
+
+Owner: sharing should be easy and rewarded, on every site. `ShareThanks.tsx`: half of browsers (`share_arm` in localStorage) see
+"Share · get a deal"; after a share completes a small card under the button (the visitor's own tap, ✕ to close) points to the
+market's deals page (`/deals`, `/uk/deals`…). Nothing is gated; the other half is the control. Events `share { medium, arm }`,
+`share_unlock { medium }`.

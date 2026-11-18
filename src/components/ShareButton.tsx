@@ -1,14 +1,28 @@
 "use client";
 // Share (owner, 2026-11-02: word of mouth): the phone's own share sheet (navigator.share) where there is one, else the
-// link and message copied, with a short "Link copied" note. No pop-up, no reward, no function: the message is written
+// link and message copied, with a short "Link copied" note. No pop-up, no function; the share-for-a-deal test is ShareThanks.tsx (2026-11-18): the message is written
 // at build (lib/share-texts.ts). The link is the page's own URL plus utm_source=share (lib/share-link.ts). One Vercel
 // event per tap, share { medium }; RiftCompare's growth report counts them.
 import { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
+import { ShareThanks, useShareArm } from "./ShareThanks";
 import { shareUrl, type ShareMedium } from "@/lib/share-link";
 
 export default function ShareButton({ title, path, text, medium = "product", label = "Share", className = "" }: { title: string; path: string; text?: string; medium?: ShareMedium; label?: string; className?: string }) {
   const [note, setNote] = useState("");
+  // Share-for-a-deal (ShareThanks.tsx, 2026-11-18): the arm, and the thank-you card once a share completes.
+  const arm = useShareArm();
+  const [thanks, setThanks] = useState(false);
+  const unlock = () => {
+    if (arm !== "reward") return;
+    setThanks(true);
+    try {
+      track("share_unlock", { medium });
+    } catch {}
+  };
+  // The market's deals page: the US is the site root, the others live under /uk, /eu, /au and /sg (lib/markets.ts).
+  const seg = path.split("/")[1];
+  const deals = ["uk", "eu", "au", "sg"].includes(seg) ? `/${seg}/deals` : "/deals";
   const timer = useRef<ReturnType<typeof setTimeout>>();
   useEffect(() => () => clearTimeout(timer.current), []);
   const say = (t: string) => {
@@ -20,11 +34,12 @@ export default function ShareButton({ title, path, text, medium = "product", lab
     const url = shareUrl(location.origin, path, medium);
     const message = text ?? title;
     try {
-      track("share", { medium });
+      track("share", { medium, arm });
     } catch {}
     if (typeof navigator.share === "function") {
       try {
         await navigator.share({ title, text: message, url });
+        unlock();
         return;
       } catch (e) {
         if ((e as Error)?.name === "AbortError") return;
@@ -33,6 +48,7 @@ export default function ShareButton({ title, path, text, medium = "product", lab
     try {
       await navigator.clipboard.writeText(`${message} ${url}`);
       say("Link copied");
+      unlock();
     } catch {
       say("Couldn’t copy the link");
     }
@@ -45,11 +61,12 @@ export default function ShareButton({ title, path, text, medium = "product", lab
           <path d="M16 6l-4-4-4 4" />
           <path d="M12 2v13" />
         </svg>
-        {label}
+        {arm === "reward" ? "Share · get a deal" : label}
       </button>
       <span role="status" aria-live="polite" className={`pointer-events-none absolute left-0 top-full z-10 mt-1.5 whitespace-nowrap rounded-md bg-fg px-2.5 py-1 text-xs font-semibold text-bg transition-opacity ${note ? "opacity-100" : "opacity-0"}`}>
         {note}
       </span>
+      {thanks && <ShareThanks href={deals} line="Today’s cameras and lenses selling under their usual price at retailers in your market, checked every day." onClose={() => setThanks(false)} />}
     </span>
   );
 }
