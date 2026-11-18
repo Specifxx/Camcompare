@@ -11,10 +11,11 @@ import { StoreVote } from "./StoreVote";
 import AccessoryThumb from "./AccessoryThumb";
 import { CartAddButton } from "./cart/CartAddButton";
 
-/** Filled button for a link that earns, outlined for the rest. Amazon and eBay
- *  wear the same button as every store (owner, 2026-11-01: "blend in"). */
-export function retailerButtonClass(_key: string, paid: boolean): string {
-  return paid ? "btn-buy" : "btn-ghost";
+/** Filled button for a link that earns, outlined for the rest. eBay wears the same button as every store (owner, 2026-11-01:
+ *  "blend in"); Amazon's is amber (`btn-amazon`, owner 2026-11-18), priced or not, so it is never mistaken for a store's. */
+export function retailerButtonClass(key: string, paid: boolean): string {
+  if (!paid) return "btn-ghost";
+  return retailer(key)?.amazon ? "btn-amazon" : "btn-buy";
 }
 
 const PaidNote = ({ paid }: { paid: boolean }) => (paid ? <p className="mt-0.5 text-[10px] leading-none text-subtle">Paid link</p> : null);

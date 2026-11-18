@@ -2539,3 +2539,13 @@ pinned row takes the "Best price" tag when its cheapest listing is NEW, in stock
 row and not more than 25% under it (a wrong product, not a deal); that store row then drops its tag, so there is one tag. A used or open-box
 listing never qualifies. The page headline, metadata, JSON-LD, deals and feeds still use the store prices. Amazon never takes the tag (its price
 is licensed for 24 hours). `tests/ebay-best-price.test.ts`.
+
+## 2026-11-18: Amazon's button is amber, and the quick view's "See full page" is a full-width button (owner)
+
+Owner: the Amazon row's button must be visibly its own colour. `.btn-amazon` (`globals.css`) is now amber `#ffa41c` (hover
+`#fa8900`, 1px `#e08a00` border) with dark ink `#111` in both themes (fixed hexes, not the themed buy tokens), and
+`retailerButtonClass` returns it for an earning Amazon link, priced ("Buy on Amazon") or unpriced ("Check Amazon"), on the
+product page, the quick view, the hero and the home feed. eBay and the stores keep `btn-buy`; a link that does not earn stays
+ghost. This reverses the 2026-11-02 no-Amazon-orange line for the button only. Rel, tracking, "Ad · Paid link", row order,
+prices and the Best price logic are unchanged. The quick view's pinned footer button is full width, 44px, and reads
+"See full page: price history and details". `tests/amazon-button.test.ts`.
