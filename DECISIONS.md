@@ -2586,3 +2586,16 @@ A/B runs to 3 Dec).
 ## 2026-11-18: the amber of the Amazon button is not Amazon's own orange
 
 The first cut used #FFA41C, which is Amazon's brand orange. Amazon's Associates agreement bars styling that could pass for Amazon, so the button is now a distinct, calmer amber (#F5A524, hover #DC8A0B, border #B7791F, dark text #111): still clearly different from the site's normal buy button, not Amazon's colour.
+
+## 2026-11-18: The dock A/B: the phone ad dock stays up above the bottom nav for half of the visitors
+
+Owner, 2026-11-18: "right above the nav bar, we should have those ads show up … very, very visible for mobile phone users." Since
+the phone bottom nav went on (18 Nov) the eBay/TCGplayer dock (`AdDock.tsx`) yielded to it: one bar at a time, the dock only while
+scrolling down. `dockArm()` in `lib/dock-arm.ts` puts each visitor in localStorage `dock-arm` "on" or "off" (50/50; storage that
+fails is "off"). "On": the dock no longer yields to `html[data-bottomnav]`; it is lifted 57px (the nav's height) with `translate`
+while the nav shows, so both bars are visible and neither covers the other (dock 64px + nav 57px, about 15% of a phone screen,
+under Better Ads' 30% line). Every other dock rule stands: never on the first screen or a product page, yields to other ad units,
+the footer, dialogs and the keyboard, ✕ for the visit, labelled Ad, rel sponsored. "Off": unchanged. Every `buy_click` carries
+`dock_arm`. Verdict 2 Dec: buy clickers and paid buy clicks per arm. EPN's Network Agreement (Exhibit A §1.4, §2.5) puts any
+promotional method it does not expressly permit under prior written approval; the dock has run since 2026-11-06, this changes only
+when it shows. Not on Dex or MTG Compare (their phone A/B runs to 3 Dec).

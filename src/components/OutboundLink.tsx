@@ -4,6 +4,7 @@
 import { track } from "@vercel/analytics";
 import { OUTBOUND_REL } from "@/lib/affiliate";
 import { cartArmNow } from "@/lib/cart-list";
+import { dockArmNow } from "@/lib/dock-arm";
 
 export default function OutboundLink({
   href,
@@ -28,7 +29,7 @@ export default function OutboundLink({
       className={className}
       onClick={() => {
         try {
-          track("buy_click", { cart_arm: cartArmNow(), retailer, product, placement });
+          track("buy_click", { dock_arm: dockArmNow(), cart_arm: cartArmNow(), retailer, product, placement });
         } catch {
           /* analytics must never block the click */
         }
