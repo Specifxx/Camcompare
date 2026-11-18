@@ -13,7 +13,7 @@ import { price } from "@/lib/format";
 import { marketFromPath } from "@/lib/market-client";
 import { isMarket, MARKETS, type MarketCode } from "@/lib/markets";
 import { quickViewFile, viewParam, withView, type QuickViewData } from "@/lib/quickview";
-import { AlsoCheck, EbayListings, OfferRowItem, PinnedMarkets, ebayPin, type PinnedLink } from "./OfferRows";
+import { AlsoCheck, EbayListings, OfferRowItem, PinnedMarkets, ebayBeatsBest, ebayPin, type PinnedLink } from "./OfferRows";
 import { retailer } from "@/lib/retailers";
 import EbayText from "./ebay/EbayText";
 import ProductThumb from "./ProductThumb";
@@ -26,10 +26,11 @@ import ShareButton from "./ShareButton";
  *  search, from the quick view file's alsoCheck), never its price (owner, 2026-11-06: a visitor-opened view of this one
  *  product is the Associates policy's "pop-up windows in conjunction with your Site promoting Products closely associated
  *  with the materials on your Site"); the price stays on the product page (24-hour licence). */
-const qvPins = (d: QuickViewData): PinnedLink[] => {
+const qvPins = (d: QuickViewData, cheapest = false): PinnedLink[] => {
   const ebay = d.ebay ? ebayPin(d.ebay.name, d.ebay.listings[0], d.ebay.all ?? d.ebay.search ?? null, d.name, { currency: d.currency, image: `/products/${d.slug}.webp` }) : null;
   const a = d.alsoCheck.find((l) => retailer(l.retailer)?.amazon);
   const amazon: PinnedLink | null = a ? { ...a, note: "Also check on Amazon: new, sold by Amazon and its sellers, the price shows there", cta: "Check Amazon", vote: a.href, cart: { href: a.href, productUrl: a.href, storeName: a.name, title: d.name, detail: "Search results", priceCents: 0, currency: d.currency, image: `/products/${d.slug}.webp` } } : null;
+  if (ebay && cheapest) ebay.cheapest = true;
   return [ebay, amazon].filter(Boolean) as PinnedLink[];
 };
 
@@ -327,12 +328,16 @@ function Dialog({ target }: { target: Target }) {
                   </h3>
                   {data.updated && <span className="text-[11px] text-subtle">Checked {new Date(data.updated).toUTCString().slice(5, 16)}</span>}
                 </div>
-                <PinnedMarkets links={qvPins(data)} product={data.slug} placement="qv-pinned" dense className="mb-2" />
+                <PinnedMarkets links={qvPins(data, !!ebayBeatsBest(data.ebay?.listings[0], data.rows))} product={data.slug} placement="qv-pinned" dense className="mb-2" />
                 {data.rows.length ? (
                   <ul className="card divide-y divide-line">
-                    {data.rows.map((r) => (
+                    {data.rows.map((r0) => {
+                      // eBay's new listing is the cheapest: the store row drops its "Best price" tag (owner, 2026-11-18).
+                      const r = ebayBeatsBest(data.ebay?.listings[0], data.rows)?.id === r0.id ? { ...r0, tag: undefined } : r0;
+                      return (
                       <OfferRowItem key={r.id} row={r} product={data.slug} title={data.name} placement="quickview" dense rrp={data.rrp} usedTypical={data.usedTypical} />
-                    ))}
+                      );
+                    })}
                   </ul>
                 ) : (
                   <div className="card p-4">
