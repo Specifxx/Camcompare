@@ -95,7 +95,7 @@ export default function Footer() {
             , at no cost to you. As an Amazon Associate we earn from qualifying purchases. Amazon and the Amazon logo are trademarks of
             Amazon.com, Inc. or its affiliates.
           </p>
-          <p className="mt-2">Store offers are always sorted by price. The one exception: Amazon and eBay rows sit above them on product pages, labelled &ldquo;Ad&rdquo;, and are never counted as the best price.</p>
+          <p className="mt-2">Store offers are always sorted by price. The one exception: Amazon and eBay rows sit above them on product pages, labelled &ldquo;Ad&rdquo;. Amazon is never counted as the best price; eBay is only when a new, in-stock listing is truly the cheapest.</p>
         </div>
       </div>
       {/* No sister-site list (owner, 2026-11-03), and since 2026-11-08 no link to another of our domains on every page:

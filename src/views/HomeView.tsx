@@ -66,7 +66,7 @@ function homeFaq(m: MarketCode, stores: number): [string, string][] {
     ],
     [
       "Do stores pay to be ranked higher?",
-      "No. Store rows are always sorted by price. Some links earn us a commission, and they are labelled; eBay and Amazon rows are labelled as ads and never counted as the best price.",
+      "No. Store rows are always sorted by price. Some links earn us a commission, and they are labelled; eBay and Amazon rows are labelled as ads; Amazon is never counted as the best price, and eBay only when a new, in-stock listing is truly the cheapest.",
     ],
   ];
 }
