@@ -5,7 +5,12 @@ import { familyTiles } from "@/lib/family";
 import { blockHeading, familyMoney, tileNote } from "@/lib/family-network";
 import type { MarketCode } from "@/lib/markets";
 
+// Off (2026-11-19, core-update quality pass): a block of links to our other sites reads as a link network. The one family link is
+// the footer's /our-sites.
+export const CROSS_SITE_BLOCKS = false;
+
 export function FamilyCluster({ market }: { market: MarketCode }) {
+  if (!CROSS_SITE_BLOCKS) return null;
   const tiles = familyTiles(market);
   if (!tiles.length) return null;
   const more = tiles.find((t) => t.more)?.more;

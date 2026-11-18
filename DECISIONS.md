@@ -2630,3 +2630,12 @@ sitting on top of it.
   `var(--bn-space)` + a small gap up, and the body's bottom padding follows it. Hidden, it slides fully off-screen (transform only, CLS 0).
 - **Measured** (local build, dock stacked): Pixel 7 412×915 nav + dock take 129px (14.1%); iPhone 15 393×852 with a 34px safe area
   143px (16.8%); iPhone SE 375×667 129px (19.3%); the old flush bar took about the same plus the full safe area.
+
+## Fewer footer links, cross-site block off, running costs on /about (2026-11-19)
+
+Owner, 2026-11-19 (core-update quality pass): "all the ads that can negatively impact our indexing let's remove and have
+more strategically placed ads". CamCompare's ad blocks already sit below each page's content, so nothing moved. The
+footer drops from about 45 links to 28 (seasonal sale pages, the plain deals board, community, stories, saved, creators,
+requests, widgets, drones, smart glasses, viral cameras, list your store). `FamilyCluster` on the deals page is off
+(`CROSS_SITE_BLOCKS`); the one family link is the footer's `/our-sites`. /about adds what the sites cost to run (about
+A$790 a month, our books, 30 days to 15 Nov 2026) and how AI tools are used. The SEO-6 home test fails on `main` too.
