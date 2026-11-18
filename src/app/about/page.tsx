@@ -54,6 +54,13 @@ export default function About() {
         Some links earn us a commission. Store offers are always sorted by price; the one exception is the Amazon and eBay rows above them on product pages, which are labelled &ldquo;Ad&rdquo;. Amazon is never counted as the best price; eBay is only when a new, in-stock listing is truly the cheapest. See the{" "}
         <Link href="/disclosure">affiliate disclosure</Link> and <Link href="/privacy">privacy</Link> pages.
       </p>
+      <h2 className="h-section pt-2">What it costs to run</h2>
+      <p>
+        Hosting, the daily price imports and the tools we build with come to about A$790 a month for {SITE_NAME} and our other price sites
+        together (our own books, the 30 days to 15 November 2026). The commissions above pay for it. We use AI tools to help write the code and
+        draft guides; specs and prices are never made up by them: specs come from the makers, prices from a program reading the retailers&apos; own
+        feeds.
+      </p>
     </div>
   );
 }

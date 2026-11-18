@@ -39,6 +39,7 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
+        {/* Fewer links on every page (2026-11-19, core-update quality pass): about 45 down to 25; the rest stay in the header and on their hubs. */}
         <nav className="flex flex-col gap-1" aria-label="Shop">
           <p className="eyebrow mb-1 text-subtle">Shop</p>
           <Link href={marketPath(here, "/cameras")} prefetch={false}>All cameras</Link>
@@ -49,39 +50,22 @@ export default function Footer() {
           <Link href={marketPath(here, "/used")} prefetch={false}>Used</Link>
           <Link href={marketPath(here, "/accessories")} prefetch={false}>Accessories</Link>
           <Link href={marketPath(here, "/digicams")} prefetch={false}>Digicams</Link>
-          <Link href={marketPath(here, "/drones")} prefetch={false}>Drones</Link>
-          <Link href={marketPath(here, "/smart-glasses")} prefetch={false}>Smart glasses</Link>
-          <Link href={marketPath(here, "/viral-cameras")} prefetch={false}>Viral cameras</Link>
           <Link href={marketPath(here, "/releases")} prefetch={false}>Just announced</Link>
           <Link href={marketPath(here, "/finder")} prefetch={false}>Camera finder</Link>
           <Link href={marketPath(here, "/compare")} prefetch={false}>Compare cameras</Link>
           <Link href="/world" prefetch={false}>Prices around the world</Link>
-          <Link href={marketPath(here, "/board")} prefetch={false}>Deals board (plain HTML)</Link>
-          <p className="eyebrow mb-1 mt-3 text-subtle">Sales</p>
-          <Link href={marketPath(here, "/black-friday")} prefetch={false}>Black Friday deals</Link>
-          <Link href={marketPath(here, "/cyber-monday")} prefetch={false}>Cyber Monday deals</Link>
-          <Link href={marketPath(here, "/boxing-day")} prefetch={false}>Boxing Day deals</Link>
-          <Link href={marketPath(here, "/january-sales")} prefetch={false}>January sales</Link>
-          <Link href={marketPath(here, "/lunar-new-year")} prefetch={false}>Lunar New Year deals</Link>
         </nav>
         <nav className="flex flex-col gap-1" aria-label="Learn and join in">
           <p className="eyebrow mb-1 text-subtle">Learn and join in</p>
           <Link href="/guides" prefetch={false}>Guides</Link>
           <Link href="/is-this-a-good-price" prefetch={false}>Is this a good price?</Link>
           <Link href="/price-report" prefetch={false}>Monthly price report</Link>
-          <Link href="/widgets" prefetch={false}>Free price links</Link>
-          <Link href="/community" prefetch={false}>Community</Link>
-          <Link href="/stories" prefetch={false}>Member stories</Link>
           <Link href="/collection" prefetch={false}>My gear</Link>
-          <Link href={marketPath(here, "/saved")} prefetch={false} rel="nofollow">Saved</Link>
-          <Link href="/creators" prefetch={false}>Creators</Link>
-          <Link href="/requests" prefetch={false}>Feedback &amp; requests</Link>
           <Link href="/feedback" prefetch={false}>Send feedback</Link>
           <RateUsLink className="text-left hover:underline">Rate CamCompare</RateUsLink>
           <p className="eyebrow mb-1 mt-3 text-subtle">About</p>
           <Link href="/about" prefetch={false}>How we price &amp; check specs</Link>
           <Link href="/how-we-pick-stores" prefetch={false}>How we pick stores</Link>
-          <Link href="/list-your-store" prefetch={false}>List your store</Link>
           <Link href="/disclosure" prefetch={false}>Affiliate disclosure</Link>
           <Link href="/credits" prefetch={false}>Photo credits</Link>
           <Link href="/privacy" prefetch={false}>Privacy</Link>
