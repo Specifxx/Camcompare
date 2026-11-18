@@ -2548,3 +2548,10 @@ ten written notes. Rift's own record also holds "too many popups asking for my o
   vote is `votes/<site>/<day>/<time>-up|down-<rand>.json`, counted from its file name by RiftCompare's daily *Reports
   triage*, which now prints a 7-day feedback table per site and flags every note for a look. No email address is asked
   for or kept: the thanks shows the site's inbox for anyone who wants a reply.
+## 2026-11-18: eBay's row may carry "Best price" (owner)
+
+The owner withdrew "eBay is never the best price". On the product page and in the quick view (`ebayBeatsBest`, `components/OfferRows.tsx`), eBay's
+pinned row takes the "Best price" tag when its cheapest listing is NEW, in stock, in the stores' currency, strictly under the "Best price" store
+row and not more than 25% under it (a wrong product, not a deal); that store row then drops its tag, so there is one tag. A used or open-box
+listing never qualifies. The page headline, metadata, JSON-LD, deals and feeds still use the store prices. Amazon never takes the tag (its price
+is licensed for 24 hours). `tests/ebay-best-price.test.ts`.

@@ -11,7 +11,7 @@ import { ebayLink } from "@/lib/ebay-links";
 import { ebayFor, retailer } from "@/lib/retailers";
 import { OFFER_TABS, rowInTab, tabHideClass, type OfferTab } from "@/lib/offer-tabs";
 import OfferTabs from "./MoreOffers";
-import { AlsoCheck, OfferRowItem, PinnedMarkets, ebayPin, type PinnedLink } from "./OfferRows";
+import { AlsoCheck, OfferRowItem, PinnedMarkets, ebayBeatsBest, ebayPin, type PinnedLink } from "./OfferRows";
 import TimedPrice from "./TimedPrice";
 import { ReportPrice } from "./ReportForms";
 
@@ -66,6 +66,12 @@ export default function OffersTable({ product, title, query, offers, market, pag
         }
       : null,
   ].filter(Boolean) as PinnedLink[];
+  const ebayBest = ebayBeatsBest(listings[0], rows);
+  if (ebayBest) {
+    const pin = pins.find((x) => x.retailer === listings[0].retailer);
+    if (pin) pin.cheapest = true;
+    for (const r of rows) if (r.id === ebayBest.id) r.tag = undefined;
+  }
   const ebayUsed = ebayLink(market, { query, condition: "used" }, page, "product-ebay-tab-used", `More used ${query} on eBay`);
   const side = listings.length > 0 || checks.length > 0 || Boolean(ebayFor(market));
   // Warnings on rows above this market's RRP or the typical used price (OfferRows).
