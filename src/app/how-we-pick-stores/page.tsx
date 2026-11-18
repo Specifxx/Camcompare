@@ -19,7 +19,7 @@ export default function HowWePickPage() {
         what="cameras and lenses"
         stores={stores}
         priceRule="A new camera or lens priced under 40% of its launch price is dropped automatically, and every listing must match one exact model."
-        marketplaces="eBay and Amazon rows are marketplaces, not stores: they are labelled as ads, sit apart from the store rows and are never the best price. We don't vet the individual sellers there, so check a seller's feedback before you buy. Used and refurbished prices come from second-hand dealers and are marked as such."
+        marketplaces="eBay and Amazon rows are marketplaces, not stores: they are labelled as ads, sit apart from the store rows, and Amazon is never the best price (eBay only when a new, in-stock listing is truly the cheapest). We don't vet the individual sellers there, so check a seller's feedback before you buy. Used and refurbished prices come from second-hand dealers and are marked as such."
         buttonClassName="btn-primary"
         suggestHref="/contact#suggest"
       />
