@@ -15,13 +15,17 @@ export const runtime = "nodejs";
 /** The report as one feedback message, for the admin page and the email. */
 function reportMessage(r: Report): string {
   const lines =
-    r.kind === "suggest-store"
+    r.kind === "feedback"
+      ? [`Feedback${r.issue ? ` (${r.issue})` : ""}${r.vote ? `: page ${r.vote === "up" ? "useful" : "not useful"}` : ""}`]
+      : r.kind === "suggest-store"
       ? [`Store suggestion: ${r.store ?? "?"}${r.storeUrl ? ` (${r.storeUrl})` : ""}${r.region ? `, ${r.region}` : ""}`]
       : [`Wrong price: ${r.product ?? r.page ?? "?"}`, `Store: ${r.store ?? "not said"}${r.shown ? `, we showed ${r.shown}` : ""}${r.actual ? `, they say ${r.actual}` : ""}`, `Problem: ${r.issue ?? "not said"}`];
   return [...lines, r.note ? `Note: ${r.note}` : ""].filter(Boolean).join("\n");
 }
 
 async function alsoSave(r: Report): Promise<boolean> {
+  // A "Was this page useful?" tap alone is counted by the daily triage from the reports branch, never saved or emailed here.
+  if (r.kind === "feedback" && !r.note) return false;
   const message = reportMessage(r);
   const market = (MARKET_CODES as readonly string[]).includes(String(r.region).toLowerCase()) ? (String(r.region).toLowerCase() as MarketCode) : null;
   let saved = false;

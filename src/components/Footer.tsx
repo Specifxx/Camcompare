@@ -11,11 +11,14 @@ import { useMarket } from "@/lib/market-client";
 import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
 import Logo from "./brand/Logo";
 import { RateUsLink } from "./site-reviews/SiteReviews";
+import { FeedbackAsk } from "@/components/FeedbackAsk";
 
 export default function Footer() {
   const here = useMarket(usePathname() ?? "/");
   return (
     <footer className="mt-16 border-t border-line bg-surface">
+      {/* "Was this page useful?" (owner, 2026-11-18: more feedback). One inline line, never a pop-up. */}
+      <div className="mx-auto max-w-6xl px-4 pt-8"><FeedbackAsk email={CONTACT_EMAIL} /></div>
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 text-sm text-muted sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr_1fr_1.2fr]">
         <div>
           <Link href={marketPath(here, "/")} prefetch={false} className="text-fg no-underline hover:no-underline" aria-label={`${SITE_NAME} home`}>
