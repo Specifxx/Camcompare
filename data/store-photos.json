@@ -155,11 +155,6 @@
    "store": "Abt",
    "retailer": "abt"
   },
-  "dji-mini-4-pro": {
-   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/Product_1.jpg?width=640",
-   "store": "Camera Electronic",
-   "retailer": "camera-electronic"
-  },
   "dji-mini-4k": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/61TcjJ4qDZL._AC_SL1500.jpg?width=640",
    "store": "Camera Electronic",
@@ -1111,9 +1106,9 @@
    "retailer": "cambrian-photography"
   },
   "om-system-om-5-mark-ii": {
-   "src": "https://cdn.shopify.com/s/files/1/1165/5118/files/5952aa11-2835-46d3-9c2e-fb528602c144.jpg?width=640",
-   "store": "Cambrian Photography",
-   "retailer": "cambrian-photography"
+   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1139254_1_80facbf4-718e-47b4-a7c0-5936b8f044d7.jpg?width=640",
+   "store": "Beach Camera",
+   "retailer": "beach-camera"
   },
   "panasonic-leica-dg-elmarit-200mm-f2-8-power-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/lywykq5ti5tovd6gbfes.jpg?width=640",
@@ -1141,9 +1136,9 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-leica-dg-summilux-9mm-f1-7-asph": {
-   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/tzyq5lso4alpj7babg1w.jpg?width=640",
-   "store": "Shop Panasonic",
-   "retailer": "panasonic-store-us"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/h/x/hx09_main_big_image1.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "panasonic-leica-dg-vario-elmar-100-400mm-f4-0-6-3-asph-power-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/ql9hlokang9ykvjxhd3p.jpg?width=640",
@@ -1211,9 +1206,9 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-g-vario-35-100mm-f4-0-5-6-asph-mega-o-i-s": {
-   "src": "https://cdn.shopify.com/s/files/1/0397/6167/4285/products/h-fs35100_k_front_slant_400.png?width=640",
-   "store": "Glazer's Camera",
-   "retailer": "glazers-camera"
+   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/mg9cpzvewz6cqhf6il55.jpg?width=640",
+   "store": "Shop Panasonic",
+   "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-g-vario-45-150mm-f4-0-5-6-asph-mega-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/v9nwcle9mykknyk6z8ws.jpg?width=640",
