@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { dockArm } from "@/lib/dock-arm";
 
 // The phone dock, ported from the sister sites (DexCompare, WargameCompare, KaeYoung, Compare Empire; owner 2026-11-06: the side rails' ads "on mobile … in
 // the best way that doesn't interrupt user experience"): the left rail's eBay tiles in a slim bar along the foot of a screen too
@@ -93,6 +94,8 @@ export function AdDock({ label, items, placement, minWidth, yieldTo = "[data-ad]
   const [shown, setShown] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [turn, setTurn] = useState(0);
+  // The dock A/B (lib/dock-arm.ts): "on" stacks the dock above the bottom nav instead of yielding to it. The dock mounts in the browser only.
+  const [stack] = useState(() => dockArm() === "on");
   const visible = shown && !dismissed;
 
   useEffect(() => {
@@ -112,7 +115,7 @@ export function AdDock({ label, items, placement, minWidth, yieldTo = "[data-ad]
           blockers: blockers.size,
           buybar: !!document.querySelector(buybar),
           // The phone bottom nav (BottomNav.tsx) holds the foot of the screen while it shows: one bar at a time.
-          modal: modal() || document.documentElement.hasAttribute("data-bottomnav"),
+          modal: modal() || (!stack && document.documentElement.hasAttribute("data-bottomnav")),
           typing,
           dismissed: false,
         }),
@@ -170,7 +173,7 @@ export function AdDock({ label, items, placement, minWidth, yieldTo = "[data-ad]
       document.removeEventListener("focusout", onBlur);
       wide.removeEventListener?.("change", update);
     };
-  }, [minWidth, yieldTo, buybar]);
+  }, [minWidth, yieldTo, buybar, stack]);
 
   // Each time it comes back, the next tile (never animated on its own).
   useEffect(() => {
@@ -213,6 +216,7 @@ export function AdDock({ label, items, placement, minWidth, yieldTo = "[data-ad]
       aria-hidden={visible ? undefined : true}
       data-ad={visible ? placement : undefined}
       data-dock={visible ? "shown" : "hidden"}
+      data-dock-stack={stack ? "" : undefined}
       className={`fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 px-3 pb-[max(8px,env(safe-area-inset-bottom))] pt-2 backdrop-blur ${
         visible ? "translate-y-0 transition-transform duration-200 ease-out motion-reduce:transition-none" : "invisible translate-y-full"
       }`}
