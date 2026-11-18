@@ -2506,3 +2506,7 @@ Applied here (the full reasoning is in DexCompare's DECISIONS.md, same date):
   drawer); "Total before postage" became "Estimated total (before postage)"; the add button's tooltip says you pay at the store. The label stays
   "Add to cart" (owner, 2026-11-14: a literal "Add to cart" on every row).
 - **The quick view sets the tab title and description while it is open** and restores them on close (the tab used to keep the list's title).
+
+## 2026-11-18: cart checkout opens every store or none (owner)
+
+Checkout (`openAll`, `src/lib/cart-checkout.ts`) opens one blank tab per store inside the click, and only when every one opens does it send each to its store's own tagged link. If the browser refuses any, it closes the ones that opened, visits nothing, and the drawer shows the allow-pop-ups steps and a "Try again" button. Before, the first store opened and the rest were refused, which left the visitor with one tab. Chrome 157 on dexcompare.io and on url-opener.com (the owner's model, which does the same close-and-ask) both give one tab until pop-ups are allowed for the site; with them allowed, all open. No browser API grants that permission from a click, so the steps stay.
