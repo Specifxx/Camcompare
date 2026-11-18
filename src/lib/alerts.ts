@@ -201,7 +201,12 @@ export async function sendEmail(e: Email): Promise<void> {
 export const escapeHtml = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
 /** A plain email with one button, as text and HTML. */
-export function emailBody({ lines, button, footer }: { lines: string[]; button: { label: string; url: string }; footer: string[] }): { text: string; html: string } {
+// The sender's postal address, printed in every email (owner, 2026-11-18): US law
+// (CAN-SPAM) requires a physical postal address in commercial email.
+export const MAILING_ADDRESS = "12 York Rd, Kellyville NSW 2155, Australia";
+
+export function emailBody({ lines, button, footer: footerLines }: { lines: string[]; button: { label: string; url: string }; footer: string[] }): { text: string; html: string } {
+  const footer = [...footerLines, MAILING_ADDRESS];
   const text = [...lines, "", `${button.label}: ${button.url}`, "", "--", ...footer].join("\n");
   const p = (s: string) => `<p style="margin:0 0 12px">${escapeHtml(s)}</p>`;
   const html = `<!doctype html><html><body style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5;color:#111827;background:#f8f8f7;padding:24px">
