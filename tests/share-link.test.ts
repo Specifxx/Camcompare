@@ -26,3 +26,11 @@ test("a shared saved list round-trips and drops junk", () => {
   assert.equal(decodeSavedList("?other=1"), null);
   assert.equal(encodeSavedList(Array.from({ length: 80 }, (_, n) => ({ slug: `s${n}`, kind: "c" as const }))).split(".").length, 50);
 });
+
+// Share-for-a-deal (owner, 2026-11-18).
+import { pickShareArm } from "../src/components/ShareThanks";
+test("the share-for-a-deal arm is drawn once, half and half, and kept", () => {
+  assert.equal(pickShareArm(null, 0.2), "reward");
+  assert.equal(pickShareArm(null, 0.8), "plain");
+  assert.equal(pickShareArm("reward", 0.8), "reward");
+});

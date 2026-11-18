@@ -2532,6 +2532,22 @@ scroll up, hidden while typing, zoomed, over the cart or menu, never over Add to
 live with `?bn=1`, so `BOTTOM_NAV` is "on" (the owner asked for the bar on every site). `?bn=0` still opts a visitor out, and "off"
 is the rollback. It ships with the next daily release, not its own build.
 
+## 2026-11-18: Feedback asks: "Was this page useful?" in the footer, a /feedback page, counted by the daily triage (owner)
+
+The owner: "We need more feedback so can we find a way to get more". One RiftCompare visitor's note (sort the movers by %
+gain or loss) became a feature the same day, but across the network three weeks brought about 58 star ratings and fewer than
+ten written notes. Rift's own record also holds "too many popups asking for my opinion", so every ask here is inline.
+
+- `components/FeedbackAsk.tsx` (the same file on every site): one line at the top of the footer, "Was this page useful?
+  Yes / No". The tap is sent at once (a vote alone counts); only then does an optional "What would make it better?" box
+  open. Never a pop-up, nothing fixed or floating, hidden for the rest of the visit on a page already answered, and in no
+  quick view (the Dex / MTG quick-view A/B, 20 Nov to 3 Dec, is untouched).
+- `/feedback`: the full form (an idea, something wrong, something missing) and "You asked, we built it", the changes
+  visitors' notes have led to; add a line there when a note leads to a change. noindex, linked from the footer and the menu.
+- Both post to `/api/report` as kind `feedback` (`lib/reports-github.ts`). A note is an inbox file like any report; a bare
+  vote is `votes/<site>/<day>/<time>-up|down-<rand>.json`, counted from its file name by RiftCompare's daily *Reports
+  triage*, which now prints a 7-day feedback table per site and flags every note for a look. No email address is asked
+  for or kept: the thanks shows the site's inbox for anyone who wants a reply.
 ## 2026-11-18: eBay's row may carry "Best price" (owner)
 
 The owner withdrew "eBay is never the best price". On the product page and in the quick view (`ebayBeatsBest`, `components/OfferRows.tsx`), eBay's
@@ -2549,3 +2565,10 @@ product page, the quick view, the hero and the home feed. eBay and the stores ke
 ghost. This reverses the 2026-11-02 no-Amazon-orange line for the button only. Rel, tracking, "Ad · Paid link", row order,
 prices and the Best price logic are unchanged. The quick view's pinned footer button is full width, 44px, and reads
 "See full page: price history and details". `tests/amazon-button.test.ts`.
+
+## 2026-11-18: Share for a deal (owner)
+
+Owner: sharing should be easy and rewarded, on every site. `ShareThanks.tsx`: half of browsers (`share_arm` in localStorage) see
+"Share · get a deal"; after a share completes a small card under the button (the visitor's own tap, ✕ to close) points to the
+market's deals page (`/deals`, `/uk/deals`…). Nothing is gated; the other half is the control. Events `share { medium, arm }`,
+`share_unlock { medium }`.
