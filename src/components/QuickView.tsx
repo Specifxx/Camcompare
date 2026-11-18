@@ -15,6 +15,7 @@ import { isMarket, MARKETS, type MarketCode } from "@/lib/markets";
 import { quickViewFile, viewParam, withView, type QuickViewData } from "@/lib/quickview";
 import { AlsoCheck, EbayListings, OfferRowItem, PinnedMarkets, ebayBeatsBest, ebayPin, type PinnedLink } from "./OfferRows";
 import { retailer } from "@/lib/retailers";
+import { bestPriceHint } from "@/lib/best-tag";
 import EbayText from "./ebay/EbayText";
 import ProductThumb from "./ProductThumb";
 import SpecHighlights from "./SpecHighlights";
@@ -335,7 +336,7 @@ function Dialog({ target }: { target: Target }) {
                       // eBay's new listing is the cheapest: the store row drops its "Best price" tag (owner, 2026-11-18).
                       const r = ebayBeatsBest(data.ebay?.listings[0], data.rows)?.id === r0.id ? { ...r0, tag: undefined } : r0;
                       return (
-                      <OfferRowItem key={r.id} row={r} product={data.slug} title={data.name} placement="quickview" dense rrp={data.rrp} usedTypical={data.usedTypical} />
+                      <OfferRowItem key={r.id} row={r} product={data.slug} title={data.name} placement="quickview" dense rrp={data.rrp} usedTypical={data.usedTypical} ebayHint={bestPriceHint(qvPins(data).filter((x) => retailer(x.retailer)?.ebay).map(() => ({ brand: "ebay" })))} />
                       );
                     })}
                   </ul>

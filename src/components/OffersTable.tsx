@@ -9,6 +9,7 @@ import EbayPanel from "./EbayPanel";
 import EbayText from "./ebay/EbayText";
 import { ebayLink } from "@/lib/ebay-links";
 import { ebayFor, retailer } from "@/lib/retailers";
+import { bestPriceHint } from "@/lib/best-tag";
 import { OFFER_TABS, rowInTab, tabHideClass, type OfferTab } from "@/lib/offer-tabs";
 import OfferTabs from "./MoreOffers";
 import { AlsoCheck, OfferRowItem, PinnedMarkets, ebayBeatsBest, ebayPin, type PinnedLink } from "./OfferRows";
@@ -66,6 +67,8 @@ export default function OffersTable({ product, title, query, offers, market, pag
         }
       : null,
   ].filter(Boolean) as PinnedLink[];
+  // The plain best price's "i" hint names the eBay row, only when the pinned list has one (lib/best-tag.ts).
+  const ebayHint = bestPriceHint(pins.filter((x) => retailer(x.retailer)?.ebay).map(() => ({ brand: "ebay" })));
   const ebayBest = ebayBeatsBest(listings[0], rows);
   if (ebayBest) {
     const pin = pins.find((x) => x.retailer === listings[0].retailer);
@@ -108,6 +111,7 @@ export default function OffersTable({ product, title, query, offers, market, pag
       placement="offers"
       rrp={rrp}
       usedTypical={usedTypical}
+      ebayHint={ebayHint}
       className={tabHideClass(OFFER_TABS.filter((t) => !rowInTab(r, t.key)).map((t) => t.key))}
       priceNode={r.amazon && r.seenAt ? <TimedPrice text={price(r.price, r.currency)} seenAt={r.seenAt} maxAgeH={AMAZON_MAX_AGE_H} /> : undefined}
     />

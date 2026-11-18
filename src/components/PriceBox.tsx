@@ -6,9 +6,11 @@ import { toRow, type PackKind } from "@/lib/offer-rows";
 import { AMAZON_MAX_AGE_H, isAmazonOffer, type HistoryPoint, type Offer } from "@/lib/offers";
 import { headline, kitText, leadOffer, lowestKit, typicalRange } from "@/lib/price-rules";
 import { paidAlternative } from "@/lib/paid-alternative";
-import { retailer } from "@/lib/retailers";
+import { ebayFor, retailer } from "@/lib/retailers";
+import { bestPriceHint, isPlainBest } from "@/lib/best-tag";
 import { usedValue } from "@/lib/value";
 import OutboundLink from "./OutboundLink";
+import { BestTag } from "./BestTag";
 import { retailerButtonClass } from "./OfferRows";
 import TimedPrice from "./TimedPrice";
 
@@ -84,6 +86,7 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
 
   const o = lead.offer;
   const row = toRow(o, { page, placement: "hero", pack });
+  const plainBest = isPlainBest(row);
   const tag = lead.what === "new" ? "Best price" : lead.what === "used" ? "Best used price" : "Best kit price";
   const what = lead.what === "new" ? `New${pack === "body" ? " · body only" : ""}` : lead.what === "used" ? `${row.condition}${pack === "body" ? " · body only" : ""}` : `${row.condition} · ${kitText(o, pack)}`;
   // With kits only: the cheapest used kit too, when the lead is a new one.
@@ -107,10 +110,15 @@ export default function PriceBox({ offers, history, launch, market, pack, page, 
       {lead.what !== "new" && <p className="text-sm text-muted">{lead.what === "kit" ? `No body-only price in ${mkt} today. The cheapest kit:` : `No new body-only price in ${mkt} today. The cheapest used:`}</p>}
       <div>
         <p className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full bg-buy px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-buy-fg">{tag}</span>
+          {plainBest ? (
+            // A store that pays us nothing: the small neutral tag, not the filled pill (owner, 2026-11-18); the hint names eBay only when it has a row.
+            <BestTag label={tag} hint={bestPriceHint(ebayFor(market) ? [{ brand: "ebay" }] : [])} />
+          ) : (
+            <span className="rounded-full bg-buy px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-buy-fg">{tag}</span>
+          )}
           <span className="text-xs text-muted">{what} · in stock</span>
         </p>
-        <p className={`price mt-1 font-display text-4xl font-extrabold tracking-[-0.03em] ${lead.what === "new" ? "text-buy" : ""}`}>{shown(o, cur)}</p>
+        <p className={`price mt-1 font-display text-4xl font-extrabold tracking-[-0.03em] ${lead.what === "new" && !plainBest ? "text-buy" : ""}`}>{shown(o, cur)}</p>
         <p className="text-sm text-muted">
           at <span className="font-semibold text-fg">{storeName(o)}</span>
           {deal && <span className={`ml-2 chip ${deal.kind === "above-avg" ? "text-warn" : "text-win"}`}>{deal.text}</span>}

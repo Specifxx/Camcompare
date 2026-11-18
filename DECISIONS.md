@@ -2599,3 +2599,17 @@ the footer, dialogs and the keyboard, ✕ for the visit, labelled Ad, rel sponso
 `dock_arm`. Verdict 2 Dec: buy clickers and paid buy clicks per arm. EPN's Network Agreement (Exhibit A §1.4, §2.5) puts any
 promotional method it does not expressly permit under prior written approval; the dock has run since 2026-11-06, this changes only
 when it shows. Not on Dex or MTG Compare (their phone A/B runs to 3 Dec).
+
+## 2026-11-18: A plain store's best price gets a small "Best price" tag, not the loud highlight
+
+Owner, 2026-11-18: when the cheapest row is just a store that pays us nothing, do not highlight it: the loudest row on the page
+should not be the one that earns nothing. `OfferRowItem` (`OfferRows.tsx`): a row tagged "best" whose link does not earn
+(`paid` false) gets a small neutral "Best price" chip (`BestTag.tsx`) instead of the soft green tint and the filled tag, and its
+price is unchanged. The hero panel (`PriceBox.tsx`) does the same for a plain lead: the small neutral tag instead of the filled pill
+and the green price (its button and the "Paid link" notes are untouched). The "i" hint (title, aria-label, tap-to-show line) reads
+"Prices and stock change: also check eBay" and shows ONLY when the list has an eBay row (`ebayHint`, from the pinned rows; the
+hero asks `ebayFor(market)`); it never says eBay is cheaper. A paid best row, an eBay row that wins ("Best price" on its own row)
+and an Amazon row keep the full highlight exactly as before. Same on the product page and the quick view. Unchanged: row order,
+sorting, `rel="sponsored"`, tracking, labels, "Lowest used" and "Lowest kit price" tags, deal badges, JSON-LD, feeds, alerts.
+`lib/best-tag.ts`, `tests/best-price-tag.test.ts`. Verdict: paid clicks per 100 buy clicks before and after (`buy_click`
+events, paid or not), because the loud highlight on a non-paying store was pulling clicks from our paid rows.
