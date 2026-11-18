@@ -6,10 +6,12 @@ import { price } from "@/lib/format";
 import type { CheckLink, OfferRow } from "@/lib/quickview";
 import { retailer } from "@/lib/retailers";
 import { rowWarning } from "@/lib/rrp";
+import { isPlainBest } from "@/lib/best-tag";
 import OutboundLink from "./OutboundLink";
 import { StoreVote } from "./StoreVote";
 import AccessoryThumb from "./AccessoryThumb";
 import { CartAddButton } from "./cart/CartAddButton";
+import { BestTag } from "./BestTag";
 
 /** Filled button for a link that earns, outlined for the rest. eBay wears the same button as every store (owner, 2026-11-01:
  *  "blend in"); Amazon's is amber (`btn-amazon`, owner 2026-11-18), priced or not, so it is never mistaken for a store's. */
@@ -48,7 +50,7 @@ export const pctOff = (p: number, was?: number) => (was && was > p ? Math.floor(
  * them. The badge flags the price, never the seller. `className` carries the
  * tab filter classes (OffersTable).
  */
-export function OfferRowItem({ row, product, title, placement, priceNode, dense = false, rrp, usedTypical, className = "" }: { row: OfferRow; product: string; /** The product's name: with it, in-stock store rows get the cart list's add button. */ title?: string; placement: string; priceNode?: React.ReactNode; dense?: boolean; rrp?: number | null; usedTypical?: number | null; className?: string }) {
+export function OfferRowItem({ row, product, title, placement, priceNode, dense = false, rrp, usedTypical, ebayHint = null, className = "" }: { row: OfferRow; product: string; /** The product's name: with it, in-stock store rows get the cart list's add button. */ title?: string; placement: string; priceNode?: React.ReactNode; dense?: boolean; rrp?: number | null; usedTypical?: number | null; /** The "i" hint of a plain best price (lib/best-tag.ts): set only when the list has an eBay row. */ ebayHint?: string | null; className?: string }) {
   const warn = rowWarning(row, rrp, usedTypical);
   // The cart list (components/cart, owner 2026-11-06): in-stock store rows, never Amazon or eBay. A Shopify row
   // with no programme adds its cart permalink (checkout at the store); the rest keep their own, tagged link.
@@ -59,14 +61,17 @@ export function OfferRowItem({ row, product, title, placement, priceNode, dense 
   const who = row.seller ? `Seller: ${row.seller}` : row.authorized ? "Authorized dealer" : null;
   const details = [row.detail, who, row.variant ? `${row.variant} version` : null].filter(Boolean).join(" · ");
   const off = pctOff(row.price, row.was);
+  // The "Best price" row of a store that pays us nothing: a small neutral tag, no tint (owner, 2026-11-18, DECISIONS.md).
+  const plainBest = row.tag === "best" && isPlainBest(row);
   return (
-    <li className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${row.tag === "best" ? `bg-buy-soft/40 ${PIN_OUTLINE.cheapest}` : ""} ${className}`}>
+    <li className={`flex items-center gap-3 ${dense ? "px-3 py-2.5 sm:px-4" : "px-3 py-3 sm:px-4"} ${row.tag === "best" && !plainBest ? `bg-buy-soft/40 ${PIN_OUTLINE.cheapest}` : ""} ${className}`}>
       {row.image && <AccessoryThumb src={row.image} alt={`${row.condition} listing at ${row.name}`} group="camera" store={row.name} size="sm" />}
       <div className="min-w-0 flex-1">
         <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 leading-tight">
           <span className="font-semibold">{row.name}</span>
           <StoreVote url={row.store} name={row.name} className="text-muted" />
-          {row.tag && <span className={`rounded px-1.5 py-px text-[11px] font-semibold ${row.tag === "best" ? "bg-buy text-buy-fg" : "bg-buy-soft text-win"}`}>{TAG[row.tag]}</span>}
+          {plainBest && <BestTag hint={ebayHint} />}
+          {row.tag && !plainBest && <span className={`rounded px-1.5 py-px text-[11px] font-semibold ${row.tag === "best" ? "bg-buy text-buy-fg" : "bg-buy-soft text-win"}`}>{TAG[row.tag]}</span>}
         </p>
         <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-xs text-muted">
           <span>{row.condition}</span>
