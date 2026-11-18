@@ -2556,6 +2556,12 @@ row and not more than 25% under it (a wrong product, not a deal); that store row
 listing never qualifies. The page headline, metadata, JSON-LD, deals and feeds still use the store prices. Amazon never takes the tag (its price
 is licensed for 24 hours). `tests/ebay-best-price.test.ts`.
 
+## 2026-11-18: Share for a deal (owner)
+
+Owner: sharing should be easy and rewarded, on every site. `ShareThanks.tsx`: half of browsers (`share_arm` in localStorage) see
+"Share · get a deal"; after a share completes a small card under the button (the visitor's own tap, ✕ to close) points to the
+market's deals page (`/deals`, `/uk/deals`…). Nothing is gated; the other half is the control. Events `share { medium, arm }`,
+`share_unlock { medium }`.
 ## 2026-11-18: The cart A/B: half of the visitors see no cart
 
 Owner, 2026-11-18: "I never intended the cart to be like a very big feature … we cannot sustain click leaks." On OP Compare the
