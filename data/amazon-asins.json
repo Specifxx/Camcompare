@@ -1,3 +1,376 @@
 {
- "www.amazon.com.au": {}
+ "www.amazon.com.au": {
+  "blackmagic-cinema-camera-6k": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "blackmagic-pocket-cinema-camera-4k": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "blackmagic-pocket-cinema-camera-6k-g2": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "blackmagic-pocket-cinema-camera-6k-pro": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "blackmagic-pocket-cinema-camera-6k": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "blackmagic-pyxis-6k": {
+   "asin": "B0D22H1D58",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-1d-x-mark-ii": {
+   "asin": "B0H7L7XJLV",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-1d-x-mark-iii": {
+   "asin": "B082YW4VPM",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-4000d": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-5d-mark-iii": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-5d-mark-iv": {
+   "asin": "B01KZ4XI36",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-5ds-r": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-5ds": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-6d-mark-ii": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-6d": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-77d": {
+   "asin": "B0H1J9FNH4",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-7d-mark-ii": {
+   "asin": "1118722906",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-80d": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-90d": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-c300-mark-iii": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-c400": {
+   "asin": "B0HB9H5SH6",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-c500-mark-ii": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-c70": {
+   "asin": "B0HBP3DWR5",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-c80": {
+   "asin": "B0HBQ959LK",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-m100": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-m200": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-m5": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-m50-mark-ii": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-m50": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-m6-mark-ii": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-m6": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r1": {
+   "asin": "B0HMZVRHQR",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r10": {
+   "asin": "B0B1Z91HXC",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r100": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r3": {
+   "asin": "B09FFTM3F6",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r5-c": {
+   "asin": "B09QSJP3X4",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r5-mark-ii": {
+   "asin": "B0D9KNWMZH",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r5": {
+   "asin": "B08C68F2DX",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r50-v": {
+   "asin": "B0F3X6R9SJ",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r50": {
+   "asin": "B0C4763VSJ",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r6-mark-ii": {
+   "asin": "B0BL6JCKZ1",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r6-mark-iii": {
+   "asin": "B0G12KKG7L",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r6-v": {
+   "asin": "B0H1JMFTPT",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r6": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r7": {
+   "asin": "B0B1Z9J752",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r8-mark-ii": {
+   "asin": "B0HJYVFHXS",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-r8": {
+   "asin": "B0BYHHMFY6",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-rebel-sl2": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-rebel-sl3": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-rebel-t6": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-rebel-t7": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-rebel-t7i": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-rebel-t8i": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-eos-rp": {
+   "asin": "B07N9KDCGV",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-g1-x-mark-iii": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-g5-x-mark-ii": {
+   "asin": "3832803726",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-g7-x-mark-ii": {
+   "asin": "B01BV14OXA",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-g7-x-mark-iii": {
+   "asin": "B07TKNCQZL",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-g9-x-mark-ii": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-sx70-hs": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-sx740-hs": {
+   "asin": "B07HCP1JG3",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-v1": {
+   "asin": "B0DYHYWHXX",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "canon-powershot-v10": {
+   "asin": "B0C59MM64C",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-air-3": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-air-3s": {
+   "asin": "B07FVZFX73",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-avata-2": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-flip": {
+   "asin": "B07FTJ8RXY",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-mavic-3-pro": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-mavic-4-pro": {
+   "asin": "B0DS2HDF1M",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-mini-3-pro": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-mini-4-pro": {
+   "asin": "B0CFF1SJ3P",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-mini-4k": {
+   "asin": "B0CXJDDJ9X",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-mini-5-pro": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-neo": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-360-ii": {
+   "asin": "B0HCNRTPCN",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-360": {
+   "asin": "B0DTTZZ6Q3",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-action-2": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-action-3": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-action-4": {
+   "asin": "B0C783YNW7",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-action-5-pro": {
+   "asin": "B0D1YH4B2R",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-action-6": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-action": {
+   "asin": "B0BQ3L6BYM",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-pocket-3": {
+   "asin": "B0CG19QXWD",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-pocket-4": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-pocket-4p": {
+   "asin": "B0H2MRDB2C",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-osmo-pocket": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "dji-pocket-2": {
+   "asin": "B08LG1LVZV",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "fujifilm-gfx100-ii": {
+   "asin": "B0CKLW8T9Z",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "fujifilm-gfx100": {
+   "asin": null,
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "fujifilm-gfx100rf": {
+   "asin": "B0F2SSJXXX",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "fujifilm-gfx100s-ii": {
+   "asin": "B0D87H7J8Q",
+   "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "fujifilm-gfx100s": {
+   "asin": "B0H5CJQHTS",
+   "checked": "2026-11-18T11:44:43.961Z"
+  }
+ }
 }
