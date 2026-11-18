@@ -111,7 +111,8 @@ export function AdDock({ label, items, placement, minWidth, yieldTo = "[data-ad]
           screen: window.innerHeight,
           blockers: blockers.size,
           buybar: !!document.querySelector(buybar),
-          modal: modal(),
+          // The phone bottom nav (BottomNav.tsx) holds the foot of the screen while it shows: one bar at a time.
+          modal: modal() || document.documentElement.hasAttribute("data-bottomnav"),
           typing,
           dismissed: false,
         }),
