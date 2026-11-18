@@ -22,6 +22,8 @@ import localFont from "next/font/local";
 import { JetBrains_Mono } from "next/font/google";
 import { SEASON_BOOT_SCRIPT, CHRISTMAS_FESTIVE_LAYER } from "@/lib/season";
 import { MARKET_BOOT_SCRIPT } from "@/lib/market-boot";
+import { BottomNav } from "@/components/BottomNav";
+import { BOTTOM_NAV } from "@/lib/bottom-nav";
 
 // Inter for text, Bricolage Grotesque for headings and big figures (the same
 // pair as Compare Empire), both self-hosted (OFL, from Fontsource) so a build
@@ -91,6 +93,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Analytics />
         <ShareArrival />
         {ADSENSE && <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE}`} crossOrigin="anonymous" strategy="lazyOnload" />}
+        {/* The phone bottom nav (components/BottomNav.tsx, lib/bottom-nav.ts): browser only, phones only, BOTTOM_NAV is its switch. */}
+        {BOTTOM_NAV !== "off" && <BottomNav mode={BOTTOM_NAV} />}
       </body>
     </html>
   );

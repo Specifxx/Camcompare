@@ -190,7 +190,7 @@ export default function Header({ nav, sale = null }: { nav: NavData; sale?: { pa
           <MarketSwitcher current={m} />
           {/* The cart list (components/cart, owner 2026-11-06): every width, with its count. */}
           <CartHeaderLink className="shrink-0 text-muted hover:text-fg" />
-          <button type="button" aria-expanded={menu} aria-controls="phone-menu" aria-label={menu ? "Close menu" : "Open menu"} onClick={() => setMenu(!menu)} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-muted lg:hidden">
+          <button type="button" aria-expanded={menu} aria-controls="phone-menu" data-bn-menu aria-label={menu ? "Close menu" : "Open menu"} onClick={() => setMenu(!menu)} className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-muted lg:hidden">
             <svg aria-hidden width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
               {menu ? <path d="M3 3l10 10M13 3 3 13" /> : <path d="M2 4h12M2 8h12M2 12h12" />}
             </svg>
