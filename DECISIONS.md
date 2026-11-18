@@ -2555,3 +2555,14 @@ pinned row takes the "Best price" tag when its cheapest listing is NEW, in stock
 row and not more than 25% under it (a wrong product, not a deal); that store row then drops its tag, so there is one tag. A used or open-box
 listing never qualifies. The page headline, metadata, JSON-LD, deals and feeds still use the store prices. Amazon never takes the tag (its price
 is licensed for 24 hours). `tests/ebay-best-price.test.ts`.
+
+## 2026-11-18: The cart A/B: half of the visitors see no cart
+
+Owner, 2026-11-18: "I never intended the cart to be like a very big feature … we cannot sustain click leaks." On OP Compare the
+share of visitors who clicked a buy link fell from 20-31% (1-13 Nov) to 11-12% on 14-15 Nov, the day a labelled "Add to cart" went
+on every price row, with visitors flat (Vercel); OP Compare and Compare Empire have the cart switched off. Here it is a test:
+`cartArm()` in `lib/cart-list.ts` puts each visitor in localStorage `cart-arm` "on" or "off" (50/50; storage that fails is "off").
+The "off" arm sees no Add to cart button, and no header or bottom-nav cart unless its cart already holds lines. Every `buy_click`
+carries `cart_arm`. Verdict 2 Dec: buy clickers and paid buy clicks per arm (the arms are equal halves of visitors). Keep the cart
+only if the "on" arm is not lower; otherwise `cartArm()` returns "off" for everyone. Not on Dex or MTG Compare (their quick-view
+A/B runs to 3 Dec).

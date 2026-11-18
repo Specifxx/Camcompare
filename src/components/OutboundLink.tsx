@@ -3,6 +3,7 @@
 // database beacon — RiftCompare turned its own off for egress, 2026-07-23).
 import { track } from "@vercel/analytics";
 import { OUTBOUND_REL } from "@/lib/affiliate";
+import { cartArmNow } from "@/lib/cart-list";
 
 export default function OutboundLink({
   href,
@@ -27,7 +28,7 @@ export default function OutboundLink({
       className={className}
       onClick={() => {
         try {
-          track("buy_click", { retailer, product, placement });
+          track("buy_click", { cart_arm: cartArmNow(), retailer, product, placement });
         } catch {
           /* analytics must never block the click */
         }
