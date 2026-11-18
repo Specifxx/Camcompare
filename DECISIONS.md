@@ -2531,3 +2531,11 @@ The opt-in build passed the phone tests (iPhone SE, Pixel 7, Z Fold cover: flush
 scroll up, hidden while typing, zoomed, over the cart or menu, never over Add to cart, CLS 0, no slower scrolling) and was checked
 live with `?bn=1`, so `BOTTOM_NAV` is "on" (the owner asked for the bar on every site). `?bn=0` still opts a visitor out, and "off"
 is the rollback. It ships with the next daily release, not its own build.
+
+## 2026-11-18: eBay's row may carry "Best price" (owner)
+
+The owner withdrew "eBay is never the best price". On the product page and in the quick view (`ebayBeatsBest`, `components/OfferRows.tsx`), eBay's
+pinned row takes the "Best price" tag when its cheapest listing is NEW, in stock, in the stores' currency, strictly under the "Best price" store
+row and not more than 25% under it (a wrong product, not a deal); that store row then drops its tag, so there is one tag. A used or open-box
+listing never qualifies. The page headline, metadata, JSON-LD, deals and feeds still use the store prices. Amazon never takes the tag (its price
+is licensed for 24 hours). `tests/ebay-best-price.test.ts`.

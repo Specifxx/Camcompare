@@ -182,6 +182,8 @@ export type PinnedLink = {
   inStock?: boolean;
   vote?: string;
   cart?: React.ComponentProps<typeof CartAddButton> | null;
+  /** The eBay row is the page's cheapest price (owner, 2026-11-18): a NEW listing genuinely under the best new store price. */
+  cheapest?: boolean;
 };
 
 /** The rows' marks. Since 2026-11-12 (owner: "too many colors … all the colored rows") no row carries a coloured outline: the
@@ -197,7 +199,7 @@ export const PIN_OUTLINE = {
  * in the quick view (owner, 2026-10-30: "the very, very top", always shown).
  * Drawn exactly like an offer row, no tint and the stores' own button (owner,
  * 2026-11-01: "blend in and look exactly the same as the other price rows"),
- * labelled "Ad". Never part of the sort, never "Best price".
+ * labelled "Ad". Never part of the sort; eBay alone may carry "Best price" when a new listing really is the cheapest (ebayBeatsBest).
  */
 export function PinnedMarkets({ links, product, placement, dense = false, className = "" }: { links: PinnedLink[]; product: string; placement: string; dense?: boolean; className?: string }) {
   if (!links.length) return null;
@@ -214,6 +216,7 @@ export function PinnedMarkets({ links, product, placement, dense = false, classN
                 <span className="font-semibold">{l.name}</span>
                 {l.vote && <StoreVote url={l.vote} name={l.name} className="text-muted" />}
                 <span className="rounded bg-buy-soft px-1.5 py-px text-[11px] font-semibold text-win">Ad · Paid link</span>
+                {l.cheapest && <span className="rounded bg-buy px-1.5 py-px text-[11px] font-semibold text-buy-fg">Best price</span>}
               </p>
               <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 text-xs text-muted">
                 {l.inStock != null && l.price && (
@@ -241,6 +244,21 @@ export function PinnedMarkets({ links, product, placement, dense = false, classN
       })}
     </ul>
   );
+}
+
+/** An eBay price more than 25% under the best store is a wrong product, never the best price. */
+export const EBAY_MAX_UNDER_STORES = 0.75;
+
+/**
+ * Does eBay's cheapest listing beat the page's "Best price" store row (owner, 2026-11-18, withdrawing "eBay is never the best price")?
+ * Only a NEW, in-stock listing in the store's currency, strictly cheaper and not more than 25% under it. Then the pinned row carries the
+ * tag and the store row drops it (one "Best price" per table). Used items never qualify; the headline, metadata and feeds are untouched.
+ */
+export function ebayBeatsBest(listing: OfferRow | undefined, rows: OfferRow[]): OfferRow | null {
+  if (!listing || !listing.inStock || listing.kit || (listing.cond ?? "new") !== "new" || listing.condition !== "New") return null;
+  const best = rows.find((r) => r.tag === "best");
+  if (!best || best.currency !== listing.currency) return null;
+  return listing.price < best.price && listing.price >= best.price * EBAY_MAX_UNDER_STORES ? best : null;
 }
 
 /** eBay's pinned row: today's cheapest live listing when there is one, else the tagged search. */
