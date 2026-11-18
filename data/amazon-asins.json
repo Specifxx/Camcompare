@@ -371,6 +371,606 @@
   "fujifilm-gfx100s": {
    "asin": "B0H5CJQHTS",
    "checked": "2026-11-18T11:44:43.961Z"
+  },
+  "fujifilm-gfx50r": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-gfx50s-ii": {
+   "asin": "B09DTGQN24",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-gfx50s": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-a5": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-a7": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-e2s": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-e3": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-e4": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-e5": {
+   "asin": "B0FBXB6QLF",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-h1": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-h2": {
+   "asin": "B0BCYQXNVB",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-h2s": {
+   "asin": "B0B2QNKSMR",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-half": {
+   "asin": "B0F8BQVNH9",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-m5": {
+   "asin": "B0DJC2WZS3",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-pro2": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-pro3": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-s10": {
+   "asin": "B08KWFXHN3",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-s20": {
+   "asin": "B0C5XRTWR2",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t1": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t10": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t100": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t2": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t20": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t200": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t3": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t30-ii": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t30-iii": {
+   "asin": "B0FVFCKDDC",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t30": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t4": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t5": {
+   "asin": "B0BKGRMLPG",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x-t50": {
+   "asin": "B0D45PPM6T",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x100f": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x100s": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x100t": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x100v": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x100vi": {
+   "asin": "B0CV523K92",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x30": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-x70": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "fujifilm-xf10": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero10-black": {
+   "asin": "B0B2FF8CP4",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero11-black-mini": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero11-black": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero12-black": {
+   "asin": "B0CF3VVTLG",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero13-black": {
+   "asin": "B0F1W8DR96",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero5-black": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero6-black": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero7-black": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero8-black": {
+   "asin": "B08C7FBW4N",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-hero9-black": {
+   "asin": "B09J713ZS7",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-max": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-max2": {
+   "asin": "B0FP5SVBHK",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-mission-1-pro-ils": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-mission-1-pro": {
+   "asin": "B0GWFKMJYG",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "gopro-mission-1": {
+   "asin": "B0GZSQDD9V",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "hasselblad-907x-50c": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "hasselblad-907x-cfv-100c": {
+   "asin": "B0GS5G2DJ3",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "hasselblad-x1d-50c": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "hasselblad-x1d-ii-50c": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "hasselblad-x2d-100c": {
+   "asin": "B0HH1ZCDKW",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "hasselblad-x2d-ii-100c": {
+   "asin": "B0FS7FGLHV",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-ace-pro-2": {
+   "asin": "B0DHGYYXLB",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-ace-pro": {
+   "asin": "B0CKML3W6R",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-go-3": {
+   "asin": "B0C588HJHF",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-go-3s": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-luna-pro": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-luna-ultra": {
+   "asin": "B0GYW541PL",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-one-rs-1-inch-360": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-one-rs": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-one-x2": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-x3": {
+   "asin": "B0B9H572LC",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-x4": {
+   "asin": "B0FQNTZPX1",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-x5": {
+   "asin": "B0DZFZL6GK",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "insta360-x6": {
+   "asin": "B0H5CR9LZF",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-c-lux": {
+   "asin": "B07LC2X683",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-cl": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-d-lux-7": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-d-lux-8": {
+   "asin": "B0HJ6X624G",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m-ev1": {
+   "asin": "B0H465BXVM",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m-typ-240": {
+   "asin": "1781450390",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m10-monochrom": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m10-p": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m10-r": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m10": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m11-d": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m11-monochrom": {
+   "asin": "B0H9MFLJ5V",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m11-p": {
+   "asin": "B0HJNQM2CX",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-m11": {
+   "asin": "B0DZ1TRX6K",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-q-typ-116": {
+   "asin": "B011K9496A",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-q2-monochrom": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-q2": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-q3-43": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-q3": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-sl-typ-601": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-sl2-s": {
+   "asin": "B0HB2PV75Q",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-sl2": {
+   "asin": "B0F491KKCM",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-sl3-p": {
+   "asin": "B0H6LSHXSJ",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-sl3-s": {
+   "asin": "B0H8B3XCG4",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-sl3": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-tl2": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "leica-v-lux-5": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "meta-oakley-meta-hstn": {
+   "asin": "B082KJCR7N",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "meta-oakley-meta-vanguard": {
+   "asin": "B0FQG95WGF",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "meta-ray-ban-display": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "meta-ray-ban-meta-gen-1": {
+   "asin": "B0DDCMG5SK",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "meta-ray-ban-meta-gen-2": {
+   "asin": "B0FLYDJHB4",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-coolpix-a1000": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-coolpix-b600": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-coolpix-p1000": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-coolpix-p1100": {
+   "asin": "B0DXK57K2S",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-coolpix-p900": {
+   "asin": "1937986489",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-coolpix-p950": {
+   "asin": "B0868VVYKV",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-coolpix-w300": {
+   "asin": "B07QC6RTXM",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d3300": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d3400": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d3500": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d4s": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d5": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d500": {
+   "asin": "1681985055",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d5500": {
+   "asin": "B00S7LBK6C",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d5600": {
+   "asin": "B01N7OJNEX",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d6": {
+   "asin": "B084XGHBJW",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d610": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d7100": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d7200": {
+   "asin": "1937538745",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d750": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d7500": {
+   "asin": "B06Y5ZCFHX",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d780": {
+   "asin": "B083QFZZVY",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d800": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d810": {
+   "asin": "B072J316G3",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-d850": {
+   "asin": "B07524LHMT",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-df": {
+   "asin": "B00MTXJY7Q",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z30": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z5-ii": {
+   "asin": "B0F3NJXN3V",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z5": {
+   "asin": "B08D8QXMSN",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z50-ii": {
+   "asin": "B0DMJJY4L3",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z50": {
+   "asin": "B08BLGFDML",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z5iic": {
+   "asin": "B0HKLV8MZX",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z6-ii": {
+   "asin": "B08L5Z4355",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z6-iii": {
+   "asin": "B0D79CB9C5",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z6": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z7-ii": {
+   "asin": "B08L614R6K",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z7": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z8": {
+   "asin": "B0C4KJZ4BT",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-z9": {
+   "asin": "B09KL1VKGD",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-zf": {
+   "asin": null,
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-zfc": {
+   "asin": "B0982QJ792",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "nikon-zr": {
+   "asin": "B0FX97FB4F",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "olympus-om-d-e-m1-mark-ii": {
+   "asin": "B01M4MB3DK",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "olympus-om-d-e-m1-mark-iii": {
+   "asin": "1681986639",
+   "checked": "2026-11-18T20:32:50.918Z"
+  },
+  "olympus-om-d-e-m1": {
+   "asin": "B00EQ07PG2",
+   "checked": "2026-11-18T20:32:50.918Z"
   }
  }
 }

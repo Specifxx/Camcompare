@@ -11,9 +11,9 @@
    "retailer": "camera-electronic"
   },
   "blackmagic-pocket-cinema-camera-6k-pro": {
-   "src": "https://www.camerahouse.com.au/media/catalog/product/c/i/cinecampochdef06p_main_ch111.jpg",
-   "store": "Camera House",
-   "retailer": "camera-house"
+   "src": "https://cdn.shopify.com/s/files/1/0955/2409/4277/files/blackmagic-pocket-cinema-camera-6k-pro-13919-p.jpg?width=640",
+   "store": "HDEW Cameras",
+   "retailer": "hdew-cameras"
   },
   "canon-ef-24-70mm-f4l-is-usm": {
    "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/MFRED_cb978202-70b1-4ba9-b513-f08b7f32eaca.jpg?width=640",
@@ -29,11 +29,6 @@
    "src": "https://doddcamera.com/media/catalog/product/cache/96fe54fcbcf5a7161b7caac20375349f/c/3/c300markiii_slant1_675x450.png",
    "store": "Dodd Camera",
    "retailer": "dodd-camera"
-  },
-  "canon-eos-c500-mark-ii": {
-   "src": "https://www.camerahouse.com.au/media/catalog/product/c/a/canon_c500_mark_ii_body_wcf_express_card_reader_cinema_eos_camera_kit-3.jpg",
-   "store": "Camera House",
-   "retailer": "camera-house"
   },
   "canon-eos-r50-v": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/canon-mirrorless-camera-6895C002.jpg",
