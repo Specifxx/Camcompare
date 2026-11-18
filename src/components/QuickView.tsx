@@ -377,8 +377,8 @@ function Dialog({ target }: { target: Target }) {
         </div>
         {href && (
           <div className="shrink-0 border-t border-line bg-surface px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 sm:px-6">
-            <Link href={href} prefetch={false} onClick={goFull} className="btn-primary w-full sm:w-auto">
-              Full specs &amp; price history →
+            <Link href={href} prefetch={false} onClick={goFull} data-quickview-fullpage className="btn-primary min-h-11 w-full">
+              See full page: price history and details →
             </Link>
           </div>
         )}

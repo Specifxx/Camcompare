@@ -159,8 +159,10 @@ h1, h2 { font-weight: 700; }
 /* Retailer buttons. Rows whose link earns get a filled button; the order of
    rows is still price, never commission. */
 @layer components {
-  /* Never Amazon's own orange (2026-11-02, Associates Operating Agreement: no styling that could pass for Amazon's site). */
-  .btn-amazon { @apply btn shadow-sm; color: rgb(var(--c-buy-fg)); background: rgb(var(--c-buy)); }
+  /* Amazon's own action (owner, 2026-11-18, reversing the 2026-11-02 no-Amazon-orange line): a calm amber with DARK ink in both
+     themes (fixed hexes, not the themed buy tokens), so the Amazon row is never mistaken for a store's button. */
+  .btn-amazon { @apply btn shadow-sm border border-[#e08a00] bg-[#ffa41c] text-[#111111] hover:bg-[#fa8900]; }
+  .btn-amazon:hover { filter: none; }
   .btn-ebay { @apply btn bg-[#0654BA] text-white hover:bg-[#054a9f]; }
 }
 
