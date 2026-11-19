@@ -20,7 +20,7 @@ import PriceTraps from "@/components/PriceTraps";
 import { usedValue } from "@/lib/value";
 import { blackFriday, cyberMonday, holidayFaq, longDate, seasonYear } from "@/lib/black-friday";
 import { FamilyCluster } from "@/components/FamilyCluster";
-import { saleIntro, saleYear, SALE_SEASONS, type SaleSlug } from "@/lib/sale-seasons";
+import { saleIntro, saleYear, SALE_SEASONS, type SaleSlug, saleIndexable } from "@/lib/sale-seasons";
 
 /**
  * Today's top bargains in a market: new under its launch RRP, used under the
@@ -159,7 +159,7 @@ export function saleMetadata(slug: SaleSlug, m: MarketCode): Metadata {
     description: `${name} ${y} camera and lens deals in ${MARKETS[m].name}: today's prices furthest under launch RRP, used under the typical used price, and this week's price drops, checked every day.`,
     path: `/${slug}`,
     market: m,
-    index: dealsIndexable(m),
+    index: dealsIndexable(m) && saleIndexable(slug, new Date().toISOString().slice(0, 10)),
     indexable: dealsIndexable,
   });
 }
