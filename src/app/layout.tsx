@@ -24,6 +24,7 @@ import { SEASON_BOOT_SCRIPT, CHRISTMAS_FESTIVE_LAYER } from "@/lib/season";
 import { MARKET_BOOT_SCRIPT } from "@/lib/market-boot";
 import { BottomNav } from "@/components/BottomNav";
 import { BOTTOM_NAV } from "@/lib/bottom-nav";
+import { AdRouteGate } from "@/components/AdRouteGate";
 
 // Inter for text, Bricolage Grotesque for headings and big figures (the same
 // pair as Compare Empire), both self-hosted (OFL, from Fontsource) so a build
@@ -88,7 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Rate us (owner, 2026-11-03): the corner card, asking only after real use; RiftCompare keeps the ratings. */}
         <RateCard />
         {/* The eBay tiles in the phone dock below 1280px: browser only (components/PhoneDock.tsx). */}
-        <PhoneDock />
+        <AdRouteGate><PhoneDock /></AdRouteGate>
         <Reveal />
         <Analytics />
         <ShareArrival />
