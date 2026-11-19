@@ -15,6 +15,7 @@ import { liveBrands } from "@/views/BrandView";
 import { dealsIndexable } from "@/views/DealsView";
 import { usedIndexable } from "@/views/UsedView";
 import { liveMounts } from "@/views/MountView";
+import { withoutOffSeasonSales } from "@/lib/sale-seasons";
 
 // Only pages that are indexed: every US product page, and a market's product
 // page once three stores there list it (lib/indexing.ts, the same rule as the noindex).
@@ -25,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const p of ["/", "/cameras", "/lenses", "/finder", "/brands", "/mounts"]) out.push({ url: abs(marketPath(m, p)) });
     // The deals and sale pages are rebuilt from each import's offers, so that import's time is their real lastmod.
     const priced = offersGeneratedAt(m) || undefined;
-    if (dealsIndexable(m)) out.push(...["/deals", "/black-friday", "/cyber-monday", "/boxing-day", "/january-sales", "/lunar-new-year"].map((p) => ({ url: abs(marketPath(m, p)), lastModified: priced })));
+    if (dealsIndexable(m)) out.push(...["/deals", "/black-friday", "/cyber-monday", ...withoutOffSeasonSales(["/boxing-day", "/january-sales"], new Date().toISOString().slice(0, 10))].map((p) => ({ url: abs(marketPath(m, p)), lastModified: priced })));
     if (usedIndexable(m)) out.push({ url: abs(marketPath(m, "/used")) });
     if (releasesIndexable(m)) out.push({ url: abs(marketPath(m, "/releases")) });
     if (pricedIn(digicams(), m)) out.push({ url: abs(marketPath(m, "/digicams")) });
