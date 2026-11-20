@@ -44,7 +44,7 @@ export function LogoMark({ size = 28, intro = false, className = "" }: { size?: 
 export default function Logo({ size = 28, compact = false, intro = false, className = "" }: { size?: number; compact?: boolean; intro?: boolean; className?: string }) {
   return (
     <span className={`cc-logo inline-flex items-center gap-2 ${className}`}>
-      <span className="relative inline-flex shrink-0">
+      <span className="relative inline-flex shrink-0 xmas-cap">
         <LogoMark size={size} intro={intro} />
       </span>
       <span className={`font-display text-[1.2rem] font-semibold leading-none tracking-[-0.02em] text-fg ${compact ? "hidden sm:inline" : ""}`}>
