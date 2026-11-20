@@ -11,9 +11,9 @@
    "retailer": "camera-electronic"
   },
   "blackmagic-pocket-cinema-camera-6k-pro": {
-   "src": "https://cdn.shopify.com/s/files/1/0955/2409/4277/files/blackmagic-pocket-cinema-camera-6k-pro-13919-p.jpg?width=640",
-   "store": "HDEW Cameras",
-   "retailer": "hdew-cameras"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/c/i/cinecampochdef06p_main_ch111.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "canon-ef-24-70mm-f4l-is-usm": {
    "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/MFRED_cb978202-70b1-4ba9-b513-f08b7f32eaca.jpg?width=640",
@@ -29,6 +29,11 @@
    "src": "https://doddcamera.com/media/catalog/product/cache/96fe54fcbcf5a7161b7caac20375349f/c/3/c300markiii_slant1_675x450.png",
    "store": "Dodd Camera",
    "retailer": "dodd-camera"
+  },
+  "canon-eos-c500-mark-ii": {
+   "src": "https://www.camerahouse.com.au/media/catalog/product/c/a/canon_c500_mark_ii_body_wcf_express_card_reader_cinema_eos_camera_kit-3.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "canon-eos-r50-v": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/canon-mirrorless-camera-6895C002.jpg",
@@ -66,9 +71,9 @@
    "retailer": "canon-store-sg"
   },
   "canon-rf-28-70mm-f2l-usm": {
-   "src": "https://cdn.shopify.com/s/files/1/0810/7196/4381/files/RF28-70mmf_2LUSM_97b301eb-b99a-4e00-b375-60ca608a77b0.jpg?width=640",
-   "store": "Canon Store",
-   "retailer": "canon-store-sg"
+   "src": "https://content.abt.com/media/images/products/BDP_Images/big_2965C002.jpg",
+   "store": "Abt",
+   "retailer": "abt"
   },
   "canon-rf-45mm-f1-2-stm": {
    "src": "https://cdn.shopify.com/s/files/1/0810/7196/4381/files/RF45mmf1.2STM_slant.png?width=640",
@@ -439,11 +444,6 @@
    "src": "https://content.abt.com/media/images/products/BDP_Images/gopro-actioncam-CHDHW011MY.jpg",
    "store": "Abt",
    "retailer": "abt"
-  },
-  "gopro-mission-1-pro-ils": {
-   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/1776675463_IMG_2717055.jpg?width=640",
-   "store": "Ted's Cameras",
-   "retailer": "teds"
   },
   "hasselblad-907x-50c": {
    "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/files/SH-BGE7-SH_626a1a78-5b85-438f-aac5-cbebc109e8dc.jpg?width=640",
@@ -1005,11 +1005,6 @@
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
   },
-  "om-system-m-zuiko-digital-45mm-f1-8": {
-   "src": "https://cdn.shopify.com/s/files/1/0622/3219/9216/files/2137974.jpg?width=640",
-   "store": "Focus Camera",
-   "retailer": "focus-camera"
-  },
   "om-system-m-zuiko-digital-ed-100-400mm-f5-0-6-3-is-ii": {
    "src": "https://cdn.shopify.com/s/files/1/1165/5118/files/94ce9adb-46c5-4a04-b860-1878bdcb08b1.jpg?width=640",
    "store": "Cambrian Photography",
@@ -1206,9 +1201,9 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-g-vario-45-150mm-f4-0-5-6-asph-mega-o-i-s": {
-   "src": "https://cdn11.bigcommerce.com/s-fc1fc/images/stencil/1280x1280/products/58421/204625/1560946936_1182676__72886.1673901323.jpg",
-   "store": "Precision Camera",
-   "retailer": "precision-camera"
+   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/products/v9nwcle9mykknyk6z8ws.jpg?width=640",
+   "store": "Shop Panasonic",
+   "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-g-vario-45-200mm-f4-0-5-6-ii-power-o-i-s": {
    "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/PN45200II.jpg?width=640",
@@ -1369,11 +1364,6 @@
    "src": "https://cdn.shopify.com/s/files/1/1165/5118/files/5b25d515-3dc6-4469-8a99-1fda410da4fa.jpg?width=640",
    "store": "Cambrian Photography",
    "retailer": "cambrian-photography"
-  },
-  "samyang-af-14mm-f2-8-fe": {
-   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-14mm-f2-8-2.jpg?width=640",
-   "store": "Ted's Cameras",
-   "retailer": "teds"
   },
   "samyang-af-18mm-f2-8-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200675_0_3.jpg?width=640",
@@ -1686,9 +1676,9 @@
    "retailer": "camera-electronic"
   },
   "sony-fx5": {
-   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/sony_fx5_full-frame_cinema_camera_-_body_only_1__1.webp?width=640",
-   "store": "Camera Electronic",
-   "retailer": "camera-electronic"
+   "src": "https://content.abt.com/media/images/products/BDP_Images/sony-camera-ILMEFX5B.jpg",
+   "store": "Abt",
+   "retailer": "abt"
   },
   "sony-rx1r-iii": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/sony-camera-DSCRX1RM3B-front-view.jpg",
@@ -1751,9 +1741,9 @@
    "retailer": "cambrian-photography"
   },
   "tamron-sp-15-30mm-f2-8-di-vc-usd-g2": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/61AGLx3sZaL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/t/a/tamron_sp_15-30mm_f2.8_di_vc_usd_g2.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "tamron-sp-150-600mm-f5-6-3-di-vc-usd-g2": {
    "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/514--vDkFhL.jpg?width=640",
@@ -1766,9 +1756,9 @@
    "retailer": "camera-wholesalers"
   },
   "tamron-sp-24-70mm-f2-8-di-vc-usd-g2": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/41n9-DV8wLL.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/0/1/01294u90u42.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "tamron-sp-35mm-f1-4-di-usd": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/tm-f045e_0_4.jpg?width=640",
@@ -1781,9 +1771,9 @@
    "retailer": "camera-wholesalers"
   },
   "tamron-sp-45mm-f1-8-di-vc-usd": {
-   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/81_2BefzOcB0L.jpg?width=640",
-   "store": "Camera Wholesalers",
-   "retailer": "camera-wholesalers"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/0/9/09889.jpg",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "tamron-sp-70-200mm-f2-8-di-vc-usd-g2": {
    "src": "https://cdn.shopify.com/s/files/1/1165/5118/products/1619160.jpg?width=640",
@@ -1801,9 +1791,9 @@
    "retailer": "camera-electronic"
   },
   "tokina-atx-m-23mm-f1-4": {
-   "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/products/12b0589x01.jpg?width=640",
-   "store": "Georges Cameras",
-   "retailer": "georges"
+   "src": "https://www.camerahouse.com.au/media/catalog/product/1/2/12b0589_main_ch1_1.png",
+   "store": "Camera House",
+   "retailer": "camera-house"
   },
   "tokina-atx-m-33mm-f1-4": {
    "src": "https://cdn.shopify.com/s/files/1/0603/4083/0375/products/12B0689_1.jpg?width=640",
