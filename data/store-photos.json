@@ -1365,6 +1365,11 @@
    "store": "Cambrian Photography",
    "retailer": "cambrian-photography"
   },
+  "samyang-af-14mm-f2-8-fe": {
+   "src": "https://cdn.shopify.com/s/files/1/0588/9464/7339/files/samyang-14mm-f2-8-2.jpg?width=640",
+   "store": "Ted's Cameras",
+   "retailer": "teds"
+  },
   "samyang-af-18mm-f2-8-fe": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/products/200675_0_3.jpg?width=640",
    "store": "Camera Electronic",
@@ -1516,9 +1521,9 @@
    "retailer": "abt"
   },
   "sony-a6100": {
-   "src": "https://content.abt.com/media/images/products/BDP_Images/big-ILCE6100B.jpg",
-   "store": "Abt",
-   "retailer": "abt"
+   "src": "https://cdn.shopify.com/s/files/1/1786/3523/products/SNA6100.jpg?width=640",
+   "store": "Camera Wholesalers",
+   "retailer": "camera-wholesalers"
   },
   "sony-distagon-t-fe-35mm-f1-4-za": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/1425422738_1126137.jpg?width=640",
