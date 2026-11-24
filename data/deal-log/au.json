@@ -1,9 +1,8 @@
-{"market":"au","currency":"AUD","updatedAt":"2026-11-24T02:13:29.882Z",
+{"market":"au","currency":"AUD","updatedAt":"2026-11-24T13:45:10.090Z",
   "deals": [
-    {"key":"leica-sl3-p|new|camera-electronic","slug":"leica-sl3-p","kind":"camera","condition":"new","retailer":"camera-electronic","price":997599,"rrp":1050000,"save":52401,"pct":5,"firstSeen":"2026-11-19T02:35:00.942Z","lastSeen":"2026-11-24T02:13:29.882Z","status":"live"},
-    {"key":"panasonic-lumix-zs300|new|camera-house","slug":"panasonic-lumix-zs300","kind":"camera","condition":"new","retailer":"camera-house","price":99900,"rrp":159900,"save":60000,"pct":38,"firstSeen":"2026-11-17T03:55:45.391Z","lastSeen":"2026-11-24T02:13:29.882Z","status":"live"},
-    {"key":"panasonic-lumix-zs300|new|digidirect","slug":"panasonic-lumix-zs300","kind":"camera","condition":"new","retailer":"digidirect","price":129900,"rrp":159900,"save":30000,"pct":19,"firstSeen":"2026-10-22T05:32:24.596Z","lastSeen":"2026-11-16T19:37:46.923Z","status":"gone","goneAt":"2026-11-17T03:55:45.391Z","goneWhy":"sold"},
-    {"key":"panasonic-lumix-zs300|new|jbhifi","slug":"panasonic-lumix-zs300","kind":"camera","condition":"new","retailer":"jbhifi","price":99700,"rrp":159900,"save":60200,"pct":38,"firstSeen":"2026-11-20T20:22:32.735Z","lastSeen":"2026-11-23T12:44:04.040Z","status":"gone","goneAt":"2026-11-24T02:13:29.882Z","goneWhy":"sold"},
-    {"key":"panasonic-lumix-zs300|used|teds","slug":"panasonic-lumix-zs300","kind":"camera","condition":"used","retailer":"teds","price":99826,"rrp":159900,"save":60074,"pct":38,"firstSeen":"2026-11-23T01:45:24.904Z","lastSeen":"2026-11-24T02:13:29.882Z","status":"live"}
+    {"key":"leica-sl3-p|new|camera-electronic","slug":"leica-sl3-p","kind":"camera","condition":"new","retailer":"camera-electronic","price":997599,"rrp":1050000,"save":52401,"pct":5,"firstSeen":"2026-11-19T02:35:00.942Z","lastSeen":"2026-11-24T13:45:10.090Z","status":"live"},
+    {"key":"panasonic-lumix-zs300|new|camera-house","slug":"panasonic-lumix-zs300","kind":"camera","condition":"new","retailer":"camera-house","price":99900,"rrp":159900,"save":60000,"pct":38,"firstSeen":"2026-11-17T03:55:45.391Z","lastSeen":"2026-11-24T13:45:10.090Z","status":"live"},
+    {"key":"panasonic-lumix-zs300|new|jbhifi","slug":"panasonic-lumix-zs300","kind":"camera","condition":"new","retailer":"jbhifi","price":99700,"rrp":159900,"save":60200,"pct":38,"firstSeen":"2026-11-24T13:45:10.090Z","lastSeen":"2026-11-24T13:45:10.090Z","status":"live"},
+    {"key":"panasonic-lumix-zs300|used|teds","slug":"panasonic-lumix-zs300","kind":"camera","condition":"used","retailer":"teds","price":99826,"rrp":159900,"save":60074,"pct":38,"firstSeen":"2026-11-23T01:45:24.904Z","lastSeen":"2026-11-24T13:45:10.090Z","status":"live"}
   ]
 }
