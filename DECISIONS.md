@@ -2690,3 +2690,9 @@ asked for hats and lights by name, so they come back after the 2026-11-08 tone-d
   but two class names, so titles, metadata and structured data are untouched. Favicons and share images are unchanged.
 - Off switch: `CHRISTMAS_FESTIVE_LAYER` (`lib/season.ts`, the `data-festive` attribute on `<html>`); the Christmas window
   also ends it on 27 December by itself. Remove after New Year: delete the block and the two classes.
+
+## 2026-11-26: The header's string of Christmas lights is removed (owner)
+
+Owner, 2026-11-26: "I don't really like the Christmas lights on the very top." The string of lights hanging under the header
+(2026-11-20) is removed on every Compare site: the `.xmas-garland::after` rule is gone from the `xmas-logo` block in `globals.css`
+and the class is off the header. The Santa hat on the logo stays, and nothing else of the Christmas layer changes.

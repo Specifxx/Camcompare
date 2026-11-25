@@ -165,7 +165,7 @@ export default function Header({ nav, sale = null }: { nav: NavData; sale?: { pa
   const cols = (n: number) => (n >= 4 ? "w-[46rem] grid-cols-4" : n === 3 ? "w-[34rem] grid-cols-3" : n === 2 ? "w-[22rem] grid-cols-2" : "w-[14rem] grid-cols-1");
   const strip: NavLink[] = [...(sale ? [{ label: sale.name, path: sale.path, market: true }] : []), ...nav.menus.map((i) => ({ label: i.label, path: i.path, market: true })), ...direct];
   return (
-    <header className="cc-header glass sticky top-0 z-30 xmas-garland">
+    <header className="cc-header glass sticky top-0 z-30">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 sm:gap-3">
         <Link href={marketPath(m, "/")} className="flex shrink-0 items-center text-fg no-underline hover:no-underline" aria-label={`${SITE_NAME} home`}>
           <Logo compact intro size={30} />
