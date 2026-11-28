@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { ShareArrival } from "@/components/ShareArrival";
 import FeedbackButton from "@/components/FeedbackButton";
 import { RateCard } from "@/components/site-reviews/RateCard";
+import { DealsPopup } from "@/components/DealsPopup";
 import Footer from "@/components/Footer";
 import GeoSuggest from "@/components/GeoSuggest";
 import Header from "@/components/Header";
@@ -88,6 +89,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FeedbackButton />
         {/* Rate us (owner, 2026-11-03): the corner card, asking only after real use; RiftCompare keeps the ratings. */}
         <RateCard />
+        {/* Black Friday and after: real Amazon and eBay products in a corner card, once a visit (owner, 2026-11-28). */}
+        <AdRouteGate><DealsPopup /></AdRouteGate>
         {/* The eBay tiles in the phone dock below 1280px: browser only (components/PhoneDock.tsx). */}
         <AdRouteGate><PhoneDock /></AdRouteGate>
         <Reveal />

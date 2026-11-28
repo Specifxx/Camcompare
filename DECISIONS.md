@@ -2696,3 +2696,23 @@ asked for hats and lights by name, so they come back after the 2026-11-08 tone-d
 Owner, 2026-11-26: "I don't really like the Christmas lights on the very top." The string of lights hanging under the header
 (2026-11-20) is removed on every Compare site: the `.xmas-garland::after` rule is gone from the `xmas-logo` block in `globals.css`
 and the class is off the header. The Santa hat on the logo stays, and nothing else of the Christmas layer changes.
+
+## 2026-11-28 — The deals card: real Amazon and eBay products in a corner pop-up (owner)
+
+Owner, 2026-11-28: "the sites without TCGplayer … can we have some eBay or Amazon pop-ups, especially with Black Friday deals
+… with actual products … it might use a bit of the quota, but that's fine." This overrides, on the owner's explicit word, the
+family's no-pop-up line for this site. `components/DealsPopup.tsx` is a small corner card (not a modal) with up to four real
+products from our own catalogue: Amazon items the build priced (`lib/deal-picks.ts`, the same live file the product page's
+Amazon row reads), each with its price's time, dropped in the browser after 24 hours (Amazon's licence) and with Amazon's own
+deal badge only before Amazon's own end; eBay's delivered Buy It Now price from the daily import to fill. Links are the item
+itself (/dp/ or /itm/), tagged `deals-popup-amazon` / `deals-popup-ebay`, rel sponsored, labelled Ad. Never a deals or
+category page, no "was" price, no saving of ours, no countdown.
+
+Amazon's Participation Requirements (o) bar Special Links in pop-ups "except for pop-up windows in conjunction with your Site
+promoting Products closely associated with the materials on your Site": the card shows only products this site compares,
+and the owner accepted the remaining risk (as for the quick view, 2026-11-06).
+
+Prompt rules kept: once a visit, sharing the visit's one prompt slot with the rate-us card (`srv_rate_seen`); never before
+nine seconds on the page, never while typing or over another dialog; ✕ and Escape close it (for the visit during Black
+Friday, for a week after). Premium members never see it where Premium exists. 
+became "We keep ads light", so it stays true. Released urgently on the owner's word.

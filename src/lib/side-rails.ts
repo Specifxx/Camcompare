@@ -38,7 +38,7 @@ export interface Rails {
 }
 
 /** The bodies and lenses the most shops in the market list today: two bodies, then a lens, so the rail is mostly cameras. */
-function popular(m: MarketCode) {
+export function popular(m: MarketCode) {
   const rank = <T extends { slug: string }>(items: T[]) =>
     items
       .map((item) => ({ item, shops: new Set(offersFor(item.slug, m).filter((o) => o.inStock && !o.kit && !isAmazonOffer(o)).map((o) => o.retailer)).size }))
