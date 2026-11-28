@@ -136,9 +136,9 @@
    "retailer": "camera-house"
   },
   "dji-air-3s": {
-   "src": "https://cdn.shopify.com/s/files/1/0504/3555/5511/files/1070373_1_330238c0-894c-4d83-9ec0-691b819eaab5.jpg?width=640",
-   "store": "Beach Camera",
-   "retailer": "beach-camera"
+   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/1729013580_IMG_2357912.jpg?width=640",
+   "store": "Camera Electronic",
+   "retailer": "camera-electronic"
   },
   "dji-flip": {
    "src": "https://content.abt.com/media/images/products/BDP_Images/dji-drone-CPFP0000018004.jpg",
@@ -1005,6 +1005,11 @@
    "store": "Camera Electronic",
    "retailer": "camera-electronic"
   },
+  "om-system-m-zuiko-digital-45mm-f1-8": {
+   "src": "https://cdn.shopify.com/s/files/1/0622/3219/9216/files/2137974.jpg?width=640",
+   "store": "Focus Camera",
+   "retailer": "focus-camera"
+  },
   "om-system-m-zuiko-digital-ed-100-400mm-f5-0-6-3-is-ii": {
    "src": "https://cdn.shopify.com/s/files/1/1165/5118/files/94ce9adb-46c5-4a04-b860-1878bdcb08b1.jpg?width=640",
    "store": "Cambrian Photography",
@@ -1241,9 +1246,9 @@
    "retailer": "panasonic-store-us"
   },
   "panasonic-lumix-s-20mm-f2-5": {
-   "src": "https://cdn.shopify.com/s/files/1/0724/5371/8324/files/lumix-2026-s20-galleryimages-2-260827_40010462-9b05-4682-bb7b-468a3f14651b.png?width=640",
-   "store": "Shop Panasonic",
-   "retailer": "panasonic-store-us"
+   "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/S-S20_frontslant.png?width=640",
+   "store": "Camera Electronic",
+   "retailer": "camera-electronic"
   },
   "panasonic-lumix-s-24-60mm-f2-8": {
    "src": "https://cdn.shopify.com/s/files/1/0685/0252/0085/files/S-E2460_frontslant.png?width=640",
